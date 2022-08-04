@@ -1,0 +1,95 @@
+IF
+  Global("SaveSavedLoc","LOCALS",0)
+THEN
+  RESPONSE #100
+    SetGlobal("SaveSavedLoc","LOCALS",1)
+    SaveObjectLocation("LOCALS","SavedLoc",Myself)
+    Continue()
+END
+
+IF
+	StateCheck(Myself,STATE_PANIC)
+THEN
+	RESPONSE #100
+		RandomWalkContinuous()
+END
+
+IF
+	!GlobalTimerNotExpired("IWD_Rest","LOCALS")
+THEN
+	RESPONSE #100
+		SetGlobalTimer("IWD_Rest","LOCALS",EIGHT_HOURS)
+		ApplySpell(Myself,RESTORE_FULL_HEALTH)
+		Rest()
+END
+
+IF
+	HaveSpell(CLERIC_CHANT)
+	See([PC])
+THEN
+	RESPONSE #100
+		Help()
+		Spell(Myself,CLERIC_CHANT)
+		Wait(2)
+END
+
+IF
+	HaveSpell(CLERIC_HOLD_PERSON)
+	See([PC])
+	!StateCheck(LastSeenBy(Myself),STATE_HELPLESS)
+THEN
+	RESPONSE #100
+		Help()
+		Spell(LastSeenBy(Myself),CLERIC_HOLD_PERSON)
+		Wait(2)
+END
+
+IF
+	AttackedBy([GOODCUTOFF],DEFAULT)
+THEN
+	RESPONSE #100
+		FaceObject(LastAttackerOf(Myself))
+		Continue()
+END
+
+IF
+	HaveSpell(CLERIC_SILENCE_15_FOOT)
+	See("EGENIA")
+	!StateCheck(LastSeenBy(Myself),STATE_SILENCED)
+	BitCheck("AREA_VAR","MYAREA",1)
+THEN
+	RESPONSE #100
+		Help()
+		Spell(LastSeenBy(Myself),CLERIC_SILENCE_15_FOOT)
+		Wait(2)
+END
+
+IF
+	HaveSpell(CLERIC_HOLD_PERSON)
+	See([PC.0.0.PALADIN])
+	!StateCheck(LastSeenBy(Myself),STATE_HELPLESS)
+	!BitCheck("CREATURE_STATE_VAR","LOCALS",8)
+THEN
+	RESPONSE #100
+		BitSet("CREATURE_STATE_VAR","LOCALS",8)
+		Help()
+		Spell(LastSeenBy(Myself),CLERIC_HOLD_PERSON)
+		Wait(2)
+END
+
+IF
+	See([PC])
+THEN
+	RESPONSE #100
+		Help()
+		AttackReevaluate(LastSeenBy(Myself),75)
+END
+
+IF
+	ActionListEmpty()
+	!NearSavedLocation(Myself,"LOCALSSavedLoc",0)
+THEN
+	RESPONSE #100
+		MoveToSavedLocation("SavedLoc","LOCALS")
+END
+

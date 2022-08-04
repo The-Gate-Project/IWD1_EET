@@ -1,0 +1,106 @@
+IF
+	!BitCheck("CREATURE_STATE_VAR","LOCALS",256)
+	Allegiance(Myself,ENEMY)
+THEN
+	RESPONSE #100
+		BitSet("CREATURE_STATE_VAR","LOCALS",256)
+		DisplayStringHead(Myself,@15483)
+		Continue()
+END
+
+IF
+	Global("MAP_GROUP_HOSTILE1","MYAREA",0)
+	IsActive(Myself)
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		SetGlobal("MAP_GROUP_HOSTILE1","MYAREA",1)
+		Continue()
+END
+
+IF
+	!Allegiance(Myself,ENEMY)
+	!Global("MAP_GROUP_HOSTILE1","MYAREA",0)
+THEN
+	RESPONSE #100
+		Enemy()
+		SetGlobal("MAP_GROUP_HOSTILE1","MYAREA",1)
+		Continue()
+END
+
+IF
+	!GlobalTimerNotExpired("IWD_Rest","LOCALS")
+THEN
+	RESPONSE #100
+		SetGlobalTimer("IWD_Rest","LOCALS",EIGHT_HOURS)
+		ApplySpell(Myself,RESTORE_FULL_HEALTH)
+		Rest()
+END
+
+IF
+	HaveSpell(WIZARD_FIREBALL)
+	!Global("MAP_GROUP_HOSTILE1","MYAREA",0)
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		MoveToPoint([1840.400])
+		SpellPoint([1545.500],WIZARD_FIREBALL)
+		Wait(2)
+END
+
+IF
+	HaveSpell(WIZARD_HASTE)
+	!Global("MAP_GROUP_HOSTILE1","MYAREA",0)
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		SpellPoint([1740.445],WIZARD_HASTE)
+		Wait(2)
+END
+
+IF
+	HaveSpell(WIZARD_MAGIC_MISSILE)
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		Spell(LastSeenBy(Myself),WIZARD_MAGIC_MISSILE)
+		Wait(2)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		RunAwayFromNoLeaveArea(LastSeenBy(Myself),45)
+END
+
+IF
+	AttackedBy(NearestEnemyOf(Myself),DEFAULT)
+THEN
+	RESPONSE #100
+		RunAwayFromNoLeaveArea(LastAttackerOf(Myself),45)
+END
+
+IF
+	!Allegiance(Myself,ENEMY)
+	AttackedBy([GOODCUTOFF],DEFAULT)
+THEN
+	RESPONSE #100
+		Enemy()
+		SetGlobal("MAP_GROUP_HOSTILE1","MYAREA",1)
+		Continue()
+END
+
+IF
+	See([PC])
+	!Allegiance(Myself,ENEMY)
+	!StateCheck(Myself,STATE_REALLY_DEAD)
+THEN
+	RESPONSE #100
+		StartCutSceneMode()
+		ClearAllActions()
+		MultiPlayerSync()
+		ApplySpellRES("BDCUTSPY",Myself)
+		StartDialogNoSet([PC])
+END
+

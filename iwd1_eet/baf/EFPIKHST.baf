@@ -1,0 +1,18 @@
+IF
+	!Global("EFPIKHST_INACTIVE","LOCALS",1)
+	Allegiance(Myself,ENEMY)
+THEN
+	RESPONSE #100
+		SetGlobal("EFPIKHST_INACTIVE","LOCALS",1)
+END
+
+IF
+	!Global("EFPIKHST_INACTIVE","LOCALS",1)
+	!Allegiance(Myself,ENEMY)
+	PickPocketFailed([PC])
+THEN
+	RESPONSE #100
+		Enemy()
+		Continue()
+END
+

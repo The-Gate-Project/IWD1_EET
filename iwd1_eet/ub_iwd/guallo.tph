@@ -1,0 +1,68 @@
+
+EXTEND_BOTTOM ~ID8004.bcs~   ~iwd1_eet/ub_iwd/baf/ar8004.baf~
+
+COPY_EXISTING ~ID8003.are~ ~override~
+	READ_LONG  0x54 "actor_off"
+	READ_SHORT 0x58 "actor_num"
+	FOR (index = 0; index < actor_num; index = index + 1) BEGIN
+		READ_ASCII ("%actor_off%" + 0x80 + ("%index%" * 0x110)) "cre_file"
+		PATCH_IF ("%cre_file%" STRING_COMPARE_CASE "umberhlk" = 0)  BEGIN
+			WRITE_ASCIIT ("%actor_off%" + 0x80 + ("%index%" * 0x110)) "cduh8004"
+		END
+	END
+	BUT_ONLY_IF_IT_CHANGES
+
+COPY_EXISTING ~ID8003.ini~ ~override~
+	REPLACE_TEXTUALLY ~Umberhlk~ ~cduh8004~
+	BUT_ONLY_IF_IT_CHANGES
+
+COPY_EXISTING ~umberhlk.cre~ ~override/cduh8004.cre~
+	WRITE_ASCII 0x280 ~8004_HULKS_DEAD~ #32
+
+COMPILE ~iwd1_eet/ub_iwd/dlg/dguello.d~
+EXTEND_TOP ~ldguell2.bcs~ ~iwd1_eet/ub_iwd/baf/ldguell2.baf~
+
+COPY_EXISTING ~ID8003.bcs~ ~override~
+	DECOMPILE_BCS_TO_BAF
+		REPLACE_TEXTUALLY ~\bGlobal("TARNEL_TRAP_SET","GLOBAL",5)~ ~False()~
+		APPEND_FILE ~iwd1_eet/ub_iwd/baf/ar8003.baf~
+	COMPILE_BAF_TO_BCS
+	BUT_ONLY_IF_IT_CHANGES
+
+COPY_EXISTING ~ldbeorn.bcs~  ~override~
+              ~lddgnom1.bcs~ ~override~
+              ~ldguello.bcs~ ~override~
+              ~ldllew.bcs~   ~override~
+              ~ldnym.bcs~    ~override~
+	DECOMPILE_BCS_TO_BAF
+		REPLACE_TEXTUALLY ~Global("BEORN_QUEST","GLOBAL",4)~ ~GlobalGT("BEORN_QUEST","GLOBAL",3)~
+	COMPILE_BAF_TO_BCS
+	BUT_ONLY_IF_IT_CHANGES
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

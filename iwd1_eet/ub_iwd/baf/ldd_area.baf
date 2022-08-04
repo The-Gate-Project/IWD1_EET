@@ -1,0 +1,30 @@
+IF
+  GlobalTimerExpired("CDVoiceTimer","GLOBAL")
+  GlobalLT("Voice_Quest","GLOBAL",2)
+  !Global("CDVoiceSpoken","GLOBAL",0)
+THEN
+  RESPONSE #25
+    SetGlobal("CDVoiceLocation","GLOBAL",1)
+    SetGlobal("CDBellTollsLeft","GLOBAL",1)
+    SetGlobal("SPRITE_IS_DEADVoice","GLOBAL",0)
+    SetGlobalTimer("CDVoiceTimer","GLOBAL",7200)
+    CreateCreatureObject("cdbell",Player1,0,0,0)
+  RESPONSE #25
+    SetGlobal("CDVoiceLocation","GLOBAL",2)
+    SetGlobal("CDBellTollsLeft","GLOBAL",2)
+    SetGlobal("SPRITE_IS_DEADVoice","GLOBAL",0)
+    SetGlobalTimer("CDVoiceTimer","GLOBAL",7200)
+    CreateCreatureObject("cdbell",Player1,0,0,0)
+  RESPONSE #25
+    SetGlobal("CDVoiceLocation","GLOBAL",3)
+    SetGlobal("CDBellTollsLeft","GLOBAL",3)
+    SetGlobal("SPRITE_IS_DEADVoice","GLOBAL",0)
+    SetGlobalTimer("CDVoiceTimer","GLOBAL",7200)
+    CreateCreatureObject("cdbell",Player1,0,0,0)
+  RESPONSE #25
+    SetGlobal("CDVoiceLocation","GLOBAL",4)
+    SetGlobal("CDBellTollsLeft","GLOBAL",4)
+    SetGlobal("SPRITE_IS_DEADVoice","GLOBAL",0)
+    SetGlobalTimer("CDVoiceTimer","GLOBAL",7200)
+    CreateCreatureObject("cdbell",Player1,0,0,0)
+END

@@ -1,0 +1,53 @@
+/*IF
+	!HasItem("REG1HP2",Myself)
+	!StateCheck(Myself,STATE_REALLY_DEAD)
+THEN
+	RESPONSE #100
+		GiveItemCreate("REG1HP2",Myself,1,0,0)
+		EquipItemEx("REG1HP2",0)
+		Continue()
+END
+
+IF
+	!HasItem("TROLLDE",Myself)
+	!StateCheck(Myself,STATE_REALLY_DEAD)
+THEN
+	RESPONSE #100
+		GiveItemCreate("TROLLDE",Myself,1,0,0)
+		Continue()
+END
+
+IF
+	BitCheck("CREATURE_STATE_VAR","LOCALS",32768)
+	!StateCheck(Myself,STATE_REALLY_DEAD)
+THEN
+	RESPONSE #100
+		//SetHP(Myself,25)
+		ApplySpellRES("IDSTHP25",Myself)
+		SetSequence(SEQ_AWAKE)
+		EquipItemEx("REG1HP2",0)
+		EquipItemEx("TROLLDE",1)
+		BitClear("CREATURE_STATE_VAR","LOCALS",32768)
+END
+
+IF
+	!BitCheck("CREATURE_STATE_VAR","LOCALS",32768)
+	!StateCheck(Myself,STATE_REALLY_DEAD)
+	HPLT(Myself,10)
+THEN
+	RESPONSE #100
+		EquipItemEx("TROLLDE",0)
+		EquipItemEx("REG1HP2",1)
+		BitSet("CREATURE_STATE_VAR","LOCALS",32768)
+		//SetHP(Myself,1)
+		ApplySpellRES("IDSETHP1",Myself)
+		PlayDead(600)
+END*/
+
+IF
+  StateCheck(Myself,STATE_SLEEPING)
+THEN
+  RESPONSE #100
+    NoAction()
+END
+

@@ -1,0 +1,16 @@
+IF
+  Global("CDGloom","MYAREA",2)
+THEN
+  RESPONSE #100
+    SetGlobal("CDGloom","MYAREA",3)
+    StartCutSceneMode()
+    StartCutScene("cdgloom")
+END
+
+IF
+  Global("CDGloom","MYAREA",4)
+THEN
+  RESPONSE #100
+    SetGlobal("CDGloom","MYAREA",5)
+    StartDialogueNoSet([PC])
+END

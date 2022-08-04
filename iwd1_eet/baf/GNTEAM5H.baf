@@ -1,0 +1,10 @@
+IF
+	!IsActive(Myself)
+	!Global("MAP_GROUP_HOSTILE5","MYAREA",0)
+THEN
+	RESPONSE #100
+		Activate(Myself)
+		SetGlobal("IwIHidden","LOCALS",0)
+		Continue()
+END
+

@@ -1,0 +1,63 @@
+BEGIN ~DMARCH~
+
+IF ~NumTimesTalkedTo(0)~ THEN BEGIN 0
+  SAY @18894
+  IF ~~ THEN REPLY @18906 DO ~SetGlobal("Yuanti_Inferno","GLOBAL",1)~ GOTO 1
+END
+
+IF ~~ THEN BEGIN 1
+  SAY @18895
+  IF ~~ THEN REPLY @18907 GOTO 2
+END
+
+IF ~~ THEN BEGIN 2
+  SAY @18897
+  IF ~!GlobalGT("Dead_Yuan","GLOBAL",14)~ THEN REPLY @18908 DO ~SetGlobal("Marchon_Free","GLOBAL",1)~ GOTO 3
+  IF ~GlobalGT("Dead_Yuan","GLOBAL",14)~ THEN REPLY @18909 GOTO 4
+END
+
+IF ~~ THEN BEGIN 3
+  SAY @18898
+  IF ~~ THEN EXIT
+END
+
+IF ~~ THEN BEGIN 4
+  SAY @18899
+  IF ~~ THEN REPLY @18910 GOTO 5
+END
+
+IF ~~ THEN BEGIN 5
+  SAY @18900
+  IF ~~ THEN REPLY @18911 GOTO 6
+  IF ~~ THEN REPLY @18912 GOTO 7
+END
+
+IF ~~ THEN BEGIN 6
+  SAY @18901
+  IF ~~ THEN REPLY @18913 DO ~RestPartyEx(0,0,TRUE)~ EXIT
+END
+
+IF ~~ THEN BEGIN 7
+  SAY @18902
+  IF ~~ THEN EXIT
+END
+
+IF ~NumTimesTalkedToGT(0)
+    Global("Marchon_Free","GLOBAL",1)
+    GlobalGT("Dead_Yuan","GLOBAL",14)~ THEN BEGIN 8
+  SAY @18903
+  IF ~~ THEN REPLY @18914 DO ~SetGlobal("Marchon_Free","GLOBAL",0)~ GOTO 9
+END
+
+IF ~~ THEN BEGIN 9
+  SAY @18904
+  IF ~~ THEN REPLY @18915 GOTO 5
+END
+
+IF ~NumTimesTalkedToGT(0)
+    !Global("Marchon_Free","GLOBAL",1)
+    GlobalGT("Dead_Yuan","GLOBAL",14)~ THEN BEGIN 10
+  SAY @18905
+  IF ~~ THEN REPLY @18916 DO ~RestPartyEx(0,0,TRUE)~ EXIT
+  IF ~~ THEN REPLY @18917 EXIT
+END

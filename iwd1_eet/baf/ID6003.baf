@@ -1,0 +1,45 @@
+IF
+	PartyHasItem("KALABAC")
+	GlobalLT("BANDOTH_QUEST","GLOBAL",3)
+THEN
+	RESPONSE #100
+		SetGlobal("BANDOTH_QUEST","GLOBAL",3)
+		Continue()
+END
+
+IF
+	Global("KRILAG_BADGE","GLOBAL",0)
+	PartyHasItem("KRILAG")
+THEN
+	RESPONSE #100
+		SetGlobal("KRILAG_BADGE","GLOBAL",1)
+		AddXP2DA("ID1EX8A")
+		DisplayStringNoName(Player1,@19558)
+		Continue()
+END
+
+IF
+	OnCreation()
+THEN
+	RESPONSE #100
+		SetGlobal("UDSPAWNB","GLOBAL",0)
+		SetGlobal("UDSPAWNC","GLOBAL",0)
+		SetGlobal("UDSPAWNA","GLOBAL",1)
+	RESPONSE #100
+		SetGlobal("UDSPAWNA","GLOBAL",0)
+		SetGlobal("UDSPAWNC","GLOBAL",0)
+		SetGlobal("UDSPAWNB","GLOBAL",1)
+	RESPONSE #100
+		SetGlobal("UDSPAWNA","GLOBAL",0)
+		SetGlobal("UDSPAWNB","GLOBAL",0)
+		SetGlobal("UDSPAWNC","GLOBAL",1)
+END
+
+IF
+	OnCreation()
+THEN
+	RESPONSE #100
+		NoAction()
+		Continue()
+END
+

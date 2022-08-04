@@ -1,0 +1,58 @@
+IF
+  Global("SaveSavedLoc","LOCALS",0)
+THEN
+  RESPONSE #100
+    SetGlobal("SaveSavedLoc","LOCALS",1)
+    SaveObjectLocation("LOCALS","SavedLoc",Myself)
+    Continue()
+END
+
+IF
+	!BitCheck("CREATURE_STATE_VAR","LOCALS",256)
+	Allegiance(Myself,ENEMY)
+THEN
+	RESPONSE #100
+		BitSet("CREATURE_STATE_VAR","LOCALS",256)
+		DisplayStringHead(Myself,@15406)
+		Continue()
+END
+
+IF
+	StateCheck(Myself,STATE_PANIC)
+THEN
+	RESPONSE #100
+		RandomWalkContinuous()
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		RunAwayFromNoLeaveArea(LastSeenBy(Myself),45)
+END
+
+IF
+	AttackedBy(NearestEnemyOf(Myself),DEFAULT)
+THEN
+	RESPONSE #100
+		FaceObject(LastAttackerOf(Myself))
+		Continue()
+END
+
+IF
+	AttackedBy([GOODCUTOFF],DEFAULT)
+THEN
+	RESPONSE #100
+		Enemy()
+		SetGlobal("MAP_GROUP_HOSTILE1","MYAREA",1)
+		Continue()
+END
+
+IF
+	ActionListEmpty()
+	!NearSavedLocation(Myself,"LOCALSSavedLoc",0)
+THEN
+	RESPONSE #100
+		MoveToSavedLocation("SavedLoc","LOCALS")
+END
+

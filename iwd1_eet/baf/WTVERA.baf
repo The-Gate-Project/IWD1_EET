@@ -1,0 +1,74 @@
+IF
+	!Global("VERA_LEAVE","GLOBAL",0)
+	!BitCheck("CREATURE_STATE_VAR","LOCALS",512)
+THEN
+	RESPONSE #100
+		FadeToColor([0.0],0)
+		Wait(1)
+		ApplySpellRES("IDINVIS",Myself)
+		SmallWait(5)
+		FadeFromColor([0.0],0)
+		BitSet("CREATURE_STATE_VAR","LOCALS",512)
+		DestroySelf()
+END
+
+IF
+	!IsActive(Myself)
+THEN
+	RESPONSE #100
+		NoAction()
+END
+
+IF
+	HitBy([0.0.SALAMANDER],CRUSHING)
+THEN
+	RESPONSE #100
+		Kill(Myself)
+END
+
+IF
+	HitBy([0.0.SALAMANDER],CRUSHING)
+	AttackedBy([0.0.SALAMANDER],DEFAULT)
+THEN
+	RESPONSE #100
+		Kill(Myself)
+		FaceObject(LastAttackerOf(Myself))
+		Continue()
+END
+
+IF
+	StateCheck(Myself,STATE_PANIC)
+THEN
+	RESPONSE #100
+		RandomWalkContinuous()
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		AttackReevaluate(LastSeenBy(Myself),75)
+END
+
+IF
+	AttackedBy(NearestEnemyOf(Myself),DEFAULT)
+THEN
+	RESPONSE #100
+		MoveToObject(LastAttackerOf(Myself))
+END
+
+IF
+	AttackedBy([GOODCUTOFF],DEFAULT)
+THEN
+	RESPONSE #100
+		Enemy()
+		Continue()
+END
+
+IF
+	AttackedBy([0.0.SALAMANDER],DEFAULT)
+THEN
+	RESPONSE #100
+		AttackReevaluate(LastAttackerOf(Myself),75)
+END
+

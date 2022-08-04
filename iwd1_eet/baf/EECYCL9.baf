@@ -1,0 +1,87 @@
+IF
+	!IsActive(Myself)
+	!Global("SPRITE_IS_DEADIdEhSquirl","GLOBAL",0)
+THEN
+	RESPONSE #100
+		Activate(Myself)
+		SetGlobal("IwIHidden","LOCALS",0)
+		Continue()
+END
+
+IF
+	!IsActive(Myself)
+THEN
+	RESPONSE #100
+		DestroySelf()
+END
+
+IF
+	StateCheck(Myself,STATE_PANIC)
+THEN
+	RESPONSE #100
+		RandomWalkContinuous()
+END
+
+IF
+	!BitCheck("SCRIPT_BIT_VAR","LOCALS",1)
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		BitSet("SCRIPT_BIT_VAR","LOCALS",1)
+		SetGlobalTimer("IwTimer0","LOCALS",2)
+END
+
+IF
+	!GlobalTimerExpired("IwTimer0","LOCALS")
+	BitCheck("SCRIPT_BIT_VAR","LOCALS",1)
+	AttackedBy(LastSeenBy(Myself),DEFAULT)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("IwTimer0","LOCALS",0)
+		Continue()
+END
+
+IF
+	GlobalTimerExpired("IwTimer0","LOCALS")
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		Help()
+		AttackOneRound(LastSeenBy(Myself))
+END
+
+IF
+	AttackedBy(NearestEnemyOf(Myself),DEFAULT)
+THEN
+	RESPONSE #100
+		Help()
+		AttackReevaluate(LastAttackerOf(Myself),75)
+END
+
+IF
+	AttackedBy([0.0.GIANT],DEFAULT)
+THEN
+	RESPONSE #100
+		MoveToObject(NearestEnemyOf(Myself))
+END
+
+IF
+	Global("MOVEMENT_LIST_0_LOC","LOCALS",0)
+	ActionListEmpty()
+	!GlobalTimerNotExpired("MOVEMENT_LIST_0_TIMER","LOCALS")
+THEN
+	RESPONSE #100
+		SetSequence(SEQ_ATTACK_SLASH)
+		SetGlobal("MOVEMENT_LIST_0_LOC","LOCALS",1)
+END
+
+IF
+	Global("MOVEMENT_LIST_0_LOC","LOCALS",1)
+	ActionListEmpty()
+	!GlobalTimerNotExpired("MOVEMENT_LIST_0_TIMER","LOCALS")
+THEN
+	RESPONSE #100
+		SetGlobalTimer("MOVEMENT_LIST_0_TIMER","LOCALS",3)
+		SetGlobal("MOVEMENT_LIST_0_LOC","LOCALS",0)
+END
+

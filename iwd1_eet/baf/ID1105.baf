@@ -1,0 +1,319 @@
+IF
+  !Global("ID1105_VISITED","GLOBAL",1)
+THEN
+  RESPONSE #100
+    SetGlobal("ID1105_VISITED","GLOBAL",1)
+    Continue()
+END
+
+IF
+  //!Global("IWD_COMPLETE","GLOBAL",0)
+  BitCheck("IWDEET_COMPLETE","GLOBAL",BITS_IWD1)
+  !Global("ERASE_IWD_JOURNAL","MYAREA",1)
+THEN
+  RESPONSE #100
+    EraseJournalEntry(@20671)
+    EraseJournalEntry(@15470)
+    EraseJournalEntry(@34232)
+    EraseJournalEntry(@34220)
+    EraseJournalEntry(@34218)
+    EraseJournalEntry(@34188)
+    EraseJournalEntry(@34233)
+    EraseJournalEntry(@18313)
+    EraseJournalEntry(@5056)
+    EraseJournalEntry(@992)
+    EraseJournalEntry(@5061)
+    EraseJournalEntry(@4360)
+    EraseJournalEntry(@5065)
+    EraseJournalEntry(@15471)
+    EraseJournalEntry(@34498)
+    EraseJournalEntry(@1340)
+    EraseJournalEntry(@9081)
+    EraseJournalEntry(@34324)
+    EraseJournalEntry(@34113)
+    EraseJournalEntry(@5066)
+    EraseJournalEntry(@10626)
+    EraseJournalEntry(@16556)
+    EraseJournalEntry(@416)
+    EraseJournalEntry(@5063)
+    EraseJournalEntry(@5064)
+    EraseJournalEntry(@19552)
+    EraseJournalEntry(@18315)
+    EraseJournalEntry(@485)
+    EraseJournalEntry(@1976)
+    EraseJournalEntry(@1977)
+    EraseJournalEntry(@4345)
+    EraseJournalEntry(@4348)
+    EraseJournalEntry(@4349)
+    EraseJournalEntry(@1978)
+    EraseJournalEntry(@3353)
+    EraseJournalEntry(@3354)
+    EraseJournalEntry(@4343)
+    EraseJournalEntry(@4347)
+    EraseJournalEntry(@4361)
+    EraseJournalEntry(@4351)
+    EraseJournalEntry(@4353)
+    EraseJournalEntry(@4358)
+    EraseJournalEntry(@4359)
+    EraseJournalEntry(@17689)
+    EraseJournalEntry(@14418)
+    EraseJournalEntry(@14419)
+    EraseJournalEntry(@2028)
+    EraseJournalEntry(@4357)
+    EraseJournalEntry(@2052)
+    EraseJournalEntry(@34238)
+    EraseJournalEntry(@5070)
+    EraseJournalEntry(@22943)
+    EraseJournalEntry(@5072)
+    EraseJournalEntry(@5071)
+    EraseJournalEntry(@34301)
+    EraseJournalEntry(@34307)
+    EraseJournalEntry(@23341)
+    EraseJournalEntry(@34244)
+    EraseJournalEntry(@34243)
+    EraseJournalEntry(@34240)
+    EraseJournalEntry(@34239)
+    EraseJournalEntry(@34419)
+    EraseJournalEntry(@34295)
+    EraseJournalEntry(@34249)
+    EraseJournalEntry(@34267)
+    EraseJournalEntry(@34302)
+    EraseJournalEntry(@34299)
+    EraseJournalEntry(@34296)
+    EraseJournalEntry(@34168)
+    EraseJournalEntry(@16530)
+    EraseJournalEntry(@16028)
+    EraseJournalEntry(@34266)
+    EraseJournalEntry(@34246)
+    EraseJournalEntry(@34269)
+    EraseJournalEntry(@34420)
+    EraseJournalEntry(@34386)
+    EraseJournalEntry(@23507)
+    EraseJournalEntry(@34499)
+    EraseJournalEntry(@2072)
+    EraseJournalEntry(@34237)
+    EraseJournalEntry(@14409)
+    EraseJournalEntry(@14408)
+    EraseJournalEntry(@34236)
+    EraseJournalEntry(@34311)
+    AddJournalEntry(@2000037,QUEST_DONE)
+    SetGlobal("ERASE_IWD_JOURNAL","MYAREA",1)
+END
+
+IF
+  //!Global("IWD_COMPLETE","GLOBAL",0)
+  BitCheck("IWDEET_COMPLETE","GLOBAL",BITS_IWD1)
+  //Global("HOW_COMPLETED","GLOBAL",0)
+  !BitCheck("IWDEET_COMPLETE","GLOBAL",BITS_HOW)
+  GlobalLT("Hjollder_Quest","GLOBAL",3)
+	Global("Move_To_HoW","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("Hjollder_Quest","GLOBAL",3)
+    SetGlobal("Join_Posse","GLOBAL",0)
+		SetGlobal("Move_To_HoW","GLOBAL",1)
+		DayNight(8)
+		SetMasterArea("ID9100")
+		//ActionOverride(Player1,ApplySpellRES("bdresurr",Myself)) 
+		ApplySpellRES("bdresurr",Player2)
+		ApplySpellRES("bdresurr",Player3)
+		ApplySpellRES("bdresurr",Player4)
+		ApplySpellRES("bdresurr",Player5)
+		ApplySpellRES("bdresurr",Player6)
+		ApplySpellRES("bddispel",Player1)
+		ApplySpellRES("bddispel",Player2)
+		ApplySpellRES("bddispel",Player3)
+		ApplySpellRES("bddispel",Player4)
+		ApplySpellRES("bddispel",Player5)
+		ApplySpellRES("bddispel",Player6)
+		ApplySpellRES("idrm516",Player1)
+		ApplySpellRES("idrm516",Player2)
+		ApplySpellRES("idrm516",Player3)
+		ApplySpellRES("idrm516",Player4)
+		ApplySpellRES("idrm516",Player5)
+		ApplySpellRES("idrm516",Player6)
+		ApplySpell(Player1,RESTORE_FULL_HEALTH)
+		ApplySpell(Player2,RESTORE_FULL_HEALTH)
+		ApplySpell(Player3,RESTORE_FULL_HEALTH)
+		ApplySpell(Player4,RESTORE_FULL_HEALTH)
+		ApplySpell(Player5,RESTORE_FULL_HEALTH)
+		ApplySpell(Player6,RESTORE_FULL_HEALTH)
+    StartCutScene("idToLW")
+END
+
+IF
+  //!Global("IWD_COMPLETE","GLOBAL",0)
+  BitCheck("IWDEET_COMPLETE","GLOBAL",BITS_IWD1)
+  //Global("HOW_COMPLETED","GLOBAL",0)
+  !BitCheck("IWDEET_COMPLETE","GLOBAL",BITS_HOW)
+  GlobalGT("Hjollder_Quest","GLOBAL",2)
+  GlobalLT("Hjollder_Quest","GLOBAL",11)
+	Global("Move_To_HoW","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("Join_Posse","GLOBAL",0)
+		SetGlobal("Move_To_HoW","GLOBAL",1)
+		SetMasterArea("ID9300")
+		//ActionOverride(Player1,ApplySpellRES("bdresurr",Myself)) 
+		ApplySpellRES("bdresurr",Player2)
+		ApplySpellRES("bdresurr",Player3)
+		ApplySpellRES("bdresurr",Player4)
+		ApplySpellRES("bdresurr",Player5)
+		ApplySpellRES("bdresurr",Player6)
+		ApplySpellRES("bddispel",Player1)
+		ApplySpellRES("bddispel",Player2)
+		ApplySpellRES("bddispel",Player3)
+		ApplySpellRES("bddispel",Player4)
+		ApplySpellRES("bddispel",Player5)
+		ApplySpellRES("bddispel",Player6)
+		ApplySpellRES("idrm516",Player1)
+		ApplySpellRES("idrm516",Player2)
+		ApplySpellRES("idrm516",Player3)
+		ApplySpellRES("idrm516",Player4)
+		ApplySpellRES("idrm516",Player5)
+		ApplySpellRES("idrm516",Player6)
+		ApplySpell(Player1,RESTORE_FULL_HEALTH)
+		ApplySpell(Player2,RESTORE_FULL_HEALTH)
+		ApplySpell(Player3,RESTORE_FULL_HEALTH)
+		ApplySpell(Player4,RESTORE_FULL_HEALTH)
+		ApplySpell(Player5,RESTORE_FULL_HEALTH)
+		ApplySpell(Player6,RESTORE_FULL_HEALTH)
+    StartCutScene("idKUtoBI")
+END
+
+IF
+  //!Global("IWD_COMPLETE","GLOBAL",0)
+  BitCheck("IWDEET_COMPLETE","GLOBAL",BITS_IWD1)
+  //Global("HOW_COMPLETED","GLOBAL",0)
+  !BitCheck("IWDEET_COMPLETE","GLOBAL",BITS_HOW)
+  GlobalGT("Hjollder_Quest","GLOBAL",10)
+	Global("Move_To_HoW","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("Join_Posse","GLOBAL",0)
+		SetGlobal("Move_To_HoW","GLOBAL",1)
+		SetMasterArea("ID9200")
+		//ActionOverride(Player1,ApplySpellRES("bdresurr",Myself)) 
+		ApplySpellRES("bdresurr",Player2)
+		ApplySpellRES("bdresurr",Player3)
+		ApplySpellRES("bdresurr",Player4)
+		ApplySpellRES("bdresurr",Player5)
+		ApplySpellRES("bdresurr",Player6)
+		ApplySpellRES("bddispel",Player1)
+		ApplySpellRES("bddispel",Player2)
+		ApplySpellRES("bddispel",Player3)
+		ApplySpellRES("bddispel",Player4)
+		ApplySpellRES("bddispel",Player5)
+		ApplySpellRES("bddispel",Player6)
+		ApplySpellRES("idrm516",Player1)
+		ApplySpellRES("idrm516",Player2)
+		ApplySpellRES("idrm516",Player3)
+		ApplySpellRES("idrm516",Player4)
+		ApplySpellRES("idrm516",Player5)
+		ApplySpellRES("idrm516",Player6)
+		ApplySpell(Player1,RESTORE_FULL_HEALTH)
+		ApplySpell(Player2,RESTORE_FULL_HEALTH)
+		ApplySpell(Player3,RESTORE_FULL_HEALTH)
+		ApplySpell(Player4,RESTORE_FULL_HEALTH)
+		ApplySpell(Player5,RESTORE_FULL_HEALTH)
+		ApplySpell(Player6,RESTORE_FULL_HEALTH)
+    StartCutScene("idKUtoBC")
+END
+
+IF
+  //!Global("IWD_COMPLETE","GLOBAL",0)
+  BitCheck("IWDEET_COMPLETE","GLOBAL",BITS_IWD1)
+  //!Global("HOW_COMPLETED","GLOBAL",0)
+  BitCheck("IWDEET_COMPLETE","GLOBAL",BITS_HOW)
+THEN
+  RESPONSE #100
+    ClearAllActions()
+    StartCutSceneMode()
+    FadeToColor([15.0],0)
+    SetGlobal("Townie_Dead","GLOBAL",0)
+    SetGlobal("Kill_Innocent","GLOBAL",0)
+	Wait(1)
+    StartCutScene("idtoEET")
+END
+
+IF
+	Global("1105_END_STARTED","MYAREA",0)
+	Global("SPRITE_IS_DEADIWD_GEM","GLOBAL",0)
+	DifficultyLT(HARD)
+	Global("END_PORTAL","GLOBAL",0)
+THEN
+	RESPONSE #100
+		ActionOverride("CORNUGON_1",DestroySelf())
+		ActionOverride("CORNUGON_2",DestroySelf())
+		Continue()
+END
+
+IF
+	Global("1105_END_STARTED","MYAREA",0)
+	Global("SPRITE_IS_DEADEVERARD","GLOBAL",0)
+	Global("END_PORTAL","GLOBAL",0)
+THEN
+	RESPONSE #100
+		StartCutSceneMode()
+		SetGlobal("1105_END_STARTED","MYAREA",1)
+		StartCutScene("EEEVEALV")
+END
+
+IF
+	Global("1105_END_STARTED","MYAREA",0)
+	Global("END_PORTAL","GLOBAL",0)
+THEN
+	RESPONSE #100
+		StartCutSceneMode()
+		SetGlobal("1105_END_STARTED","MYAREA",1)
+		StartCutScene("EEPEQTLK")
+END
+
+IF
+	//Global("IWD_COMPLETE","GLOBAL",0)
+	!BitCheck("IWDEET_COMPLETE","GLOBAL",BITS_IWD1)
+	!Global("BELHIFET_DEAD","GLOBAL",0)
+THEN
+	RESPONSE #100
+		StartCutSceneMode()
+		//SetGlobal("IWD_COMPLETE","GLOBAL",1)
+		BitSet("IWDEET_COMPLETE","GLOBAL",BITS_IWD1)
+		StartCutScene("EEBELKIL")
+END
+
+IF
+	//Global("IWD_COMPLETE","GLOBAL",0)
+	!BitCheck("IWDEET_COMPLETE","GLOBAL",BITS_IWD1)
+	Exists("EEBELHI1")
+	HPLT("EEBELHI1",10)
+THEN
+	RESPONSE #100
+		StartCutSceneMode()
+		//SetGlobal("IWD_COMPLETE","GLOBAL",1)
+		BitSet("IWDEET_COMPLETE","GLOBAL",BITS_IWD1)
+		SetGlobal("BELHIFET_DEAD","GLOBAL",1)
+		ClearAllActions()
+		MultiPlayerSync()
+		StartCutScene("EEBELDTH")
+END
+
+IF
+	GlobalGT("END_PROGRESS","GLOBAL",4)
+	Exists("EVERARD")
+THEN
+	RESPONSE #100
+		//HideCreature("EVERARD",TRUE)
+		//MultiPlayerSync()
+		ActionOverride("EVERARD",DestroySelf())
+		MultiPlayerSync()
+		Continue()
+END
+
+IF
+	OnCreation()
+THEN
+	RESPONSE #100
+		NoAction()
+		Continue()
+END
+

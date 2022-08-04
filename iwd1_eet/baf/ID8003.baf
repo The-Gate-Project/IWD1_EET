@@ -1,0 +1,67 @@
+IF
+	!Global("TRIGGERS_INIT","MYAREA",1)
+THEN
+	RESPONSE #100
+		TriggerActivation("To8004a",FALSE)
+		TriggerActivation("To8004b",FALSE)
+		TriggerActivation("To8004c",FALSE)
+		SetGlobal("TRIGGERS_INIT","MYAREA",1)
+		Continue()
+END
+
+IF
+	Global("TARNEL_TRAP_SET","GLOBAL",2)
+	!GlobalTimerNotExpired("TARNEL_TRAP_TIMER","MYAREA")
+THEN
+	RESPONSE #100
+		ForceSpellPointRES("IDIN983",[1800.805])  //INNATE_INCENDIARY_CLOUD_EXPLOSION
+		ForceSpellPointRES("IDIN983",[1975.785])  //INNATE_INCENDIARY_CLOUD_EXPLOSION
+		ForceSpellPointRES("IDIN983",[2190.800])  //INNATE_INCENDIARY_CLOUD_EXPLOSION	
+		TriggerActivation("To8004a",TRUE)
+		TriggerActivation("To8004b",TRUE)
+		TriggerActivation("To8004c",TRUE)	
+		OpenDoor("AR8003DOOR1")
+		SetGlobalTimer("TARNEL_TRAP_TIMER","MYAREA",4)
+		SetGlobal("TARNEL_TRAP_SET","GLOBAL",3)
+		SetGlobal("TARNEL_HULK_SPAWN_1","GLOBAL",1)
+END
+
+IF
+	Global("TARNEL_TRAP_SET","GLOBAL",3)
+	!GlobalTimerNotExpired("TARNEL_TRAP_TIMER","MYAREA")
+THEN
+	RESPONSE #100
+		SetGlobalTimer("TARNEL_TRAP_TIMER","MYAREA",4)
+		SetGlobal("TARNEL_TRAP_SET","GLOBAL",4)
+		SetGlobal("TARNEL_HULK_SPAWN_2","GLOBAL",1)
+		SetGlobal("TARNEL_HULK_SPAWN_1","GLOBAL",0)
+END
+
+IF
+	Global("TARNEL_TRAP_SET","GLOBAL",4)
+	!GlobalTimerNotExpired("TARNEL_TRAP_TIMER","MYAREA")
+THEN
+	RESPONSE #100
+		SetGlobalTimer("TARNEL_TRAP_TIMER","MYAREA",4)
+		SetGlobal("TARNEL_TRAP_SET","GLOBAL",5)
+		SetGlobal("TARNEL_HULK_SPAWN_3","GLOBAL",1)
+		SetGlobal("TARNEL_HULK_SPAWN_2","GLOBAL",0)
+END
+
+IF
+	Global("TARNEL_TRAP_SET","GLOBAL",5)
+	!GlobalTimerNotExpired("TARNEL_TRAP_TIMER","MYAREA")
+THEN
+	RESPONSE #100
+		SetGlobal("TARNEL_TRAP_SET","GLOBAL",6)
+		SetGlobal("TARNEL_HULK_SPAWN_3","GLOBAL",0)
+END
+
+IF
+	OnCreation()
+THEN
+	RESPONSE #100
+		NoAction()
+		Continue()
+END
+

@@ -1,0 +1,65 @@
+IF
+	StateCheck(Myself,STATE_PANIC)
+THEN
+	RESPONSE #100
+		RandomWalkContinuous()
+END
+
+IF
+	!GlobalTimerNotExpired("IWD_Rest","LOCALS")
+THEN
+	RESPONSE #100
+		SetGlobalTimer("IWD_Rest","LOCALS",EIGHT_HOURS)
+		ApplySpell(Myself,RESTORE_FULL_HEALTH)
+		Rest()
+END
+
+IF
+	!BitCheck("CREATURE_STATE_VAR","LOCALS",2)
+	!Global("YUANTI_INFERNO","GLOBAL",0)
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #75
+		BitSet("CREATURE_STATE_VAR","LOCALS",2)
+		SetSequence(SEQ_HEAD_TURN)
+		Continue()
+	RESPONSE #25
+		BitSet("CREATURE_STATE_VAR","LOCALS",2)
+		Continue()
+END
+
+IF
+	HaveSpellRES("IDIN998")  //INNATE_CHAMELEON_POWER
+	See(NearestEnemyOf(Myself))
+	!Global("YUANTI_INFERNO","GLOBAL",0)
+THEN
+	RESPONSE #100
+		SpellRES("IDIN998",Myself)  //INNATE_CHAMELEON_POWER
+		Wait(2)
+END
+
+IF
+	!Global("YUANTI_INFERNO","GLOBAL",0)
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		AttackReevaluate(LastSeenBy(Myself),75)
+END
+
+IF
+	!Global("YUANTI_INFERNO","GLOBAL",0)
+	AttackedBy(NearestEnemyOf(Myself),DEFAULT)
+THEN
+	RESPONSE #100
+		MoveToObject(LastAttackerOf(Myself))
+END
+
+IF
+	AttackedBy([GOODCUTOFF],DEFAULT)
+THEN
+	RESPONSE #100
+		SetGlobal("YUANTI_INFERNO","GLOBAL",1)
+		Enemy()
+		Continue()
+END
+

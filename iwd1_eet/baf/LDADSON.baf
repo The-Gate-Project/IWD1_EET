@@ -1,0 +1,20 @@
+IF
+	!BitCheck("CREATURE_STATE_VAR","LOCALS",1)
+THEN
+	RESPONSE #100
+		BitSet("CREATURE_STATE_VAR","LOCALS",1)
+		SetGlobalTimerRandom("IwTimer24","LOCALS",5,15)
+		Continue()
+END
+
+IF
+	Global("SPRITE_IS_DEADThe_Idol","GLOBAL",0)
+	!GlobalTimerNotExpired("IwTimer24","LOCALS")
+	Detect([PC])
+THEN
+	RESPONSE #100
+		DisplayStringHead(Myself,@15482)
+		SetGlobalTimerRandom("IwTimer24","LOCALS",5,15)
+		Continue()
+END
+

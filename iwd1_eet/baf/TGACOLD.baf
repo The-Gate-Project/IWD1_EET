@@ -1,0 +1,129 @@
+IF
+  Global("SaveSavedLoc","LOCALS",0)
+THEN
+  RESPONSE #100
+    SetGlobal("SaveSavedLoc","LOCALS",1)
+    SaveObjectLocation("LOCALS","SavedLoc",Myself)
+    Continue()
+END
+
+IF
+	StateCheck(Myself,STATE_PANIC)
+THEN
+	RESPONSE #100
+		RandomWalkContinuous()
+END
+
+IF
+	!GlobalTimerNotExpired("IWD_Rest","LOCALS")
+THEN
+	RESPONSE #100
+		SetGlobalTimer("IWD_Rest","LOCALS",EIGHT_HOURS)
+		ApplySpell(Myself,RESTORE_FULL_HEALTH)
+		Rest()
+END
+
+IF
+	HaveSpell(CLERIC_CURE_MEDIUM_WOUNDS)
+	!StateCheck(Myself,STATE_REALLY_DEAD)
+	HPPercentLT(Myself,60)
+THEN
+	RESPONSE #100
+		Spell(Myself,CLERIC_CURE_MEDIUM_WOUNDS)
+		Wait(2)
+		Continue()
+END
+
+IF
+	!Allegiance(Myself,ENEMY)
+	AttackedBy([GOODCUTOFF],DEFAULT)
+THEN
+	RESPONSE #100
+		Enemy()
+		Continue()
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	Global("SPELL_PHASE","LOCALS",0)
+THEN
+	RESPONSE #100
+		SetGlobal("SPELL_PHASE","LOCALS",1)
+		Spell(LastSeenBy(Myself),CLERIC_DISPEL_MAGIC)
+		Wait(2)
+	RESPONSE #100
+		SetGlobal("SPELL_PHASE","LOCALS",1)
+		Spell(LastSeenBy(Myself),CLERIC_SILENCE_15_FOOT)
+		Wait(2)
+	RESPONSE #100
+		SetGlobal("SPELL_PHASE","LOCALS",1)
+		SpellRES("IDPR111",LastSeenBy(Myself))
+		Wait(2)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	Global("SPELL_PHASE","LOCALS",1)
+THEN
+	RESPONSE #100
+		SetGlobal("SPELL_PHASE","LOCALS",2)
+		Spell(Myself,CLERIC_FLAME_BLADE)
+		Wait(2)
+	RESPONSE #100
+		SetGlobal("SPELL_PHASE","LOCALS",2)
+		Spell(Myself,CLERIC_SPIRITUAL_HAMMER)
+		Wait(2)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		AttackReevaluate(LastSeenBy(Myself),75)
+END
+
+IF
+	AttackedBy(NearestEnemyOf(Myself),DEFAULT)
+THEN
+	RESPONSE #100
+		MoveToObject(LastAttackerOf(Myself))
+END
+
+IF
+	Allegiance(Myself,ENEMY)
+	!Help([PC])
+	Help([EVILCUTOFF])
+THEN
+	RESPONSE #100
+		MoveToObject(LastHelp(Myself))
+END
+
+IF
+	NumTimesTalkedTo(0)
+	See([PC])
+	!Allegiance(Myself,ENEMY)
+	!StateCheck(Myself,STATE_REALLY_DEAD)
+THEN
+	RESPONSE #100
+		ApplySpellRES("BDCUTSPY",Myself)
+		StartDialogNoSet([PC])
+END
+
+IF
+	ActionListEmpty()
+	NearSavedLocation(Myself,"LOCALSSavedLoc",0)
+THEN
+	RESPONSE #100
+		MoveToSavedLocation("SavedLoc","LOCALS")
+END
+
+IF
+	ActionListEmpty()
+	!NearSavedLocation(Myself,"LOCALSSavedLoc",0)
+THEN
+	RESPONSE #100
+		RandomWalk()
+		Wait(5)		
+END
+
+

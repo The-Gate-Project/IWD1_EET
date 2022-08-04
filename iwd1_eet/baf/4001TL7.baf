@@ -1,0 +1,30 @@
+IF
+	StateCheck(Myself,STATE_PANIC)
+THEN
+	RESPONSE #100
+		RandomWalkContinuous()
+END
+
+IF
+	!See(NearestEnemyOf(Myself))
+	!GlobalTimerNotExpired("IwTimer1","LOCALS")
+	See([0.0.0.0.PERSON_1])
+	See([0.0.0.0.PERSON_2])
+	Detect([PC])
+THEN
+	RESPONSE #100
+		DisplayStringHead([0.0.0.0.PERSON_1],@1851)
+		Wait(3)
+		DisplayStringHead([0.0.0.0.PERSON_2],@1852)
+		Wait(3)
+		DisplayStringHead([0.0.0.0.PERSON_1],@1853)
+		Wait(3)
+		DisplayStringHead([0.0.0.0.PERSON_2],@1854)
+		Wait(3)
+		DisplayStringHead([0.0.0.0.PERSON_1],@1855)
+		DisplayStringHead([0.0.0.0.PERSON_2],@1855)
+		Wait(3)
+		DisplayStringHead(Myself,@1856)
+		SetGlobalTimer("IwTimer1","LOCALS",45)
+END
+

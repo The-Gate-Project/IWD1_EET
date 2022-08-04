@@ -1,0 +1,38 @@
+IF
+	!BitCheck("CREATURE_STATE_VAR","LOCALS",1)
+THEN
+	RESPONSE #100
+		BitSet("CREATURE_STATE_VAR","LOCALS",1)
+		Continue()
+END
+
+IF
+	!BitCheck("CREATURE_STATE_VAR","LOCALS",512)
+	Allegiance(Myself,ENEMY)
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #90
+		BitSet("CREATURE_STATE_VAR","LOCALS",512)
+		DisplayStringHead(Myself,@17998)
+		Continue()
+	RESPONSE #90
+		BitSet("CREATURE_STATE_VAR","LOCALS",512)
+		DisplayStringHead(Myself,@18045)
+		Continue()
+	RESPONSE #90
+		BitSet("CREATURE_STATE_VAR","LOCALS",512)
+		DisplayStringHead(Myself,@18046)
+		Continue()
+	RESPONSE #90
+		BitSet("CREATURE_STATE_VAR","LOCALS",512)
+		DisplayStringHead(Myself,@18047)
+		Continue()
+	RESPONSE #90
+		BitSet("CREATURE_STATE_VAR","LOCALS",512)
+		DisplayStringHead(Myself,@18048)
+		Continue()
+	RESPONSE #60
+		BitSet("CREATURE_STATE_VAR","LOCALS",512)
+		Continue()
+END
+

@@ -1,0 +1,47 @@
+IF
+  Global("SaveSavedLoc","LOCALS",0)
+THEN
+  RESPONSE #100
+    SetGlobal("SaveSavedLoc","LOCALS",1)
+    SaveObjectLocation("LOCALS","SavedLoc",Myself)
+    Continue()
+END
+
+IF
+	!BitCheck("CREATURE_STATE_VAR","LOCALS",1)
+THEN
+	RESPONSE #100
+		BitSet("CREATURE_STATE_VAR","LOCALS",1)
+		SetGlobalTimerRandom("IwTimer24","LOCALS",3,5)
+		Continue()
+END
+
+IF
+	!GlobalTimerNotExpired("IwTimer24","LOCALS")
+	Detect([PC])
+THEN
+	RESPONSE #30
+		DisplayStringHead(Myself,@24601)
+		SetGlobalTimerRandom("IwTimer24","LOCALS",3,5)
+		Continue()
+	RESPONSE #30
+		DisplayStringHead(Myself,@24602)
+		SetGlobalTimerRandom("IwTimer24","LOCALS",3,5)
+		Continue()
+	RESPONSE #30
+		DisplayStringHead(Myself,@24603)
+		SetGlobalTimerRandom("IwTimer24","LOCALS",3,5)
+		Continue()
+	RESPONSE #280
+		SetGlobalTimerRandom("IwTimer24","LOCALS",3,5)
+		Continue()
+END
+
+IF
+	ActionListEmpty()
+	!NearSavedLocation(Myself,"LOCALSSavedLoc",30)
+THEN
+	RESPONSE #100
+		MoveToSavedLocation("SavedLoc","LOCALS")
+END
+

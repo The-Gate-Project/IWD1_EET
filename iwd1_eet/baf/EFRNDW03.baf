@@ -1,0 +1,25 @@
+IF
+  Global("SaveSavedLoc","LOCALS",0)
+THEN
+  RESPONSE #100
+    SetGlobal("SaveSavedLoc","LOCALS",1)
+    SaveObjectLocation("LOCALS","SavedLoc",Myself)
+    Continue()
+END
+
+IF
+	//ActionListEmpty()
+	!NearSavedLocation(Myself,"LOCALSSavedLoc",36)
+THEN
+	RESPONSE #100
+		MoveToSavedLocation("SavedLoc","LOCALS")
+END
+
+IF
+	ActionListEmpty()
+THEN
+	RESPONSE #100
+		RandomWalk()
+		WaitRandom(3,10)
+END
+

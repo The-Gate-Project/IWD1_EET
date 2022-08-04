@@ -1,0 +1,65 @@
+
+
+IF
+	!Global("YXUN_ATTACK","MYAREA",0)
+	!Allegiance(Myself,ENEMY)
+THEN
+	RESPONSE #100
+		Enemy()
+		Continue()
+END
+
+IF
+	!BitCheck("CREATURE_STATE_VAR","LOCALS",1)
+THEN
+	RESPONSE #100
+		BitSet("CREATURE_STATE_VAR","LOCALS",1)
+		//SetDialogueRange(300)
+		Continue()
+END
+
+IF
+	!Global("YXUN_ATTACK","MYAREA",0)
+THEN
+	RESPONSE #100
+		DestroySelf()
+END
+
+IF
+	Allegiance(Myself,ENEMY)
+	Global("YXUN_CAST_SPECIAL","MYAREA",0)
+THEN
+	RESPONSE #100
+		SetGlobal("YXUN_CAST_SPECIAL","MYAREA",1)
+		SetGlobal("YXUN_ATTACK","MYAREA",1)
+		//ReallyForceSpellRES("IDIN984",Myself) //INNATE_FLASH_DESTROY_SUMMON_YXUNOMEI
+		CreateVisualEffectObject("PARALH",Myself)
+		ApplySpellRES("idinvis",Myself)
+		SmallWait(5)
+		CreateCreature("Tanarri",[-1.-1],0)
+		Wait(5)
+		DestroySelf()
+END
+
+IF
+	NumTimesTalkedTo(0)
+	!Allegiance(Myself,ENEMY)
+	See([PC])
+	!StateCheck(Myself,STATE_REALLY_DEAD)
+THEN
+	RESPONSE #100
+		ApplySpellRES("BDCUTSPY",Myself)
+		StartDialogNoSet([PC])
+END
+
+IF
+	NumTimesTalkedTo(0)
+	!Allegiance(Myself,ENEMY)
+	AttackedBy([GOODCUTOFF],DEFAULT)
+	!StateCheck(Myself,STATE_REALLY_DEAD)
+THEN
+	RESPONSE #100
+		ApplySpellRES("BDCUTSPY",Myself)
+		StartDialogNoSet([PC])
+END
+

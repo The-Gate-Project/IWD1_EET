@@ -1,0 +1,436 @@
+LOAD_TRA ~iwd1_eet/lang/%LANGUAGE%/iwdee.tra~
+
+OUTER_SPRINT tilde "~"
+
+OUTER_SPRINT ~iwdeef~  ~iwd1_eet/iwdee_data~
+OUTER_SPRINT ~itemee~  ~%iwdeef%/items~
+OUTER_SPRINT ~creee~   ~%iwdeef%/creatures~
+OUTER_SPRINT ~splee~   ~%iwdeef%/spells~
+OUTER_SPRINT ~bafee~   ~%iwdeef%/scripts~
+OUTER_SPRINT ~dlgee~   ~%iwdeef%/dialogs~
+OUTER_SPRINT ~otheree~ ~%iwdeef%/others~
+
+COPY ~%iwdeef%/copy~ ~override~
+//BLOCK ITEMS
+COPY ~%itemee%/BDSUMST.ITM~   ~override~
+	SAY 0x0c @40741
+	SAY 0x54 @40742
+
+COPY ~%itemee%/BDSUMSTX.ITM~  ~override~
+	SAY 0x0c @40741
+	SAY 0x54 @40743
+
+COPY ~%itemee%/bdwaki1.ITM~   ~override~
+	SAY 0x0c @40662
+	SAY 0x54 @40663
+
+COPY ~%itemee%/GENEK.ITM~     ~override~
+  SAY 0x08 @14423
+  SAY 0x0c @14421
+  SAY 0x50 @14424
+
+COPY ~%itemee%/GODBOW.ITM~    ~override~
+
+COPY ~%itemee%/ohbrac01.ITM~  ~override~
+	SAY 0x0c @40264
+	SAY 0x54 @40265
+
+COPY ~%itemee%/ohbrac02.ITM~  ~override~
+	SAY 0x0c @40268
+	SAY 0x54 @40269
+
+COPY ~%itemee%/ohfullp.ITM~   ~override~
+	SAY 0x0c @40268
+	SAY 0x54 @40269
+
+COPY ~%itemee%/ohioun01.ITM~  ~override~
+	SAY 0x0c @40266
+	SAY 0x54 @40267
+
+COPY ~%itemee%/ohioun02.ITM~  ~override~
+	SAY 0x0c @40371
+	SAY 0x54 @40372
+
+COPY ~%itemee%/ohioun03.ITM~  ~override~
+	SAY 0x0c @40369
+	SAY 0x54 @40370
+
+COPY ~%itemee%/SW1H45.ITM~    ~override/SW1ID45.ITM~
+	SAY 0x0c @35923
+	SAY 0x54 @35925
+
+COPY ~%itemee%/sw1h51.ITM~    ~override/SW1ID51.ITM~
+	SAY 0x0c @40017
+	SAY 0x54 @40018
+	LPF ALTER_EFFECT INT_VAR check_globals=0 match_opcode=177 STR_VAR match_resource="sw1h51a" resource="SW1ID51A" END
+	LPF ALTER_EFFECT INT_VAR check_headers=0 match_opcode=177 STR_VAR match_resource="sw1h51b" resource="SW1ID51B" END
+	LPF ALTER_EFFECT INT_VAR check_headers=0 match_opcode=177 STR_VAR match_resource="sw1h51c" resource="SW1ID51C" END
+	LPF ALTER_EFFECT INT_VAR check_headers=0 match_opcode=177 STR_VAR match_resource="sw1h51d" resource="SW1ID51D" END
+	LPF ALTER_EFFECT INT_VAR check_headers=0 match_opcode=177 STR_VAR match_resource="sw1h51e" resource="SW1ID51E" END
+	LPF ALTER_EFFECT INT_VAR check_headers=0 match_opcode=177 STR_VAR match_resource="sw1h51f" resource="SW1ID51F" END
+	LPF ALTER_EFFECT INT_VAR check_headers=0 match_opcode=177 STR_VAR match_resource="sw1h51g" resource="SW1ID51G" END
+	LPF ALTER_EFFECT INT_VAR check_headers=0 match_opcode=177 STR_VAR match_resource="sw1h51h" resource="SW1ID51H" END
+	LPF ALTER_EFFECT INT_VAR check_headers=0 match_opcode=177 STR_VAR match_resource="sw1h51i" resource="SW1ID51I" END
+	LPF ALTER_EFFECT INT_VAR check_headers=0 match_opcode=177 STR_VAR match_resource="sw1h51j" resource="SW1ID51J" END
+	LPF ALTER_EFFECT INT_VAR check_headers=0 match_opcode=177 STR_VAR match_resource="sw1h51k" resource="SW1ID51K" END
+	LPF ALTER_EFFECT INT_VAR check_headers=0 match_opcode=177 STR_VAR match_resource="sw1h51l" resource="SW1ID51L" END
+	LPF ALTER_EFFECT INT_VAR check_headers=0 match_opcode=177 STR_VAR match_resource="sw1h51m" resource="SW1ID51M" END
+
+COPY ~%itemee%/HELMHUN.ITM~   ~override~
+	SAY 0x0c @16974
+	SAY 0x54 @16975
+
+COPY ~%itemee%/KEDL.ITM~      ~override~
+	SAY 0x0c @9789
+	SAY 0x54 @9790
+
+COPY ~%itemee%/ELFGLOV.ITM~   ~override~
+	SAY 0x08 @18602
+	SAY 0x0c @18603
+	SAY 0x50 @18604
+	SAY 0x50 @18604
+
+COPY ~%itemee%/ELFBOOT.ITM~   ~override~
+	SAY 0x08 @18595
+	SAY 0x0c @18596
+	SAY 0x54 @18594
+	SAY 0x50 @18594
+
+COPY ~%itemee%/ELFCLCK.ITM~   ~override~
+	SAY 0x08 @18597
+	SAY 0x0c @18598
+	SAY 0x54 @18600
+	SAY 0x50 @18600
+
+COPY ~%itemee%/PELLON.ITM~    ~override~
+	SAY 0x08 @7646
+	SAY 0x0c @7648
+	SAY 0x54 @7647
+	SAY 0x50 @7649
+
+COPY ~%itemee%/GVALOR1.ITM~   ~override~
+     ~%itemee%/GVALOR2.ITM~   ~override~
+	SAY 0x0c @24795
+	SAY 0x54 @24796
+
+COPY ~%itemee%/BELTSTO.ITM~   ~override~
+	SAY 0x0c @17528
+	SAY 0x54 @17533
+
+COPY ~%itemee%/BRIATH.ITM~    ~override~
+  SAY 0x08 @14420
+  SAY 0x0c @18791
+  SAY 0x50 @14422
+
+ACTION_IF NOT FILE_EXISTS_IN_GAME ~bdsleep.ITM~ BEGIN
+	COPY ~%itemee%/bdsleep.ITM~  ~override~
+END
+//BLOCKEND
+
+//BLOCK CRE
+COPY ~%creee%/GENEK.CRE~      ~override~
+  SAY 0x08 @14950
+  SAY 0x0c @14653
+
+COPY_EXISTING ~BIKNIGHT.CRE~  ~override~
+              ~BKNIGHT.CRE~   ~override~
+              ~BRONSEN.CRE~   ~override~
+              ~CYANIMP1.CRE~  ~override~
+              ~CYANIMP2.CRE~  ~override~
+              ~CYANIMP3.CRE~  ~override~
+              ~DLSGEM.CRE~    ~override~
+              ~IDOL.CRE~      ~override~
+              ~KEANIMPH.CRE~  ~override~
+              ~PSENTRY.CRE~   ~override~
+              ~SENTRY.CRE~    ~override~
+              ~TARNSEN.CRE~   ~override~
+              ~VOICE.CRE~     ~override~
+              ~WBISHOP.CRE~   ~override~
+	ADD_CRE_ITEM  ~BDCONSTR~ #0 #0 #0 ~NONE~ ~LRING RRING AMULET BELT~
+	IF_EXISTS
+
+COPY_EXISTING ~DEEPGNUN.CRE~  ~override~
+	ADD_CRE_ITEM  ~bdsleep~ #0 #0 #0 ~NONE~ ~AMULET~
+
+COPY_EXISTING ~EMMRCHD.CRE~  ~override~
+	ADD_CRE_ITEM  ~POTN52~   #1  #0 #0 ~NONE~ ~QITEM1~
+	ADD_CRE_ITEM  ~UAROW3A~  #20 #0 #0 ~NONE~ ~QUIVER1~
+	ADD_CRE_ITEM  ~ULBOW5A~  #0  #0 #0 ~NONE~ ~WEAPON1~ EQUIP TWOHANDED
+	ADD_CRE_ITEM  ~AROW10~   #20 #0 #0 ~NONE~ ~QUIVER2~
+	ADD_CRE_ITEM  ~UAROW4A~  #20 #0 #0 ~NONE~ ~QUIVER3~
+	ADD_CRE_ITEM  ~SHCLOAK~  #0  #0 #0 ~NONE~ ~CLOAK~
+	ADD_CRE_ITEM  ~ULSWD1A~  #0  #0 #0 ~NONE~ ~WEAPON2~
+	ADD_CRE_ITEM  ~BRAC04~   #0  #0 #0 ~NONE~ ~GLOVES~
+	ADD_CRE_ITEM  ~POTN52~   #1  #0 #0 ~NONE~ ~QITEM2~
+	ADD_CRE_ITEM  ~POTN52~   #1  #0 #0 ~NONE~ ~QITEM3~
+
+COPY_EXISTING ~FLOZEM.CRE~ ~override~
+	REPLACE_CRE_ITEM ~OHFULLP~ #0  #0 #0 ~NONE~ ~ARMOR~
+
+COPY_EXISTING ~MARKETH.CRE~   ~override~
+	ADD_CRE_ITEM  ~GORGON~   #0  #0 #0 ~NONE~ ~INV1~
+	ADD_CRE_ITEM  ~sw1h47~   #0  #0 #0 ~NONE~ ~SHIELD~
+
+COPY_EXISTING ~PRESIO.CRE~   ~override~
+	ADD_CRE_ITEM  ~OHIOUN01~ #0  #0 #0 ~NONE~ ~HELMET~
+
+ACTION_IF FILE_EXISTS_IN_GAME ~cdpresio.cre~ BEGIN
+	COPY_EXISTING ~cdpresio.cre~ ~override~
+		ADD_CRE_ITEM ~OHIOUN01~ #0  #0 #0 ~NONE~ ~HELMET~
+END
+
+COPY_EXISTING ~SHELHAI.CRE~ ~override~
+	ADD_CRE_ITEM  ~sw1h49~   #0  #0 #0 ~NONE~ ~SHIELD~
+
+ACTION_FOR_EACH file IN GIANTFG GIANTFI2 GIANTFIR GIANTFN GIANTFRO GORG JORIL BEGIN
+	ACTION_IF FILE_EXISTS_IN_GAME ~%file%.cre~ BEGIN
+		COPY_EXISTING ~%file%.cre~ ~override~
+			ADD_CRE_ITEM ~HELM01~ #0 #0 #0 ~UNSTEALABLE&UNDROPPABLE~ ~HELMET~
+	END
+END
+//BLOCKEND
+
+//BLOCK  SPL
+COPY ~%splee%/ohbrac02.SPL~   ~override~
+COPY ~%splee%/vorpal.SPL~     ~override~
+	LPF ALTER_EFFECT INT_VAR match_opcode=139 parameter1=RESOLVE_STR_REF(@35592) END
+//BLOCKEND
+
+//BLOCK EFFECTS
+COPY ~%otheree%/ohbrac01.EFF~ ~override~
+COPY ~%otheree%/vorpal.EFF~   ~override~
+COPY ~%otheree%/sw1h51a.EFF~  ~override/SW1ID51A.EFF~
+     ~%otheree%/sw1h51b.EFF~  ~override/SW1ID51B.EFF~
+     ~%otheree%/sw1h51c.EFF~  ~override/SW1ID51C.EFF~
+     ~%otheree%/sw1h51d.EFF~  ~override/SW1ID51D.EFF~
+     ~%otheree%/sw1h51e.EFF~  ~override/SW1ID51E.EFF~
+     ~%otheree%/sw1h51f.EFF~  ~override/SW1ID51F.EFF~
+     ~%otheree%/sw1h51g.EFF~  ~override/SW1ID51G.EFF~
+     ~%otheree%/sw1h51h.EFF~  ~override/SW1ID51H.EFF~
+     ~%otheree%/sw1h51i.EFF~  ~override/SW1ID51I.EFF~
+     ~%otheree%/sw1h51j.EFF~  ~override/SW1ID51J.EFF~
+     ~%otheree%/sw1h51k.EFF~  ~override/SW1ID51K.EFF~
+     ~%otheree%/sw1h51l.EFF~  ~override/SW1ID51L.EFF~
+     ~%otheree%/sw1h51m.EFF~  ~override/SW1ID51M.EFF~
+//BLOCKEND
+
+//BLOCK  2DA
+COPY ~%otheree%/BDSUMST.2DA~  ~override~
+
+ADD_MUSIC ~ID5103~ ~iwd1_eet/iwd_ee_res/ID5103.mus~
+MKDIR ~music/ID5103~
+COPY ~iwd1_eet/iwd_ee_res/ID5103A.acm~ ~music/ID5103~
+APPEND ~songlist.ids~ ~%ID5103% ID5103~
+
+ADD_MUSIC ~ID5104~ ~iwd1_eet/iwd_ee_res/ID5104.mus~
+MKDIR ~music/ID5104~
+COPY ~iwd1_eet/iwd_ee_res/ID5104A.acm~ ~music/ID5104~
+APPEND ~songlist.ids~ ~%ID5104% ID5104~
+
+COPY_EXISTING ~ID5103.are~ ~override~
+	READ_LONG  0xbc song_off
+	WRITE_LONG song_off       ~%ID5103%~
+	WRITE_LONG song_off + 0x4 ~%ID5103%~
+
+<<<<<<<<genek_top.baf
+IF
+	Global("CDGenek","ID6006",2)
+	OnCreation()
+THEN
+	RESPONSE #100
+		SetGlobal("CDGenek","ID6006",3)
+		ActionOverride("Genek",DestroySelf())
+		Continue()
+END
+>>>>>>>>
+
+<<<<<<<<genek_btm.baf
+IF
+	Global("CDGenek","ID6006",0)
+	Global("CD_Create_Genek","MYAREA",1)
+THEN
+	RESPONSE #100
+		SetGlobal("CDGenek","ID6006",1)
+		ActionOverride("Genek",DropInventory())
+END
+
+IF
+	Global("CDGenek","ID6006",1)
+	PartyHasItem("genek")
+THEN
+	RESPONSE #100
+		SetGlobal("CDGenek","ID6006",2)
+END
+>>>>>>>>
+EXTEND_TOP ~ID6006.BCS~ ~genek_top.baf~
+EXTEND_BOTTOM ~ID6006.BCS~ ~genek_btm.baf~
+
+<<<<<<<<eva_mus.baf
+IF
+	Global("OHMUSIC","MYAREA",0)
+	PartyHasItem("EVAJOUR")
+	CombatCounter(0)
+THEN
+	RESPONSE #100
+		SetGlobal("OHMUSIC","MYAREA",1)
+		PlaySong(%ID5104%)
+		Continue()
+END
+>>>>>>>>
+EXTEND_BOTTOM ~ID5103.BCS~ ~eva_mus.baf~ EVALUATE_BUFFER
+EXTEND_BOTTOM ~ID6006.BCS~ ~eva_mus.baf~ EVALUATE_BUFFER
+//BLOCKEND
+
+//BLOCK STO
+COPY_EXISTING ~DETEMPE.STO~  ~override~
+              ~DETEMPLE.STO~ ~override~
+	LPF EDIT_STORE_PURCHASE INT_VAR type = 37 END
+
+COPY_EXISTING ~DE_LIB.STO~   ~override~
+	ADD_STORE_ITEM ~scrl5m~   LAST              #0 #0 #0 ~IDENTIFIED~ #1
+	ADD_STORE_ITEM ~scrla5~   AFTER  ~scrl1f~   #0 #0 #0 ~IDENTIFIED~ #1
+
+COPY_EXISTING ~EHPOMAB.STO~ ~override~
+	LPF EDIT_STORE_PURCHASE INT_VAR type = 12 END
+	ADD_STORE_ITEM ~leat10~   AFTER  ~chan04~   #0 #0 #0 ~IDENTIFIED~ #1
+	ADD_STORE_ITEM ~sw1h43~   BEFORE ~MAUL~     #0 #0 #0 ~IDENTIFIED~ #1
+
+COPY_EXISTING ~EMMERIC.STO~  ~override~
+	ADD_STORE_ITEM ~bow01~    FIRST             #0 #0 #0 ~IDENTIFIED~ #6
+	ADD_STORE_ITEM ~bow06~    FIRST             #0 #0 #0 ~IDENTIFIED~ #1
+	ADD_STORE_ITEM ~bow05~    FIRST             #0 #0 #0 ~IDENTIFIED~ #6
+	ADD_STORE_ITEM ~bow03~    AFTER  ~bow02~    #0 #0 #0 ~IDENTIFIED~ #6
+	ADD_STORE_ITEM ~LEAT01~   BEFORE ~AX1H01~   #0 #0 #0 ~IDENTIFIED~ #6
+	ADD_STORE_ITEM ~LEAT04~   BEFORE ~AX1H01~   #0 #0 #0 ~IDENTIFIED~ #6
+	ADD_STORE_ITEM ~LEAT10~   BEFORE ~AX1H01~   #0 #0 #0 ~IDENTIFIED~ #6
+	ADD_STORE_ITEM ~SHLD08~   BEFORE ~AX1H01~   #0 #0 #0 ~IDENTIFIED~ #6
+	ADD_STORE_ITEM ~HELM01~   BEFORE ~AX1H01~   #0 #0 #0 ~IDENTIFIED~ #6
+
+COPY_EXISTING ~KIERAN2.STO~  ~override~
+	ADD_STORE_ITEM ~OHIOUN02~ AFTER  ~JAMISON~  #0 #0 #0 ~IDENTIFIED~ #6
+
+COPY_EXISTING ~KUGERTH.STO~  ~override~
+	ADD_STORE_ITEM ~ADISEASE~ FIRST             #1 #0 #0 ~IDENTIFIED~ #1
+	REMOVE_STORE_ITEM ~BOOK45~
+
+COPY_EXISTING ~KUSMITH.STO~  ~override~
+	ADD_STORE_ITEM ~leat10~   AFTER  ~chan04~   #0 #0 #0 ~IDENTIFIED~ #1
+	ADD_STORE_ITEM ~sw1h20~   AFTER  ~SW2H01~   #0 #0 #0 ~IDENTIFIED~ #1
+	ADD_STORE_ITEM ~sw1h43~   AFTER  ~SW1H08~   #0 #0 #0 ~IDENTIFIED~ #1
+
+COPY_EXISTING ~LDD_NYM.STO~  ~override~
+	ADD_STORE_ITEM ~SW1ID51~  FIRST             #0 #0 #0 ~IDENTIFIED~ #1
+	ADD_STORE_ITEM ~HELMHUN~  AFTER  ~MYSTERY~  #0 #0 #0 ~IDENTIFIED~ #1
+	ADD_STORE_ITEM ~KEDL~     BEFORE ~VIOLIN~   #0 #0 #0 ~IDENTIFIED~ #1
+
+COPY_EXISTING ~SHLEHLAN.STO~ ~override~
+	ADD_STORE_ITEM ~ELFGLOV~  BEFORE ~GEMBG06~  #0 #0 #0 ~IDENTIFIED~ #1
+	ADD_STORE_ITEM ~ELFBOOT~  BEFORE ~GEMBG06~  #0 #0 #0 ~IDENTIFIED~ #1
+	ADD_STORE_ITEM ~ELFCLCK~  BEFORE ~GEMBG06~  #0 #0 #0 ~IDENTIFIED~ #1
+	ADD_STORE_ITEM ~PELLON~   BEFORE ~GEMBG06~  #8 #0 #0 ~IDENTIFIED~ #1
+
+COPY_EXISTING ~TIERNON.STO~  ~override~
+	ADD_STORE_ITEM ~OHFULLP~  AFTER  ~KING~     #0 #0 #0 ~IDENTIFIED~ #1
+	ADD_STORE_ITEM ~GVALOR1~  AFTER  ~CLCK09~   #3 #0 #0 ~IDENTIFIED~ #1
+
+COPY_EXISTING ~WAUKEEN.STO~  ~override~
+	ADD_STORE_ITEM ~ohbrac02~ AFTER  ~WAUKEEN~  #0 #0 #0 ~IDENTIFIED~ #1
+	ADD_STORE_ITEM ~sw1h20~   BEFORE ~SCRLPET~  #0 #0 #0 ~IDENTIFIED~ #1
+	ADD_STORE_ITEM ~sw1h43~   BEFORE ~SCRLPET~  #0 #0 #0 ~IDENTIFIED~ #1
+	ADD_STORE_ITEM ~POTN08~   BEFORE ~GEMBG08~  #1 #0 #0 ~IDENTIFIED~ #1
+	ADD_STORE_ITEM ~POTN20~   BEFORE ~GEMBG08~  #1 #0 #0 ~IDENTIFIED~ #1
+	ADD_STORE_ITEM ~POTN17~   BEFORE ~GEMBG08~  #1 #0 #0 ~IDENTIFIED~ #1
+//BLOCKEND
+
+//BLOCK  ARE
+COPY_EXISTING ~ID3502.ARE~   ~override~
+	LPF fj_are_structure INT_VAR fj_con_itm_idx=10 STR_VAR fj_structure_type=itm fj_name=  "SW1H44" END
+
+COPY_EXISTING ~ID3503.ARE~   ~override~
+	LPF fj_are_structure INT_VAR fj_con_itm_idx= 3 STR_VAR fj_structure_type=itm fj_name="RNDGEM01" END
+
+COPY_EXISTING ~ID3602.ARE~   ~override~
+	LPF fj_are_structure INT_VAR fj_con_itm_idx= 0 STR_VAR fj_structure_type=itm fj_name=  "SW1H46" END
+	LPF fj_are_structure INT_VAR fj_con_itm_idx= 2 STR_VAR fj_structure_type=itm fj_name= "TSKELP2" END
+
+COPY_EXISTING ~ID4004.ARE~   ~override~
+	LPF DELETE_AREA_ITEM STR_VAR item_to_delete="BOOK45" END
+	LPF fj_are_structure INT_VAR fj_con_itm_idx= 5 STR_VAR fj_structure_type=itm fj_name="OHBRAC01" END
+
+COPY_EXISTING ~ID4005.ARE~   ~override~
+	LPF fj_are_structure INT_VAR fj_con_itm_idx= 0 STR_VAR fj_structure_type=itm fj_name=  "SW1H48" END
+	LPF fj_are_structure INT_VAR fj_con_itm_idx=11 STR_VAR fj_structure_type=itm fj_name= "BELTSTO" END
+	LPF fj_are_structure INT_VAR fj_con_itm_idx=20 STR_VAR fj_structure_type=itm fj_name= "SW1ID45" END
+
+COPY_EXISTING ~ID5104.ARE~   ~override~
+	LPF fj_are_structure INT_VAR fj_con_itm_idx= 2 STR_VAR fj_structure_type=itm fj_name="OHIOUN03" END
+
+COPY_EXISTING ~ID5302.ARE~   ~override~
+	LPF fj_are_structure INT_VAR fj_con_itm_idx= 0 STR_VAR fj_structure_type=itm fj_name= "BDWAKI1" END
+
+COPY_EXISTING ~ID6006.ARE~   ~override~
+	LPF fj_are_structure
+		INT_VAR fj_loc_x=279 fj_loc_y=801 fj_animation=60928 fj_orientation=11
+		STR_VAR fj_structure_type=actor fj_name="GENEK" fj_cre_resref="GENEK"
+	END
+	LPF fj_are_structure INT_VAR fj_con_itm_idx= 6 STR_VAR fj_structure_type=itm fj_name=  "BRIATH" END
+
+COPY_EXISTING ~ID7004.ARE~   ~override~
+	LPF fj_are_structure INT_VAR fj_con_itm_idx= 9 STR_VAR fj_structure_type=itm fj_name=  "SW1H48" END
+
+COPY_EXISTING ~ID9400.ARE~   ~override~
+	LPF fj_are_structure INT_VAR fj_con_itm_idx= 9 STR_VAR fj_structure_type=itm fj_name=  "SW1H46" END
+
+COPY_EXISTING ~ID9714.ARE~   ~override~
+	LPF fj_are_structure INT_VAR fj_con_itm_idx=28 STR_VAR fj_structure_type=itm fj_name=  "SW1H55" END
+//BLOCKEND
+
+//BLOCK DIALOG
+OUTER_SPRINT ~z_dialog~  ~~
+OUTER_SPRINT ~z_dialog2~ ~~
+
+ACTION_IF MOD_IS_INSTALLED ~iwd1_eet/setup-iwd1_eet.tp2~ ~60~ BEGIN
+	OUTER_SPRINT ~z_dialog~ ~IF %tilde%Global("Know_Vexing","GLOBAL",1)
+        !Global("Know_Truename","GLOBAL",1)
+        OR(2)
+          PartyHasItem("vexed")
+          PartyHasItem("vexed2")%tilde% THEN REPLY @25298 DO %tilde%SetGlobal("Know_Truename","GLOBAL",1)%tilde% GOTO u84
+    IF %tilde%PartyHasItem("lxbowbm")%tilde% THEN REPLY @40541 DO %tilde%TransformItem("lxbowbm","cdxbowbm")%tilde% GOTO u85~
+
+	OUTER_SPRINT ~z_dialog2~ ~IF %tilde%%tilde% THEN BEGIN u84
+    SAY @40676
+    IF %tilde%%tilde% THEN DO %tilde%StartCutScene("cdvexcut")%tilde% EXIT
+  END
+  
+  IF %tilde%%tilde% THEN BEGIN u85
+    SAY @40677
+    IF %tilde%%tilde% THEN GOTO u86
+  END
+  
+  IF %tilde%%tilde% THEN BEGIN u86
+    SAY @40678
+    IF %tilde%%tilde% THEN DO %tilde%StartCutScene("gnDstSlf")%tilde% EXIT
+  END~
+END
+
+ADD_JOURNAL EXISTING TITLE (@2000029) @40680
+ADD_JOURNAL EXISTING TITLE (@2000008) @5069
+
+COPY ~%dlgee%/dlg.d~ ~%dlgee%~ EVALUATE_BUFFER
+
+COMPILE ~%dlgee%/dlg.d~
+//BLOCKEND
+
+
+
+
+
+
+
+
+
+
+
+
+
+

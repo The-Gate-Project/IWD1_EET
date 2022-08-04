@@ -1,0 +1,257 @@
+IF
+	Global("HOW_SEER_MOV","GLOBAL",0)
+THEN
+	RESPONSE #100
+		SetGlobal("HOW_SEER_MOV","GLOBAL",1)
+		StartCutSceneMode()
+		MultiPlayerSync()
+		StartMovie("HOWSEER")
+		MultiPlayerSync()
+		EndCutSceneMode()
+END
+
+IF
+	Global("AREA_INIT","MYAREA",0)
+THEN
+	RESPONSE #100
+		SetGlobal("AREA_INIT","MYAREA",1)
+		SetGlobal("9101_SPAWN_HOBART","GLOBAL",1)
+		SaveGame(0)
+END
+
+IF
+	!Global("9100_RESET_JOIN","GLOBAL",0)
+THEN
+	RESPONSE #100
+		MultiPlayerSync()
+		//ResetJoinRequests()
+		SetGlobal("9100_RESET_JOIN","GLOBAL",0)
+		Continue()
+END
+
+IF
+	GlobalLT("WEREWOLF_ACTIVE","GLOBAL",2)
+	OR(2)
+		GlobalGT("EMMERICH_QUEST","GLOBAL",2)
+		!Global("SPRITE_IS_DEADEMMERICH","GLOBAL",0)
+THEN
+	RESPONSE #100
+		SetGlobal("WEREWOLF_ACTIVE","GLOBAL",2)
+		Continue()
+END
+
+IF
+	Global("WEREWOLF_ACTIVE","GLOBAL",0)
+	GlobalGT("BODY_COUNT","GLOBAL",1)
+	!TimeOfDay(DAY)
+	//!TimeOfDay(DAY)
+THEN
+	RESPONSE #100
+		SetGlobal("WEREWOLF_ACTIVE","GLOBAL",1)
+		Continue()
+END
+
+IF
+	Global("WEREWOLF_ACTIVE","GLOBAL",1)
+	//Or(2)
+	//	TimeOfDay(DAY)
+		TimeOfDay(DAY)
+THEN
+	RESPONSE #100
+		SetGlobal("WEREWOLF_ACTIVE","GLOBAL",0)
+		Continue()
+END
+
+IF
+	Global("HOSTTOWER_ENCOUNTER","GLOBAL",1)
+	Global("SPRITE_IS_DEADKieranNye","GLOBAL",0)
+	Global("TOWER_CUT_STAGE","MYAREA",0)
+	InMyArea(Player1)
+THEN
+	RESPONSE #100
+		StartCutSceneMode()
+		SetGlobal("9100_FORCE_WEREWOLF","GLOBAL",0)
+		StartCutScene("LWWARHOM")
+		StartCutScene("LWVAARCT")
+END
+
+IF
+	!Global("9100_FORCE_WEREWOLF","GLOBAL",0)
+	Global("WEREWOLF_ACTIVE","GLOBAL",1)
+THEN
+	RESPONSE #100
+		SetGlobal("9100_FORCE_WEREWOLF","GLOBAL",0)
+		StartCutScene("LWWARRES")
+		/* AddEndCutSceneMode */
+		EndCutSceneMode()
+		Continue()
+END
+
+IF
+	!Global("9100_FORCE_WEREWOLF","GLOBAL",0)
+	!Global("WEREWOLF_ACTIVE","GLOBAL",1)
+THEN
+	RESPONSE #100
+		SetGlobal("9100_FORCE_WEREWOLF","GLOBAL",0)
+		StartCutScene("LWWARHOM")
+		/* AddEndCutSceneMode */
+		EndCutSceneMode()
+		Continue()
+END
+
+IF
+	Global("BOAT_CHANGED","MYAREA",0)
+	Global("HJOLLDER_BANISHED","GLOBAL",1)
+THEN
+	RESPONSE #100
+		OpenDoor("AR9100_BOAT1")
+		SetGlobal("BOAT_CHANGED","MYAREA",1)
+		Continue()
+END
+
+IF
+	!Global("PARTY_STARTED_FIGHT","MYAREA",0)
+	Global("KIERAN_PROTECTED","GLOBAL",0)
+THEN
+	RESPONSE #100
+		SetGlobal("KIERAN_PROTECTED","GLOBAL",1)
+		Continue()
+END
+
+IF
+	!Global("PARTY_STARTED_FIGHT","MYAREA",0)
+	Dead("VAARGLAN")
+	Dead("ALPHEUS")
+	Dead("9100_MERCWAR1")
+	Dead("9100_MERCWAR2")
+	Dead("9100_MERCTHF")
+	Dead("9100_PSHAR")
+THEN
+	RESPONSE #100
+		Unlock("AR9100_Door1_To9101")
+		Unlock("AR9100_Door2_To9103")
+		Unlock("AR9100_Door3_To9104")
+		Unlock("AR9100_Door4_To9105")
+		Unlock("AR9100_Door5_To9106")
+		Unlock("AR9100_Door6_To9108")
+		Unlock("AR9100_Door7_To9109")
+		Unlock("AR9100_Door8_To9110")
+		SetGlobal("PARTY_STARTED_FIGHT","MYAREA",0)
+		Continue()
+END
+
+IF
+	Global("BC_CUTSCENE","GLOBAL",10)
+	OnCreation()
+THEN
+	RESPONSE #100
+		MultiPlayerSync()
+		SetGlobal("BC_CUTSCENE","GLOBAL",15)
+		Continue()
+END
+
+IF
+  GlobalGT("Hjollder_Quest","GLOBAL",7)
+  !Global("ID9500_REVEAED","GLOBAL",1)
+THEN
+  RESPONSE #100
+    SetGlobal("ID9500_REVEAED","GLOBAL",1)
+    RevealAreaOnMap("ID9500")
+    Continue()
+END
+
+IF
+  !Global("RESET_KIERAN_JOURNAL","MYAREA",1)
+  OR(3)
+    GlobalGT("SPRITE_IS_DEADALPHEUS","GLOBAL",0)
+    GlobalGT("SPRITE_IS_DEADALPHEUSD","GLOBAL",0)
+    GlobalGT("SPRITE_IS_DEADKIERAN","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("RESET_KIERAN_JOURNAL","MYAREA",1)
+    EraseJournalEntry(@34099)
+    SetQuestDone(@23548)
+    Continue()
+END
+
+IF
+  !Global("RESET_EMMERICH_JOURNAL","MYAREA",1)
+  GlobalGT("SPRITE_IS_DEADEMMERICH","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("RESET_EMMERICH_JOURNAL","MYAREA",1)
+    EraseJournalEntry(@25431)
+    EraseJournalEntry(@25838)
+    EraseJournalEntry(@25829)
+    EraseJournalEntry(@25830)
+    EraseJournalEntry(@25834)
+    EraseJournalEntry(@25831)
+    EraseJournalEntry(@25832)
+    EraseJournalEntry(@25833)
+    EraseJournalEntry(@26323)
+    EraseJournalEntry(@26327)
+    EraseJournalEntry(@23558)
+    EraseJournalEntry(@23557)
+    EraseJournalEntry(@23555)
+    EraseJournalEntry(@23559)
+    SetQuestDone(@25429)
+    Continue()
+END
+
+IF
+	Global("LONELYWOOD_ALARM","GLOBAL",0)
+	!Global("AREA_HOSTILE","MYAREA",0)
+THEN
+	RESPONSE #100
+		SetGlobal("LONELYWOOD_ALARM","GLOBAL",1)
+		Continue()
+END
+
+IF
+	Global("AREA_HOSTILE","MYAREA",0)
+	!Global("LONELYWOOD_ALARM","GLOBAL",0)
+THEN
+	RESPONSE #100
+		SetGlobal("AREA_HOSTILE","MYAREA",1)
+		Continue()
+END
+
+IF
+	!Global("TOWNIE_DEAD","GLOBAL",0)
+THEN
+	RESPONSE #100
+		SetGlobal("TOWNIE_HOSTILE","MYAREA",0)
+		SetGlobal("TOWNIE_DEAD","GLOBAL",0)
+		Continue()
+END
+
+IF
+	OnCreation()
+THEN
+	RESPONSE #100
+		NoAction()
+		Continue()
+END
+
+IF
+	Global("CloseDoors","MYAREA",0)
+	TimeOfDay(NIGHT)
+THEN
+	RESPONSE #100
+		SetGlobal("CloseDoors","MYAREA",1)
+		CloseDoor("AR9100_Door1_To9101")
+		CloseDoor("AR9100_Door2_To9103")
+		CloseDoor("AR9100_Door3_To9104")
+		CloseDoor("AR9100_Door4_To9105")
+		CloseDoor("AR9100_Door5_To9106")
+		CloseDoor("AR9100_Door6_To9108")
+END
+
+IF
+	!Global("CloseDoors","MYAREA",0)
+	!TimeOfDay(NIGHT)
+THEN
+	RESPONSE #100
+		SetGlobal("CloseDoors","MYAREA",0)
+END
+

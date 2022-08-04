@@ -1,0 +1,114 @@
+IF
+	StateCheck(Myself,STATE_PANIC)
+THEN
+	RESPONSE #100
+		RandomWalkContinuous()
+END
+
+IF
+	!GlobalTimerNotExpired("IWD_Rest","LOCALS")
+THEN
+	RESPONSE #100
+		SetGlobalTimer("IWD_Rest","LOCALS",EIGHT_HOURS)
+		ApplySpell(Myself,RESTORE_FULL_HEALTH)
+		Rest()
+END
+
+IF
+	HaveSpellRES("IDPR399")  //CLERIC_SUMMON_TROLLS
+	!Global("YUANTI_INFERNO","GLOBAL",0)
+	!GlobalTimerNotExpired("IwTimer25","LOCALS")
+	!BitCheck("CREATURE_STATE_VAR","LOCALS",8)
+THEN
+	RESPONSE #100
+		BitSet("CREATURE_STATE_VAR","LOCALS",8)
+		ActionOverride("YuantiPriest1",SetSequence(SEQ_CAST))
+		ActionOverride("YuantiPriest2",SetSequence(SEQ_CAST))
+		SpellPointRES("IDPR399",[3140.1830]) //CLERIC_SUMMON_TROLLS
+		SetGlobalTimer("IwTimer25","LOCALS",120)
+END
+
+IF
+	HaveSpellRES("IDPR398")
+	!Global("YUANTI_INFERNO","GLOBAL",0)
+	!GlobalTimerNotExpired("IwTimer25","LOCALS")
+	BitCheck("CREATURE_STATE_VAR","LOCALS",8)
+THEN
+	RESPONSE #100
+		BitClear("CREATURE_STATE_VAR","LOCALS",8)
+		ActionOverride("YuantiPriest1",SetSequence(SEQ_CAST))
+		ActionOverride("YuantiPriest2",SetSequence(SEQ_CAST))
+		SpellPointRES("IDPR398",[3140.1830]) //CLERIC_SUMMON_LIZARDMEN
+		SetGlobalTimer("IwTimer25","LOCALS",120)
+END
+
+IF
+	!BitCheck("AREA_VAR","MYAREA",1)
+	!HaveSpellRES("IDPR399")
+	!HaveSpellRES("IDPR398")
+THEN
+	RESPONSE #100
+		BitSet("AREA_VAR","MYAREA",1)
+END
+
+IF
+	!BitCheck("CREATURE_STATE_VAR","LOCALS",2)
+	!Global("YUANTI_INFERNO","GLOBAL",0)
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #75
+		BitSet("CREATURE_STATE_VAR","LOCALS",2)
+		SetSequence(SEQ_HEAD_TURN)
+		Continue()
+	RESPONSE #25
+		BitSet("CREATURE_STATE_VAR","LOCALS",2)
+		Continue()
+END
+
+IF
+	HaveSpell(CLERIC_GLYPH_OF_WARDING)
+	See(NearestEnemyOf(Myself))
+	!Global("YUANTI_INFERNO","GLOBAL",0)
+THEN
+	RESPONSE #100
+		Spell(LastSeenBy(Myself),CLERIC_GLYPH_OF_WARDING)
+		Wait(2)
+END
+
+IF
+	HaveSpell(CLERIC_CHANT)
+	See(NearestEnemyOf(Myself))
+	!Global("YUANTI_INFERNO","GLOBAL",0)
+THEN
+	RESPONSE #100
+		Spell(Myself,CLERIC_CHANT)
+		Wait(2)
+END
+
+IF
+	!Global("YUANTI_INFERNO","GLOBAL",0)
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		AttackReevaluate(LastSeenBy(Myself),75)
+END
+
+IF
+	!Global("YUANTI_INFERNO","GLOBAL",0)
+	AttackedBy(NearestEnemyOf(Myself),DEFAULT)
+THEN
+	RESPONSE #100
+		MoveToObject(LastAttackerOf(Myself))
+END
+
+IF
+	NumTimesTalkedTo(0)
+	See([PC])
+	!Allegiance(Myself,ENEMY)
+	!StateCheck(Myself,STATE_REALLY_DEAD)
+THEN
+	RESPONSE #100
+		ApplySpellRES("BDCUTSPY",Myself)
+		StartDialogNoSet([PC])
+END
+

@@ -1,0 +1,21 @@
+IF
+	!Global("ILLAIRDR_INACTIVE","MYAREA",1)
+	!Global("OPEN_ENTERANCE","MYAREA",0)
+	OpenState("AR9600_Door1",TRUE)
+THEN
+	RESPONSE #100
+		//Deactivate(Myself)
+		SetGlobal("ILLAIRDR_INACTIVE","MYAREA",1)
+END
+
+IF
+	!Global("ILLAIRDR_INACTIVE","MYAREA",1)
+	Global("OPEN_ENTERANCE","MYAREA",0)
+	Dead("ID9600_GOLEM_1")
+	Dead("ID9600_GOLEM_2")
+THEN
+	RESPONSE #100
+		StartCutSceneMode()
+		StartCutScene("ILDOORCT")
+END
+

@@ -1,0 +1,11 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId("WYLFDENE")  // Вильфдин
+		StartCutSceneMode()
+		SetGlobal("BC_CUTSCENE","GLOBAL",12)
+		EndCutSceneMode()
+		StartCutScene("BCWYLLVE")
+END
+

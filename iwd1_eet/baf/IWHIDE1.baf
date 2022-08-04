@@ -1,0 +1,8 @@
+IF
+  IsActive(Myself)
+  !Global("IwIHidden","LOCALS",0)
+THEN
+  RESPONSE #100
+    Deactivate(Myself)
+    //Continue()
+END

@@ -1,0 +1,17 @@
+IF
+	OpenState("AR9717_Door8",TRUE)
+THEN
+	RESPONSE #100
+		TriggerActivation(Myself,FALSE)
+END
+
+IF
+	Global("CELL_04","MYAREA",0)
+	Entered([PC])
+THEN
+	RESPONSE #100
+		Unlock("AR9717_Door8")
+		OpenDoor("AR9717_Door8")
+		SetGlobal("CELL_04","MYAREA",1)
+END
+

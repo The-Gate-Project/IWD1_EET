@@ -1,0 +1,33 @@
+IF
+	!IsActive(Myself)
+	!Global("SPRITE_IS_DEADLYSAN","GLOBAL",0)
+	See([PC])
+	CombatCounter(0)
+THEN
+	RESPONSE #100
+		StartCutSceneMode()
+		MultiPlayerSync()
+		//MoveViewObject(Myself,INSTANT)
+		Activate(Myself)
+		SetGlobal("IwIHidden","LOCALS",0)
+		MoveViewObject(Myself,INSTANT)
+		Wait(1)
+		ApplySpellRES("BDCUTSPY",Myself)
+		StartDialogNoSet([PC])
+END
+
+/*IF
+	CreatureHidden(Myself)
+THEN
+	RESPONSE #100
+		SetDialogueRange(300)
+		FaceObject([PC])
+END*/
+
+IF
+	!IsActive(Myself)
+THEN
+	RESPONSE #100
+		NoAction()
+END
+

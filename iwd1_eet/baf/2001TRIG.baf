@@ -1,0 +1,8 @@
+IF
+	Global("ID2001_Attack","ID2001",0)
+	Entered([PC])
+THEN
+	RESPONSE #100
+		SetGlobal("ID2001_Attack","ID2001",1)
+END
+

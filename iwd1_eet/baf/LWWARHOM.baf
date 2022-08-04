@@ -1,0 +1,13 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId("EmmWerewolf")
+		SetGlobal("FOLLOW_PC","LOCALS",0)
+		ApplySpellRES("IDINVIS3",Myself)
+		//HideCreature(Myself,TRUE)
+		JumpToPoint([2842.1290])
+		SetGlobal("IwIHidden","LOCALS",1)
+		Deactivate(Myself)
+END
+

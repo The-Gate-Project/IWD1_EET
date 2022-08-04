@@ -1,0 +1,85 @@
+IF
+  Global("SaveSavedLoc","LOCALS",0)
+THEN
+  RESPONSE #100
+    SetGlobal("SaveSavedLoc","LOCALS",1)
+    SaveObjectLocation("LOCALS","SavedLoc",Myself)
+    Continue()
+END
+
+IF
+	StateCheck(Myself,STATE_PANIC)
+THEN
+	RESPONSE #100
+		RandomWalkContinuous()
+END
+
+IF
+	Allegiance(Myself,ENEMY)
+	Global("MURDER_ALARM","GLOBAL",0)
+THEN
+	RESPONSE #100
+		SetGlobal("MURDER_ALARM","GLOBAL",1)
+		Continue()
+END
+
+IF
+	HPPercentLT(Myself,50)
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		Help()
+		RunAwayFrom(NearestEnemyOf(Myself),45)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		Help()
+		AttackReevaluate(LastSeenBy(Myself),75)
+END
+
+IF
+	AttackedBy(NearestEnemyOf(Myself),DEFAULT)
+THEN
+	RESPONSE #100
+		Help()
+		AttackReevaluate(LastAttackerOf(Myself),75)
+END
+
+IF
+	AttackedBy([GOODCUTOFF],DEFAULT)
+THEN
+	RESPONSE #100
+		SetGlobal("MURDER_ALARM","GLOBAL",1)
+		Enemy()
+		Continue()
+END
+
+IF
+	Help([PC])
+THEN
+	RESPONSE #100
+		SetGlobal("MURDER_ALARM","GLOBAL",1)
+		FaceObject(LastHelp(Myself))
+		Continue()
+END
+
+IF
+	ActionListEmpty()
+	NearSavedLocation(Myself,"LOCALSSavedLoc",4)
+THEN
+	RESPONSE #100
+		MoveToSavedLocation("SavedLoc","LOCALS")
+END
+
+IF
+	ActionListEmpty()
+	!NearSavedLocation(Myself,"LOCALSSavedLoc",4)
+THEN
+	RESPONSE #100
+		RandomWalk()
+		WaitRandom(3,7)
+END
+

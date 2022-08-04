@@ -1,0 +1,29 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId("CORNUGON_1")
+		EquipItemEx("IDAPORT",0)
+		FaceObject(PartySlot1)
+		Wait(1)
+		Activate(Myself)
+		SetGlobal("IwIHidden","LOCALS",0)
+		ApplySpellRES("idinvis5",Myself)
+		MoveToPoint([783.503])
+		FaceObject([PC])
+END
+
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId("CORNUGON_2")
+		EquipItemEx("IDAPORT",0)
+		FaceObject(PartySlot1)
+		Wait(1)
+		Activate(Myself)
+		SetGlobal("IwIHidden","LOCALS",0)
+		ApplySpellRES("idinvis5",Myself)
+		MoveToPoint([529.555])
+		FaceObject([PC])
+END

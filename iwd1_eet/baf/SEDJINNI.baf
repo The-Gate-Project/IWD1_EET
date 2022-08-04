@@ -1,0 +1,46 @@
+IF
+	!IsActive(Myself)
+	!Global("SPAWN_DJINNI","GLOBAL",0)
+THEN
+	RESPONSE #100
+		Activate(Myself)
+		SetGlobal("IwIHidden","LOCALS",0)
+		Enemy()
+		SmallWait(8)
+		//UseItem("SPAWN",Myself)
+		CreateVisualEffectObject("HEALH",Myself)
+		SmallWait(14)
+		FaceObject(NearestEnemyOf(Myself))
+		//HideCreature(Myself,FALSE)
+		ApplySpellRES("IDINVIS5",Myself)
+		Continue()
+END
+
+IF
+	StateCheck(Myself,STATE_PANIC)
+THEN
+	RESPONSE #100
+		RandomWalkContinuous()
+END
+
+IF
+	Global("CAST_WHIRLWIND","LOCALS",0)
+	IsActive(Myself)
+	See(NearestEnemyOf(Myself))
+	!StateCheck(Myself,STATE_NOT_VISIBLE)
+THEN
+	RESPONSE #100
+		ForceSpellRES("IDPR613",NearestEnemyOf(Myself))
+		SetGlobal("CAST_WHIRLWIND","LOCALS",1)
+		Wait(2)
+	RESPONSE #200
+		Continue()
+END
+
+IF
+	!IsActive(Myself)
+THEN
+	RESPONSE #100
+		NoAction()
+END
+

@@ -1,0 +1,70 @@
+IF
+  Global("SaveSavedLoc","LOCALS",0)
+THEN
+  RESPONSE #100
+    SetGlobal("SaveSavedLoc","LOCALS",1)
+    SaveObjectLocation("LOCALS","SavedLoc",Myself)
+    Continue()
+END
+
+IF
+	Global("EGANIA_MOVE","GLOBAL",1)
+THEN
+	RESPONSE #100
+		SaveLocation("LOCALS","SavedLoc",[2830.1790])
+		SetGlobal("EGANIA_MOVE","GLOBAL",2)
+		MultiPlayerSync()
+		JumpToPoint([2830.1790])
+		MultiPlayerSync()
+		SetHomeLocation([2830.1790])
+		MultiPlayerSync()
+		Face(E)
+END
+
+IF
+	!Global("SPRITE_IS_DEADYXUNOMEI","GLOBAL",0)
+THEN
+	RESPONSE #100
+		DestroySelf()
+END
+
+IF
+	StateCheck(Myself,STATE_PANIC)
+THEN
+	RESPONSE #100
+		RandomWalkContinuous()
+END
+
+IF
+	!Allegiance(Myself,ENEMY)
+	AttackedBy([GOODCUTOFF],DEFAULT)
+THEN
+	RESPONSE #100
+		Enemy()
+		Continue()
+END
+
+IF
+	Allegiance(Myself,ENEMY)
+	See([PC])
+THEN
+	RESPONSE #100
+		RunAwayFromNoLeaveArea(LastSeenBy(Myself),45)
+END
+
+IF
+	Allegiance(Myself,ENEMY)
+	AttackedBy([GOODCUTOFF],DEFAULT)
+THEN
+	RESPONSE #100
+		RunAwayFromNoLeaveArea(LastAttackerOf(Myself),45)
+END
+
+IF
+	ActionListEmpty()
+	!NearSavedLocation(Myself,"LOCALSSavedLoc",12)
+THEN
+	RESPONSE #100
+		MoveToSavedLocation("SavedLoc","LOCALS")
+END
+

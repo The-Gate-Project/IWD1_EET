@@ -1,0 +1,63 @@
+IF
+	Global("GOLEM_FOLLOW_PARTY","MYAREA",1)
+	!NearLocation(Myself,1177,595,55)
+THEN
+	RESPONSE #100
+		//SetGlobalTimer("GOLEM_TIMER","MYAREA",2)
+		//SetGlobal("GOLEM_FOLLOW_PARTY","MYAREA",2)
+		//StartCutScene("ILGOLWRP")
+		SetGlobalTimer("GOLEM_TIMER","MYAREA",2)
+		SetGlobal("GOLEM_FOLLOW_PARTY","MYAREA",2)
+		//ClearActions(Myself)
+		//ForceSpellPointRES("IDIN154",[1177.595])  // Регенерирует и исчезает из вида
+		//ForceSpellRES("IDIN154",Myself)
+		//SetHomeLocation([1177.595])
+		//JumpToPoint([1177.595])
+		//SmallWait(4)
+		//MoveToSavedLocation("SavedLoc","LOCALS")
+		StartCutScene("ILGOLWRP")
+		/* AddEndCutSceneMode */
+		EndCutSceneMode()
+END
+
+IF
+	GlobalLT("GOLEM_FOLLOW_PARTY","MYAREA",2)
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		SetGlobal("GOLEM_FOLLOW_PARTY","MYAREA",1)
+		AttackReevaluate(LastSeenBy(Myself),75)
+END
+
+IF
+	GlobalLT("GOLEM_FOLLOW_PARTY","MYAREA",2)
+	Allegiance(Myself,ENEMY)
+	See([0.0.BARBARIAN])
+THEN
+	RESPONSE #100
+		AttackReevaluate(LastSeenBy(Myself),75)
+END
+
+IF
+	!Allegiance(Myself,ENEMY)
+	AttackedBy([GOODCUTOFF],DEFAULT)
+THEN
+	RESPONSE #100
+		SetGlobal("GOLEM_HOSTILE","MYAREA",1)
+		ChangeEnemyAlly("ID9600_GOLEM_1",ENEMY)
+		ChangeEnemyAlly("ID9600_GOLEM_2",ENEMY)
+		SetGlobal("GOLEM_FOLLOW_PARTY","MYAREA",1)
+		Continue()
+END
+
+IF
+	Global("GOLEM_FOLLOW_PARTY","MYAREA",1)
+  ActionListEmpty()
+	!See([PC])
+THEN
+  RESPONSE #100
+    MoveToObject(Player1)
+END
+
+
+

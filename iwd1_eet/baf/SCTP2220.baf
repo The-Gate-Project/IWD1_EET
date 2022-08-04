@@ -1,0 +1,18 @@
+IF
+	Entered([PC])
+THEN
+	RESPONSE #100
+		DisplayString(Myself,14381)  // Сработала ловушка
+		ReallyForceSpellRES("IDWI220",LastTrigger) //WIZARD_SNILLOCS_SNOWBALL_SWARM
+		Wait(2)
+END
+
+IF
+	Opened([PC])
+THEN
+	RESPONSE #100
+		DisplayString(Myself,14381)  // Сработала ловушка
+		ReallyForceSpellRES("IDWI220",LastTrigger) //WIZARD_SNILLOCS_SNOWBALL_SWARM
+		Wait(2)
+END
+

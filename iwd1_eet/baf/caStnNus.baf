@@ -1,0 +1,27 @@
+IF
+	See(NearestEnemyOf(Myself))
+	!GlobalTimerNotExpired("IwTimer33","LOCALS")
+THEN
+	RESPONSE #100
+		SetGlobalTimerRandom("IwTimer33","LOCALS",9,18)
+		ForceSpell(LastSeenBy(Myself),WIZARD_MAGIC_MISSILE)
+		Wait(2)
+END
+
+IF
+	See([PC])
+THEN
+	RESPONSE #100
+		ClearActions(Myself)
+		NoAction()
+END
+
+IF
+  !GlobalTimerExpired("IwTimer33","LOCALS")
+  !TargetUnreachable(Player1)
+THEN
+  RESPONSE #100
+    MoveToObject(Player1)
+END
+
+

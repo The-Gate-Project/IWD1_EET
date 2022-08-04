@@ -1,0 +1,28 @@
+BACKUP ~source_resource~
+AUTHOR ~gu~
+
+BEGIN ~source_resource~
+
+<<<<<<<< xxx.x
+NAME	TYPE	SIZE
+%surres%
+>>>>>>>>
+
+ACTION_FOR_EACH ext IN ARE BCS CRE DLG ITM SPL STO BEGIN
+	OUTER_SPRINT ~surres~ ~~
+	COPY_EXISTING_REGEXP GLOB ~.*\.%ext%~ ~override~
+		SPRINT ~surres~ ~%surres%%SOURCE_RES%%TAB%%ext%%TAB%%SOURCE_SIZE%%LNL%~
+		BUT_ONLY_IF_IT_CHANGES
+	COPY ~xxx.x~ ~%ext%_files.2da~ EVALUATE_BUFFER
+END
+
+
+
+
+
+
+
+
+
+
+

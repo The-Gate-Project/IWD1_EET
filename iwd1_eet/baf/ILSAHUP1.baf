@@ -1,0 +1,232 @@
+IF
+	StateCheck(Myself,STATE_PANIC)
+THEN
+	RESPONSE #100
+		RandomWalkContinuous()
+END
+
+IF
+	!GlobalTimerNotExpired("IWD_Rest","LOCALS")
+THEN
+	RESPONSE #100
+		SetGlobalTimer("IWD_Rest","LOCALS",EIGHT_HOURS)
+		ApplySpell(Myself,RESTORE_FULL_HEALTH)
+		Rest()
+END
+
+IF
+	HaveSpell(CLERIC_CURE_CRITICAL_WOUNDS)
+	!Dead("ICASARACHT")
+	HPPercentLT("ICASARACHT",75)
+THEN
+	RESPONSE #100
+		Spell("ICASARACHT",CLERIC_CURE_CRITICAL_WOUNDS)
+		Wait(3)
+		Continue()
+END
+
+IF
+	HaveSpell(CLERIC_CURE_CRITICAL_WOUNDS)
+	!Dead("IWD_GEM")
+	HPPercentLT("IWD_GEM",75)
+THEN
+	RESPONSE #100
+		Spell("IWD_GEM",CLERIC_CURE_CRITICAL_WOUNDS)
+		Wait(3)
+		Continue()
+END
+
+IF
+	HaveSpell(CLERIC_CURE_CRITICAL_WOUNDS)
+	!Dead("ID9604_KING")
+	HPPercentLT("ID9604_KING",75)
+THEN
+	RESPONSE #100
+		Spell("ID9604_KING",CLERIC_CURE_CRITICAL_WOUNDS)
+		Wait(3)
+		Continue()
+END
+
+IF
+	HaveSpell(CLERIC_CURE_CRITICAL_WOUNDS)
+	!Dead("ID9604_PRIESTESS")
+	HPPercentLT("ID9604_PRIESTESS",75)
+THEN
+	RESPONSE #100
+		Spell("ID9604_PRIESTESS",CLERIC_CURE_CRITICAL_WOUNDS)
+		Wait(3)
+		Continue()
+END
+
+IF
+	HaveSpell(CLERIC_CURE_CRITICAL_WOUNDS)
+	!StateCheck(Myself,STATE_REALLY_DEAD)
+	HPPercentLT(Myself,75)
+THEN
+	RESPONSE #100
+		Spell(Myself,CLERIC_CURE_CRITICAL_WOUNDS)
+		Wait(3)
+		Continue()
+END
+
+IF
+	HaveSpell(CLERIC_CURE_CRITICAL_WOUNDS)
+	!Dead("ID9604_GUARD_1")
+	HPPercentLT("ID9604_GUARD_1",75)
+THEN
+	RESPONSE #100
+		Spell("ID9604_GUARD_1",CLERIC_CURE_CRITICAL_WOUNDS)
+		Wait(3)
+		Continue()
+END
+
+IF
+	HaveSpell(CLERIC_CURE_CRITICAL_WOUNDS)
+	!Dead("ID9604_GUARD_2")
+	HPPercentLT("ID9604_GUARD_2",75)
+THEN
+	RESPONSE #100
+		Spell("ID9604_GUARD_2",CLERIC_CURE_CRITICAL_WOUNDS)
+		Wait(3)
+		Continue()
+END
+
+IF
+	HaveSpell(CLERIC_CURE_CRITICAL_WOUNDS)
+	!Dead("ID9604_GUARD_3")
+	HPPercentLT("ID9604_GUARD_3",75)
+THEN
+	RESPONSE #100
+		Spell("ID9604_GUARD_3",CLERIC_CURE_CRITICAL_WOUNDS)
+		Wait(3)
+		Continue()
+END
+
+IF
+	HaveSpell(CLERIC_CURE_CRITICAL_WOUNDS)
+	!Dead("ID9604_GUARD_4")
+	HPPercentLT("ID9604_GUARD_4",75)
+THEN
+	RESPONSE #100
+		Spell("ID9604_GUARD_4",CLERIC_CURE_CRITICAL_WOUNDS)
+		Wait(3)
+		Continue()
+END
+
+IF
+	HaveSpell(CLERIC_MISCAST_MAGIC)
+	OR(3)
+		See([PC.0.0.DRUID_ALL])
+		See([PC.0.0.CLERIC_ALL])
+		See([PC.0.0.MAGE_ALL])
+THEN
+	RESPONSE #100
+		Spell(LastSeenBy(Myself),CLERIC_MISCAST_MAGIC)
+		Wait(2)
+END
+
+IF
+	HaveSpell(CLERIC_DISPEL_MAGIC)
+	See(NearestEnemyOf(Myself))
+	StateCheck(NearestEnemyOf(Myself),STATE_HASTED)
+THEN
+	RESPONSE #100
+		Spell(LastSeenBy(Myself),CLERIC_DISPEL_MAGIC)
+		Wait(2)
+END
+
+IF
+	HaveSpell(CLERIC_DISPEL_MAGIC)
+	See(SecondNearestEnemyOf(Myself))
+	StateCheck(SecondNearestEnemyOf(Myself),STATE_HASTED)
+THEN
+	RESPONSE #100
+		Spell(LastSeenBy(Myself),CLERIC_DISPEL_MAGIC)
+		Wait(2)
+END
+
+IF
+	HaveSpell(CLERIC_DISPEL_MAGIC)
+	See(ThirdNearestEnemyOf(Myself))
+	StateCheck(ThirdNearestEnemyOf(Myself),STATE_HASTED)
+THEN
+	RESPONSE #100
+		Spell(LastSeenBy(Myself),CLERIC_DISPEL_MAGIC)
+		Wait(2)
+END
+
+IF
+	HaveSpell(CLERIC_DISPEL_MAGIC)
+	See(FourthNearestEnemyOf(Myself))
+	StateCheck(FourthNearestEnemyOf(Myself),STATE_HASTED)
+THEN
+	RESPONSE #100
+		Spell(LastSeenBy(Myself),CLERIC_DISPEL_MAGIC)
+		Wait(2)
+END
+
+IF
+	HaveSpell(CLERIC_DISPEL_MAGIC)
+	See(FifthNearestEnemyOf(Myself))
+	StateCheck(FifthNearestEnemyOf(Myself),STATE_HASTED)
+THEN
+	RESPONSE #100
+		Spell(LastSeenBy(Myself),CLERIC_DISPEL_MAGIC)
+		Wait(2)
+END
+
+IF
+	HaveSpell(CLERIC_DISPEL_MAGIC)
+	See(SixthNearestEnemyOf(Myself))
+	StateCheck(SixthNearestEnemyOf(Myself),STATE_HASTED)
+THEN
+	RESPONSE #100
+		Spell(LastSeenBy(Myself),CLERIC_DISPEL_MAGIC)
+		Wait(2)
+END
+
+IF
+	HaveSpell(CLERIC_RIGID_THINKING)
+	See(NearestEnemyOf(Myself))
+	!StateCheck(LastSeenBy(Myself),STATE_CONFUSED)
+THEN
+	RESPONSE #100
+		Spell(LastSeenBy(Myself),CLERIC_RIGID_THINKING)
+		Wait(2)
+END
+
+IF
+	HaveSpell(CLERIC_HOLD_PERSON)
+	See(NearestEnemyOf(Myself))
+	!StateCheck(LastSeenBy(Myself),STATE_HELPLESS)
+THEN
+	RESPONSE #100
+		Spell(LastSeenBy(Myself),CLERIC_HOLD_PERSON)
+		Wait(2)
+END
+
+IF
+	HaveSpellRES("IDPR111")
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		SpellRES("IDPR111",LastSeenBy(Myself))
+		Wait(2)
+END
+
+IF
+	HaveSpell(CLERIC_ENTANGLE)
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		Spell(LastSeenBy(Myself),CLERIC_ENTANGLE)
+		Wait(2)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		AttackReevaluate(LastSeenBy(Myself),75)
+END
+

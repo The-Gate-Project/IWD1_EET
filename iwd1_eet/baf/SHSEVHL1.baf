@@ -1,0 +1,142 @@
+IF
+	!BitCheck("CREATURE_STATE_VAR","LOCALS",32)
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		BitSet("CREATURE_STATE_VAR","LOCALS",32)
+		Continue()
+END
+
+IF
+	StateCheck(Myself,STATE_PANIC)
+THEN
+	RESPONSE #100
+		RandomWalkContinuous()
+END
+
+IF
+	!GlobalTimerNotExpired("IWD_Rest","LOCALS")
+THEN
+	RESPONSE #100
+		SetGlobalTimer("IWD_Rest","LOCALS",EIGHT_HOURS)
+		ApplySpell(Myself,RESTORE_FULL_HEALTH)
+		Rest()
+END
+
+IF
+	HaveSpellRES("IDIN997") //INNATE_SHADOW_PACT
+	See([ENEMY])
+	!StateCheck(LastSeenBy(Myself),STATE_REALLY_DEAD)
+	HPPercentLT(LastSeenBy(Myself),60)
+	BitCheck("CREATURE_STATE_VAR","LOCALS",32)
+THEN
+	RESPONSE #100
+		SpellRES("IDIN997",LastSeenBy(Myself))
+		Wait(2)
+		//Continue()
+END
+
+IF
+	HaveSpellRES("IDIN997") //INNATE_SHADOW_PACT
+	See(NearestEnemyOf(NearestEnemyOf(Myself)))
+	!StateCheck(LastSeenBy(Myself),STATE_REALLY_DEAD)
+	HPPercentLT(LastSeenBy(Myself),60)
+	BitCheck("CREATURE_STATE_VAR","LOCALS",32)
+THEN
+	RESPONSE #100
+		SpellRES("IDIN997",LastSeenBy(Myself))
+		Wait(2)
+		//Continue()
+END
+
+IF
+	HaveSpellRES("IDIN997") //INNATE_SHADOW_PACT
+	See(SecondNearestEnemyOf(NearestEnemyOf(Myself)))
+	!StateCheck(LastSeenBy(Myself),STATE_REALLY_DEAD)
+	HPPercentLT(LastSeenBy(Myself),60)
+	BitCheck("CREATURE_STATE_VAR","LOCALS",32)
+THEN
+	RESPONSE #100
+		SpellRES("IDIN997",LastSeenBy(Myself))
+		Wait(2)
+		//Continue()
+END
+
+IF
+	HaveSpellRES("IDIN997") //INNATE_SHADOW_PACT
+	See(ThirdNearestEnemyOf(NearestEnemyOf(Myself)))
+	!StateCheck(LastSeenBy(Myself),STATE_REALLY_DEAD)
+	HPPercentLT(LastSeenBy(Myself),60)
+	BitCheck("CREATURE_STATE_VAR","LOCALS",32)
+THEN
+	RESPONSE #100
+		SpellRES("IDIN997",LastSeenBy(Myself))
+		Wait(2)
+		//Continue()
+END
+
+IF
+	HaveSpellRES("IDIN997") //INNATE_SHADOW_PACT
+	See(FourthNearestEnemyOf(NearestEnemyOf(Myself)))
+	!StateCheck(LastSeenBy(Myself),STATE_REALLY_DEAD)
+	HPPercentLT(LastSeenBy(Myself),60)
+	BitCheck("CREATURE_STATE_VAR","LOCALS",32)
+THEN
+	RESPONSE #100
+		SpellRES("IDIN997",LastSeenBy(Myself))
+		Wait(2)
+		//Continue()
+END
+
+IF
+	HaveSpellRES("IDIN997") //INNATE_SHADOW_PACT
+	See(FifthNearestEnemyOf(NearestEnemyOf(Myself)))
+	!StateCheck(LastSeenBy(Myself),STATE_REALLY_DEAD)
+	HPPercentLT(LastSeenBy(Myself),60)
+	BitCheck("CREATURE_STATE_VAR","LOCALS",32)
+THEN
+	RESPONSE #100
+		SpellRES("IDIN997",LastSeenBy(Myself))
+		Wait(2)
+		//Continue()
+END
+
+IF
+	HaveSpell(WIZARD_VAMPIRIC_TOUCH) // SPWI314.SPL (Прикосновение Вампира)
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		Spell(LastSeenBy(Myself),WIZARD_VAMPIRIC_TOUCH) // SPWI314.SPL (Прикосновение Вампира)
+		Wait(2)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		AttackReevaluate(LastSeenBy(Myself),75)
+END
+
+IF
+	See([ENEMY])
+	AttackedBy(NearestEnemyOf(Myself),DEFAULT)
+THEN
+	RESPONSE #100
+		RunAwayFromNoLeaveArea(LastAttackerOf(Myself),45)
+END
+
+IF
+	AttackedBy(NearestEnemyOf(Myself),DEFAULT)
+THEN
+	RESPONSE #100
+		MoveToObject(LastAttackerOf(Myself))
+END
+
+IF
+	!See([ENEMY])
+	Exists([ENEMY])
+THEN
+	RESPONSE #100
+		MoveToObject([ENEMY])
+END
+

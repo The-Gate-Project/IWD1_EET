@@ -1,0 +1,86 @@
+IF
+  !Global("SET_INVISIBLE","LOCALS",1)
+THEN
+  RESPONSE #100
+    ApplySpellRES("IDINVUL",Myself)
+    ApplySpellRES("IDINVIS6",Myself)
+    SetGlobal("SET_INVISIBLE","LOCALS",1)
+    Continue()
+END
+
+IF
+	Global("MAGICMOUTH_TALK","MYAREA",3)
+THEN
+	RESPONSE #100
+		//PlaySequence("9717MS1",CAST)
+		StaticSequence("9717MS1",SEQ_CAST)
+		SetGlobal("MAGICMOUTH_TALK","MYAREA",4)
+END
+
+IF
+	!Global("MAGICMOUTH_DONE","MYAREA",0)
+THEN
+	RESPONSE #100
+		DestroySelf()
+END
+
+IF
+	Global("MAGICMOUTH_TALK","MYAREA",2)
+	See([ENEMY])
+THEN
+	RESPONSE #100
+		SetGlobal("MAGICMOUTH_TALK","MYAREA",3)
+END
+
+IF
+	Global("MAGICMOUTH_TALK","MYAREA",0)
+	!GlobalTimerNotExpired("MAGICMOUTH_TIMER","MYAREA")
+	See([PC])
+THEN
+	RESPONSE #100
+		SetGlobal("MAGICMOUTH_TALK","MYAREA",1)
+END
+
+IF
+	Global("MAGICMOUTH_TALK","MYAREA",2)
+	!GlobalTimerNotExpired("MAGICMOUTH_TIMER","MYAREA")
+	See([PC])
+	!Allegiance(Myself,ENEMY)
+	!StateCheck(Myself,STATE_REALLY_DEAD)
+THEN
+	RESPONSE #100
+		StartCutSceneMode()
+		ClearAllActions()
+		SetGlobal("MAGICMOUTH_TALK","MYAREA",3)
+		MultiPlayerSync()
+		ApplySpellRES("BDCUTSPY",Myself)
+		StartDialogNoSet([PC])
+END
+
+IF
+	Global("MAGICMOUTH_TALK","MYAREA",1)
+THEN
+	RESPONSE #100
+		//PlaySequence("9717MS1",AWAKE)
+		StaticSequence("9717MS1",SEQ_AWAKE)
+		SetGlobal("MAGICMOUTH_TALK","MYAREA",2)
+		SetGlobalTimer("MAGICMOUTH_TIMER","MYAREA",5)
+END
+
+IF
+	Global("MAGICMOUTH_TALK","MYAREA",4)
+	!See([PC])
+THEN
+	RESPONSE #100
+		SetGlobalTimer("MAGICMOUTH_TIMER","MYAREA",5)
+		SetGlobal("MAGICMOUTH_TALK","MYAREA",0)
+END
+
+IF
+	Global("MAGICMOUTH_TALK","MYAREA",2)
+	!See([PC])
+THEN
+	RESPONSE #100
+		SetGlobal("MAGICMOUTH_TALK","MYAREA",3)
+END
+

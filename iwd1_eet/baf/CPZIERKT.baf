@@ -1,0 +1,9 @@
+IF
+	Global("SPAWN_ZIERKKI","GLOBAL",0)
+	Contains("Tale4",Myself)
+THEN
+	RESPONSE #100
+		SetGlobal("SPAWN_ZIERKKI","GLOBAL",1)
+		DestroyItem("Tale4")
+END
+

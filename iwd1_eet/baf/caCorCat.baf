@@ -1,0 +1,59 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId("HEAVEN")
+		ForceSpellPointRES("IDIN186",[2790.1924])
+		SmallWait(2)
+		CreateCreature("CORCAT",[2790.1924],14)  // Корнугон
+END
+
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId("DAY")
+		SmallWait(3)
+		ForceSpellPointRES("IDIN186",[2957.1837])
+		SmallWait(2)
+		CreateCreature("CORCAT",[2957.1837],14)  // Корнугон
+END
+
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId("EARTH")
+		SmallWait(6)
+		ForceSpellPointRES("IDIN186",[2848.2084])
+		SmallWait(2)
+		CreateCreature("CORCAT",[2848.2084],10)  // Корнугон
+END
+
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId("SEA")
+		SmallWait(9)
+		ForceSpellPointRES("IDIN186",[3453.1967])
+		SmallWait(2)
+		CreateCreature("CORCAT",[3453.1967],2)  // Корнугон
+END
+
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId("NIGHT")
+		SmallWait(12)
+		ForceSpellPointRES("IDIN186",[3391.2134])
+		SmallWait(2)
+		CreateCreature("CORCAT",[3391.2134],6)  // Корнугон
+		/* AddEndCutSceneMode */
+		SmallWait(2)
+		EndCutSceneMode()
+END
+
+
+

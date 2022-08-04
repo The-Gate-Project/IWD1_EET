@@ -1,0 +1,93 @@
+IF
+	!Allegiance(Myself,ENEMY)
+	BitCheck("AREA_GROUP_VAR","MYAREA",1)
+THEN
+	RESPONSE #100
+		Enemy()
+		Continue()
+END
+
+IF
+	!IsActive(Myself)
+	BitCheck("AREA_GROUP_VAR","MYAREA",1)
+THEN
+	RESPONSE #100
+		Activate(Myself)
+		SetGlobal("IwIHidden","LOCALS",0)
+		Continue()
+END
+
+IF
+	!BitCheck("CREATURE_STATE_VAR","LOCALS",1)
+THEN
+	RESPONSE #100
+		BitSet("CREATURE_STATE_VAR","LOCALS",1)
+		SetGlobal("IwIHidden","LOCALS",1)
+		Deactivate(Myself)
+		//SetGlobal("IwIHidden","LOCALS",1)
+		//Continue()
+END
+
+IF
+	!IsActive(Myself)
+THEN
+	RESPONSE #100
+		NoAction()
+END
+
+IF
+	StateCheck(Myself,STATE_PANIC)
+THEN
+	RESPONSE #100
+		RandomWalkContinuous()
+END
+
+IF
+	!BitCheck("CREATURE_STATE_VAR","LOCALS",2)
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #50
+		BitSet("CREATURE_STATE_VAR","LOCALS",2)
+		SetSequence(SEQ_HEAD_TURN)
+		Continue()
+	RESPONSE #50
+		BitSet("CREATURE_STATE_VAR","LOCALS",2)
+		Continue()
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	!Range(LastSeenBy(Myself),4)
+	CanEquipRanged()
+THEN
+	RESPONSE #100
+		EquipRanged()
+		AttackReevaluate(LastSeenBy(Myself),45)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	Range(LastSeenBy(Myself),4)
+THEN
+	RESPONSE #100
+		EquipMostDamagingMelee()
+		AttackReevaluate(LastSeenBy(Myself),45)
+END
+
+IF
+	AttackedBy(NearestEnemyOf(Myself),DEFAULT)
+THEN
+	RESPONSE #100
+		MoveToObject(LastAttackerOf(Myself))
+END
+
+IF
+  ActionListEmpty()
+	!See([PC])
+THEN
+  RESPONSE #100
+    MoveToObject(Player1)
+END
+
+
+

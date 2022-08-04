@@ -1,0 +1,42 @@
+IF
+	StateCheck(Myself,STATE_PANIC)
+THEN
+	RESPONSE #100
+		RandomWalkContinuous()
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		AttackReevaluate(LastSeenBy(Myself),75)
+END
+
+IF
+	Global("THRONE_ROOM_ATTACK","MYAREA",0)
+	AttackedBy([GOODCUTOFF],DEFAULT)
+THEN
+	RESPONSE #100
+		SetGlobal("THRONE_ROOM_ATTACK","MYAREA",1)
+		Enemy()
+		Continue()
+END
+
+IF
+	!Global("THRONE_ROOM_ATTACK","ID4001",0)
+	Dead("LIZARD_KING")
+	ActionListEmpty()
+	!See([PC])
+THEN
+	RESPONSE #100
+		MoveToObject(Player1)
+END
+
+IF
+	!Global("THRONE_ROOM_ATTACK","MYAREA",0)
+	!See("LIZARD_KING")
+THEN
+	RESPONSE #100
+		MoveToObject("LIZARD_KING")
+END
+

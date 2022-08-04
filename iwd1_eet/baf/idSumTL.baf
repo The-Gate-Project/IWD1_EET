@@ -1,0 +1,12 @@
+IF
+  !Global("I_SUMMONED","LOCALS",1)
+THEN
+  RESPONSE #100
+    CreateVisualEffectObject("ASumm1X",Myself)
+    Wait(1)
+    CreateVisualEffectObject("MSUMM1H",Myself)
+    SmallWait(10)
+    ApplySpellRES("IDRINVS",Myself)
+    SetGlobal("I_SUMMONED","LOCALS",1)
+    Continue()
+END

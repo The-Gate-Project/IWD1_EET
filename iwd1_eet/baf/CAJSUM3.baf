@@ -1,0 +1,47 @@
+IF
+	StateCheck(Myself,STATE_PANIC)
+THEN
+	RESPONSE #100
+		RandomWalkContinuous()
+END
+
+IF
+	!GlobalTimerNotExpired("IWD_Rest","LOCALS")
+THEN
+	RESPONSE #100
+		SetGlobalTimer("IWD_Rest","LOCALS",EIGHT_HOURS)
+		ApplySpell(Myself,RESTORE_FULL_HEALTH)
+		Rest()
+END
+
+IF
+	HaveSpellRES("IDIN177")  // SPIN177.SPL (No such index)
+	See(NearestEnemyOf(Myself))
+	!GlobalTimerNotExpired("SUMMON_TIMER","LOCALS")
+THEN
+	RESPONSE #100
+		SetGlobal("SUMMON_TIMER","LOCALS",0)
+		///Spell(LastSeenBy(Myself),3177)  // SPIN177.SPL (No such index)
+		SpellRES("IDIN177",LastSeenBy(Myself))
+		Wait(2)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		AttackReevaluate(LastSeenBy(Myself),75)
+END
+
+IF
+	!Global("MAP_GROUP_HOSTILE3","MYAREA",0)
+	!GlobalTimerNotExpired("SUMMON_TIMER","LOCALS")
+	HaveSpellRES("IDIN177")  // SPIN177.SPL (No such index)
+THEN
+	RESPONSE #100
+		SetGlobal("SUMMON_TIMER","LOCALS",0)
+		//SpellPoint([3216.2024],3177)  // SPIN177.SPL (No such index)
+		SpellPointRES("IDIN177",[3216.2024])
+		Wait(2)
+END
+

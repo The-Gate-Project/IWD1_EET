@@ -1,0 +1,44 @@
+IF
+	IsActive(Myself)
+	!HasItem("CIFADE",Myself)
+THEN
+	RESPONSE #100
+		GiveItemCreate("CIFADE",Myself,1,1,1)
+		Continue()
+END
+
+IF
+	IsActive(Myself)
+	!Global("SPRITE_IS_DEADLUREMASTER","GLOBAL",0)
+THEN
+	RESPONSE #100
+		EquipItemEx("CIFADE",0)  // No such index
+		Wait(2)
+		DestroySelf()
+END
+
+/*IF
+	IsActive(Myself)
+	!HasItem("SPAWN",Myself)
+THEN
+	RESPONSE #100
+		GiveItemCreate("SPAWN",Myself,1,1,1)
+		Continue()
+END*/
+
+IF
+	!IsActive(Myself)
+THEN
+	RESPONSE #100
+		Activate(Myself)
+		SetGlobal("IwIHidden","LOCALS",0)
+		//GiveItemCreate("SPAWN",Myself,1,1,1)
+		//UseItem("SPAWN",Myself)
+		CreateVisualEffectObject("HEALH",Myself)
+		SmallWait(14)
+		FaceObject(NearestEnemyOf(Myself))
+		//HideCreature(Myself,FALSE)
+		ApplySpellRES("IDINVIS5",Myself)
+		Continue()
+END
+

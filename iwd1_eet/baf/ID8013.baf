@@ -1,0 +1,100 @@
+IF
+  !Global("ID8013_VISITED","GLOBAL",1)
+THEN
+  RESPONSE #100
+    SetGlobal("ID8013_VISITED","GLOBAL",1)
+    Continue()
+END
+
+IF
+	Global("FLUSH_SPAWNS","MYAREA",1)
+	!GlobalTimerNotExpired("SPAWN_TIMER","MYAREA")
+THEN
+	RESPONSE #100
+		SetGlobal("8013_SPAWN_1","GLOBAL",0)
+		SetGlobal("8013_SPAWN_2","GLOBAL",0)
+		SetGlobal("8013_SPAWN_3","GLOBAL",0)
+		SetGlobal("8013_SPAWN_4","GLOBAL",0)
+		SetGlobal("8013_SPAWN_5","GLOBAL",0)
+		SetGlobal("FLUSH_SPAWNS","MYAREA",0)
+		SetGlobalTimer("SPAWN_TIMER","MYAREA",15)
+END
+
+IF
+	Global("FLUSH_SPAWNS","MYAREA",1)
+THEN
+	RESPONSE #100
+		NoAction()
+END
+
+IF
+	Global("TRAP_PHASE","MYAREA",0)
+	!Global("POQUELIN_HOSTILE","GLOBAL",0)
+THEN
+	RESPONSE #100
+		SetGlobal("8013_SPAWN_1","GLOBAL",1)
+		SetGlobal("TRAP_PHASE","MYAREA",1)
+		SetGlobal("FLUSH_SPAWNS","MYAREA",1)
+		SetGlobalTimer("SPAWN_TIMER","MYAREA",5)
+END
+
+IF
+	Global("TRAP_PHASE","MYAREA",1)
+	!GlobalTimerNotExpired("SPAWN_TIMER","MYAREA")
+THEN
+	RESPONSE #100
+		SetGlobal("8013_SPAWN_2","GLOBAL",1)
+		SetGlobal("TRAP_PHASE","MYAREA",2)
+		SetGlobal("FLUSH_SPAWNS","MYAREA",1)
+		SetGlobalTimer("SPAWN_TIMER","MYAREA",5)
+END
+
+IF
+	Global("TRAP_PHASE","MYAREA",2)
+	!GlobalTimerNotExpired("SPAWN_TIMER","MYAREA")
+THEN
+	RESPONSE #100
+		SetGlobal("8013_SPAWN_3","GLOBAL",1)
+		SetGlobal("TRAP_PHASE","MYAREA",3)
+		SetGlobal("FLUSH_SPAWNS","MYAREA",1)
+		SetGlobalTimer("SPAWN_TIMER","MYAREA",5)
+END
+
+IF
+	Global("TRAP_PHASE","MYAREA",3)
+	!GlobalTimerNotExpired("SPAWN_TIMER","MYAREA")
+THEN
+	RESPONSE #100
+		SetGlobal("8013_SPAWN_4","GLOBAL",1)
+		SetGlobal("TRAP_PHASE","MYAREA",4)
+		SetGlobal("FLUSH_SPAWNS","MYAREA",1)
+		SetGlobalTimer("SPAWN_TIMER","MYAREA",5)
+END
+
+IF
+	Global("TRAP_PHASE","MYAREA",4)
+	!GlobalTimerNotExpired("SPAWN_TIMER","MYAREA")
+THEN
+	RESPONSE #100
+		SetGlobal("8013_SPAWN_5","GLOBAL",1)
+		SetGlobal("TRAP_PHASE","MYAREA",5)
+		SetGlobal("FLUSH_SPAWNS","MYAREA",1)
+		SetGlobalTimer("SPAWN_TIMER","MYAREA",5)
+END
+
+IF
+	Global("TRAP_PHASE","MYAREA",5)
+	!GlobalTimerNotExpired("SPAWN_TIMER","MYAREA")
+THEN
+	RESPONSE #100
+		SetGlobal("TRAP_PHASE","MYAREA",6)
+END
+
+IF
+	OnCreation()
+THEN
+	RESPONSE #100
+		NoAction()
+		Continue()
+END
+

@@ -1,0 +1,210 @@
+IF
+	!BitCheck("AREA_VAR","MYAREA",4)
+	Allegiance(Myself,ENEMY)
+THEN
+	RESPONSE #100
+		BitSet("AREA_VAR","MYAREA",4)
+		Continue()
+END
+
+IF
+	StateCheck(Myself,STATE_PANIC)
+THEN
+	RESPONSE #100
+		RandomWalkContinuous()
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	Global("SPELL_PHASE","LOCALS",0)
+	BitCheck("AREA_VAR","MYAREA",4)
+THEN
+	RESPONSE #100
+		SetGlobal("SPELL_PHASE","LOCALS",1)
+		Spell(LastSeenBy(Myself),CLERIC_GLYPH_OF_WARDING)
+		Wait(2)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	Global("SPELL_PHASE","LOCALS",1)
+THEN
+	RESPONSE #100
+		SetGlobal("SPELL_PHASE","LOCALS",2)
+		Spell(LastSeenBy(Myself),CLERIC_HOLD_PERSON)
+		Wait(2)
+	RESPONSE #100
+		SetGlobal("SPELL_PHASE","LOCALS",2)
+		Spell(LastSeenBy(Myself),CLERIC_GLYPH_OF_WARDING)
+		Wait(2)
+	RESPONSE #100
+		SetGlobal("SPELL_PHASE","LOCALS",2)
+		Spell(LastSeenBy(Myself),CLERIC_DISPEL_MAGIC)
+		Wait(2)
+	RESPONSE #100
+		SetGlobal("SPELL_PHASE","LOCALS",2)
+		Spell(Myself,CLERIC_STRENGTH_OF_ONE)
+		Wait(2)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	!StateCheck(LastSeenBy(Myself),STATE_HELPLESS)
+	Global("SPELL_PHASE","LOCALS",2)
+THEN
+	RESPONSE #100
+		Spell(LastSeenBy(Myself),CLERIC_HOLD_PERSON)
+		Wait(2)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	Global("SPELL_PHASE","LOCALS",2)
+THEN
+	RESPONSE #100
+		Spell(LastSeenBy(Myself),CLERIC_GLYPH_OF_WARDING)
+		Wait(2)
+END
+
+IF
+	Global("SPELL_PHASE","LOCALS",2)
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		AttackReevaluate(LastSeenBy(Myself),75)
+END
+
+IF
+	!Allegiance(Myself,ENEMY)
+	AttackedBy([GOODCUTOFF],DEFAULT)
+THEN
+	RESPONSE #100
+		Enemy()
+		Continue()
+END
+
+IF
+	NumTimesTalkedTo(0)
+	See([PC])
+	!Allegiance(Myself,ENEMY)
+	!StateCheck(Myself,STATE_REALLY_DEAD)
+THEN
+	RESPONSE #100
+		StartCutSceneMode()
+		ClearAllActions()
+		MultiPlayerSync()
+		ApplySpellRES("BDCUTSPY",Myself)
+		StartDialogNoSet([PC])
+END
+
+IF
+	AttackedBy([GOODCUTOFF],DEFAULT)
+THEN
+	RESPONSE #100
+		MoveToObject(LastAttackerOf(Myself))
+END
+
+IF
+	!BitCheck("AREA_VAR","MYAREA",4)
+	!Global("YXUN_ATTACK","MYAREA",0)
+THEN
+	RESPONSE #100
+		BitSet("AREA_VAR","MYAREA",4)
+END
+
+IF
+	!Allegiance(Myself,ENEMY)
+	Global("BAPTISM_PHASE","LOCALS",0)
+THEN
+	RESPONSE #100
+		MoveToObject("CAPTIVEVILLAGER1A")
+		DisplayStringHead(Myself,@11595)
+		ReallyForceSpellRES("IDIN987","CAPTIVEVILLAGER1A") //INNATE_D5_HIGH_BAPTISM
+		Wait(2)
+		IncrementGlobal("BAPTISM_PHASE","LOCALS",1)
+END
+
+IF
+	!Allegiance(Myself,ENEMY)
+	Global("BAPTISM_PHASE","LOCALS",1)
+THEN
+	RESPONSE #100
+		MoveToObject("CAPTIVEVILLAGER2A")
+		DisplayStringHead(Myself,@11595)
+		ReallyForceSpellRES("IDIN987","CAPTIVEVILLAGER2A") //INNATE_D5_HIGH_BAPTISM
+		Wait(2)
+		IncrementGlobal("BAPTISM_PHASE","LOCALS",1)
+END
+
+IF
+	!Allegiance(Myself,ENEMY)
+	Global("BAPTISM_PHASE","LOCALS",2)
+THEN
+	RESPONSE #100
+		MoveToObject("CAPTIVEVILLAGER3A")
+		DisplayStringHead(Myself,@11595)
+		ReallyForceSpellRES("IDIN987","CAPTIVEVILLAGER3A") //INNATE_D5_HIGH_BAPTISM
+		Wait(2)
+		IncrementGlobal("BAPTISM_PHASE","LOCALS",1)
+END
+
+IF
+	!Allegiance(Myself,ENEMY)
+	Global("BAPTISM_PHASE","LOCALS",3)
+THEN
+	RESPONSE #100
+		MoveToObject("CAPTIVEVILLAGER4A")
+		DisplayStringHead(Myself,@11595)
+		ReallyForceSpellRES("IDIN987","CAPTIVEVILLAGER4A") //INNATE_D5_HIGH_BAPTISM
+		Wait(2)
+		IncrementGlobal("BAPTISM_PHASE","LOCALS",1)
+END
+
+IF
+	!Allegiance(Myself,ENEMY)
+	Global("BAPTISM_PHASE","LOCALS",4)
+THEN
+	RESPONSE #100
+		MoveToObject("CAPTIVEVILLAGER5A")
+		DisplayStringHead(Myself,@11595)
+		ReallyForceSpellRES("IDIN987","CAPTIVEVILLAGER5A") //INNATE_D5_HIGH_BAPTISM
+		Wait(2)
+		IncrementGlobal("BAPTISM_PHASE","LOCALS",1)
+END
+
+IF
+	!Allegiance(Myself,ENEMY)
+	Global("BAPTISM_PHASE","LOCALS",5)
+THEN
+	RESPONSE #100
+		MoveToObject("CAPTIVEVILLAGER6A")
+		DisplayStringHead(Myself,@11595)
+		ReallyForceSpellRES("IDIN987","CAPTIVEVILLAGER6A") //INNATE_D5_HIGH_BAPTISM
+		Wait(2)
+		IncrementGlobal("BAPTISM_PHASE","LOCALS",1)
+END
+
+IF
+	!Allegiance(Myself,ENEMY)
+	Global("BAPTISM_PHASE","LOCALS",6)
+THEN
+	RESPONSE #100
+		MoveToObject("CAPTIVEVILLAGER7A")
+		DisplayStringHead(Myself,@11595)
+		ReallyForceSpellRES("IDIN987","CAPTIVEVILLAGER7A") //INNATE_D5_HIGH_BAPTISM
+		Wait(2)
+		IncrementGlobal("BAPTISM_PHASE","LOCALS",1)
+END
+
+IF
+	!Allegiance(Myself,ENEMY)
+	Global("BAPTISM_PHASE","LOCALS",7)
+THEN
+	RESPONSE #100
+		MoveToObject("CAPTIVEVILLAGER8A")
+		DisplayStringHead(Myself,@11595)
+		ReallyForceSpellRES("IDIN987","CAPTIVEVILLAGER8A") //INNATE_D5_HIGH_BAPTISM
+		Wait(2)
+		SetGlobal("BAPTISM_PHASE","LOCALS",0)
+END
+

@@ -1,0 +1,44 @@
+IF
+	Global("CAST_INNATE_GREAT_ROAR","LOCALS",0)
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		ForceSpellRES("IDIN138",LastSeenBy(Myself)) //INNATE_GREAT_ROAR
+		Wait(2)
+		SetGlobal("CAST_INNATE_GREAT_ROAR","LOCALS",1)
+END
+
+IF
+	NumTimesTalkedTo(0)
+	See([PC])
+	!Allegiance(Myself,ENEMY)
+	!StateCheck(Myself,STATE_REALLY_DEAD)
+THEN
+	RESPONSE #100
+		ApplySpellRES("BDCUTSPY",Myself)
+		StartDialogNoSet([PC])
+END
+
+IF
+	NumTimesTalkedToGT(0)
+	See([PC])
+	GlobalTimerExpired("SeePcTimer","LOCALS")
+	!Allegiance(Myself,ENEMY)
+	!StateCheck(Myself,STATE_REALLY_DEAD)
+THEN
+	RESPONSE #100
+		ApplySpellRES("BDCUTSPY",Myself)
+		StartDialogueNoSet([PC])
+END
+
+IF
+	Global("SetSeePCTimer","LOCALS",0)
+	!Allegiance(Myself,ENEMY)
+	!NumberOfTimesTalkedTo(0)
+	!See([PC])
+THEN
+	RESPONSE #100
+		SetGlobal("SetSeePCTimer","LOCALS",1)
+		SetGlobalTimer("SeePcTimer","LOCALS",TEN_ROUNDS)
+END
+

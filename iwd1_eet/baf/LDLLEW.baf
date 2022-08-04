@@ -1,0 +1,58 @@
+/*IF
+	CreatureHidden(Myself)
+	Global("BEORN_QUEST","GLOBAL",4)
+	Global("8004_HULKS_DEAD","GLOBAL",15)
+THEN
+	RESPONSE #100
+		HideCreature(Myself,FALSE)
+		Continue()
+END
+
+IF
+	CreatureHidden(Myself)
+THEN
+	RESPONSE #100
+		NoAction()
+END*/
+
+IF
+  GlobalGT("Umber_Hulk_Armor","GLOBAL",0)
+  GlobalLT("Umber_Hulk_Armor","GLOBAL",15)
+  GlobalTimerExpired("UmbHide_Timer","GLOBAL")
+THEN
+  RESPONSE #100
+    SetGlobal("Umber_Hulk_Armor","GLOBAL",15)
+    Continue()
+END
+
+IF
+	StateCheck(Myself,STATE_PANIC)
+THEN
+	RESPONSE #100
+		RandomWalkContinuous()
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		Hide()
+		AttackReevaluate(LastSeenBy(Myself),90)
+END
+
+IF
+	AttackedBy(NearestEnemyOf(Myself),DEFAULT)
+THEN
+	RESPONSE #100
+		Hide()
+		MoveToObject(LastAttackerOf(Myself))
+END
+
+IF
+	AttackedBy([GOODCUTOFF],DEFAULT)
+THEN
+	RESPONSE #100
+		Enemy()
+		Continue()
+END
+

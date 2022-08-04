@@ -1,0 +1,16 @@
+IF
+	//Global("AR9714_CUTSCENE","GLOBAL",0)
+	//OR(2)
+		Entered([ANYONE])
+	//	IsOverMe([ANYONE])
+THEN
+	RESPONSE #100
+		//SetGlobal("AR9714_CUTSCENE","GLOBAL",1)
+		//StartCutScene("CPCUT0")
+		StaticSequence("9714MS4",SEQ_AWAKE)
+		SetGlobal("9714MS4_SEQ","MYAREA",1)
+		Wait(2)
+		StaticSequence("9714MS4",SEQ_ATTACK)
+		SetGlobal("9714MS4_SEQ","MYAREA",0)
+END
+

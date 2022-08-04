@@ -1,0 +1,107 @@
+// copied from his normal script, but pared down for a single opponent
+IF
+  Global("CDPresioDuel","GLOBAL",7)
+THEN
+  RESPONSE #100
+    DisplayStringHead(Myself,@300000404)
+    SaveLocation("LOCALS","SavedLoc",[3272.2215])
+    SetGlobal("SaveSavedLoc","LOCALS",1)
+    ChangeAIScript("",OVERRIDE)
+END
+
+IF
+  GlobalGT("CDPresioDuel","GLOBAL",2)
+  GlobalLT("CDPresioDuel","GLOBAL",5)
+  HaveSpell(WIZARD_MIRROR_IMAGE)
+  See(NearestEnemyOf(Myself))
+THEN
+  RESPONSE #100
+    Spell(Myself,WIZARD_MIRROR_IMAGE)
+    Wait(2)
+END
+
+IF
+  GlobalGT("CDPresioDuel","GLOBAL",2)
+  GlobalLT("CDPresioDuel","GLOBAL",5)
+  HaveSpell(CLERIC_FLAME_STRIKE)
+  See(NearestEnemyOf(Myself))
+  !Range(LastSeenBy(Myself),7)
+THEN
+  RESPONSE #100
+    Spell(LastSeenBy(Myself),CLERIC_FLAME_STRIKE)
+    Wait(2)
+END
+
+IF
+  GlobalGT("CDPresioDuel","GLOBAL",2)
+  GlobalLT("CDPresioDuel","GLOBAL",5)
+  HaveSpell(WIZARD_MAGIC_MISSILE)
+    See(NearestEnemyOf(Myself))
+THEN
+  RESPONSE #100
+    Spell(LastSeenBy(Myself),WIZARD_MAGIC_MISSILE)
+    Wait(2)
+END
+
+IF
+  GlobalGT("CDPresioDuel","GLOBAL",2)
+  GlobalLT("CDPresioDuel","GLOBAL",5)
+  HaveSpellRES("IDWI417")
+  See(NearestEnemyOf(Myself))
+THEN
+  RESPONSE #100
+    SpellRES("IDWI417",LastSeenBy(Myself))
+    Wait(2)
+END
+
+IF
+  GlobalGT("CDPresioDuel","GLOBAL",2)
+  GlobalLT("CDPresioDuel","GLOBAL",5)
+  HaveSpell(CLERIC_CLOAK_OF_FEAR)
+  See(NearestEnemyOf(Myself))
+THEN
+  RESPONSE #100
+    Spell(Myself,CLERIC_CLOAK_OF_FEAR)
+    Wait(2)
+END
+
+IF
+  GlobalGT("CDPresioDuel","GLOBAL",2)
+  GlobalLT("CDPresioDuel","GLOBAL",5)
+  HaveSpell(CLERIC_ANIMATE_DEAD)
+  See(NearestEnemyOf(Myself))
+THEN
+  RESPONSE #100
+    Spell(LastSeenBy(Myself),CLERIC_ANIMATE_DEAD)
+    Wait(2)
+END
+
+IF
+  GlobalGT("CDPresioDuel","GLOBAL",2)
+  GlobalLT("CDPresioDuel","GLOBAL",5)
+  HaveSpell(WIZARD_HASTE)
+  See(NearestEnemyOf(Myself))
+THEN
+  RESPONSE #100
+    Spell(Myself,WIZARD_HASTE)
+    Wait(2)
+END
+
+IF
+  GlobalGT("CDPresioDuel","GLOBAL",2)
+  GlobalLT("CDPresioDuel","GLOBAL",5)
+  See(NearestEnemyOf(Myself))
+THEN
+  RESPONSE #100
+    AttackReevaluate(LastSeenBy(Myself),75)
+END
+
+IF
+  GlobalGT("CDPresioDuel","GLOBAL",2)
+  GlobalLT("CDPresioDuel","GLOBAL",5)
+  AttackedBy(NearestEnemyOf(Myself),DEFAULT)
+THEN
+  RESPONSE #100
+    FaceObject(LastAttackerOf(Myself))
+    Continue()
+END

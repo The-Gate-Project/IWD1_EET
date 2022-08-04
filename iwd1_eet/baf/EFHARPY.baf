@@ -1,0 +1,12 @@
+IF
+	!Global("EFHARPY_INACTIVE","LOCALS",1)
+	IsActive(Myself)
+	LOS([PC],25)
+THEN
+	RESPONSE #100
+		ReallyForceSpellRES("IDIN165",Myself) // HARPY_WAIL
+		SetGlobal("EFHARPY_INACTIVE","LOCALS",1)
+	RESPONSE #50
+		Continue()
+END
+

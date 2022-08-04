@@ -1,0 +1,7 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		ChangeAIScript("EFATKMEL",GENERAL)
+		ChangeAIScript("DUSPGDAT",RACE)
+END

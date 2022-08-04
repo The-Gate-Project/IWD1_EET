@@ -1,0 +1,151 @@
+IF
+	StateCheck(Myself,STATE_PANIC)
+THEN
+	RESPONSE #100
+		RandomWalkContinuous()
+END
+
+IF
+	!GlobalTimerNotExpired("IWD_Rest","LOCALS")
+THEN
+	RESPONSE #100
+		SetGlobalTimer("IWD_Rest","LOCALS",EIGHT_HOURS)
+		ApplySpell(Myself,RESTORE_FULL_HEALTH)
+		Rest()
+END
+
+IF
+	BitCheck("CREATURE_STATE_VAR","LOCALS",4)
+	!BitCheck("CREATURE_STATE_VAR","LOCALS",16)
+	HPPercentLT(Myself,50)
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		BitClear("CREATURE_STATE_VAR","LOCALS",4)
+		Continue()
+END
+
+IF
+	BitCheck("CREATURE_STATE_VAR","LOCALS",4)
+	HPPercentLT(Myself,15)
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		BitClear("CREATURE_STATE_VAR","LOCALS",4)
+		Continue()
+END
+
+IF
+	HaveSpellRES("IDIN999") //INNATE_ANIMAL_AFFINITY
+	!Global("YUANTI_INFERNO","GLOBAL",0)
+THEN
+	RESPONSE #100
+		SpellRES("IDIN999",Myself) //INNATE_ANIMAL_AFFINITY
+		Wait(2)
+		SpellRES("IDIN998",Myself) //INNATE_CHAMELEON_POWER
+		Wait(2)
+		Continue()
+END
+
+IF
+	!BitCheck("CREATURE_STATE_VAR","LOCALS",8)
+	HPPercentLT(Myself,75)
+THEN
+	RESPONSE #100
+		BitSet("CREATURE_STATE_VAR","LOCALS",8)
+		BitSet("CREATURE_STATE_VAR","LOCALS",4)
+		ForceSpellRES("IDIN998",Myself) //INNATE_CHAMELEON_POWER
+		Wait(2)
+		Continue()
+END
+
+IF
+	!BitCheck("CREATURE_STATE_VAR","LOCALS",16)
+	!BitCheck("CREATURE_STATE_VAR","LOCALS",4)
+	HPPercentLT(Myself,25)
+THEN
+	RESPONSE #100
+		BitSet("CREATURE_STATE_VAR","LOCALS",16)
+		BitSet("CREATURE_STATE_VAR","LOCALS",4)
+		ForceSpellRES("IDIN998",Myself) //INNATE_CHAMELEON_POWER
+		Wait(2)
+		Continue()
+END
+
+IF
+	BitCheck("CREATURE_STATE_VAR","LOCALS",4)
+	!Global("SPRITE_IS_DEADEldathynHealer","GLOBAL",0)
+THEN
+	RESPONSE #100
+		BitClear("CREATURE_STATE_VAR","LOCALS",4)
+		Continue()
+END
+
+IF
+	BitCheck("CREATURE_STATE_VAR","LOCALS",4)
+	TargetUnreachable("EldathynHealer")
+THEN
+	RESPONSE #100
+		BitClear("CREATURE_STATE_VAR","LOCALS",4)
+		Continue()
+END
+
+IF
+	!BitCheck("CREATURE_STATE_VAR","LOCALS",2)
+	!Global("YUANTI_INFERNO","GLOBAL",0)
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #75
+		BitSet("CREATURE_STATE_VAR","LOCALS",2)
+		SetSequence(SEQ_HEAD_TURN)
+		Continue()
+	RESPONSE #25
+		BitSet("CREATURE_STATE_VAR","LOCALS",2)
+		Continue()
+END
+
+IF
+	!Global("YUANTI_INFERNO","GLOBAL",0)
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		Help()
+		AttackReevaluate(LastSeenBy(Myself),75)
+END
+
+IF
+	!Global("YUANTI_INFERNO","GLOBAL",0)
+	AttackedBy(NearestEnemyOf(Myself),DEFAULT)
+THEN
+	RESPONSE #100
+		MoveToObject(LastAttackerOf(Myself))
+END
+
+IF
+	!BitCheck("CREATURE_STATE_VAR","LOCALS",4)
+	!Global("YUANTI_INFERNO","GLOBAL",0)
+	ActionListEmpty()
+	!See([PC])
+THEN
+  RESPONSE #100
+    MoveToObject(Player1)
+END
+
+
+
+IF
+	BitCheck("CREATURE_STATE_VAR","LOCALS",4)
+	!HPPercentLT(Myself,75)
+THEN
+	RESPONSE #100
+		BitClear("CREATURE_STATE_VAR","LOCALS",4)
+END
+
+IF
+	BitCheck("CREATURE_STATE_VAR","LOCALS",4)
+	!See("EldathynHealer")
+THEN
+	RESPONSE #100
+		MoveToObject("EldathynHealer")
+END
+

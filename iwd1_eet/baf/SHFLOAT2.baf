@@ -1,0 +1,10 @@
+IF
+	!BitCheck("CREATURE_STATE_VAR","LOCALS",256)
+	Allegiance(Myself,ENEMY)
+THEN
+	RESPONSE #100
+		BitSet("CREATURE_STATE_VAR","LOCALS",256)
+		DisplayStringHead(Myself,@18608)
+		Continue()
+END
+

@@ -1,0 +1,7 @@
+IF
+  Global("CDAddBook","MYAREA",0)
+THEN
+  RESPONSE #100
+    SetGlobal("CDAddBook","MYAREA",1)
+    ActionOverride("Bookshelf6",CreateItem("cddaen",1000,1,1))
+END

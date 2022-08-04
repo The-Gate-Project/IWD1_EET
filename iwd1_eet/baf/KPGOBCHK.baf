@@ -1,0 +1,77 @@
+IF
+  Global("SaveSavedLoc","LOCALS",0)
+THEN
+  RESPONSE #100
+    SetGlobal("SaveSavedLoc","LOCALS",1)
+    SaveObjectLocation("LOCALS","SavedLoc",Myself)
+    Continue()
+END
+
+IF
+	!Global("KPGOBCHK_INACTIVE","LOCALS",1)
+	!Global("CHICKEN_ALL_DEAD","MYAREA",0)
+THEN
+	RESPONSE #100
+		MoveToSavedLocation("SavedLoc","LOCALS")
+		Wait(1)
+		SetGlobal("KPGOBCHK_INACTIVE","LOCALS",1)
+END
+
+IF
+	!Global("KPGOBCHK_INACTIVE","LOCALS",1)
+	!BitCheck("CREATURE_STATE_VAR","LOCALS",1)
+THEN
+	RESPONSE #100
+		BitSet("CREATURE_STATE_VAR","LOCALS",1)
+		SetGlobalTimerRandom("IwTimer24","LOCALS",5,10)
+		Continue()
+END
+
+IF
+	!Global("KPGOBCHK_INACTIVE","LOCALS",1)
+	GlobalTimerExpired("IwTimer24","LOCALS")
+THEN
+	RESPONSE #100
+		DisplayStringHead(Myself,@6387)
+		SetGlobalTimerRandom("IwTimer24","LOCALS",5,10)
+		Continue()
+	RESPONSE #100
+		DisplayStringHead(Myself,@8143)
+		SetGlobalTimerRandom("IwTimer24","LOCALS",5,10)
+		Continue()
+	RESPONSE #100
+		DisplayStringHead(Myself,@8144)
+		SetGlobalTimerRandom("IwTimer24","LOCALS",5,10)
+		Continue()
+	RESPONSE #100
+		DisplayStringHead(Myself,@8145)
+		SetGlobalTimerRandom("IwTimer24","LOCALS",5,10)
+		Continue()
+END
+
+IF
+	!Global("KPGOBCHK_INACTIVE","LOCALS",1)
+	ActionListEmpty()
+	See([0.0.CHICKEN])
+THEN
+	RESPONSE #100
+		MoveToObject(LastSeenBy(Myself))
+	RESPONSE #20
+		Continue()
+END
+
+IF
+	!Global("KPGOBCHK_INACTIVE","LOCALS",1)
+	ActionListEmpty()
+THEN
+	RESPONSE #100
+		MoveToObject("CHICKEN1")
+	RESPONSE #100
+		MoveToObject("CHICKEN2")
+	RESPONSE #100
+		MoveToObject("CHICKEN3")
+	RESPONSE #100
+		SetSequence(SEQ_HEAD_TURN)
+		Wait(3)
+END
+

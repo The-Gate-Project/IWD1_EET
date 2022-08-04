@@ -1,0 +1,10 @@
+IF
+	Global("POMAB_SPOKE","MYAREA",0)
+	Global("SPRITE_IS_DEADPOMABR","GLOBAL",0)
+THEN
+	RESPONSE #100
+		SetGlobal("POMAB_SPOKE","MYAREA",1)
+		ClearAllActions()
+		StartCutSceneMode()
+		StartCutScene("EEPOMABT")
+END

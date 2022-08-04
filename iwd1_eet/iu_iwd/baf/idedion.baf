@@ -1,0 +1,6 @@
+IF
+  HasItem("misc58",Myself)
+THEN
+  RESPONSE #100
+    DestroyItem("misc58")
+END

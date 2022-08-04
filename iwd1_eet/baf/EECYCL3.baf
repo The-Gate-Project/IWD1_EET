@@ -1,0 +1,91 @@
+IF
+	!IsActive(Myself)
+	Global("SPRITE_IS_DEADIdEhSquirl","GLOBAL",0)
+THEN
+	RESPONSE #100
+		Activate(Myself)
+		SetGlobal("IwIHidden","LOCALS",0)
+		Continue()
+END
+
+IF
+	!IsActive(Myself)
+	!Global("SPRITE_IS_DEADIdEhSquirl","GLOBAL",0)
+THEN
+	RESPONSE #100
+		DestroySelf()
+END
+
+IF
+	StateCheck(Myself,STATE_PANIC)
+THEN
+	RESPONSE #100
+		RandomWalkContinuous()
+END
+
+IF
+	!BitCheck("SCRIPT_BIT_VAR","LOCALS",1)
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		BitSet("SCRIPT_BIT_VAR","LOCALS",1)
+		SetGlobalTimer("IwTimer0","LOCALS",5)
+END
+
+IF
+	!GlobalTimerExpired("IwTimer0","LOCALS")
+	BitCheck("SCRIPT_BIT_VAR","LOCALS",1)
+	AttackedBy(LastSeenBy(Myself),DEFAULT)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("IwTimer0","LOCALS",0)
+		Continue()
+END
+
+IF
+	GlobalTimerExpired("IwTimer0","LOCALS")
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		AttackOneRound(LastSeenBy(Myself))
+END
+
+IF
+	AttackedBy([GOODCUTOFF],DEFAULT)
+THEN
+	RESPONSE #100
+		AttackReevaluate(LastAttackerOf(Myself),75)
+END
+
+IF
+	!Global("1100_SQUIRREL_DEAD","GLOBAL",0)
+  ActionListEmpty()
+	!See([PC])
+THEN
+  RESPONSE #100
+    MoveToObject(Player1)
+END
+
+
+
+IF
+	Global("1100_SQUIRREL_DEAD","GLOBAL",0)
+	See([0.0.RABBIT])
+	Range(LastSeenBy(Myself),5)
+THEN
+	RESPONSE #100
+		ActionOverride(LastSeenBy(Myself),RunAwayFrom(NearestEnemyOf(Myself),100))
+		FaceObject(LastSeenBy(Myself))
+		Wait(1)
+		SetSequence(SEQ_ATTACK_SLASH)
+		Wait(3)
+END
+
+IF
+	Global("1100_SQUIRREL_DEAD","GLOBAL",0)
+	True()
+THEN
+	RESPONSE #100
+		MoveToObject([0.0.RABBIT])
+END
+

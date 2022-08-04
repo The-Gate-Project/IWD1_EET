@@ -1,0 +1,27 @@
+IF
+  //GlobalGT("GATE_OPEN","MYAREA",0)
+  GlobalGT("Master_Quest","GLOBAL",4)
+  Exists("CUTSPY")
+THEN
+  RESPONSE #100
+    ActionOverride("CUTSPY",DestroySelf())
+    Continue()
+END
+
+IF
+	!Global("RETURN_TO_LONELYWOOD","GLOBAL",0)
+THEN
+	RESPONSE #100
+		StartCutSceneMode()
+		StartCutScene("keRtrnLW")
+		SetGlobal("RETURN_TO_LONELYWOOD","GLOBAL",0)
+END
+
+IF
+	OnCreation()
+THEN
+	RESPONSE #100
+		NoAction()
+		Continue()
+END
+

@@ -1,0 +1,46 @@
+IF
+	Global("DANCE_CUTSCENE","MYAREA",1)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("DANCE_TIMER","MYAREA",12)
+		SetGlobal("DANCE_CUTSCENE","MYAREA",2)
+		Continue()
+END
+
+IF
+	Global("DANCE_CUTSCENE","MYAREA",2)
+	!GlobalTimerNotExpired("DANCE_TIMER","MYAREA")
+THEN
+	RESPONSE #100
+		SetGlobal("DANCE_CUTSCENE","MYAREA",3)
+		Continue()
+END
+
+IF
+	Global("ORGAN_DISABLED","MYAREA",0)
+	Global("DANCE_CUTSCENE","MYAREA",4)
+THEN
+	RESPONSE #100
+		//Deactivate("AM9712C")
+		SoundActivate("ID9712C",FALSE)
+		SetGlobal("ORGAN_DISABLED","MYAREA",1)
+		Continue()
+END
+
+IF
+	!Global("RETURN_TO_LONELYWOOD","GLOBAL",0)
+THEN
+	RESPONSE #100
+		StartCutSceneMode()
+		StartCutScene("keRtrnLW")
+		SetGlobal("RETURN_TO_LONELYWOOD","GLOBAL",0)
+END
+
+IF
+	OnCreation()
+THEN
+	RESPONSE #100
+		NoAction()
+		Continue()
+END
+

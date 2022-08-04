@@ -1,0 +1,14 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Myself)
+		CloseDoor("AR9716_DOOR1")
+		CloseDoor("AR9716_DOOR2")
+		MultiPlayerSync()
+		Lock("AR9716_DOOR1")
+		Lock("AR9716_DOOR2")
+		/* AddEndCutSceneMode */
+		EndCutSceneMode()
+END
+

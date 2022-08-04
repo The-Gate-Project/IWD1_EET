@@ -1,0 +1,31 @@
+IF
+	!IsActive(Myself)
+	!Global("TELEPORT_2","MYAREA",0)
+THEN
+	RESPONSE #100
+		Activate(Myself)
+		SetGlobal("IwIHidden","LOCALS",0)
+		//UseItem("SPAWN",Myself)
+		CreateVisualEffectObject("HEALH",Myself)
+		SmallWait(14)
+		FaceObject(NearestEnemyOf(Myself))
+		//HideCreature(Myself,FALSE)
+		ApplySpellRES("IDINVIS5",Myself)
+		Continue()
+END
+
+IF
+	!IsActive(Myself)
+THEN
+	RESPONSE #100
+		NoAction()
+END
+
+IF
+	Global("TELEPORT_2","MYAREA",0)
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		SetGlobal("TELEPORT_2","MYAREA",1)
+END
+

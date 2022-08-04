@@ -1,0 +1,53 @@
+IF
+  Global("SaveSavedLoc","LOCALS",0)
+THEN
+  RESPONSE #100
+    SetGlobal("SaveSavedLoc","LOCALS",1)
+    SaveObjectLocation("LOCALS","SavedLoc",Myself)
+    Continue()
+END
+
+IF
+	!Global("BC_BATTLE_OVER","GLOBAL",0)
+THEN
+	RESPONSE #100
+		//ChangeCurrentScript("BCRTNSAV")
+		ChangeAIScript("BCRTNSAV",DEFAULT)
+	RESPONSE #100
+		WaitRandom(2,5)
+END
+
+IF
+	ActionListEmpty()
+	!GlobalTimerNotExpired("IwTimer30","LOCALS")
+THEN
+	RESPONSE #100
+		WaitRandom(0,2)
+		MoveToPoint([1692.1541])
+		SetGlobalTimerRandom("IwTimer30","LOCALS",1,10)
+	RESPONSE #100
+		WaitRandom(0,2)
+		MoveToPoint([1683.1452])
+		SetGlobalTimerRandom("IwTimer30","LOCALS",1,10)
+	RESPONSE #100
+		WaitRandom(0,2)
+		MoveToPoint([1817.1509])
+		SetGlobalTimerRandom("IwTimer30","LOCALS",1,10)
+	RESPONSE #100
+		WaitRandom(0,2)
+		MoveToPoint([1838.1600])
+		SetGlobalTimerRandom("IwTimer30","LOCALS",1,10)
+	RESPONSE #100
+		WaitRandom(0,2)
+		MoveToPoint([1738.1645])
+		SetGlobalTimerRandom("IwTimer30","LOCALS",1,10)
+	RESPONSE #100
+		WaitRandom(0,2)
+		MoveToPoint([1627.1652])
+		SetGlobalTimerRandom("IwTimer30","LOCALS",1,10)
+	RESPONSE #100
+		WaitRandom(0,2)
+		MoveToPoint([1529.1532])
+		SetGlobalTimerRandom("IwTimer30","LOCALS",1,10)
+END
+

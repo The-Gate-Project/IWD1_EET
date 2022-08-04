@@ -1,0 +1,48 @@
+IF
+	IsActive(Myself)
+	!HasItem("CIFADE",Myself)
+THEN
+	RESPONSE #100
+		GiveItemCreate("CIFADE",Myself,1,1,1)
+		Continue()
+END
+
+IF
+	Global("SPAWN_GEDDIAN","GLOBAL",1)
+THEN
+	RESPONSE #100
+		Activate(Myself)
+		SetGlobal("IwIHidden","LOCALS",0)
+		CreateVisualEffectObject("HEALH",Myself)
+		SmallWait(14)
+		FaceObject(NearestEnemyOf(Myself))
+		//HideCreature(Myself,FALSE)
+		ApplySpellRES("IDINVIS5",Myself)
+		Continue()
+END
+
+IF
+	Global("SPAWN_GEDDIAN","GLOBAL",2)
+THEN
+	RESPONSE #100
+		EquipItemEx("CIFADE",0)
+		SetGlobal("SPAWN_GEDDIAN","GLOBAL",3)
+		Wait(2)
+		//HideCreature(Myself,TRUE)
+		DestroySelf()
+END
+
+IF
+	Global("SPAWN_GEDDIAN","GLOBAL",3)
+THEN
+	RESPONSE #100
+		DestroySelf()
+END
+
+IF
+	!IsActive(Myself)
+THEN
+	RESPONSE #100
+		NoAction()
+END
+

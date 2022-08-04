@@ -1,0 +1,185 @@
+IF
+	StateCheck(Myself,STATE_PANIC)
+THEN
+	RESPONSE #100
+		RandomWalkContinuous()
+END
+
+IF
+	!GlobalTimerNotExpired("IWD_Rest","LOCALS")
+THEN
+	RESPONSE #100
+		SetGlobalTimer("IWD_Rest","LOCALS",EIGHT_HOURS)
+		ApplySpell(Myself,RESTORE_FULL_HEALTH)
+		Rest()
+END
+
+IF
+	HaveSpell(CLERIC_CURE_MEDIUM_WOUNDS)
+	!StateCheck(Myself,STATE_REALLY_DEAD)
+	HPPercentLT(Myself,50)
+THEN
+	RESPONSE #100
+		Spell(Myself,CLERIC_CURE_MEDIUM_WOUNDS)
+		Wait(3)
+		Continue()
+END
+
+IF
+	HaveSpell(CLERIC_STRENGTH_OF_ONE)
+THEN
+	RESPONSE #100
+		Spell(Myself,CLERIC_STRENGTH_OF_ONE)
+		Wait(2)
+END
+
+IF
+	True()
+THEN
+	/*RESPONSE #100
+		SetGlobal("LOCAL_CAST_SPELL","LOCALS",0)
+		Continue()
+	RESPONSE #100
+		SetGlobal("LOCAL_CAST_SPELL","LOCALS",1)
+		Continue()
+	RESPONSE #100
+		SetGlobal("LOCAL_CAST_SPELL","LOCALS",2)
+		Continue()
+	RESPONSE #100
+		SetGlobal("LOCAL_CAST_SPELL","LOCALS",3)
+		Continue()
+	RESPONSE #100
+		SetGlobal("LOCAL_CAST_SPELL","LOCALS",4)
+		Continue()
+	RESPONSE #100
+		SetGlobal("LOCAL_CAST_SPELL","LOCALS",5)
+		Continue()
+	RESPONSE #100
+		SetGlobal("LOCAL_CAST_SPELL","LOCALS",6)
+		Continue()
+	RESPONSE #100
+		SetGlobal("LOCAL_CAST_SPELL","LOCALS",7)
+		Continue()
+	RESPONSE #100
+		SetGlobal("LOCAL_CAST_SPELL","LOCALS",8)
+		Continue()*/
+	RESPONSE #100
+		SetGlobalRandomPlus("LOCAL_CAST_SPELL","LOCALS",1,9,-1)
+		Continue()
+END
+
+IF
+	HaveSpell(CLERIC_COMMAND)
+	GlobalLT("LOCAL_CAST_SPELL","LOCALS",1)
+	See(NearestEnemyOf(Myself))
+	!GlobalTimerNotExpired("IwTimer25","LOCALS")
+THEN
+	RESPONSE #100
+		SetGlobalTimerRandom("IwTimer25","LOCALS",10,30)
+		Spell(LastSeenBy(Myself),CLERIC_COMMAND)
+		Wait(2)
+END
+
+IF
+	HaveSpell(CLERIC_CONJURE_FIRE_ELEMENTAL)
+	GlobalLT("LOCAL_CAST_SPELL","LOCALS",2)
+	See(NearestEnemyOf(Myself))
+	!GlobalTimerNotExpired("IwTimer25","LOCALS")
+THEN
+	RESPONSE #100
+		SetGlobalTimerRandom("IwTimer25","LOCALS",10,30)
+		Spell(LastSeenBy(Myself),CLERIC_CONJURE_FIRE_ELEMENTAL)
+		Wait(2)
+END
+
+IF
+	HaveSpell(CLERIC_INSECT_PLAGUE)
+	GlobalLT("LOCAL_CAST_SPELL","LOCALS",3)
+	See(NearestEnemyOf(Myself))
+	!GlobalTimerNotExpired("IwTimer25","LOCALS")
+THEN
+	RESPONSE #100
+		SetGlobalTimerRandom("IwTimer25","LOCALS",10,30)
+		Spell(LastSeenBy(Myself),CLERIC_INSECT_PLAGUE)
+		Wait(2)
+END
+
+IF
+	HaveSpell(CLERIC_INSECT_PLAGUE)
+	GlobalLT("LOCAL_CAST_SPELL","LOCALS",4)
+	See(NearestEnemyOf(Myself))
+	!GlobalTimerNotExpired("IwTimer25","LOCALS")
+THEN
+	RESPONSE #100
+		SetGlobalTimerRandom("IwTimer25","LOCALS",10,30)
+		Spell(LastSeenBy(Myself),CLERIC_INSECT_PLAGUE)
+		Wait(2)
+END
+
+IF
+	HaveSpell(CLERIC_DOLOROUS_DECAY)
+	GlobalLT("LOCAL_CAST_SPELL","LOCALS",5)
+	See(NearestEnemyOf(Myself))
+	!GlobalTimerNotExpired("IwTimer25","LOCALS")
+THEN
+	RESPONSE #100
+		SetGlobalTimerRandom("IwTimer25","LOCALS",10,30)
+		Spell(LastSeenBy(Myself),CLERIC_DOLOROUS_DECAY)
+		Wait(2)
+END
+
+IF
+	HaveSpell(CLERIC_FIRE_SEEDS)
+	GlobalLT("LOCAL_CAST_SPELL","LOCALS",6)
+	See(NearestEnemyOf(Myself))
+	!GlobalTimerNotExpired("IwTimer25","LOCALS")
+THEN
+	RESPONSE #100
+		SetGlobalTimerRandom("IwTimer25","LOCALS",10,30)
+		Spell(Myself,CLERIC_FIRE_SEEDS)
+		//Wait(2)
+		AttackReevaluate(LastSeenBy(Myself),120)
+END
+
+IF
+	HaveSpell(CLERIC_SUMMON_INSECTS)
+	GlobalLT("LOCAL_CAST_SPELL","LOCALS",7)
+	See(NearestEnemyOf(Myself))
+	!GlobalTimerNotExpired("IwTimer25","LOCALS")
+THEN
+	RESPONSE #100
+		SetGlobalTimerRandom("IwTimer25","LOCALS",10,30)
+		Spell(LastSeenBy(Myself),CLERIC_SUMMON_INSECTS)
+		Wait(2)
+END
+
+IF
+	HaveSpell(CLERIC_GREATER_COMMAND)
+	GlobalLT("LOCAL_CAST_SPELL","LOCALS",8)
+	See(NearestEnemyOf(Myself))
+	!GlobalTimerNotExpired("IwTimer25","LOCALS")
+THEN
+	RESPONSE #100
+		SetGlobalTimerRandom("IwTimer25","LOCALS",10,30)
+		Spell(LastSeenBy(Myself),CLERIC_GREATER_COMMAND)
+		Wait(2)
+END
+
+IF
+	HaveSpell(CLERIC_FIRE_SEEDS)
+	See(NearestEnemyOf(Myself))
+	!GlobalTimerNotExpired("IwTimer25","LOCALS")
+THEN
+	RESPONSE #100
+		SetGlobalTimerRandom("IwTimer25","LOCALS",10,30)
+		Spell(LastSeenBy(Myself),CLERIC_FIRE_SEEDS)
+		Wait(2)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		AttackReevaluate(LastSeenBy(Myself),75)
+END
+

@@ -1,0 +1,91 @@
+IF
+	StateCheck(Myself,STATE_PANIC)
+THEN
+	RESPONSE #100
+		RandomWalkContinuous()
+END
+
+IF
+	!GlobalTimerNotExpired("IWD_Rest","LOCALS")
+THEN
+	RESPONSE #100
+		SetGlobalTimer("IWD_Rest","LOCALS",EIGHT_HOURS)
+		ApplySpell(Myself,RESTORE_FULL_HEALTH)
+		Rest()
+END
+
+IF
+	HaveSpell(CLERIC_CURE_MEDIUM_WOUNDS)
+	!StateCheck(Myself,STATE_REALLY_DEAD)
+	HPPercentLT(Myself,75)
+	Allegiance(Myself,ENEMY)
+THEN
+	RESPONSE #100
+		Spell(Myself,CLERIC_CURE_MEDIUM_WOUNDS)
+		Wait(3)
+		Continue()
+END
+
+IF
+	HaveSpell(CLERIC_CURE_MEDIUM_WOUNDS)
+	See([ENEMY])
+	!StateCheck(LastSeenBy(Myself),STATE_REALLY_DEAD)
+	HPPercentLT(LastSeenBy(Myself),75)
+	Allegiance(Myself,ENEMY)
+THEN
+	RESPONSE #100
+		Spell(LastSeenBy(Myself),CLERIC_CURE_MEDIUM_WOUNDS)
+		Wait(3)
+		Continue()
+END
+
+IF
+	HaveSpell(CLERIC_UNHOLY_BLIGHT)
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		Spell(LastSeenBy(Myself),CLERIC_UNHOLY_BLIGHT)
+		Wait(2)
+END
+
+IF
+	HaveSpell(CLERIC_MISCAST_MAGIC)
+	OR(6)
+		See([PC.0.0.FIGHTER_MAGE_THIEF])
+		See([PC.0.0.FIGHTER_MAGE_CLERIC])
+		See([PC.0.0.FIGHTER_MAGE])
+		See([PC.0.0.CLERIC_MAGE])
+		See([PC.0.0.MAGE])
+		See([PC.0.0.SORCERER])
+	Allegiance(Myself,ENEMY)
+THEN
+	RESPONSE #100
+		Spell(LastSeenBy(Myself),CLERIC_MISCAST_MAGIC)
+		Wait(2)
+END
+
+IF
+	HaveSpell(CLERIC_BLESS)
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		Spell(Myself,CLERIC_BLESS)
+		Wait(2)
+END
+
+IF
+	HaveSpellRES("IDPR111")
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		SpellRES("IDPR111",LastSeenBy(Myself))
+		Wait(2)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		AttackReevaluate(LastSeenBy(Myself),75)
+END
+

@@ -1,0 +1,295 @@
+
+OUTER_SPRINT newline ~%WNL%%LNL%%MNL%%TAB% ~
+OUTER_SPRINT slash ~/~
+OUTER_SPRINT quote ~"~
+OUTER_SPRINT tilde "~"
+OUTER_SPRINT dog   ~@~
+
+//INCLUDE ~iwd1_eet/kit_tempus/kit_tempus.tph~
+
+ADD_JOURNAL EXISTING TITLE (@2000029) @40680
+ADD_JOURNAL EXISTING TITLE (@2000008) @5069
+
+
+/*OUTER_SPRINT ~dPln1~ ~~
+OUTER_SPRINT ~dPln2~ ~~
+ACTION_IF MOD_IS_INSTALLED ~iwd1_eet/setup-iwd1_eet.tp2~ ~60~ BEGIN
+  OUTER_SPRINT ~dPln1~ ~    IF %tilde%Global("Know_Vexing","GLOBAL",1)
+        !Global("Know_Truename","GLOBAL",1)
+        OR(2)
+          PartyHasItem("vexed")
+          PartyHasItem("vexed2")%tilde% THEN REPLY %dog%25298 DO %tilde%SetGlobal("Know_Truename","GLOBAL",1)%tilde% GOTO u84
+    IF %tilde%PartyHasItem("lxbowbm")%tilde% THEN REPLY %dog%40541 DO %tilde%TransformItem("lxbowbm","cdxbowbm")%tilde% GOTO u85~
+  OUTER_SPRINT ~dPln2~ ~  IF %tilde%%tilde% THEN BEGIN u84
+    SAY %dog%40676
+    IF %tilde%%tilde% THEN DO %tilde%StartCutScene("cdvexcut")%tilde% EXIT
+  END
+  
+  IF %tilde%%tilde% THEN BEGIN u85
+    SAY %dog%40677
+    IF %tilde%%tilde% THEN GOTO u86
+  END
+  
+  IF %tilde%%tilde% THEN BEGIN u86
+    SAY %dog%40678
+    IF %tilde%%tilde% THEN DO %tilde%StartCutScene("gnDstSlf")%tilde% EXIT
+  END~
+END */
+ACTION_IF MOD_IS_INSTALLED ~iwd1_eet/setup-iwd1_eet.tp2~ ~60~ BEGIN
+  COMPILE ~iwd1_eet/iwd_ee_res/dia1.d~
+END ELSE BEGIN
+  COMPILE ~iwd1_eet/iwd_ee_res/dia.d~
+END
+
+//COPY + ~iwd1_eet/iwd_ee_res/dia.d~ ~iwd1_eet/iwd_ee_res/dia1.d~ EVALUATE_BUFFER
+//COPY ~iwd1_eet/iwd_ee_res/dia.d~ ~iwd1_eet/iwd_ee_res~ EVALUATE_BUFFER
+
+//COMPILE ~iwd1_eet/iwd_ee_res/dia.d~
+
+
+<<<<<<<<add_itm.baf
+IF
+  !Global("ID_%itmm%_ADDED","MYAREA",1)
+THEN
+  RESPONSE #100
+    SetGlobal("ID_%itmm%_ADDED","MYAREA",1)
+    ActionOverride("%contnn%",CreateItem("%itmm%",1,1,1))
+    Continue()
+END
+>>>>>>>>
+
+OUTER_SPRINT ~itmm~ ~SW1H44~
+OUTER_SPRINT ~contnn~ ~Skeleton~
+EXTEND_BOTTOM ~ID3502.BCS~ ~add_itm.baf~ EVALUATE_BUFFER
+
+OUTER_SPRINT ~itmm~ ~OHBRAC01~
+OUTER_SPRINT ~contnn~ ~Altar Thingy~
+EXTEND_BOTTOM ~ID4004.BCS~ ~add_itm.baf~ EVALUATE_BUFFER
+
+OUTER_SPRINT ~itmm~ ~SW1H48~
+OUTER_SPRINT ~contnn~ ~Chest 1~
+EXTEND_BOTTOM ~ID4005.BCS~ ~add_itm.baf~ EVALUATE_BUFFER
+
+OUTER_SPRINT ~itmm~ ~BELTSTO~
+OUTER_SPRINT ~contnn~ ~War Chest 3~
+EXTEND_BOTTOM ~ID4005.BCS~ ~add_itm.baf~ EVALUATE_BUFFER
+
+OUTER_SPRINT ~itmm~ ~SW1H45~
+OUTER_SPRINT ~contnn~ ~Throne~
+EXTEND_BOTTOM ~ID4005.BCS~ ~add_itm.baf~ EVALUATE_BUFFER
+
+OUTER_SPRINT ~itmm~ ~OHIOUN03~
+OUTER_SPRINT ~contnn~ ~Container 3~
+EXTEND_BOTTOM ~ID5104.BCS~ ~add_itm.baf~ EVALUATE_BUFFER
+
+OUTER_SPRINT ~itmm~ ~BDWAKI1~
+OUTER_SPRINT ~contnn~ ~Container 1~
+EXTEND_BOTTOM ~ID5302.BCS~ ~add_itm.baf~ EVALUATE_BUFFER
+
+OUTER_SPRINT ~itmm~ ~BRIATH~
+OUTER_SPRINT ~contnn~ ~Container 8~
+EXTEND_BOTTOM ~ID6006.BCS~ ~add_itm.baf~ EVALUATE_BUFFER
+
+OUTER_SPRINT ~itmm~ ~SW1H48~
+OUTER_SPRINT ~contnn~ ~Altar 1~
+EXTEND_BOTTOM ~ID7004.BCS~ ~add_itm.baf~ EVALUATE_BUFFER
+
+OUTER_SPRINT ~itmm~ ~SW1H46~
+OUTER_SPRINT ~contnn~ ~Pot 5~
+EXTEND_BOTTOM ~ID9400.BCS~ ~add_itm.baf~ EVALUATE_BUFFER
+
+OUTER_SPRINT ~itmm~ ~SW1H55~
+OUTER_SPRINT ~contnn~ ~Container 3~
+EXTEND_BOTTOM ~ID9717.BCS~ ~add_itm.baf~ EVALUATE_BUFFER
+
+//OUTER_SPRINT ~itmm~ ~GODBOW~
+//OUTER_SPRINT ~contnn~ ~Container 6~
+//EXTEND_BOTTOM ~ID5001.BCS~ ~add_itm.baf~ EVALUATE_BUFFER
+
+COPY_EXISTING ~waukeen.sto~ ~override~
+  ADD_STORE_ITEM ~OHBRAC02~ #1 #1 #1 ~IDENTIFIED~ #1
+
+COPY_EXISTING ~kieran2.sto~ ~override~
+  ADD_STORE_ITEM ~OHIOUN02~ #1 #1 #1 ~IDENTIFIED~ #1
+
+COPY_EXISTING ~tiernon.sto~ ~override~
+  ADD_STORE_ITEM ~OHFULLP~  #0 #0 #0 ~IDENTIFIED~ #1
+
+COPY_EXISTING ~flozem.cre~ ~override~
+  REPLACE_CRE_ITEM ~OHFULLP~ #0 #0 #0 ~NONE~ ~ARMOR~
+
+COPY_EXISTING ~presio.cre~ ~override~
+  ADD_CRE_ITEM ~OHIOUN01~ #1 #1 #1 ~NONE~ ~HELMET~
+
+ACTION_IF FILE_EXISTS_IN_GAME ~cdpresio.cre~ BEGIN
+  COPY_EXISTING ~cdpresio.cre~ ~override~
+    ADD_CRE_ITEM ~OHIOUN01~ #1 #1 #1 ~NONE~ ~HELMET~
+END
+
+ACTION_FOR_EACH file IN GIANTFG GIANTFI2 GIANTFIR GIANTFN GIANTFRO GORG JORIL BEGIN
+  ACTION_IF FILE_EXISTS_IN_GAME ~%file%.cre~ BEGIN
+    COPY_EXISTING ~%file%.cre~ ~override~
+      ADD_CRE_ITEM ~HELM01~ #0 #0 #0 ~UNSTEALABLE&UNDROPPABLE~ ~HELMET~
+  END
+END
+
+COPY_EXISTING ~MARKETH.cre~ ~override~
+  ADD_CRE_ITEM ~sw1h47~ #1 #1 #1 ~NONE~ ~SHIELD~
+
+COPY_EXISTING ~SHELHAI.cre~ ~override~
+  ADD_CRE_ITEM ~sw1h49~ #1 #1 #1 ~NONE~ ~SHIELD~
+
+COPY ~iwd1_eet/iwd_ee_res/genek.cre~ ~override~
+  SAY 0x08 @14950
+  SAY 0x0c @14653
+
+ADD_MUSIC ~ID5103~ ~iwd1_eet/iwd_ee_res/ID5103.mus~
+MKDIR ~music/ID5103~
+COPY ~iwd1_eet/iwd_ee_res/ID5103A.acm~ ~music/ID5103~
+APPEND ~songlist.ids~ ~%ID5103% ID5103~
+
+ADD_MUSIC ~ID5104~ ~iwd1_eet/iwd_ee_res/ID5104.mus~
+MKDIR ~music/ID5104~
+COPY ~iwd1_eet/iwd_ee_res/ID5104A.acm~ ~music/ID5104~
+APPEND ~songlist.ids~ ~%ID5104% ID5104~
+
+COPY_EXISTING ~ID5103.are~ ~override~
+  READ_LONG  0xbc song_off
+  WRITE_LONG song_off       ~%ID5103%~
+  WRITE_LONG song_off + 0x4 ~%ID5103%~
+
+<<<<<<<<genek_top.baf
+IF
+	Global("CDGenek","ID6006",2)
+	OnCreation()
+THEN
+	RESPONSE #100
+		SetGlobal("CDGenek","ID6006",3)
+		ActionOverride("Genek",DestroySelf())
+		Continue()
+END
+>>>>>>>>
+
+<<<<<<<<genek_btm.baf
+IF
+  !Global("CD_Create_Genek","MYAREA",1)
+THEN
+  RESPONSE #100
+    SetGlobal("CD_Create_Genek","MYAREA",1)
+    CreateCreature("genek",[279.801],11)
+    Continue()
+END
+
+IF
+	Global("CDGenek","ID6006",0)
+	Global("CD_Create_Genek","MYAREA",1)
+THEN
+	RESPONSE #100
+		SetGlobal("CDGenek","ID6006",1)
+		ActionOverride("Genek",DropInventory())
+END
+
+IF
+	Global("CDGenek","ID6006",1)
+	PartyHasItem("genek")
+THEN
+	RESPONSE #100
+		SetGlobal("CDGenek","ID6006",2)
+END
+>>>>>>>>
+EXTEND_TOP ~ID6006.BCS~ ~genek_top.baf~
+EXTEND_BOTTOM ~ID6006.BCS~ ~genek_btm.baf~
+
+<<<<<<<<eva_mus.baf
+IF
+	Global("OHMUSIC","MYAREA",0)
+	PartyHasItem("EVAJOUR")
+	CombatCounter(0)
+THEN
+	RESPONSE #100
+		SetGlobal("OHMUSIC","MYAREA",1)
+		PlaySong(%ID5104%)
+		Continue()
+END
+>>>>>>>>
+EXTEND_BOTTOM ~ID5103.BCS~ ~eva_mus.baf~ EVALUATE_BUFFER
+EXTEND_BOTTOM ~ID6006.BCS~ ~eva_mus.baf~ EVALUATE_BUFFER
+
+COPY ~iwd1_eet/iwd_ee_res/bdwaki1.ITM~ ~override~
+  SAY 0x0c @40662
+  SAY 0x54 @40663
+
+//COPY ~iwd1_eet/iwd_ee_res/GODBOW.ITM~ ~override~
+
+COPY ~iwd1_eet/iwd_ee_res/ohbrac01.ITM~ ~override~
+  SAY 0x0c @40264
+  SAY 0x54 @40265
+
+COPY ~iwd1_eet/iwd_ee_res/ohbrac02.ITM~ ~override~
+  SAY 0x0c @40268
+  SAY 0x54 @40269
+
+COPY ~iwd1_eet/iwd_ee_res/ohioun01.ITM~ ~override~
+  SAY 0x0c @40266
+  SAY 0x54 @40267
+
+COPY ~iwd1_eet/iwd_ee_res/ohioun02.ITM~ ~override~
+  SAY 0x0c @40371
+  SAY 0x54 @40372
+
+COPY ~iwd1_eet/iwd_ee_res/ohioun03.ITM~ ~override~
+  SAY 0x0c @40369
+  SAY 0x54 @40370
+
+COPY ~iwd1_eet/iwd_ee_res/BELTSTO.ITM~ ~override~
+  SAY 0x0c @17528
+  SAY 0x54 @17533
+
+COPY ~iwd1_eet/iwd_ee_res/BRIATH.ITM~ ~override~
+  SAY 0x08 @14420
+  SAY 0x0c @18791
+  SAY 0x50 @14422
+
+COPY ~iwd1_eet/iwd_ee_res/GENEK.ITM~ ~override~
+  SAY 0x08 @14423
+  SAY 0x0c @14421
+  SAY 0x50 @14424
+
+
+COPY ~iwd1_eet/iwd_ee_res/ohfullp.ITM~  ~override~
+
+COPY ~iwd1_eet/iwd_ee_res/ibdwaki1.bam~ ~override~
+     ~iwd1_eet/iwd_ee_res/IPLAT04_.BAM~ ~override~
+     ~iwd1_eet/iwd_ee_res/ohioun01.BAM~ ~override~
+     ~iwd1_eet/iwd_ee_res/ohioun02.BAM~ ~override~
+     ~iwd1_eet/iwd_ee_res/ohioun03.BAM~ ~override~
+     ~iwd1_eet/iwd_ee_res/IBELTSTO.BAM~ ~override~
+     ~iwd1_eet/iwd_ee_res/CBELTSTO.BAM~ ~override~
+
+COPY ~iwd1_eet/iwd_ee_res/ohbrac01.EFF~ ~override~
+     ~iwd1_eet/iwd_ee_res/ohbrac02.SPL~ ~override~
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

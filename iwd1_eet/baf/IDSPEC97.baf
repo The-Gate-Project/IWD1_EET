@@ -1,0 +1,114 @@
+IF
+  Die()
+THEN
+  RESPONSE #100
+    ChangeSpecifics(Myself,0)
+    Continue()
+END
+
+IF
+  !Global("SET_SPECIFICS","LOCALS",1)
+  Race(Myself,TROLL)
+  !StateCheck(Myself,STATE_REALLY_DEAD)
+THEN
+  RESPONSE #100
+    ChangeSpecifics(Myself,TROLL_DUEL)
+    SetGlobal("SET_SPECIFICS","LOCALS",1)
+    Continue()
+END
+
+IF
+  !Global("SET_SPECIFICS","LOCALS",1)
+  Race(Myself,MYCONID)
+  !StateCheck(Myself,STATE_REALLY_DEAD)
+THEN
+  RESPONSE #100
+    ChangeSpecifics(Myself,MYCONID_DUEL)
+    SetGlobal("SET_SPECIFICS","LOCALS",1)
+    Continue()
+END
+
+IF
+  !Global("SET_SPECIFICS","LOCALS",1)
+  Race(Myself,ORC)
+  !StateCheck(Myself,STATE_REALLY_DEAD)
+THEN
+  RESPONSE #100
+    ChangeSpecifics(Myself,ORC_DUEL)
+    SetGlobal("SET_SPECIFICS","LOCALS",1)
+    Continue()
+END
+
+IF
+  !Global("SET_SPECIFICS","LOCALS",1)
+  Race(Myself,MINOTAUR)
+  !StateCheck(Myself,STATE_REALLY_DEAD)
+THEN
+  RESPONSE #100
+    ChangeSpecifics(Myself,MINOTAUR_DUEL)
+    SetGlobal("SET_SPECIFICS","LOCALS",1)
+    Continue()
+END
+
+IF
+  !Global("SET_SPECIFICS","LOCALS",1)
+  Race(Myself,WYVERN)
+  !StateCheck(Myself,STATE_REALLY_DEAD)
+THEN
+  RESPONSE #100
+    ChangeSpecifics(Myself,WYVERN_DUEL)
+    SetGlobal("SET_SPECIFICS","LOCALS",1)
+    Continue()
+END
+
+IF
+  !Global("SET_SPECIFICS","LOCALS",1)
+  Race(Myself,UMBERHULK)
+  !StateCheck(Myself,STATE_REALLY_DEAD)
+THEN
+  RESPONSE #100
+    ChangeSpecifics(Myself,UMBERHULK_DUEL)
+    SetGlobal("SET_SPECIFICS","LOCALS",1)
+    Continue()
+END
+
+IF
+  !Global("SET_SPECIFICS","LOCALS",1)
+  Race(Myself,SPECTRAL_UNDEAD)
+  !StateCheck(Myself,STATE_REALLY_DEAD)
+THEN
+  RESPONSE #100
+    ChangeSpecifics(Myself,GUARD_DUEL)
+    SetGlobal("SET_SPECIFICS","LOCALS",1)
+    Continue()
+END
+
+IF
+  !Global("SET_SPECIFICS","LOCALS",1)
+  Race(Myself,BEHOLDER)
+  !StateCheck(Myself,STATE_REALLY_DEAD)
+THEN
+  RESPONSE #100
+    ChangeSpecifics(Myself,BEHOLDER_DUEL)
+    SetGlobal("SET_SPECIFICS","LOCALS",1)
+    Continue()
+END
+
+IF
+	!Global("SetMeleeEffect","LOCALS",1)
+	AreaCheck("ID9716")
+	!Race(Myself,TROLL)
+THEN
+	RESPONSE #100
+		ApplySpellRES("ID9716FD",Myself)
+		SetGlobal("SetMeleeEffect","LOCALS",1)
+		Continue()
+END
+
+IF
+	!Global("SetMeleeEffect","LOCALS",1)
+THEN
+	RESPONSE #100
+		SetGlobal("SetMeleeEffect","LOCALS",1)
+		Continue()
+END

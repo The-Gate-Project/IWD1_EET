@@ -1,0 +1,64 @@
+IF
+	StateCheck(Myself,STATE_PANIC)
+THEN
+	RESPONSE #100
+		RandomWalkContinuous()
+END
+
+IF
+	See([PC])
+	!Range(LastSeenBy(Myself),4)
+	CanEquipRanged()
+THEN
+	RESPONSE #100
+		EquipRanged()
+		Help()
+		Attack(LastSeenBy(Myself))
+END
+
+IF
+	See([PC])
+	Range(LastSeenBy(Myself),4)
+THEN
+	RESPONSE #100
+		EquipMostDamagingMelee()
+		Help()
+		Attack(LastSeenBy(Myself))
+END
+
+IF
+	AttackedBy([GOODCUTOFF],DEFAULT)
+	!Range(LastAttackerOf(Myself),4)
+	CanEquipRanged()
+THEN
+	RESPONSE #100
+		EquipRanged()
+		Help()
+		Attack(LastAttackerOf(Myself))
+END
+
+IF
+	AttackedBy([GOODCUTOFF],DEFAULT)
+	Range(LastAttackerOf(Myself),4)
+THEN
+	RESPONSE #100
+		EquipMostDamagingMelee()
+		Help()
+		Attack(LastAttackerOf(Myself))
+END
+
+IF
+	See([PC])
+THEN
+	RESPONSE #100
+		EquipMostDamagingMelee()
+		Help()
+		Attack(LastSeenBy(Myself))
+END
+
+IF
+	Help([ANYONE])
+THEN
+	RESPONSE #100
+END
+

@@ -1,0 +1,7 @@
+IF
+  PartyHasItem("stout")
+  Global("CDStoutInGame","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("CDStoutInGame","GLOBAL",1)
+END    

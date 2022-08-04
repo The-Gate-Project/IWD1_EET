@@ -1,0 +1,62 @@
+IF
+	OnCreation()
+THEN
+	RESPONSE #100
+		SetGlobal("Internal_0","LOCALS",0)
+END
+
+IF
+	StateCheck(Myself,STATE_PANIC)
+THEN
+	RESPONSE #100
+		RandomWalkContinuous()
+END
+
+IF
+	Global("Internal_0","LOCALS",1)
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		Attack(NearestEnemyOf(Myself))
+END
+
+IF
+	Global("Internal_0","LOCALS",1)
+	Global("5001_Alert_1","MYAREA",1)
+THEN
+	RESPONSE #100
+		Attack([PC])
+END
+
+IF
+	Global("Internal_0","LOCALS",0)
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		Help()
+		DisplayStringHead(Myself,@1820)
+		SetGlobal("Internal_0","LOCALS",1)
+		Continue()
+END
+
+IF
+	Global("Internal_0","LOCALS",0)
+	AttackedBy([PC],DEFAULT)
+THEN
+	RESPONSE #100
+		Help()
+		DisplayStringHead(Myself,@1820)
+		SetGlobal("Internal_0","LOCALS",1)
+		Attack(LastAttackerOf(Myself))
+END
+
+IF
+	Global("Internal_0","LOCALS",0)
+	Global("5001_Alert_1","MYAREA",1)
+THEN
+	RESPONSE #100
+		DisplayStringHead(Myself,@1820)
+		SetGlobal("Internal_0","LOCALS",1)
+		Attack([PC])
+END
+

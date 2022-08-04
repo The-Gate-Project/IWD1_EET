@@ -1,0 +1,89 @@
+OUTER_SPRINT ~st_gm~ ~iwd1_eet/start_game~
+
+COPY ~%st_gm%/are~ ~override~
+
+COPY ~%st_gm%/ID0000.are~ ~override~
+	WRITE_SHORT 0x48 THIS | (1 << IWDAREA)
+
+COMPILE ~%st_gm%/baf~
+COMPILE ~%st_gm%/ICEWIND.baf~
+
+<<<<<<<<IDSTARTA.2DA
+2DA V1.0
+BADVAL
+                    VALUE
+START_AREA          ID0000
+START_XPOS          320
+START_YPOS          320
+START_AREA_TUTORIAL TU0015
+START_XPOS_TUTORIAL 607
+START_YPOS_TUTORIAL 660
+START_AREA_MP       ID0000
+START_XPOS_MP       320
+START_YPOS_MP       320
+START_XP            64000
+START_XP_CAP        8000000
+START_MP_XP_CAP     8000000
+
+>>>>>>>>
+COPY ~IDSTARTA.2DA~ ~override~
+	PRETTY_PRINT_2DA
+
+<<<<<<<<IDSTARTP.2DA
+2DA V1.0
+0
+                    1          2          3          4          5          6          
+START_XPOS          320        360        360        320        280        280        
+START_YPOS          240        280        360        360        360        280       
+START_XPOS_TUTORIAL 760        760        760        760        760        760        
+START_YPOS_TUTORIAL 1695       1695       1695       1695       1695       1695       
+START_XPOS_MP       320        360        360        320        280        280     
+START_YPOS_MP       240        280        360        360        360        280      
+
+>>>>>>>>
+COPY ~IDSTARTP.2DA~ ~override~
+	PRETTY_PRINT_2DA
+
+<<<<<<<<IDREPUT.2DA
+2DA             V1.0
+0
+                KILL_INNOCENT   INJURE_INNOCENT STEAL           KILL_FIST       MONEY_CHURCH    MONEY_BEGGAR    MAGIC_CHURCH    KILL_EVIL       BASE_CHURCH     KILL_WATCHER    KILL_AMNISH     KILL_GUARD
+1               0               0               0               0               0              0               0               0               0            0               0               0
+2               0             0               0               0             0              0               0               0               0            0             0             0
+3               0             0               0               0             0              0               0               0                0            0             0             0
+4               0             0               0               0             0              0               0               0               0             0             0             0
+5               0             0             0               0              0              0               0               0               0             0             0             0
+6               0             0             0               0              0              0               0               0               0             0             0             0
+7               0             0             0               0              0              0               0               0               0             0             0             0
+8               0             0             0               0              0              0               0               0                0             0             0             0
+9               0             0             0             0              0              0               0               0               0             0             0             0
+10              0             0             0             0              0              0               0               0               0             0             0             0
+11              0             0             0             0              0              0               0               0               0             0             0             0
+12              0             0             0             0              0              0               0               0               0             0             0             0
+13              0             0             0             0              0              0               0               0                0            0             0             0
+14              0             0             0             0              0              0               0               0               0            0             0             0
+15              0             0             0             0              0              0               0               0               0            0             0             0
+16              0             0             0             0              0              0               0               0               0            0             0             0
+17              0             0             0             0              0              0               0               0               0            0             0             0
+18              0             0             0             0             0               0               0               0               0               0             0             0
+19              0            0             0             0            0               0               0               0               0               0            0            0
+20              0            0             0             0            0               0               0               0               0               0            0            0
+
+>>>>>>>>
+COPY ~IDREPUT.2DA~ ~override~
+	PRETTY_PRINT_2DA
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

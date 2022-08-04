@@ -1,0 +1,27 @@
+IF
+	OnCreation()
+	!BitCheck("AREA_VAR","MYAREA",1)
+THEN
+	RESPONSE #100
+		Wait(5)
+		OpenDoor("AR5104DOOR3")
+		BitSet("AREA_VAR","MYAREA",1)
+END
+
+IF
+	Global("AREA_DOOR","MYAREA",1)
+	!GlobalTimerNotExpired("IW_AREA_TIMER1","MYAREA")
+THEN
+	RESPONSE #100
+		OpenDoor("AR5104Door3")
+		SetGlobal("AREA_DOOR","MYAREA",2)
+END
+
+IF
+	Global("AREA_DOOR","MYAREA",0)
+	!GlobalTimerNotExpired("IW_AREA_TIMER1","MYAREA")
+THEN
+	RESPONSE #100
+		SetGlobalTimer("IW_AREA_TIMER1","MYAREA",5)
+		SetGlobal("AREA_DOOR","MYAREA",1)
+END

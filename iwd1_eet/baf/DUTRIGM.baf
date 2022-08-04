@@ -1,0 +1,30 @@
+IF
+	OR(2)
+		!Global("EAST_BLOCK","GLOBAL",0)
+		!Global("WEST_BLOCK","GLOBAL",0)
+THEN
+	RESPONSE #100
+		//Deactivate(Myself)
+		TriggerActivation(Myself,FALSE)
+END
+
+IF
+	Entered([PC])
+THEN
+	RESPONSE #100
+		SetGlobal("WEST_BLOCK","GLOBAL",1)
+		SetGlobal("EAST_BLOCK","GLOBAL",1)
+		StartCutScene("DUTRAPC")
+		DisplayString(Myself,14381)
+END
+
+IF
+	Opened([PC])
+THEN
+	RESPONSE #100
+		SetGlobal("WEST_BLOCK","GLOBAL",1)
+		SetGlobal("EAST_BLOCK","GLOBAL",1)
+		StartCutScene("DUTRAPC")
+		DisplayString(Myself,14381)
+END
+

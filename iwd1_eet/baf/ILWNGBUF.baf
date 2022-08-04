@@ -1,0 +1,15 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Myself)
+		PlaySound("RDAGON12")
+		SetSequence(SEQ_SHOOT)
+		Wait(1)
+		ReallyForceSpellRES("IDIN159",NearestEnemyOf(Myself))  // INNATE_DRAGON_WING_BUFFET
+		SetSequence(SEQ_SHOOT)
+		Wait(1)
+		/* AddEndCutSceneMode */
+		EndCutSceneMode()
+END
+

@@ -1,0 +1,19 @@
+IF
+	!Global("EFDELDEF_INACTIVE","LOCALS",1)
+	DifficultyLT(HARD)
+	!StoryModeOn()
+	Global("SPRITE_IS_DEADIWD_GEM","GLOBAL",0)
+	!See([PC])
+THEN
+	RESPONSE #100
+		DestroySelf()
+END
+
+IF
+	!Global("EFDELDEF_INACTIVE","LOCALS",1)
+	True()
+THEN
+	RESPONSE #100
+		SetGlobal("EFDELDEF_INACTIVE","LOCALS",1)
+END
+

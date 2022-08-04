@@ -1,0 +1,13 @@
+IF
+	Global("SCANMTR4_TRIGGERED","GLOBAL",0)
+	Entered([PC])
+THEN
+	RESPONSE #100
+		SetGlobal("SCANMTR4_TRIGGERED","GLOBAL",1)
+		MultiPlayerSync()
+		StaticSequence("9500MS4",SEQ_AWAKE)
+		PlaySound("ID9500B")
+		Wait(4)
+		StaticSequence("9500MS4",SEQ_CAST)
+END
+

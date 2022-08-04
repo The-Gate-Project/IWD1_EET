@@ -1,0 +1,17 @@
+IF
+	!Global("SPRITE_IS_DEADXACTILE","GLOBAL",0)
+	Global("MAP_GROUP_HOSTILE1","MYAREA",0)
+THEN
+	RESPONSE #100
+		SetGlobal("MAP_GROUP_HOSTILE1","MYAREA",1)
+		Continue()
+END
+
+IF
+	OnCreation()
+THEN
+	RESPONSE #100
+		NoAction()
+		Continue()
+END
+

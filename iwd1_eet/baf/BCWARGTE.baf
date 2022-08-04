@@ -1,0 +1,60 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId("9200_WARRIOR_1")
+		Wait(0)
+		MoveToPoint([348.310])
+		FaceObject("Angaar")  // Ангаар
+END
+
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId("9200_WARRIOR_2")
+		Wait(0)
+		MoveToPoint([339.395])
+		FaceObject("Angaar")  // Ангаар
+END
+
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId("9200_WARRIOR_3")
+		Wait(1)
+		MoveToPoint([503.282])
+		FaceObject("Angaar")  // Ангаар
+END
+
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId("9200_WARRIOR_4")
+		Wait(3)
+		MoveToPoint([603.328])
+		FaceObject("Angaar")  // Ангаар
+END
+
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId("9200_WARRIOR_5")
+		Wait(1)
+		MoveToPoint([442.455])
+		FaceObject("Angaar")  // Ангаар
+END
+
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId("9200_WARRIOR_6")
+		Wait(1)
+		MoveToPoint([559.463])
+		FaceObject("Angaar")  // Ангаар
+END
+

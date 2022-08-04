@@ -1,0 +1,12 @@
+IF
+	!BitCheck("CREATURE_STATE_VAR","LOCALS",4096)
+	BitCheck("AREA_GROUP_VAR","MYAREA",1)
+THEN
+	RESPONSE #100
+		BitSet("CREATURE_STATE_VAR","LOCALS",4096)
+		Activate(Myself)
+		SetGlobal("IwIHidden","LOCALS",0)
+		EquipItemEx("TRANS2",0)
+		Continue()
+END
+

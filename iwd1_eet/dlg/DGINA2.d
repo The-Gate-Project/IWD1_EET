@@ -1,0 +1,148 @@
+BEGIN ~DGINA2~
+
+IF WEIGHT #1
+~NumTimesTalkedTo(0)~ THEN BEGIN 0
+  SAY @19440
+  IF ~~ THEN REPLY @19462 GOTO 1
+  IF ~~ THEN REPLY @19463 GOTO 2
+  IF ~~ THEN REPLY @19464 GOTO 3
+  IF ~~ THEN REPLY @19465 GOTO 4
+  IF ~~ THEN REPLY @19466 EXIT
+END
+
+IF ~~ THEN BEGIN 1
+  SAY @19442
+  IF ~~ THEN REPLY @19469 GOTO 5
+  IF ~~ THEN REPLY @19470 GOTO 4
+  IF ~~ THEN REPLY @19472 GOTO 3
+END
+
+IF ~~ THEN BEGIN 2
+  SAY @19443
+  IF ~~ THEN EXIT
+END
+
+IF ~~ THEN BEGIN 3
+  SAY @19444
+  IF ~~ THEN EXIT
+END
+
+IF ~~ THEN BEGIN 4
+  SAY @19445
+  IF ~CheckStatGT(LastTalkedToBy,12,INT)~ THEN REPLY @19473 DO ~SetGlobal("Ginafae_Eye","GLOBAL",1)~ GOTO 6
+  IF ~CheckStatLT(LastTalkedToBy,13,INT)~ THEN REPLY @19474 GOTO 7
+  IF ~~ THEN REPLY @19479 EXIT
+END
+
+IF ~~ THEN BEGIN 5
+  SAY @19446
+  IF ~~ THEN REPLY @19480 GOTO 11
+  IF ~~ THEN REPLY @19481 GOTO 6
+  IF ~~ THEN REPLY @19482 EXIT
+END
+
+IF ~~ THEN BEGIN 6
+  SAY @19447
+  IF ~~ THEN REPLY @19483 GOTO 9
+  IF ~~ THEN REPLY @19486 GOTO 10
+  IF ~~ THEN REPLY @19487 GOTO 2
+  IF ~~ THEN REPLY @19488 EXIT
+END
+
+IF ~~ THEN BEGIN 7
+  SAY @19448
+  IF ~~ THEN EXIT
+END
+
+IF ~~ THEN BEGIN 8
+  SAY @19449
+  IF ~!PartyHasItem("PNull")~ THEN REPLY @19489 EXIT
+  IF ~Global("Malavon_Curse","GLOBAL",1)
+      PartyHasItem("PNull")
+      !Global("Marketh_Gone","GLOBAL",1)~ THEN REPLY @19490 GOTO 17
+  IF ~Global("Malavon_Curse","GLOBAL",1)
+      PartyHasItem("PNull")
+      Global("Marketh_Gone","GLOBAL",1)~ THEN REPLY @19525 GOTO 18
+  IF ~~ THEN REPLY @19526 EXIT
+END
+
+IF ~~ THEN BEGIN 9
+  SAY @19450
+  IF ~~ THEN REPLY @19491 GOTO 10
+  IF ~~ THEN REPLY @19492 GOTO 2
+END
+
+IF ~~ THEN BEGIN 10
+  SAY @19451
+  IF ~~ THEN REPLY @19493 DO ~SetGlobal("Ginafae_Promise","GLOBAL",1)~ GOTO 13
+  IF ~~ THEN REPLY @19494 DO ~SetGlobal("Ginafae_Promise","GLOBAL",2)~ GOTO 16
+  IF ~~ THEN REPLY @19495 DO ~SetGlobal("Ginafae_Promise","GLOBAL",2)~ GOTO 16
+END
+
+IF ~~ THEN BEGIN 11
+  SAY @19452
+  IF ~~ THEN GOTO 12
+END
+
+IF ~~ THEN BEGIN 12
+  SAY @19453
+  IF ~!GlobalGT("Ginafae_Promise","GLOBAL",0)~ THEN REPLY @19506 GOTO 10
+  IF ~!Global("Malavon_Curse","GLOBAL",1)~ THEN REPLY @19507 DO ~SetGlobal("Malavon_Curse","GLOBAL",1)~ GOTO 8
+  IF ~~ THEN REPLY @19508 EXIT
+END
+
+IF ~~ THEN BEGIN 13
+  SAY @19454
+  IF ~~ THEN GOTO 14
+END
+
+IF ~~ THEN BEGIN 14
+  SAY @19455
+  IF ~~ THEN REPLY @19509 EXIT
+END
+
+IF WEIGHT #2
+~NumTimesTalkedToGT(0)~ THEN BEGIN 15
+  SAY @19456
+  IF ~!Global("Ginafae_Eye","GLOBAL",1)~ THEN REPLY @19515 GOTO 6
+  IF ~~ THEN REPLY @19516 GOTO 11
+  IF ~Global("Malavon_Curse","GLOBAL",1)
+      PartyHasItem("PNull")
+      !Global("Marketh_Gone","GLOBAL",1)~ THEN REPLY @19517 GOTO 17
+  IF ~Global("Malavon_Curse","GLOBAL",1)
+      PartyHasItem("PNull")
+      Global("Marketh_Gone","GLOBAL",1)~ THEN REPLY @19518 GOTO 18
+  IF ~~ THEN REPLY @19527 EXIT
+END
+
+IF ~~ THEN BEGIN 16
+  SAY @19457
+  IF ~~ THEN EXIT
+END
+
+IF ~~ THEN BEGIN 17
+  SAY @19458
+  IF ~~ THEN EXIT
+END
+
+IF ~~ THEN BEGIN 18
+  SAY @19459
+  IF ~~ THEN REPLY @19519 DO ~TakePartyItem("PNull")
+                              DestroyItem("PNull")
+                              AddXP2DA("ID1EX10A")
+                              DisplayStringNoNameDlg(LastTalkedToBy,@19537)
+                              EscapeArea()~ EXIT
+END
+
+IF WEIGHT #0
+~Global("SPRITE_IS_DEADMarketh","GLOBAL",1)~ THEN BEGIN 19
+  SAY @19460
+  IF ~~ THEN REPLY @19522 GOTO 20
+  IF ~~ THEN REPLY @19523 GOTO 20
+  IF ~~ THEN REPLY @19524 GOTO 20
+END
+
+IF ~~ THEN BEGIN 20
+  SAY @19461
+  IF ~~ THEN EXIT
+END

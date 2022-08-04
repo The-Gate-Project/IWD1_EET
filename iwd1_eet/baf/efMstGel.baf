@@ -1,0 +1,12 @@
+IF
+	!GlobalTimerNotExpired("IwTimer31","LOCALS")
+	IsActive(Myself)
+	!StateCheck(Myself,STATE_NOT_VISIBLE)
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		SetGlobalTimerRandom("IwTimer31","LOCALS",5,15)
+		ReallyForceSpellRES("IDIN182",Myself)
+		Wait(2)
+END
+

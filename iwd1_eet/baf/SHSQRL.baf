@@ -1,0 +1,70 @@
+IF
+	!IsActive(Myself)
+	!Global("SQUIRRELS_VIS","MYAREA",0)
+THEN
+	RESPONSE #100
+		Activate(Myself)
+		SetGlobal("IwIHidden","LOCALS",0)
+		Continue()
+END
+
+IF
+	Global("MAP_GROUP_HOSTILE3","MYAREA",0)
+	IsActive(Myself)
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		SetGlobal("MAP_GROUP_HOSTILE3","MYAREA",1)
+		Continue()
+END
+
+IF
+	!Allegiance(Myself,ENEMY)
+	!Global("MAP_GROUP_HOSTILE3","MYAREA",0)
+THEN
+	RESPONSE #100
+		Enemy()
+		SetGlobal("MAP_GROUP_HOSTILE3","MYAREA",1)
+		Continue()
+END
+
+IF
+	!IsActive(Myself)
+THEN
+	RESPONSE #100
+		NoAction()
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		RunAwayFromNoLeaveArea(LastSeenBy(Myself),45)
+END
+
+IF
+	AttackedBy(NearestEnemyOf(Myself),DEFAULT)
+THEN
+	RESPONSE #100
+		FaceObject(LastAttackerOf(Myself))
+		Continue()
+END
+
+IF
+	AttackedBy([GOODCUTOFF],DEFAULT)
+THEN
+	RESPONSE #100
+		BitSet("AREA_VAR","MYAREA",32)
+		Enemy()
+		SetGlobal("MAP_GROUP_HOSTILE3","MYAREA",1)
+		Continue()
+END
+
+IF
+	ActionListEmpty()
+THEN
+	RESPONSE #100
+		RandomWalk()
+		WaitRandom(0,1)
+END
+

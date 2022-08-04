@@ -1,0 +1,61 @@
+IF
+  Die()
+THEN
+  RESPONSE #100
+    ChangeSpecifics(Myself,0)
+END
+
+IF
+  !Global("SET_SPECIFICS","LOCALS",1)
+  Race(Myself,HARPY)
+THEN
+  RESPONSE #100
+    ChangeSpecifics(Myself,HARPY_DUEL)
+    SetGlobal("SET_SPECIFICS","LOCALS",1)
+    Continue()
+END
+
+IF
+  !Global("SET_SPECIFICS","LOCALS",1)
+  Race(Myself,WYVERN)
+THEN
+  RESPONSE #100
+    ChangeSpecifics(Myself,WYVERN_DUEL)
+    SetGlobal("SET_SPECIFICS","LOCALS",1)
+    Continue()
+END
+
+IF
+	!Global("CYDUEL_INACTIVE","LOCALS",1)
+	Global("HARPY_WYVERN_DUEL","MYAREA",0)
+	See([PC])
+THEN
+	RESPONSE #100
+		SetGlobal("HARPY_WYVERN_DUEL","MYAREA",1)
+END
+
+IF
+	!Global("CYDUEL_INACTIVE","LOCALS",1)
+	Global("HARPY_WYVERN_DUEL","MYAREA",0)
+	AttackedBy([GOODCUTOFF],DEFAULT)
+THEN
+	RESPONSE #100
+		SetGlobal("HARPY_WYVERN_DUEL","MYAREA",1)
+END
+
+IF
+	!Global("CYDUEL_INACTIVE","LOCALS",1)
+	Global("HARPY_WYVERN_DUEL","MYAREA",0)
+THEN
+	RESPONSE #100
+		NoAction()
+END
+
+IF
+	!Global("CYDUEL_INACTIVE","LOCALS",1)
+	!See([PC])
+THEN
+	RESPONSE #100
+		SetGlobal("CYDUEL_INACTIVE","LOCALS",1)
+END
+

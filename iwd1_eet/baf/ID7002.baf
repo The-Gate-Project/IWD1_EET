@@ -1,0 +1,9 @@
+IF
+	Global("7002_7005_DOOR_STATE","GLOBAL",1)
+	OpenState("AR7002Door1",FALSE)
+THEN
+	RESPONSE #100
+		Unlock("AR7002Door1")
+		OpenDoor("AR7002Door1")
+		Continue()
+END

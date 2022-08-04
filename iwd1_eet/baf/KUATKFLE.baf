@@ -1,0 +1,33 @@
+IF
+	!Global("KUATKFLE_INACTIVE","LOCALS",1)
+	Global("KULDAHAR_ATTACK","GLOBAL",3)
+THEN
+	RESPONSE #100
+		SetGlobal("KUATKFLE_INACTIVE","LOCALS",1)
+END
+
+IF
+	Global("KUATKFLE_INACTIVE","LOCALS",1)
+	See([0.0.ORC])
+THEN
+	RESPONSE #100
+		RunAwayFromNoLeaveArea(LastSeenBy(Myself),45)
+END
+
+IF
+	Global("KUATKFLE_INACTIVE","LOCALS",1)
+	AttackedBy([0.0.ORC],DEFAULT)
+THEN
+	RESPONSE #100
+		RunAwayFromNoLeaveArea(LastAttackerOf(Myself),45)
+END
+
+IF
+	Global("KUATKFLE_INACTIVE","LOCALS",1)
+	OnCreation()
+THEN
+	RESPONSE #100
+		NoAction()
+		Continue()
+END
+

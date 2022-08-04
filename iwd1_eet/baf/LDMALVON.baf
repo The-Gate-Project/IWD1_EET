@@ -1,0 +1,105 @@
+IF
+	!Global("LDMALVON_INACTIVE","LOCALS",1)
+	!IsActive(Myself)
+	GlobalGT("IRON_GOLEM_DEAD","GLOBAL",1)
+	GlobalGT("SPRITE_IS_DEADMUMBER_HULK","GLOBAL",3)
+	GlobalGT("SPRITE_IS_DEADMSIMULACRUM","GLOBAL",0)
+THEN
+	RESPONSE #100
+		Activate(Myself)
+		SetGlobal("IwIHidden","LOCALS",0)
+		EquipItemEx("RINGMAL",0)
+		GiveItemCreate("MIN1HP",Myself,1,1,1)
+		EquipItemEx("MIN1HP",0)
+		Continue()
+END
+
+IF
+	!Global("LDMALVON_INACTIVE","LOCALS",1)
+	HasItem("MIN1HP",Myself)
+	IsActive(Myself)
+	Allegiance(Myself,ENEMY)
+THEN
+	RESPONSE #100
+		EquipItemEx("MIN1HP",1)
+		DestroyItem("MIN1HP")
+		Continue()
+END
+
+IF
+	!Global("LDMALVON_INACTIVE","LOCALS",1)
+	Global("MAP_GROUP_HOSTILE5","MYAREA",0)
+	IsActive(Myself)
+	Allegiance(Myself,ENEMY)
+THEN
+	RESPONSE #100
+		SetGlobal("MAP_GROUP_HOSTILE5","MYAREA",1)
+		Continue()
+END
+
+IF
+	!Global("LDMALVON_INACTIVE","LOCALS",1)
+	Global("MALAVON_INIT_ATTACK","MYAREA",0)
+	IsActive(Myself)
+	Allegiance(Myself,ENEMY)
+THEN
+	RESPONSE #100
+		ForceSpellPointRES("IDWI904",[1750.445]) //WIZARD_MALAVONS_CORROSIVE_FOG
+		Wait(2)
+		SetGlobal("MALAVON_INIT_ATTACK","MYAREA",1)
+END
+
+IF
+	!Global("LDMALVON_INACTIVE","LOCALS",1)
+	!Global("MALAVON_INIT_ATTACK","MYAREA",0)
+	!HasItem("MIN1HP",Myself)
+	!Global("MAP_GROUP_HOSTILE5","MYAREA",0)
+THEN
+	RESPONSE #100
+		SetGlobal("LDMALVON_INACTIVE","LOCALS",1)
+END
+
+IF
+	!Global("LDMALVON_INACTIVE","LOCALS",1)
+	!IsActive(Myself)
+THEN
+	RESPONSE #100
+		NoAction()
+END
+
+IF
+	StateCheck(Myself,STATE_PANIC)
+THEN
+	RESPONSE #100
+		RandomWalkContinuous()
+END
+
+IF
+	!Global("LDMALVON_INACTIVE","LOCALS",1)
+	AttackedBy([GOODCUTOFF],DEFAULT)
+THEN
+	RESPONSE #100
+		Enemy()
+		Continue()
+END
+
+IF
+	!Global("LDMALVON_INACTIVE","LOCALS",1)
+	NumTimesTalkedTo(0)
+	See([PC])
+	!Allegiance(Myself,ENEMY)
+	!StateCheck(Myself,STATE_REALLY_DEAD)
+THEN
+	RESPONSE #100
+		ApplySpellRES("BDCUTSPY",Myself)
+		StartDialogNoSet([PC])
+END
+
+IF
+	!Global("LDMALVON_INACTIVE","LOCALS",1)
+	True()
+THEN
+	RESPONSE #100
+		NoAction()
+END
+

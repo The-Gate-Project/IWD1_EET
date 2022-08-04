@@ -1,0 +1,67 @@
+IF
+	StateCheck(Myself,STATE_PANIC)
+THEN
+	RESPONSE #100
+		RandomWalkContinuous()
+END
+
+IF
+	!GlobalTimerNotExpired("IWD_Rest","LOCALS")
+THEN
+	RESPONSE #100
+		SetGlobalTimer("IWD_Rest","LOCALS",EIGHT_HOURS)
+		ApplySpell(Myself,RESTORE_FULL_HEALTH)
+		Rest()
+END
+
+IF
+	HaveSpell(CLERIC_DEFENSIVE_HARMONY)
+	Allegiance(Myself,ENEMY)
+THEN
+	RESPONSE #100
+		Spell("D4YUANG1",CLERIC_CHANT)
+		Wait(2)
+		MoveToObject("D4YUANG1")
+		Spell("D4YUANG1",CLERIC_DEFENSIVE_HARMONY)
+		Continue()
+END
+
+IF
+	HaveSpell(CLERIC_HOLD_PERSON)
+	See(NearestEnemyOf(Myself))
+	!StateCheck(LastSeenBy(Myself),STATE_HELPLESS)
+THEN
+	RESPONSE #100
+		Spell(LastSeenBy(Myself),CLERIC_HOLD_PERSON)
+		Wait(2)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		AttackReevaluate(LastSeenBy(Myself),75)
+END
+
+IF
+	AttackedBy([GOODCUTOFF],DEFAULT)
+THEN
+	RESPONSE #100
+		Enemy()
+		Continue()
+END
+
+IF
+	NumTimesTalkedTo(0)
+	See([PC])
+	!Allegiance(Myself,ENEMY)
+	!StateCheck(Myself,STATE_REALLY_DEAD)
+THEN
+	RESPONSE #100
+		StartCutSceneMode()
+		ClearAllActions()
+		MultiPlayerSync()
+		ApplySpellRES("BDCUTSPY",Myself)
+		StartDialogNoSet([PC])
+END
+

@@ -1,0 +1,9 @@
+IF
+	!Global("LDIDLRNG_INACTIVE","LOCALS",1)
+	!Global("SPRITE_IS_DEADThe_Idol","GLOBAL",0)
+THEN
+	RESPONSE #100
+		DestroyItem("ANTIMAG")
+		SetGlobal("LDIDLRNG_INACTIVE","LOCALS",1)
+END
+

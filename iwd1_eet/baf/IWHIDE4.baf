@@ -1,0 +1,39 @@
+IF
+	!Global("EFDELINS_INACTIVE","LOCALS",1)
+	DifficultyLT(HARDEST)
+	!StoryModeOn()
+	!See([PC])
+THEN
+	RESPONSE #100
+		DestroySelf()
+END
+
+IF
+	!Global("EFDELINS_INACTIVE","LOCALS",1)
+	True()
+THEN
+	RESPONSE #100
+		SetGlobal("EFDELINS_INACTIVE","LOCALS",1)
+		Continue()
+END
+
+IF
+  IsActive(Myself)
+  Global("IwIHidden","LOCALS",0)
+  Global("FirstIwIHidden","LOCALS",0)
+THEN
+  RESPONSE #100
+    SetGlobal("IwIHidden","LOCALS",1)
+    SetGlobal("FirstIwIHidden","LOCALS",1)
+    Deactivate(Myself)
+  //  Continue()
+END
+
+IF
+  IsActive(Myself)
+  !Global("IwIHidden","LOCALS",0)
+THEN
+  RESPONSE #100
+    Deactivate(Myself)
+   // Continue()
+END

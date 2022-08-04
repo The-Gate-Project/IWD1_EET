@@ -1,0 +1,48 @@
+//BLOCK FROST SALAMENDER DAMEGE IN ID7001
+COPY_EXISTING ~ID7001.are~ ~override~
+	LPF fj_are_structure
+		INT_VAR
+			fj_box_left       = 522
+			fj_box_top        = 466
+			fj_box_right      = 722
+			fj_box_bottom     = 641
+			fj_cursor_idx     = 22
+			fj_flags          = 2
+			fj_loc_x          = 687
+			fj_loc_y          = 408
+			fj_vertex_0       = 533 + (577 << 16)
+			fj_vertex_1       = 647 + (522 << 16)
+			fj_vertex_2       = 652 + (482 << 16)
+			fj_vertex_3       = 682 + (466 << 16)
+			fj_vertex_4       = 722 + (503 << 16)
+			fj_vertex_5       = 716 + (550 << 16)
+			fj_vertex_6       = 670 + (593 << 16)
+			fj_vertex_7       = 566 + (641 << 16)
+			fj_vertex_8       = 522 + (595 << 16)
+		STR_VAR
+			fj_structure_type = region
+			fj_name           = Sal_Fire_Reg
+			fj_reg_script     = IdSalFir
+	END
+
+COMPILE ~iwd1_eet/_other/IdSalFir.baf~
+
+COPY ~iwd1_eet/_other/IDSALFR.spl~ ~override~
+     ~iwd1_eet/_other/IDSALF1.spl~ ~override~
+//BLOCKEND
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

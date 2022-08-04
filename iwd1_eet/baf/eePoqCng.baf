@@ -1,0 +1,21 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Myself)
+		StartCutSceneMode()
+		HideGUI()
+		MultiPlayerSync()
+		SetGlobal("END_PORTAL","GLOBAL",10)
+		SetGlobal("END_PROGRESS","GLOBAL",5)
+		ReallyForceSpell([PC],WIZARD_DISPEL_MAGIC)
+		StartCutScene("EEENDCT5")
+		ForceSpellRES("IDIN985",Myself)
+		SmallWait(4)
+		ActionOverride("CUTSPY",DestroySelf())
+		//DestroySelf()
+		EndCutSceneMode()
+		Wait(2)
+		DestroySelf()
+END
+

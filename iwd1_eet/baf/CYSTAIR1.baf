@@ -1,0 +1,40 @@
+IF
+	OpenState("AR9700_STAIR1",TRUE)
+	//Sequence("9700MS1",CAST)
+	Global("9700MS1_SEQ","MYAREA",2)
+THEN
+	RESPONSE #100
+		//Deactivate(Myself)
+		TriggerActivation(Myself,FALSE)
+END
+
+IF
+	Global("BROKEN_STAIR_STATE","MYAREA",0)
+	Entered([PC])
+THEN
+	RESPONSE #100
+		PlaySound("ID9700A")
+		//PlaySequence("9700MS1",AWAKE)
+		StaticSequence("9700MS1",SEQ_AWAKE)
+		SetGlobal("9700MS1_SEQ","MYAREA",1)
+		SetGlobal("BROKEN_STAIR_STATE","MYAREA",1)
+		Wait(2)
+		OpenDoor("AR9700_STAIR1")
+		//PlaySequence("9700MS1",CAST)
+		StaticSequence("9700MS1",SEQ_CAST)
+		SetGlobal("9700MS1_SEQ","MYAREA",2)
+		SetGlobal("BROKEN_STAIR_STATE","MYAREA",2)
+END
+
+IF
+	Global("BROKEN_STAIR_STATE","MYAREA",1)
+THEN
+	RESPONSE #100
+		OpenDoor("AR9700_STAIR1")
+		//PlaySequence("9700MS1",CAST)
+		StaticSequence("9700MS1",SEQ_CAST)
+		SetGlobal("9700MS1_SEQ","MYAREA",2)
+		SetGlobal("BROKEN_STAIR_STATE","MYAREA",2)
+		Continue()
+END
+

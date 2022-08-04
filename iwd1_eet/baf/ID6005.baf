@@ -1,0 +1,69 @@
+IF
+  Global("Forge_On","GLOBAL",0)
+  Global("Triggers_Forge_On","MYAREA",0)
+THEN
+  RESPONSE #100
+    SetGlobal("Triggers_Forge_On","MYAREA",1)
+    TriggerActivation("To6004a",TRUE)
+    TriggerActivation("To6004b",TRUE)
+    TriggerActivation("To6004c",TRUE)
+    TriggerActivation("To6013a",FALSE)
+    TriggerActivation("To6013b",FALSE)
+    TriggerActivation("To6013c",FALSE)
+    Continue()
+END
+
+IF
+  Global("Forge_On","GLOBAL",1)
+  !Global("Triggers_Forge_On","MYAREA",0)
+THEN
+  RESPONSE #100
+    SetGlobal("Triggers_Forge_On","MYAREA",0)
+    TriggerActivation("To6013a",TRUE)
+    TriggerActivation("To6013b",TRUE)
+    TriggerActivation("To6013c",TRUE)
+    TriggerActivation("To6004a",FALSE)
+    TriggerActivation("To6004b",FALSE)
+    TriggerActivation("To6004c",FALSE)
+    Continue()
+END
+
+IF
+	!Global("ID6006_VISITED","GLOBAL",0)
+	OpenState("AR6005Door1",FALSE)
+THEN
+	RESPONSE #100
+		OpenDoor("AR6005Door1")
+		SetGlobal("KILL_LICH_MINIONS","MYAREA",1)
+		SetGlobal("6005_NOXP_LICH_SPAWN","GLOBAL",0)
+		Continue()
+END
+
+IF
+	Global("KILL_LICH_MINIONS","MYAREA",0)
+	!Global("SPRITE_IS_DEADIDLICH","GLOBAL",0)
+THEN
+	RESPONSE #100
+		SetGlobal("LICH_MINIONS_FOLLOW","MYAREA",0)
+		SetGlobal("KILL_LICH_MINIONS","MYAREA",1)
+		Continue()
+END
+
+IF
+	GlobalGT("SPRITE_IS_DEADUD_LICH_SPAWN","GLOBAL",0)
+	GlobalGT("UD_LICH_SPAWN_CNT","MYAREA",0)
+THEN
+	RESPONSE #100
+		IncrementGlobal("SPRITE_IS_DEADUD_LICH_SPAWN","GLOBAL",-1)
+		IncrementGlobal("UD_LICH_SPAWN_CNT","MYAREA",-1)
+		Continue()
+END
+
+IF
+	OnCreation()
+THEN
+	RESPONSE #100
+		NoAction()
+		Continue()
+END
+

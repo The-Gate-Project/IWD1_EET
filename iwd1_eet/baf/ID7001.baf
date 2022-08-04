@@ -1,0 +1,67 @@
+IF
+	!Global("SLAVE_DEAD7000","GLOBAL",0)
+THEN
+	RESPONSE #100
+		SetGlobal("SLAVE_DEAD7000","GLOBAL",0)
+		Continue()
+END
+
+IF
+	!BitCheck("AREA_VAR","MYAREA",32)
+	!Global("SLAVES_FREE_1","GLOBAL",0)
+THEN
+	RESPONSE #100
+		BitSet("AREA_VAR","MYAREA",32)
+		Continue()
+END
+
+IF
+	!BitCheck("AREA_VAR","MYAREA",32)
+	!Global("SPRITE_IS_DEADKERISH","GLOBAL",0)
+THEN
+	RESPONSE #100
+		BitSet("AREA_VAR","MYAREA",32)
+		Continue()
+END
+
+/*VERA*/
+//@16940 @34217 @34211 @34207 @4680 @20179 @11854 @19284 @23552 @20469 @34300 @18696 @16352 @15706 @16002 @18698 @34413
+IF
+	Global("VERA_LEAVE","GLOBAL",0)
+	!Global("SPRITE_IS_DEADVERA","GLOBAL",0)
+	GlobalLT("Kill_Vera","GLOBAL",4)
+	OR(2)
+		!Global("SPRITE_IS_DEADKERISH","GLOBAL",0)
+		Allegiance("KERISH",ENEMY)
+	!Global("REMOVE_VERA_JOURNAL","MYAREA",1)
+THEN
+	RESPONSE #100
+		EraseJournalEntry(@16940)
+		EraseJournalEntry(@34217)
+		EraseJournalEntry(@34211)
+		EraseJournalEntry(@34207)
+		EraseJournalEntry(@4680)
+		EraseJournalEntry(@20179)
+		EraseJournalEntry(@11854)
+		EraseJournalEntry(@19284)
+		EraseJournalEntry(@23552)
+		EraseJournalEntry(@20469)
+		EraseJournalEntry(@34300)
+		EraseJournalEntry(@18696)
+		EraseJournalEntry(@16352)
+		EraseJournalEntry(@15706)
+		EraseJournalEntry(@16002)
+		EraseJournalEntry(@18698)
+		AddJournalEntry(@34413,QUEST_DONE)
+		SetGlobal("REMOVE_VERA_JOURNAL","MYAREA",1)
+		Continue()
+END
+
+IF
+	OnCreation()
+THEN
+	RESPONSE #100
+		NoAction()
+		Continue()
+END
+

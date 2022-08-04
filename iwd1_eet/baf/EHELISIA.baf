@@ -1,0 +1,46 @@
+IF
+  Global("SaveSavedLoc","LOCALS",0)
+THEN
+  RESPONSE #100
+    SetGlobal("SaveSavedLoc","LOCALS",1)
+    SaveObjectLocation("LOCALS","SavedLoc",Myself)
+    Continue()
+END
+
+IF
+	StateCheck(Myself,STATE_PANIC)
+THEN
+	RESPONSE #100
+		RandomWalkContinuous()
+END
+
+IF
+	Global("ELISIA_VANISH","GLOBAL",1)
+THEN
+	RESPONSE #100
+		UseItem("WAND4CA",Myself)
+		Wait(3)
+		DestroySelf()
+END
+
+IF
+	AttackedBy([ANYTHING],DEFAULT)
+THEN
+	RESPONSE #100
+		UseItem("WAND4CA",Myself)
+		SetGlobal("ELISIA_VANISH","GLOBAL",1)
+		Wait(3)
+		DestroySelf()
+END
+
+IF
+	ActionListEmpty()
+	!NearSavedLocation(Myself,"LOCALSSavedLoc",0)
+THEN
+	RESPONSE #100
+		MoveToSavedLocation("SavedLoc","LOCALS")
+END
+
+/* NearSavedLocation:
+  NearSavedLocation(Myself,"bd_default_loc",5) */
+

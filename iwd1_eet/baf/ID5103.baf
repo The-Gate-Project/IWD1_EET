@@ -1,0 +1,166 @@
+IF
+	OnCreation()
+THEN
+	RESPONSE #100
+		SetGlobal("DID_FADEOUT","MYAREA",2)
+		Continue()
+END
+
+IF
+  !Global("ID5103_VISITED","GLOBAL",1)
+THEN
+  RESPONSE #100
+    SetGlobal("ID5103_VISITED","GLOBAL",1)
+    Continue()
+END
+
+IF
+	!Global("DID_FADEOUT","MYAREA",0)
+	Global("ASTRO1","GLOBAL",0)
+	Global("ASTRO2","GLOBAL",0)
+	Global("ASTRO3","GLOBAL",0)
+	Global("ASTRO4","GLOBAL",0)
+THEN
+	RESPONSE #100
+		SetGlobal("DID_FADEOUT","MYAREA",0)
+		Continue()
+END
+
+IF
+	Global("ASTRO1","GLOBAL",1)
+	Global("DID_FADEOUT","MYAREA",0)
+THEN
+	RESPONSE #100
+		SetGlobal("DID_FADEOUT","MYAREA",1)
+		Continue()
+END
+
+IF
+	Global("ASTRO2","GLOBAL",1)
+	Global("DID_FADEOUT","MYAREA",0)
+THEN
+	RESPONSE #100
+		SetGlobal("DID_FADEOUT","MYAREA",1)
+		Continue()
+END
+
+IF
+	Global("ASTRO3","GLOBAL",1)
+	Global("DID_FADEOUT","MYAREA",0)
+THEN
+	RESPONSE #100
+		SetGlobal("DID_FADEOUT","MYAREA",1)
+		Continue()
+END
+
+IF
+	Global("ASTRO4","GLOBAL",1)
+	Global("DID_FADEOUT","MYAREA",0)
+THEN
+	RESPONSE #100
+		SetGlobal("DID_FADEOUT","MYAREA",1)
+		Continue()
+END
+
+IF
+	Global("DID_FADEOUT","MYAREA",1)
+THEN
+	RESPONSE #100
+		StartCutSceneMode()
+		ClearAllActions()
+		FadeToColor([0.0],0)
+		Wait(1)
+		Continue()
+END
+
+IF
+	!Global("ASTRO1","GLOBAL",0)
+	!Global("DID_FADEOUT","MYAREA",0)
+THEN
+	RESPONSE #100
+		SetGlobal("ASTRO1","GLOBAL",2)
+		StaticSequence("5103MS4",SEQ_AWAKE)
+		Continue()
+END
+
+IF
+	!Global("ASTRO2","GLOBAL",0)
+	!Global("DID_FADEOUT","MYAREA",0)
+THEN
+	RESPONSE #100
+		SetGlobal("ASTRO2","GLOBAL",2)
+		StaticSequence("5103MS3",SEQ_AWAKE)
+		Continue()
+END
+
+IF
+	!Global("ASTRO3","GLOBAL",0)
+	!Global("DID_FADEOUT","MYAREA",0)
+THEN
+	RESPONSE #100
+		SetGlobal("ASTRO3","GLOBAL",2)
+		StaticSequence("5103MS1",SEQ_AWAKE)
+		StaticSequence("5103MS2",SEQ_AWAKE)
+		Continue()
+END
+
+IF
+	!Global("ASTRO4","GLOBAL",0)
+	!Global("DID_FADEOUT","MYAREA",0)
+THEN
+	RESPONSE #100
+		SetGlobal("ASTRO4","GLOBAL",2)
+		StaticSequence("5103MS5",SEQ_AWAKE)
+		Continue()
+END
+
+IF
+	Global("DID_FADEOUT","MYAREA",1)
+THEN
+	RESPONSE #100
+		EndCutSceneMode()
+		FadeFromColor([0.0],0)
+		Continue()
+END
+
+IF
+	!Global("ASTRO_NO_TALK","GLOBAL",0)
+THEN
+	RESPONSE #100
+		SetGlobal("ASTRO_NO_TALK","GLOBAL",0)
+		Continue()
+END
+
+IF
+	!Global("DID_FADEOUT","MYAREA",0)
+THEN
+	RESPONSE #100
+		SetGlobal("DID_FADEOUT","MYAREA",0)
+END
+
+IF
+	Global("MAP_GROUP_HOSTILE1","MYAREA",0)
+	!Global("SPRITE_IS_DEADLARREL","GLOBAL",0)
+THEN
+	RESPONSE #100
+		SetGlobal("MAP_GROUP_HOSTILE1","MYAREA",1)
+		Continue()
+END
+
+IF
+	Global("MAP_GROUP_HOSTILE1","MYAREA",0)
+	!Global("SPRITE_IS_DEADGELARITH","GLOBAL",0)
+THEN
+	RESPONSE #100
+		SetGlobal("MAP_GROUP_HOSTILE1","MYAREA",1)
+		Continue()
+END
+
+IF
+	OnCreation()
+THEN
+	RESPONSE #100
+		NoAction()
+		Continue()
+END
+

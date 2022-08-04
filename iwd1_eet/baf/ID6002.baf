@@ -1,0 +1,57 @@
+IF
+  !Global("ID6002_VISITED","GLOBAL",1)
+THEN
+  RESPONSE #100
+    SetGlobal("ID6002_VISITED","GLOBAL",1)
+    Continue()
+END
+
+IF
+  OpenState("AR6002SecretDoor1",FALSE)
+  Global("TRIGGER_DEACTIVATED","MYAREA",0)
+THEN
+  RESPONSE #100
+    SetGlobal("TRIGGER_DEACTIVATED","MYAREA",1)
+    TriggerActivation("To6010",FALSE)
+    Continue()
+END
+
+IF
+	Global("PUZZLE_REWARD","MYAREA",0)
+	Global("PUZZLE_STAIRS_OPEN","GLOBAL",1)
+THEN
+	RESPONSE #100
+		SetGlobal("PUZZLE_REWARD","MYAREA",1)
+		AddXP2DA("ID1EX9A")
+		DisplayStringNoName(Player1,@19536)
+		Continue()
+END
+
+IF
+	OnCreation()
+THEN
+	RESPONSE #100
+		SetGlobal("UDSPAWNB","GLOBAL",0)
+		SetGlobal("UDSPAWNC","GLOBAL",0)
+		SetGlobal("UDSPAWNA","GLOBAL",1)
+	RESPONSE #100
+		SetGlobal("UDSPAWNA","GLOBAL",0)
+		SetGlobal("UDSPAWNC","GLOBAL",0)
+		SetGlobal("UDSPAWNB","GLOBAL",1)
+	RESPONSE #100
+		SetGlobal("UDSPAWNA","GLOBAL",0)
+		SetGlobal("UDSPAWNB","GLOBAL",0)
+		SetGlobal("UDSPAWNC","GLOBAL",1)
+END
+
+IF
+  OpenState("AR6002SecretDoor1",TRUE)
+  !Global("TRIGGER_ACTIVATED","MYAREA",1)
+THEN
+  RESPONSE #100
+    SetGlobal("TRIGGER_ACTIVATED","MYAREA",1)
+    TriggerActivation("To6010",TRUE)
+    AddMapNoteColor([1575.475],@100050,YELLOW)
+    Continue()
+END
+

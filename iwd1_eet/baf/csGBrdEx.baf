@@ -1,0 +1,24 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Myself)
+		StartCutSceneMode()
+		ClearAllActions()
+		MultiPlayerSync()
+		CreateVisualEffectObject("HEALH",Myself)
+		SmallWait(10)
+		//HideCreature(Myself,TRUE)
+		ApplySpellRES("IDINVIS4",Myself)
+		EndCutSceneMode()
+		DestroySelf()
+END
+
+/*IF
+	OnCreation()
+THEN
+	RESPONSE #100
+		NoAction()
+		Continue()
+END*/
+

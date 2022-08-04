@@ -1,0 +1,31 @@
+IF
+	StateCheck(Myself,STATE_PANIC)
+THEN
+	RESPONSE #100
+		RandomWalkContinuous()
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	GlobalLT("SPELL_PHASE","LOCALS",3)
+THEN
+	RESPONSE #100
+		IncrementGlobal("SPELL_PHASE","LOCALS",1)
+		SpellRES("IDWI304b",LastSeenBy(Myself))
+		Wait(2)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		AttackReevaluate(LastSeenBy(Myself),75)
+END
+
+IF
+	AttackedBy(NearestEnemyOf(Myself),DEFAULT)
+THEN
+	RESPONSE #100
+		MoveToObject(LastAttackerOf(Myself))
+END
+

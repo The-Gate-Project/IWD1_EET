@@ -1,0 +1,72 @@
+IF
+	OR(6)
+		See(Player6)
+		See(Player5)
+		See(Player4)
+		See(Player3)
+		See(Player2)
+		See(Player1)
+	!GlobalTimerNotExpired("IwTimer25","LOCALS")
+	RandomNum(6,1)
+THEN
+	RESPONSE #100
+		SetGlobalTimerRandom("IwTimer25","LOCALS",5,20)
+		ForceSpell(LastSeenBy(Myself),CLERIC_GREATER_COMMAND)
+		Wait(2)
+	RESPONSE #100
+		SetGlobalTimerRandom("IwTimer25","LOCALS",5,20)
+		ForceSpell(LastSeenBy(Myself),CLERIC_UNHOLY_BLIGHT)
+		Wait(2)
+	RESPONSE #100
+		SetGlobalTimerRandom("IwTimer25","LOCALS",5,20)
+		ForceSpell(Myself,CLERIC_SOL_SEARING_ORB)
+		Wait(1)
+		AttackOneRound(LastSeenBy(Myself))
+	RESPONSE #100
+		SetGlobalTimerRandom("IwTimer25","LOCALS",5,20)
+		ForceSpell(LastSeenBy(Myself),CLERIC_FLAME_STRIKE)
+		Wait(2)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	!StateCheck(LastSeenBy(Myself),STATE_STUNNED)
+	!GlobalTimerNotExpired("IwTimer25","LOCALS")
+THEN
+	RESPONSE #100
+		SetGlobalTimerRandom("IwTimer25","LOCALS",5,20)
+		ForceSpell(LastSeenBy(Myself),CLERIC_GREATER_COMMAND)
+		Wait(2)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	!GlobalTimerNotExpired("IwTimer25","LOCALS")
+THEN
+	RESPONSE #100
+		SetGlobalTimerRandom("IwTimer25","LOCALS",5,20)
+		ForceSpell(LastSeenBy(Myself),CLERIC_UNHOLY_BLIGHT)
+		Wait(2)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	!GlobalTimerNotExpired("IwTimer25","LOCALS")
+THEN
+	RESPONSE #100
+		SetGlobalTimerRandom("IwTimer25","LOCALS",5,20)
+		ForceSpell(LastSeenBy(Myself),CLERIC_FLAME_STRIKE)
+		Wait(2)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	!GlobalTimerNotExpired("IwTimer25","LOCALS")
+THEN
+	RESPONSE #100
+		SetGlobalTimerRandom("IwTimer25","LOCALS",5,20)
+		ForceSpell(Myself,CLERIC_SOL_SEARING_ORB)
+		Wait(1)
+		AttackOneRound(LastSeenBy(Myself))
+END
+

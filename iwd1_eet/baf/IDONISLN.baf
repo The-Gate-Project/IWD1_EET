@@ -1,0 +1,296 @@
+/*IF
+  !Global("SetInvulnerable","LOCALS",1) //IDINVUL
+THEN
+  RESPONSE #100
+    SetGlobal("SetInvulnerable","LOCALS",1)
+    ApplySpellRES("IDINVUL",Myself)
+    Continue()
+END
+
+IF
+	!Global("9300_ON_ISLAND","GLOBAL",0)
+	OR(6)
+		!Range(Player1,30)
+		!Range(Player2,30)
+		!Range(Player3,30)
+		!Range(Player4,30)
+		!Range(Player5,30)
+		!Range(Player6,30)
+THEN
+	RESPONSE #100
+		SetGlobal("9300_ON_ISLAND","GLOBAL",0)
+		Continue()
+END
+
+IF
+	Global("9300_ON_ISLAND","GLOBAL",0)
+	Range(Player1,30)
+	Range(Player2,30)
+	Range(Player3,30)
+	Range(Player4,30)
+	Range(Player5,30)
+	Range(Player6,30)
+THEN
+	RESPONSE #100
+		SetGlobal("9300_ON_ISLAND","GLOBAL",1)
+		SetGlobal("9300_RESET_TEAMS","GLOBAL",1)
+		Continue()
+END*/
+
+/*IF
+  !Global("9300_ON_ISLAND","GLOBAL",1)
+  IsOverMe(Player1)
+  OR(3)
+    IsOverMe(Player2)
+    StateCheck(Player2,STATE_REALLY_DEAD)
+    !NumInPartyGT(1)
+  OR(3)
+    IsOverMe(Player3)
+    StateCheck(Player3,STATE_REALLY_DEAD)
+    !NumInPartyGT(2)
+  OR(3)
+    IsOverMe(Player4)
+    StateCheck(Player4,STATE_REALLY_DEAD)
+    !NumInPartyGT(3)
+  OR(3)
+    IsOverMe(Player5)
+    StateCheck(Player5,STATE_REALLY_DEAD)
+    !NumInPartyGT(4)
+  OR(3)
+    IsOverMe(Player6)
+    StateCheck(Player6,STATE_REALLY_DEAD)
+    !NumInPartyGT(5)
+THEN
+  RESPONSE #100
+    SetGlobal("9300_ON_ISLAND","GLOBAL",1)
+    SetGlobal("9300_RESET_TEAMS","GLOBAL",1)
+END
+
+IF
+  !Global("9300_ON_ISLAND","GLOBAL",0)
+  !IsOverMe(Player1)
+THEN
+  RESPONSE #100
+    SetGlobal("9300_ON_ISLAND","GLOBAL",0)
+END
+
+IF
+  !Global("9300_ON_ISLAND","GLOBAL",0)
+  !IsOverMe(Player2)
+  !StateCheck(Player2,STATE_REALLY_DEAD)
+  NumInPartyGT(1)
+THEN
+  RESPONSE #100
+    SetGlobal("9300_ON_ISLAND","GLOBAL",0)
+END
+
+IF
+  !Global("9300_ON_ISLAND","GLOBAL",0)
+  !IsOverMe(Player3)
+  !StateCheck(Player3,STATE_REALLY_DEAD)
+  NumInPartyGT(2)
+THEN
+  RESPONSE #100
+    SetGlobal("9300_ON_ISLAND","GLOBAL",0)
+END
+
+IF
+  !Global("9300_ON_ISLAND","GLOBAL",0)
+  !IsOverMe(Player4)
+  !StateCheck(Player4,STATE_REALLY_DEAD)
+  NumInPartyGT(3)
+THEN
+  RESPONSE #100
+    SetGlobal("9300_ON_ISLAND","GLOBAL",0)
+END
+
+IF
+  !Global("9300_ON_ISLAND","GLOBAL",0)
+  !IsOverMe(Player5)
+  !StateCheck(Player5,STATE_REALLY_DEAD)
+  NumInPartyGT(4)
+THEN
+  RESPONSE #100
+    SetGlobal("9300_ON_ISLAND","GLOBAL",0)
+END
+
+IF
+  !Global("9300_ON_ISLAND","GLOBAL",0)
+  !IsOverMe(Player6)
+  !StateCheck(Player6,STATE_REALLY_DEAD)
+  NumInPartyGT(5)
+THEN
+  RESPONSE #100
+    SetGlobal("9300_ON_ISLAND","GLOBAL",0)
+END*/
+
+IF
+	!Global("Player1_OnIsland","GLOBAL",1)
+	IsOverMe(Player1)
+THEN
+	RESPONSE #100
+		SetGlobal("Player1_OnIsland","GLOBAL",1)
+		ActionOverride(Player1,SetGlobal("OnIsland","LOCALS",1))
+		SetGlobalTimer("P1_OnIsland","GLOBAL",THREE_ROUNDS)
+		Continue()
+END
+
+IF
+	!Global("Player1_OnIsland","GLOBAL",0)
+	!GlobalTimerExpired("P1_OnIsland","GLOBAL")
+	!IsOverMe(Player1)
+THEN
+	RESPONSE #100
+		SetGlobal("Player1_OnIsland","GLOBAL",0)
+		ActionOverride(Player1,SetGlobal("OnIsland","LOCALS",0))
+		Continue()
+END
+
+IF
+	!Global("Player2_OnIsland","GLOBAL",1)
+	OR(3)
+		IsOverMe(Player2)
+		!InParty(Player2)
+		StateCheck(Player2,STATE_REALLY_DEAD)
+THEN
+	RESPONSE #100
+		SetGlobal("Player2_OnIsland","GLOBAL",1)
+		ActionOverride(Player2,SetGlobal("OnIsland","LOCALS",1))
+		SetGlobalTimer("P2_OnIsland","GLOBAL",THREE_ROUNDS)
+		Continue()
+END
+
+IF
+	!Global("Player2_OnIsland","GLOBAL",0)
+	!GlobalTimerExpired("P2_OnIsland","GLOBAL")
+	!IsOverMe(Player2)
+	InParty(Player2)
+	!StateCheck(Player2,STATE_REALLY_DEAD)
+THEN
+	RESPONSE #100
+		SetGlobal("Player2_OnIsland","GLOBAL",0)
+		ActionOverride(Player2,SetGlobal("OnIsland","LOCALS",0))
+		Continue()
+END
+
+IF
+	!Global("Player3_OnIsland","GLOBAL",1)
+	OR(3)
+		IsOverMe(Player3)
+		!InParty(Player3)
+		StateCheck(Player3,STATE_REALLY_DEAD)
+THEN
+	RESPONSE #100
+		SetGlobal("Player3_OnIsland","GLOBAL",1)
+		ActionOverride(Player3,SetGlobal("OnIsland","LOCALS",1))
+		SetGlobalTimer("P3_OnIsland","GLOBAL",THREE_ROUNDS)
+		Continue()
+END
+
+IF
+	!Global("Player3_OnIsland","GLOBAL",0)
+	!GlobalTimerExpired("P3_OnIsland","GLOBAL")
+	!IsOverMe(Player3)
+	InParty(Player3)
+	!StateCheck(Player3,STATE_REALLY_DEAD)
+THEN
+	RESPONSE #100
+		SetGlobal("Player3_OnIsland","GLOBAL",0)
+		ActionOverride(Player3,SetGlobal("OnIsland","LOCALS",0))
+		Continue()
+END
+
+IF
+	!Global("Player4_OnIsland","GLOBAL",1)
+	OR(3)
+		IsOverMe(Player4)
+		!InParty(Player4)
+		StateCheck(Player4,STATE_REALLY_DEAD)
+THEN
+	RESPONSE #100
+		SetGlobal("Player4_OnIsland","GLOBAL",1)
+		ActionOverride(Player4,SetGlobal("OnIsland","LOCALS",1))
+		SetGlobalTimer("P4_OnIsland","GLOBAL",THREE_ROUNDS)
+		Continue()
+END
+
+IF
+	!Global("Player4_OnIsland","GLOBAL",0)
+	!GlobalTimerExpired("P4_OnIsland","GLOBAL")
+	!IsOverMe(Player4)
+	InParty(Player4)
+	!StateCheck(Player4,STATE_REALLY_DEAD)
+THEN
+	RESPONSE #100
+		SetGlobal("Player4_OnIsland","GLOBAL",0)
+		ActionOverride(Player4,SetGlobal("OnIsland","LOCALS",0))
+		Continue()
+END
+
+IF
+	!Global("Player5_OnIsland","GLOBAL",1)
+	OR(3)
+		IsOverMe(Player5)
+		!InParty(Player5)
+		StateCheck(Player5,STATE_REALLY_DEAD)
+THEN
+	RESPONSE #100
+		SetGlobal("Player5_OnIsland","GLOBAL",1)
+		ActionOverride(Player5,SetGlobal("OnIsland","LOCALS",1))
+		SetGlobalTimer("P5_OnIsland","GLOBAL",THREE_ROUNDS)
+		Continue()
+END
+
+IF
+	!Global("Player5_OnIsland","GLOBAL",0)
+	!GlobalTimerExpired("P5_OnIsland","GLOBAL")
+	!IsOverMe(Player5)
+	InParty(Player5)
+	!StateCheck(Player5,STATE_REALLY_DEAD)
+THEN
+	RESPONSE #100
+		SetGlobal("Player5_OnIsland","GLOBAL",0)
+		ActionOverride(Player5,SetGlobal("OnIsland","LOCALS",0))
+		Continue()
+END
+
+IF
+	!Global("Player6_OnIsland","GLOBAL",1)
+	OR(3)
+		IsOverMe(Player6)
+		!InParty(Player6)
+		StateCheck(Player6,STATE_REALLY_DEAD)
+THEN
+	RESPONSE #100
+		SetGlobal("Player6_OnIsland","GLOBAL",1)
+		ActionOverride(Player6,SetGlobal("OnIsland","LOCALS",1))
+		SetGlobalTimer("P6_OnIsland","GLOBAL",THREE_ROUNDS)
+		Continue()
+END
+
+IF
+	!Global("Player6_OnIsland","GLOBAL",0)
+	!GlobalTimerExpired("P6_OnIsland","GLOBAL")
+	!IsOverMe(Player6)
+	InParty(Player6)
+	!StateCheck(Player6,STATE_REALLY_DEAD)
+THEN
+	RESPONSE #100
+		SetGlobal("Player6_OnIsland","GLOBAL",0)
+		ActionOverride(Player6,SetGlobal("OnIsland","LOCALS",0))
+		Continue()
+END
+
+
+
+
+
+
+
+
+
+
+
+
+
+

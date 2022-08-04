@@ -1,0 +1,65 @@
+IF
+	!BitCheck("CREATURE_STATE_VAR","LOCALS",512)
+	GlobalGT("MIREK_QUEST","GLOBAL",3)
+THEN
+	RESPONSE #100
+		SaveLocation("LOCALS","SavedLoc",[2084.1714])
+		SetHomeLocation([2084.1714])
+		BitSet("CREATURE_STATE_VAR","LOCALS",512)
+		Continue()
+END
+
+IF
+	StateCheck(Myself,STATE_PANIC)
+THEN
+	RESPONSE #100
+		RandomWalkContinuous()
+END
+
+IF
+	!Allegiance(Myself,ENEMY)
+	AttackedBy([GOODCUTOFF],DEFAULT)
+THEN
+	RESPONSE #100
+		Enemy()
+		Continue()
+END
+
+IF
+	NumTimesTalkedTo(0)
+	See([PC])
+	!Allegiance(Myself,ENEMY)
+	!StateCheck(Myself,STATE_REALLY_DEAD)
+THEN
+	RESPONSE #100
+		ApplySpellRES("BDCUTSPY",Myself)
+		StartDialogNoSet([PC])
+END
+
+IF
+	OR(2)
+		See([ENEMY])
+		See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		RunAwayFromNoLeaveArea(LastSeenBy(Myself),45)
+END
+
+IF
+	OR(2)
+		AttackedBy([ENEMY],DEFAULT)
+		AttackedBy(NearestEnemyOf(Myself),DEFAULT)
+THEN
+	RESPONSE #100
+		RunAwayFromNoLeaveArea(LastAttackerOf(Myself),45)
+END
+
+IF
+	BitCheck("CREATURE_STATE_VAR","LOCALS",512)
+	ActionListEmpty()
+	!NearSavedLocation(Myself,"LOCALSSavedLoc",0)
+THEN
+	RESPONSE #100
+		MoveToSavedLocation("SavedLoc","LOCALS")
+END
+

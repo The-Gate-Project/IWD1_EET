@@ -1,0 +1,189 @@
+IF
+	Global("TALE_PLACED","MYAREA",1)
+	Contains("TALE1",Myself)  // История сэра Геддиана
+THEN
+	RESPONSE #100
+		SetGlobal("TALE_PLACED","MYAREA",2)
+		RemoveTraps(Myself)
+END
+
+IF
+	!Global("TALE_PLACED","MYAREA",0)
+	!Contains("TALE1",Myself)  // История сэра Геддиана
+	Contains("ZMISC16",Myself)  // Огненный агат
+	OR(2)
+		Entered([PC])
+		Opened([PC])
+THEN
+	RESPONSE #100
+		DestroyItem("ZMISC16")  // Огненный агат
+		DisplayString(Myself,14381)  // Ловушка сработала
+		ReallyForceSpell(LastTrigger,TRAP_LIGHTNING_BOLT)  // SPWI002.SPL (Разряд молнии)
+		Wait(2)
+	RESPONSE #100
+		DestroyItem("ZMISC16")  // Огненный агат
+		DisplayString(Myself,14381)  // Ловушка сработала
+		ReallyForceSpell(LastTrigger,TRAP_FIREBALL)  // SPWI001.SPL (Огненный шар)
+		Wait(2)
+END
+
+IF
+	!Global("TALE_PLACED","MYAREA",0)
+	!Contains("TALE1",Myself)  // История сэра Геддиана
+	Contains("ZMISC17",Myself)  // Огненный агат
+	OR(2)
+		Entered([PC])
+		Opened([PC])
+THEN
+	RESPONSE #100
+		DestroyItem("ZMISC17")  // Огненный агат
+		DisplayString(Myself,14381)  // Ловушка сработала
+		ReallyForceSpellRES("IDWI024",LastTrigger)  // Плоть в камень
+		Wait(2)
+	RESPONSE #100
+		DestroyItem("ZMISC17")  // Огненный агат
+		DisplayString(Myself,14381)  // Ловушка сработала
+		ReallyForceSpellRES("IDWI016",LastTrigger)  // No such index
+		Wait(2)
+END
+
+IF
+	!Global("TALE_PLACED","MYAREA",0)
+	!Contains("TALE1",Myself)  // История сэра Геддиана
+	Contains("ZMISC18",Myself)  // Огненный агат
+	OR(2)
+		Entered([PC])
+		Opened([PC])
+THEN
+	RESPONSE #100
+		DestroyItem("ZMISC18")  // Огненный агат
+		DisplayString(Myself,14381)  // Ловушка сработала
+		ReallyForceSpellRES("IDWI017",LastTrigger)  // No such index
+		Wait(2)
+	RESPONSE #100
+		DestroyItem("ZMISC18")  // Огненный агат
+		DisplayString(Myself,14381)  // Ловушка сработала
+		ReallyForceSpellRES("IDWI022",LastTrigger)  // Магический снаряд
+		Wait(2)
+END
+
+IF
+	!Global("TALE_PLACED","MYAREA",0)
+	!Contains("TALE1",Myself)  // История сэра Геддиана
+	Contains("ZMISC19",Myself)  // Огненный агат
+	OR(2)
+		Entered([PC])
+		Opened([PC])
+THEN
+	RESPONSE #100
+		DestroyItem("ZMISC19")  // Огненный агат
+		DisplayString(Myself,14381)  // Ловушка сработала
+		ReallyForceSpellRES("IDWI019",LastTrigger)  // Туман смерти
+		Wait(2)
+	RESPONSE #100
+		DestroyItem("ZMISC19")  // Огненный агат
+		DisplayString(Myself,14381)  // Ловушка сработала
+		ReallyForceSpell(LastTrigger,TRAP_CLOUDKILL)  // SPWI016.SPL (Облако-убийца)
+		Wait(2)
+	RESPONSE #100
+		DestroyItem("ZMISC19")  // Огненный агат
+		DisplayString(Myself,14381)  // Ловушка сработала
+		ReallyForceSpell(LastTrigger,TRAP_STINKING_CLOUD)  // SPWI004.SPL (Зловонное облако)
+		Wait(2)
+END
+
+IF
+	!Global("TALE_PLACED","MYAREA",0)
+	!Contains("TALE1",Myself)  // История сэра Геддиана
+	Contains("ZMISC20",Myself)  // Огненный агат
+	OR(2)
+		Entered([PC])
+		Opened([PC])
+THEN
+	RESPONSE #100
+		DestroyItem("ZMISC20")  // Огненный агат
+		DisplayString(Myself,14381)  // Ловушка сработала
+		ReallyForceSpellRES("IDWI805",LastTrigger)  // Ужасное увядание Аби-Далзима
+		Wait(2)
+	RESPONSE #100
+		DestroyItem("ZMISC20")  // Огненный агат
+		DisplayString(Myself,14381)  // Ловушка сработала
+		ReallyForceSpellRES("IDWI020",LastTrigger)  // Перст смерти
+		Wait(2)
+END
+
+IF
+	!Global("TALE_PLACED","MYAREA",0)
+	!Contains("TALE1",Myself)  // История сэра Геддиана
+	!Contains("ZMISC16",Myself)  // Огненный агат
+	!Contains("ZMISC17",Myself)  // Огненный агат
+	!Contains("ZMISC18",Myself)  // Огненный агат
+	!Contains("ZMISC19",Myself)  // Огненный агат
+	!Contains("ZMISC20",Myself)  // Огненный агат
+	Global("SET_CHEST_1","MYAREA",0)
+THEN
+	RESPONSE #100
+		SetGlobal("SET_CHEST_1","MYAREA",1)
+		CreateItem("ZMISC16",0,0,0)  // Огненный агат
+END
+
+IF
+	!Global("TALE_PLACED","MYAREA",0)
+	!Contains("TALE1",Myself)  // История сэра Геддиана
+	!Contains("ZMISC16",Myself)  // Огненный агат
+	!Contains("ZMISC17",Myself)  // Огненный агат
+	!Contains("ZMISC18",Myself)  // Огненный агат
+	!Contains("ZMISC19",Myself)  // Огненный агат
+	!Contains("ZMISC20",Myself)  // Огненный агат
+	Global("SET_CHEST_2","MYAREA",0)
+THEN
+	RESPONSE #100
+		SetGlobal("SET_CHEST_2","MYAREA",1)
+		CreateItem("ZMISC17",0,0,0)  // Огненный агат
+END
+
+IF
+	!Global("TALE_PLACED","MYAREA",0)
+	!Contains("TALE1",Myself)  // История сэра Геддиана
+	!Contains("ZMISC16",Myself)  // Огненный агат
+	!Contains("ZMISC17",Myself)  // Огненный агат
+	!Contains("ZMISC18",Myself)  // Огненный агат
+	!Contains("ZMISC19",Myself)  // Огненный агат
+	!Contains("ZMISC20",Myself)  // Огненный агат
+	Global("SET_CHEST_3","MYAREA",0)
+THEN
+	RESPONSE #100
+		SetGlobal("SET_CHEST_3","MYAREA",1)
+		CreateItem("ZMISC18",0,0,0)  // Огненный агат
+END
+
+IF
+	!Global("TALE_PLACED","MYAREA",0)
+	!Contains("TALE1",Myself)  // История сэра Геддиана
+	!Contains("ZMISC16",Myself)  // Огненный агат
+	!Contains("ZMISC17",Myself)  // Огненный агат
+	!Contains("ZMISC18",Myself)  // Огненный агат
+	!Contains("ZMISC19",Myself)  // Огненный агат
+	!Contains("ZMISC20",Myself)  // Огненный агат
+	Global("SET_CHEST_4","MYAREA",0)
+THEN
+	RESPONSE #100
+		SetGlobal("SET_CHEST_4","MYAREA",1)
+		CreateItem("ZMISC19",0,0,0)  // Огненный агат
+END
+
+IF
+	!Global("TALE_PLACED","MYAREA",0)
+	!Contains("TALE1",Myself)  // История сэра Геддиана
+	!Contains("ZMISC16",Myself)  // Огненный агат
+	!Contains("ZMISC17",Myself)  // Огненный агат
+	!Contains("ZMISC18",Myself)  // Огненный агат
+	!Contains("ZMISC19",Myself)  // Огненный агат
+	!Contains("ZMISC20",Myself)  // Огненный агат
+	Global("SET_CHEST_5","MYAREA",0)
+THEN
+	RESPONSE #100
+		SetGlobal("SET_CHEST_5","MYAREA",1)
+		CreateItem("ZMISC20",0,0,0)  // Огненный агат
+END
+

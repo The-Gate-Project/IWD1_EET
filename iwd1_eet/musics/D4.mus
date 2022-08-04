@@ -1,0 +1,19 @@
+B4
+17
+A1             @TAG ENDA1
+A2             @TAG ENDA2
+B1             @TAG ENDA2
+B2             @TAG ENDA2
+B3             @TAG ENDA2
+B4             @TAG ENDA2
+C1             @TAG ENDA2
+C2             @TAG ENDA2
+C3             @TAG ENDA2
+C4             @TAG ENDA2
+D1             @TAG ENDA2
+D2             @TAG ENDA2
+D3             @TAG ENDA2
+E1             @TAG ENDA2
+E2             @TAG ENDB1
+E3             @TAG ENDA2
+E4     B4 B1   @TAG ENDA2

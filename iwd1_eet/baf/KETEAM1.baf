@@ -1,0 +1,19 @@
+IF
+	!Global("KETEAM1_INACTIVE","LOCALS",1)
+	!IsActive(Myself)
+	!Global("MAP_GROUP_HOSTILE1","MYAREA",0)
+THEN
+	RESPONSE #100
+		Activate(Myself)
+		SetGlobal("IwIHidden","LOCALS",0)
+		SetGlobal("KETEAM1_INACTIVE","LOCALS",1)
+END
+
+IF
+	!Global("KETEAM1_INACTIVE","LOCALS",1)
+	!IsActive(Myself)
+THEN
+	RESPONSE #100
+		NoAction()
+END
+

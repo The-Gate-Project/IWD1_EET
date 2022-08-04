@@ -1,0 +1,501 @@
+BEGIN ~DTOWNGEN~
+
+IF ~~ THEN BEGIN 0
+  SAY @365
+  IF ~Global("Easthaven_Rumor","GLOBAL",0)~ THEN REPLY @366 DO ~IncrementGlobal("Easthaven_Rumor","GLOBAL",1)~ GOTO 32
+  IF ~Global("Easthaven_Rumor","GLOBAL",1)~ THEN REPLY @367 DO ~IncrementGlobal("Easthaven_Rumor","GLOBAL",1)~ GOTO 33
+  IF ~Global("Easthaven_Rumor","GLOBAL",2)~ THEN REPLY @368 DO ~IncrementGlobal("Easthaven_Rumor","GLOBAL",1)~ GOTO 34
+  IF ~Global("Easthaven_Rumor","GLOBAL",3)~ THEN REPLY @369 DO ~IncrementGlobal("Easthaven_Rumor","GLOBAL",1)~ GOTO 35
+  IF ~Global("Easthaven_Rumor","GLOBAL",4)~ THEN REPLY @370 DO ~IncrementGlobal("Easthaven_Rumor","GLOBAL",1)~ GOTO 36
+  IF ~Global("Easthaven_Rumor","GLOBAL",5)~ THEN REPLY @371 DO ~IncrementGlobal("Easthaven_Rumor","GLOBAL",1)~ GOTO 37
+  IF ~Global("Easthaven_Rumor","GLOBAL",6)~ THEN REPLY @372 DO ~IncrementGlobal("Easthaven_Rumor","GLOBAL",1)~ GOTO 40
+  IF ~Global("Easthaven_Rumor","GLOBAL",7)~ THEN REPLY @373 DO ~SetGlobal("Easthaven_Rumor","GLOBAL",0)~ GOTO 41
+  IF ~~ THEN REPLY @374 GOTO 29
+  IF ~~ THEN REPLY @375 GOTO 23
+  IF ~~ THEN REPLY @376 EXIT
+END
+
+IF WEIGHT #4
+~Race(LastTalkedToBy,DWARF)
+ NumTimesTalkedTo(0)
+ RandomNum(3,1)~ THEN BEGIN 1
+  SAY @377
+  IF ~Global("Know_Hildreth","GLOBAL",0)~ THEN REPLY @378 GOTO 2
+  IF ~Global("Know_Hildreth","GLOBAL",1)~ THEN REPLY @379 GOTO 3
+  IF ~~ THEN REPLY @380 GOTO 3
+  IF ~~ THEN REPLY @381 GOTO 0
+  IF ~~ THEN REPLY @376 EXIT
+END
+
+IF ~~ THEN BEGIN 2
+  SAY @383
+  IF ~~ THEN REPLY @384 GOTO 0
+  IF ~~ THEN REPLY @385 GOTO 3
+  IF ~Global("EH_Race_Hostile","GLOBAL",0)
+      Gender(LastTalkedToBy,FEMALE)~ THEN REPLY @6518 GOTO 15
+  IF ~Global("EH_Race_Hostile","GLOBAL",1)
+      Gender(LastTalkedToBy,FEMALE)~ THEN REPLY @6518 GOTO 16
+  IF ~Global("EH_Race_Hostile","GLOBAL",0)
+      Gender(LastTalkedToBy,MALE)~ THEN REPLY @6520 GOTO 15
+  IF ~Global("EH_Race_Hostile","GLOBAL",1)
+      Gender(LastTalkedToBy,MALE)~ THEN REPLY @6520 GOTO 16
+  IF ~~ THEN REPLY @376 EXIT
+END
+
+IF ~~ THEN BEGIN 3
+  SAY @6528
+  IF ~~ THEN REPLY @6529 GOTO 4
+  IF ~~ THEN REPLY @6530 GOTO 0
+  IF ~~ THEN REPLY @376 EXIT
+END
+
+IF ~~ THEN BEGIN 4
+  SAY @6532
+  IF ~Global("Dwarf_Cash","GLOBAL",0)~ THEN REPLY @6604 DO ~SetGlobal("Dwarf_Cash","GLOBAL",1)
+                                                            GiveItemCreate("Misc22",LastTalkedToBy,0,0,0)~ GOTO 5
+  IF ~~ THEN REPLY @6611 GOTO 0
+  IF ~~ THEN REPLY @376 EXIT
+END
+
+IF ~~ THEN BEGIN 5
+  SAY @6825
+  IF ~~ THEN REPLY @382 GOTO 0
+  IF ~~ THEN REPLY @376 EXIT
+END
+
+IF WEIGHT #7
+~Race(LastTalkedToBy,ELF)
+ NumTimesTalkedTo(0)
+ RandomNum(3,1)~ THEN BEGIN 6
+  SAY @6879
+  IF ~~ THEN REPLY @6880 GOTO 7
+  IF ~Global("Erevain_Met","GLOBAL",1)~ THEN REPLY @6885 GOTO 8
+  IF ~~ THEN REPLY @6886 GOTO 0
+  IF ~~ THEN REPLY @6887 GOTO 9
+  IF ~~ THEN REPLY @376 EXIT
+END
+
+IF ~~ THEN BEGIN 7
+  SAY @6894
+  IF ~Global("Erevain_Met","GLOBAL",1)~ THEN REPLY @6902 GOTO 9
+  IF ~~ THEN REPLY @6903 GOTO 0
+  IF ~~ THEN REPLY @376 EXIT
+END
+
+IF ~~ THEN BEGIN 8
+  SAY @6923
+  IF ~~ THEN REPLY @6926 GOTO 9
+  IF ~~ THEN REPLY @6932 GOTO 0
+  IF ~~ THEN REPLY @376 EXIT
+END
+
+IF ~~ THEN BEGIN 9
+  SAY @6936
+  IF ~~ THEN REPLY @6940 GOTO 0
+  IF ~~ THEN REPLY @6941 EXIT
+END
+
+IF WEIGHT #10
+~Race(LastTalkedToBy,GNOME)
+ NumTimesTalkedTo(0)
+ Global("Spoke_Gnome","GLOBAL",0)~ THEN BEGIN 10
+  SAY @6946
+  IF ~~ THEN REPLY @6947 DO ~SetGlobal("Spoke_Gnome","GLOBAL",1)~ GOTO 11
+  IF ~~ THEN REPLY @6948 GOTO 0
+  IF ~~ THEN REPLY @376 EXIT
+END
+
+IF ~~ THEN BEGIN 11
+  SAY @6950
+  IF ~~ THEN REPLY @6957 GOTO 12
+  IF ~~ THEN REPLY @6979 GOTO 0
+  IF ~Global("EH_Race_Hostile","GLOBAL",0)~ THEN REPLY @6980 GOTO 15
+  IF ~Global("EH_Race_Hostile","GLOBAL",1)~ THEN REPLY @6980 GOTO 16
+  IF ~~ THEN REPLY @376 EXIT
+END
+
+IF ~~ THEN BEGIN 12
+  SAY @6987
+  IF ~~ THEN REPLY @6988 GOTO 0
+  IF ~~ THEN REPLY @376 EXIT
+END
+
+IF WEIGHT #11
+~Race(LastTalkedToBy,GNOME)
+ NumTimesTalkedTo(0)
+ Global("Spoke_Gnome","GLOBAL",1)~ THEN BEGIN 13
+  SAY @6992
+  IF ~Global("EH_Race_Hostile","GLOBAL",0)~ THEN REPLY @6995 GOTO 15
+  IF ~Global("EH_Race_Hostile","GLOBAL",1)~ THEN REPLY @6995 GOTO 16
+  IF ~~ THEN REPLY @6948 GOTO 0
+  IF ~~ THEN REPLY @376 EXIT
+END
+
+IF WEIGHT #12
+~Race(LastTalkedToBy,HALFLING)
+ NumTimesTalkedTo(0)~ THEN BEGIN 14
+  SAY @7043
+  IF ~Global("Halfling_Aldwin","GLOBAL",0)~ THEN REPLY @7064 DO ~SetGlobal("Halfling_Aldwin","GLOBAL",1)~ GOTO 17
+  IF ~Global("Halfling_Aldwin","GLOBAL",1)~ THEN REPLY @7065 GOTO 17
+  IF ~~ THEN REPLY @7066 GOTO 0
+  IF ~Global("EH_Race_Hostile","GLOBAL",0)~ THEN REPLY @7069 GOTO 15
+  IF ~Global("EH_Race_Hostile","GLOBAL",1)~ THEN REPLY @7069 GOTO 16
+  IF ~~ THEN REPLY @376 EXIT
+END
+
+IF ~~ THEN BEGIN 15
+  SAY @7095
+  IF ~~ THEN REPLY @7231 DO ~SetGlobal("EH_Race_Hostile","GLOBAL",1)
+                             GiveItemCreate("Fish",LastTalkedToBy,0,0,0)~ GOTO 0
+  IF ~~ THEN REPLY @7232 EXIT
+END
+
+IF ~~ THEN BEGIN 16
+  SAY @7233
+  IF ~~ THEN REPLY @7265 GOTO 0
+  IF ~~ THEN REPLY @7274 EXIT
+END
+
+IF ~~ THEN BEGIN 17
+  SAY @7275
+  IF ~~ THEN REPLY @7276 GOTO 18
+  IF ~~ THEN REPLY @7066 GOTO 0
+  IF ~Global("EH_Race_Hostile","GLOBAL",0)~ THEN REPLY @7278 GOTO 15
+  IF ~Global("EH_Race_Hostile","GLOBAL",1)~ THEN REPLY @7278 GOTO 16
+  IF ~~ THEN REPLY @376 EXIT
+END
+
+IF ~~ THEN BEGIN 18
+  SAY @7281
+  IF ~~ THEN REPLY @7399 GOTO 0
+  IF ~~ THEN REPLY @376 EXIT
+END
+
+IF WEIGHT #13
+~Class(LastTalkedToBy,BARD_ALL)
+ NumTimesTalkedTo(0)~ THEN BEGIN 19
+  SAY @7401
+  IF ~Global("Bard_Easthaven","GLOBAL",0)~ THEN REPLY @7402 DO ~SetGlobal("Bard_Easthaven","GLOBAL",1)~ GOTO 20
+  IF ~~ THEN REPLY @7403 GOTO 0
+  IF ~~ THEN REPLY @376 EXIT
+END
+
+IF ~~ THEN BEGIN 20
+  SAY @7408
+  IF ~~ THEN REPLY @7410 DO ~GiveItemCreate("Misc27",LastTalkedToBy,0,0,0)~ GOTO 21
+END
+
+IF ~~ THEN BEGIN 21
+  SAY @7411
+  IF ~~ THEN REPLY @7412 GOTO 0
+  IF ~~ THEN REPLY @376 EXIT
+END
+
+IF WEIGHT #14
+~NumTimesTalkedTo(0)
+ RandomNum(3,1)~ THEN BEGIN 22
+  SAY @7416
+  IF ~~ THEN REPLY @7417 GOTO 0
+  IF ~~ THEN REPLY @7418 GOTO 0
+  IF ~~ THEN REPLY @376 EXIT
+END
+
+IF ~~ THEN BEGIN 23
+  SAY @7420
+  IF ~~ THEN REPLY @7421 GOTO 24
+  IF ~~ THEN REPLY @7423 GOTO 0
+  IF ~~ THEN REPLY @376 EXIT
+END
+
+IF ~~ THEN BEGIN 24
+  SAY @7425
+  IF ~~ THEN REPLY @7427 DO ~SetGlobal("Know_Messenger","GLOBAL",1)~ GOTO 25
+  IF ~~ THEN REPLY @7423 GOTO 0
+  IF ~~ THEN REPLY @376 EXIT
+END
+
+IF ~~ THEN BEGIN 25
+  SAY @7430
+  IF ~~ THEN REPLY @7432 GOTO 26
+  IF ~~ THEN REPLY @7433 GOTO 27
+  IF ~~ THEN REPLY @7434 GOTO 0
+  IF ~~ THEN REPLY @376 EXIT
+END
+
+IF ~~ THEN BEGIN 26
+  SAY @7436
+  IF ~~ THEN REPLY @7433 GOTO 27
+  IF ~~ THEN REPLY @7438 GOTO 0
+  IF ~~ THEN REPLY @376 EXIT
+END
+
+IF ~~ THEN BEGIN 27
+  SAY @7440
+  IF ~~ THEN REPLY @7442 GOTO 28
+  IF ~~ THEN REPLY @7434 GOTO 0
+  IF ~~ THEN REPLY @376 EXIT
+END
+
+IF ~~ THEN BEGIN 28
+  SAY @7447
+  IF ~~ THEN REPLY @7449 GOTO 0
+  IF ~~ THEN REPLY @376 EXIT
+END
+
+IF ~~ THEN BEGIN 29
+  SAY @7453
+  IF ~~ THEN REPLY @7454 DO ~SetGlobal("Know_Messenger","GLOBAL",1)~ GOTO 30
+  IF ~~ THEN REPLY @7459 GOTO 0
+  IF ~~ THEN REPLY @376 EXIT
+END
+
+IF ~~ THEN BEGIN 30
+  SAY @7461
+  IF ~~ THEN REPLY @7462 GOTO 31
+  IF ~~ THEN REPLY @7463 GOTO 0
+  IF ~~ THEN REPLY @376 EXIT
+END
+
+IF ~~ THEN BEGIN 31
+  SAY @7465
+  IF ~~ THEN REPLY @7466 GOTO 0
+  IF ~~ THEN REPLY @376 EXIT
+END
+
+IF ~~ THEN BEGIN 32
+  SAY @7470
+  IF ~~ THEN REPLY @7434 GOTO 0
+  IF ~~ THEN REPLY @376 EXIT
+END
+
+IF ~~ THEN BEGIN 33
+  SAY @7473
+  IF ~~ THEN REPLY @7449 GOTO 0
+  IF ~~ THEN REPLY @376 EXIT
+END
+
+IF ~~ THEN BEGIN 34
+  SAY @7475
+  IF ~~ THEN REPLY @7449 GOTO 0
+  IF ~~ THEN REPLY @376 EXIT
+END
+
+IF ~~ THEN BEGIN 35
+  SAY @7477
+  IF ~~ THEN REPLY @7449 GOTO 0
+  IF ~~ THEN REPLY @376 EXIT
+END
+
+IF ~~ THEN BEGIN 36
+  SAY @7482
+  IF ~~ THEN REPLY @7449 GOTO 0
+  IF ~~ THEN REPLY @376 EXIT
+END
+
+IF ~~ THEN BEGIN 37
+  SAY @7485
+  IF ~~ THEN REPLY @7486 GOTO 38
+  IF ~GlobalGT("Siren_Quest","GLOBAL",1)~ THEN REPLY @7487 GOTO 39
+  IF ~~ THEN REPLY @7449 GOTO 0
+  IF ~~ THEN REPLY @376 EXIT
+END
+
+IF ~~ THEN BEGIN 38
+  SAY @7492
+  IF ~GlobalGT("Siren_Quest","GLOBAL",1)~ THEN REPLY @7487 GOTO 39
+  IF ~~ THEN REPLY @7449 GOTO 0
+  IF ~~ THEN REPLY @376 EXIT
+END
+
+IF ~~ THEN BEGIN 39
+  SAY @7496
+  IF ~~ THEN REPLY @7449 GOTO 0
+  IF ~~ THEN REPLY @376 EXIT
+END
+
+IF ~~ THEN BEGIN 40
+  SAY @7499
+  IF ~GlobalGT("Siren_Quest","GLOBAL",1)~ THEN REPLY @7500 GOTO 39
+  IF ~~ THEN REPLY @7449 GOTO 0
+  IF ~~ THEN REPLY @376 EXIT
+END
+
+IF ~~ THEN BEGIN 41
+  SAY @7503
+  IF ~~ THEN REPLY @7449 GOTO 0
+  IF ~~ THEN REPLY @376 EXIT
+END
+
+IF WEIGHT #17
+~NumTimesTalkedToGT(0)~ THEN BEGIN 42
+  SAY @7506
+  IF ~~ THEN REPLY @7507 GOTO 0
+  IF ~~ THEN REPLY @376 EXIT
+END
+
+IF WEIGHT #1
+~GlobalGT("Know_Balance","GLOBAL",0)
+ RandomNum(3,1)~ THEN BEGIN 43
+  SAY @17388
+  IF ~~ THEN REPLY @17429 GOTO 46
+  IF ~~ THEN REPLY @17430 GOTO 50
+END
+
+IF WEIGHT #2
+~GlobalGT("Know_Balance","GLOBAL",0)
+ RandomNum(3,2)~ THEN BEGIN 44
+  SAY @17431
+  IF ~~ THEN REPLY @17432 GOTO 46
+  IF ~~ THEN REPLY @17430 GOTO 50
+END
+
+IF WEIGHT #3
+~GlobalGT("Know_Balance","GLOBAL",0)
+ RandomNumLT(3,4)~ THEN BEGIN 45
+  SAY @17434
+  IF ~~ THEN REPLY @17435 GOTO 46
+  IF ~~ THEN REPLY @17430 GOTO 50
+END
+
+IF ~~ THEN BEGIN 46
+  SAY @17437
+  IF ~~ THEN GOTO 47
+END
+
+IF ~~ THEN BEGIN 47
+  SAY @17438
+  IF ~~ THEN REPLY @17439 GOTO 48
+  IF ~~ THEN REPLY @17430 GOTO 50
+END
+
+IF ~~ THEN BEGIN 48
+  SAY @17441
+  IF ~Global("Freed_Everard","GLOBAL",0)~ THEN REPLY @17442 GOTO 49
+  IF ~~ THEN REPLY @17430 EXIT
+END
+
+IF ~~ THEN BEGIN 49
+  SAY @17443
+  IF ~~ THEN REPLY @17444 GOTO 50
+END
+
+IF ~~ THEN BEGIN 50
+  SAY @17445
+  IF ~Global("Easthaven_Help","GLOBAL",0)~ THEN REPLY @17446 DO ~GiveItemCreate("Potn42",LastTalkedToBy,1,0,0)
+                                                                 GiveItemCreate("Potn17",LastTalkedToBy,3,0,0)
+                                                                 GiveItemCreate("Potn07", LastTalkedToBy,1,0,0)
+                                                                 SetGlobal("Easthaven_Help","GLOBAL",1)~ GOTO 51
+  IF ~Global("Easthaven_Help","GLOBAL",1)~ THEN REPLY @288 EXIT
+END
+
+IF ~~ THEN BEGIN 51
+  SAY @17448
+  IF ~~ THEN REPLY @8242 EXIT
+END
+
+IF WEIGHT #0
+~GlobalGT("Know_Balance","GLOBAL",0)
+ Global("Dwarven_Expedition_Finished","GLOBAL",0)
+ Global("Dwarf_Cash","GLOBAL",1)~ THEN BEGIN 52
+  SAY @17449
+  IF ~~ THEN REPLY @17450 DO ~SetGlobal("Dwarven_Expedition_Finished","GLOBAL",1)~ GOTO 53
+END
+
+IF ~~ THEN BEGIN 53
+  SAY @17451
+  IF ~~ THEN REPLY @17452 GOTO 54
+  IF ~PartyGoldGT(499)~ THEN REPLY @17453 DO ~TakePartyGold(500)~ GOTO 57
+  IF ~PartyGoldLT(500)~ THEN REPLY @17454 GOTO 54
+  IF ~~ THEN REPLY @17455 GOTO 50
+END
+
+IF ~~ THEN BEGIN 54
+  SAY @17456
+  IF ~~ THEN REPLY @17457 DO ~GiveItemCreate("Bow05",LastTalkedToBy,0,0,0)
+                              GiveItemCreate("Potn22",LastTalkedToBy,1,0,0)
+                              GiveItemCreate("Potn11",LastTalkedToBy,1,0,0)
+                              GiveItemCreate("Arow10",LastTalkedToBy,20,0,0)~ GOTO 55
+  IF ~~ THEN REPLY @17458 EXIT
+END
+
+IF ~~ THEN BEGIN 55
+  SAY @17459
+  IF ~~ THEN REPLY @17460 GOTO 56
+  IF ~~ THEN REPLY @17461 EXIT
+END
+
+IF ~~ THEN BEGIN 56
+  SAY @17462
+  IF ~~ THEN REPLY @17463 EXIT
+END
+
+IF ~~ THEN BEGIN 57
+  SAY @17464
+  IF ~~ THEN REPLY @17465 GOTO 46
+  IF ~~ THEN REPLY @17466 EXIT
+END
+
+IF WEIGHT #5
+~Race(LastTalkedToBy,DWARF)
+ NumTimesTalkedTo(0)
+ RandomNum(3,2)~ THEN BEGIN 58
+  SAY @17467
+  IF ~Global("Know_Hildreth","GLOBAL",0)~ THEN REPLY @378 GOTO 2
+  IF ~Global("Know_Hildreth","GLOBAL",1)~ THEN REPLY @379 GOTO 3
+  IF ~~ THEN REPLY @380 GOTO 3
+  IF ~~ THEN REPLY @381 GOTO 0
+  IF ~~ THEN REPLY @376 EXIT
+END
+
+IF WEIGHT #6
+~Race(LastTalkedToBy,DWARF)
+ NumTimesTalkedTo(0)
+ RandomNumLT(3,4)~ THEN BEGIN 59
+  SAY @17473
+  IF ~Global("Know_Hildreth","GLOBAL",0)~ THEN REPLY @378 GOTO 2
+  IF ~Global("Know_Hildreth","GLOBAL",1)~ THEN REPLY @379 GOTO 3
+  IF ~~ THEN REPLY @380 GOTO 3
+  IF ~~ THEN REPLY @381 GOTO 0
+  IF ~~ THEN REPLY @376 EXIT
+END
+
+IF WEIGHT #8
+~Race(LastTalkedToBy,ELF)
+ NumTimesTalkedTo(0)
+ RandomNum(3,2)~ THEN BEGIN 60
+  SAY @17479
+  IF ~~ THEN REPLY @17480 GOTO 7
+  IF ~Global("Erevain_Met","GLOBAL",1)~ THEN REPLY @17481 GOTO 8
+  IF ~~ THEN REPLY @17482 GOTO 0
+  IF ~~ THEN REPLY @376 EXIT
+END
+
+IF WEIGHT #9
+~Race(LastTalkedToBy,ELF)
+ NumTimesTalkedTo(0)
+ RandomNumLT(3,4)~ THEN BEGIN 61
+  SAY @17484
+  IF ~~ THEN REPLY @17485 GOTO 7
+  IF ~Global("Erevain_Met","GLOBAL",1)~ THEN REPLY @17481 GOTO 8
+  IF ~~ THEN REPLY @17482 GOTO 0
+  IF ~~ THEN REPLY @6887 GOTO 9
+  IF ~~ THEN REPLY @376 EXIT
+END
+
+IF WEIGHT #15
+~NumTimesTalkedTo(0)
+ RandomNum(3,2)~ THEN BEGIN 62
+  SAY @17492
+  IF ~~ THEN REPLY @7417 GOTO 0
+  IF ~~ THEN REPLY @7418 GOTO 0
+  IF ~~ THEN REPLY @376 EXIT
+END
+
+IF WEIGHT #16
+~NumTimesTalkedTo(0)
+ RandomNumLT(3,4)~ THEN BEGIN 63
+  SAY @17497
+  IF ~~ THEN REPLY @7417 GOTO 0
+  IF ~~ THEN REPLY @7418 GOTO 0
+  IF ~~ THEN REPLY @376 EXIT
+END

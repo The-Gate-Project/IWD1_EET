@@ -1,0 +1,1088 @@
+IF
+	!HaveAnySpells()
+THEN
+	RESPONSE #100
+		ChangeAIScript("EFATKMEL",RACE)
+END
+
+IF
+	!GlobalTimerNotExpired("IWD_Rest","LOCALS")
+THEN
+	RESPONSE #100
+		SetGlobalTimer("IWD_Rest","LOCALS",EIGHT_HOURS)
+		ApplySpell(Myself,RESTORE_FULL_HEALTH)
+		Rest()
+END
+
+IF
+	!Global("CASTING_FAILED","LOCALS",0)
+THEN
+	RESPONSE #100
+		SetGlobal("CASTING_FAILED","LOCALS",0)
+		Continue()
+END
+
+IF
+	Global("DULURMST_CASTING_SET_0","LOCALS",0)
+THEN
+	/*RESPONSE #100
+		SetGlobal("DULURMST_CASTING_SET_0","LOCALS",1)
+		Continue()
+	RESPONSE #100
+		SetGlobal("DULURMST_CASTING_SET_0","LOCALS",2)
+		Continue()
+	RESPONSE #100
+		SetGlobal("DULURMST_CASTING_SET_0","LOCALS",3)
+		Continue()
+	RESPONSE #100
+		SetGlobal("DULURMST_CASTING_SET_0","LOCALS",4)
+		Continue()
+	RESPONSE #100
+		SetGlobal("DULURMST_CASTING_SET_0","LOCALS",5)
+		Continue()
+	RESPONSE #100
+		SetGlobal("DULURMST_CASTING_SET_0","LOCALS",6)
+		Continue()
+	RESPONSE #100
+		SetGlobal("DULURMST_CASTING_SET_0","LOCALS",7)
+		Continue()
+	RESPONSE #100
+		SetGlobal("DULURMST_CASTING_SET_0","LOCALS",8)
+		Continue()
+	RESPONSE #100
+		SetGlobal("DULURMST_CASTING_SET_0","LOCALS",9)
+		Continue()
+	RESPONSE #100
+		SetGlobal("DULURMST_CASTING_SET_0","LOCALS",10)
+		Continue()
+	RESPONSE #100
+		SetGlobal("DULURMST_CASTING_SET_0","LOCALS",11)
+		Continue()
+	RESPONSE #100
+		SetGlobal("DULURMST_CASTING_SET_0","LOCALS",12)
+		Continue()
+	RESPONSE #100
+		SetGlobal("DULURMST_CASTING_SET_0","LOCALS",13)
+		Continue()
+	RESPONSE #100
+		SetGlobal("DULURMST_CASTING_SET_0","LOCALS",14)
+		Continue()
+	RESPONSE #100
+		SetGlobal("DULURMST_CASTING_SET_0","LOCALS",15)
+		Continue()
+	RESPONSE #100
+		SetGlobal("DULURMST_CASTING_SET_0","LOCALS",16)
+		Continue()
+	RESPONSE #100
+		SetGlobal("DULURMST_CASTING_SET_0","LOCALS",17)
+		Continue()
+	RESPONSE #100
+		SetGlobal("DULURMST_CASTING_SET_0","LOCALS",18)
+		Continue()*/
+	RESPONSE #100
+		SetGlobalRandom("DULURMST_CASTING_SET_0","LOCALS",1,18)
+		Continue()
+END
+
+IF
+	Global("DULURMST_CASTING_SET_0","LOCALS",1)
+	!HaveSpell(WIZARD_CHAIN_LIGHTNING)
+THEN
+	RESPONSE #100
+		IncrementGlobal("DULURMST_CASTING_SET_0","LOCALS",1)
+		IncrementGlobal("CASTING_FAILED","LOCALS",1)
+		Continue()
+END
+
+IF
+	Global("DULURMST_CASTING_SET_0","LOCALS",1)
+	OR(6)
+		See(Player6)
+		See(Player5)
+		See(Player4)
+		See(Player3)
+		See(Player2)
+		See(Player1)
+	RandomNum(6,1)
+THEN
+	RESPONSE #100
+		SetGlobal("WARP","LOCALS",0)
+		Spell(LastSeenBy(Myself),WIZARD_CHAIN_LIGHTNING)
+		Wait(2)
+		SetGlobal("DULURMST_CASTING_SET_0","LOCALS",0)
+END
+
+IF
+	Global("DULURMST_CASTING_SET_0","LOCALS",2)
+	!HaveSpell(WIZARD_CHAOS)
+THEN
+	RESPONSE #100
+		IncrementGlobal("DULURMST_CASTING_SET_0","LOCALS",1)
+		IncrementGlobal("CASTING_FAILED","LOCALS",1)
+		Continue()
+END
+
+IF
+	Global("DULURMST_CASTING_SET_0","LOCALS",2)
+	OR(6)
+		See(Player6)
+		See(Player5)
+		See(Player4)
+		See(Player3)
+		See(Player2)
+		See(Player1)
+	RandomNum(6,1)
+THEN
+	RESPONSE #100
+		SetGlobal("WARP","LOCALS",0)
+		Spell(LastSeenBy(Myself),WIZARD_CHAOS)
+		Wait(2)
+		SetGlobal("DULURMST_CASTING_SET_0","LOCALS",0)
+END
+
+IF
+	Global("DULURMST_CASTING_SET_0","LOCALS",3)
+	!HaveSpell(WIZARD_SLOW)
+THEN
+	RESPONSE #100
+		IncrementGlobal("DULURMST_CASTING_SET_0","LOCALS",1)
+		IncrementGlobal("CASTING_FAILED","LOCALS",1)
+		Continue()
+END
+
+IF
+	Global("DULURMST_CASTING_SET_0","LOCALS",3)
+	OR(6)
+		See(Player6)
+		See(Player5)
+		See(Player4)
+		See(Player3)
+		See(Player2)
+		See(Player1)
+	RandomNum(6,1)
+THEN
+	RESPONSE #100
+		SetGlobal("WARP","LOCALS",0)
+		Spell(LastSeenBy(Myself),WIZARD_SLOW)
+		Wait(2)
+		SetGlobal("DULURMST_CASTING_SET_0","LOCALS",0)
+END
+
+IF
+	Global("DULURMST_CASTING_SET_0","LOCALS",4)
+	!HaveSpell(WIZARD_DISPEL_MAGIC)
+THEN
+	RESPONSE #100
+		IncrementGlobal("DULURMST_CASTING_SET_0","LOCALS",1)
+		IncrementGlobal("CASTING_FAILED","LOCALS",1)
+		Continue()
+END
+
+IF
+	Global("DULURMST_CASTING_SET_0","LOCALS",4)
+	OR(6)
+		See(Player6)
+		See(Player5)
+		See(Player4)
+		See(Player3)
+		See(Player2)
+		See(Player1)
+	RandomNum(6,1)
+THEN
+	RESPONSE #100
+		SetGlobal("WARP","LOCALS",0)
+		Spell(LastSeenBy(Myself),WIZARD_DISPEL_MAGIC)
+		Wait(2)
+		SetGlobal("DULURMST_CASTING_SET_0","LOCALS",0)
+END
+
+IF
+	Global("DULURMST_CASTING_SET_0","LOCALS",5)
+	!HaveSpell(WIZARD_FEEBLEMIND)
+THEN
+	RESPONSE #100
+		IncrementGlobal("DULURMST_CASTING_SET_0","LOCALS",1)
+		IncrementGlobal("CASTING_FAILED","LOCALS",1)
+		Continue()
+END
+
+IF
+	Global("DULURMST_CASTING_SET_0","LOCALS",5)
+	OR(6)
+		See(Player6)
+		See(Player5)
+		See(Player4)
+		See(Player3)
+		See(Player2)
+		See(Player1)
+	RandomNum(6,1)
+THEN
+	RESPONSE #100
+		SetGlobal("WARP","LOCALS",0)
+		Spell(LastSeenBy(Myself),WIZARD_FEEBLEMIND)
+		Wait(2)
+		SetGlobal("DULURMST_CASTING_SET_0","LOCALS",0)
+END
+
+IF
+	Global("DULURMST_CASTING_SET_0","LOCALS",6)
+	!HaveSpell(WIZARD_IMPROVED_INVISIBILITY)
+THEN
+	RESPONSE #100
+		IncrementGlobal("DULURMST_CASTING_SET_0","LOCALS",1)
+		IncrementGlobal("CASTING_FAILED","LOCALS",1)
+		Continue()
+END
+
+IF
+	Global("DULURMST_CASTING_SET_0","LOCALS",6)
+	OR(6)
+		See(Player6)
+		See(Player5)
+		See(Player4)
+		See(Player3)
+		See(Player2)
+		See(Player1)
+	RandomNum(6,1)
+THEN
+	RESPONSE #100
+		SetGlobal("WARP","LOCALS",0)
+		Spell(Myself,WIZARD_IMPROVED_INVISIBILITY)
+		Wait(2)
+		SetGlobal("DULURMST_CASTING_SET_0","LOCALS",0)
+END
+
+IF
+	Global("DULURMST_CASTING_SET_0","LOCALS",7)
+	!HaveSpell(WIZARD_LIGHTNING_BOLT)
+THEN
+	RESPONSE #100
+		IncrementGlobal("DULURMST_CASTING_SET_0","LOCALS",1)
+		IncrementGlobal("CASTING_FAILED","LOCALS",1)
+		Continue()
+END
+
+IF
+	Global("DULURMST_CASTING_SET_0","LOCALS",7)
+	OR(6)
+		See(Player6)
+		See(Player5)
+		See(Player4)
+		See(Player3)
+		See(Player2)
+		See(Player1)
+	RandomNum(6,1)
+THEN
+	RESPONSE #100
+		SetGlobal("WARP","LOCALS",0)
+		Spell(LastSeenBy(Myself),WIZARD_LIGHTNING_BOLT)
+		Wait(2)
+		SetGlobal("DULURMST_CASTING_SET_0","LOCALS",0)
+END
+
+IF
+	Global("DULURMST_CASTING_SET_0","LOCALS",8)
+	!HaveSpell(WIZARD_MAGIC_MISSILE)
+THEN
+	RESPONSE #100
+		IncrementGlobal("DULURMST_CASTING_SET_0","LOCALS",1)
+		IncrementGlobal("CASTING_FAILED","LOCALS",1)
+		Continue()
+END
+
+IF
+	Global("DULURMST_CASTING_SET_0","LOCALS",8)
+	OR(6)
+		See(Player6)
+		See(Player5)
+		See(Player4)
+		See(Player3)
+		See(Player2)
+		See(Player1)
+	RandomNum(6,1)
+THEN
+	RESPONSE #100
+		SetGlobal("WARP","LOCALS",0)
+		Spell(LastSeenBy(Myself),WIZARD_MAGIC_MISSILE)
+		Wait(2)
+		SetGlobal("DULURMST_CASTING_SET_0","LOCALS",0)
+END
+
+IF
+	Global("DULURMST_CASTING_SET_0","LOCALS",9)
+	!HaveSpell(WIZARD_DIRE_CHARM)
+THEN
+	RESPONSE #100
+		IncrementGlobal("DULURMST_CASTING_SET_0","LOCALS",1)
+		IncrementGlobal("CASTING_FAILED","LOCALS",1)
+		Continue()
+END
+
+IF
+	Global("DULURMST_CASTING_SET_0","LOCALS",9)
+	OR(6)
+		See(Player6)
+		See(Player5)
+		See(Player4)
+		See(Player3)
+		See(Player2)
+		See(Player1)
+	RandomNum(6,1)
+THEN
+	RESPONSE #100
+		SetGlobal("WARP","LOCALS",0)
+		Spell(LastSeenBy(Myself),WIZARD_DIRE_CHARM)
+		Wait(2)
+		SetGlobal("DULURMST_CASTING_SET_0","LOCALS",0)
+END
+
+IF
+	Global("DULURMST_CASTING_SET_0","LOCALS",10)
+	!HaveSpellRES("IDWI612")
+THEN
+	RESPONSE #100
+		IncrementGlobal("DULURMST_CASTING_SET_0","LOCALS",1)
+		IncrementGlobal("CASTING_FAILED","LOCALS",1)
+		Continue()
+END
+
+IF
+	Global("DULURMST_CASTING_SET_0","LOCALS",10)
+	OR(6)
+		See(Player6)
+		See(Player5)
+		See(Player4)
+		See(Player3)
+		See(Player2)
+		See(Player1)
+	RandomNum(6,1)
+THEN
+	RESPONSE #100
+		SetGlobal("WARP","LOCALS",0)
+		SpellRES("IDWI612",LastSeenBy(Myself))
+		Wait(2)
+		SetGlobal("DULURMST_CASTING_SET_0","LOCALS",0)
+END
+
+IF
+	Global("DULURMST_CASTING_SET_0","LOCALS",11)
+	!HaveSpell(WIZARD_HORROR)
+THEN
+	RESPONSE #100
+		IncrementGlobal("DULURMST_CASTING_SET_0","LOCALS",1)
+		IncrementGlobal("CASTING_FAILED","LOCALS",1)
+		Continue()
+END
+
+IF
+	Global("DULURMST_CASTING_SET_0","LOCALS",11)
+	OR(6)
+		See(Player6)
+		See(Player5)
+		See(Player4)
+		See(Player3)
+		See(Player2)
+		See(Player1)
+	RandomNum(6,1)
+THEN
+	RESPONSE #100
+		SetGlobal("WARP","LOCALS",0)
+		Spell(LastSeenBy(Myself),WIZARD_HORROR)
+		Wait(2)
+		SetGlobal("DULURMST_CASTING_SET_0","LOCALS",0)
+END
+
+IF
+	Global("DULURMST_CASTING_SET_0","LOCALS",12)
+	!HaveSpell(WIZARD_POWER_WORD_SILENCE)
+THEN
+	RESPONSE #100
+		IncrementGlobal("DULURMST_CASTING_SET_0","LOCALS",1)
+		IncrementGlobal("CASTING_FAILED","LOCALS",1)
+		Continue()
+END
+
+IF
+	Global("DULURMST_CASTING_SET_0","LOCALS",12)
+	OR(6)
+		See(Player6)
+		See(Player5)
+		See(Player4)
+		See(Player3)
+		See(Player2)
+		See(Player1)
+	RandomNum(6,1)
+THEN
+	RESPONSE #100
+		SetGlobal("WARP","LOCALS",0)
+		Spell(LastSeenBy(Myself),WIZARD_POWER_WORD_SILENCE)
+		Wait(2)
+		SetGlobal("DULURMST_CASTING_SET_0","LOCALS",0)
+END
+
+IF
+	Global("DULURMST_CASTING_SET_0","LOCALS",13)
+	!HaveSpell(WIZARD_CONFUSION)
+THEN
+	RESPONSE #100
+		IncrementGlobal("DULURMST_CASTING_SET_0","LOCALS",1)
+		IncrementGlobal("CASTING_FAILED","LOCALS",1)
+		Continue()
+END
+
+IF
+	Global("DULURMST_CASTING_SET_0","LOCALS",13)
+	OR(6)
+		See(Player6)
+		See(Player5)
+		See(Player4)
+		See(Player3)
+		See(Player2)
+		See(Player1)
+	RandomNum(6,1)
+THEN
+	RESPONSE #100
+		SetGlobal("WARP","LOCALS",0)
+		Spell(LastSeenBy(Myself),WIZARD_CONFUSION)
+		Wait(2)
+		SetGlobal("DULURMST_CASTING_SET_0","LOCALS",0)
+END
+
+IF
+	Global("DULURMST_CASTING_SET_0","LOCALS",14)
+	!HaveSpell(WIZARD_HORROR)
+THEN
+	RESPONSE #100
+		IncrementGlobal("DULURMST_CASTING_SET_0","LOCALS",1)
+		IncrementGlobal("CASTING_FAILED","LOCALS",1)
+		Continue()
+END
+
+IF
+	Global("DULURMST_CASTING_SET_0","LOCALS",14)
+	OR(6)
+		See(Player6)
+		See(Player5)
+		See(Player4)
+		See(Player3)
+		See(Player2)
+		See(Player1)
+	RandomNum(6,1)
+THEN
+	RESPONSE #100
+		SetGlobal("WARP","LOCALS",0)
+		Spell(LastSeenBy(Myself),WIZARD_HORROR)
+		Wait(2)
+		SetGlobal("DULURMST_CASTING_SET_0","LOCALS",0)
+END
+
+IF
+	Global("DULURMST_CASTING_SET_0","LOCALS",15)
+	!HaveSpell(WIZARD_GREATER_MALISON)
+THEN
+	RESPONSE #100
+		IncrementGlobal("DULURMST_CASTING_SET_0","LOCALS",1)
+		IncrementGlobal("CASTING_FAILED","LOCALS",1)
+		Continue()
+END
+
+IF
+	Global("DULURMST_CASTING_SET_0","LOCALS",15)
+	OR(6)
+		See(Player6)
+		See(Player5)
+		See(Player4)
+		See(Player3)
+		See(Player2)
+		See(Player1)
+	RandomNum(6,1)
+THEN
+	RESPONSE #100
+		SetGlobal("WARP","LOCALS",0)
+		Spell(LastSeenBy(Myself),WIZARD_GREATER_MALISON)
+		Wait(2)
+		SetGlobal("DULURMST_CASTING_SET_0","LOCALS",0)
+END
+
+IF
+	Global("DULURMST_CASTING_SET_0","LOCALS",16)
+	!HaveSpell(WIZARD_CONE_OF_COLD)
+THEN
+	RESPONSE #100
+		IncrementGlobal("DULURMST_CASTING_SET_0","LOCALS",1)
+		IncrementGlobal("CASTING_FAILED","LOCALS",1)
+		Continue()
+END
+
+IF
+	Global("DULURMST_CASTING_SET_0","LOCALS",16)
+	OR(6)
+		See(Player6)
+		See(Player5)
+		See(Player4)
+		See(Player3)
+		See(Player2)
+		See(Player1)
+	RandomNum(6,1)
+THEN
+	RESPONSE #100
+		SetGlobal("WARP","LOCALS",0)
+		Spell(LastSeenBy(Myself),WIZARD_CONE_OF_COLD)
+		Wait(2)
+		SetGlobal("DULURMST_CASTING_SET_0","LOCALS",0)
+END
+
+IF
+	Global("DULURMST_CASTING_SET_0","LOCALS",17)
+	!HaveSpell(WIZARD_EMOTION_HOPELESSNESS)
+THEN
+	RESPONSE #100
+		IncrementGlobal("DULURMST_CASTING_SET_0","LOCALS",1)
+		IncrementGlobal("CASTING_FAILED","LOCALS",1)
+		Continue()
+END
+
+IF
+	Global("DULURMST_CASTING_SET_0","LOCALS",17)
+	OR(6)
+		See(Player6)
+		See(Player5)
+		See(Player4)
+		See(Player3)
+		See(Player2)
+		See(Player1)
+	RandomNum(6,1)
+THEN
+	RESPONSE #100
+		SetGlobal("WARP","LOCALS",0)
+		Spell(LastSeenBy(Myself),WIZARD_EMOTION_HOPELESSNESS)
+		Wait(2)
+		SetGlobal("DULURMST_CASTING_SET_0","LOCALS",0)
+END
+
+IF
+	Global("DULURMST_CASTING_SET_0","LOCALS",18)
+	!HaveSpell(WIZARD_CHROMATIC_ORB)
+THEN
+	RESPONSE #100
+		SetGlobal("DULURMST_CASTING_SET_0","LOCALS",1)
+		IncrementGlobal("CASTING_FAILED","LOCALS",1)
+		Continue()
+END
+
+IF
+	Global("DULURMST_CASTING_SET_0","LOCALS",18)
+	OR(6)
+		See(Player6)
+		See(Player5)
+		See(Player4)
+		See(Player3)
+		See(Player2)
+		See(Player1)
+	RandomNum(6,1)
+THEN
+	RESPONSE #100
+		SetGlobal("WARP","LOCALS",0)
+		Spell(LastSeenBy(Myself),WIZARD_CHROMATIC_ORB)
+		Wait(2)
+		SetGlobal("DULURMST_CASTING_SET_0","LOCALS",0)
+END
+
+IF
+	Global("CASTING_FAILED","LOCALS",18)
+THEN
+	RESPONSE #100
+		SetGlobal("DULURMST_CASTING_SET_0","LOCALS",19)
+		Continue()
+END
+
+IF
+	Global("DULURMST_CASTING_SET_0","LOCALS",19)
+	OR(6)
+		See(Player6)
+		See(Player5)
+		See(Player4)
+		See(Player3)
+		See(Player2)
+		See(Player1)
+	RandomNum(6,1)
+THEN
+	RESPONSE #100
+		SetGlobal("WARP","LOCALS",0)
+		Continue()
+END
+
+IF
+	!Global("CASTING_FAILED","LOCALS",0)
+THEN
+	RESPONSE #100
+		SetGlobal("CASTING_FAILED","LOCALS",0)
+		Continue()
+END
+
+IF
+	Global("DULURMST_CASTING_SET_1","LOCALS",0)
+THEN
+	/*RESPONSE #100
+		SetGlobal("DULURMST_CASTING_SET_1","LOCALS",1)
+		Continue()
+	RESPONSE #100
+		SetGlobal("DULURMST_CASTING_SET_1","LOCALS",2)
+		Continue()
+	RESPONSE #100
+		SetGlobal("DULURMST_CASTING_SET_1","LOCALS",3)
+		Continue()
+	RESPONSE #100
+		SetGlobal("DULURMST_CASTING_SET_1","LOCALS",4)
+		Continue()
+	RESPONSE #100
+		SetGlobal("DULURMST_CASTING_SET_1","LOCALS",5)
+		Continue()
+	RESPONSE #100
+		SetGlobal("DULURMST_CASTING_SET_1","LOCALS",6)
+		Continue()
+	RESPONSE #100
+		SetGlobal("DULURMST_CASTING_SET_1","LOCALS",7)
+		Continue()
+	RESPONSE #100
+		SetGlobal("DULURMST_CASTING_SET_1","LOCALS",8)
+		Continue()
+	RESPONSE #100
+		SetGlobal("DULURMST_CASTING_SET_1","LOCALS",9)
+		Continue()
+	RESPONSE #100
+		SetGlobal("DULURMST_CASTING_SET_1","LOCALS",10)
+		Continue()
+	RESPONSE #100
+		SetGlobal("DULURMST_CASTING_SET_1","LOCALS",11)
+		Continue()
+	RESPONSE #100
+		SetGlobal("DULURMST_CASTING_SET_1","LOCALS",12)
+		Continue()
+	RESPONSE #100
+		SetGlobal("DULURMST_CASTING_SET_1","LOCALS",13)
+		Continue()
+	RESPONSE #100
+		SetGlobal("DULURMST_CASTING_SET_1","LOCALS",14)
+		Continue()
+	RESPONSE #100
+		SetGlobal("DULURMST_CASTING_SET_1","LOCALS",15)
+		Continue()
+	RESPONSE #100
+		SetGlobal("DULURMST_CASTING_SET_1","LOCALS",16)
+		Continue()
+	RESPONSE #100
+		SetGlobal("DULURMST_CASTING_SET_1","LOCALS",17)
+		Continue()
+	RESPONSE #100
+		SetGlobal("DULURMST_CASTING_SET_1","LOCALS",18)
+		Continue()*/
+	RESPONSE #100
+		SetGlobalRandom("DULURMST_CASTING_SET_1","LOCALS",1,18)
+		Continue()
+END
+
+IF
+	Global("DULURMST_CASTING_SET_1","LOCALS",1)
+	!HaveSpell(WIZARD_CHAIN_LIGHTNING)
+THEN
+	RESPONSE #100
+		IncrementGlobal("DULURMST_CASTING_SET_1","LOCALS",1)
+		IncrementGlobal("CASTING_FAILED","LOCALS",1)
+		Continue()
+END
+
+IF
+	Global("DULURMST_CASTING_SET_1","LOCALS",1)
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		SetGlobal("WARP","LOCALS",0)
+		Spell(LastSeenBy(Myself),WIZARD_CHAIN_LIGHTNING)
+		Wait(2)
+		SetGlobal("DULURMST_CASTING_SET_1","LOCALS",0)
+END
+
+IF
+	Global("DULURMST_CASTING_SET_1","LOCALS",2)
+	!HaveSpell(WIZARD_CHAOS)
+THEN
+	RESPONSE #100
+		IncrementGlobal("DULURMST_CASTING_SET_1","LOCALS",1)
+		IncrementGlobal("CASTING_FAILED","LOCALS",1)
+		Continue()
+END
+
+IF
+	Global("DULURMST_CASTING_SET_1","LOCALS",2)
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		SetGlobal("WARP","LOCALS",0)
+		Spell(LastSeenBy(Myself),WIZARD_CHAOS)
+		Wait(2)
+		SetGlobal("DULURMST_CASTING_SET_1","LOCALS",0)
+END
+
+IF
+	Global("DULURMST_CASTING_SET_1","LOCALS",3)
+	!HaveSpell(WIZARD_SLOW)
+THEN
+	RESPONSE #100
+		IncrementGlobal("DULURMST_CASTING_SET_1","LOCALS",1)
+		IncrementGlobal("CASTING_FAILED","LOCALS",1)
+		Continue()
+END
+
+IF
+	Global("DULURMST_CASTING_SET_1","LOCALS",3)
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		SetGlobal("WARP","LOCALS",0)
+		Spell(LastSeenBy(Myself),WIZARD_SLOW)
+		Wait(2)
+		SetGlobal("DULURMST_CASTING_SET_1","LOCALS",0)
+END
+
+IF
+	Global("DULURMST_CASTING_SET_1","LOCALS",4)
+	!HaveSpell(WIZARD_DISPEL_MAGIC)
+THEN
+	RESPONSE #100
+		IncrementGlobal("DULURMST_CASTING_SET_1","LOCALS",1)
+		IncrementGlobal("CASTING_FAILED","LOCALS",1)
+		Continue()
+END
+
+IF
+	Global("DULURMST_CASTING_SET_1","LOCALS",4)
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		SetGlobal("WARP","LOCALS",0)
+		Spell(LastSeenBy(Myself),WIZARD_DISPEL_MAGIC)
+		Wait(2)
+		SetGlobal("DULURMST_CASTING_SET_1","LOCALS",0)
+END
+
+IF
+	Global("DULURMST_CASTING_SET_1","LOCALS",5)
+	!HaveSpell(WIZARD_FEEBLEMIND)
+THEN
+	RESPONSE #100
+		IncrementGlobal("DULURMST_CASTING_SET_1","LOCALS",1)
+		IncrementGlobal("CASTING_FAILED","LOCALS",1)
+		Continue()
+END
+
+IF
+	Global("DULURMST_CASTING_SET_1","LOCALS",5)
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		SetGlobal("WARP","LOCALS",0)
+		Spell(LastSeenBy(Myself),WIZARD_FEEBLEMIND)
+		Wait(2)
+		SetGlobal("DULURMST_CASTING_SET_1","LOCALS",0)
+END
+
+IF
+	Global("DULURMST_CASTING_SET_1","LOCALS",6)
+	!HaveSpell(WIZARD_IMPROVED_INVISIBILITY)
+THEN
+	RESPONSE #100
+		IncrementGlobal("DULURMST_CASTING_SET_1","LOCALS",1)
+		IncrementGlobal("CASTING_FAILED","LOCALS",1)
+		Continue()
+END
+
+IF
+	Global("DULURMST_CASTING_SET_1","LOCALS",6)
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		SetGlobal("WARP","LOCALS",0)
+		Spell(Myself,WIZARD_IMPROVED_INVISIBILITY)
+		Wait(2)
+		SetGlobal("DULURMST_CASTING_SET_1","LOCALS",0)
+END
+
+IF
+	Global("DULURMST_CASTING_SET_1","LOCALS",7)
+	!HaveSpell(WIZARD_LIGHTNING_BOLT)
+THEN
+	RESPONSE #100
+		IncrementGlobal("DULURMST_CASTING_SET_1","LOCALS",1)
+		IncrementGlobal("CASTING_FAILED","LOCALS",1)
+		Continue()
+END
+
+IF
+	Global("DULURMST_CASTING_SET_1","LOCALS",7)
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		SetGlobal("WARP","LOCALS",0)
+		Spell(LastSeenBy(Myself),WIZARD_LIGHTNING_BOLT)
+		Wait(2)
+		SetGlobal("DULURMST_CASTING_SET_1","LOCALS",0)
+END
+
+IF
+	Global("DULURMST_CASTING_SET_1","LOCALS",8)
+	!HaveSpell(WIZARD_MAGIC_MISSILE)
+THEN
+	RESPONSE #100
+		IncrementGlobal("DULURMST_CASTING_SET_1","LOCALS",1)
+		IncrementGlobal("CASTING_FAILED","LOCALS",1)
+		Continue()
+END
+
+IF
+	Global("DULURMST_CASTING_SET_1","LOCALS",8)
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		SetGlobal("WARP","LOCALS",0)
+		Spell(LastSeenBy(Myself),WIZARD_MAGIC_MISSILE)
+		Wait(2)
+		SetGlobal("DULURMST_CASTING_SET_1","LOCALS",0)
+END
+
+IF
+	Global("DULURMST_CASTING_SET_1","LOCALS",9)
+	!HaveSpell(WIZARD_DIRE_CHARM)
+THEN
+	RESPONSE #100
+		IncrementGlobal("DULURMST_CASTING_SET_1","LOCALS",1)
+		IncrementGlobal("CASTING_FAILED","LOCALS",1)
+		Continue()
+END
+
+IF
+	Global("DULURMST_CASTING_SET_1","LOCALS",9)
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		SetGlobal("WARP","LOCALS",0)
+		Spell(LastSeenBy(Myself),WIZARD_DIRE_CHARM)
+		Wait(2)
+		SetGlobal("DULURMST_CASTING_SET_1","LOCALS",0)
+END
+
+IF
+	Global("DULURMST_CASTING_SET_1","LOCALS",10)
+	!HaveSpellRES("IDWI612")
+THEN
+	RESPONSE #100
+		IncrementGlobal("DULURMST_CASTING_SET_1","LOCALS",1)
+		IncrementGlobal("CASTING_FAILED","LOCALS",1)
+		Continue()
+END
+
+IF
+	Global("DULURMST_CASTING_SET_1","LOCALS",10)
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		SetGlobal("WARP","LOCALS",0)
+		SpellRES("IDWI612",LastSeenBy(Myself))
+		Wait(2)
+		SetGlobal("DULURMST_CASTING_SET_1","LOCALS",0)
+END
+
+IF
+	Global("DULURMST_CASTING_SET_1","LOCALS",11)
+	!HaveSpell(WIZARD_HORROR)
+THEN
+	RESPONSE #100
+		IncrementGlobal("DULURMST_CASTING_SET_1","LOCALS",1)
+		IncrementGlobal("CASTING_FAILED","LOCALS",1)
+		Continue()
+END
+
+IF
+	Global("DULURMST_CASTING_SET_1","LOCALS",11)
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		SetGlobal("WARP","LOCALS",0)
+		Spell(LastSeenBy(Myself),WIZARD_HORROR)
+		Wait(2)
+		SetGlobal("DULURMST_CASTING_SET_1","LOCALS",0)
+END
+
+IF
+	Global("DULURMST_CASTING_SET_1","LOCALS",12)
+	!HaveSpell(WIZARD_POWER_WORD_SILENCE)
+THEN
+	RESPONSE #100
+		IncrementGlobal("DULURMST_CASTING_SET_1","LOCALS",1)
+		IncrementGlobal("CASTING_FAILED","LOCALS",1)
+		Continue()
+END
+
+IF
+	Global("DULURMST_CASTING_SET_1","LOCALS",12)
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		SetGlobal("WARP","LOCALS",0)
+		Spell(LastSeenBy(Myself),WIZARD_POWER_WORD_SILENCE)
+		Wait(2)
+		SetGlobal("DULURMST_CASTING_SET_1","LOCALS",0)
+END
+
+IF
+	Global("DULURMST_CASTING_SET_1","LOCALS",13)
+	!HaveSpell(WIZARD_CONFUSION)
+THEN
+	RESPONSE #100
+		IncrementGlobal("DULURMST_CASTING_SET_1","LOCALS",1)
+		IncrementGlobal("CASTING_FAILED","LOCALS",1)
+		Continue()
+END
+
+IF
+	Global("DULURMST_CASTING_SET_1","LOCALS",13)
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		SetGlobal("WARP","LOCALS",0)
+		Spell(LastSeenBy(Myself),WIZARD_CONFUSION)
+		Wait(2)
+		SetGlobal("DULURMST_CASTING_SET_1","LOCALS",0)
+END
+
+IF
+	Global("DULURMST_CASTING_SET_1","LOCALS",14)
+	!HaveSpell(WIZARD_HORROR)
+THEN
+	RESPONSE #100
+		IncrementGlobal("DULURMST_CASTING_SET_1","LOCALS",1)
+		IncrementGlobal("CASTING_FAILED","LOCALS",1)
+		Continue()
+END
+
+IF
+	Global("DULURMST_CASTING_SET_1","LOCALS",14)
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		SetGlobal("WARP","LOCALS",0)
+		Spell(LastSeenBy(Myself),WIZARD_HORROR)
+		Wait(2)
+		SetGlobal("DULURMST_CASTING_SET_1","LOCALS",0)
+END
+
+IF
+	Global("DULURMST_CASTING_SET_1","LOCALS",15)
+	!HaveSpell(WIZARD_GREATER_MALISON)
+THEN
+	RESPONSE #100
+		IncrementGlobal("DULURMST_CASTING_SET_1","LOCALS",1)
+		IncrementGlobal("CASTING_FAILED","LOCALS",1)
+		Continue()
+END
+
+IF
+	Global("DULURMST_CASTING_SET_1","LOCALS",15)
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		SetGlobal("WARP","LOCALS",0)
+		Spell(LastSeenBy(Myself),WIZARD_GREATER_MALISON)
+		Wait(2)
+		SetGlobal("DULURMST_CASTING_SET_1","LOCALS",0)
+END
+
+IF
+	Global("DULURMST_CASTING_SET_1","LOCALS",16)
+	!HaveSpell(WIZARD_CONE_OF_COLD)
+THEN
+	RESPONSE #100
+		IncrementGlobal("DULURMST_CASTING_SET_1","LOCALS",1)
+		IncrementGlobal("CASTING_FAILED","LOCALS",1)
+		Continue()
+END
+
+IF
+	Global("DULURMST_CASTING_SET_1","LOCALS",16)
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		SetGlobal("WARP","LOCALS",0)
+		Spell(LastSeenBy(Myself),WIZARD_CONE_OF_COLD)
+		Wait(2)
+		SetGlobal("DULURMST_CASTING_SET_1","LOCALS",0)
+END
+
+IF
+	Global("DULURMST_CASTING_SET_1","LOCALS",17)
+	!HaveSpell(WIZARD_EMOTION_HOPELESSNESS)
+THEN
+	RESPONSE #100
+		IncrementGlobal("DULURMST_CASTING_SET_1","LOCALS",1)
+		IncrementGlobal("CASTING_FAILED","LOCALS",1)
+		Continue()
+END
+
+IF
+	Global("DULURMST_CASTING_SET_1","LOCALS",17)
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		SetGlobal("WARP","LOCALS",0)
+		Spell(LastSeenBy(Myself),WIZARD_EMOTION_HOPELESSNESS)
+		Wait(2)
+		SetGlobal("DULURMST_CASTING_SET_1","LOCALS",0)
+END
+
+IF
+	Global("DULURMST_CASTING_SET_1","LOCALS",18)
+	!HaveSpell(WIZARD_CHROMATIC_ORB)
+THEN
+	RESPONSE #100
+		SetGlobal("DULURMST_CASTING_SET_1","LOCALS",1)
+		IncrementGlobal("CASTING_FAILED","LOCALS",1)
+		Continue()
+END
+
+IF
+	Global("DULURMST_CASTING_SET_1","LOCALS",18)
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		SetGlobal("WARP","LOCALS",0)
+		Spell(LastSeenBy(Myself),WIZARD_CHROMATIC_ORB)
+		Wait(2)
+		SetGlobal("DULURMST_CASTING_SET_1","LOCALS",0)
+END
+
+IF
+	Global("CASTING_FAILED","LOCALS",18)
+THEN
+	RESPONSE #100
+		SetGlobal("DULURMST_CASTING_SET_1","LOCALS",19)
+		Continue()
+END
+
+IF
+	Global("DULURMST_CASTING_SET_1","LOCALS",19)
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		SetGlobal("WARP","LOCALS",0)
+		Continue()
+END
+
+IF
+	Range(NearestEnemyOf(Myself),4)
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		SetGlobal("WARP","LOCALS",0)
+		AttackReevaluate(LastSeenBy(Myself),75)
+END
+

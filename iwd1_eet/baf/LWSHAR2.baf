@@ -1,0 +1,102 @@
+IF
+	!HaveSpell(CLERIC_CURE_CRITICAL_WOUNDS)
+THEN
+	RESPONSE #100
+		IncrementGlobal("ATTACK_STATE","GLOBAL",1)
+		ChangeAIScript("",RACE)
+END
+
+IF
+	!Global("FRIENDS_DEAD","LOCALS",0)
+THEN
+	RESPONSE #100
+		ChangeAIScript("",RACE)
+END
+
+IF
+	StateCheck(Myself,STATE_PANIC)
+THEN
+	RESPONSE #100
+		RandomWalkContinuous()
+END
+
+IF
+	!GlobalTimerNotExpired("IWD_Rest","LOCALS")
+THEN
+	RESPONSE #100
+		SetGlobalTimer("IWD_Rest","LOCALS",EIGHT_HOURS)
+		ApplySpell(Myself,RESTORE_FULL_HEALTH)
+		Rest()
+END
+
+IF
+	HaveSpell(CLERIC_CURE_CRITICAL_WOUNDS)
+	!StateCheck(Myself,STATE_REALLY_DEAD)
+	HPPercentLT(Myself,50)
+THEN
+	RESPONSE #100
+		Spell(Myself,CLERIC_CURE_CRITICAL_WOUNDS)
+		Wait(3)
+		Continue()
+END
+
+IF
+	HaveSpell(CLERIC_CURE_CRITICAL_WOUNDS)
+	See("VAARGLAN")
+	!StateCheck(LastSeenBy(Myself),STATE_REALLY_DEAD)
+	HPPercentLT(LastSeenBy(Myself),50)
+THEN
+	RESPONSE #100
+		Spell(LastSeenBy(Myself),CLERIC_CURE_CRITICAL_WOUNDS)
+		Wait(3)
+		Continue()
+END
+
+IF
+	HaveSpell(CLERIC_CURE_CRITICAL_WOUNDS)
+	See("ALPHEUS")
+	!StateCheck(LastSeenBy(Myself),STATE_REALLY_DEAD)
+	HPPercentLT(LastSeenBy(Myself),50)
+THEN
+	RESPONSE #100
+		Spell(LastSeenBy(Myself),CLERIC_CURE_CRITICAL_WOUNDS)
+		Wait(3)
+		Continue()
+END
+
+IF
+	HaveSpell(CLERIC_CURE_CRITICAL_WOUNDS)
+	See("9100_MERCWAR1")
+	!StateCheck(LastSeenBy(Myself),STATE_REALLY_DEAD)
+	HPPercentLT(LastSeenBy(Myself),50)
+THEN
+	RESPONSE #100
+		Spell(LastSeenBy(Myself),CLERIC_CURE_CRITICAL_WOUNDS)
+		Wait(3)
+		Continue()
+END
+
+IF
+	HaveSpell(CLERIC_CURE_CRITICAL_WOUNDS)
+	See("9100_MERCWAR2")
+	!StateCheck(LastSeenBy(Myself),STATE_REALLY_DEAD)
+	HPPercentLT(LastSeenBy(Myself),50)
+THEN
+	RESPONSE #100
+		Spell(LastSeenBy(Myself),CLERIC_CURE_CRITICAL_WOUNDS)
+		Wait(3)
+		Continue()
+END
+
+IF
+	HaveSpell(CLERIC_CURE_CRITICAL_WOUNDS)
+	See("9100_MERCTHF")
+	!StateCheck(LastSeenBy(Myself),STATE_REALLY_DEAD)
+	HPPercentLT(LastSeenBy(Myself),50)
+THEN
+	RESPONSE #100
+		Spell(LastSeenBy(Myself),CLERIC_CURE_CRITICAL_WOUNDS)
+		Wait(3)
+		Continue()
+END
+

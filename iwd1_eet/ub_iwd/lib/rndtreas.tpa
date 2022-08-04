@@ -1,0 +1,53 @@
+// taken from converter; only difference is C_E instead of copy for rndtres.2da
+
+OUTER_FOR (i=0;i<100;i=i+1) BEGIN
+   OUTER_FOR (j=0;j<25;j=j+1) BEGIN
+            OUTER_SPRINT $random_treasure_array(~%i%~ ~%j%~) ~NOITEM~
+   END
+END
+
+COPY_EXISTING ~rndtres.2da~ ~override~
+     READ_2DA_ENTRIES_NOW random_treasure_array 3
+     FOR(i=1;i<~random_treasure_array~;i=i+1) BEGIN
+              SET ~length~=0
+              READ_2DA_ENTRY_FORMER random_treasure_array ~%i%~ ~0~ ~temp~
+              SPRINT $treasure_item_name_old(~%i%~) ~%temp%~
+              PATCH_IF ~i~<10 BEGIN
+                   SPRINT ~newitem~ ~rndtre0%i%~
+              END ELSE BEGIN
+                   SPRINT ~newitem~ ~rndtre%i%~
+              END
+              INNER_ACTION BEGIN
+                 COPY_EXISTING ~rndtre01.itm~ ~override/%newitem%.itm~
+              END
+              FOR (j=1;j<20;j=j+1) BEGIN
+                 READ_2DA_ENTRY_FORMER random_treasure_array ~%i%~ ~%j%~ ~item~
+                 PATCH_IF ~%item%~ STRING_EQUAL_CASE ~NOITEM~ BEGIN
+                    SET ~length~=~j~-1
+                    SET ~j~=21
+                 END ELSE BEGIN
+                    SPRINT ~temp~ ~%temp% %item%~
+                 END
+              END
+              FOR (j=~length~+1;j<20;j=j+1) BEGIN
+                 SET ~index~=~j~-~length~
+                 READ_2DA_ENTRY_FORMER random_treasure_array ~%i%~ ~%index%~ ~item~
+                 SPRINT $random_treasure_array (~%i%~ ~%j%~) ~%item%~
+                 SPRINT ~temp~ ~%temp% %item%~
+              END
+              SPRINT $treasure_output(~%i%~) ~%temp%~
+      END
+
+<<<<<<<< rndtreas.2da
+2DA      V1.0
+*
+2        3        4        5        6        7        8        9        10       11       12       13       14       15       16       17       18       19       20
+>>>>>>>>
+
+COPY rndtreas.2da ~override~
+
+OUTER_FOR (i=1;i<~random_treasure_array~;i=i+1) BEGIN
+      OUTER_SPRINT ~temp~ $treasure_output(~%i%~)
+      APPEND_OUTER ~override/rndtreas.2da~ ~%temp%~
+END
+

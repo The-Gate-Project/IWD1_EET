@@ -1,0 +1,26 @@
+IF
+	IsWeaponRanged(Myself)
+THEN
+	RESPONSE #75
+		ChangeAIScript("EFATKCR",RACE)
+	RESPONSE #75
+		ChangeAIScript("EFATKHR",RACE)
+	RESPONSE #75
+		ChangeAIScript("EFATKTR",RACE)
+	RESPONSE #75
+		ChangeAIScript("EFATKRNG",RACE)
+END
+
+IF
+	True()
+THEN
+	RESPONSE #75
+		ChangeAIScript("EFATKCM",RACE)
+	RESPONSE #75
+		ChangeAIScript("EFATKHM",RACE)
+	RESPONSE #75
+		ChangeAIScript("EFATKTM",RACE)
+	RESPONSE #75
+		ChangeAIScript("EFATKMEL",RACE)
+END
+

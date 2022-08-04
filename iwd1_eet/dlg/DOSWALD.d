@@ -1,0 +1,109 @@
+BEGIN ~DOSWALD~
+
+IF WEIGHT #0
+~NumTimesTalkedTo(0)
+ Global("Kuldahar_Murder","GLOBAL",0)~ THEN BEGIN 0
+  SAY @5695
+  IF ~Global("Know_Oswald","GLOBAL",0)~ THEN REPLY @8618 GOTO 1
+  IF ~Global("Know_Oswald","GLOBAL",1)~ THEN REPLY @8619 GOTO 1
+  IF ~~ THEN REPLY @8625 DO ~SetGlobal("Know_Airship","GLOBAL",1)~ GOTO 2
+  IF ~~ THEN REPLY @8626 EXIT
+END
+
+IF ~~ THEN BEGIN 1
+  SAY @8627
+  IF ~~ THEN REPLY @8628 DO ~SetGlobal("Know_Airship","GLOBAL",1)~ GOTO 2
+  IF ~~ THEN REPLY @8629 DO ~SetGlobal("Know_Work","GLOBAL",1)~ GOTO 5
+  IF ~~ THEN REPLY @376 EXIT
+END
+
+IF ~~ THEN BEGIN 2
+  SAY @8631
+  IF ~~ THEN REPLY @8632 GOTO 3
+  IF ~~ THEN REPLY @8633 DO ~SetGlobal("Know_Work","GLOBAL",1)~ GOTO 5
+  IF ~~ THEN REPLY @8634 EXIT
+END
+
+IF ~~ THEN BEGIN 3
+  SAY @8635
+  IF ~~ THEN REPLY @8636 GOTO 4
+  IF ~~ THEN REPLY @8637 GOTO 8
+  IF ~~ THEN REPLY @8634 EXIT
+END
+
+IF ~~ THEN BEGIN 4
+  SAY @8639
+  IF ~~ THEN REPLY @8640 GOTO 8
+  IF ~Global("Know_Work","GLOBAL",0)~ THEN REPLY @8641 DO ~SetGlobal("Know_Work","GLOBAL",1)~ GOTO 5
+  IF ~Global("Know_Work","GLOBAL",1)~ THEN REPLY @8642 GOTO 5
+  IF ~~ THEN REPLY @8634 EXIT
+END
+
+IF ~~ THEN BEGIN 5
+  SAY @8644
+  IF ~~ THEN REPLY @8645 GOTO 6
+  IF ~Global("Know_Airship","GLOBAL",0)~ THEN REPLY @8646 DO ~SetGlobal("Know_Airship","GLOBAL",1)~ GOTO 2
+  IF ~Global("Know_Airship","GLOBAL",1)~ THEN REPLY @8647 GOTO 2
+  IF ~~ THEN REPLY @8648 EXIT
+END
+
+IF ~~ THEN BEGIN 6
+  SAY @8649
+  IF ~~ THEN REPLY @8650 GOTO 7
+  IF ~~ THEN REPLY @8651 GOTO 12
+  IF ~~ THEN REPLY @8634 EXIT
+END
+
+IF ~~ THEN BEGIN 7
+  SAY @8654
+  IF ~~ THEN REPLY @8651 GOTO 12
+  IF ~~ THEN REPLY @8634 EXIT
+END
+
+IF ~~ THEN BEGIN 8
+  SAY @8656
+  IF ~~ THEN REPLY @8657 GOTO 9
+  IF ~~ THEN REPLY @8634 EXIT
+END
+
+IF ~~ THEN BEGIN 9
+  SAY @8659
+  IF ~~ THEN REPLY @8660 GOTO 10
+  IF ~~ THEN REPLY @8661 EXIT
+END
+
+IF ~~ THEN BEGIN 10
+  SAY @8664
+  IF ~~ THEN REPLY @8665 GOTO 11
+  IF ~~ THEN REPLY @8634 EXIT
+END
+
+IF ~~ THEN BEGIN 11
+  SAY @8667
+  IF ~Global("Know_Work","GLOBAL",0)~ THEN REPLY @8669 DO ~SetGlobal("Know_Work","GLOBAL",1)~ GOTO 5
+  IF ~Global("Know_Work","GLOBAL",1)~ THEN REPLY @8670 GOTO 5
+  IF ~~ THEN REPLY @8634 EXIT
+END
+
+IF ~~ THEN BEGIN 12
+  SAY @8672
+  IF ~~ THEN REPLY @8673 DO ~StartStore("KUOswald",LastTalkedToBy)~ EXIT
+  IF ~Global("Know_Airship","GLOBAL",0)~ THEN REPLY @8674 DO ~SetGlobal("Know_Airship","GLOBAL",1)~ GOTO 2
+  IF ~~ THEN REPLY @607 EXIT
+END
+
+IF WEIGHT #2
+~Global("Kuldahar_Murder","GLOBAL",1)~ THEN BEGIN 13 // from:
+  SAY @8676
+  IF ~~ THEN EXIT
+END
+
+IF WEIGHT #1
+~NumTimesTalkedToGT(0)
+ Global("Kuldahar_Murder","GLOBAL",0)~ THEN BEGIN 14
+  SAY @8679
+  IF ~Global("Know_Airship","GLOBAL",0)~ THEN REPLY @8680 DO ~SetGlobal("Know_Airship","GLOBAL",1)~ GOTO 2
+  IF ~Global("Know_Work","GLOBAL",0)~ THEN REPLY @8681 DO ~SetGlobal("Know_Work","GLOBAL",1)~ GOTO 5
+  IF ~~ THEN REPLY @8682 DO ~StartStore("KUOswald",LastTalkedToBy)~ EXIT
+  IF ~~ THEN REPLY @8683 EXIT
+END

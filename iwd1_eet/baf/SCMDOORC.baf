@@ -1,0 +1,17 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Myself)
+		StartCutSceneMode()
+		ClearAllActions()
+		MultiPlayerSync()
+		ForceSpellPointRES("IDIN157",[2686.224]) //INNATE_BLUE_GLOW
+		Wait(1)
+		OpenDoor("AR9502_DOOR1")
+		PlaySound("ID9502D")
+		EndCutSceneMode()
+		Deactivate(Myself)
+		//TriggerActivation("Door Trigger",FALSE)
+END
+

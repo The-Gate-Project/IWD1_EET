@@ -1,0 +1,29 @@
+IF
+	Global("LARREL_CUTSCENE","MYAREA",0)
+THEN
+	RESPONSE #100
+		StartCutSceneMode()
+		HideGUI()
+		MultiPlayerSync()
+		ClearAllActions()
+		MultiPlayerSync()
+		DisplayStringHead(Myself,@18307)
+		Wait(3)
+		DisplayStringHead(Myself,@18308)
+		Wait(3)
+		DisplayStringHead(Myself,@18309)
+		Wait(3)
+		DisplayStringHead(Myself,@18310)
+		Wait(3)
+		DisplayStringHead(Myself,@18311)
+		Wait(2)
+		MoveToPoint([640.722])
+		MoveViewObject([PC],FAST)
+		ActionOverride("CUTSPY",DestroySelf())
+		SetGlobal("LARREL_CUTSCENE","MYAREA",1)
+		UnhideGUI()
+		MultiPlayerSync()
+		EndCutSceneMode()
+		DestroySelf()
+END
+

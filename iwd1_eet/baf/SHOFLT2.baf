@@ -1,0 +1,45 @@
+IF
+	!Global("SHOFLT2_INACTIVE","LOCALS",1)
+	BitCheck("AREA_GROUP_VAR","MYAREA",1)
+THEN
+	RESPONSE #100
+		DisplayStringHead(Myself,@17228)
+		SetGlobal("SHOFLT2_INACTIVE","LOCALS",1)
+END
+
+IF
+	!Global("SHOFLT2_INACTIVE","LOCALS",1)
+	!BitCheck("CREATURE_STATE_VAR","LOCALS",1)
+THEN
+	RESPONSE #100
+		BitSet("CREATURE_STATE_VAR","LOCALS",1)
+		SetGlobalTimer("IwTimer24","LOCALS",4)
+		Continue()
+END
+
+IF
+	!Global("SHOFLT2_INACTIVE","LOCALS",1)
+	GlobalTimerExpired("IwTimer24","LOCALS")
+THEN
+	RESPONSE #100
+		DisplayStringHead(Myself,@17347) // Атака начнется здесь.
+		SetGlobalTimer("IwTimer24","LOCALS",4)
+		Continue()
+	RESPONSE #100
+		DisplayStringHead(Myself,@17349) // Здесь наши силы укроются и будут выжидать.
+		SetGlobalTimer("IwTimer24","LOCALS",4)
+		Continue()
+	RESPONSE #100
+		DisplayStringHead(Myself,@17350) // Они нападут из этой точки.
+		SetGlobalTimer("IwTimer24","LOCALS",4)
+		Continue()
+	RESPONSE #100
+		DisplayStringHead(Myself,@17351) // Они зайдут с тыла вот здесь.
+		SetGlobalTimer("IwTimer24","LOCALS",4)
+		Continue()
+	RESPONSE #100
+		DisplayStringHead(Myself,@17353) // Лучники будут стрелять отсюда.
+		SetGlobalTimer("IwTimer24","LOCALS",4)
+		Continue()
+END
+

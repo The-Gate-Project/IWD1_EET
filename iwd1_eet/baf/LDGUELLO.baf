@@ -1,0 +1,101 @@
+IF
+	!Global("SPRITE_IS_DEADBEORN","GLOBAL",0)
+THEN
+	RESPONSE #100
+		DestroySelf()
+END
+
+IF
+	OnCreation()
+	!Global("SPRITE_IS_DEADGUELLO","GLOBAL",0)
+THEN
+	RESPONSE #100
+		DestroySelf()
+END
+
+IF
+	!Allegiance(Myself,ENEMY)
+	!Global("MAP_GROUP_HOSTILE1","MYAREA",0)
+THEN
+	RESPONSE #100
+		Enemy()
+		Continue()
+END
+
+IF
+	!IsActive(Myself)
+	Global("BEORN_QUEST","GLOBAL",4)
+	Global("SPRITE_IS_DEAD8004_HULKS_DEAD","GLOBAL",15)
+THEN
+	RESPONSE #100
+		Activate(Myself)
+		SetGlobal("IwIHidden","LOCALS",0)
+		Continue()
+END
+
+IF
+	!IsActive(Myself)
+	Global("BEORN_QUEST","GLOBAL",3)
+THEN
+	RESPONSE #100
+		Activate(Myself)
+		SetGlobal("IwIHidden","LOCALS",0)
+		Continue()
+END
+
+IF
+	!BitCheck("CREATURE_STATE_VAR","LOCALS",1)
+THEN
+	RESPONSE #100
+		BitSet("CREATURE_STATE_VAR","LOCALS",1)
+		SetGlobal("IwIHidden","LOCALS",1)
+		Deactivate(Myself)
+		//Continue()
+END
+
+IF
+	!IsActive(Myself)
+THEN
+	RESPONSE #100
+		NoAction()
+END
+
+IF
+	StateCheck(Myself,STATE_PANIC)
+THEN
+	RESPONSE #100
+		RandomWalkContinuous()
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		Help()
+		AttackReevaluate(LastSeenBy(Myself),75)
+END
+
+IF
+	AttackedBy(NearestEnemyOf(Myself),DEFAULT)
+THEN
+	RESPONSE #100
+		MoveToObject(LastAttackerOf(Myself))
+END
+
+IF
+	AttackedBy([GOODCUTOFF],DEFAULT)
+THEN
+	RESPONSE #100
+		SetGlobal("MAP_GROUP_HOSTILE1","MYAREA",1)
+		Enemy()
+		Continue()
+END
+
+IF
+	Allegiance([0.0.SVIRFNEBLIN],ENEMY)
+	Help([0.0.SVIRFNEBLIN])
+THEN
+	RESPONSE #100
+		MoveToObject(LastHelp(Myself))
+END
+

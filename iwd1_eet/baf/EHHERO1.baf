@@ -1,0 +1,85 @@
+IF
+	!Global("SPRITE_IS_DEADHROTHGAR","GLOBAL",0)
+	!StateCheck(Myself,STATE_REALLY_DEAD)
+THEN
+	RESPONSE #100
+		DestroySelf()
+END
+
+IF
+	!IsActive(Myself)
+	!Global("MURDER_ALARM","GLOBAL",0)
+	Global("SPRITE_IS_DEADHROTHGAR","GLOBAL",0)
+THEN
+	RESPONSE #100
+		Activate(Myself)
+		SetGlobal("IwIHidden","LOCALS",0)
+		Continue()
+END
+
+IF
+	!IsActive(Myself)
+THEN
+	RESPONSE #100
+		NoAction()
+END
+
+IF
+	StateCheck(Myself,STATE_PANIC)
+THEN
+	RESPONSE #100
+		RandomWalkContinuous()
+END
+
+IF
+	!BitCheck("CREATURE_STATE_VAR","LOCALS",2)
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		BitSet("CREATURE_STATE_VAR","LOCALS",2)
+		SetSequence(SEQ_HEAD_TURN)
+		Continue()
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		EquipMostDamagingMelee()
+		Help()
+		AttackReevaluate(LastSeenBy(Myself),75)
+END
+
+IF
+	!BitCheck("CREATURE_STATE_VAR","LOCALS",2)
+	AttackedBy(NearestEnemyOf(Myself),DEFAULT)
+THEN
+	RESPONSE #100
+		BitSet("CREATURE_STATE_VAR","LOCALS",2)
+		SetSequence(SEQ_HEAD_TURN)
+		Continue()
+END
+
+IF
+	AttackedBy(NearestEnemyOf(Myself),DEFAULT)
+THEN
+	RESPONSE #100
+		EquipMostDamagingMelee()
+		Help()
+		AttackReevaluate(LastAttackerOf(Myself),75)
+END
+
+IF
+	Help([0.0.HUMAN])
+THEN
+	RESPONSE #100
+		MoveToObject(LastHelp(Myself))
+END
+
+IF
+	ActionListEmpty()
+THEN
+	RESPONSE #100
+		MoveToObject(Player1)
+END
+

@@ -1,0 +1,31 @@
+IF
+	!IsActive(Myself)
+	!Global("POQUELIN_HOSTILE","GLOBAL",0)
+THEN
+	RESPONSE #100
+		//EquipItem("SUMAN",0) // No such index
+		//Wait(1)
+		//HideCreature(Myself,FALSE)
+		Activate(Myself)
+		SetGlobal("IwIHidden","LOCALS",0)
+		CreateVisualEffectObject("MSUMM1X",Myself)
+		ApplySpellRES("IDINVIS5",Myself)
+		CreateVisualEffectObject("MSUMM1H",Myself)
+		Wait(1)
+		Continue()
+END
+
+/*IF
+	!HasItem("SUMAN",Myself) // No such index
+THEN
+	RESPONSE #100
+		GiveItemCreate("SUMAN",Myself,1,1,1) // No such index
+END*/
+
+IF
+	!IsActive(Myself)
+THEN
+	RESPONSE #100
+		NoAction()
+END
+

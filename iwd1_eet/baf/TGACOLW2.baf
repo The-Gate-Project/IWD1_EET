@@ -1,0 +1,148 @@
+IF
+	OnCreation()
+THEN
+	RESPONSE #100
+		SaveObjectLocation("LOCALS","SavedLoc",Myself)
+END
+
+IF
+	StateCheck(Myself,STATE_PANIC)
+THEN
+	RESPONSE #100
+		RandomWalkContinuous()
+END
+
+IF
+	!GlobalTimerNotExpired("IWD_Rest","LOCALS")
+THEN
+	RESPONSE #100
+		SetGlobalTimer("IWD_Rest","LOCALS",EIGHT_HOURS)
+		ApplySpell(Myself,RESTORE_FULL_HEALTH)
+		Rest()
+END
+
+IF
+	HPLT(Myself,11)
+	HaveSpell(CLERIC_CURE_MEDIUM_WOUNDS)
+THEN
+	RESPONSE #100
+		Spell(Myself,CLERIC_CURE_MEDIUM_WOUNDS)
+		Wait(2)
+END
+
+IF
+	Global("Internal_0","LOCALS",0)
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		Spell(NearestEnemyOf(Myself),CLERIC_GLYPH_OF_WARDING)
+		Wait(2)
+		SetGlobal("Internal_0","LOCALS",1)
+	RESPONSE #100
+		Spell(NearestEnemyOf(Myself),CLERIC_DISPEL_MAGIC)
+		Wait(2)
+		SetGlobal("Internal_0","LOCALS",1)
+	RESPONSE #100
+		Spell(NearestEnemyOf(Myself),CLERIC_HOLD_PERSON)
+		Wait(2)
+		SetGlobal("Internal_0","LOCALS",1)
+	RESPONSE #100
+		Spell(NearestEnemyOf(Myself),CLERIC_ENTANGLE)
+		Wait(2)
+		SetGlobal("Internal_0","LOCALS",1)
+	RESPONSE #100
+		Spell(NearestEnemyOf(Myself),CLERIC_MAGIC_STONE)
+		Wait(2)
+		SetGlobal("Internal_0","LOCALS",1)
+	RESPONSE #100
+		SpellRES("IDPR111",NearestEnemyOf(Myself))
+		Wait(2)
+		SetGlobal("Internal_0","LOCALS",1)
+END
+
+IF
+	Global("Internal_0","LOCALS",1)
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		Spell(NearestEnemyOf(Myself),CLERIC_GLYPH_OF_WARDING)
+		Wait(2)
+		SetGlobal("Internal_0","LOCALS",2)
+	RESPONSE #100
+		Spell(NearestEnemyOf(Myself),CLERIC_DISPEL_MAGIC)
+		Wait(2)
+		SetGlobal("Internal_0","LOCALS",2)
+	RESPONSE #100
+		Spell(NearestEnemyOf(Myself),CLERIC_HOLD_PERSON)
+		Wait(2)
+		SetGlobal("Internal_0","LOCALS",2)
+	RESPONSE #100
+		Spell(NearestEnemyOf(Myself),CLERIC_ENTANGLE)
+		Wait(2)
+		SetGlobal("Internal_0","LOCALS",2)
+	RESPONSE #100
+		Spell(NearestEnemyOf(Myself),CLERIC_MAGIC_STONE)
+		Wait(2)
+		SetGlobal("Internal_0","LOCALS",2)
+	RESPONSE #100
+		SpellRES("IDPR111",NearestEnemyOf(Myself))
+		Wait(2)
+		SetGlobal("Internal_0","LOCALS",2)
+END
+
+IF
+	Global("Internal_0","LOCALS",2)
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		Spell(Myself,CLERIC_STRENGTH_OF_ONE)
+		Wait(2)
+		SetGlobal("Internal_0","LOCALS",3)
+	RESPONSE #100
+		Spell(Myself,CLERIC_FLAME_BLADE)
+		Wait(2)
+		SetGlobal("Internal_0","LOCALS",3)
+	RESPONSE #100
+		Spell(Myself,CLERIC_SPIRITUAL_HAMMER)
+		Wait(2)
+		SetGlobal("Internal_0","LOCALS",3)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		Help()
+		AttackReevaluate(NearestEnemyOf(Myself),45)
+END
+
+IF
+	AttackedBy([ANYONE],DEFAULT)
+THEN
+	RESPONSE #100
+		Help()
+		AttackReevaluate(LastAttackerOf(Myself),45)
+END
+
+IF
+	Help([ANYONE])
+	!Help([PC])
+THEN
+	RESPONSE #100
+		MoveToObject(LastHelp)
+END
+
+IF
+	!NearSavedLocation(Myself,"LOCALSSavedLoc",5)
+THEN
+	RESPONSE #100
+		MoveToSavedLocation("SavedLoc","LOCALS")
+END
+
+IF
+	True()
+THEN
+	RESPONSE #100
+		RandomWalk()
+END
+

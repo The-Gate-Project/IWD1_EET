@@ -1,0 +1,34 @@
+IF
+	Global("IWD1_CHAPTER","GLOBAL",3)
+THEN
+	RESPONSE #100
+		IncrementGlobal("IWD1_CHAPTER","GLOBAL",1)
+		TextScreen("IWD1TXT4")
+		Continue()
+END
+
+IF
+	OnCreation()
+THEN
+	RESPONSE #100
+		SetGlobal("udspawnb","GLOBAL",0)
+		SetGlobal("udspawnc","GLOBAL",0)
+		SetGlobal("udspawna","GLOBAL",1)
+	RESPONSE #100
+		SetGlobal("udspawna","GLOBAL",0)
+		SetGlobal("udspawnc","GLOBAL",0)
+		SetGlobal("udspawnb","GLOBAL",1)
+	RESPONSE #100
+		SetGlobal("udspawna","GLOBAL",0)
+		SetGlobal("udspawnb","GLOBAL",0)
+		SetGlobal("udspawnc","GLOBAL",1)
+END
+
+IF
+  Global("ID6000_Revealed","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("ID6000_Revealed","GLOBAL",1)
+    Continue()
+END
+

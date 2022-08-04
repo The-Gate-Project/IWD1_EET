@@ -1,0 +1,14 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Myself)
+		SetGlobal("MAGICMOUTH_DONE","MYAREA",1)
+		Unlock("AR9717_Door10")
+		OpenDoor("AR9717_Door10")
+		Wait(1)
+		AmbientActivate("9717MS1",FALSE)
+		EndCutSceneMode()
+		DestroySelf()
+END
+

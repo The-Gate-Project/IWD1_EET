@@ -1,0 +1,39 @@
+IF
+  OpenState("AR9800_Hide1",FALSE)
+  Global("OPENED_HIDE","MYAREA",0)
+  !Global("Deactivate_Trigger","MYAREA",1)
+THEN
+  RESPONSE #100
+    TriggerActivation("To9711",FALSE)
+    SetGlobal("Deactivate_Trigger","MYAREA",1)
+    Continue()
+END
+
+IF
+	Global("SUMMONER_TURN","MYAREA",0)
+THEN
+	RESPONSE #100
+		SetGlobal("SUMMONER_TURN","MYAREA",1)
+		Continue()
+	RESPONSE #100
+		SetGlobal("SUMMONER_TURN","MYAREA",2)
+		Continue()
+END
+
+IF
+	!Global("RETURN_TO_LONELYWOOD","GLOBAL",0)
+THEN
+	RESPONSE #100
+		StartCutSceneMode()
+		StartCutScene("keRtrnLW")
+		SetGlobal("RETURN_TO_LONELYWOOD","GLOBAL",0)
+END
+
+IF
+	OnCreation()
+THEN
+	RESPONSE #100
+		NoAction()
+		Continue()
+END
+

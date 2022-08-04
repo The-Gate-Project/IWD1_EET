@@ -1,0 +1,56 @@
+IF
+	!Global("ARUNDEL_OUTSIDE","GLOBAL",0)
+THEN
+	RESPONSE #100
+		DestroySelf()
+END
+
+IF
+	!Allegiance(Myself,ENEMY)
+	!Global("KULDAHAR_ALARM","GLOBAL",0)
+THEN
+	RESPONSE #100
+		Enemy()
+		Continue()
+END
+
+IF
+	Global("BIG_SCARY_GLOBAL","GLOBAL",0)
+	!Global("SPRITE_IS_DEADYXUNOMEI","GLOBAL",0)
+	See([PC])
+THEN
+	RESPONSE #100
+		StartCutSceneMode()
+		ClearAllActions()
+		MultiPlayerSync()
+		Wait(1)
+		ApplySpellRES("BDCUTSPY",Myself)
+		StartDialogNoSet(LastSeenBy(Myself))
+END
+
+IF
+	Global("SPRITE_IS_DEADYXUNOMEI","GLOBAL",0)
+	AttackedBy([GOODCUTOFF],DEFAULT)
+THEN
+	RESPONSE #100
+		Enemy()
+		SetGlobal("KULDAHAR_ALARM","GLOBAL",1)
+		ReallyForceSpell(Myself,WIZARD_INVISIBILITY)
+		Wait(5)
+		DestroySelf()
+END
+
+IF
+	NumTimesTalkedTo(0)
+	See([PC])
+	!Allegiance(Myself,ENEMY)
+	!StateCheck(Myself,STATE_REALLY_DEAD)
+THEN
+	RESPONSE #100
+		StartCutSceneMode()
+		ClearAllActions()
+		MultiPlayerSync()
+		ApplySpellRES("BDCUTSPY",Myself)
+		StartDialogNoSet(LastSeenBy(Myself))
+END
+

@@ -1,0 +1,9 @@
+IF
+	Allegiance(Myself,ENEMY)
+	ActionListEmpty()
+THEN
+  RESPONSE #100
+    MoveToObject(Player1)
+END
+
+

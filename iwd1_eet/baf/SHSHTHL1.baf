@@ -1,0 +1,253 @@
+IF
+  Global("SaveSavedLoc","LOCALS",0)
+THEN
+  RESPONSE #100
+    SetGlobal("SaveSavedLoc","LOCALS",1)
+    SaveObjectLocation("LOCALS","SavedLoc",Myself)
+    Continue()
+END
+
+IF
+	!BitCheck("CREATURE_STATE_VAR","LOCALS",32)
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		BitSet("CREATURE_STATE_VAR","LOCALS",32)
+		Continue()
+END
+
+IF
+	StateCheck(Myself,STATE_PANIC)
+THEN
+	RESPONSE #100
+		RandomWalkContinuous()
+END
+
+IF
+	!GlobalTimerNotExpired("IWD_Rest","LOCALS")
+THEN
+	RESPONSE #100
+		SetGlobalTimer("IWD_Rest","LOCALS",EIGHT_HOURS)
+		ApplySpell(Myself,RESTORE_FULL_HEALTH)
+		Rest()
+END
+
+IF
+	Global("SAW_ENEMY","LOCALS",0)
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		SetGlobal("SAW_ENEMY","LOCALS",1)
+		Continue()
+END
+
+IF
+	HaveSpellRES("IDIN997") //INNATE_SHADOW_PACT
+	See("BONE_1_1")
+	!Dead("BONE_1_1")
+	HPPercentLT("BONE_1_1",75)
+	BitCheck("CREATURE_STATE_VAR","LOCALS",32)
+THEN
+	RESPONSE #100
+		SpellRES("IDIN997","BONE_1_1") //INNATE_SHADOW_PACT
+		Wait(3)
+		//Continue()
+END
+
+IF
+	HaveSpellRES("IDIN997") //INNATE_SHADOW_PACT
+	See("BONE_1_2")
+	!Dead("BONE_1_2")
+	HPPercentLT("BONE_1_2",75)
+	BitCheck("CREATURE_STATE_VAR","LOCALS",32)
+THEN
+	RESPONSE #100
+		SpellRES("IDIN997","BONE_1_2") //INNATE_SHADOW_PACT
+		Wait(3)
+		//Continue()
+END
+
+IF
+	HaveSpellRES("IDIN997") //INNATE_SHADOW_PACT
+	See("BONE_1_3")
+	!Dead("BONE_1_3")
+	HPPercentLT("BONE_1_3",75)
+	BitCheck("CREATURE_STATE_VAR","LOCALS",32)
+THEN
+	RESPONSE #100
+		SpellRES("IDIN997","BONE_1_3") //INNATE_SHADOW_PACT
+		Wait(3)
+		//Continue()
+END
+
+IF
+	HaveSpellRES("IDIN997") //INNATE_SHADOW_PACT
+	See("BONE_1_4")
+	!Dead("BONE_1_4")
+	HPPercentLT("BONE_1_4",75)
+	BitCheck("CREATURE_STATE_VAR","LOCALS",32)
+THEN
+	RESPONSE #100
+		SpellRES("IDIN997","BONE_1_4") //INNATE_SHADOW_PACT
+		Wait(3)
+		//Continue()
+END
+
+IF
+	HaveSpellRES("IDIN997") //INNATE_SHADOW_PACT
+	See("BONE_2_1")
+	!Dead("BONE_2_1")
+	HPPercentLT("BONE_2_1",75)
+	BitCheck("CREATURE_STATE_VAR","LOCALS",32)
+THEN
+	RESPONSE #100
+		SpellRES("IDIN997","BONE_2_1") //INNATE_SHADOW_PACT
+		Wait(3)
+		//Continue()
+END
+
+IF
+	HaveSpellRES("IDIN997") //INNATE_SHADOW_PACT
+	See("BONE_2_2")
+	!Dead("BONE_2_2")
+	HPPercentLT("BONE_2_2",75)
+	BitCheck("CREATURE_STATE_VAR","LOCALS",32)
+THEN
+	RESPONSE #100
+		SpellRES("IDIN997","BONE_2_2") //INNATE_SHADOW_PACT
+		Wait(3)
+		//Continue()
+END
+
+IF
+	HaveSpellRES("IDIN997") //INNATE_SHADOW_PACT
+	See("BONE_2_3")
+	!Dead("BONE_2_3")
+	HPPercentLT("BONE_2_3",75)
+	BitCheck("CREATURE_STATE_VAR","LOCALS",32)
+THEN
+	RESPONSE #100
+		SpellRES("IDIN997","BONE_2_3") //INNATE_SHADOW_PACT
+		Wait(3)
+		//Continue()
+END
+
+IF
+	HaveSpellRES("IDIN997") //INNATE_SHADOW_PACT
+	See("BONE_2_4")
+	!Dead("BONE_2_4")
+	HPPercentLT("BONE_2_4",75)
+	BitCheck("CREATURE_STATE_VAR","LOCALS",32)
+THEN
+	RESPONSE #100
+		SpellRES("IDIN997","BONE_2_4") //INNATE_SHADOW_PACT
+		Wait(3)
+		//Continue()
+END
+
+IF
+	HaveSpellRES("IDIN997") //INNATE_SHADOW_PACT
+	See("BONE_2_5")
+	!Dead("BONE_2_5")
+	HPPercentLT("BONE_2_5",75)
+	BitCheck("CREATURE_STATE_VAR","LOCALS",32)
+THEN
+	RESPONSE #100
+		SpellRES("IDIN997","BONE_2_5") //INNATE_SHADOW_PACT
+		Wait(3)
+		//Continue()
+END
+
+IF
+	HaveSpellRES("IDIN997") //INNATE_SHADOW_PACT
+	See("BONE_3_1")
+	!Dead("BONE_3_1")
+	HPPercentLT("BONE_3_1",75)
+	BitCheck("CREATURE_STATE_VAR","LOCALS",32)
+THEN
+	RESPONSE #100
+		SpellRES("IDIN997","BONE_3_1") //INNATE_SHADOW_PACT
+		Wait(3)
+		//Continue()
+END
+
+IF
+	HaveSpellRES("IDIN997") //INNATE_SHADOW_PACT
+	See("BONE_3_2")
+	!Dead("BONE_3_2")
+	HPPercentLT("BONE_3_2",75)
+	BitCheck("CREATURE_STATE_VAR","LOCALS",32)
+THEN
+	RESPONSE #100
+		SpellRES("IDIN997","BONE_3_2") //INNATE_SHADOW_PACT
+		Wait(3)
+		//Continue()
+END
+
+IF
+	HaveSpellRES("IDIN997") //INNATE_SHADOW_PACT
+	See([ENEMY])
+	!StateCheck(LastSeenBy(Myself),STATE_REALLY_DEAD)
+	HPPercentLT(LastSeenBy(Myself),75)
+	BitCheck("CREATURE_STATE_VAR","LOCALS",32)
+THEN
+	RESPONSE #100
+		SpellRES("IDIN997",LastSeenBy(Myself)) //INNATE_SHADOW_PACT
+		Wait(3)
+		//Continue()
+END
+
+IF
+	HaveSpell(WIZARD_LARLOCH_MINOR_DRAIN)
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		Spell(LastSeenBy(Myself),WIZARD_LARLOCH_MINOR_DRAIN)
+		Wait(2)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		AttackReevaluate(LastSeenBy(Myself),75)
+END
+
+IF
+	See([ENEMY])
+	AttackedBy(NearestEnemyOf(Myself),DEFAULT)
+THEN
+	RESPONSE #100
+		RunAwayFromNoLeaveArea(LastAttackerOf(Myself),45)
+END
+
+IF
+	AttackedBy(NearestEnemyOf(Myself),DEFAULT)
+THEN
+	RESPONSE #100
+		MoveToObject(LastAttackerOf(Myself))
+END
+
+IF
+	ActionListEmpty()
+	!NearSavedLocation(Myself,"LOCALSSavedLoc",36)
+THEN
+	RESPONSE #100
+		MoveToSavedLocation("SavedLoc","LOCALS")
+END
+
+IF
+	ActionListEmpty()
+THEN
+	RESPONSE #100
+		RandomWalk()
+END
+
+IF
+	!Global("SAW_ENEMY","LOCALS",0)
+	!See([ENEMY])
+THEN
+	RESPONSE #100
+		MoveToObject([ENEMY])
+END
+

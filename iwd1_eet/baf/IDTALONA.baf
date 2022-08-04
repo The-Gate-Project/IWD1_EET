@@ -1,0 +1,11 @@
+IF
+  OR(2)
+    Die()
+    StateCheck(Myself,STATE_REALLY_DEAD)
+  !Global("Inc_Death_Variable","LOCALS",1)
+THEN
+  RESPONSE #100
+  	SetGlobal("Inc_Death_Variable","LOCALS",1)
+    IncrementGlobal("TALONITE_DEAD","GLOBAL",1)
+    Continue()
+END

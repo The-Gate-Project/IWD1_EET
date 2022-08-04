@@ -1,0 +1,60 @@
+IF
+	!BitCheck("CREATURE_STATE_VAR","LOCALS",1)
+THEN
+	RESPONSE #100
+		BitSet("CREATURE_STATE_VAR","LOCALS",1)
+		SetGlobalTimerRandom("IwTimer24","LOCALS",4,8)
+		Continue()
+END
+
+IF
+	!GlobalTimerNotExpired("IwTimer24","LOCALS")
+	Detect([PC])
+THEN
+	RESPONSE #100
+		DisplayStringHead(Myself,@18060)
+		SetGlobalTimerRandom("IwTimer24","LOCALS",4,8)
+		Continue()
+	RESPONSE #100
+		DisplayStringHead(Myself,@18061)
+		SetGlobalTimerRandom("IwTimer24","LOCALS",4,8)
+		Continue()
+	RESPONSE #100
+		DisplayStringHead(Myself,@18066)
+		SetGlobalTimerRandom("IwTimer24","LOCALS",4,8)
+		Continue()
+	RESPONSE #100
+		DisplayStringHead(Myself,@18067)
+		SetGlobalTimerRandom("IwTimer24","LOCALS",4,8)
+		Continue()
+END
+
+IF
+	StateCheck(Myself,STATE_PANIC)
+THEN
+	RESPONSE #100
+		RandomWalkContinuous()
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		AttackReevaluate(LastSeenBy(Myself),75)
+END
+
+IF
+	AttackedBy(NearestEnemyOf(Myself),DEFAULT)
+THEN
+	RESPONSE #100
+		AttackReevaluate(LastAttackerOf(Myself),75)
+END
+
+IF
+	ActionListEmpty()
+	!TargetUnreachable(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		MoveToObject(NearestEnemyOf(Myself))
+END
+

@@ -1,0 +1,38 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		//CutSceneId(Myself)
+		CutSceneId(Player1)
+		StartCutSceneMode()
+		ClearAllActions()
+		MultiPlayerSync()
+		//StopJoinRequests()
+		SetGlobal("9700_RESET_JOIN","GLOBAL",1)
+		MultiPlayerSync()
+		Wait(1)
+		SmallWait(6)
+		//ForceSpell(Myself,3181)  // SPIN181.SPL (Безошибочный Телепорт)
+		ActionOverride("Hobart",ForceSpellRES("IDIN181",Myself))
+		Wait(2)
+		//HideCreature(Myself,TRUE)
+		ActionOverride("Hobart",DestroySelf())
+		Wait(1)
+		MultiPlayerSync()
+		SmallWait(5)
+		LeaveAreaLUAPanic("ID9700","",[1446.1088],8)
+		LeaveAreaLUA("ID9700","",[1446.1088],8)
+		ActionOverride(Player2,LeaveAreaLUA("ID9700","",[1497.1088],8))
+		ActionOverride(Player3,LeaveAreaLUA("ID9700","",[1410.1051],10))
+		ActionOverride(Player4,LeaveAreaLUA("ID9700","",[1539.1054],6))
+		ActionOverride(Player5,LeaveAreaLUA("ID9700","",[1385.999],12))
+		ActionOverride(Player6,LeaveAreaLUA("ID9700","",[1554.1005],4))
+		MultiPlayerSync()
+		SmallWait(5)
+		EndCutSceneMode()
+		//StartCutScene("LUA9700")
+END
+
+
+
+

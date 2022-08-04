@@ -1,0 +1,17 @@
+IF
+	!Global("EFXDELH_INACTIVE","LOCALS",1)
+	//CheckPartyAverageLevel(16,GREATER_THAN)
+	LevelPartyGT(10)
+THEN
+	RESPONSE #100
+		DestroySelf()
+END
+
+IF
+	!Global("EFXDELH_INACTIVE","LOCALS",1)
+	True()
+THEN
+	RESPONSE #100
+		SetGlobal("EFXDELH_INACTIVE","LOCALS",1)
+END
+

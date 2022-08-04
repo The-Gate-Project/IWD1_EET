@@ -1,0 +1,72 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId("JORN")  // Йорн
+		//SetSavedLocationPoint(763,1815,SW)
+		SaveLocation("LOCALS","SavedLoc",[763.1815])
+		SetHomeLocation([763.1815])
+		MoveToPoint([763.1815])
+		Face(SW)
+END
+
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId("ID9600_BARBARIAN_1")
+		//SetSavedLocationPoint(717,1785,S)
+		SaveLocation("LOCALS","SavedLoc",[717.1785])
+		SetHomeLocation([717.1785])
+		MoveToPoint([717.1785])
+		Face(S)
+END
+
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId("ID9600_BARBARIAN_2")
+		//SetSavedLocationPoint(769,1972,NW)
+		SaveLocation("LOCALS","SavedLoc",[769.1972])
+		SetHomeLocation([769.1972])
+		MoveToPoint([769.1972])
+		Face(NW)
+END
+
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId("ID9600_BARBARIAN_4")
+		//SetSavedLocationPoint(739,1854,NW)
+		SaveLocation("LOCALS","SavedLoc",[739.1854])
+		SetHomeLocation([739.1854])
+		MoveToPoint([739.1854])
+		Face(NW)
+END
+
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId("ID9600_BARBARIAN_7")
+		//SetSavedLocationPoint(992,2050,W)
+		SaveLocation("LOCALS","SavedLoc",[992.2050])
+		SetHomeLocation([992.2050])
+		MoveToPoint([992.2050])
+		Face(W)
+END
+
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId("ID9600_BARBARIAN_8")
+		//SetSavedLocationPoint(564,2044,NE)
+		SaveLocation("LOCALS","SavedLoc",[564.2044])
+		SetHomeLocation([564.2044])
+		MoveToPoint([564.2044])
+		Face(NE)
+END
+

@@ -1,0 +1,284 @@
+
+//area
+
+DEFINE_PATCH_MACRO remove_area_actors BEGIN
+      READ_LONG   0x54 actor_off
+      READ_SHORT  0x58 actor_num
+      PATCH_IF (~%actor_num%~ > 0) BEGIN
+        WRITE_SHORT 0x58 0
+        READ_LONG   0x5c triggers_off
+        PATCH_IF (~%triggers_off%~ >= ~%actor_off%~) BEGIN
+          WRITE_LONG 0x5c ~%triggers_off%~ - ~%actor_num%~ * 0x110
+        END
+        READ_LONG   0x60 spawn_off
+        PATCH_IF (~%spawn_off%~ >= ~%actor_off%~) BEGIN
+          WRITE_LONG 0x60 ~%spawn_off%~ - ~%actor_num%~ * 0x110
+        END
+        READ_LONG   0x68 entrance_off
+        PATCH_IF (~%entrance_off%~ >= ~%actor_off%~) BEGIN
+          WRITE_LONG 0x68 ~%entrance_off%~ - ~%actor_num%~ * 0x110
+        END
+        READ_LONG   0x70 contain_off
+        PATCH_IF (~%contain_off%~ >= ~%actor_off%~) BEGIN
+          WRITE_LONG 0x70 ~%contain_off%~ - ~%actor_num%~ * 0x110
+        END
+        READ_LONG   0x78 item_off
+        PATCH_IF (~%item_off%~ >= ~%actor_off%~) BEGIN
+          WRITE_LONG 0x78 ~%item_off%~ - ~%actor_num%~ * 0x110
+        END
+        READ_LONG   0x7c vert_off
+        PATCH_IF (~%vert_off%~ >= ~%actor_off%~) BEGIN
+          WRITE_LONG 0x7c ~%vert_off%~ - ~%actor_num%~ * 0x110
+        END
+        READ_LONG   0x84 ambi_off
+        PATCH_IF (~%ambi_off%~ >= ~%actor_off%~) BEGIN
+          WRITE_LONG 0x84 ~%ambi_off%~ - ~%actor_num%~ * 0x110
+        END
+        READ_LONG   0x88 var_off
+        PATCH_IF (~%var_off%~ >= ~%actor_off%~) BEGIN
+          WRITE_LONG 0x88 ~%var_off%~ - ~%actor_num%~ * 0x110
+        END
+        READ_LONG   0xa0 explore_off
+        PATCH_IF (~%explore_off%~ >= ~%actor_off%~) BEGIN
+          WRITE_LONG 0xa0 ~%explore_off%~ - ~%actor_num%~ * 0x110
+        END
+        READ_LONG   0xa8 door_off
+        PATCH_IF (~%door_off%~ >= ~%actor_off%~) BEGIN
+          WRITE_LONG 0xa8 ~%door_off%~ - ~%actor_num%~ * 0x110
+        END
+        READ_LONG   0xb0 anim_off
+        PATCH_IF (~%anim_off%~ >= ~%actor_off%~) BEGIN
+          WRITE_LONG 0xb0 ~%anim_off%~ - ~%actor_num%~ * 0x110
+        END
+        READ_LONG   0xb8 tiled_off
+        PATCH_IF (~%tiled_off%~ >= ~%actor_off%~) BEGIN
+          WRITE_LONG 0xb8 ~%tiled_off%~ - ~%actor_num%~ * 0x110
+        END
+        READ_LONG   0xbc song_off
+        PATCH_IF (~%song_off%~ >= ~%actor_off%~) BEGIN
+          WRITE_LONG 0xbc ~%song_off%~ - ~%actor_num%~ * 0x110
+        END
+        READ_LONG   0xc0 rest_enc_off
+        PATCH_IF (~%rest_enc_off%~ >= ~%actor_off%~) BEGIN
+          WRITE_LONG 0xc0 ~%rest_enc_off%~ - ~%actor_num%~ * 0x110
+        END
+        READ_LONG   0xc4 auto_map_off
+        PATCH_IF (~%auto_map_off%~ >= ~%actor_off%~) BEGIN
+          WRITE_LONG 0xc4 ~%auto_map_off%~ - ~%actor_num%~ * 0x110
+        END
+        DELETE_BYTES ~%actor_off%~ ~%actor_num%~ * 0x110
+      END
+END
+
+DEFINE_PATCH_MACRO remove_automap BEGIN
+      READ_LONG   0xc4 auto_map_off
+      READ_LONG   0xc8 auto_map_num
+      PATCH_IF (~%auto_map_num%~ > 0) BEGIN
+        WRITE_SHORT 0xc8 0
+        READ_LONG   0x54 actor_off
+        PATCH_IF (~%actor_off%~ >= ~%auto_map_off%~) BEGIN
+          WRITE_LONG 0x54 ~%actor_off%~ - ~%auto_map_num%~ * 0x34
+        END
+        READ_LONG   0x5c triggers_off
+        PATCH_IF (~%triggers_off%~ >= ~%auto_map_off%~) BEGIN
+          WRITE_LONG 0x5c ~%triggers_off%~ - ~%auto_map_num%~ * 0x34
+        END
+        READ_LONG   0x60 spawn_off
+        PATCH_IF (~%spawn_off%~ >= ~%auto_map_off%~) BEGIN
+          WRITE_LONG 0x60 ~%spawn_off%~ - ~%auto_map_num%~ * 0x34
+        END
+        READ_LONG   0x68 entrance_off
+        PATCH_IF (~%entrance_off%~ >= ~%auto_map_off%~) BEGIN
+          WRITE_LONG 0x68 ~%entrance_off%~ - ~%auto_map_num%~ * 0x34
+        END
+        READ_LONG   0x70 contain_off
+        PATCH_IF (~%contain_off%~ >= ~%auto_map_off%~) BEGIN
+          WRITE_LONG 0x70 ~%contain_off%~ - ~%auto_map_num%~ * 0x34
+        END
+        READ_LONG   0x78 item_off
+        PATCH_IF (~%item_off%~ >= ~%auto_map_off%~) BEGIN
+          WRITE_LONG 0x78 ~%item_off%~ - ~%auto_map_num%~ * 0x34
+        END
+        READ_LONG   0x7c vert_off
+        PATCH_IF (~%vert_off%~ >= ~%auto_map_off%~) BEGIN
+          WRITE_LONG 0x7c ~%vert_off%~ - ~%auto_map_num%~ * 0x34
+        END
+        READ_LONG   0x84 ambi_off
+        PATCH_IF (~%ambi_off%~ >= ~%auto_map_off%~) BEGIN
+          WRITE_LONG 0x84 ~%ambi_off%~ - ~%auto_map_num%~ * 0x34
+        END
+        READ_LONG   0x88 var_off
+        PATCH_IF (~%var_off%~ >= ~%auto_map_off%~) BEGIN
+          WRITE_LONG 0x88 ~%var_off%~ - ~%auto_map_num%~ * 0x34
+        END
+        READ_LONG   0xa0 explore_off
+        PATCH_IF (~%explore_off%~ >= ~%auto_map_off%~) BEGIN
+          WRITE_LONG 0xa0 ~%explore_off%~ - ~%auto_map_num%~ * 0x34
+        END
+        READ_LONG   0xa8 door_off
+        PATCH_IF (~%door_off%~ >= ~%auto_map_off%~) BEGIN
+          WRITE_LONG 0xa8 ~%door_off%~ - ~%auto_map_num%~ * 0x34
+        END
+        READ_LONG   0xb0 anim_off
+        PATCH_IF (~%anim_off%~ >= ~%auto_map_off%~) BEGIN
+          WRITE_LONG 0xb0 ~%anim_off%~ - ~%auto_map_num%~ * 0x34
+        END
+        READ_LONG   0xb8 tiled_off
+        PATCH_IF (~%tiled_off%~ >= ~%auto_map_off%~) BEGIN
+          WRITE_LONG 0xb8 ~%tiled_off%~ - ~%auto_map_num%~ * 0x34
+        END
+        READ_LONG   0xbc song_off
+        PATCH_IF (~%song_off%~ >= ~%auto_map_off%~) BEGIN
+          WRITE_LONG 0xbc ~%song_off%~ - ~%auto_map_num%~ * 0x34
+        END
+        READ_LONG   0xc0 rest_enc_off
+        PATCH_IF (~%rest_enc_off%~ >= ~%auto_map_off%~) BEGIN
+          WRITE_LONG 0xc0 ~%rest_enc_off%~ - ~%auto_map_num%~ * 0x34
+        END
+        DELETE_BYTES ~%auto_map_off%~ ~%auto_map_num%~ * 0x34
+      END
+END
+
+DEFINE_PATCH_FUNCTION ~add_area_cre_acti~
+  INT_VAR
+    pos_x       =   1
+    pos_y       =   1
+    dest_x      =   ~%pos_x%~
+    dest_y      =   ~%pos_y%~
+    flags       =   1
+    anim        =   25602
+    dir         =   0
+    //unknown     =   0xff
+    expiri_time = ~-1~
+    wander_dist =   0
+    follow_dist =   0
+    present_at  =   0b11111111111111111111111111111111
+    talked_to   =   0
+  STR_VAR
+    //area_name   = ""
+    actor_name  = ""
+    dialogue    = ""
+    over_scr    = ""
+    genr_scr    = ""
+    clas_scr    = ""
+    race_scr    = ""
+    defl_scr    = ""
+    spec_scr    = ""
+    cre_file    = ""
+  BEGIN
+    //BLOCK
+    //COPY_EXISTING ~%area_name%.are~ ~override~
+      READ_LONG   0x54 actor_off
+      READ_SHORT  0x58 actor_num
+      WRITE_SHORT 0x58 ~%actor_num%~ + 1
+      READ_LONG   0x5c triggers_off
+      PATCH_IF (~%triggers_off%~ >= ~%actor_off%~) BEGIN
+        WRITE_LONG 0x5c ~%triggers_off%~ + 0x110
+      END
+      READ_LONG   0x60 spawn_off
+      PATCH_IF (~%spawn_off%~ >= ~%actor_off%~) BEGIN
+        WRITE_LONG 0x60 ~%spawn_off%~ + 0x110
+      END
+      READ_LONG   0x68 entrance_off
+      PATCH_IF (~%entrance_off%~ >= ~%actor_off%~) BEGIN
+        WRITE_LONG 0x68 ~%entrance_off%~ + 0x110
+      END
+      READ_LONG   0x70 contain_off
+      PATCH_IF (~%contain_off%~ >= ~%actor_off%~) BEGIN
+        WRITE_LONG 0x70 ~%contain_off%~ + 0x110
+      END
+      READ_LONG   0x78 item_off
+      PATCH_IF (~%item_off%~ >= ~%actor_off%~) BEGIN
+        WRITE_LONG 0x78 ~%item_off%~ + 0x110
+      END
+      READ_LONG   0x7c vert_off
+      PATCH_IF (~%vert_off%~ >= ~%actor_off%~) BEGIN
+        WRITE_LONG 0x7c ~%vert_off%~ + 0x110
+      END
+      READ_LONG   0x84 ambi_off
+      PATCH_IF (~%ambi_off%~ >= ~%actor_off%~) BEGIN
+        WRITE_LONG 0x84 ~%ambi_off%~ + 0x110
+      END
+      READ_LONG   0x88 var_off
+      PATCH_IF (~%var_off%~ >= ~%actor_off%~) BEGIN
+        WRITE_LONG 0x88 ~%var_off%~ + 0x110
+      END
+      READ_LONG   0xa0 explore_off
+      PATCH_IF (~%explore_off%~ >= ~%actor_off%~) BEGIN
+        WRITE_LONG 0xa0 ~%explore_off%~ + 0x110
+      END
+      READ_LONG   0xa8 door_off
+      PATCH_IF (~%door_off%~ >= ~%actor_off%~) BEGIN
+        WRITE_LONG 0xa8 ~%door_off%~ + 0x110
+      END
+      READ_LONG   0xb0 anim_off
+      PATCH_IF (~%anim_off%~ >= ~%actor_off%~) BEGIN
+        WRITE_LONG 0xb0 ~%anim_off%~ + 0x110
+      END
+      READ_LONG   0xb8 tiled_off
+      PATCH_IF (~%tiled_off%~ >= ~%actor_off%~) BEGIN
+        WRITE_LONG 0xb8 ~%tiled_off%~ + 0x110
+      END
+      READ_LONG   0xbc song_off
+      PATCH_IF (~%song_off%~ >= ~%actor_off%~) BEGIN
+        WRITE_LONG 0xbc ~%song_off%~ + 0x110
+      END
+      READ_LONG   0xc0 rest_enc_off
+      PATCH_IF (~%rest_enc_off%~ >= ~%actor_off%~) BEGIN
+        WRITE_LONG 0xc0 ~%rest_enc_off%~ + 0x110
+      END
+      READ_LONG   0xc4 auto_map_off
+      PATCH_IF (~%auto_map_off%~ >= ~%actor_off%~) BEGIN
+        WRITE_LONG 0xc4 ~%auto_map_off%~ + 0x110
+      END
+    //BLOCKEND
+      INSERT_BYTES ~%actor_off%~ 0x110
+        WRITE_ASCIIE ~%actor_off%~ + 0x00 ~%actor_name%~ (32)
+        WRITE_SHORT  ~%actor_off%~ + 0x20 ~%pos_x%~
+        WRITE_SHORT  ~%actor_off%~ + 0x22 ~%pos_y%~
+        WRITE_SHORT  ~%actor_off%~ + 0x24 ~%dest_x%~
+        WRITE_SHORT  ~%actor_off%~ + 0x26 ~%dest_y%~
+        WRITE_BYTE   ~%actor_off%~ + 0x28 ~%flags%~
+        WRITE_LONG   ~%actor_off%~ + 0x30 ~%anim%~
+        WRITE_SHORT  ~%actor_off%~ + 0x34 ~%dir%~
+        //WRITE_BYTE   ~%actor_off%~ + 0x36 ~%unknown%~
+        WRITE_LONG   ~%actor_off%~ + 0x38 ~%expiri_time%~
+        WRITE_SHORT  ~%actor_off%~ + 0x3c ~%wander_dist%~
+        WRITE_SHORT  ~%actor_off%~ + 0x3e ~%follow_dist%~
+        WRITE_LONG   ~%actor_off%~ + 0x40 ~%present_at%~
+        WRITE_LONG   ~%actor_off%~ + 0x44 ~%talked_to%~
+        WRITE_ASCIIE ~%actor_off%~ + 0x48 ~%dialogue%~ (8)
+        WRITE_ASCIIE ~%actor_off%~ + 0x50 ~%over_scr%~ (8)
+        WRITE_ASCIIE ~%actor_off%~ + 0x58 ~%genr_scr%~ (8)
+        WRITE_ASCIIE ~%actor_off%~ + 0x60 ~%clas_scr%~ (8)
+        WRITE_ASCIIE ~%actor_off%~ + 0x68 ~%race_scr%~ (8)
+        WRITE_ASCIIE ~%actor_off%~ + 0x70 ~%defl_scr%~ (8)
+        WRITE_ASCIIE ~%actor_off%~ + 0x78 ~%spec_scr%~ (8)
+        WRITE_ASCIIE ~%actor_off%~ + 0x80 ~%cre_file%~ (8)
+END
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

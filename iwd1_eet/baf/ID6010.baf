@@ -1,0 +1,83 @@
+IF
+	OnCreation()
+	Global("PUZZLE_STAIRS_OPEN","GLOBAL",1)
+THEN
+	RESPONSE #100
+		Unlock("AR6010DOOR1")
+		OpenDoor("AR6010DOOR1")
+		TriggerActivation("To6011",TRUE)
+END
+
+IF
+	OnCreation()
+	Global("PUZZLE_STAIRS_OPEN","GLOBAL",0)
+THEN
+	RESPONSE #100
+		CloseDoor("AR6010DOOR1")
+		Lock("AR6010DOOR1")
+		TriggerActivation("To6011",FALSE)
+END
+
+IF
+  !Global("ID6010_VISITED","GLOBAL",1)
+THEN
+  RESPONSE #100
+    SetGlobal("ID6010_VISITED","GLOBAL",1)
+    Continue()
+END
+
+IF
+	!Global("PUZZLE_A_DISABLED","GLOBAL",0)
+	GlobalLT("AR6010_TRAP_STATE","GLOBAL",1)
+THEN
+	RESPONSE #100
+		SetGlobal("AR6010_PLAY_SOUND","GLOBAL",1)
+		Continue()
+END
+
+IF
+	!Global("PUZZLE_B_DISABLED","GLOBAL",0)
+	GlobalLT("AR6010_TRAP_STATE","GLOBAL",2)
+THEN
+	RESPONSE #100
+		SetGlobal("AR6010_PLAY_SOUND","GLOBAL",1)
+		Continue()
+END
+
+IF
+	!Global("AR6010_PLAY_SOUND","GLOBAL",0)
+THEN
+	RESPONSE #100
+		PlaySound("REARM_S")
+		Continue()
+END
+
+IF
+	OR(3) !Global("AR6010_PLAY_SOUND","GLOBAL",0)
+	  !Global("PUZZLE_B_DISABLED","GLOBAL",0)
+	  !Global("PUZZLE_A_DISABLED","GLOBAL",0)
+THEN
+	RESPONSE #100
+		SetGlobal("AR6010_PLAY_SOUND","GLOBAL",0)
+		SetGlobal("PUZZLE_B_DISABLED","GLOBAL",0)
+		SetGlobal("PUZZLE_A_DISABLED","GLOBAL",0)
+END
+
+IF
+	OnCreation()
+THEN
+	RESPONSE #100
+		NoAction()
+		Continue()
+END
+
+IF
+	Global("PUZZLE_STAIRS_OPEN","GLOBAL",1)
+	Global("PUZZLE_STAIRS_NOTE","MYAREA",0)
+THEN
+	RESPONSE #100
+		AddMapNoteColor([665.575],@100081,GREEN)
+		SetGlobal("PUZZLE_STAIRS_NOTE","MYAREA",1)
+		Continue()
+END
+

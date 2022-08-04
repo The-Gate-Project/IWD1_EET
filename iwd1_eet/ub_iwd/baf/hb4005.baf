@@ -1,0 +1,14 @@
+IF
+  Global("CDHighBaptistFlock","MYAREA",0)
+THEN
+  RESPONSE #100
+    CreateCreature("cdcapv1a",[3343.1661],4) // 2
+    CreateCreature("cdcapv2a",[3230.1677],4) // 3
+    CreateCreature("cdcapv3a",[3114.1662],4) // 1
+    CreateCreature("cdcapv8a",[3483.1434],4) // 4
+    CreateCreature("cdcapv7a",[3419.1504],4) // 5
+    CreateCreature("cdcapv6a",[3346.1579],4) // 6
+    CreateCreature("cdcapv5a",[3248.1596],4) // 7
+    CreateCreature("cdcapv4a",[3141.1592],4) // 8
+    SetGlobal("CDHighBaptistFlock","MYAREA",1)
+END

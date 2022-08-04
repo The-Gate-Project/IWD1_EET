@@ -1,0 +1,27 @@
+IF
+  HPLT(Myself,5)
+THEN
+  RESPONSE #100
+    SetGlobal("SPRITE_IS_DEADVoice","GLOBAL",1)
+    SetGlobal("CDVoiceIsHere","MYAREA",0)
+    DestroyItem("IDIMMUN2")
+    EquipItemEx("ringtom",0) // No such index
+    Wait(3)
+    DestroySelf()
+END
+
+IF
+  GlobalGT("Voice_Quest","GLOBAL",1)
+THEN
+  RESPONSE #100
+    DestroySelf()
+END
+
+IF
+  NumTimesTalkedTo(0)
+  !Allegiance(Myself,[ENEMY])
+  See([PC])
+THEN
+  RESPONSE #100
+    Dialogue([PC])
+END

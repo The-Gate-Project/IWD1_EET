@@ -1,0 +1,130 @@
+IF
+	!Global("9700_RESET_JOIN","GLOBAL",0)
+THEN
+	RESPONSE #100
+		MultiPlayerSync()
+		//ResetJoinRequests()
+		SetGlobal("9700_RESET_JOIN","GLOBAL",0)
+		Continue()
+END
+
+IF
+	Global("AR9714_CUTSCENE","GLOBAL",1)
+THEN
+	RESPONSE #100
+		SetGlobal("AR9714_CUTSCENE","GLOBAL",2)
+		Continue()
+END
+
+IF
+	Global("AR9700_HANGING_MAN","GLOBAL",0)
+	//!Sequence("9700MS2",ATTACK)
+	!Global("9700MS2_SEQ","MYAREA",0)
+THEN
+	RESPONSE #100
+		//PlaySequence("9700MS2",ATTACK)
+		StaticSequence("9700MS2",SEQ_ATTACK)
+		SetGlobal("9700MS2_SEQ","MYAREA",0)
+		//Deactivate("AM9700B")
+		SoundActivate("ID9700B",FALSE)
+		Continue()
+END
+
+IF
+	//!Sequence("9700MS1",CAST)
+	!Global("9700MS1_SEQ","MYAREA",2)
+	OpenState("AR9700_STAIR1",TRUE)
+THEN
+	RESPONSE #100
+		//PlaySequence("9700MS1",CAST)
+		StaticSequence("9700MS1",SEQ_CAST)
+		SetGlobal("9700MS1_SEQ","MYAREA",2)
+		Continue()
+END
+
+/*IF
+	Global("HOBART_TALK","MYAREA",0)
+	CheckPartyAverageLevel(14,LESS_THAN)
+THEN
+	RESPONSE #100
+		HideCreature("AMBUSH_HARPY_4",TRUE)
+		ActionOverride("AMBUSH_HARPY_4",DestroySelf())
+		Continue()
+END
+
+IF
+	Global("HOBART_TALK","MYAREA",0)
+	!CheckPartyAverageLevel(16,GREATER_THAN)
+THEN
+	RESPONSE #100
+		HideCreature("AMBUSH_HARPY_5",TRUE)
+		ActionOverride("AMBUSH_HARPY_5",DestroySelf())
+		Continue()
+END*/
+
+IF
+	Global("HOBART_TALK","MYAREA",0)
+THEN
+	RESPONSE #100
+		StartCutSceneMode()
+		MultiPlayerSync()
+		StartCutScene("CYHOBTLK")
+		SetGlobal("HOBART_TALK","MYAREA",1)
+END
+
+IF
+	!Global("9700_RESET","GLOBAL",0)
+THEN
+	RESPONSE #100
+		SetGlobal("MAP_GROUP_HOSTILE2","MYAREA",0)
+		SetGlobal("MAP_GROUP_HOSTILE4","MYAREA",0)
+		SetGlobal("9700_RESET","GLOBAL",0)
+		Continue()
+END
+
+IF
+	Global("HARPY_WYVERN_DUEL","MYAREA",1)
+	/*Dead("HARPY_0")
+	Dead("HARPY_1")
+	Dead("HARPY_2")
+	Dead("HARPY_3")*/
+	GlobalGT("SPRITE_IS_DEADHarpyDuel","GLOBAL",3)
+THEN
+	RESPONSE #100
+		SetGlobal("HARPY_WYVERN_DUEL","MYAREA",3)
+		Continue()
+END
+
+IF
+	Global("HARPY_WYVERN_DUEL","MYAREA",1)
+	/*Dead("WYVERN_0")
+	Dead("WYVERN_1")
+	Dead("WYVERN_2")
+	Dead("WYVERN_3")
+	Dead("WYVERN_4")
+	Dead("WYVERN_5")
+	Dead("WYVERN_6")*/
+	GlobalGT("SPRITE_IS_DEADWyvernDuel","GLOBAL",6)
+THEN
+	RESPONSE #100
+		SetGlobal("HARPY_WYVERN_DUEL","MYAREA",2)
+		Continue()
+END
+
+IF
+	!Global("RETURN_TO_LONELYWOOD","GLOBAL",0)
+THEN
+	RESPONSE #100
+		StartCutSceneMode()
+		StartCutScene("keRtrnLW")
+		SetGlobal("RETURN_TO_LONELYWOOD","GLOBAL",0)
+END
+
+IF
+	OnCreation()
+THEN
+	RESPONSE #100
+		NoAction()
+		Continue()
+END
+

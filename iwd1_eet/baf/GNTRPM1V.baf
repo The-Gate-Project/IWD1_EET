@@ -1,0 +1,64 @@
+IF
+	!Allegiance(Myself,ENEMY)
+	BitCheck("AREA_GROUP_VAR","MYAREA",1)
+THEN
+	RESPONSE #100
+		Enemy()
+		Continue()
+END
+
+IF
+	StateCheck(Myself,STATE_PANIC)
+THEN
+	RESPONSE #100
+		RandomWalkContinuous()
+END
+
+IF
+	!BitCheck("CREATURE_STATE_VAR","LOCALS",2)
+	BitCheck("AREA_GROUP_VAR","MYAREA",1)
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #50
+		BitSet("CREATURE_STATE_VAR","LOCALS",2)
+		SetSequence(SEQ_HEAD_TURN)
+		Continue()
+	RESPONSE #50
+		BitSet("CREATURE_STATE_VAR","LOCALS",2)
+		Continue()
+END
+
+IF
+	BitCheck("AREA_GROUP_VAR","MYAREA",1)
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		AttackReevaluate(LastSeenBy(Myself),75)
+END
+
+IF
+	BitCheck("AREA_GROUP_VAR","MYAREA",1)
+	AttackedBy(NearestEnemyOf(Myself),DEFAULT)
+THEN
+	RESPONSE #100
+		MoveToObject(LastAttackerOf(Myself))
+END
+
+IF
+	AttackedBy([GOODCUTOFF],DEFAULT)
+THEN
+	RESPONSE #100
+		BitSet("AREA_GROUP_VAR","MYAREA",1)
+END
+
+IF
+	BitCheck("AREA_GROUP_VAR","MYAREA",1)
+  ActionListEmpty()
+	!See([PC])
+THEN
+  RESPONSE #100
+    MoveToObject(Player1)
+END
+
+
+

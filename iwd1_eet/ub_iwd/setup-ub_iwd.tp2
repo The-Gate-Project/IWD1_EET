@@ -1,0 +1,804 @@
+BACKUP ~ub_iwd/backup~ // location to store files for backup
+AUTHOR ~webmaster@gibberlings3.net~ // email address displayed if install fails
+
+VERSION ~v7~
+README ~ub_iwd/readme-ub_iwd.html~
+
+ASK_EVERY_COMPONENT
+
+ALWAYS
+
+  ACTION_IF FILE_EXISTS_IN_GAME ~kitlist.2da~ THEN BEGIN // if IWD-in-BG2 instead of true IWD...
+
+    OUTER_SET "iwd-in-bg2" =     1 // handy var for checking and simple math
+    OUTER_SET "iwd_offset" = 74100 // offset to iwd strings
+
+  END ELSE BEGIN
+
+    OUTER_SET "iwd-in-bg2" = 0
+    OUTER_SET "iwd_offset" = 0
+
+  END
+
+END
+
+AUTO_TRA ~ub_iwd/languages/%s~
+
+LANGUAGE ~English~                                 ~english~ ~ub_iwd/languages/english/setup.tra~
+LANGUAGE ~French (by Graoumf)~                     ~french~  ~ub_iwd/languages/french/setup.tra~
+LANGUAGE ~Italian (by Giuseppe)~                   ~italian~ ~ub_iwd/languages/italian/setup.tra~
+LANGUAGE ~Russian (by Prowler, Accolon, Hawkmoon)~ ~russian~ ~ub_iwd/languages/russian/setup.tra~
+LANGUAGE ~Deutsch (Mike)~                          ~german~  ~ub_iwd/languages/german/setup.tra~
+
+/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
+/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
+/////                                                  \\\\\
+///// voice                                            \\\\\
+/////                                                  \\\\\
+/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
+/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
+
+BEGIN @0 DESIGNATED 0
+REQUIRE_PREDICATE NOT FILE_EXISTS_IN_GAME ~amfaith.itm~ @2 // skip if auril's bane installed
+  
+// patch functions
+INCLUDE ~ub_iwd/lib/functions.tpa~
+
+// make iwd -> bg2 syntax adjustments for scripts and dialogues prior to their compilation below
+ACTION_IF ("%iwd-in-bg2%" = 1) THEN BEGIN
+
+  COPY ~ub_iwd/baf/lddurd01.baf~ ~ub_iwd/baf/lddurd01.baf~
+    REPLACE_TEXTUALLY ~EquipItem("ringtom",0)~ 
+                      ~EquipItem("ringtom")~
+
+  COPY ~ub_iwd/baf/ldd_area.baf~ ~ub_iwd/baf/ldd_area.baf~
+    REPLACE_TEXTUALLY ~ActionOverride(Player1,CreateCreature("cdbell",\[-1\.-1\],0))~
+                      ~CreateCreatureObject("cdbell",Player1,0,0,0)~
+
+  COPY ~ub_iwd/dlg/voice.d~ ~ub_iwd/dlg/voice.d~
+    REPLACE_TEXTUALLY ~DestroyItem("min2hp")~ ~DestroyItem("minhp1")~
+    REPLACE_EVALUATE // always be careful here; will also affect WEIGHT #x if you're not careful
+        ~#\([0-9]+\)~
+        BEGIN
+          SET "RESULT" = ("%MATCH1%" + "%iwd_offset%")
+        END
+        ~#%RESULT%~
+
+END
+
+// new state needed to fix Dead() triggers that don't use DVs; add RES action
+APPEND ~state.ids~  ~0x00000FC0 STATE_REALLY_DEAD~ UNLESS ~0x00000FC0 STATE_REALLY_DEAD~
+
+// invis creature to do bell tolls
+COMPILE ~ub_iwd/baf/cdbell.baf~
+COPY_EXISTING ~lddthief.cre~ ~override/cdbell.cre~
+  WRITE_BYTE 0x20 0b00010000                                      // invis
+  WRITE_BYTE 0x22 0b00001000                                      // deactivated
+  WRITE_ASCIIE 0x248 "%DEST_RES%" #8                              // override scripts
+  WRITE_ASCII  0x250 "" #32                                       // blanks other scripts
+  WRITE_BYTE   (0x2d8 - ("%iwd-in-bg2%" * 0x68)) 128              // neutral
+  WRITE_ASCIIE (0x2e8 - ("%iwd-in-bg2%" * 0x68)) "%DEST_RES%" #32 // dv
+  REPLACE_CRE_ITEM ~clck06~ #1 #1 #1 ~undroppable~ ~cloak~        // lazy way to make undetectable
+
+// need new actress to replace harken
+COPY_EXISTING ~sincylia.cre~ ~override/cdbethla.cre~
+  SAY 0x08 @1
+  SAY 0x0c @1
+
+// add generic combat script, items
+COPY_EXISTING ~voice.cre~ ~override~
+  WRITE_ASCII  0x268 ~gnmmgsgh~ // assign generic combat script
+  PATCH_IF ("%iwd-in-bg2%" = 0) BEGIN
+    REPLACE_CRE_ITEM ~min2hp~  #1 #1 #1 ~NONE~ ~AMULET~
+  END ELSE BEGIN
+    REPLACE_CRE_ITEM ~minhp1~  #1 #1 #1 ~NONE~ ~AMULET~
+  END
+  ADD_CRE_ITEM     ~ringtom~ #1 #1 #1 ~NONE~ ~QITEM1 QITEM2 QITEM3~
+  BUT_ONLY_IF_IT_CHANGES
+
+// script for voice
+COMPILE ~ub_iwd/baf/lddurd01.baf~
+
+// various trigger tweaks
+COMPILE ~ub_iwd/dlg/voice.d~
+
+// bell from marketh's palace to move voice around
+// with one sound file, pointless to do ogg > wav dance
+COPY ~ub_iwd/wav/cdbell.wav~  ~override~
+
+// initial spawn
+EXTEND_BOTTOM ~ar8001.bcs~ ~ub_iwd/baf/ar8001.baf~
+
+// pale justice trap enable/disable
+EXTEND_BOTTOM ~ar8009.bcs~ ~ub_iwd/baf/ar8009.baf~
+
+// play bell, move voice
+EXTEND_BOTTOM ~ar8001.bcs~ ~ub_iwd/baf/ldd_area.baf~
+EXTEND_BOTTOM ~ar8002.bcs~ ~ub_iwd/baf/ldd_area.baf~
+EXTEND_BOTTOM ~ar8003.bcs~ ~ub_iwd/baf/ldd_area.baf~
+EXTEND_BOTTOM ~ar8004.bcs~ ~ub_iwd/baf/ldd_area.baf~
+EXTEND_BOTTOM ~ar8005.bcs~ ~ub_iwd/baf/ldd_area.baf~
+EXTEND_BOTTOM ~ar8006.bcs~ ~ub_iwd/baf/ldd_area.baf~
+EXTEND_BOTTOM ~ar8007.bcs~ ~ub_iwd/baf/ldd_area.baf~
+EXTEND_BOTTOM ~ar8008.bcs~ ~ub_iwd/baf/ldd_area.baf~
+EXTEND_BOTTOM ~ar8009.bcs~ ~ub_iwd/baf/ldd_area.baf~
+EXTEND_BOTTOM ~ar8010.bcs~ ~ub_iwd/baf/ldd_area.baf~
+EXTEND_BOTTOM ~ar8011.bcs~ ~ub_iwd/baf/ldd_area.baf~
+EXTEND_BOTTOM ~ar8012.bcs~ ~ub_iwd/baf/ldd_area.baf~
+EXTEND_BOTTOM ~ar8013.bcs~ ~ub_iwd/baf/ldd_area.baf~
+EXTEND_BOTTOM ~ar8014.bcs~ ~ub_iwd/baf/ldd_area.baf~
+EXTEND_BOTTOM ~ar8015.bcs~ ~ub_iwd/baf/ldd_area.baf~
+EXTEND_BOTTOM ~ar8016.bcs~ ~ub_iwd/baf/ldd_area.baf~
+
+// potential spawn areas
+OUTER_SET cd_glob = 1 OUTER_SET cd_face = 6 OUTER_SET cd_x = 2265 OUTER_SET cd_y = 2206
+EXTEND_BOTTOM ~ar8001.bcs~ ~ub_iwd/baf/ldd_spawn.baf~ EVALUATE_BUFFER
+
+OUTER_SET cd_glob = 2 OUTER_SET cd_face = 2 OUTER_SET cd_x = 1212 OUTER_SET cd_y = 1170
+EXTEND_BOTTOM ~ar8005.bcs~ ~ub_iwd/baf/ldd_spawn.baf~ EVALUATE_BUFFER
+
+OUTER_SET cd_glob = 3 OUTER_SET cd_face = 0 OUTER_SET cd_x = 1344 OUTER_SET cd_y = 1814
+EXTEND_BOTTOM ~ar8009.bcs~ ~ub_iwd/baf/ldd_spawn.baf~ EVALUATE_BUFFER
+
+OUTER_SET cd_glob = 4 OUTER_SET cd_face = 5 OUTER_SET cd_x = 2806 OUTER_SET cd_y = 908
+EXTEND_BOTTOM ~ar8011.bcs~ ~ub_iwd/baf/ldd_spawn.baf~ EVALUATE_BUFFER
+
+OUTER_SET cd_glob = 5 OUTER_SET cd_face = 4 OUTER_SET cd_x = 1615 OUTER_SET cd_y = 1249
+EXTEND_BOTTOM ~ar8012.bcs~ ~ub_iwd/baf/ldd_spawn.baf~ EVALUATE_BUFFER
+
+// restore harken, add sister bethla
+COPY_EXISTING ~ar8012.are~ ~override~
+  READ_LONG  0x54 "actor_off"
+  READ_SHORT 0x58 "actor_num"
+  FOR (index = 0 ; index < actor_num ; index = index + 1) BEGIN
+    READ_ASCII ("%actor_off%" + 0x80 + ("%index%" * 0x110)) "cre_file"
+    PATCH_IF ("%cre_file%" STRING_COMPARE_CASE "sbethla" = 0) BEGIN // dead priestess becomes harken
+      WRITE_ASCII ("%actor_off%" +        ("%index%" * 0x110)) ~Brother Harken~ #32
+      WRITE_ASCII ("%actor_off%" + 0x48 + ("%index%" * 0x110)) ~dharken~  #8 // dialogue file
+      WRITE_ASCII ("%actor_off%" + 0x58 + ("%index%" * 0x110)) ~ldhark~   #8 // class script; provides goofy stringheads
+      WRITE_ASCII ("%actor_off%" + 0x68 + ("%index%" * 0x110)) ~ldidlrng~ #8 // general script; purges antimagic ring
+      WRITE_ASCII ("%actor_off%" + 0x80 + ("%index%" * 0x110)) ~bharken~  #8 // creature file
+    END ELSE
+    PATCH_IF ("%cre_file%" STRING_COMPARE_CASE "bharken" = 0) BEGIN // old harken becomes sister beth
+      WRITE_ASCII ("%actor_off%" +        ("%index%" * 0x110)) ~Sister Beth~ #32
+      WRITE_ASCII ("%actor_off%" + 0x58 + ("%index%" * 0x110)) ~~         #8 // class script; purges goofy stringheads
+      WRITE_ASCII ("%actor_off%" + 0x80 + ("%index%" * 0x110)) ~cdbethla~ #8 // creature file
+    END
+  END
+  BUT_ONLY_IF_IT_CHANGES
+
+// fix glory of suffering, quest reward
+COPY_EXISTING ~glory.itm~ ~override~
+  LPF cd_item_alter_effect INT_VAR equipped = 1 opcode = 18 parameter2 = 3 dicesize = 0 END
+  BUT_ONLY
+
+/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
+/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
+/////                                                  \\\\\
+///// malavon's golems                                 \\\\\
+/////                                                  \\\\\
+/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
+/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
+
+BEGIN @100 DESIGNATED 100
+
+// iwd in bg2 adjustments
+ACTION_IF ("%iwd-in-bg2%" = 1) THEN BEGIN
+
+  // make iwd -> bg2 syntax adjustments for scripts and dialogues prior to their compilation below
+  COPY ~ub_iwd/dlg/malgolem.d~ ~ub_iwd/dlg/malgolem.d~
+    REPLACE_TEXTUALLY ~Protagonist~ ~LastTalkedToBy~
+    REPLACE_EVALUATE
+        ~#\([0-9]+\)~
+        BEGIN
+          SET "RESULT" = ("%MATCH1%" + "%iwd_offset%")
+        END
+        ~#%RESULT%~
+
+  // make iwd -> bg2 syntax adjustments for scripts and dialogues prior to their compilation below
+  COPY ~ub_iwd/baf/cdmalgol.baf~ ~ub_iwd/baf/cdmalgol.baf~
+    REPLACE_TEXTUALLY ~Internal(Myself,\([0-9]+\),\([0-9]+\))~ ~Global("CDLocalVar\1","LOCALS",\2)~
+    REPLACE_TEXTUALLY ~ChangeStat(Myself,XPVALUE,0,SET)~ ~~
+
+  // close exploit of killing neutral/friendly golems for free xp
+  COPY_EXISTING ~golemiro.cre~ ~override~
+    READ_LONG  0x14 "%golem_xp%"
+    WRITE_LONG 0x14 0 // no xp value
+    BUT_ONLY
+
+  // close exploit of killing neutral/friendly golems for free xp
+  EXTEND_BOTTOM ~ar8010.bcs~ ~ub_iwd/baf/ar8010.baf~ // add golem xp via area script if golems were actually hostile
+  
+  // can't do this nice simple fix for iwd, as there's no or() trigger in the base game
+  COPY_EXISTING ~ldmalvon.bcs~ ~override~
+    DECOMPILE_BCS_TO_BAF
+      REPLACE_TEXTUALLY ~GlobalGT("SPRITE_IS_DEADIRON_GOLEM","GLOBAL",1)~ ~OR(2) GlobalGT("SPRITE_IS_DEADIRON_GOLEM","GLOBAL",1) GlobalGT("Golem_Commands","GLOBAL",1)~
+    COMPILE_BAF_TO_BCS
+    BUT_ONLY
+
+END ELSE BEGIN
+  
+  EXTEND_TOP    ~ldmalvon.bcs~ ~ub_iwd/baf/ldmalvon.baf~
+  
+END
+
+COMPILE ~ub_iwd/baf/cdmalgol.baf~
+        ~ub_iwd/dlg/malgolem.d~
+
+EXTEND_BOTTOM ~ar8007.bcs~   ~ub_iwd/baf/ar8007.baf~
+
+COPY_EXISTING ~ar8010.are~ ~override~
+  READ_LONG  0x54 "actor_off"
+  READ_SHORT 0x58 "actor_num"
+  FOR (index = 0 ; index < actor_num ; index = index + 1) BEGIN
+    READ_ASCII ("%actor_off%" + 0x80 + ("%index%" * 0x110)) "cre_file"
+    PATCH_IF (("%cre_file%" STRING_COMPARE_CASE "golemiro" = 0) OR
+              ("%cre_file%" STRING_COMPARE_CASE "#8010d12" = 0)) BEGIN
+      WRITE_ASCII ("%actor_off%" + 0x50 + ("%index%" * 0x110)) ~cdmalgol~  #8 // override script
+    END ELSE
+    PATCH_IF ("%cre_file%" STRING_COMPARE_CASE "svirblnd" = 0) BEGIN
+      READ_ASCII ("%actor_off%" + 0x48 + ("%index%" * 0x110)) "dialogue"
+      PATCH_IF ("%dialogue%" STRING_COMPARE_CASE "" = 0) BEGIN // if no dialogue file, assign one
+        WRITE_ASCII ("%actor_off%" + 0x48 + ("%index%" * 0x110)) ~dgnomebl~  #8 // dialogue file
+      END
+    END
+  END
+  BUT_ONLY_IF_IT_CHANGES
+
+COPY_EXISTING ~book01.itm~ ~override/cdmgolem.itm~
+  WRITE_SHORT 0x42 0
+  SAY 0x08 @101
+  SAY 0x0c @101
+  WRITE_LONG 0x50 (18713 + "%iwd_offset%")
+  WRITE_LONG 0x54 (18713 + "%iwd_offset%")
+
+/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
+/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
+/////                                                  \\\\\
+///// expanded guello                                  \\\\\
+/////                                                  \\\\\
+/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
+/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
+
+BEGIN @200 DESIGNATED 200
+
+// iwd in bg2 adjustments
+ACTION_IF ("%iwd-in-bg2%" = 1) THEN BEGIN
+
+  EXTEND_BOTTOM ~ar8004.bcs~   ~ub_iwd/baf/ar8004_bg2.baf~   // sets b_q to 5 if guello free and umber hulks killed
+
+END ELSE BEGIN
+
+  EXTEND_BOTTOM ~ar8004.bcs~   ~ub_iwd/baf/ar8004.baf~   // sets b_q to 5 if guello free and umber hulks killed
+
+  COPY_EXISTING ~ar8003.are~ ~override~
+    READ_LONG  0x54 "actor_off"
+    READ_SHORT 0x58 "actor_num"
+    FOR (index = 0; index < actor_num; index = index + 1) BEGIN
+      READ_ASCII ("%actor_off%" + 0x80 + ("%index%" * 0x110)) "cre_file"
+      PATCH_IF ("%cre_file%" STRING_COMPARE_CASE "umberhlk" = 0)  BEGIN
+        WRITE_ASCIIT ("%actor_off%" + 0x80 + ("%index%" * 0x110)) "cduh8004"
+      END
+    END
+    BUT_ONLY_IF_IT_CHANGES
+  
+  ACTION_IF FILE_EXISTS_IN_GAME ~ar8003.ini~ THEN BEGIN
+  
+    COPY_EXISTING ~ar8003.ini~ ~override~
+      REPLACE_TEXTUALLY ~Umberhlk~ ~cduh8004~
+      BUT_ONLY_IF_IT_CHANGES
+  
+  END ELSE BEGIN
+  
+    COPY ~ub_iwd/ini/ar8003.ini~ ~override~
+    
+  END
+  
+  COPY_EXISTING ~umberhlk.cre~ ~override/cduh8004.cre~
+    WRITE_ASCII 0x29e ~8004_HULKS_DEAD~ #32
+  
+END
+
+COMPILE ~ub_iwd/dlg/dguello.d~ // few tweaks to get guello's dialogue working
+EXTEND_TOP    ~ldguell2.bcs~ ~ub_iwd/baf/ldguell2.baf~ // clear out guello once party re-enters shikata's area to prevent dupe guellos
+
+// set fourth wave of hulks
+COPY_EXISTING ~ar8003.bcs~ ~override~
+  DECOMPILE_BCS_TO_BAF
+    REPLACE_TEXTUALLY ~\bGlobal("TARNEL_TRAP_SET","GLOBAL",5)~ ~False()~
+    APPEND_FILE ~ub_iwd/baf/ar8003.baf~
+  COMPILE_BAF_TO_BCS
+  BUT_ONLY_IF_IT_CHANGES
+
+// changes trigger to account for beorn_quest values > 4
+COPY_EXISTING ~ldbeorn.bcs~  ~override~
+              ~lddgnom1.bcs~ ~override~
+              ~ldguello.bcs~ ~override~
+              ~ldllew.bcs~   ~override~
+              ~ldnym.bcs~    ~override~
+  DECOMPILE_BCS_TO_BAF
+    REPLACE_TEXTUALLY ~Global("BEORN_QUEST","GLOBAL",4)~ ~GlobalGT("BEORN_QUEST","GLOBAL",3)~
+  COMPILE_BAF_TO_BCS
+  BUT_ONLY_IF_IT_CHANGES
+
+/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
+/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
+/////                                                  \\\\\
+///// marketh's ring                                   \\\\\
+/////                                                  \\\\\
+/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
+/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
+
+BEGIN @300 DESIGNATED 300
+
+/*
+marketh_ring
+0 - not started
+1 - discussed swap with ginafae, opens dlg options for norl
+2 - discussed copy with norl, but didn't have portrait
+3 - norl making copy; Ring_Quest_Time timer set to eight hours
+4 - copy complete, norl has given copy to party
+5 - copy given to ginafae, swap in progress; CDGinaRingTimer is one day timer for this
+6 - ring swapped, marketh vulnerable
+*/
+
+// iwd in bg2 adjustments
+ACTION_IF ("%iwd-in-bg2%" = 1) THEN BEGIN
+  
+  // minhp1 item for marketh
+  COPY_EXISTING ~minhp1.itm~ ~override/cdminhp1.itm~
+
+  // syntax adjustament
+  COPY ~ub_iwd/baf/ldmarkth.baf~ ~ub_iwd/baf/ldmarkth.baf~
+    REPLACE_TEXTUALLY ~HideCreature(Myself,FALSE)~ ~Activate(Myself)~
+    REPLACE_TEXTUALLY ~SetDialogueRange(300)~ ~~
+    REPLACE_TEXTUALLY ~Dialogue(\[PC\])~ ~StartDialogueNoSet([PC])~
+
+  // syntax, strref adjustment
+  COPY ~ub_iwd/dlg/ring.d~ ~ub_iwd/dlg/ring.d~
+    REPLACE_TEXTUALLY ~HideCreature(Myself,TRUE)~ ~Deactivate(Myself)~
+    REPLACE_EVALUATE
+        ~#\([0-9]+\)~
+        BEGIN
+          SET "RESULT" = ("%MATCH1%" + "%iwd_offset%")
+        END
+        ~#%RESULT%~
+
+END ELSE BEGIN
+  
+  // minhp1 item for marketh
+  COPY ~ub_iwd/itm/cdminhp1.itm~ ~override~
+  
+END
+
+// Isaya : fix (copy from IWD Tweaks) to avoid a warning relative to ldmarkth.baf
+APPEND ~state.ids~  ~0x00000FC0 STATE_REALLY_DEAD~ UNLESS ~0x00000FC0 STATE_REALLY_DEAD~
+
+COMPILE ~ub_iwd/dlg/ring.d~     // lotta dialogue changes here
+        ~ub_iwd/baf/cdmark.baf~ // script for teleportin' marketh
+
+EXTEND_TOP ~ldmarkth.bcs~ ~ub_iwd/baf/ldmarkth.baf~ // force appearance once ring swapped
+
+// teleporting scripts
+EXTEND_BOTTOM ~ar8001.bcs~ ~ub_iwd/baf/tp8001.baf~
+EXTEND_BOTTOM ~ar8005.bcs~ ~ub_iwd/baf/tp8005.baf~
+EXTEND_BOTTOM ~ar8008.bcs~ ~ub_iwd/baf/tp8008.baf~
+EXTEND_BOTTOM ~ar8009.bcs~ ~ub_iwd/baf/tp8009.baf~
+EXTEND_BOTTOM ~ar8011.bcs~ ~ub_iwd/baf/tp8011.baf~
+
+// ginafae's restored dialogue
+COPY_EXISTING ~ar8006.are~ ~override~
+  READ_LONG  0x54 "actor_off"
+  READ_SHORT 0x58 "actor_num"
+  FOR (index = 0 ; index < actor_num ; index = index + 1) BEGIN
+    READ_ASCII ("%actor_off%" + 0x80 + ("%index%" * 0x110)) "cre_file"
+    PATCH_IF ("%cre_file%" STRING_COMPARE_CASE "ginafae" = 0) BEGIN // ginafae
+      WRITE_ASCII ("%actor_off%" + 0x48 + ("%index%" * 0x110)) ~dginafae~  #8 // dialogue file
+    END
+  END
+  BUT_ONLY_IF_IT_CHANGES
+
+// marketh can't die until ring swapped
+COPY_EXISTING ~marketh.cre~ ~override~
+  ADD_CRE_ITEM ~cdminhp1~ #0 #0 #0 ~NONE~ ~LRING RRING AMULET~ // can't die
+  BUT_ONLY_IF_IT_CHANGES
+
+// create teleportin' marketh
+COPY_EXISTING ~marketh.cre~ ~override/cdmark.cre~
+  WRITE_ASCII 0x248 ~cdmark~  #8 // override script
+  WRITE_ASCII (0x2e8 - ("%iwd-in-bg2%" * 0x68)) ~cdmark~ #32 // dv
+
+/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
+/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
+/////                                                  \\\\\
+///// presio's duel                                    \\\\\
+/////                                                  \\\\\
+/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
+/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
+
+BEGIN @400 DESIGNATED 400
+
+/*
+CDPresioDuel
+0 - no challenge
+1 - challenge accepted by mage
+2 - challenge accepted by paladin
+3 - presio moved, mage challenge
+4 - presio moved, paladin challenge
+5 - challenge won, mage
+6 - challenge won, paladin
+7 - challenge ended prematurely (treachery)
+*/
+
+// iwd in bg2 adjustments
+ACTION_IF ("%iwd-in-bg2%" = 1) THEN BEGIN
+
+  // syntax adjustament
+  COPY ~ub_iwd/baf/ar4003.baf~ ~ub_iwd/baf/ar4003.baf~
+    REPLACE_TEXTUALLY ~AddXPVar("Level_2_Easy",@403)~ ~DisplayString(Player1,@403) AddXP2DA("Level_2_Easy")~
+
+  // spell not available in conversion
+  COPY ~ub_iwd/baf/cdpresio.baf~ ~ub_iwd/baf/cdpresio.baf~
+    REPLACE_TEXTUALLY ~HaveSpell(WIZARD_BELTYNS_BURNING_BLOOD)~ ~False()~
+
+  // can't use ini to give cold wights override script
+  COPY_EXISTING ~#4003c1.cre~ ~override~ 
+                ~#4003c2.cre~ ~override~
+                ~#4003c3.cre~ ~override~
+                ~#4003c4.cre~ ~override~
+                ~#4003c5.cre~ ~override~
+                ~#4003c6.cre~ ~override~
+    WRITE_ASCII 0x248 ~cdpres~ #8
+    BUT_ONLY
+
+END ELSE BEGIN
+
+  // in case some mod overwrites this (looking at you, AB)
+  APPEND ~class.ids~ ~202 MAGE_ALL~    UNLESS ~202 MAGE_ALL~
+  APPEND ~class.ids~ ~203 FIGHTER_ALL~ UNLESS ~203 FIGHTER_ALL~
+  APPEND ~class.ids~ ~204 CLERIC_ALL~  UNLESS ~204 CLERIC_ALL~
+  APPEND ~class.ids~ ~205 THIEF_ALL~   UNLESS ~205 THIEF_ALL~
+  APPEND ~class.ids~ ~206 BARD_ALL~    UNLESS ~206 BARD_ALL~
+  APPEND ~class.ids~ ~207 PALADIN_ALL~ UNLESS ~207 PALADIN_ALL~
+  APPEND ~class.ids~ ~208 DRUID_ALL~   UNLESS ~208 DRUID_ALL~
+  APPEND ~class.ids~ ~209 RANGER_ALL~  UNLESS ~209 RANGER_ALL~
+
+  ACTION_IF FILE_EXISTS_IN_GAME ~ar4003.ini~ THEN BEGIN
+
+    COPY_EXISTING ~ar4003.ini~ ~override~ // assign cdpres to cold wights spawned by ini
+      REPLACE_TEXTUALLY ~\(cre_file[ %TAB%]+=[ %TAB%]+WIGHTCLD\)~
+    ~\1
+script_Override = cdpres~
+      BUT_ONLY_IF_IT_CHANGES
+  
+  END ELSE BEGIN
+  
+    COPY ~ub_iwd/ini/ar4003.ini~ ~override~
+  
+  END
+  
+END
+
+COMPILE ~ub_iwd/baf/cd4003tp.baf~ // 'trap' on bridge to detect treachery
+        ~ub_iwd/baf/cdpres.baf~   // pauses creatures for duel
+        ~ub_iwd/baf/cdpresio.baf~ // presio's scipt pared for single combat
+        ~ub_iwd/dlg/dundlt2.d~    // alter dialogue to allow for challenge issuance
+        
+EXTEND_BOTTOM ~ar4003.bcs~ ~ub_iwd/baf/ar4003.baf~ // XP for defeating presio in single combat
+
+COPY_EXISTING ~presio.cre~ ~override/cdpresio.cre~
+  WRITE_ASCII 0x248 ~cdpresio~ #8
+  WRITE_ASCII 0x250 ~d3pres~   #8
+
+// add blocking script to creatures in area for pause during duel
+COPY_EXISTING ~ar4003.are~ ~override~
+  READ_LONG  0x54 actor_off
+  READ_SHORT 0x58 actor_num
+  FOR (index = 0 ; index < actor_num ; ++index) BEGIN
+    READ_ASCII (actor_off + 0x80 + (index * 0x110)) cre_file
+    PATCH_IF ("presio" STRING_COMPARE_CASE "%cre_file%" = 0) BEGIN // presio
+      WRITE_ASCII (actor_off + 0x50 + (index * 0x110)) "cdpresio" #8 // new override script
+    END ELSE BEGIN // everyone but presio
+      WRITE_ASCII (actor_off + 0x50 + (index * 0x110)) "cdpres" #8 // new override script
+    END
+  END
+  LPF fj_are_structure // new trap on bridge enforces single combat
+  INT_VAR
+    fj_type        = 0     // trap
+    fj_box_left    = 2312
+    fj_box_top     = 2150
+    fj_box_right   = 2440
+    fj_box_bottom  = 2242
+    fj_vertex_0    = 2411 + (2241 << 16)
+    fj_vertex_1    = 2439 + (2174 << 16)
+    fj_vertex_2    = 2336 + (2151 << 16)
+    fj_vertex_3    = 2313 + (2217 << 16)
+    fj_flags       = (BIT1 + BIT7 + BIT8) // deactivated to start
+    fj_trap_active = 1
+  STR_VAR
+    fj_structure_type = region
+    fj_name           = cd4003tp
+    fj_reg_script     = cd4003tp
+  END
+  BUT_ONLY_IF_IT_CHANGES
+
+/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
+/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
+/////                                                  \\\\\
+///// orrick's shield                                  \\\\\
+/////                                                  \\\\\
+/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
+/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
+
+BEGIN @500 DESIGNATED 500
+
+COMPILE ~ub_iwd/dlg/orrick.d~ // alter dialogue to allow for upgrade
+
+/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
+/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
+/////                                                  \\\\\
+///// High baptist's minions                           \\\\\
+/////                                                  \\\\\
+/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
+/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
+
+BEGIN @600 DESIGNATED 600
+
+// patch functions
+INCLUDE ~ub_iwd/lib/functions.tpa~
+
+// make iwd -> bg2 syntax adjustments for scripts and dialogues prior to their compilation below
+ACTION_IF ("%iwd-in-bg2%" = 1) THEN BEGIN
+
+  COPY ~ub_iwd/dlg/highbapt.d~ ~ub_iwd/dlg/highbapt.d~
+    REPLACE_TEXTUALLY ~AddXPVar("\([^"]+\)",0)~ ~AddXP2DA("\1")~
+    REPLACE_EVALUATE // always be careful here; will also affect WEIGHT #x if you're not careful
+        ~#\([0-9]+\)~
+        BEGIN
+          SET "RESULT" = ("%MATCH1%" + "%iwd_offset%")
+        END
+        ~#%RESULT%~
+
+  COPY ~ub_iwd/baf/cdcapvil.baf~ ~ub_iwd/baf/cdcapvil.baf~
+    REPLACE_TEXTUALLY ~!BitGlobal(":AREA_VAR","MYAREA",4,AND)~ ~!Global("AREA_VARBit1","MYAREA",3)~
+    REPLACE_TEXTUALLY ~BitGlobal(":AREA_VAR","MYAREA",4,OR)~   ~SetGlobal("AREA_VARBit1","MYAREA",3)~
+
+  EXTEND_BOTTOM ~ar4005.bcs~ ~ub_iwd/baf/hb400522.baf~ // since no dv_increment in bg2 engine...
+
+END
+
+EXTEND_BOTTOM ~ar4005.bcs~ ~ub_iwd/baf/hb4005.baf~
+
+COMPILE ~ub_iwd/dlg/highbapt.d~   // alter dialogue to hand out quest xp
+        ~ub_iwd/baf/cdcapvil.baf~ // scripting for new captive villagers
+
+COPY_EXISTING ~mcapvil.cre~  ~override/cdcapv1a.cre~
+              ~fcapvil.cre~  ~override/cdcapv2a.cre~
+              ~fmcapvil.cre~ ~override/cdcapv3a.cre~
+              ~mcapvil.cre~  ~override/cdcapv4a.cre~
+              ~ffcapvil.cre~ ~override/cdcapv5a.cre~
+              ~mcapvil.cre~  ~override/cdcapv6a.cre~
+              ~fcapvil.cre~  ~override/cdcapv7a.cre~
+              ~fmcapvil.cre~ ~override/cdcapv8a.cre~
+  WRITE_ASCII  0x248 "cdcapvil"              // override script
+  PATCH_IF (iwd-in-bg2 = 0) THEN BEGIN
+    WRITE_ASCII  0x27e "" #32                  // dv set
+    WRITE_ASCII  0x29e "Hyp_Villager_Dead" #32 // dv increment
+  END
+  WRITE_ASCIIE (0x2f1 - (0x68 * iwd-in-bg2)) "%DEST_RES%" #23  // script name; next write clears out...
+  WRITE_ASCII  (0x2e8 - (0x68 * iwd-in-bg2)) "captivevillager" // ... all but the [1-8]a form the previous write
+  WRITE_ASCII  (0x334 - (0x68 * iwd-in-bg2)) "dcapvil3"        // dialogue
+  ADD_CRE_ITEM ~b1-6~ #0 #0 #0 ~NONE~ ~WEAPON1~ EQUIP          // weapon
+  
+COPY_EXISTING ~ar4005.are~ ~override~
+  LPF cd_area_alter_cre INT_VAR x_coord = 3166 y_coord = 1553 STR_VAR cre_name = "The High Baptist" END // iwd
+  LPF cd_area_alter_cre INT_VAR x_coord = 3166 y_coord = 1553 STR_VAR cre_name = "TheHighBaptist" END // iwd-in-bg2
+  LPF cd_area_alter_cre INT_VAR x_coord = 3056 y_coord = 1356 STR_VAR cre_name = "Histachii 104" END
+  LPF cd_area_alter_cre INT_VAR x_coord = 2774 y_coord = 1372 STR_VAR cre_name = "Histachii 105" END
+  LPF cd_area_alter_cre INT_VAR x_coord = 2709 y_coord = 1468 STR_VAR cre_name = "Histachii 106" END
+  LPF cd_area_alter_cre INT_VAR x_coord = 3097 y_coord = 1274 STR_VAR cre_name = "Histachii 107" END
+  LPF cd_area_alter_cre INT_VAR x_coord = 3020 y_coord = 1400 STR_VAR cre_name = "Histachii 108" END
+  BUT_ONLY
+
+/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
+/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
+/////                                                  \\\\\
+///// minor item restorations                          \\\\\
+/////                                                  \\\\\
+/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
+/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
+
+BEGIN @1500 DESIGNATED 1500
+
+// patch functions
+INCLUDE ~ub_iwd/lib/functions.tpa~
+
+// high quality, misc items as random drops
+CLEAR_ARRAYS
+ACTION_DEFINE_ASSOCIATIVE_ARRAY cd_rndtres BEGIN
+  hqhxbow => TFGTres // High Quality Heavy Crossbow
+  hqlxbow => TFGTres // High Quality Light Crossbow
+  hqsbow  => Skel_R2 // High Quality Short Bow
+  udart5a => RNGp4   // Inferno Darts +4
+  uhalb5a => LD1Tres // Great Halberd +4
+  uspot2a => DE1Tres // Potion of Resistance
+  uspot2b => DE1Tres // Potion of Greater Resistance
+END
+
+COPY_EXISTING ~rndtres.2da~ ~override~
+  PATCH_PHP_EACH cd_rndtres AS item => line BEGIN
+    PATCH_IF (!FILE_CONTAINS_EVALUATED (~rndtres.2da~ ~[ %TAB%]%item%[ %TAB%%LNL%%MNL%%WNL%]~)) BEGIN // only add if not already in table
+      REPLACE_TEXTUALLY ~^%line%[ %TAB%]~ ~%line% %item% ~
+    END
+  END
+  REPLACE_TEXTUALLY ~^Arow_P\([12]\)[ %TAB%]~ ~Arow_P\1 hqarow ~ // high quality arrows (common enough to be added multiple places)
+  REPLACE_TEXTUALLY ~^RNGp\([12]\)[ %TAB%]~   ~RNGp\1 hqbolt ~ // high quality bolts (common enough to be added multiple places)
+  PRETTY_PRINT_2DA
+  BUT_ONLY
+
+ACTION_IF (iwd-in-bg2 = 1) THEN BEGIN
+
+  INCLUDE ~ub_iwd/lib/rndtreas.tpa~ // builds random treasure table with proper weighting
+
+  COPY_EXISTING ~rndtreas.2da~ ~override~
+    PRETTY_PRINT_2DA
+    BUT_ONLY
+
+END
+
+// since it sets str to 6, make min str 7 so it actually penalizes
+COPY_EXISTING ~beltsto.itm~ ~override~
+  WRITE_SHORT 0x26 6
+  LPF cd_item_alter_effect INT_VAR equipped = 1 opcode = 142 duration = 0 END
+
+// fix holy chaos deck
+COPY_EXISTING ~hlydeck.itm~ ~override~
+  LPF cd_item_alter_effect INT_VAR headers = 1 opcode = 148 power = 0 parameter2 = 1 END
+
+// change -2 con bump to two bumps to prevent wrapping around to 25 con
+COPY_EXISTING ~potnclr1.itm~ ~override~
+  LPF DELETE_ITEM_EFFECT INT_VAR opcode_to_delete = 10 END
+  LPF ADD_ITEM_EFFECT INT_VAR opcode = 10 target = 1 parameter1 = "-1" timing = 1 END
+  LPF ADD_ITEM_EFFECT INT_VAR opcode = 10 target = 1 parameter1 = "-1" timing = 1 END
+
+// bump up price to reflect levels of spells available
+COPY_EXISTING ~wandcor.itm~ ~override~
+  WRITE_LONG 0x34 15000
+
+// add holy chaos deck (ar4002), belt of stones (ar4005), potion of clear purpose (ar5203), briath's journal (ar6006)
+ACTION_FOR_EACH area IN ar4002 ar4005 ar5203 ar6006 BEGIN
+
+  COPY_EXISTING ~%area%.are~ ~override~
+    WRITE_ASCIIE 0x94 "%area%" #8
+    BUT_ONLY
+
+  EXTEND_BOTTOM ~%area%.bcs~ ~ub_iwd/baf/%area%.baf~
+
+END
+
+COPY_EXISTING ~kuork3.sto~ ~override~
+  ADD_STORE_ITEM ~wandcor~ LAST #4 #4 #0 ~IDENTIFIED~ #1
+
+COPY_EXISTING ~ldd_nym.sto~ ~override~
+  ADD_STORE_ITEM ~kedl~    LAST #0 #0 #0 ~IDENTIFIED~ #1
+
+COPY_EXISTING ~shlehlan.sto~ ~override~
+  ADD_STORE_ITEM ~pellon~  LAST #8 #0 #0 ~IDENTIFIED~ #1
+
+ACTION_IF GAME_IS ~how totlm~ THEN BEGIN // how, totlm items
+
+  // fix gauntlets of valor
+  COPY_EXISTING ~gvalor1.itm~ ~override~
+    READ_LONG   0x64 abil_off
+    READ_SHORT  0x68 abil_num
+    READ_LONG   0x6a fx_off
+    READ_SHORT  0x70 fx_num
+    SET fx_delta = 0
+    // set some stuff for ability one, then delete other headers
+    WRITE_BYTE  (abil_off + 0x01) 1 // id to use
+    WRITE_SHORT (abil_off + 0x22) 3 // 3 charges
+    WRITE_SHORT (abil_off + 0x24) 3 // item recharges
+    WRITE_BYTE  (abil_off + 0x27) THIS | BIT3 // recharge after resting flag
+    READ_SHORT  (abil_off + 0x1e) abil_fx_num
+    READ_SHORT  (abil_off + 0x20) abil_fx_idx
+    // change gauntlets to time-limited item
+    FOR (index2 = 0 ; index2 < abil_fx_num ; ++index2) BEGIN
+      READ_SHORT (fx_off +        ((index2 + abil_fx_idx) * 0x30)) opcode
+      PATCH_IF (opcode = 111) BEGIN
+        WRITE_BYTE  (fx_off + 0x0c + ((index2 + abil_fx_idx) * 0x30))  0 // instant/limited
+        WRITE_LONG  (fx_off + 0x0e + ((index2 + abil_fx_idx) * 0x30)) (70 - (10 * "%iwd-in-bg2%")) // duration: one turn
+      END
+    END
+    // now delete rest of abilities
+    FOR (index = 1 ; index < abil_num ; ++index) BEGIN // looks for default ability header
+      READ_SHORT  (0x1e + abil_off + (index * 0x38)) abil_fx_num
+      READ_SHORT  (0x20 + abil_off + (index * 0x38)) abil_fx_idx
+      DELETE_BYTES (fx_off + (0x30 * (abil_fx_idx + fx_delta))) (0x30 * abil_fx_num) // deletes all associated effects
+      DELETE_BYTES (abil_off + (index * 0x38)) 0x38                                  // deletes ability itself
+      SET fx_delta -= abil_fx_num
+      SET abil_num -= 1
+      SET index    -= 1
+      SET fx_off   -= 0x38
+    END
+    WRITE_SHORT  0x68 1
+    WRITE_LONG   0x6a fx_off
+  
+  // fix gauntlets of valor
+  COPY_EXISTING ~gvalor2.itm~ ~override~
+    LPF cd_item_alter_header INT_VAR range = 0 END
+    LPF ADD_ITEM_EFFECT INT_VAR type = 1 opcode = 142 target = 2 duration = 3 probability1 = 12 parameter2 = 44 END
+
+  COPY_EXISTING ~tiernon.sto~ ~override~
+    ADD_STORE_ITEM ~gvalor1~ LAST #3 #0 #0 ~IDENTIFIED~ #1
+
+END
+
+/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
+/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
+/////                                                  \\\\\
+///// restore random drops                             \\\\\
+/////                                                  \\\\\
+/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
+/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
+
+BEGIN @2000 DESIGNATED 2000
+REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~ar9100.are~ @2001 // how, totlm only
+
+CLEAR_ARRAYS
+ACTION_DEFINE_ASSOCIATIVE_ARRAY cd_rndtres BEGIN
+  u1Ham5a => LD4Tres // War Hammer of Phasing +3
+  u1Ham5b => LD4Tres // War Hammer +4: Defender
+  u2Ham4b => WT1Tres // War Hammer of Phasing +2 (2H)
+  u2Ham5a => LD4Tres // Demon's Breath
+  u2hAx4b => WT3Tres // Two Handed Axe of Resistance +3
+  u2hAx5a => LD2Tres // Foe's Fate
+  uBswd5b => LD1Tres // Bastard Sword +3: Incinerator
+  uFlal5a => LD4Tres // Shocking Flail +4
+  uLbow5a => LD2Tres // Long Bow +4: Hammer
+  uLswd2b => TG2Tres // Spiked Long Sword +1
+  uLswd5a => LD1Tres // Long Sword of Action +4
+  uLswd5b => LD1Tres // Bhaal's Fire
+  uMstr3a => DE4Tres // Morning Star +2: Hammer
+  uMstr5a => LD4Tres // Morning Star of Action +4
+  uRing2a => TG1Tres // Greater Ring of the Warrior
+  uRing4a => UD2Tres // Ring of Reckless Action
+  uRing4c => UD2Tres // Ring of Aura Transfusion
+  uRing5a => LD5Tres // Ring of Greater Resistance
+  uRing5b => LD5Tres // Ring of the Warrior Thief
+  uShld3a => DE7Tres // Reinforced Large Shield +2
+  uShld4a => UD4Tres // Large Shield of Strength +1
+  uSltr3a => DE2Tres // Studded Leather +2: Shadowed
+  uSltr4a => UD4Tres // Studded Leather of Resistance +3
+  uSltr5a => LD3Tres // Studded Leather +4: Shadowed
+  uSpot3b => DE1Tres // Potion of Constitution
+  uSpot4a => UD2Tres // Potion of Arcane Absorption
+  uSpot4c => UD2Tres // Potion of Aura Enhancement
+  uSpot5a => LD5Tres // Potion of Dissipation
+  uSswd3a => DE6Tres // Sloth
+  uSswd5b => LD3Tres // Short Sword +4: Hammer
+  uTswd2b => TG3Tres // Two Handed Sword +1: Hammering
+  uTswd2c => TG3Tres // Two Handed Sword of Resistance +1
+  uTswd4a => WT2Tres // Two Handed Sword +4: Backbiter
+  uTswd4b => UD5Tres // Two Handed Sword +3: Bane
+  uTswd5a => LD1Tres // Static Two Handed Sword +4
+  uTswd5b => LD1Tres // Two Handed Sword +4: Life Giver
+END
+
+COPY_EXISTING ~rndtres.2da~ ~override~
+  PATCH_PHP_EACH cd_rndtres AS item => line BEGIN
+    PATCH_IF (!FILE_CONTAINS_EVALUATED (~rndtres.2da~ ~[ %TAB%]%item%[ %TAB%%LNL%%MNL%%WNL%]~)) BEGIN // only add if not already in table
+      REPLACE_TEXTUALLY ~^%line%[ %TAB%]~ ~%line% %item% ~
+    END
+  END
+  PRETTY_PRINT_2DA
+  BUT_ONLY
+
+ACTION_IF (iwd-in-bg2 = 1) THEN BEGIN
+
+  INCLUDE ~ub_iwd/lib/rndtreas.tpa~ // builds random treasure table with proper weighting
+
+  COPY_EXISTING ~rndtreas.2da~ ~override~
+    PRETTY_PRINT_2DA
+    BUT_ONLY
+
+END

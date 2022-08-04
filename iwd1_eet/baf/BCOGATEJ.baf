@@ -1,0 +1,16 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId("ANGAAR")
+		JumpToPoint([649.410])
+		MultiPlayerSync()
+		CloseDoor("AR9200_GATE1")
+		SetHomeLocation([649.410])
+		SetGlobal("SaveSavedLoc","LOCALS",1)
+		SaveObjectLocation("LOCALS","SavedLoc",Myself)
+		CloseDoor("AR9200_GATE1")
+		/* AddEndCutSceneMode */
+		EndCutSceneMode()
+END
+

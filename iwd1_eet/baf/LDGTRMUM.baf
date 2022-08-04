@@ -1,0 +1,24 @@
+IF
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		SpellNoDec(NearestEnemyOf(Myself),CLERIC_UNHOLY_BLIGHT)
+	RESPONSE #100
+		SpellNoDec(NearestEnemyOf(Myself),CLERIC_GREATER_COMMAND)
+	RESPONSE #100
+		SpellNoDec(Myself,CLERIC_SOL_SEARING_ORB)
+		Wait(1)
+		AttackOneRound(NearestEnemyOf(Myself))
+	RESPONSE #100
+		SpellNoDec(NearestEnemyOf(Myself),CLERIC_FLAME_STRIKE)
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		AttackOneRound(LastSeenBy(Myself))
+END
+

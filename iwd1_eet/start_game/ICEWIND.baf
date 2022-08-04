@@ -1,0 +1,87 @@
+IF
+	Global("K#TotalPlayTimeActive","GLOBAL",0)
+THEN
+	RESPONSE #100
+		SetGlobal("K#TotalPlayTimeActive","GLOBAL",1)
+		RealSetGlobalTimer("K#RealTimerOneHour","GLOBAL",TWELVE_HOURS)
+		Continue()
+END
+
+IF
+	RealGlobalTimerExpired("K#RealTimerOneHour","GLOBAL")
+THEN
+	RESPONSE #100
+		IncrementGlobal("K#TotalPlayTime","GLOBAL",1)
+		RealSetGlobalTimer("K#RealTimerOneHour","GLOBAL",TWELVE_HOURS)
+		Continue()
+END
+
+IF
+	Global("PARTY_IN_ICEWIND_DALE","GLOBAL",1)
+	Global("Iwd1WorldDays","GLOBAL",0)
+THEN
+	RESPONSE #100
+		SetGlobal("Iwd1WorldDays","GLOBAL",1)
+		SetGlobalTimer("Iwd1WorldDaysTimer","GLOBAL",ONE_DAY)
+		Continue()
+END
+
+IF
+	Global("PARTY_IN_ICEWIND_DALE","GLOBAL",1)
+	GlobalTimerExpired("Iwd1WorldDaysTimer","GLOBAL")
+	Global("Iwd1CheckWorldDays","GLOBAL",0)
+THEN
+	RESPONSE #100
+		SetGlobal("Iwd1CheckWorldDays","GLOBAL",1)
+		SetGlobalTimer("Iwd1WorldDaysCheckTimer","GLOBAL",1)
+		Continue()
+END
+
+IF
+	Global("PARTY_IN_ICEWIND_DALE","GLOBAL",1)
+	GlobalsGT("Iwd1WorldDaysTimer","Iwd1WorldDaysCheckTimer")
+	!Global("Iwd1CheckWorldDays","GLOBAL",0)
+THEN
+	RESPONSE #100
+		SetGlobal("Iwd1CheckWorldDays","GLOBAL",0)
+		Continue()
+END
+
+IF
+	Global("PARTY_IN_ICEWIND_DALE","GLOBAL",1)
+	GlobalsGT("Iwd1WorldDaysCheckTimer","Iwd1WorldDaysTimer")
+	!Global("Iwd1CheckWorldDays","GLOBAL",0)
+THEN
+	RESPONSE #100
+		IncrementGlobal("Iwd1WorldDaysTimer","GLOBAL",108000) //7200*15 - ONE_DAY
+		IncrementGlobal("Iwd1AllGameDays","GLOBAL",1)
+END
+
+IF
+	PartyHasItem("BELT02")
+	!Global("BELT02_REMOVE","GLOBAL",1)
+THEN
+	RESPONSE #100
+		RemoveStoreItem("HOBART","BELT02",99)
+		SetGlobal("BELT02_REMOVE","GLOBAL",1)
+		Continue()
+END
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

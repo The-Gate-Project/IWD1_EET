@@ -1,0 +1,67 @@
+IF
+	!HasItem("RINGTOM",Myself)
+THEN
+	RESPONSE #100
+		GiveItemCreate("RINGTOM",Myself,1,0,0)
+		Continue()
+END
+
+IF
+	Range([PC],15)
+THEN
+	RESPONSE #100
+		EquipItemEx("RINGTOM",0)
+		Wait(3)
+		DestroySelf()
+END
+
+IF
+	!BitCheck("CREATURE_STATE_VAR","LOCALS",1)
+THEN
+	RESPONSE #100
+		BitSet("CREATURE_STATE_VAR","LOCALS",1)
+		SetGlobalTimerRandom("IwTimer24","LOCALS",4,8)
+		Continue()
+END
+
+IF
+	GlobalTimerExpired("IwTimer24","LOCALS")
+THEN
+	RESPONSE #75
+		DisplayStringHead(Myself,@17969)
+		SetGlobalTimerRandom("IwTimer24","LOCALS",4,8)
+		Continue()
+	RESPONSE #75
+		DisplayStringHead(Myself,@17970)
+		SetGlobalTimerRandom("IwTimer24","LOCALS",4,8)
+		Continue()
+	RESPONSE #75
+		DisplayStringHead(Myself,@17971)
+		SetGlobalTimerRandom("IwTimer24","LOCALS",4,8)
+		Continue()
+	RESPONSE #75
+		DisplayStringHead(Myself,@17972)
+		SetGlobalTimerRandom("IwTimer24","LOCALS",4,8)
+		Continue()
+	RESPONSE #75
+		DisplayStringHead(Myself,@17973)
+		SetGlobalTimerRandom("IwTimer24","LOCALS",4,8)
+		Continue()
+	RESPONSE #75
+		DisplayStringHead(Myself,@17974)
+		SetGlobalTimerRandom("IwTimer24","LOCALS",4,8)
+		Continue()
+	RESPONSE #175
+		SetGlobalTimerRandom("IwTimer24","LOCALS",4,8)
+		Continue()
+END
+
+IF
+	AttackedBy([ANYTHING],DEFAULT)
+THEN
+	RESPONSE #100
+		EquipItemEx("RINGTOM",0)
+		Wait(3)
+		DestroySelf()
+END
+

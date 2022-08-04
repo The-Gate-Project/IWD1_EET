@@ -1,0 +1,9 @@
+IF
+	!Global("GNUNDEAD_INACTIVE","LOCALS",1)
+	!NumTimesTalkedTo(0)
+THEN
+	RESPONSE #100
+		ChangeRace(Myself,SPECTRAL_UNDEAD)
+		SetGlobal("GNUNDEAD_INACTIVE","LOCALS",1)
+END
+

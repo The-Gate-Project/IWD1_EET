@@ -1,0 +1,46 @@
+IF
+	OnCreation()
+	!Global("SLAVE_DEAD7000","GLOBAL",0)
+THEN
+	RESPONSE #100
+		SetGlobal("SLAVE_DEAD7000","GLOBAL",0)
+		Continue()
+END
+
+IF
+	!Global("SLAVE_DEAD7000","GLOBAL",0)
+THEN
+	RESPONSE #100
+		SetGlobal("MAP_GROUP_HOSTILE5","MYAREA",1)
+		SetGlobal("SLAVE_DEAD7000","GLOBAL",0)
+		Continue()
+END
+
+IF
+	Global("MAP_GROUP_HOSTILE1","MYAREA",0)
+	!Global("SPRITE_IS_DEADJORIL","GLOBAL",0)
+THEN
+	RESPONSE #100
+		SetGlobal("MAP_GROUP_HOSTILE1","MYAREA",1)
+		Continue()
+END
+
+IF
+	Global("JORIL_BADGE","GLOBAL",0)
+	PartyHasItem("JORIL")
+THEN
+	RESPONSE #100
+		SetGlobal("JORIL_BADGE","GLOBAL",1)
+		AddXP2DA("ID1EX10A")
+		DisplayStringNoName(Player1,@19559)
+		Continue()
+END
+
+IF
+	OnCreation()
+THEN
+	RESPONSE #100
+		NoAction()
+		Continue()
+END
+

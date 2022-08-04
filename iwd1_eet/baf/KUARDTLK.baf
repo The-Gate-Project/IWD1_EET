@@ -1,0 +1,14 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId("ARUNDEL")
+		ClearAllActions()
+		MultiPlayerSync()
+		ChangeAIScript("",SPECIFICS)
+		BitSet("CREATURE_STATE_VAR","LOCALS",256)
+		Wait(1)
+		ApplySpellRES("BDCUTSPY",Myself)
+		StartDialogNoSet([PC])
+END
+

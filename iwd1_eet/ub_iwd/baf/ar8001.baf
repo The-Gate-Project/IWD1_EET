@@ -1,0 +1,9 @@
+IF // initial creation
+  Global("CDVoiceLocation","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("CDVoiceLocation","GLOBAL",1)
+    SetGlobal("CDVoiceIsHere","MYAREA",1)
+    CreateCreature("voice",[1239.1754],6)
+    ActionOverride("voice",ApplySpellRES("idinvis5",Myself))
+END

@@ -1,0 +1,29 @@
+
+
+IF
+	!GlobalTimerNotExpired("IWD_Rest","LOCALS")
+THEN
+	RESPONSE #100
+		SetGlobalTimer("IWD_Rest","LOCALS",EIGHT_HOURS)
+		ApplySpell(Myself,RESTORE_FULL_HEALTH)
+		Rest()
+END
+
+IF
+	HaveSpell(WIZARD_DIMENSION_DOOR)
+	Global("DID_WARP","LOCALS",0)
+THEN
+	RESPONSE #100
+		SpellPoint([2696.1228],WIZARD_DIMENSION_DOOR)
+		Wait(2)
+		FaceObject(NearestEnemyOf(Myself))
+		SetGlobal("DID_WARP","LOCALS",1)
+		ChangeAIScript("LWALPW2",GENERAL)
+	RESPONSE #100
+		SpellPoint([2262.1590],WIZARD_DIMENSION_DOOR)
+		Wait(2)
+		FaceObject(NearestEnemyOf(Myself))
+		SetGlobal("DID_WARP","LOCALS",1)
+		ChangeAIScript("LWALPW3",GENERAL)
+END
+

@@ -1,0 +1,9 @@
+IF
+  !Allegiance("ehwolf",ENEMY)
+THEN
+  RESPONSE #100
+    ActionOverride("ehwolf",SetInterrupt(FALSE))
+    ActionOverride("ehwolf",MoveToPoint([536.402]))
+    SetGlobal("EHWOLF_DEAD","GLOBAL",1)
+    ActionOverride("ehwolf",DestroySelf())
+END

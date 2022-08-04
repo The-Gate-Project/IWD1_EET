@@ -1,0 +1,18 @@
+IF // if attacked after duel started/in progress, break truce
+  GlobalGT("CDPresioDuel","GLOBAL",0)
+  GlobalLT("CDPresioDuel","GLOBAL",5)
+  AttackedBy([GOODCUTOFF],DEFAULT)
+THEN
+  RESPONSE #100
+    SetGlobal("CDPresioDuel","GLOBAL",7)
+    SetDialog("")
+    Enemy()
+END
+
+IF // if duel broken or ended, switch back to enemy
+  !Allegiance(Myself,ENEMY)
+  GlobalGT("CDPresioDuel","GLOBAL",4)
+THEN
+  RESPONSE #100
+    Enemy()
+END

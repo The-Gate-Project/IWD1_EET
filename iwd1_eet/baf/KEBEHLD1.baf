@@ -1,0 +1,125 @@
+IF
+	!GlobalTimerNotExpired("IwTimer32","LOCALS")
+THEN
+	RESPONSE #100
+		SetGlobal("BEHOLDER_CASTS","LOCALS",2)
+		SetGlobalTimerRandom("IwTimer32","LOCALS",6,9)
+		Continue()
+	RESPONSE #100
+		SetGlobal("BEHOLDER_CASTS","LOCALS",3)
+		SetGlobalTimerRandom("IwTimer32","LOCALS",6,9)
+		Continue()
+	RESPONSE #100
+		SetGlobal("BEHOLDER_CASTS","LOCALS",4)
+		SetGlobalTimerRandom("IwTimer32","LOCALS",6,9)
+		Continue()
+END
+
+IF
+	GlobalGT("BEHOLDER_CASTS","LOCALS",0)
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		FaceObject(NearestEnemyOf(Myself))
+		Continue()
+END
+
+IF
+	OR(6)
+		See(Player6)
+		See(Player5)
+		See(Player4)
+		See(Player3)
+		See(Player2)
+		See(Player1)
+	GlobalGT("BEHOLDER_CASTS","LOCALS",0)
+	RandomNum(6,1)
+THEN
+	RESPONSE #100
+		//ForceSpell(LastSeenBy(Myself),3174)  // SPIN174.SPL (Нанести Серьезные Раны)
+		ForceSpellRES("IDIN174",LastSeenBy(Myself))
+		IncrementGlobal("BEHOLDER_CASTS","LOCALS",-1)
+		Wait(1)
+	RESPONSE #100
+		//ForceSpell(LastSeenBy(Myself),3168)  // SPIN168.SPL (Очаровать Персону)
+		ForceSpellRES("IDIN168",LastSeenBy(Myself))
+		IncrementGlobal("BEHOLDER_CASTS","LOCALS",-1)
+		Wait(1)
+	RESPONSE #100
+		//ForceSpell(LastSeenBy(Myself),3172)  // SPIN172.SPL (Страх)
+		ForceSpellRES("IDIN172",LastSeenBy(Myself))
+		IncrementGlobal("BEHOLDER_CASTS","LOCALS",-1)
+		Wait(1)
+	RESPONSE #30 //100
+		//ForceSpell(LastSeenBy(Myself),3170)  // SPIN170.SPL (Плоть в Камень)
+		ForceSpellRES("IDIN170",LastSeenBy(Myself))
+		IncrementGlobal("BEHOLDER_CASTS","LOCALS",-1)
+		Wait(1)
+	RESPONSE #30 //100
+		//ForceSpell(LastSeenBy(Myself),3171)  // SPIN171.SPL (Распыление)
+		ForceSpellRES("IDIN171",LastSeenBy(Myself))
+		IncrementGlobal("BEHOLDER_CASTS","LOCALS",-1)
+		Wait(1)
+	RESPONSE #30 //100
+		//ForceSpell(LastSeenBy(Myself),3175)  // SPIN175.SPL (Луч смерти)
+		ForceSpellRES("IDIN175",LastSeenBy(Myself))
+		IncrementGlobal("BEHOLDER_CASTS","LOCALS",-1)
+		Wait(1)
+	RESPONSE #100
+		//ForceSpell(LastSeenBy(Myself),3173)  // SPIN173.SPL (Замедление)
+		ForceSpellRES("IDIN173",LastSeenBy(Myself))
+		IncrementGlobal("BEHOLDER_CASTS","LOCALS",-1)
+		Wait(1)
+	RESPONSE #100
+		//ForceSpell(LastSeenBy(Myself),3169)  // SPIN169.SPL (Сон)
+		ForceSpellRES("IDIN169",LastSeenBy(Myself))
+		IncrementGlobal("BEHOLDER_CASTS","LOCALS",-1)
+		Wait(1)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	GlobalGT("BEHOLDER_CASTS","LOCALS",0)
+THEN
+	RESPONSE #100
+		//ForceSpell(LastSeenBy(Myself),3174)  // SPIN174.SPL (Нанести Серьезные Раны)
+		ForceSpellRES("IDIN174",LastSeenBy(Myself))
+		IncrementGlobal("BEHOLDER_CASTS","LOCALS",-1)
+		Wait(1)
+	RESPONSE #100
+		//ForceSpell(LastSeenBy(Myself),3168)  // SPIN168.SPL (Очаровать Персону)
+		ForceSpellRES("IDIN168",LastSeenBy(Myself))
+		IncrementGlobal("BEHOLDER_CASTS","LOCALS",-1)
+		Wait(1)
+	RESPONSE #100
+		//ForceSpell(LastSeenBy(Myself),3172)  // SPIN172.SPL (Страх)
+		ForceSpellRES("IDIN172",LastSeenBy(Myself))
+		IncrementGlobal("BEHOLDER_CASTS","LOCALS",-1)
+		Wait(1)
+	RESPONSE #30 //100
+		//ForceSpell(LastSeenBy(Myself),3170)  // SPIN170.SPL (Плоть в Камень)
+		ForceSpellRES("IDIN170",LastSeenBy(Myself))
+		IncrementGlobal("BEHOLDER_CASTS","LOCALS",-1)
+		Wait(1)
+	RESPONSE #30 //100
+		//ForceSpell(LastSeenBy(Myself),3171)  // SPIN171.SPL (Распыление)
+		ForceSpellRES("IDIN171",LastSeenBy(Myself))
+		IncrementGlobal("BEHOLDER_CASTS","LOCALS",-1)
+		Wait(1)
+	RESPONSE #30 //100
+		//ForceSpell(LastSeenBy(Myself),3175)  // SPIN175.SPL (Луч смерти)
+		ForceSpellRES("IDIN175",LastSeenBy(Myself))
+		IncrementGlobal("BEHOLDER_CASTS","LOCALS",-1)
+		Wait(1)
+	RESPONSE #100
+		//ForceSpell(LastSeenBy(Myself),3173)  // SPIN173.SPL (Замедление)
+		ForceSpellRES("IDIN173",LastSeenBy(Myself))
+		IncrementGlobal("BEHOLDER_CASTS","LOCALS",-1)
+		Wait(1)
+	RESPONSE #100
+		//ForceSpell(LastSeenBy(Myself),3169)  // SPIN169.SPL (Сон)
+		ForceSpellRES("IDIN169",LastSeenBy(Myself))
+		IncrementGlobal("BEHOLDER_CASTS","LOCALS",-1)
+		Wait(1)
+END
+

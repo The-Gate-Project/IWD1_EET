@@ -1,0 +1,33 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Myself)
+		StartCutSceneMode()
+		ClearAllActions()
+		MultiPlayerSync()
+		SetGlobal("FORCE_TALK","LOCALS",0)
+		SetGlobal("SPRITE_IS_DEADCYIceG","GLOBAL",0)
+		SetGlobal("WATCH_GROUP","MYAREA",5)
+		CreateCreature("CYICEG",[454.253],14)
+		CreateCreature("CYICEG",[257.335],14)
+		CreateCreature("CYICEG",[581.601],8)
+		CreateCreature("CYICEG",[771.513],8)
+		//UseItem("SPAWN",Myself)
+		CreateVisualEffectObject("HEALH",Myself)
+		SmallWait(10)
+		//HideCreature(Myself,TRUE)
+		ApplySpellRES("IDINVIS4",Myself)
+		SetGlobal("IwIHidden","LOCALS",1)
+		EndCutSceneMode()
+		Deactivate(Myself)
+END
+
+/*IF
+	OnCreation()
+THEN
+	RESPONSE #100
+		NoAction()
+		Continue()
+END*/
+

@@ -1,0 +1,214 @@
+IF
+	Allegiance(Myself,ENEMY)
+THEN
+	RESPONSE #100
+		ChangeAIScript("",GENERAL)
+END
+
+IF
+	!GlobalTimerNotExpired("IWD_Rest","LOCALS")
+THEN
+	RESPONSE #100
+		SetGlobalTimer("IWD_Rest","LOCALS",EIGHT_HOURS)
+		ApplySpell(Myself,RESTORE_FULL_HEALTH)
+		Rest()
+END
+
+IF
+	HaveSpell(CLERIC_CURE_SERIOUS_WOUNDS)
+	See(Player1)
+	!StateCheck(Player1,STATE_REALLY_DEAD)
+	HPPercentLT(Player1,80)
+THEN
+	RESPONSE #100
+		Spell(Player1,CLERIC_CURE_SERIOUS_WOUNDS)
+		Wait(3)
+END
+
+IF
+	HaveSpell(CLERIC_CURE_SERIOUS_WOUNDS)
+	See(Player2)
+	!StateCheck(Player2,STATE_REALLY_DEAD)
+	HPPercentLT(Player2,80)
+THEN
+	RESPONSE #100
+		Spell(Player2,CLERIC_CURE_SERIOUS_WOUNDS)
+		Wait(3)
+END
+
+IF
+	HaveSpell(CLERIC_CURE_SERIOUS_WOUNDS)
+	See(Player3)
+	!StateCheck(Player3,STATE_REALLY_DEAD)
+	HPPercentLT(Player3,80)
+THEN
+	RESPONSE #100
+		Spell(Player3,CLERIC_CURE_SERIOUS_WOUNDS)
+		Wait(3)
+END
+
+IF
+	HaveSpell(CLERIC_CURE_SERIOUS_WOUNDS)
+	See(Player4)
+	!StateCheck(Player4,STATE_REALLY_DEAD)
+	HPPercentLT(Player4,80)
+THEN
+	RESPONSE #100
+		Spell(Player4,CLERIC_CURE_SERIOUS_WOUNDS)
+		Wait(3)
+END
+
+IF
+	HaveSpell(CLERIC_CURE_SERIOUS_WOUNDS)
+	See(Player5)
+	!StateCheck(Player5,STATE_REALLY_DEAD)
+	HPPercentLT(Player5,80)
+THEN
+	RESPONSE #100
+		Spell(Player5,CLERIC_CURE_SERIOUS_WOUNDS)
+		Wait(3)
+END
+
+IF
+	HaveSpell(CLERIC_CURE_SERIOUS_WOUNDS)
+	See(Player6)
+	!StateCheck(Player6,STATE_REALLY_DEAD)
+	HPPercentLT(Player6,80)
+THEN
+	RESPONSE #100
+		Spell(Player6,CLERIC_CURE_SERIOUS_WOUNDS)
+		Wait(3)
+END
+
+IF
+	HaveSpell(CLERIC_CURE_MEDIUM_WOUNDS)
+	See(Player1)
+	!StateCheck(Player1,STATE_REALLY_DEAD)
+	HPPercentLT(Player1,80)
+THEN
+	RESPONSE #100
+		Spell(Player1,CLERIC_CURE_MEDIUM_WOUNDS)
+		Wait(3)
+END
+
+IF
+	HaveSpell(CLERIC_CURE_MEDIUM_WOUNDS)
+	See(Player2)
+	!StateCheck(Player2,STATE_REALLY_DEAD)
+	HPPercentLT(Player2,80)
+THEN
+	RESPONSE #100
+		Spell(Player2,CLERIC_CURE_MEDIUM_WOUNDS)
+		Wait(3)
+END
+
+IF
+	HaveSpell(CLERIC_CURE_MEDIUM_WOUNDS)
+	See(Player3)
+	!StateCheck(Player3,STATE_REALLY_DEAD)
+	HPPercentLT(Player3,80)
+THEN
+	RESPONSE #100
+		Spell(Player3,CLERIC_CURE_MEDIUM_WOUNDS)
+		Wait(3)
+END
+
+IF
+	HaveSpell(CLERIC_CURE_MEDIUM_WOUNDS)
+	See(Player4)
+	!StateCheck(Player4,STATE_REALLY_DEAD)
+	HPPercentLT(Player4,80)
+THEN
+	RESPONSE #100
+		Spell(Player4,CLERIC_CURE_MEDIUM_WOUNDS)
+		Wait(3)
+END
+
+IF
+	HaveSpell(CLERIC_CURE_MEDIUM_WOUNDS)
+	See(Player5)
+	!StateCheck(Player5,STATE_REALLY_DEAD)
+	HPPercentLT(Player5,80)
+THEN
+	RESPONSE #100
+		Spell(Player5,CLERIC_CURE_MEDIUM_WOUNDS)
+		Wait(3)
+END
+
+IF
+	HaveSpell(CLERIC_CURE_MEDIUM_WOUNDS)
+	See(Player6)
+	!StateCheck(Player6,STATE_REALLY_DEAD)
+	HPPercentLT(Player6,80)
+THEN
+	RESPONSE #100
+		Spell(Player6,CLERIC_CURE_MEDIUM_WOUNDS)
+		Wait(3)
+END
+
+IF
+	HaveSpell(CLERIC_CURE_LIGHT_WOUNDS)
+	See(Player1)
+	!StateCheck(Player1,STATE_REALLY_DEAD)
+	HPPercentLT(Player1,80)
+THEN
+	RESPONSE #100
+		Spell(Player1,CLERIC_CURE_LIGHT_WOUNDS)
+		Wait(3)
+END
+
+IF
+	HaveSpell(CLERIC_CURE_LIGHT_WOUNDS)
+	See(Player2)
+	!StateCheck(Player2,STATE_REALLY_DEAD)
+	HPPercentLT(Player2,80)
+THEN
+	RESPONSE #100
+		Spell(Player2,CLERIC_CURE_LIGHT_WOUNDS)
+		Wait(3)
+END
+
+IF
+	HaveSpell(CLERIC_CURE_LIGHT_WOUNDS)
+	See(Player3)
+	!StateCheck(Player3,STATE_REALLY_DEAD)
+	HPPercentLT(Player3,80)
+THEN
+	RESPONSE #100
+		Spell(Player3,CLERIC_CURE_LIGHT_WOUNDS)
+		Wait(3)
+END
+
+IF
+	HaveSpell(CLERIC_CURE_LIGHT_WOUNDS)
+	See(Player4)
+	!StateCheck(Player4,STATE_REALLY_DEAD)
+	HPPercentLT(Player4,80)
+THEN
+	RESPONSE #100
+		Spell(Player4,CLERIC_CURE_LIGHT_WOUNDS)
+		Wait(3)
+END
+
+IF
+	HaveSpell(CLERIC_CURE_LIGHT_WOUNDS)
+	See(Player5)
+	!StateCheck(Player5,STATE_REALLY_DEAD)
+	HPPercentLT(Player5,80)
+THEN
+	RESPONSE #100
+		Spell(Player5,CLERIC_CURE_LIGHT_WOUNDS)
+		Wait(3)
+END
+
+IF
+	HaveSpell(CLERIC_CURE_LIGHT_WOUNDS)
+	See(Player6)
+	!StateCheck(Player6,STATE_REALLY_DEAD)
+	HPPercentLT(Player6,80)
+THEN
+	RESPONSE #100
+		Spell(Player6,CLERIC_CURE_LIGHT_WOUNDS)
+		Wait(3)
+END
+

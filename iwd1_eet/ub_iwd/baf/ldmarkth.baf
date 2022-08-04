@@ -1,0 +1,23 @@
+IF
+  GlobalTimerExpired("CDGinaRingTimer","GLOBAL")
+  Global("Marketh_Ring","GLOBAL",5)
+THEN
+  RESPONSE #100
+    SetGlobal("Marketh_Ring","GLOBAL",6)
+    Activate(Myself)
+    SetGlobal("IwIHidden","LOCALS",0)
+    DestroyItem("cdminhp1")
+    //HideCreature(Myself,FALSE)
+END
+
+IF
+  Global("Marketh_Ring","GLOBAL",6)
+  See([PC])
+  !Allegiance(Myself,ENEMY)
+  !StateCheck(Myself,STATE_REALLY_DEAD)
+THEN
+  RESPONSE #100
+    //SetDialogueRange(300)
+    //Dialogue([PC])
+    StartDialogNoSet([PC])
+END

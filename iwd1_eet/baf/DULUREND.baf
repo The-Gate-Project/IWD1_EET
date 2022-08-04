@@ -1,0 +1,24 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Myself)
+		MultiPlayerSync()
+		ClearAllActions()
+		MultiPlayerSync()
+		MoveViewObject(Myself,INSTANT)
+		Wait(2)
+		//SetDialogueRange(300)
+		ApplySpellRES("BDCUTSPY",Myself)
+		MultiPlayerSync()
+		StartDialogNoSet([PC])
+END
+
+/*IF
+	OnCreation()
+THEN
+	RESPONSE #100
+		NoAction()
+		Continue()
+END*/
+

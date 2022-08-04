@@ -1,0 +1,30 @@
+IF
+	StateCheck(Myself,STATE_PANIC)
+THEN
+	RESPONSE #100
+		RandomWalkContinuous()
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		Help()
+		Attack(NearestEnemyOf(Myself))
+END
+
+IF
+	AttackedBy([PC],DEFAULT)
+THEN
+	RESPONSE #100
+		Help()
+		Attack(LastAttackerOf(Myself))
+END
+
+IF
+	Help([ANYONE])
+THEN
+	RESPONSE #100
+		Attack(LastAttackerOf(LastHelp(Myself)))
+END
+

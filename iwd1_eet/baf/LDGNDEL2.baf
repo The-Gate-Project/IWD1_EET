@@ -1,0 +1,8 @@
+IF
+	OnCreation()
+	GlobalGT("SPRITE_IS_DEAD8001_SALAMANDERS","GLOBAL",20)
+THEN
+	RESPONSE #100
+		DestroySelf()
+END
+

@@ -1,0 +1,122 @@
+IF
+	Global("MAP_GROUP_HOSTILE1","MYAREA",0)
+	!Global("SPRITE_IS_DEADGARETH","GLOBAL",0)
+THEN
+	RESPONSE #100
+		SetGlobal("MAP_GROUP_HOSTILE1","MYAREA",1)
+		Continue()
+END
+
+IF
+	HasItem("BOOKENG",Myself) // Книга по инженерному делу
+	!Global("SLAVES_FREE_1","GLOBAL",0)
+THEN
+	RESPONSE #100
+		DropInventory()
+		Continue()
+END
+
+IF
+	Global("7002_7005_DOOR_STATE","GLOBAL",0)
+	!Global("SLAVES_FREE_1","GLOBAL",0)
+THEN
+	RESPONSE #100
+		SetGlobal("7002_7005_DOOR_STATE","GLOBAL",1)
+		Continue()
+END
+
+IF
+	!Global("SLAVES_FREE_1","GLOBAL",0)
+	!GlobalTimerNotExpired("IwTimer24","LOCALS")
+THEN
+	RESPONSE #80
+		DisplayStringHead(Myself,@14582)
+		SetGlobalTimerRandom("IwTimer24","LOCALS",2,5)
+		Continue()
+	RESPONSE #80
+		DisplayStringHead(Myself,@14585)
+		SetGlobalTimerRandom("IwTimer24","LOCALS",2,5)
+		Continue()
+	RESPONSE #60
+		SetGlobalTimerRandom("IwTimer24","LOCALS",2,5)
+		Continue()
+END
+
+IF
+	OnCreation()
+	!Global("SLAVES_FREE_1","GLOBAL",0)
+THEN
+	RESPONSE #100
+		DestroySelf()
+END
+
+IF
+	!Global("SLAVES_FREE_1","GLOBAL",0)
+	NearLocation(Myself,1104,385,6)
+	ActionListEmpty()
+THEN
+	RESPONSE #100
+		DestroySelf()
+END
+
+IF
+	!Global("SLAVES_FREE_1","GLOBAL",0)
+THEN
+	RESPONSE #50
+		MoveToPoint([1104.385])
+END
+
+IF
+	!BitCheck("CREATURE_STATE_VAR","LOCALS",1)
+THEN
+	RESPONSE #100
+		BitSet("CREATURE_STATE_VAR","LOCALS",1)
+		SetGlobalTimerRandom("IwTimer24","LOCALS",2,5)
+		Continue()
+END
+
+IF
+	Global("MAP_GROUP_HOSTILE1","MYAREA",0)
+	IsActive(Myself)
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		SetGlobal("MAP_GROUP_HOSTILE1","MYAREA",1)
+		Continue()
+END
+
+IF
+	!Allegiance(Myself,ENEMY)
+	!Global("MAP_GROUP_HOSTILE1","MYAREA",0)
+THEN
+	RESPONSE #100
+		Enemy()
+		SetGlobal("MAP_GROUP_HOSTILE1","MYAREA",1)
+		Continue()
+END
+
+/*IF
+	!Global("SLAVES_FREE_1","GLOBAL",0)
+	!GlobalTimerNotExpired("IwTimer24","LOCALS")
+THEN
+	RESPONSE #80
+		DisplayStringHead(Myself,@14582)
+		SetGlobalTimerRandom("IwTimer24","LOCALS",2,5)
+		Continue()
+	RESPONSE #80
+		DisplayStringHead(Myself,@14585)
+		SetGlobalTimerRandom("IwTimer24","LOCALS",2,5)
+		Continue()
+	RESPONSE #60
+		SetGlobalTimerRandom("IwTimer24","LOCALS",2,5)
+		Continue()
+END*/
+
+IF
+	OnCreation()
+THEN
+	RESPONSE #100
+		NoAction()
+		Continue()
+END
+

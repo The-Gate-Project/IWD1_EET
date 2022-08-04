@@ -1,0 +1,19 @@
+IF
+  Global("TARNEL_TRAP_SET","GLOBAL",5)
+  !GlobalTimerNotExpired("TARNEL_TRAP_TIMER","MYAREA")
+THEN
+  RESPONSE #100
+    SetGlobalTimer("TARNEL_TRAP_TIMER","MYAREA",4)
+    SetGlobal("TARNEL_TRAP_SET","GLOBAL",6)
+    SetGlobal("TARNEL_HULK_SPAWN_4","GLOBAL",1)
+    SetGlobal("TARNEL_HULK_SPAWN_3","GLOBAL",0)
+END
+
+IF
+  Global("TARNEL_TRAP_SET","GLOBAL",6)
+  !GlobalTimerNotExpired("TARNEL_TRAP_TIMER","MYAREA")
+THEN
+  RESPONSE #100
+    SetGlobal("TARNEL_TRAP_SET","GLOBAL",7)
+    SetGlobal("TARNEL_HULK_SPAWN_4","GLOBAL",0)
+END

@@ -1,0 +1,20 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId("POMAB")
+		StartCutSceneMode()
+		ClearAllActions()
+		CreateCreature("CUTSPY",[540.450],0)
+		MultiPlayerSync()
+		SetGlobal("POMAB_ATTACK","GLOBAL",6)
+		CloseDoor("AR1103DOOR1")
+		CloseDoor("AR1103HideMe")
+		TriggerActivation("To1102",FALSE)
+		TriggerActivation("To1104",FALSE)
+		Wait(1)
+		MultiPlayerSync()
+		Wait(1)
+		StartDialogNoSet(PartySlot1)
+END
+

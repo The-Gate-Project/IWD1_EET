@@ -1,0 +1,3075 @@
+//BLOCK RANDOM_ITEMS
+APPEND ~RNDTRES.2da~ ~AROW_P1	arow01	arow01	arow01	arow02	arow08	arow01	arow01	arow01	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*
+AROW_P2	arow01	arow01	arow02	arow02	arow08	arow08	arow01	arow01	arow01	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*
+ASKELP1	blun06	ax1h01	sw1h01	sw1h04	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*
+ASKELP2	blun06	ax1h01	sw1h01	sw1h04	hqmstar	hqbswrd	hqlswrd	hqaxe	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*
+ASKELP3	hqmstar	hqbswrd	hqlswrd	hqaxe	blun06	ax1h01	sw1h05	hqmstar	hqlswrd	ax1h02	blun07	hqaxe	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*
+DE1TRES	ShldRng	uSpot3a	uRing3c	uRing3a	uRobe1a	BootFox	USPOT3B	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*
+DE2TRES	uDagg3c	uDagg3b	uDagg3a	Withery	USLTR3A	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*
+DE3TRES	ArowTrn	TrnBolt	uHXbw3a	uHXbw3b	uLBow3a	zzh8gk	lxbowbm	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*
+DE4TRES	uFlal3a	ZZJ6SP	ZZ05WE	PeaceKe	u1Ham3a	UMSTR3A	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*
+DE6TRES	uLswd3a	Intrces	uBswd3b	Diver	uBswd3a	Days	ZZZ3BC	USSWD3A	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*
+DE7TRES	ShldBch	ShldRed	USHLD3A	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*
+EC3TRES	ring06	uRing1b	uDagg1a	BeltBea	BootQui	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*
+EH1TRES	chan04	hqdagg	hqmstar	potn08	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*
+EXTRES1	beltbon	helmsh	stomper	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*
+EXTRES2	robearm	namji	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*
+EXTRES4	ogien	cloakin	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*
+EXTRES5	wisp	mourner	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*
+KT1TRES	uHalb2c	uHalb2a	uHxbw2a	uLXbw2a	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*
+KT2TRES	uDagg2b	uDagg2a	u2Ham2a	uShld2a	uFlal2a	Dazer	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*
+KT3TRES	uBswd2a	uLswd2a	uTswd2a	uSswd2a	Mielikk	Turodah	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*
+LD1TRES	uBswd5a	uTswd4a	u2hAx4a	uHalb4a	uHalb4b	uBswd4a	UTSWD5A	UBSWD5B	UTSWD5B	ULSWD5A	ULSWD5B	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*
+LD2TRES	uLXbw5a	uHXbw5a	uHXbw4a	U2HAX5A	ULBOW5A.ITM	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*
+LD3TRES	uDagg5a	uSswd5a	uSltr4a	USLTR5A	USSWD5B	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*
+LD4TRES	uMstr5b	uMstr4b	u1Ham4b	uMstr4a	u2Ham4a	U1HAM5B	UFLAL5A	U2HAM5A	UMSTR5A	U1HAM5A	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*
+LD5TRES	uSpot5b	uRing4c	uRing4a	URING5A	URING5B	USPOT5A	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*
+ORCTRES	applebn	glimglm	stout	mhorn	wandtrp	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*
+OrkTres	ringelf	cloakmi	labelt	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*
+RND9200	MIWD01	MISC20	MISC16	BELT01	00EMPTY	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*
+RND9300	MISC28	MISC30	MISC32	00EMPTY	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*
+RND9400	MIWD01	MISC58	MISC57	00EMPTY	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*
+RND9500	00EMPTY	MISC27	MISC28	MISC39	MISC30	00EMPTY	00EMPTY	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*
+RND9600	MISC36	MISC35	MISC50	MISC50	MIWD01	00EMPTY	00EMPTY	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*
+RND9603	MISC36	MISC36	MISC35	MISC35	AMUL08	AMUL11	00EMPTY	00EMPTY	00EMPTY	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*
+RNGP1	uDart1a	arow01	arow01	uDart1a	arow02	bolt01	bull02	bolt01	bull02	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*
+RNGP2	uDart2a	uArow2a	Arow02	uDart2a	uArow2a	arow01	arow01	Arow08	bolt02	bull03	bolt02	bolt02	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*
+RNGP3	uArow3a	uArow3b	uArow3c	Arow08	Arow09	Arow11	uDart3a	uDart3b	bolt02	bolt06	bolt06	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*
+RNGP4	uArow4a	uDart4a	Arow08	Arow10	uBull4a	bolt03	bolt04	bolt03	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*
+SH_AXE	UTswd3b	UTswd3a	Ax1H03	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*
+SH_BOW	Clbhand	Ulbow3c	Bow07	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*
+SH_GEM	Misc28	Misc29	Misc30	Misc31	Misc32	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*
+SH_INGSW	Lshand	Ulswd3c	Ulswd3d	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*
+SH_MSTR	Umstr3c	Umstr3b	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*
+SH_SHLD	Shshld	Ushld3b	Shld02	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*
+SH_SSWD	Usswd3b	Usswd3c	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*
+SH_WHMR	U1ham3b	U2ham3a	HAMM08	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*
+SH_XBOW	Ulxbw3b	Ulxbw3a	Xbow03	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*
+SH1TRES	Kris	idBersrk	Serrate	BoneAm	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*
+SH2TRES	KayBow	KayChai	KayGlov	KayRing	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*
+SH3TRES	ShCloak	ShPlate	ShRobe	ShBoots	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*
+SH4TRES	Corello	Labelas	Shevara	Solonor	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*
+SH8TRES	ZZN6GC	poker	DBone	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*
+SHT_CLR	ElfChan	uRing3b	USpot3c	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*
+SHT_MAG	Shstaff	Elrobe	Dagg03	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*
+SKEL_M1	hamm01	sw2h01	sw1h01	ax1h01	staf01	blun02	sw1h04	sw1h07	blun06	dagg01	hqlswrd	hqmace	hamm01	sw2h01	sw1h01	ax1h01	blun06	blun02	sw1h04	sw1h07	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*
+SKEL_R1	bow05	bow05	bow03	bow01	bow03	bow05	bow05	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*
+SKEL_R2	bow05	bow03	bow03	bow01	bow06	bow01	bow03	bow03	bow05	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*
+TFGTRES	uLBow2b	uLBow2a	bow06	xbow05	scrl99	scrl06	scrl1f	scrl1i	shld04	scrl1t	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*
+TG1TRES	amul04	amul14	BootMan	uRing2b	AmulBra	BootMoa	Bknight	URING2A	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*
+TG2TRES	leat05	uSltr01	uSltr2a	uSswd2b	ULSWD2B	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*
+TG3TRES	PeasRew	idReaver	uBswd2b	sw1h02	UTSWD2C	UTSWD2B	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*
+TSKELP1	ax1h01	sw1h01	sw1h04	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*
+TSKELP2	ax1h01	sw1h01	sw1h04	hqbswrd	hqlswrd	hqaxe	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*
+UD1TRES	u1hAx4a	uHalb3c	u1hAx3a	u1hAx2a	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*
+UD2TRES	uRing4b	AmulDef	Bishop	USPOT4A	USPOT4C	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*
+UD3TRES	u1Ham4a	uShld4a	uShld3a	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*
+UD4TRES	uDagg4b	uDagg4a	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*
+UD5TRES	uSswd4a	uBswd4c	uLswd4a	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*
+VS1TRES	blun07	bow06	hamm02	sw1h05	sw1h08	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*
+VS2TRES	uHalb1a	uLbow1a	uLswd1a	uTswd1a	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*
+VS3TRES	uDagg1b	uHalb2b	uRing1a	uSpot1a	u2hAx1a	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*
+WEPRAN	RanAx	RanBSwd	RanClub	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*
+WT1TRES	uFlal4a	redemt	Gsleep	U2HAM4B	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*
+WT2TRES	uLswd4b	uSswd4b	HelmPat	uTswd4b	uBswd4b	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*
+WT3TRES	uSpot4b	LongClev	SpenStaf	U2HAX4B	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*
+WTGTRES	misc18	misc36	misc22	misc38	misc19	misc21	misc18	misc36	misc22	misc38	misc19	misc21	misc18	misc36	misc22	misc38	misc19	misc21	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*	*~
+
+COPY_EXISTING ~RNDWEP.ITM~ ~override/AROW_P1.ITM~
+              ~RNDWEP.ITM~ ~override/AROW_P2.ITM~
+              ~RNDWEP.ITM~ ~override/ASKELP1.ITM~
+              ~RNDWEP.ITM~ ~override/ASKELP2.ITM~
+              ~RNDWEP.ITM~ ~override/ASKELP3.ITM~
+              ~RNDWEP.ITM~ ~override/DE1TRES.ITM~
+              ~RNDWEP.ITM~ ~override/DE2TRES.ITM~
+              ~RNDWEP.ITM~ ~override/DE3TRES.ITM~
+              ~RNDWEP.ITM~ ~override/DE4TRES.ITM~
+              ~RNDWEP.ITM~ ~override/DE6TRES.ITM~
+              ~RNDWEP.ITM~ ~override/DE7TRES.ITM~
+              ~RNDWEP.ITM~ ~override/EC3TRES.ITM~
+              ~RNDWEP.ITM~ ~override/EH1TRES.ITM~
+              ~RNDWEP.ITM~ ~override/EXTRES1.ITM~
+              ~RNDWEP.ITM~ ~override/EXTRES2.ITM~
+              ~RNDWEP.ITM~ ~override/EXTRES4.ITM~
+              ~RNDWEP.ITM~ ~override/EXTRES5.ITM~
+              ~RNDWEP.ITM~ ~override/KT1TRES.ITM~
+              ~RNDWEP.ITM~ ~override/KT2TRES.ITM~
+              ~RNDWEP.ITM~ ~override/KT3TRES.ITM~
+              ~RNDWEP.ITM~ ~override/LD1TRES.ITM~
+              ~RNDWEP.ITM~ ~override/LD2TRES.ITM~
+              ~RNDWEP.ITM~ ~override/LD3TRES.ITM~
+              ~RNDWEP.ITM~ ~override/LD4TRES.ITM~
+              ~RNDWEP.ITM~ ~override/LD5TRES.ITM~
+              ~RNDWEP.ITM~ ~override/ORCTRES.ITM~
+              ~RNDWEP.ITM~ ~override/OrkTres.ITM~
+              ~RNDWEP.ITM~ ~override/RND9200.ITM~
+              ~RNDWEP.ITM~ ~override/RND9300.ITM~
+              ~RNDWEP.ITM~ ~override/RND9400.ITM~
+              ~RNDWEP.ITM~ ~override/RND9500.ITM~
+              ~RNDWEP.ITM~ ~override/RND9600.ITM~
+              ~RNDWEP.ITM~ ~override/RND9603.ITM~
+              ~RNDWEP.ITM~ ~override/RNGP1.ITM~
+              ~RNDWEP.ITM~ ~override/RNGP2.ITM~
+              ~RNDWEP.ITM~ ~override/RNGP3.ITM~
+              ~RNDWEP.ITM~ ~override/RNGP4.ITM~
+              ~RNDWEP.ITM~ ~override/SH_AXE.ITM~
+              ~RNDWEP.ITM~ ~override/SH_GEM.ITM~
+              ~RNDWEP.ITM~ ~override/SH_INGSW.ITM~
+              ~RNDWEP.ITM~ ~override/SH_MSTR.ITM~
+              ~RNDWEP.ITM~ ~override/SH_SHLD.ITM~
+              ~RNDWEP.ITM~ ~override/SH_SSWD.ITM~
+              ~RNDWEP.ITM~ ~override/SH_WHMR.ITM~
+              ~RNDWEP.ITM~ ~override/SH_XBOW.ITM~
+              ~RNDWEP.ITM~ ~override/SH1TRES.ITM~
+              ~RNDWEP.ITM~ ~override/SH2TRES.ITM~
+              ~RNDWEP.ITM~ ~override/SH3TRES.ITM~
+              ~RNDWEP.ITM~ ~override/SH4TRES.ITM~
+              ~RNDWEP.ITM~ ~override/SH8TRES.ITM~
+              ~RNDWEP.ITM~ ~override/SHT_CLR.ITM~
+              ~RNDWEP.ITM~ ~override/SHT_MAG.ITM~
+              ~RNDWEP.ITM~ ~override/SKEL_M1.ITM~
+              ~RNDWEP.ITM~ ~override/SKEL_R1.ITM~
+              ~RNDWEP.ITM~ ~override/SKEL_R2.ITM~
+              ~RNDWEP.ITM~ ~override/TFGTRES.ITM~
+              ~RNDWEP.ITM~ ~override/TG1TRES.ITM~
+              ~RNDWEP.ITM~ ~override/TG2TRES.ITM~
+              ~RNDWEP.ITM~ ~override/TG3TRES.ITM~
+              ~RNDWEP.ITM~ ~override/TSKELP1.ITM~
+              ~RNDWEP.ITM~ ~override/TSKELP2.ITM~
+              ~RNDWEP.ITM~ ~override/UD1TRES.ITM~
+              ~RNDWEP.ITM~ ~override/UD2TRES.ITM~
+              ~RNDWEP.ITM~ ~override/UD3TRES.ITM~
+              ~RNDWEP.ITM~ ~override/UD4TRES.ITM~
+              ~RNDWEP.ITM~ ~override/UD5TRES.ITM~
+              ~RNDWEP.ITM~ ~override/VS1TRES.ITM~
+              ~RNDWEP.ITM~ ~override/VS2TRES.ITM~
+              ~RNDWEP.ITM~ ~override/VS3TRES.ITM~
+              ~RNDWEP.ITM~ ~override/WEPRAN.ITM~
+              ~RNDWEP.ITM~ ~override/WT1TRES.ITM~
+              ~RNDWEP.ITM~ ~override/WT2TRES.ITM~
+              ~RNDWEP.ITM~ ~override/WT3TRES.ITM~
+              ~RNDWEP.ITM~ ~override/WTGTRES.ITM~
+              ~RNDWEP.ITM~ ~override/SH_BOW.ITM~
+              ~RNDWEP.ITM~ ~override/00EMPTY.ITM~
+     		  ~RNDWEP.ITM~ ~override/00EMPTY.ITM~
+
+COPY_EXISTING ~RNDTRES.2da~ ~override~
+	PRETTY_PRINT_2DA
+//BLOCKEND
+
+//BLOCK HIGH QUALITY
+
+//BLOCKEND
+
+PRINT ~Installing item files...~
+SILENT
+
+
+//BLOCK NO_STRING
+COPY ~iwd1_eet/items/WAND4CA.ITM~ ~override~
+     ~iwd1_eet/items/MIN1HP.ITM~ ~override~
+     ~iwd1_eet/items/REG1HP2.ITM~ ~override~
+     ~iwd1_eet/items/IDRING95.ITM~ ~override~
+     ~iwd1_eet/items/IDIMMUN2.ITM~ ~override~
+     ~iwd1_eet/items/WANDFAK.ITM~ ~override~
+     ~iwd1_eet/items/IDSEEALL.ITM~ ~override~
+     ~iwd1_eet/items/IDSFLAIL.ITM~ ~override~
+     ~iwd1_eet/items/IDAPORT.ITM~ ~override~
+     ~iwd1_eet/items/IPLAT05.ITM~ ~override~
+     ~iwd1_eet/items/IDIMMUN3.ITM~ ~override~
+     ~iwd1_eet/items/IRONMAN.ITM~ ~override~
+     ~iwd1_eet/items/IDMNHPAM.ITM~ ~override~
+     ~iwd1_eet/items/WANDREA.ITM~ ~override~
+     ~iwd1_eet/items/BELBYE.ITM~ ~override~
+     ~iwd1_eet/items/IDMIN2HP.ITM~ ~override~
+     ~iwd1_eet/items/M2D4SLAS.ITM~ ~override~
+     ~iwd1_eet/items/RINGFIR.ITM~ ~override~
+     ~iwd1_eet/items/IDIMMUN1.ITM~ ~override~
+     ~iwd1_eet/items/SHADOW1.ITM~ ~override~
+     ~iwd1_eet/items/TRANS.ITM~ ~override~
+     ~iwd1_eet/items/SHADLESS.ITM~ ~override~
+     ~iwd1_eet/items/RINGTOM.ITM~ ~override~
+     ~iwd1_eet/items/MUM1-12.ITM~ ~override~
+     ~iwd1_eet/items/IMMAGMS.ITM~ ~override~
+     ~iwd1_eet/items/SPPR103C.ITM~ ~override~
+     ~iwd1_eet/items/SPPR205C.ITM~ ~override~
+     ~iwd1_eet/items/SPPR203C.ITM~ ~override~
+     ~iwd1_eet/items/SPPR105C.ITM~ ~override~
+     ~iwd1_eet/items/SPPR201C.ITM~ ~override~
+     ~iwd1_eet/items/SPPR214C.ITM~ ~override~
+     ~iwd1_eet/items/SPPR211C.ITM~ ~override~
+     ~iwd1_eet/items/SPPR208C.ITM~ ~override~
+     ~iwd1_eet/items/SPPR212C.ITM~ ~override~
+     ~iwd1_eet/items/HELMBLK.ITM~ ~override~
+     ~iwd1_eet/items/PLATBLK.ITM~ ~override~
+     ~iwd1_eet/items/FARTRNG.ITM~ ~override~
+     ~iwd1_eet/items/LIZSPEAR.ITM~ ~override~
+     ~iwd1_eet/items/WCWIGHT.ITM~ ~override~
+     ~iwd1_eet/items/WPSNZOM.ITM~ ~override~
+     ~iwd1_eet/items/MIN2HP.ITM~ ~override~
+     ~iwd1_eet/items/TROLLDE.ITM~ ~override~
+     ~iwd1_eet/items/YXURESI.ITM~ ~override~
+     ~iwd1_eet/items/STUPID.ITM~ ~override~
+     ~iwd1_eet/items/MINHPN9.ITM~ ~override~
+     ~iwd1_eet/items/AROW1-6.ITM~ ~override~
+     ~iwd1_eet/items/SHLGBOW2.ITM~ ~override~
+     ~iwd1_eet/items/SHAXE2C.ITM~ ~override~
+     ~iwd1_eet/items/STAF3-8.ITM~ ~override~
+     ~iwd1_eet/items/SHLSWRD2.ITM~ ~override~
+     ~iwd1_eet/items/TRANS2.ITM~ ~override~
+     ~iwd1_eet/items/SHAX4D4C.ITM~ ~override~
+     ~iwd1_eet/items/TRANS3.ITM~ ~override~
+     ~iwd1_eet/items/TRANS40.ITM~ ~override~
+     ~iwd1_eet/items/CHAN99.ITM~ ~override~
+     ~iwd1_eet/items/SHMACE2.ITM~ ~override~
+     ~iwd1_eet/items/PLAT97.ITM~ ~override~
+     ~iwd1_eet/items/LEAT99.ITM~ ~override~
+     ~iwd1_eet/items/FARROW.ITM~ ~override~
+     ~iwd1_eet/items/SPPR306C.ITM~ ~override~
+     ~iwd1_eet/items/SPPR308C.ITM~ ~override~
+     ~iwd1_eet/items/SPPR307C.ITM~ ~override~
+     ~iwd1_eet/items/SPPR407C.ITM~ ~override~
+     ~iwd1_eet/items/ROBEINV.ITM~ ~override~
+     ~iwd1_eet/items/SALFROS.ITM~ ~override~
+     ~iwd1_eet/items/CSALRING.ITM~ ~override~
+     ~iwd1_eet/items/WEPGIAN.ITM~ ~override~
+     ~iwd1_eet/items/SPPR507C.ITM~ ~override~
+     ~iwd1_eet/items/SPPR510C.ITM~ ~override~
+     ~iwd1_eet/items/SPPR504C.ITM~ ~override~
+     ~iwd1_eet/items/SALFIRE.ITM~ ~override~
+     ~iwd1_eet/items/FSALRING.ITM~ ~override~
+     ~iwd1_eet/items/CLUB6-24.ITM~ ~override~
+     ~iwd1_eet/items/SALSHIK.ITM~ ~override~
+     ~iwd1_eet/items/AX2-12S.ITM~ ~override~
+     ~iwd1_eet/items/RINGMAL.ITM~ ~override~
+     ~iwd1_eet/items/FG2-20S.ITM~ ~override~
+     ~iwd1_eet/items/FELE1-8.ITM~ ~override~
+     ~iwd1_eet/items/TRANS4.ITM~ ~override~
+     ~iwd1_eet/items/TRAN100.ITM~ ~override~
+     ~iwd1_eet/items/ANTIMAG.ITM~ ~override~
+     ~iwd1_eet/items/MOVE20.ITM~ ~override~
+     ~iwd1_eet/items/M5D4SLAS.ITM~ ~override~
+     ~iwd1_eet/items/LWRING.ITM~ ~override~
+     ~iwd1_eet/items/ADIS.ITM~ ~override~
+     ~iwd1_eet/items/TRANS20.ITM~ ~override~
+     ~iwd1_eet/items/WRANGED.ITM~ ~override~
+     ~iwd1_eet/items/PLATND.ITM~ ~override~
+     ~iwd1_eet/items/NOMAGIC.ITM~ ~override~
+     ~iwd1_eet/items/SPPR607C.ITM~ ~override~
+     ~iwd1_eet/items/REMORHA.ITM~ ~override~
+     ~iwd1_eet/items/ICEGOLEM.ITM~ ~override~
+     ~iwd1_eet/items/SEEAMUL.ITM~ ~override~
+     ~iwd1_eet/items/DLXBOW.ITM~ ~override~
+     ~iwd1_eet/items/TRANS5.ITM~ ~override~
+     ~iwd1_eet/items/IDRING91.ITM~ ~override~
+     ~iwd1_eet/items/IDRING90.ITM~ ~override~
+     ~iwd1_eet/items/SHADE.ITM~ ~override~
+     ~iwd1_eet/items/CIIGEN.ITM~ ~override~
+     ~iwd1_eet/items/CIGBARD.ITM~ ~override~
+     ~iwd1_eet/items/WEPWYV.ITM~ ~override~
+     ~iwd1_eet/items/CIBOSST.ITM~ ~override~
+     ~iwd1_eet/items/SPAWN.ITM~ ~override~
+     ~iwd1_eet/items/CISPGRD1.ITM~ ~override~
+     ~iwd1_eet/items/CISPGRD2.ITM~ ~override~
+     ~iwd1_eet/items/CISPGRD3.ITM~ ~override~
+     ~iwd1_eet/items/XCLCK17.ITM~ ~override~
+     ~iwd1_eet/items/XSLNG02.ITM~ ~override~
+     ~iwd1_eet/items/XUSSWD3.ITM~ ~override~
+     ~iwd1_eet/items/XLEAT03.ITM~ ~override~
+     ~iwd1_eet/items/XBULL03.ITM~ ~override~
+     ~iwd1_eet/items/XCLUB.ITM~ ~override~
+     ~iwd1_eet/items/XCHAN03.ITM~ ~override~
+     ~iwd1_eet/items/XLBOW04.ITM~ ~override~
+     ~iwd1_eet/items/XAROW11.ITM~ ~override~
+     ~iwd1_eet/items/XU2HAM3.ITM~ ~override~
+     ~iwd1_eet/items/XAX1H03.ITM~ ~override~
+     ~iwd1_eet/items/XSTAFHMG.ITM~ ~override~
+     ~iwd1_eet/items/XBLUN07.ITM~ ~override~
+     ~iwd1_eet/items/XBRAC07.ITM~ ~override~
+     ~iwd1_eet/items/XSW1H09.ITM~ ~override~
+     ~iwd1_eet/items/XXBOW06.ITM~ ~override~
+     ~iwd1_eet/items/XBOLT06.ITM~ ~override~
+     ~iwd1_eet/items/CIBOSSB.ITM~ ~override~
+     ~iwd1_eet/items/CIRAKSH.ITM~ ~override~
+     ~iwd1_eet/items/CIRAKSH1.ITM~ ~override~
+     ~iwd1_eet/items/CWOJELL.ITM~ ~override~
+     ~iwd1_eet/items/CIREVE.ITM~ ~override~
+     ~iwd1_eet/items/CWREVE.ITM~ ~override~
+     ~iwd1_eet/items/IDGHOST.ITM~ ~override~
+     ~iwd1_eet/items/CWOSLIM.ITM~ ~override~
+     ~iwd1_eet/items/SKULL1.ITM~ ~override~
+     ~iwd1_eet/items/SKULL2.ITM~ ~override~
+     ~iwd1_eet/items/CIFADE.ITM~ ~override~
+     ~iwd1_eet/items/FREEACT.ITM~ ~override~
+     ~iwd1_eet/items/REGEN.ITM~ ~override~
+     ~iwd1_eet/items/CIBOOT.ITM~ ~override~
+     ~iwd1_eet/items/CWMJELL.ITM~ ~override~
+     ~iwd1_eet/items/CISTONE.ITM~ ~override~
+     ~iwd1_eet/items/SPPR304C.ITM~ ~override~
+     ~iwd1_eet/items/SPPR314C.ITM~ ~override~
+     ~iwd1_eet/items/SPPR712C.ITM~ ~override~
+     ~iwd1_eet/items/MAUL.ITM~ ~override~
+     ~iwd1_eet/items/RANAX.ITM~ ~override~
+     ~iwd1_eet/items/RANBSWD.ITM~ ~override~
+     ~iwd1_eet/items/RANCLUB.ITM~ ~override~
+     ~iwd1_eet/items/BLCKPLA.ITM~ ~override~
+     ~iwd1_eet/items/BLCKSHD.ITM~ ~override~
+     ~iwd1_eet/items/BLCKSWD.ITM~ ~override~
+     ~iwd1_eet/items/IDTRLREG.ITM~ ~override~
+     ~iwd1_eet/items/IDMONHP1.ITM~ ~override~
+     ~iwd1_eet/items/SPPR404C.ITM~ ~override~
+     ~iwd1_eet/items/SUMRING.ITM~ ~override~
+     ~iwd1_eet/items/BEHWEP.ITM~ ~override~
+     ~iwd1_eet/items/BEHAMU.ITM~ ~override~
+     ~iwd1_eet/items/BRING.ITM~ ~override~
+     ~iwd1_eet/items/CWSZOMB.ITM~ ~override~
+     ~iwd1_eet/items/FG2-20C.ITM~ ~override~
+     ~iwd1_eet/items/POQ2-16.ITM~ ~override~
+     ~iwd1_eet/items/SQRLSPD.ITM~ ~override~
+     ~iwd1_eet/items/IDSPIDWR.ITM~ ~override~
+     //~iwd1_eet/items/00EMPTY.ITM~ ~override~
+     //~iwd1_eet/items/00EMPTY.ITM~ ~override/00EMPTY.ITM~
+     /**/
+//BLOCKEND
+
+//BLOCK STRING
+COPY ~iwd1_eet/items/FISH.ITM~ ~override~
+  SAY 0x08 @80
+  SAY 0x0c @19684
+  SAY 0x50 @14852
+  SAY 0x54 @14852
+
+COPY ~iwd1_eet/items/EREVAIN.ITM~ ~override~ //longsword
+  SAY 0x08 @2976
+  SAY 0x0c @2981
+  SAY 0x50 @2977
+  SAY 0x54 @2982
+
+COPY ~iwd1_eet/items/LIST.ITM~ ~override~
+  SAY 0x08 @76
+  SAY 0x0c @27230
+  SAY 0x50 @20636
+  SAY 0x54 @20636
+
+COPY ~iwd1_eet/items/JhoSwd1.ITM~ ~override~
+  SAY 0x08 @5712
+  SAY 0x0c @5713
+  SAY 0x50 @5714
+  SAY 0x54 @5714
+
+COPY ~iwd1_eet/items/JhoSwd2.ITM~ ~override~ //longsword
+  SAY 0x08 @6117
+  SAY 0x0c @16327
+  SAY 0x50 @6098
+  SAY 0x54 @6098
+
+COPY ~iwd1_eet/items/ELIGEM.ITM~ ~override~
+  SAY 0x0c @5710
+  SAY 0x54 @5709
+
+COPY ~iwd1_eet/items/EHDag.ITM~ ~override~
+  SAY 0x08 @6319
+  SAY 0x0c @6320
+  SAY 0x50 @6321
+  SAY 0x54 @6321
+
+COPY ~iwd1_eet/items/Contract.ITM~ ~override~
+  SAY 0x08 @4364
+  SAY 0x0c @9332
+  SAY 0x50 @9234
+  SAY 0x54 @9234
+
+COPY ~iwd1_eet/items/Wine.ITM~ ~override~
+  SAY 0x08 @75
+  SAY 0x0c @27229
+  SAY 0x50 @11353
+  SAY 0x54 @19723
+
+COPY ~iwd1_eet/items/SCRNOTE.ITM~ ~override~
+  SAY 0x08 @2841
+  SAY 0x0c @2842
+  SAY 0x50 @3082
+  SAY 0x54 @3082
+
+COPY ~iwd1_eet/items/HQDAGG.ITM~ ~override~
+  SAY 0x08 @5677
+  SAY 0x0c @5678
+  SAY 0x50 @6327
+  SAY 0x54 @6327
+
+COPY ~iwd1_eet/items/RINGLUR.ITM~ ~override~
+  SAY 0x08 @27453
+  SAY 0x0c @27597
+  SAY 0x50 @27470
+  SAY 0x54 @27470
+
+COPY ~iwd1_eet/items/M3D6CRSH.ITM~ ~override~
+  SAY 0x08 @760
+
+COPY ~iwd1_eet/items/KEYCON.ITM~ ~override~
+  SAY 0x08 @17938
+  SAY 0x0c @17940
+  SAY 0x50 @17937
+  SAY 0x54 @17937
+
+COPY ~iwd1_eet/items/U1HAM5B.ITM~ ~override~
+  SAY 0x0c @14908
+  SAY 0x54 @14913
+
+COPY ~iwd1_eet/items/NATURE.ITM~ ~override~
+  SAY 0x0c @3225
+  SAY 0x54 @3226
+
+COPY ~iwd1_eet/items/YETI.ITM~ ~override~
+  SAY 0x08 @9760
+  SAY 0x0c @9761
+  SAY 0x50 @9762
+  SAY 0x54 @9762
+
+COPY ~iwd1_eet/items/POISON.ITM~ ~override~
+  SAY 0x54 @14159
+
+COPY ~iwd1_eet/items/MIREKQI.ITM~ ~override~
+  SAY 0x08 @6305
+  SAY 0x0c @6326
+  SAY 0x50 @6912
+  SAY 0x54 @6912
+
+COPY ~iwd1_eet/items/BOOKMYT.ITM~ ~override~
+  SAY 0x08 @9036
+  SAY 0x0c @9037
+  SAY 0x50 @9038
+  SAY 0x54 @9038
+
+COPY ~iwd1_eet/items/LABELT.ITM~ ~override~
+  SAY 0x0c @14439
+  SAY 0x54 @16036
+
+COPY ~iwd1_eet/items/CLOAKMI.ITM~ ~override~
+  SAY 0x0c @14318
+  SAY 0x54 @8707
+
+COPY ~iwd1_eet/items/WANDFRE.ITM~ ~override~
+  SAY 0x0c @17625
+  SAY 0x54 @17624
+
+COPY ~iwd1_eet/items/WANDMIS.ITM~ ~override~
+  SAY 0x0c @17623
+  SAY 0x54 @17622
+
+COPY ~iwd1_eet/items/JASPER.ITM~ ~override~
+  SAY 0x0c @22476
+  SAY 0x54 @22473
+
+COPY ~iwd1_eet/items/ROGUE.ITM~ ~override~
+  SAY 0x08 @24776
+  SAY 0x0c @24777
+  SAY 0x50 @24775
+  SAY 0x54 @24778
+
+COPY ~iwd1_eet/items/SASH.ITM~ ~override~
+  SAY 0x0c @24789
+  SAY 0x54 @24790
+
+COPY ~iwd1_eet/items/SCRCS05.ITM~ ~override~ /* SCROLL CASE */
+     ~iwd1_eet/items/SCRCS06.ITM~ ~override~
+     ~iwd1_eet/items/SCRCS02.ITM~ ~override~
+     ~iwd1_eet/items/SCRCS01.ITM~ ~override~
+     ~iwd1_eet/items/SCRCS04.ITM~ ~override~
+     ~iwd1_eet/items/SCRCS08.ITM~ ~override~
+     ~iwd1_eet/items/SCRCS07.ITM~ ~override~
+     ~iwd1_eet/items/SCRCS03.ITM~ ~override~
+     ~iwd1_eet/items/SCRCS10.ITM~ ~override~
+     ~iwd1_eet/items/SCRCS09.ITM~ ~override~
+  SAY 0x08 @26259
+  SAY 0x0c @26260
+  SAY 0x50 @26261
+  SAY 0x54 @26261
+
+COPY ~iwd1_eet/items/PTNBG02.ITM~ ~override~ /* POTION BAG */
+     ~iwd1_eet/items/PTNBG01.ITM~ ~override~
+     ~iwd1_eet/items/PTNBG05.ITM~ ~override~
+     ~iwd1_eet/items/PTNBG04.ITM~ ~override~
+     ~iwd1_eet/items/PTNBG08.ITM~ ~override~
+     ~iwd1_eet/items/PTNBG07.ITM~ ~override~
+     ~iwd1_eet/items/PTNBG06.ITM~ ~override~
+     ~iwd1_eet/items/PTNBG03.ITM~ ~override~
+     ~iwd1_eet/items/PTNBG10.ITM~ ~override~
+     ~iwd1_eet/items/PTNBG09.ITM~ ~override~
+  SAY 0x08 @26257
+  SAY 0x0c @26258
+  SAY 0x50 @26256
+  SAY 0x54 @26256
+
+COPY ~iwd1_eet/items/GEMBG01.ITM~ ~override~ /* GEM BAG */
+     ~iwd1_eet/items/GEMBG04.ITM~ ~override~
+     ~iwd1_eet/items/GEMBG03.ITM~ ~override~
+     ~iwd1_eet/items/GEMBG06.ITM~ ~override~
+     ~iwd1_eet/items/GEMBG05.ITM~ ~override~
+     ~iwd1_eet/items/GEMBG02.ITM~ ~override~
+     ~iwd1_eet/items/GEMBG08.ITM~ ~override~
+     ~iwd1_eet/items/GEMBG07.ITM~ ~override~
+  SAY 0x08 @26253
+  SAY 0x0c @26254
+  SAY 0x50 @26255
+  SAY 0x54 @26255
+
+COPY ~iwd1_eet/items/MANTLEHF.ITM~ ~override~
+  SAY 0x0c @3023
+  SAY 0x54 @3024
+
+COPY ~iwd1_eet/items/OGI.ITM~ ~override~
+  SAY 0x0c @24804
+  SAY 0x54 @24805
+
+COPY ~iwd1_eet/items/VOICEBN.ITM~ ~override~
+  SAY 0x08 @11489
+  SAY 0x0c @17939
+  SAY 0x50 @17936
+  SAY 0x54 @17936
+
+COPY ~iwd1_eet/items/MANTLECS.ITM~ ~override~
+  SAY 0x08 @2942
+  SAY 0x0c @2940
+  SAY 0x50 @2939
+  SAY 0x54 @2941
+
+COPY ~iwd1_eet/items/GLORY.ITM~ ~override~
+  SAY 0x0c @18843
+  SAY 0x54 @17935
+
+COPY ~iwd1_eet/items/ARMPEN.ITM~ ~override~
+  SAY 0X0C @6666
+  SAY 0X54 @17900
+
+COPY ~iwd1_eet/items/CLCKBS.ITM~ ~override~
+  SAY 0x0c @17925
+  SAY 0x54 @17926
+
+COPY ~iwd1_eet/items/ROBEANG.ITM~ ~override~
+  SAY 0x0c @17932
+  SAY 0x54 @17933
+  WRITE_LONG 0x19a ~%IDPAIN%~
+
+COPY ~iwd1_eet/items/EIDANRNG.ITM~ ~override~
+  SAY 0x08 @2936
+  SAY 0x0c @2937
+  SAY 0x50 @2934
+  SAY 0x54 @2934
+
+COPY ~iwd1_eet/items/ZZA7CH.ITM~ ~override~
+  SAY 0x08 @16624
+  SAY 0x0c @17059
+  SAY 0x50 @23001
+  SAY 0x54 @13743
+
+COPY ~iwd1_eet/items/ADISEASE.ITM~ ~override~
+  SAY 0x0c @10384
+  SAY 0x54 @10385
+
+COPY ~iwd1_eet/items/SHADOWS.ITM~ ~override~
+  SAY 0x0c @7631
+  SAY 0x54 @7632
+
+COPY ~iwd1_eet/items/KEYGATE.ITM~ ~override~
+  SAY 0x08 @923
+  SAY 0x0c @924
+  SAY 0x50 @925
+  SAY 0x54 @925
+
+COPY ~iwd1_eet/items/KEYSANC.ITM~ ~override~
+  SAY 0x08 @923
+  SAY 0x0c @928
+  SAY 0x50 @929
+  SAY 0x54 @929
+
+COPY ~iwd1_eet/items/KEYPRST.ITM~ ~override~
+  SAY 0x08 @923
+  SAY 0x0c @930
+  SAY 0x50 @931
+  SAY 0x54 @931
+
+COPY ~iwd1_eet/items/HOLYSYM.ITM~ ~override~
+  SAY 0x08 @934
+  SAY 0x0c @932
+  SAY 0x50 @933
+  SAY 0x54 @933
+
+COPY ~iwd1_eet/items/KEYMAUS.ITM~ ~override~
+  SAY 0x08 @923
+  SAY 0x0c @935
+  SAY 0x50 @936
+  SAY 0x54 @936
+
+COPY ~iwd1_eet/items/WANDARM.ITM~ ~override~
+  SAY 0x0c @3034
+  SAY 0x54 @3035
+
+COPY ~iwd1_eet/items/BWTALIS.ITM~ ~override~
+  SAY 0x08 @9045
+  SAY 0x0c @9046
+  SAY 0x50 @9047
+  SAY 0x54 @9049
+
+COPY ~iwd1_eet/items/KEYNRM.ITM~ ~override~
+  SAY 0x08 @923
+  SAY 0x0c @17704
+  SAY 0x50 @17627
+  SAY 0x54 @17627
+
+COPY ~iwd1_eet/items/KRESWRD.ITM~ ~override~
+  SAY 0x0c @9091
+  SAY 0x54 @9092
+
+COPY ~iwd1_eet/items/AXLIZMAN.ITM~ ~override~
+  SAY 0x08 @2668
+
+COPY ~iwd1_eet/items/TELIZMAN.ITM~ ~override~
+  SAY 0x08 @2658
+
+COPY ~iwd1_eet/items/FLAMOIL.ITM~ ~override~
+  SAY 0x08 @18930
+  SAY 0x0c @18934
+  SAY 0x50 @18931
+  SAY 0x54 @18931
+  WRITE_SHORT 0x9c ~%idpro270%~
+
+COPY ~iwd1_eet/items/LALIZMAN.ITM~ ~override~
+  SAY 0x08 @2656
+
+COPY ~iwd1_eet/items/NALIZMAN.ITM~ ~override~
+  SAY 0x08 @2657
+
+COPY ~iwd1_eet/items/SPINE.ITM~ ~override~
+  SAY 0x0c @2926
+  SAY 0x54 @2923
+
+COPY ~iwd1_eet/items/POLIZMAN.ITM~ ~override~
+  SAY 0x08 @2654
+
+COPY ~iwd1_eet/items/MSLIZMAN.ITM~ ~override~
+  SAY 0x08 @2653
+
+COPY ~iwd1_eet/items/M1D7SLSH.ITM~ ~override~
+  SAY 0x08 @77
+
+COPY ~iwd1_eet/items/PRESDAG.ITM~ ~override~
+  SAY 0x0c @1146
+  SAY 0x50 @1148
+  SAY 0x54 @1149
+
+COPY ~iwd1_eet/items/PRESROB.ITM~ ~override~
+  SAY 0x08 @918
+  SAY 0x0c @1150
+  SAY 0x50 @1152
+  SAY 0x54 @1153
+
+COPY ~iwd1_eet/items/UFLAL2B.ITM~ ~override~
+  SAY 0x0c @14358
+  SAY 0x54 @14359
+
+COPY ~iwd1_eet/items/BLYUANTI.ITM~ ~override~
+  SAY 0x08 @2651
+
+COPY ~iwd1_eet/items/SWYUANTI.ITM~ ~override~
+     ~iwd1_eet/items/AXYUANTI.ITM~ ~override~
+  SAY 0x08 @2652
+
+COPY ~iwd1_eet/items/UDAGG3B.ITM~ ~override~
+  SAY 0x0c @14243
+  SAY 0x54 @14244
+
+COPY ~iwd1_eet/items/ULSWD3A.ITM~ ~override~
+  SAY 0x0c @14494
+  SAY 0x54 @14495
+
+COPY ~iwd1_eet/items/KEYALBI.ITM~ ~override~
+  SAY 0x08 @923
+  SAY 0x0c @2932
+  SAY 0x50 @2933
+  SAY 0x54 @2933
+
+COPY ~iwd1_eet/items/BOWMESS.ITM~ ~override~
+  SAY 0x0c @3324
+  SAY 0x54 @3323
+
+COPY ~iwd1_eet/items/RINGPAN.ITM~ ~override~
+  SAY 0x0c @3331
+  SAY 0x54 @3330
+
+COPY ~iwd1_eet/items/HEARTGM.ITM~ ~override~
+  SAY 0x08 @3255
+  SAY 0x0c @3257
+  SAY 0x50 @3258
+  SAY 0x54 @3258
+
+COPY ~iwd1_eet/items/EREJOUR.ITM~ ~override~
+  SAY 0x08 @10982
+  SAY 0x0c @9330
+  SAY 0x50 @10984
+  SAY 0x54 @10984
+
+COPY ~iwd1_eet/items/U1HAX3B.ITM~ ~override~
+  SAY 0x0c @14324
+  SAY 0x54 @14325
+
+COPY ~iwd1_eet/items/PWARJ.ITM~ ~override~
+  SAY 0x0c @18065
+  SAY 0x50 @903
+  SAY 0x54 @903
+
+COPY ~iwd1_eet/items/BOOKANI.ITM~ ~override~
+  SAY 0x08 @3098
+  SAY 0x0c @3097
+  SAY 0x50 @3077
+  SAY 0x54 @3077
+
+COPY ~iwd1_eet/items/BOOKVIO.ITM~ ~override~
+  SAY 0x08 @3187
+  SAY 0x0c @3186
+  SAY 0x50 @3188
+  SAY 0x54 @3188
+
+COPY ~iwd1_eet/items/BOOKPOT.ITM~ ~override~
+  SAY 0x0c @3183
+  SAY 0x50 @3184
+  SAY 0x54 @3184
+
+COPY ~iwd1_eet/items/BOOKSS.ITM~ ~override~
+  SAY 0x0c @3332
+  SAY 0x50 @3333
+  SAY 0x54 @3333
+
+COPY ~iwd1_eet/items/BOOKIVY.ITM~ ~override~
+  SAY 0x08 @3239
+  SAY 0x0c @3238
+  SAY 0x50 @3240
+  SAY 0x54 @3240
+
+COPY ~iwd1_eet/items/BOOKPK.ITM~ ~override~
+  SAY 0x0c @3327
+  SAY 0x50 @3325
+  SAY 0x54 @3325
+
+COPY ~iwd1_eet/items/SERPSCA.ITM~ ~override~
+  SAY 0x0c @3057
+  SAY 0x54 @3058
+
+COPY ~iwd1_eet/items/BLRDECK.ITM~ ~override~
+  SAY 0x08 @2660
+  SAY 0x0c @2974
+  SAY 0x50 @2973
+  SAY 0x54 @2975
+
+COPY ~iwd1_eet/items/BOOKFOL.ITM~ ~override~
+  SAY 0x08 @3252
+  SAY 0x0c @3253
+  SAY 0x50 @3254
+  SAY 0x54 @3254
+
+COPY ~iwd1_eet/items/BOOKFIS.ITM~ ~override~
+  SAY 0x0c @3102
+  SAY 0x50 @3078
+  SAY 0x54 @3078
+
+COPY ~iwd1_eet/items/CHAINBM.ITM~ ~override~
+  SAY 0x0c @3314
+  SAY 0x54 @3316
+
+COPY ~iwd1_eet/items/HELMDED.ITM~ ~override~
+  SAY 0x0c @3318
+  SAY 0x54 @3317
+
+COPY ~iwd1_eet/items/AROWTRN.ITM~ ~override~
+  SAY 0x0c @3348
+  SAY 0x54 @3349
+
+COPY ~iwd1_eet/items/HOLDING.ITM~ ~override~
+  SAY 0x08 @18926
+  SAY 0x0c @18928
+  SAY 0x50 @18927
+  SAY 0x54 @18929
+
+COPY ~iwd1_eet/items/PIECE1.ITM~ ~override~
+     ~iwd1_eet/items/PIECE2.ITM~ ~override~
+     ~iwd1_eet/items/PIECE3.ITM~ ~override~
+     ~iwd1_eet/items/PIECE4.ITM~ ~override~
+  SAY 0x08 @9003
+  SAY 0x0c @9004
+  SAY 0x50 @9005
+  SAY 0x54 @9005
+
+COPY ~iwd1_eet/items/BOOKWOR.ITM~ ~override~
+  SAY 0x08 @9042
+  SAY 0x0c @9043
+  SAY 0x50 @9044
+  SAY 0x54 @9044
+
+COPY ~iwd1_eet/items/BOOKROC.ITM~ ~override~
+  SAY 0x08 @9039
+  SAY 0x0c @9040
+  SAY 0x50 @9041
+  SAY 0x54 @9041
+
+COPY ~iwd1_eet/items/BOOKCOR.ITM~ ~override~
+  SAY 0x08 @9007
+  SAY 0x0c @9008
+  SAY 0x50 @9009
+  SAY 0x54 @9009
+
+COPY ~iwd1_eet/items/BOOKSHE.ITM~ ~override~
+  SAY 0x08 @9016
+  SAY 0x0c @9017
+  SAY 0x50 @9018
+  SAY 0x54 @9018
+
+COPY ~iwd1_eet/items/BOOKMOO.ITM~ ~override~
+  SAY 0x08 @9013
+  SAY 0x0c @9014
+  SAY 0x50 @9015
+  SAY 0x54 @9015
+
+COPY ~iwd1_eet/items/BOOKLAB.ITM~ ~override~
+  SAY 0x08 @9010
+  SAY 0x0c @9011
+  SAY 0x50 @9012
+  SAY 0x54 @9012
+
+COPY ~iwd1_eet/items/BOOKSOL.ITM~ ~override~
+  SAY 0x08 @8959
+  SAY 0x0c @9025
+  SAY 0x50 @9027
+  SAY 0x54 @9027
+
+COPY ~iwd1_eet/items/BOOKCOM.ITM~ ~override~
+  SAY 0x08 @14563
+  SAY 0x0c @14564
+  SAY 0x50 @14565
+  SAY 0x54 @14565
+
+COPY ~iwd1_eet/items/BOOKUNI.ITM~ ~override~
+  SAY 0x08 @14566
+  SAY 0x0c @14569
+  SAY 0x50 @14570
+  SAY 0x54 @14570
+
+COPY ~iwd1_eet/items/BOOKCOD.ITM~ ~override~
+  SAY 0x08 @9033
+  SAY 0x0c @9034
+  SAY 0x50 @9035
+  SAY 0x54 @9035
+
+COPY ~iwd1_eet/items/BOOKHIP.ITM~ ~override~
+  SAY 0x08 @14571
+  SAY 0x0c @14572
+  SAY 0x50 @14573
+  SAY 0x54 @14573
+
+COPY ~iwd1_eet/items/BOOKBLA.ITM~ ~override~
+  SAY 0x0c @10992
+  SAY 0x50 @10993
+  SAY 0x54 @10993
+
+COPY ~iwd1_eet/items/BOOKEVA.ITM~ ~override~
+  SAY 0x0c @10999
+  SAY 0x50 @11000
+  SAY 0x54 @11000
+
+COPY ~iwd1_eet/items/EVAJOUR.ITM~ ~override~
+  SAY 0x08 @14560
+  SAY 0x0c @14561
+  SAY 0x50 @14562
+  SAY 0x54 @14562
+
+COPY ~iwd1_eet/items/HOLYWAT.ITM~ ~override~
+  SAY 0x08 @9801
+  SAY 0x0c @9802
+  SAY 0x50 @9804
+  SAY 0x54 @9804
+
+COPY ~iwd1_eet/items/HELMSUN.ITM~ ~override~
+  SAY 0x0c @3336
+  SAY 0x54 @3337
+
+COPY ~iwd1_eet/items/SLINGED.ITM~ ~override~
+  SAY 0x0c @17714
+  SAY 0x54 @17715
+
+COPY ~iwd1_eet/items/SEEDS.ITM~ ~override~
+  SAY 0x08 @8330
+  SAY 0x0c @8331
+  SAY 0x54 @8332
+
+COPY ~iwd1_eet/items/WATER.ITM~ ~override~
+  SAY 0x08 @8335
+  SAY 0x0c @8336
+  SAY 0x54 @8337
+
+COPY ~iwd1_eet/items/BIRDS.ITM~ ~override~
+  SAY 0x08 @8287
+  SAY 0x0c @8291
+  SAY 0x54 @8293
+
+COPY ~iwd1_eet/items/SQUIREL.ITM~ ~override~
+  SAY 0x08 @8338
+  SAY 0x0c @8340
+  SAY 0x54 @8341
+
+COPY ~iwd1_eet/items/ZZM5MH.ITM~ ~override~
+  SAY 0x0c @11488
+  SAY 0x54 @11487
+
+COPY ~iwd1_eet/items/COFFEE.ITM~ ~override~
+  SAY 0x0c @8209
+  SAY 0x54 @8210
+
+COPY ~iwd1_eet/items/MOONBOW.ITM~ ~override~
+  SAY 0x0c @8909
+  SAY 0x54 @8929
+
+COPY ~iwd1_eet/items/SRING.ITM~ ~override~
+  SAY 0x0c @8815
+  SAY 0x54 @8816
+
+COPY ~iwd1_eet/items/PHILTER.ITM~ ~override~
+  SAY 0x0c @11490
+  SAY 0x54 @11491
+
+COPY ~iwd1_eet/items/ARHAND.ITM~ ~override~
+  SAY 0x0c @8950
+  SAY 0x54 @8951
+
+COPY ~iwd1_eet/items/HQ2HSWD.ITM~ ~override~
+  SAY 0x08 @5673
+  SAY 0x0c @5672
+  SAY 0x50 @6324
+  SAY 0x54 @6324
+
+COPY ~iwd1_eet/items/HQLSWRD.ITM~ ~override~
+  SAY 0x08 @5674
+  SAY 0x0c @5671
+  SAY 0x50 @6322
+  SAY 0x54 @6322
+
+COPY ~iwd1_eet/items/KALABAC.ITM~ ~override~
+  SAY 0x08 @7825
+  SAY 0x0c @7826
+  SAY 0x54 @7824
+
+COPY ~iwd1_eet/items/CAIRN.ITM~ ~override~
+  SAY 0x0c @17922
+  SAY 0x54 @17924
+
+COPY ~iwd1_eet/items/KRILAG.ITM~ ~override~
+  SAY 0x08 @18591
+  SAY 0x0c @18592
+  SAY 0x50 @18593
+  SAY 0x54 @18593
+
+COPY ~iwd1_eet/items/NOTEKRI.ITM~ ~override~
+  SAY 0x0c @21325
+  SAY 0x50 @21326
+  SAY 0x54 @21326
+
+COPY ~iwd1_eet/items/DVER.ITM~ ~override~
+  SAY 0x08 @7815
+  SAY 0x0c @7814
+  SAY 0x54 @7813
+
+COPY ~iwd1_eet/items/FKEY.ITM~ ~override~
+  SAY 0x08 @7820
+  SAY 0x0c @7821
+  SAY 0x54 @7822
+
+COPY ~iwd1_eet/items/RAZOR.ITM~ ~override~
+  SAY 0x08 @7829
+  SAY 0x0c @4365
+  SAY 0x54 @7830
+
+COPY ~iwd1_eet/items/ZZU6CS.ITM~ ~override~
+  SAY 0x0c @17085
+  SAY 0x54 @17084
+
+COPY ~iwd1_eet/items/TKEY.ITM~ ~override~
+  SAY 0x08 @9613
+  SAY 0x0c @9614
+  SAY 0x50 @9615
+  SAY 0x54 @9615
+
+COPY ~iwd1_eet/items/MAILLIF.ITM~ ~override~
+  SAY 0x0c @7623
+  SAY 0x54 @7605
+
+COPY ~iwd1_eet/items/REZNATH.ITM~ ~override~
+  SAY 0x08 @14425
+  SAY 0x0c @14426
+  SAY 0x50 @14427
+  SAY 0x54 @14427
+
+COPY ~iwd1_eet/items/SHAWM.ITM~ ~override~
+  SAY 0x08 @9781
+  SAY 0x0c @9331
+  SAY 0x50 @15428
+  SAY 0x54 @15429
+
+COPY ~iwd1_eet/items/HELMLA.ITM~ ~override~
+  SAY 0x0c @17178
+  SAY 0x54 @17099
+
+COPY ~iwd1_eet/items/TERIKAN.ITM~ ~override~
+  SAY 0x08 @7827
+  SAY 0x0c @7828
+  SAY 0x54 @2935
+
+COPY ~iwd1_eet/items/TJOURN.ITM~ ~override~
+  SAY 0x08 @9336
+  SAY 0x0c @9337
+  SAY 0x50 @9340
+  SAY 0x54 @9340
+
+COPY ~iwd1_eet/items/CELEBRA.ITM~ ~override~
+  SAY 0x0c @11584
+  SAY 0x54 @11583
+
+COPY ~iwd1_eet/items/KEYDUG.ITM~ ~override~
+  SAY 0x08 @923
+  SAY 0x0c @14266
+  SAY 0x50 @14267
+  SAY 0x54 @14267
+
+COPY ~iwd1_eet/items/BITEME.ITM~ ~override~
+  SAY 0x0c @17370
+  SAY 0x54 @17371
+
+COPY ~iwd1_eet/items/2HAXE.ITM~ ~override/Z2HAXE.ITM~
+  SAY 0x08 @9785
+  SAY 0x0c @9786
+  SAY 0x50 @8564
+  SAY 0x54 @8564
+
+COPY ~iwd1_eet/items/AURIL.ITM~ ~override~
+  SAY 0x0c @16797
+  SAY 0x54 @14259
+
+COPY ~iwd1_eet/items/RINGKON.ITM~ ~override~
+  SAY 0x0c @17363
+  SAY 0x54 @17364
+
+COPY ~iwd1_eet/items/J2HAXE.ITM~ ~override~
+  SAY 0x08 @9785
+  SAY 0x0c @14258
+  SAY 0x50 @8564
+  SAY 0x54 @14257
+
+COPY ~iwd1_eet/items/JORIL.ITM~ ~override~
+  SAY 0x08 @14268
+  SAY 0x0c @14269
+  SAY 0x50 @14270
+  SAY 0x54 @14270
+
+COPY ~iwd1_eet/items/BOOKENG.ITM~ ~override~
+  SAY 0x08 @9066
+  SAY 0x0c @9067
+  SAY 0x50 @9068
+  SAY 0x54 @9068
+
+COPY ~iwd1_eet/items/NOTEKER.ITM~ ~override~
+  SAY 0x08 @21319
+  SAY 0x0c @21320
+  SAY 0x50 @21324
+  SAY 0x54 @21324
+
+COPY ~iwd1_eet/items/SW1H15A.ITM~ ~override~
+  SAY 0x0c @11053
+  SAY 0x54 @11055
+
+COPY ~iwd1_eet/items/GAUNTID.ITM~ ~override~
+  SAY 0x08 @15430
+  SAY 0x0c @15434
+  SAY 0x54 @15435
+
+COPY ~iwd1_eet/items/CITTERN.ITM~ ~override~
+  SAY 0x08 @7642
+  SAY 0x0c @7643
+  SAY 0x50 @7645
+  SAY 0x54 @7644
+
+COPY ~iwd1_eet/items/KEYWATC.ITM~ ~override~
+  SAY 0x08 @3733
+  SAY 0x0c @3740
+  SAY 0x50 @3764
+  SAY 0x54 @3764
+
+COPY ~iwd1_eet/items/GAUNTEM.ITM~ ~override~
+  SAY 0x08 @15430
+  SAY 0x0c @15432
+  SAY 0x54 @15433
+
+COPY ~iwd1_eet/items/TONGUE.ITM~ ~override~
+  SAY 0x0c @19329
+  SAY 0x54 @19328
+
+COPY ~iwd1_eet/items/HIDEUMB.ITM~ ~override~
+  SAY 0x08 @17322
+  SAY 0x0c @17327
+  SAY 0x50 @17325
+  SAY 0x54 @17325
+
+COPY ~iwd1_eet/items/HIDEBEE.ITM~ ~override~
+  SAY 0x08 @17339
+  SAY 0x0c @14440
+  SAY 0x50 @17340
+  SAY 0x54 @17340
+
+COPY ~iwd1_eet/items/PORTRAIT.ITM~ ~override~
+  SAY 0x0c @3661
+  SAY 0x50 @3629
+  SAY 0x54 @3629
+
+COPY ~iwd1_eet/items/BELTSTR.ITM~ ~override~
+  SAY 0x0c @17618
+  SAY 0x54 @17619
+
+COPY ~iwd1_eet/items/BLOOD.ITM~ ~override~
+  SAY 0x0c @8507
+  SAY 0x54 @8509
+
+COPY ~iwd1_eet/items/UROBE1A.ITM~ ~override~
+  SAY 0x0c @14635
+  SAY 0x54 @8229
+
+COPY ~iwd1_eet/items/UDAGG2A.ITM~ ~override~
+  SAY 0x0c @14236
+  SAY 0x54 @14238
+
+COPY ~iwd1_eet/items/MARKETH.ITM~ ~override~
+  SAY 0x08 @3524
+  SAY 0x0c @3586
+  SAY 0x50 @3587
+  SAY 0x54 @3587
+
+COPY ~iwd1_eet/items/DRAGARM.ITM~ ~override~
+  SAY 0x08 @2965
+  SAY 0x0c @2967
+  SAY 0x50 @2966
+  SAY 0x54 @2971
+
+COPY ~iwd1_eet/items/VALIANT.ITM~ ~override~
+  SAY 0x0c @21327
+  SAY 0x54 @8565
+
+COPY ~iwd1_eet/items/GORGON.ITM~ ~override~
+  SAY 0x0c @7624
+  SAY 0x54 @7625
+  WRITE_LONG 0x10a ~%IDPETRIF%~
+
+COPY ~iwd1_eet/items/SLAYER.ITM~ ~override~
+  SAY 0x0c @8554
+  SAY 0x54 @8553
+
+COPY ~iwd1_eet/items/MALAVON.ITM~ ~override~
+  SAY 0x08 @3487
+  SAY 0x0c @3491
+  SAY 0x50 @3520
+  SAY 0x54 @3520
+
+COPY ~iwd1_eet/items/WATCHER.ITM~ ~override~
+  SAY 0x08 @7637
+  SAY 0x0c @7635
+  SAY 0x50 @7638
+  SAY 0x54 @7639
+
+COPY ~iwd1_eet/items/FIREKIS.ITM~ ~override~
+  SAY 0x0c @7603
+  SAY 0x54 @7602
+
+COPY ~iwd1_eet/items/UMSTR3B.ITM~ ~override~
+  SAY 0x0c @14540
+  SAY 0x54 @14543
+
+COPY ~iwd1_eet/items/MAIDEN.ITM~ ~override~
+  SAY 0x08 @3483
+  SAY 0x0c @3485
+  SAY 0x50 @3458
+  SAY 0x54 @3458
+
+COPY ~iwd1_eet/items/SWANARM.ITM~ ~override~
+  SAY 0x0c @18615
+  SAY 0x54 @2972
+
+COPY ~iwd1_eet/items/ZZF6AL.ITM~ ~override~
+  SAY 0x0c @11581
+  SAY 0x54 @11582
+
+COPY ~iwd1_eet/items/ARGENT.ITM~ ~override~
+  SAY 0x0c @18051
+  SAY 0x54 @17996
+
+COPY ~iwd1_eet/items/PERDIEM.ITM~ ~override~
+  SAY 0x08 @3369
+  SAY 0x0c @3370
+  SAY 0x50 @3345
+  SAY 0x54 @3345
+
+COPY ~iwd1_eet/items/SHLDBCH.ITM~ ~override~
+  SAY 0x0c @468
+  SAY 0x54 @3340
+
+COPY ~iwd1_eet/items/POTATOES.ITM~ ~override~
+  SAY 0x08 @3684
+  SAY 0x0c @3691
+  SAY 0x50 @3722
+  SAY 0x54 @3722
+
+COPY ~iwd1_eet/items/BOOTFOR.ITM~ ~override~
+  SAY 0x0c @17636
+  SAY 0x54 @17637
+
+COPY ~iwd1_eet/items/BEETSHLD.ITM~ ~override~
+  SAY 0x08 @2910
+  SAY 0x0c @2911
+  SAY 0x50 @2912
+  SAY 0x54 @2912
+
+COPY ~iwd1_eet/items/UMHULK.ITM~ ~override~
+  SAY 0x08 @3031
+  SAY 0x0c @3032
+  SAY 0x50 @3033
+  SAY 0x54 @3033
+
+COPY ~iwd1_eet/items/NYMDAGG.ITM~ ~override~
+  SAY 0x0c @18646
+  SAY 0x54 @18647
+
+COPY ~iwd1_eet/items/NYMSHLD.ITM~ ~override~
+  SAY 0x08 @2905
+  SAY 0x0c @2906
+  SAY 0x50 @2912
+  SAY 0x54 @2904
+
+COPY ~iwd1_eet/items/PNULL.ITM~ ~override~
+  SAY 0x0c @19340
+  SAY 0x54 @19341
+
+COPY ~iwd1_eet/items/RINGCOP.ITM~ ~override~
+  SAY 0x08 @3423
+  SAY 0x0c @3457
+  SAY 0x50 @3421
+  SAY 0x54 @3421
+
+COPY ~iwd1_eet/items/ZZ57PJ.ITM~ ~override~
+  SAY 0x08 @7650
+  SAY 0x0c @7652
+  SAY 0x50 @7653
+  SAY 0x54 @7653
+
+COPY ~iwd1_eet/items/AMULFLE.ITM~ ~override~
+  SAY 0x0c @17710
+  SAY 0x54 @17711
+
+COPY ~iwd1_eet/items/USLTR5A.ITM~ ~override~
+  SAY 0x0c @14834
+  SAY 0x54 @14835
+
+COPY ~iwd1_eet/items/ULSWD5A.ITM~ ~override~
+  SAY 0x0c @14512
+  SAY 0x54 @14513
+
+COPY ~iwd1_eet/items/U1HAX4A.ITM~ ~override~
+  SAY 0x0c @14326
+  SAY 0x54 @14327
+
+COPY ~iwd1_eet/items/SHPLATE.ITM~ ~override~
+  SAY 0x54 @14810
+
+COPY ~iwd1_eet/items/UFLAL3A.ITM~ ~override~
+  SAY 0x0c @14360
+  SAY 0x54 @14361
+
+COPY ~iwd1_eet/items/AMULBAR.ITM~ ~override~
+  SAY 0x0c @3060
+  SAY 0x54 @3059
+
+COPY ~iwd1_eet/items/UAROW3A.ITM~ ~override~
+  SAY 0x0c @14275
+  SAY 0x54 @14271
+
+COPY ~iwd1_eet/items/ULBOW5A.ITM~ ~override~
+  SAY 0x0c @14486
+  SAY 0x54 @14487
+
+COPY ~iwd1_eet/items/UAROW4A.ITM~ ~override~
+  SAY 0x0c @14280
+  SAY 0x54 @14281
+
+COPY ~iwd1_eet/items/SHCLOAK.ITM~ ~override~
+  SAY 0x0c @14808
+  SAY 0x54 @14807
+
+COPY ~iwd1_eet/items/ULSWD1A.ITM~ ~override~
+  SAY 0x0c @14488
+  SAY 0x54 @14489
+
+COPY ~iwd1_eet/items/UDAGG5A.ITM~ ~override~
+  SAY 0x0c @14255
+  SAY 0x54 @14252
+
+COPY ~iwd1_eet/items/URING5A.ITM~ ~override~
+  SAY 0x0c @14631
+  SAY 0x54 @14632
+
+COPY ~iwd1_eet/items/UMSTR5B.ITM~ ~override~
+  SAY 0x0c @14558
+  SAY 0x54 @14559
+
+COPY ~iwd1_eet/items/FORCE.ITM~ ~override~
+  SAY 0x0c @24377
+  SAY 0x54 @24376
+
+COPY ~iwd1_eet/items/U1HAX2A.ITM~ ~override~
+  SAY 0x0c @14319
+  SAY 0x50 @14233
+  SAY 0x54 @14321
+
+COPY ~iwd1_eet/items/WYLFINS.ITM~ ~override~
+  SAY 0x08 @17776
+  SAY 0x0c @22463
+  SAY 0x50 @22464
+  SAY 0x54 @22464
+
+COPY ~iwd1_eet/items/MIRROR.ITM~ ~override~
+  SAY 0x08 @24739
+  SAY 0x0c @24740
+  SAY 0x50 @24741
+  SAY 0x54 @24741
+
+COPY ~iwd1_eet/items/MIRROR2.ITM~ ~override~
+  SAY 0x08 @24742
+  SAY 0x0c @24743
+  SAY 0x50 @24744
+  SAY 0x54 @24745
+
+COPY ~iwd1_eet/items/WEREAMUL.ITM~ ~override~
+  SAY 0x0c @26193
+  SAY 0x50 @26194
+  SAY 0x54 @26194
+
+COPY ~iwd1_eet/items/ICEROSE.ITM~ ~override~
+  SAY 0x08 @24378
+  SAY 0x0c @24379
+  SAY 0x50 @24380
+  SAY 0x54 @24380
+
+COPY ~iwd1_eet/items/QUINN.ITM~ ~override~
+  SAY 0x0c @24375
+  SAY 0x54 @24374
+
+COPY ~iwd1_eet/items/CLETTER.ITM~ ~override~
+  SAY 0x08 @18530
+  SAY 0x0c @25335
+  SAY 0x50 @26231
+  SAY 0x54 @26231
+
+COPY ~iwd1_eet/items/VIRGIN.ITM~ ~override~
+  SAY 0x08 @24746
+  SAY 0x0c @24748
+  SAY 0x50 @24747
+  SAY 0x54 @24749
+
+COPY ~iwd1_eet/items/USHLD2A.ITM~ ~override~
+  SAY 0x0c @14636
+  SAY 0x54 @14637
+
+COPY ~iwd1_eet/items/UHALB1A.ITM~ ~override~
+  SAY 0x0c @14366
+  SAY 0x54 @14368
+
+COPY ~iwd1_eet/items/BIRON.ITM~ ~override~
+  SAY 0x0c @21484
+  SAY 0x54 @21485
+
+COPY ~iwd1_eet/items/SVIAN.ITM~ ~override~
+  SAY 0x0c @22526
+  SAY 0x54 @22528
+
+COPY ~iwd1_eet/items/YOUNG.ITM~ ~override~
+  SAY 0x0c @21641
+  SAY 0x54 @21642
+
+COPY ~iwd1_eet/items/HQAXE.ITM~ ~override~
+  SAY 0x08 @5703
+  SAY 0x0c @5704
+  SAY 0x50 @6378
+  SAY 0x54 @6378
+
+COPY ~iwd1_eet/items/HQBSWRD.ITM~ ~override~
+  SAY 0x08 @5689
+  SAY 0x0c @5690
+  SAY 0x50 @6372
+  SAY 0x54 @6372
+
+COPY ~iwd1_eet/items/UDART3A.ITM~ ~override~
+  SAY 0x0c @14343
+  SAY 0x54 @14344
+
+COPY ~iwd1_eet/items/VEXED3.ITM~ ~override~
+  SAY 0x0c @21633
+  SAY 0x54 @24386
+
+COPY ~iwd1_eet/items/VEXED.ITM~ ~override~
+  SAY 0x0c @21633
+  SAY 0x54 @21632
+
+COPY ~iwd1_eet/items/VEXED2.ITM~ ~override~
+  SAY 0x0c @21633
+  SAY 0x54 @26722
+
+COPY ~iwd1_eet/items/TIERNON.ITM~ ~override~
+  SAY 0x08 @24726
+  SAY 0x0c @24727
+  SAY 0x50 @24728
+  SAY 0x54 @24729
+  SAY 0x20e @24730
+
+COPY ~iwd1_eet/items/KOSSUTH.ITM~ ~override~
+  SAY 0x0c @26701
+  SAY 0x54 @26702
+
+COPY ~iwd1_eet/items/DNTSHD1.ITM~ ~override~
+  SAY 0x0c @24752
+  SAY 0x54 @24750
+
+COPY ~iwd1_eet/items/BLOODGF.ITM~ ~override~
+  SAY 0x0c @24335
+  SAY 0x54 @24334
+
+COPY ~iwd1_eet/items/TALONGF.ITM~ ~override~
+  SAY 0x0c @24333
+  SAY 0x54 @24332
+
+COPY ~iwd1_eet/items/HANDGF.ITM~ ~override~
+  SAY 0x0c @24325
+  SAY 0x54 @24326
+
+COPY ~iwd1_eet/items/KISSGF.ITM~ ~override~
+  SAY 0x0c @24372
+  SAY 0x54 @24373
+
+COPY ~iwd1_eet/items/FISTGF.ITM~ ~override~
+  SAY 0x0c @24324
+  SAY 0x54 @24323
+
+COPY ~iwd1_eet/items/FANGGF.ITM~ ~override~
+  SAY 0x0c @24329
+  SAY 0x54 @24330
+
+COPY ~iwd1_eet/items/TONGGF.ITM~ ~override~
+  SAY 0x0c @24327
+  SAY 0x54 @24328
+
+COPY ~iwd1_eet/items/DNTSHD2.ITM~ ~override~
+  SAY 0x08 @24755
+  SAY 0x0c @24756
+  SAY 0x50 @24754
+  SAY 0x54 @24754
+
+COPY ~iwd1_eet/items/JHOSWD3.ITM~ ~override~
+  SAY 0x08 @24757
+  SAY 0x0c @24758
+  SAY 0x50 @24759
+  SAY 0x54 @24759
+
+COPY ~iwd1_eet/items/BFLAOIL.ITM~ ~override~
+  SAY 0x08 @18930
+  SAY 0x0c @18934
+  SAY 0x50 @18931
+  SAY 0x54 @18931
+  WRITE_SHORT 0x9c ~%idpro270%~
+
+COPY ~iwd1_eet/items/FBOLT.ITM~ ~override~
+  WRITE_SHORT 0x9c ~%idpro269%~
+
+COPY ~iwd1_eet/items/SHARK3.ITM~ ~override~
+  SAY 0x08 @25377
+  SAY 0x0c @25378
+  SAY 0x50 @25376
+  SAY 0x54 @25376
+
+COPY ~iwd1_eet/items/SEKOLAH.ITM~ ~override~
+  SAY 0x0c @26313
+  SAY 0x54 @26312
+
+COPY ~iwd1_eet/items/SHARK.ITM~ ~override~
+  SAY 0x08 @25371
+  SAY 0x0c @25367
+  SAY 0x50 @25370
+  SAY 0x54 @25370
+
+COPY ~iwd1_eet/items/SHARK2.ITM~ ~override~
+  SAY 0x08 @25372
+  SAY 0x0c @25373
+  SAY 0x50 @25374
+  SAY 0x54 @25374
+
+COPY ~iwd1_eet/items/DEBIAN.ITM~ ~override~
+  SAY 0x0c @21490
+  SAY 0x54 @21491
+
+COPY ~iwd1_eet/items/POWER.ITM~ ~override~
+  SAY 0x0c @21500
+  SAY 0x54 @21501
+
+COPY ~iwd1_eet/items/LOVER.ITM~ ~override~
+  SAY 0x0c @24806
+  SAY 0x54 @24807
+
+COPY ~iwd1_eet/items/PEST.ITM~ ~override~
+  SAY 0x0c @21612
+  SAY 0x54 @21611
+
+COPY ~iwd1_eet/items/SCEPTRE.ITM~ ~override~
+  SAY 0x0c @24791
+  SAY 0x54 @24792
+
+COPY ~iwd1_eet/items/HARP.ITM~ ~override~
+  SAY 0x08 @21628
+  SAY 0x0c @21630
+  SAY 0x50 @21629
+  SAY 0x54 @21631
+
+COPY ~iwd1_eet/items/HELMCT.ITM~ ~override~
+  SAY 0x0c @27366
+  SAY 0x54 @27367
+
+COPY ~iwd1_eet/items/ZZD5WOH.ITM~ ~override~
+  SAY 0x0c @27374
+  SAY 0x54 @27375
+
+COPY ~iwd1_eet/items/CLOAKSC.ITM~ ~override~
+  SAY 0x0c @27362
+  SAY 0x54 @27363
+
+COPY ~iwd1_eet/items/STAFHMG.ITM~ ~override~
+  SAY 0x0c @27368
+  SAY 0x54 @27369
+
+COPY ~iwd1_eet/items/CISHELH.ITM~ ~override~
+  SAY 0x0c @26701
+  SAY 0x54 @26702
+
+COPY ~iwd1_eet/items/EBOTTLE.ITM~ ~override~
+  SAY 0x08 @10685
+  SAY 0x0c @15326
+  SAY 0x50 @27423
+  SAY 0x54 @27423
+
+COPY ~iwd1_eet/items/ISWARM.ITM~ ~override~
+  SAY 0x0c @18615
+  SAY 0x54 @2972
+
+COPY ~iwd1_eet/items/BAGH02.ITM~ ~override~ /* BAGS */
+     ~iwd1_eet/items/BAGH01.ITM~ ~override~ 
+  SAY 0x08 @18926
+  SAY 0x0c @30697
+  SAY 0x50 @18927
+  SAY 0x54 @7354
+
+COPY ~iwd1_eet/items/UFLAL4A.ITM~ ~override~
+  SAY 0x0c @14362
+  SAY 0x54 @14363
+
+COPY ~iwd1_eet/items/CWSPGRD.ITM~ ~override~
+  SAY 0x0c @14512
+  SAY 0x54 @14513
+
+//COPY ~iwd1_eet/items/CISPGRD.ITM~ ~override~
+//  SAY 0x08 @21636
+//  SAY 0x0c @21635
+//  SAY 0x50 @21634
+
+COPY ~iwd1_eet/items/ZZ36DGD.ITM~ ~override~
+  SAY 0x08 @2976
+  SAY 0x0c @27376
+  SAY 0x50 @2977
+  SAY 0x54 @27377
+
+COPY ~iwd1_eet/items/WANDTRP.ITM~ ~override~
+  SAY 0x0c @4381
+  SAY 0x54 @4380
+
+COPY ~iwd1_eet/items/SYMHELM.ITM~ ~override~
+  SAY 0x08 @934
+  SAY 0x0c @27406
+  SAY 0x50 @27405
+  SAY 0x54 @27405
+
+COPY ~iwd1_eet/items/KEYDUNG.ITM~ ~override~
+  SAY 0x08 @923
+  SAY 0x0c @27402
+  SAY 0x50 @27403
+  SAY 0x54 @27403
+
+COPY ~iwd1_eet/items/MJOURN.ITM~ ~override~
+  SAY 0x08 @27452
+  SAY 0x0c @27460
+  SAY 0x50 @27467
+  SAY 0x54 @27467
+
+COPY ~iwd1_eet/items/USHLD3B.ITM~ ~override~
+  SAY 0x0c @14644
+  SAY 0x54 @14646
+
+COPY ~iwd1_eet/items/MANUSCR.ITM~ ~override~
+  SAY 0x08 @27451
+  SAY 0x0c @27459
+  SAY 0x50 @27466
+  SAY 0x54 @27466
+
+COPY ~iwd1_eet/items/U2HAX3B.ITM~ ~override~
+  SAY 0x08 @9785
+  SAY 0x0c @14847
+  SAY 0x50 @8564
+  SAY 0x54 @14848
+
+COPY ~iwd1_eet/items/USHLD3A.ITM~ ~override~
+  SAY 0x0c @14640
+  SAY 0x54 @14641
+
+COPY ~iwd1_eet/items/KEYPLAT.ITM~ ~override~
+  SAY 0x08 @923
+  SAY 0x0c @27407
+  SAY 0x50 @27408
+  SAY 0x54 @27408
+
+COPY ~iwd1_eet/items/KEYGOLD.ITM~ ~override~
+  SAY 0x08 @923
+  SAY 0x0c @27417
+  SAY 0x50 @27418
+  SAY 0x54 @27418
+
+COPY ~iwd1_eet/items/KEYELEC.ITM~ ~override~
+  SAY 0x08 @923
+  SAY 0x0c @27414
+  SAY 0x50 @27413
+  SAY 0x54 @27413
+
+COPY ~iwd1_eet/items/KEYSILV.ITM~ ~override~
+  SAY 0x08 @923
+  SAY 0x0c @27410
+  SAY 0x50 @27409
+  SAY 0x54 @27409
+
+COPY ~iwd1_eet/items/KEYCOPP.ITM~ ~override~
+  SAY 0x08 @923
+  SAY 0x0c @27412
+  SAY 0x50 @27411
+  SAY 0x54 @27411
+
+COPY ~iwd1_eet/items/KEYBRON.ITM~ ~override~
+  SAY 0x08 @923
+  SAY 0x0c @27416
+  SAY 0x50 @27415
+  SAY 0x54 @27415
+
+COPY ~iwd1_eet/items/USLTR4A.ITM~ ~override~
+  SAY 0x0c @14832
+  SAY 0x54 @14833
+
+COPY ~iwd1_eet/items/UFLAL5A.ITM~ ~override~
+  SAY 0x0c @14364
+  SAY 0x54 @14365
+
+COPY ~iwd1_eet/items/UMSTR3C.ITM~ ~override~
+  SAY 0x0c @14545
+  SAY 0x54 @14548
+  SAY 0x1fe @16399
+  WRITE_LONG 0x1d2 ~%IDPHASE%~
+
+COPY ~iwd1_eet/items/UDART4A.ITM~ ~override~
+  SAY 0x0c @14350
+  SAY 0x54 @14351
+
+COPY ~iwd1_eet/items/UBSWD5B.ITM~ ~override~
+  SAY 0x0c @14316
+  SAY 0x54 @14317
+
+COPY ~iwd1_eet/items/TALE1.ITM~ ~override~
+  SAY 0x08 @27455
+  SAY 0x0c @27461
+  SAY 0x50 @27464
+  SAY 0x54 @27464
+
+COPY ~iwd1_eet/items/TALE3.ITM~ ~override~
+  SAY 0x08 @27455
+  SAY 0x0c @27457
+  SAY 0x50 @27462
+  SAY 0x54 @27462
+
+COPY ~iwd1_eet/items/TALE4.ITM~ ~override~
+  SAY 0x08 @27455
+  SAY 0x0c @27458
+  SAY 0x50 @27463
+  SAY 0x54 @27463
+
+COPY ~iwd1_eet/items/TALE2.ITM~ ~override~
+  SAY 0x08 @27455
+  SAY 0x0c @27456
+  SAY 0x50 @27424
+  SAY 0x54 @27424
+
+COPY ~iwd1_eet/items/AXEMINO.ITM~ ~override~
+  SAY 0x0c @27034
+  SAY 0x54 @27035
+
+COPY ~iwd1_eet/items/TRNBOLT.ITM~ ~override~
+  SAY 0x0c @2928
+  SAY 0x54 @2929
+
+COPY ~iwd1_eet/items/ZZC8HB.ITM~ ~override~
+  SAY 0x08 @2976
+  SAY 0x0c @27037
+  SAY 0x50 @2977
+  SAY 0x54 @27036
+
+COPY ~iwd1_eet/items/TORN.ITM~ ~override~
+  SAY 0x50 @26909
+  SAY 0x54 @26909
+
+COPY ~iwd1_eet/items/DGEM03.ITM~ ~override~
+  SAY 0x0c @27129
+
+COPY ~iwd1_eet/items/DGEM10.ITM~ ~override~
+  SAY 0x0c @27131
+
+COPY ~iwd1_eet/items/DGEM01.ITM~ ~override~
+  SAY 0x0c @27130
+
+COPY ~iwd1_eet/items/DGEM07.ITM~ ~override~
+  SAY 0x0c @27133
+
+COPY ~iwd1_eet/items/DGEM06.ITM~ ~override~
+  SAY 0x0c @27132
+
+COPY ~iwd1_eet/items/DGEM08.ITM~ ~override~
+  SAY 0x0c @27124
+
+COPY ~iwd1_eet/items/DGEM02.ITM~ ~override~
+  SAY 0x0c @27125
+
+COPY ~iwd1_eet/items/DGEM04.ITM~ ~override~
+  SAY 0x0c @27128
+
+COPY ~iwd1_eet/items/DGEM05.ITM~ ~override~
+  SAY 0x0c @27127
+
+COPY ~iwd1_eet/items/DGEM09.ITM~ ~override~
+  SAY 0x0c @27126
+
+COPY ~iwd1_eet/items/ULSWD3B.ITM~ ~override~
+  SAY 0x0c @14496
+  SAY 0x54 @14497
+
+COPY ~iwd1_eet/items/AMULBRO.ITM~ ~override~
+  SAY 0x0c @8817
+  SAY 0x54 @17705
+
+COPY ~iwd1_eet/items/BELTGON.ITM~ ~override~
+  SAY 0x0c @17616
+  SAY 0x54 @17546
+
+COPY ~iwd1_eet/items/SCARAB.ITM~ ~override~
+  SAY 0x0c @24787
+  SAY 0x54 @24788
+
+COPY ~iwd1_eet/items/HELMDEF.ITM~ ~override~
+  SAY 0x0c @14441
+  SAY 0x54 @16955
+
+COPY ~iwd1_eet/items/FKILLER.ITM~ ~override~
+  SAY 0x0c @3101
+  SAY 0x54 @3100
+
+COPY ~iwd1_eet/items/ZZH8GK.ITM~ ~override~
+  SAY 0x0c @17717
+  SAY 0x54 @17716
+
+COPY ~iwd1_eet/items/WHTASH.ITM~ ~override~
+  SAY 0x0c @2916
+  SAY 0x54 @2915
+
+COPY ~iwd1_eet/items/GIVING.ITM~ ~override~
+  SAY 0x0c @17934
+  SAY 0x54 @14555
+
+COPY ~iwd1_eet/items/LONESOM.ITM~ ~override~
+  SAY 0x08 @9785
+  SAY 0x0c @9787
+  SAY 0x50 @8564
+  SAY 0x54 @9788
+
+COPY ~iwd1_eet/items/MYRLOCH.ITM~ ~override~
+  SAY 0x0c @22578
+  SAY 0x54 @22577
+
+COPY ~iwd1_eet/items/BAEL.ITM~ ~override~
+  SAY 0x08 @2976
+  SAY 0x0c @22550
+  SAY 0x50 @2977
+  SAY 0x54 @22551
+
+COPY ~iwd1_eet/items/ZZG7TS.ITM~ ~override~
+  SAY 0x0c @24320
+  SAY 0x54 @24318
+
+COPY ~iwd1_eet/items/PIKEMAN.ITM~ ~override~
+  SAY 0x0c @24321
+  SAY 0x54 @24322
+
+COPY ~iwd1_eet/items/BESS.ITM~ ~override~
+  SAY 0x0c @22566
+  SAY 0x54 @22569
+
+COPY ~iwd1_eet/items/ZZS6SC.ITM~ ~override~
+  SAY 0x0c @21493
+  SAY 0x54 @21494
+
+COPY ~iwd1_eet/items/HELLPIK.ITM~ ~override~
+  SAY 0x0c @24315
+  SAY 0x54 @24314
+
+COPY ~iwd1_eet/items/ERON.ITM~ ~override~
+  SAY 0x0c @24312
+  SAY 0x54 @24313
+
+COPY ~iwd1_eet/items/FAYR.ITM~ ~override~
+  SAY 0x0c @24310
+  SAY 0x54 @24311
+
+COPY ~iwd1_eet/items/BLCKBOW.ITM~ ~override~
+  SAY 0x0c @24308
+  SAY 0x54 @24309
+
+COPY ~iwd1_eet/items/DAISY.ITM~ ~override~
+  SAY 0x0c @24307
+  SAY 0x54 @24306
+
+COPY ~iwd1_eet/items/RELIAN.ITM~ ~override~
+  SAY 0x0c @24304
+  SAY 0x54 @24305
+
+COPY ~iwd1_eet/items/TOMB.ITM~ ~override~
+  SAY 0x0c @24302
+  SAY 0x54 @24303
+
+COPY ~iwd1_eet/items/LUCKY.ITM~ ~override~
+  SAY 0x0c @21599
+  SAY 0x54 @21600
+
+COPY ~iwd1_eet/items/ZZE6PE.ITM~ ~override~
+  SAY 0x0c @25820
+  SAY 0x54 @25819
+
+COPY ~iwd1_eet/items/LYRE.ITM~ ~override~
+  SAY 0x08 @17927
+  SAY 0x0c @17929
+  SAY 0x50 @17928
+  SAY 0x54 @17930
+
+COPY ~iwd1_eet/items/BARDIC.ITM~ ~override~
+  SAY 0x08 @17975
+  SAY 0x0c @17979
+  SAY 0x50 @17976
+  SAY 0x54 @17978
+
+COPY ~iwd1_eet/items/UBULL4A.ITM~ ~override~
+  SAY 0x0c @16040
+  SAY 0x54 @16039
+
+COPY ~iwd1_eet/items/UDART1A.ITM~ ~override~
+  SAY 0x0c @14339
+  SAY 0x54 @14340
+
+COPY ~iwd1_eet/items/UDART3B.ITM~ ~override~
+  SAY 0x0c @14345
+  SAY 0x54 @14346
+
+COPY ~iwd1_eet/items/ELFWINE.ITM~ ~override~
+  SAY 0x08 @8701
+  SAY 0x0c @8702
+  SAY 0x50 @8709
+  SAY 0x54 @8705
+
+COPY ~iwd1_eet/items/HONEYLT.ITM~ ~override~
+  SAY 0x08 @15422
+  SAY 0x0c @15423
+  SAY 0x50 @15424
+  SAY 0x54 @15424
+
+COPY ~iwd1_eet/items/THISTLE.ITM~ ~override~
+  SAY 0x08 @15425
+  SAY 0x0c @15426
+  SAY 0x50 @15427
+  SAY 0x54 @15427
+
+COPY ~iwd1_eet/items/SPIRIT.ITM~ ~override~
+  SAY 0x0c @15437
+  SAY 0x54 @15436
+
+COPY ~iwd1_eet/items/MORADIN.ITM~ ~override~
+  SAY 0x08 @2920
+  SAY 0x0c @7640
+  SAY 0x50 @6731
+  SAY 0x54 @7641
+
+COPY ~iwd1_eet/items/MYSTERY.ITM~ ~override~
+  SAY 0x0c @17988
+  SAY 0x54 @17989
+
+COPY ~iwd1_eet/items/VIOLIN.ITM~ ~override~
+  SAY 0x08 @16779
+  SAY 0x0c @16782
+  SAY 0x50 @16781
+  SAY 0x54 @16783
+
+COPY ~iwd1_eet/items/STORM.ITM~ ~override~
+  SAY 0x0c @25817
+  SAY 0x54 @25818
+
+COPY ~iwd1_eet/items/GARROW.ITM~ ~override~
+  SAY 0x0c @24794
+  SAY 0x54 @24793
+
+COPY ~iwd1_eet/items/GULLWYN.ITM~ ~override~
+  SAY 0x0c @21497
+  SAY 0x54 @15055
+
+COPY ~iwd1_eet/items/DARTZIL.ITM~ ~override~
+  SAY 0x0c @21643
+  SAY 0x54 @21644
+
+COPY ~iwd1_eet/items/XAIN.ITM~ ~override~
+  SAY 0x08 @21637
+  SAY 0x0c @21639
+  SAY 0x50 @21638
+  SAY 0x54 @21640
+  WRITE_SHORT 0x9c ~%idpro270%~
+
+COPY ~iwd1_eet/items/THRYM.ITM~ ~override~
+  SAY 0x0c @21626
+  SAY 0x54 @21627
+
+COPY ~iwd1_eet/items/JAMISON.ITM~ ~override~
+  SAY 0x0c @21596
+  SAY 0x54 @18054
+
+COPY ~iwd1_eet/items/AMAUNAT.ITM~ ~override~
+  SAY 0x0c @21480
+  SAY 0x54 @21481
+
+COPY ~iwd1_eet/items/MAE.ITM~ ~override~
+  SAY 0x0c @21495
+  SAY 0x54 @21496
+  WRITE_LONG 0x1d2 ~%IDPETRIF%~
+
+COPY ~iwd1_eet/items/ZZ14IN.ITM~ ~override~
+  SAY 0x0c @21503
+  SAY 0x54 @21502
+
+COPY ~iwd1_eet/items/KINETIC.ITM~ ~override~
+  SAY 0x0c @21598
+  SAY 0x54 @21597
+
+COPY ~iwd1_eet/items/DOVES.ITM~ ~override~
+  SAY 0x0c @21624
+  SAY 0x54 @21625
+
+COPY ~iwd1_eet/items/CHANCE.ITM~ ~override~
+  SAY 0x0c @24773
+  SAY 0x54 @24774
+
+COPY ~iwd1_eet/items/WAUKEEN.ITM~ ~override~
+  SAY 0x0c @24316
+  SAY 0x54 @24317
+
+COPY ~iwd1_eet/items/HQSSWRD.ITM~ ~override~
+  SAY 0x08 @5675
+  SAY 0x0c @5676
+  SAY 0x50 @6325
+  SAY 0x54 @6325
+
+COPY ~iwd1_eet/items/HQHAMM.ITM~ ~override~
+  SAY 0x08 @5707
+  SAY 0x0c @5708
+  SAY 0x50 @6379
+  SAY 0x54 @6379
+
+COPY ~iwd1_eet/items/HQMACE.ITM~ ~override~
+  SAY 0x08 @5705
+  SAY 0x0c @5706
+  SAY 0x50 @6377
+  SAY 0x54 @6377
+
+COPY ~iwd1_eet/items/HQHALB.ITM~ ~override~
+  SAY 0x50 @6375
+  SAY 0x54 @6375
+
+COPY ~iwd1_eet/items/RINGED.ITM~ ~override~
+  SAY 0x0c @21492
+  SAY 0x54 @14910
+
+COPY ~iwd1_eet/items/ULRING.ITM~ ~override~
+  SAY 0x0c @24783
+  SAY 0x54 @24784
+
+COPY ~iwd1_eet/items/CONE.ITM~ ~override~
+  SAY 0x08 @24776
+  SAY 0x0c @24779
+  SAY 0x50 @24775
+  SAY 0x54 @24780
+
+COPY ~iwd1_eet/items/CYNICIS.ITM~ ~override~
+  SAY 0x08 @2976
+  SAY 0x0c @21488
+  SAY 0x50 @2977
+  SAY 0x54 @21489
+  SAY 0x1de @24928
+  SAY 0x20e @24929
+  SAY 0x23e @24930
+  SAY 0x26e @24931
+  SAY 0x29e @24932
+  SAY 0x2ce @24933
+  SAY 0x2fe @24934
+  SAY 0x32e @24935
+  SAY 0x35e @24936
+  SAY 0x38e @24937
+  SAY 0x3be @24938
+  SAY 0x3ee @24940
+  /*
+  STRING_SET 24916 @24916
+  STRING_SET 24917 @24917
+  STRING_SET 24918 @24918
+  STRING_SET 24919 @24919
+  STRING_SET 24920 @24920
+  STRING_SET 24921 @24921
+  STRING_SET 24922 @24922
+  STRING_SET 24923 @24923
+  STRING_SET 24924 @24924
+  STRING_SET 24925 @24925
+  STRING_SET 24926 @24926
+  STRING_SET 24927 @24927
+  */
+  //LPF ALTER_ITEM_EFFECT
+  //	INT_VAR opcode=177 target=1 parameter2=2 timing=2
+  //	STR_VAR resource="CYNICIS"
+  //END
+OUTER_SET var1 = RESOLVE_STR_REF(@24916)
+COPY_EXISTING ~bdbrac02.EFF~ ~override/CYNICIS.EFF~
+	WRITE_LONG 0x48 12
+	WRITE_LONG 0x60 var1
+OUTER_SET var1 = RESOLVE_STR_REF(@24917)
+OUTER_SET var1 = RESOLVE_STR_REF(@24918)
+OUTER_SET var1 = RESOLVE_STR_REF(@24919)
+OUTER_SET var1 = RESOLVE_STR_REF(@24920)
+OUTER_SET var1 = RESOLVE_STR_REF(@24921)
+OUTER_SET var1 = RESOLVE_STR_REF(@24922)
+OUTER_SET var1 = RESOLVE_STR_REF(@24923)
+OUTER_SET var1 = RESOLVE_STR_REF(@24924)
+OUTER_SET var1 = RESOLVE_STR_REF(@24925)
+OUTER_SET var1 = RESOLVE_STR_REF(@24926)
+OUTER_SET var1 = RESOLVE_STR_REF(@24927)
+
+COPY ~iwd1_eet/items/OBLOOD.ITM~ ~override~
+  SAY 0x0c @24803
+  SAY 0x54 @24802
+
+COPY ~iwd1_eet/items/REVENAN.ITM~ ~override~
+  SAY 0x0c @24782
+  SAY 0x54 @24781
+
+COPY ~iwd1_eet/items/BLAST.ITM~ ~override~
+  SAY 0x0c @24801
+  SAY 0x54 @24798
+
+COPY ~iwd1_eet/items/KING.ITM~ ~override~
+  SAY 0x08 @21636
+  SAY 0x0c @21635
+  SAY 0x50 @21634
+  SAY 0x54 @21634
+
+COPY ~iwd1_eet/items/U2HAX4A.ITM~ ~override~
+  SAY 0x08 @9785
+  SAY 0x0c @14849
+  SAY 0x50 @8564
+  SAY 0x54 @14850
+  SAY 0x1ce @16399
+  WRITE_LONG 0x202 ~%IDPHASE%~
+
+COPY ~iwd1_eet/items/U2HAX1A.ITM~ ~override~
+  SAY 0x08 @9785
+  SAY 0x0c @14836
+  SAY 0x50 @8564
+  SAY 0x54 @14837
+
+COPY ~iwd1_eet/items/U1HAX1A.ITM~ ~override~
+  SAY 0x08 @14229
+  SAY 0x0c @14231
+  SAY 0x50 @14233
+  SAY 0x54 @14233
+
+COPY ~iwd1_eet/items/U1HAM5A.ITM~ ~override~
+  SAY 0x0c @14894
+  SAY 0x54 @14895
+  SAY 0x1fe @16399
+  WRITE_LONG 0x1d2 ~%IDPHASE%~
+
+COPY ~iwd1_eet/items/HOLDFST.ITM~ ~override~
+  SAY 0x0c @2984
+  SAY 0x54 @2983
+
+COPY ~iwd1_eet/items/URING1B.ITM~ ~override~
+  SAY 0x0c @14590
+  SAY 0x54 @14591
+
+COPY ~iwd1_eet/items/SBOWEBU.ITM~ ~override~
+  SAY 0x0c @27365
+  SAY 0x54 @27364
+
+COPY ~iwd1_eet/items/BRACEIP.ITM~ ~override~
+  SAY 0x0c @27370
+  SAY 0x54 @27371
+
+COPY ~iwd1_eet/items/FLAILSK.ITM~ ~override~
+  SAY 0x0c @27372
+  SAY 0x54 @27373
+
+COPY ~iwd1_eet/items/HQMSTAR.ITM~ ~override~
+  SAY 0x08 @5701
+  SAY 0x0c @5702
+  SAY 0x50 @6376
+  SAY 0x54 @6376
+
+COPY ~iwd1_eet/items/UDAGG1A.ITM~ ~override~
+  SAY 0x0c @14234
+  SAY 0x54 @14235
+
+COPY ~iwd1_eet/items/BELTBEA.ITM~ ~override~
+  SAY 0x0c @17543
+  SAY 0x54 @17544
+
+COPY ~iwd1_eet/items/BOOTQUI.ITM~ ~override~
+  SAY 0x0c @17630
+  SAY 0x54 @17631
+
+COPY ~iwd1_eet/items/APPLEBN.ITM~ ~override~
+  SAY 0x0c @4368
+  SAY 0x54 @4369
+
+COPY ~iwd1_eet/items/GLIMGLM.ITM~ ~override~
+  SAY 0x0c @4373
+  SAY 0x54 @4372
+
+COPY ~iwd1_eet/items/STOUT.ITM~ ~override~
+  SAY 0x0c @4375
+  SAY 0x54 @4374
+
+COPY ~iwd1_eet/items/MHORN.ITM~ ~override~
+  SAY 0x08 @4376
+  SAY 0x0c @4379
+  SAY 0x50 @4377
+  SAY 0x54 @4378
+
+COPY ~iwd1_eet/items/RINGELF.ITM~ ~override~
+  SAY 0x08 @3344
+  SAY 0x0c @3343
+  SAY 0x54 @3342
+
+COPY ~iwd1_eet/items/UDAGG1B.ITM~ ~override~
+  SAY 0x0c @14330
+  SAY 0x54 @14331
+  SAY 0x19e @16399
+  WRITE_LONG 0x1d2 ~%IDPHASE%~
+
+COPY ~iwd1_eet/items/UHALB2B.ITM~ ~override~
+  SAY 0x0c @14375
+  SAY 0x54 @14376
+
+COPY ~iwd1_eet/items/URING1A.ITM~ ~override~
+  SAY 0x0c @14587
+  SAY 0x54 @14589
+
+COPY ~iwd1_eet/items/USPOT1A.ITM~ ~override~
+  SAY 0x0c @14694
+  SAY 0x54 @14695
+
+COPY ~iwd1_eet/items/UAROW2A.ITM~ ~override~
+  SAY 0x0c @14274
+  SAY 0x54 @5800
+
+COPY ~iwd1_eet/items/UDART2A.ITM~ ~override~
+  SAY 0x0c @14341
+  SAY 0x54 @14342
+
+COPY ~iwd1_eet/items/UTSWD1A.ITM~ ~override~
+  SAY 0x0c @14863
+  SAY 0x54 @14864
+
+COPY ~iwd1_eet/items/ULBOW1A.ITM~ ~override~
+  SAY 0x0c @14466
+  SAY 0x54 @14467
+
+COPY ~iwd1_eet/items/UHALB2C.ITM~ ~override~
+  SAY 0x0c @14478
+  SAY 0x54 @14479
+
+COPY ~iwd1_eet/items/UHALB2A.ITM~ ~override~
+  SAY 0x0c @14373
+  SAY 0x54 @14374
+
+COPY ~iwd1_eet/items/UHXBW2A.ITM~ ~override~
+  SAY 0x08 @14428
+  SAY 0x0c @14429
+  SAY 0x50 @18095
+  SAY 0x54 @14432
+
+COPY ~iwd1_eet/items/ULXBW2A.ITM~ ~override~
+  SAY 0x0c @14457
+  SAY 0x54 @14458
+
+COPY ~iwd1_eet/items/DAZER.ITM~ ~override~
+  SAY 0x0c @17733
+  SAY 0x54 @17735
+
+COPY ~iwd1_eet/items/U2HAM2A.ITM~ ~override~
+  SAY 0x0c @14926
+  SAY 0x54 @14953
+
+COPY ~iwd1_eet/items/UFLAL2A.ITM~ ~override~
+  SAY 0x0c @14355
+  SAY 0x54 @14357
+
+COPY ~iwd1_eet/items/UDAGG2B.ITM~ ~override~
+  SAY 0x0c @14241
+  SAY 0x54 @14242
+
+COPY ~iwd1_eet/items/UBSWD2A.ITM~ ~override~
+  SAY 0x0c @14282
+  SAY 0x54 @14283
+  SAY 0x19e @16399
+  WRITE_LONG 0x1d2 ~%IDPHASE%~
+
+COPY ~iwd1_eet/items/ULSWD2A.ITM~ ~override~
+  SAY 0x0c @14490
+  SAY 0x54 @14491
+
+COPY ~iwd1_eet/items/UTSWD2A.ITM~ ~override~
+  SAY 0x0c @14865
+  SAY 0x54 @14866
+
+COPY ~iwd1_eet/items/USSWD2A.ITM~ ~override~
+  SAY 0x0c @14659
+  SAY 0x54 @14660
+
+COPY ~iwd1_eet/items/MIELIKK.ITM~ ~override~
+  SAY 0x0c @9732
+  SAY 0x54 @9734
+
+COPY ~iwd1_eet/items/TURODAH.ITM~ ~override~
+  SAY 0x0c @2931
+  SAY 0x54 @2328
+
+COPY ~iwd1_eet/items/URING2B.ITM~ ~override~
+  SAY 0x0c @14596
+  SAY 0x54 @14605
+
+COPY ~iwd1_eet/items/BOOTMOA.ITM~ ~override~
+  SAY 0x0c @17638
+  SAY 0x54 @17639
+
+COPY ~iwd1_eet/items/AMULBRA.ITM~ ~override~
+  SAY 0x0c @17712
+  SAY 0x54 @17713
+
+COPY ~iwd1_eet/items/BKNIGHT.ITM~ ~override~
+  SAY 0x08 @17980
+  SAY 0x0c @17982
+  SAY 0x50 @17981
+  SAY 0x54 @17987
+
+COPY ~iwd1_eet/items/BOOTMAN.ITM~ ~override~
+  SAY 0x0c @17669
+  SAY 0x54 @17670
+
+COPY ~iwd1_eet/items/ULBOW2A.ITM~ ~override~
+  SAY 0x0c @14468
+  SAY 0x54 @14469
+
+COPY ~iwd1_eet/items/ULBOW2B.ITM~ ~override~
+  SAY 0x0c @14470
+  SAY 0x54 @14471
+
+COPY ~iwd1_eet/items/USSWD2B.ITM~ ~override~
+  SAY 0x0c @14661
+  SAY 0x54 @14670
+  SAY 0x1ce @16399
+  WRITE_LONG 0x202 ~%IDPHASE%~
+
+COPY ~iwd1_eet/items/USLTR01.ITM~ ~override~
+  SAY 0x0c @14825
+  SAY 0x54 @14826
+
+COPY ~iwd1_eet/items/USLTR2A.ITM~ ~override~
+  SAY 0x0c @14827
+  SAY 0x54 @14829
+
+COPY ~iwd1_eet/items/PEASREW.ITM~ ~override~
+  SAY 0x0c @17729
+  SAY 0x54 @17730
+
+COPY ~iwd1_eet/items/IDREAVER.ITM~ ~override~
+  SAY 0x0c @17736
+  SAY 0x54 @17737
+
+COPY ~iwd1_eet/items/UBSWD2B.ITM~ ~override~
+  SAY 0x0c @14284
+  SAY 0x54 @14298
+
+COPY ~iwd1_eet/items/SHLDRNG.ITM~ ~override~
+  SAY 0x0c @2913
+  SAY 0x54 @2914
+
+COPY ~iwd1_eet/items/USPOT3A.ITM~ ~override~
+  SAY 0x0c @14721
+  SAY 0x54 @14722
+
+COPY ~iwd1_eet/items/URING3C.ITM~ ~override~
+  SAY 0x0c @14623
+  SAY 0x54 @14624
+
+COPY ~iwd1_eet/items/URING3A.ITM~ ~override~
+  SAY 0x0c @14598
+  SAY 0x54 @8235
+
+COPY ~iwd1_eet/items/BOOTFOX.ITM~ ~override~
+  SAY 0x0c @17628
+  SAY 0x54 @17629
+
+COPY ~iwd1_eet/items/LXBOWBM.ITM~ ~override~
+  SAY 0x0c @17731
+  SAY 0x54 @8911
+
+COPY ~iwd1_eet/items/ULBOW3A.ITM~ ~override~
+  SAY 0x0c @14476
+  SAY 0x54 @14477
+
+COPY ~iwd1_eet/items/UHXBW3A.ITM~ ~override~
+  SAY 0x0c @14433
+  SAY 0x54 @14434
+
+COPY ~iwd1_eet/items/UHXBW3B.ITM~ ~override~
+  SAY 0x0c @14435
+  SAY 0x54 @14436
+
+COPY ~iwd1_eet/items/UDAGG3C.ITM~ ~override~
+  SAY 0x0c @14245
+  SAY 0x54 @14246
+
+COPY ~iwd1_eet/items/WITHERY.ITM~ ~override~
+  SAY 0x0c @2863
+  SAY 0x54 @2864
+
+COPY ~iwd1_eet/items/UDAGG3A.ITM~ ~override~
+  SAY 0x0c @14239
+  SAY 0x54 @14240
+
+COPY ~iwd1_eet/items/U1HAM3A.ITM~ ~override~
+  SAY 0x0c @14885
+  SAY 0x54 @14886
+
+COPY ~iwd1_eet/items/ZZJ6SP.ITM~ ~override~
+  SAY 0x0c @3194
+  SAY 0x54 @3196
+
+COPY ~iwd1_eet/items/ZZ05WE.ITM~ ~override~
+  SAY 0x0c @3027
+  SAY 0x54 @3028
+
+COPY ~iwd1_eet/items/PEACEKE.ITM~ ~override~
+  SAY 0x0c @3190
+  SAY 0x54 @3189
+
+COPY ~iwd1_eet/items/ZZZ6BC.ITM~ ~override~
+  SAY 0x0c @16191
+  SAY 0x54 @3099
+
+COPY ~iwd1_eet/items/INTRCES.ITM~ ~override~
+  SAY 0x0c @3321
+  SAY 0x54 @3319
+
+COPY ~iwd1_eet/items/UBSWD3B.ITM~ ~override~
+  SAY 0x0c @14301
+  SAY 0x54 @14302
+
+COPY ~iwd1_eet/items/DIVER.ITM~ ~override~
+  SAY 0x0c @2991
+  SAY 0x54 @2992
+
+COPY ~iwd1_eet/items/UBSWD3A.ITM~ ~override~
+  SAY 0x0c @14299
+  SAY 0x54 @14300
+
+COPY ~iwd1_eet/items/DAYS.ITM~ ~override~
+  SAY 0x0c @3029
+  SAY 0x54 @3030
+
+COPY ~iwd1_eet/items/SHLDRED.ITM~ ~override~
+  SAY 0x0c @3347
+  SAY 0x54 @3346
+
+COPY ~iwd1_eet/items/UAROW3B.ITM~ ~override~
+  SAY 0x0c @14276
+  SAY 0x54 @14277
+
+COPY ~iwd1_eet/items/UAROW3C.ITM~ ~override~
+  SAY 0x0c @14278
+  SAY 0x54 @14279
+
+COPY ~iwd1_eet/items/SHROBE.ITM~ ~override~
+  SAY 0x0c @14811
+  SAY 0x54 @14812
+
+COPY ~iwd1_eet/items/SHBOOTS.ITM~ ~override~
+  SAY 0x0c @14814
+  SAY 0x54 @14813
+
+COPY ~iwd1_eet/items/ZZN6GC.ITM~ ~override~
+  SAY 0x0c @17741
+  SAY 0x54 @17742
+
+COPY ~iwd1_eet/items/POKER.ITM~ ~override~
+  SAY 0x0c @17744
+  SAY 0x54 @17743
+
+COPY ~iwd1_eet/items/DBONE.ITM~ ~override~
+  SAY 0x0c @17746
+  SAY 0x54 @17745
+
+COPY ~iwd1_eet/items/KRIS.ITM~ ~override~
+  SAY 0x0c @8239
+  SAY 0x54 @4382
+
+COPY ~iwd1_eet/items/IDBERSRK.ITM~ ~override~
+  SAY 0x08 @10988
+  SAY 0x0c @10989
+  SAY 0x50 @10990
+  SAY 0x54 @10991
+
+COPY ~iwd1_eet/items/SERRATE.ITM~ ~override~
+  SAY 0x0c @8831
+  SAY 0x54 @8832
+
+COPY ~iwd1_eet/items/BONEAM.ITM~ ~override~
+  SAY 0x08 @14815
+  SAY 0x0c @14816
+  SAY 0x50 @14817
+  SAY 0x54 @14818
+
+COPY ~iwd1_eet/items/CORELLO.ITM~ ~override~
+  SAY 0x0c @8846
+  SAY 0x54 @8870
+
+COPY ~iwd1_eet/items/LABELAS.ITM~ ~override~
+  SAY 0x0c @8881
+  SAY 0x54 @8879
+
+COPY ~iwd1_eet/items/SHEVARA.ITM~ ~override~
+  SAY 0x0c @8946
+  SAY 0x54 @8947
+
+COPY ~iwd1_eet/items/SOLONOR.ITM~ ~override~
+  SAY 0x0c @8948
+  SAY 0x54 @8949
+
+COPY ~iwd1_eet/items/KAYBOW.ITM~ ~override~
+  SAY 0x0c @8710
+  SAY 0x50 @8711
+  SAY 0x54 @8712
+
+COPY ~iwd1_eet/items/KAYCHAI.ITM~ ~override~
+  SAY 0x54 @5013
+
+COPY ~iwd1_eet/items/KAYGLOV.ITM~ ~override~
+  SAY 0x08 @8724
+  SAY 0x0c @8726
+  SAY 0x50 @8725
+  SAY 0x54 @8728
+
+COPY ~iwd1_eet/items/KAYRING.ITM~ ~override~
+  SAY 0x0c @14819
+  SAY 0x50 @14820
+  SAY 0x54 @14821
+  WRITE_ASCII 0x3a ~IIWKAYLE~ (8)
+
+COPY ~iwd1_eet/items/UTSWD3B.ITM~ ~override~
+  SAY 0x0c @14873
+  SAY 0x54 @14874
+
+COPY ~iwd1_eet/items/UTSWD3A.ITM~ ~override~
+  SAY 0x0c @14871
+  SAY 0x54 @14872
+
+COPY ~iwd1_eet/items/ULXBW3B.ITM~ ~override~
+  SAY 0x0c @14461
+  SAY 0x54 @14462
+
+COPY ~iwd1_eet/items/ULXBW3A.ITM~ ~override~
+  SAY 0x0c @14460
+  SAY 0x54 @14459
+
+COPY ~iwd1_eet/items/USSWD3B.ITM~ ~override~
+  SAY 0x0c @14680
+  SAY 0x54 @14681
+
+COPY ~iwd1_eet/items/USSWD3C.ITM~ ~override~
+  SAY 0x0c @14682
+  SAY 0x54 @14683
+
+COPY ~iwd1_eet/items/SHSHLD.ITM~ ~override~
+  SAY 0x0c @15411
+  SAY 0x54 @15410
+
+COPY ~iwd1_eet/items/SHSTAFF.ITM~ ~override~
+  SAY 0x0c @15421
+  SAY 0x54 @15420
+
+COPY ~iwd1_eet/items/ELROBE.ITM~ ~override~
+  SAY 0x0c @8688
+  SAY 0x50 @8689
+  SAY 0x54 @8690
+
+COPY ~iwd1_eet/items/U1HAM3B.ITM~ ~override~
+  SAY 0x0c @14887
+  SAY 0x54 @14888
+
+COPY ~iwd1_eet/items/U2HAM3A.ITM~ ~override~
+  SAY 0x0c @14954
+  SAY 0x54 @14955
+
+COPY ~iwd1_eet/items/ELFCHAN.ITM~ ~override~
+  SAY 0x0c @8246
+  SAY 0x54 @8247
+
+COPY ~iwd1_eet/items/URING3B.ITM~ ~override~
+  SAY 0x0c @18792
+  SAY 0x54 @14612
+
+COPY ~iwd1_eet/items/USPOT3C.ITM~ ~override~
+  SAY 0x0c @14735
+  SAY 0x54 @14736
+
+COPY ~iwd1_eet/items/LSHAND.ITM~ ~override~
+  SAY 0x0c @8783
+  SAY 0x54 @8780
+
+COPY ~iwd1_eet/items/ULSWD3C.ITM~ ~override~
+  SAY 0x0c @14500
+  SAY 0x54 @14502
+
+COPY ~iwd1_eet/items/U1HAX3A.ITM~ ~override~
+  SAY 0x0c @14322
+  SAY 0x54 @14323
+
+COPY ~iwd1_eet/items/UHALB3C.ITM~ ~override~
+  SAY 0x0c @14382
+  SAY 0x54 @14383
+
+COPY ~iwd1_eet/items/UDAGG4B.ITM~ ~override~
+  SAY 0x0c @14249
+  SAY 0x54 @14250
+
+COPY ~iwd1_eet/items/UDAGG4A.ITM~ ~override~
+  SAY 0x0c @14247
+  SAY 0x54 @14248
+
+COPY ~iwd1_eet/items/U1HAM4A.ITM~ ~override~
+  SAY 0x0c @14889
+  SAY 0x54 @14890
+
+COPY ~iwd1_eet/items/USHLD4A.ITM~ ~override~
+  SAY 0x0c @14651
+  SAY 0x54 @14658
+
+COPY ~iwd1_eet/items/USSWD4A.ITM~ ~override~
+  SAY 0x0c @14684
+  SAY 0x54 @14685
+
+COPY ~iwd1_eet/items/UBSWD4C.ITM~ ~override~
+  SAY 0x0c @14310
+  SAY 0x54 @14311
+
+COPY ~iwd1_eet/items/ULSWD4A.ITM~ ~override~
+  SAY 0x0c @14503
+  SAY 0x54 @14504
+
+COPY ~iwd1_eet/items/URING4B.ITM~ ~override~
+  SAY 0x0c @14627
+  SAY 0x54 @14628
+
+COPY ~iwd1_eet/items/AMULDEF.ITM~ ~override~
+  SAY 0x0c @17707
+  SAY 0x54 @17706
+
+COPY ~iwd1_eet/items/BISHOP.ITM~ ~override~
+  SAY 0x08 @17980
+  SAY 0x0c @18064
+  SAY 0x50 @17981
+  SAY 0x54 @18063
+
+COPY ~iwd1_eet/items/USPOT4B.ITM~ ~override~
+  SAY 0x0c @14746
+  SAY 0x54 @14748
+
+COPY ~iwd1_eet/items/LONGCLEV.ITM~ ~override~
+  SAY 0x0c @17726
+  SAY 0x54 @17725
+
+COPY ~iwd1_eet/items/SPENSTAF.ITM~ ~override~
+  SAY 0x0c @2921
+  SAY 0x54 @2922
+
+COPY ~iwd1_eet/items/ULSWD4B.ITM~ ~override~
+  SAY 0x0c @14510
+  SAY 0x54 @14511
+
+COPY ~iwd1_eet/items/USSWD4B.ITM~ ~override~
+  SAY 0x0c @14686
+  SAY 0x54 @14687
+
+COPY ~iwd1_eet/items/HELMPAT.ITM~ ~override~
+  SAY 0x0c @16978
+  SAY 0x54 @16976
+
+COPY ~iwd1_eet/items/UTSWD4B.ITM~ ~override~
+  SAY 0x0c @14877
+  SAY 0x54 @14878
+
+COPY ~iwd1_eet/items/UBSWD4B.ITM~ ~override~
+  SAY 0x0c @14307
+  SAY 0x54 @14308
+  SAY 0x19e @16399
+  WRITE_LONG 0x1d2 ~%IDPHASE%~
+
+COPY ~iwd1_eet/items/GSLEEP.ITM~ ~override~
+  SAY 0x0c @9763
+  SAY 0x54 @9764
+
+COPY ~iwd1_eet/items/REDEMT.ITM~ ~override~
+  SAY 0x0c @26835
+  SAY 0x54 @8510
+
+COPY ~iwd1_eet/items/U2HAM4A.ITM~ ~override~
+  SAY 0x0c @14956
+  SAY 0x54 @14957
+
+COPY ~iwd1_eet/items/UMSTR4B.ITM~ ~override~
+  SAY 0x0c @14552
+  SAY 0x54 @14554
+
+COPY ~iwd1_eet/items/U1HAM4B.ITM~ ~override~
+  SAY 0x0c @14891
+  SAY 0x54 @14893
+
+COPY ~iwd1_eet/items/UMSTR4A.ITM~ ~override~
+  SAY 0x0c @14549
+  SAY 0x54 @14551
+
+COPY ~iwd1_eet/items/USSWD5A.ITM~ ~override~
+  SAY 0x0c @14688
+  SAY 0x54 @14689
+
+COPY ~iwd1_eet/items/USPOT5B.ITM~ ~override~
+  SAY 0x0c @14805
+  SAY 0x54 @14806
+
+COPY ~iwd1_eet/items/URING4C.ITM~ ~override~
+  SAY 0x0c @14629
+  SAY 0x54 @14630
+
+COPY ~iwd1_eet/items/URING4A.ITM~ ~override~
+  SAY 0x0c @14625
+  SAY 0x54 @14626
+
+COPY ~iwd1_eet/items/UBSWD5A.ITM~ ~override~
+  SAY 0x0c @14312
+  SAY 0x54 @14313
+
+COPY ~iwd1_eet/items/UTSWD4A.ITM~ ~override~
+  SAY 0x0c @14875
+  SAY 0x54 @14876
+
+COPY ~iwd1_eet/items/UBSWD4A.ITM~ ~override~
+  SAY 0x0c @14304
+  SAY 0x54 @14305
+
+COPY ~iwd1_eet/items/UHALB4A.ITM~ ~override~
+  SAY 0x0c @14384
+  SAY 0x54 @14385
+
+COPY ~iwd1_eet/items/UHALB4B.ITM~ ~override~
+  SAY 0x0c @14386
+  SAY 0x54 @14387
+
+COPY ~iwd1_eet/items/ULXBW5A.ITM~ ~override~
+  SAY 0x0c @14463
+  SAY 0x54 @14464
+
+COPY ~iwd1_eet/items/UHXBW5A.ITM~ ~override~
+  SAY 0x0c @14445
+  SAY 0x54 @14455
+
+COPY ~iwd1_eet/items/UHXBW4A.ITM~ ~override~
+  SAY 0x0c @14437
+  SAY 0x54 @14438
+
+COPY ~iwd1_eet/items/OGIEN.ITM~ ~override~
+  SAY 0x08 @21606
+  SAY 0x0c @21609
+  SAY 0x50 @21607
+  SAY 0x54 @21610
+
+COPY ~iwd1_eet/items/CLOAKIN.ITM~ ~override~
+  SAY 0x0c @21486
+  SAY 0x54 @21487
+
+COPY ~iwd1_eet/items/ROBEARM.ITM~ ~override~
+  SAY 0x0c @21618
+  SAY 0x54 @21617
+
+COPY ~iwd1_eet/items/NAMJI.ITM~ ~override~
+  SAY 0x0c @21604
+  SAY 0x54 @21605
+
+COPY ~iwd1_eet/items/WISP.ITM~ ~override~
+  SAY 0x0c @21615
+  SAY 0x54 @21616
+  WRITE_SHORT 0x9c ~%idpro343%~
+
+COPY ~iwd1_eet/items/MOURNER.ITM~ ~override~
+  SAY 0x08 @21601
+  SAY 0x0c @21602
+  SAY 0x54 @21603
+
+COPY ~iwd1_eet/items/CAT.ITM~ ~override~
+  SAY 0x08 @18950
+  SAY 0x0c @18951
+  SAY 0x50 @18952
+  SAY 0x54 @18952
+
+COPY ~iwd1_eet/items/CLBHAND.ITM~ ~override~
+  SAY 0x0c @8662
+  SAY 0x54 @8663
+
+COPY ~iwd1_eet/items/ULBOW3C.ITM~ ~override~
+  SAY 0x0c @14480
+  SAY 0x54 @14481
+
+COPY ~iwd1_eet/items/SPWI517X.ITM~ ~override~
+  SAY 0x0c @25320
+  SAY 0x54 @24244
+
+COPY ~iwd1_eet/items/BELTBON.ITM~ ~override~
+  SAY 0x0c @21482
+  SAY 0x54 @21483
+
+COPY ~iwd1_eet/items/QUOST.ITM~ ~override~
+  SAY 0x0c @21613
+  SAY 0x54 @21614
+
+COPY ~iwd1_eet/items/STAFBES.ITM~ ~override~
+  SAY 0x0c @21619
+  SAY 0x54 @21620
+
+COPY ~iwd1_eet/items/U1HAX4B.ITM~ ~override~
+  SAY 0x0c @14328
+  SAY 0x54 @14329
+
+COPY ~iwd1_eet/items/HELMSH.ITM~ ~override~
+  SAY 0x0c @21499
+  SAY 0x54 @21498
+
+COPY ~iwd1_eet/items/STOMPER.ITM~ ~override~
+  SAY 0x0c @21622
+  SAY 0x54 @21623
+
+COPY ~iwd1_eet/items/Ulswd3d.itm~ ~override~
+  SAY 0x0c @14507
+  SAY 0x54 @14509
+/* Lost items */
+COPY ~iwd1_eet/items/URING2A.ITM~ ~override~
+  SAY 0x0c @14592
+  SAY 0x54 @14595
+
+COPY ~iwd1_eet/items/ULSWD2B.ITM~ ~override~
+  SAY 0x0c @14492
+  SAY 0x54 @14493
+
+COPY ~iwd1_eet/items/UTSWD2C.ITM~ ~override~
+  SAY 0x0c @14869
+  SAY 0x54 @14870
+
+COPY ~iwd1_eet/items/UTSWD2B.ITM~ ~override~
+  SAY 0x0c @14867
+  SAY 0x54 @14868
+
+COPY ~iwd1_eet/items/USPOT3B.ITM~ ~override~
+  SAY 0x0c @14723
+  SAY 0x54 @14724
+
+COPY ~iwd1_eet/items/USLTR3A.ITM~ ~override~
+  SAY 0x0c @14830
+  SAY 0x54 @14831
+
+COPY ~iwd1_eet/items/UMSTR3A.ITM~ ~override~
+  SAY 0x0c @14536
+  SAY 0x54 @14537
+
+COPY ~iwd1_eet/items/USSWD3A.ITM~ ~override~
+  SAY 0x0c @14675
+  SAY 0x54 @14679
+
+COPY ~iwd1_eet/items/USHLD3A.ITM~ ~override~
+  SAY 0x0c @14640
+  SAY 0x54 @14641
+
+COPY ~iwd1_eet/items/USPOT4A.ITM~ ~override~
+  SAY 0x0c @14743
+  SAY 0x54 @14745
+
+COPY ~iwd1_eet/items/USPOT4C.ITM~ ~override~
+  SAY 0x0c @14749
+  SAY 0x54 @14802
+
+COPY ~iwd1_eet/items/U2HAX4B.ITM~ ~override~
+  SAY 0x08 @9785
+  SAY 0x0c @14859
+  SAY 0x50 @8564
+  SAY 0x54 @14860
+
+COPY ~iwd1_eet/items/U2HAM4B.ITM~ ~override~
+  SAY 0x0c @14958
+  SAY 0x54 @14959
+  SAY 0x1ce @16399
+  WRITE_LONG 0x202 ~%IDPHASE%~
+
+COPY ~iwd1_eet/items/U2HAM5A.ITM~ ~override~
+  SAY 0x0c @14965
+  SAY 0x54 @14966
+
+COPY ~iwd1_eet/items/UMSTR5A.ITM~ ~override~
+  SAY 0x0c @14556
+  SAY 0x54 @14557
+
+COPY ~iwd1_eet/items/USSWD5B.ITM~ ~override~
+  SAY 0x0c @14690
+  SAY 0x54 @14691
+
+COPY ~iwd1_eet/items/URING5B.ITM~ ~override~
+  SAY 0x0c @14633
+  SAY 0x54 @14634
+
+COPY ~iwd1_eet/items/USPOT5A.ITM~ ~override~
+  SAY 0x0c @14803
+  SAY 0x54 @14804
+
+COPY ~iwd1_eet/items/U2HAX5A.ITM~ ~override~
+  SAY 0x08 @9785
+  SAY 0x0c @14861
+  SAY 0x50 @8564
+  SAY 0x54 @14862
+
+COPY ~iwd1_eet/items/UTSWD5A.ITM~ ~override~
+  SAY 0x0c @14879
+  SAY 0x54 @14880
+
+COPY ~iwd1_eet/items/UTSWD5B.ITM~ ~override~
+  SAY 0x0c @14881
+  SAY 0x54 @14882
+
+COPY ~iwd1_eet/items/ULSWD5B.ITM~ ~override~
+  SAY 0x0c @14514
+  SAY 0x54 @14517
+/**/
+//BLOCKEND
+
+//BLOCK EFF STRING
+COPY ~iwd1_eet/items/eff_string/CDDOVME2.EFF~ ~override~
+  SAY 0x1c @100057
+COPY ~iwd1_eet/items/eff_string/CDDOVMES.EFF~ ~override~
+  SAY 0x1c @100071
+
+COPY_EXISTING ~hitplus1.eff~ ~override/ZZ36DGDH.EFF~
+  WRITE_LONG 0x1c 1
+  WRITE_LONG 0x20 8
+  WRITE_LONG 0x60 2
+
+//BLOCKEND
+
+COPY ~iwd1_eet/items/eff_nostring~ ~override~
+
+COPY_EXISTING ~MISC17.ITM~ ~override/ZMISC17.ITM~
+              ~MISC17.ITM~ ~override/ZMISC18.ITM~
+              ~MISC17.ITM~ ~override/ZMISC19.ITM~
+              ~MISC17.ITM~ ~override/ZMISC20.ITM~
+              ~MISC17.ITM~ ~override/ZMISC16.ITM~
+  WRITE_ASCII 0x3a ~~ (8)
+
+COPY_EXISTING ~MISC01.itm~ ~override/MIWD01.itm~
+  WRITE_SHORT 0x1c 59
+
+
+
+VERBOSE
+PRINT ~Items installation complete...~
+/*
+PRINT ~~
+PRINT ~~
+PRINT ~Patching CYNICIS streffs...~
+
+<<<<<<<<XXX2
+@100024916 = ~String24916~
+@100024917 = ~String24917~
+@100024918 = ~String24918~
+@100024919 = ~String24919~
+@100024920 = ~String24920~
+@100024921 = ~String24921~
+@100024922 = ~String24922~
+@100024923 = ~String24923~
+@100024924 = ~String24924~
+@100024925 = ~String24925~
+@100024926 = ~String24926~
+@100024927 = ~String24927~
+>>>>>>>>
+
+COPY ~XXX2~ ~iwd1_eet/cynicis.tra~
+  GET_STRREF 24916 str 
+  REPLACE_TEXTUALLY ~String24916~ ~%str%~
+  GET_STRREF 24917 str 
+  REPLACE_TEXTUALLY ~String24917~ ~%str%~
+  GET_STRREF 24918 str 
+  REPLACE_TEXTUALLY ~String24918~ ~%str%~
+  GET_STRREF 24919 str 
+  REPLACE_TEXTUALLY ~String24919~ ~%str%~
+  GET_STRREF 24920 str 
+  REPLACE_TEXTUALLY ~String24920~ ~%str%~
+  GET_STRREF 24921 str 
+  REPLACE_TEXTUALLY ~String24921~ ~%str%~
+  GET_STRREF 24922 str 
+  REPLACE_TEXTUALLY ~String24922~ ~%str%~
+  GET_STRREF 24923 str 
+  REPLACE_TEXTUALLY ~String24923~ ~%str%~
+  GET_STRREF 24924 str 
+  REPLACE_TEXTUALLY ~String24924~ ~%str%~
+  GET_STRREF 24925 str 
+  REPLACE_TEXTUALLY ~String24925~ ~%str%~
+  GET_STRREF 24926 str 
+  REPLACE_TEXTUALLY ~String24926~ ~%str%~
+  GET_STRREF 24927 str 
+  REPLACE_TEXTUALLY ~String24927~ ~%str%~
+
+  STRING_SET 199976 @100024916 USING ~iwd1_eet/cynicis.tra~
+  STRING_SET 199977 @100024917 USING ~iwd1_eet/cynicis.tra~
+  STRING_SET 199978 @100024918 USING ~iwd1_eet/cynicis.tra~
+  STRING_SET 199979 @100024919 USING ~iwd1_eet/cynicis.tra~
+  STRING_SET 199980 @100024920 USING ~iwd1_eet/cynicis.tra~
+  STRING_SET 199981 @100024921 USING ~iwd1_eet/cynicis.tra~
+  STRING_SET 199982 @100024922 USING ~iwd1_eet/cynicis.tra~
+  STRING_SET 199983 @100024923 USING ~iwd1_eet/cynicis.tra~
+  STRING_SET 199984 @100024924 USING ~iwd1_eet/cynicis.tra~
+  STRING_SET 199985 @100024925 USING ~iwd1_eet/cynicis.tra~
+  STRING_SET 199986 @100024926 USING ~iwd1_eet/cynicis.tra~
+  STRING_SET 199987 @100024927 USING ~iwd1_eet/cynicis.tra~
+
+  STRING_SET 24916 @24916
+  STRING_SET 24917 @24917
+  STRING_SET 24918 @24918
+  STRING_SET 24919 @24919
+  STRING_SET 24920 @24920
+  STRING_SET 24921 @24921
+  STRING_SET 24922 @24922
+  STRING_SET 24923 @24923
+  STRING_SET 24924 @24924
+  STRING_SET 24925 @24925
+  STRING_SET 24926 @24926
+  STRING_SET 24927 @24927
+
+COPY_EXISTING ~BVICONI.DLG~ ~override~
+  READ_LONG 0x0c states_off
+  READ_LONG 0x08 states_num
+  FOR (i = 0; i < ~%states_num%~; ++i) BEGIN
+    READ_LONG ~%states_off%~ + i * 0x10 stt
+    PATCH_IF (stt = 24916) BEGIN WRITE_LONG ~%states_off%~ + i * 0x10 199976 END
+    PATCH_IF (stt = 24919) BEGIN WRITE_LONG ~%states_off%~ + i * 0x10 199979 END
+  END
+  BUT_ONLY_IF_IT_CHANGES
+
+COPY_EXISTING ~BARONP.DLG~ ~override~
+  READ_LONG 0x0c states_off
+  READ_LONG 0x08 states_num
+  FOR (i = 0; i < ~%states_num%~; ++i) BEGIN
+    READ_LONG ~%states_off%~ + i * 0x10 stt
+    PATCH_IF (stt = 24917) BEGIN WRITE_LONG ~%states_off%~ + i * 0x10 199977 END
+  END
+  
+
+COPY_EXISTING ~WAYLANE.DLG~ ~override~
+  READ_LONG 0x0c states_off
+  READ_LONG 0x08 states_num
+  READ_LONG 0x10 resp_num
+  READ_LONG 0x14 resp_off
+  FOR (i = 0; i < ~%states_num%~; ++i) BEGIN
+    READ_LONG ~%states_off%~ + i * 0x10 stt
+    PATCH_IF (stt = 24921) BEGIN WRITE_LONG ~%states_off%~ + i * 0x10 199981 END
+  END
+  FOR (i = 0; i < ~%resp_num%~; ++i) BEGIN
+    READ_LONG ~%resp_off%~ + i * 0x20 + 4 stt
+    PATCH_IF (stt = 24918) BEGIN WRITE_LONG ~%states_off%~ + i * 0x20 + 4 199978 END
+    PATCH_IF (stt = 24920) BEGIN WRITE_LONG ~%states_off%~ + i * 0x20 + 4 199980 END
+  END
+  
+
+COPY_EXISTING ~BJAHEIR.DLG~ ~override~
+  READ_LONG 0x0c states_off
+  READ_LONG 0x08 states_num
+  READ_LONG 0x10 resp_num
+  READ_LONG 0x14 resp_off
+  FOR (i = 0; i < ~%states_num%~; ++i) BEGIN
+    READ_LONG ~%states_off%~ + i * 0x10 stt
+    PATCH_IF (stt = 24923) BEGIN WRITE_LONG ~%states_off%~ + i * 0x10 199983 END
+    PATCH_IF (stt = 24926) BEGIN WRITE_LONG ~%states_off%~ + i * 0x10 199986 END
+    PATCH_IF (stt = 24927) BEGIN WRITE_LONG ~%states_off%~ + i * 0x10 199987 END
+  END
+  FOR (i = 0; i < ~%resp_num%~; ++i) BEGIN
+    READ_LONG ~%resp_off%~ + i * 0x20 + 4 stt
+    PATCH_IF (stt = 24922) BEGIN WRITE_LONG ~%states_off%~ + i * 0x20 + 4 199982 END
+    PATCH_IF (stt = 24924) BEGIN WRITE_LONG ~%states_off%~ + i * 0x20 + 4 199984 END
+    PATCH_IF (stt = 24925) BEGIN WRITE_LONG ~%states_off%~ + i * 0x20 + 4 199985 END
+  END
+
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

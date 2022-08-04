@@ -1,0 +1,13 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Myself)
+		FadeToColor([0.0],0)
+		StartMovie("SCRY")
+		FadeFromColor([0.0],0)
+		SetGlobal("ASTRO_NO_TALK","GLOBAL",0)
+		ApplySpellRES("BDCUTSPY",Myself)
+		StartDialogNoSet([PC])
+END
+

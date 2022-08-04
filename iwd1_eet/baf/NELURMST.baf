@@ -1,0 +1,34 @@
+IF
+	GlobalGT("CHALLENGE_COURAGE","GLOBAL",1)
+THEN
+	RESPONSE #100
+		//UseItem("SPAWN",Myself)
+		CreateVisualEffectObject("HEALH",Myself)
+		SmallWait(14)
+		DestroySelf()
+END
+
+IF
+	See([PC])
+THEN
+	RESPONSE #100
+		FaceObject([PC])
+		Continue()
+END
+
+IF
+	NumberOfTimesTalkedTo(0)
+	See([PC])
+	!Allegiance(Myself,ENEMY)
+	//!Dead("yself)")
+	!StateCheck(Myself,STATE_REALLY_DEAD)
+THEN
+	RESPONSE #100
+		StartCutSceneMode()
+		ClearAllActions()
+		//SetDialogueRange(300)
+		ApplySpellRES("BDCUTSPY",Myself)
+		MultiPlayerSync()
+		StartDialogNoSet([PC])
+END
+

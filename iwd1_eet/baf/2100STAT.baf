@@ -1,0 +1,10 @@
+IF
+	Global("Know_Tolben","GLOBAL",0)
+	Clicked([ANYONE])
+THEN
+	RESPONSE #100
+		SetGlobal("Know_Tolben","GLOBAL",1)
+		RemoveMapNote([2480.1800],@10896)
+		AddMapNoteColor([2480.1800],@100010,YELLOW)
+END
+

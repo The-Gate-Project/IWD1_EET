@@ -1,0 +1,83 @@
+IF
+	Global("MURDER_ALARM","GLOBAL",0)
+	!Global("SPRITE_IS_DEADEVERARD","GLOBAL",0)
+THEN
+	RESPONSE #100
+		SetGlobal("MURDER_ALARM","GLOBAL",1)
+		Continue()
+END
+
+IF
+	Global("MURDER_ALARM","GLOBAL",0)
+	!Global("SPRITE_IS_DEADPOMAB","GLOBAL",0)
+THEN
+	RESPONSE #100
+		SetGlobal("MURDER_ALARM","GLOBAL",1)
+		Continue()
+END
+
+IF
+	Global("MURDER_ALARM","GLOBAL",0)
+	!Global("AREA_HOSTILE","MYAREA",0)
+THEN
+	RESPONSE #100
+		SetGlobal("MURDER_ALARM","GLOBAL",1)
+		Continue()
+END
+
+IF
+	Global("AREA_HOSTILE","MYAREA",0)
+	!Global("MURDER_ALARM","GLOBAL",0)
+THEN
+	RESPONSE #100
+		SetGlobal("AREA_HOSTILE","MYAREA",1)
+		Continue()
+END
+
+IF
+	!Global("TOWNIE_DEAD","GLOBAL",0)
+THEN
+	RESPONSE #100
+		SetGlobal("TOWNIE_HOSTILE","MYAREA",0)
+		SetGlobal("TOWNIE_DEAD","GLOBAL",0)
+		Continue()
+END
+
+IF
+	OnCreation()
+THEN
+	RESPONSE #100
+		NoAction()
+		Continue()
+END
+
+IF
+	Global("CloseDoors","MYAREA",0)
+	TimeOfDay(NIGHT)
+THEN
+	RESPONSE #100
+		SetGlobal("CloseDoors","MYAREA",1)
+		CloseDoor("AR1000 Door1")
+		CloseDoor("AR1000 Door2")
+		CloseDoor("AR1000 Door3")
+		CloseDoor("AR1000 Door4")
+		CloseDoor("AR1000 Door5")
+		CloseDoor("AR1000 Door6")
+		CloseDoor("AR1000 Door7")
+		CloseDoor("AR1000 Door8")
+		CloseDoor("AR1000 Door9")
+		CloseDoor("AR1000 Door10")
+		CloseDoor("AR1000 Door11")
+		CloseDoor("AR1000 Door12")
+		CloseDoor("AR1000 Door13")
+		CloseDoor("AR1000 Door14")
+END
+
+IF
+	!Global("CloseDoors","MYAREA",0)
+	!TimeOfDay(NIGHT)
+THEN
+	RESPONSE #100
+		SetGlobal("CloseDoors","MYAREA",0)
+END
+

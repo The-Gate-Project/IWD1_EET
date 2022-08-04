@@ -1,0 +1,89 @@
+IF
+	Global("AR9706_DOOR1","MYAREA",0)
+THEN
+	RESPONSE #100
+		TriggerActivation("To9705",FALSE)
+		SetGlobal("AR9706_DOOR1","MYAREA",1)
+		Continue()
+END
+
+IF
+	Global("AR9706_HIDDEN_DOOR_STATE","GLOBAL",0)
+	OpenState("AR9706_HIDE_DOOR1",TRUE)
+THEN
+	RESPONSE #100
+		CloseDoor("AR9706_HIDE_DOOR1")
+		TriggerActivation("To9705",FALSE)
+		Continue()
+END
+
+IF
+	!Global("AR9706_HIDDEN_DOOR_STATE","GLOBAL",0)
+	OpenState("AR9706_HIDE_DOOR1",FALSE)
+THEN
+	RESPONSE #100
+		OpenDoor("AR9706_HIDE_DOOR1")
+		TriggerActivation("To9705",TRUE)
+		Continue()
+END
+
+IF
+	!Global("RESET_VISIBLE_RANGE","GLOBAL",0)
+THEN
+	RESPONSE #100
+		//SetVisualRange(0)
+		ActionOverride("CUTSPY",DestroySelf())
+		SetGlobal("RESET_VISIBLE_RANGE","GLOBAL",0)
+		MultiPlayerSync()
+		Continue()
+END
+
+IF
+	Global("AREA_CUTSCENE","MYAREA",2)
+THEN
+	RESPONSE #100
+		MultiPlayerSync()
+		MoveViewObject([PC],INSTANT)
+		SetGlobal("AREA_CUTSCENE","MYAREA",3)
+		Continue()
+END
+
+/*IF
+	Global("AREA_CUTSCENE","MYAREA",0)
+	CheckPartyAverageLevel(14,LESS_THAN)
+THEN
+	RESPONSE #100
+		HideCreature("HRPFND_0",TRUE)
+		HideCreature("HRPFND_1",TRUE)
+		ActionOverride("HRPFND_0",DestroySelf())
+		ActionOverride("HRPFND_1",DestroySelf())
+		Continue()
+END*/
+
+IF
+	Global("AREA_CUTSCENE","MYAREA",0)
+THEN
+	RESPONSE #100
+		StartCutSceneMode()
+		MultiPlayerSync()
+		SetGlobal("AREA_CUTSCENE","MYAREA",1)
+		StartCutScene("NEHRPCUT")
+END
+
+IF
+	!Global("RETURN_TO_LONELYWOOD","GLOBAL",0)
+THEN
+	RESPONSE #100
+		StartCutSceneMode()
+		StartCutScene("keRtrnLW")
+		SetGlobal("RETURN_TO_LONELYWOOD","GLOBAL",0)
+END
+
+IF
+	OnCreation()
+THEN
+	RESPONSE #100
+		NoAction()
+		Continue()
+END
+

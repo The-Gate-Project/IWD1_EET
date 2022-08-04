@@ -1,0 +1,14 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Myself)
+		UnhideGUI()
+		Enemy()
+		//StartRandomTimer(27,14,21)
+		SetGlobalTimerRandom("IwTimer27","LOCALS",14,21)
+		//StartRandomTimer(25,28,35)
+		SetGlobalTimerRandom("IwTimer25","LOCALS",28,35)
+		StartCutScene("ILWNGBUF")
+END
+

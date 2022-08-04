@@ -1,0 +1,21 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Player1)
+		StartCutSceneMode()
+		ClearAllActions()
+		MultiPlayerSync()
+		MoveViewPoint([1142.496],INSTANT)
+		Unlock("AR9600_Door1")
+		Wait(1)
+		OpenDoor("AR9600_Door1")
+		MultiPlayerSync()
+		SetGlobal("OPEN_ENTERANCE","MYAREA",1)
+		MultiPlayerSync()
+		Wait(1)
+		MoveViewObject(Myself,INSTANT)
+		Wait(1)
+		EndCutSceneMode()
+END
+

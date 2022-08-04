@@ -1,0 +1,7 @@
+IF
+  !See([PC]) // avoids stampede onscreen
+  Global("Liz_King_Quest","GLOBAL",1)
+THEN
+  RESPONSE #100
+    EscapeArea()
+END

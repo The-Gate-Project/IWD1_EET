@@ -1,0 +1,7 @@
+IF
+  Global("CDUBItemDrop","MYAREA",0)
+THEN
+  RESPONSE #100
+    ActionOverride("WarChest3",GiveItemCreate("beltsto",Myself,0,0,0))
+    SetGlobal("CDUBItemDrop","MYAREA",1)
+END

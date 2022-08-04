@@ -1,0 +1,15 @@
+IF
+	StateCheck(Myself,STATE_PANIC)
+THEN
+	RESPONSE #100
+		RandomWalkContinuous()
+END
+
+IF
+	Help([ANYONE])
+	!Help([PC])
+THEN
+	RESPONSE #100
+		Attack(LastAttackerOf(LastHelp(Myself)))
+END
+

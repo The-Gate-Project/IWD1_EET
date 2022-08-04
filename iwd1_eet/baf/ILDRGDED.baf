@@ -1,0 +1,31 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		//CutSceneId("GEM")
+		CutSceneId(Player1)
+		MultiPlayerSync()
+		ClearAllActions()
+		MultiPlayerSync()
+		SetGlobal("GEM_ACTIVE","GLOBAL",1)
+		CreateCreature("CUTSPY",[1000.870],0)
+		Kill("ICASARACHT")
+		//SetVisualRange(50)
+		MoveViewPoint([943.839],VERY_FAST)
+		Activate("IWD_GEM")
+		ActionOverride("IWD_GEM",SetGlobal("IwIHidden","LOCALS",0))
+		ReallyForceSpellRES("IDIN160","IWD_GEM")  // INNATE_DRAGON_GEM_EFFECTS
+		Wait(2)
+		//HideCreature(Myself,FALSE)
+		ActionOverride("IWD_GEM",ApplySpellRES("IDINVIS5",Myself))
+		ActionOverride("IWD_GEM",EquipItemEx("IDRING91",0))
+		Wait(3)
+		MoveViewObject(Myself,INSTANT)
+		//SetVisualRange(0)
+		ActionOverride("CUTSPY",DestroySelf())
+		Wait(1)
+		UnhideGUI()
+		MultiPlayerSync()
+		EndCutSceneMode()
+END
+

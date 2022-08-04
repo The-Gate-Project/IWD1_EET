@@ -1,0 +1,39 @@
+IF
+  !Global("ID1103_VISITED","GLOBAL",1)
+THEN
+  RESPONSE #100
+    SetGlobal("ID1103_VISITED","GLOBAL",1)
+    Continue()
+END
+
+IF
+	Global("POMAB_SPOKE","MYAREA",0)
+	Global("SPRITE_IS_DEADPOMABR","GLOBAL",0)
+THEN
+	RESPONSE #100
+		StartCutSceneMode()
+		SetGlobal("POMAB_SPOKE","MYAREA",1)
+		StartCutScene("EEPOMABT")
+END
+
+IF
+  !BitCheck("CREATURE_STATE_VAR","LOCALS",512)
+  !Global("SPRITE_IS_DEADPOMABR","GLOBAL",0)
+THEN
+  RESPONSE #100
+    ActionOverride("CUTSPY",DestroySelf())
+    OpenDoor("AR1103Door1")
+    OpenDoor("AR1103HideMe")
+    TriggerActivation("To1102",TRUE)
+	TriggerActivation("To1104",TRUE)
+    BitSet("CREATURE_STATE_VAR","LOCALS",512)
+END
+
+IF
+	OnCreation()
+THEN
+	RESPONSE #100
+		NoAction()
+		Continue()
+END
+

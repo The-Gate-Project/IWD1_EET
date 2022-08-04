@@ -1,0 +1,8 @@
+IF
+  OnCreation()
+  GlobalGT("SPRITE_IS_DEAD8008_SALAMANDERS","GLOBAL",11)
+  !Global("SPRITE_IS_DEADSHIKATA","GLOBAL",0)
+THEN
+  RESPONSE #100
+    DestroySelf()
+END

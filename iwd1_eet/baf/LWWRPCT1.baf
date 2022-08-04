@@ -1,0 +1,68 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId("9100_PSHAR")
+		Activate("9100_PSHAR")
+		Face(NW)
+		WaitRandom(0,2)
+		SetGlobal("IwIHidden","LOCALS",0)
+		JumpToPoint([2596.1443])
+		SetHomeLocation([2596.1443])
+		CreateVisualEffectObject("SPDIMNDR",Myself)
+		SmallWait(7)
+		ApplySpellRES("idinvis5",Myself)  // No such index
+		Wait(3)
+END
+
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId("9100_MERCWAR1")
+		Activate("9100_MERCWAR1")
+		Face(NW)
+		WaitRandom(0,2)
+		SetGlobal("IwIHidden","LOCALS",0)
+		JumpToPoint([2512.1385])
+		SetHomeLocation([2512.1385])
+		CreateVisualEffectObject("SPDIMNDR",Myself)
+		SmallWait(7)
+		ApplySpellRES("idinvis5",Myself)  // No such index
+		Wait(3)
+END
+
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId("9100_MERCWAR2")
+		Activate("9100_MERCWAR2")
+		Face(NW)
+		WaitRandom(0,2)
+		SetGlobal("IwIHidden","LOCALS",0)
+		JumpToPoint([2459.1434])
+		SetHomeLocation([2459.1434])
+		CreateVisualEffectObject("SPDIMNDR",Myself)
+		SmallWait(7)
+		ApplySpellRES("idinvis5",Myself)  // No such index
+		Wait(3)
+END
+
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId("9100_MERCTHF")
+		Activate("9100_MERCTHF")
+		Face(NW)
+		WaitRandom(0,2)
+		SetGlobal("IwIHidden","LOCALS",0)
+		JumpToPoint([2530.1519])
+		SetHomeLocation([2530.1519])
+		CreateVisualEffectObject("SPDIMNDR",Myself)
+		SmallWait(7)
+		ApplySpellRES("idinvis5",Myself)  // No such index
+		Wait(3)
+END
+

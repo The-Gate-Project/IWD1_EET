@@ -1,0 +1,9 @@
+IF
+	Global("AR9700_HANGING_MAN","GLOBAL",0)
+	Entered([PC])
+THEN
+	RESPONSE #100
+		SetGlobal("AR9700_HANGING_MAN","GLOBAL",1)
+		StartCutScene("CYHANGC")
+END
+

@@ -1,0 +1,64 @@
+IF
+	OnCreation()
+	Global("KULDAHAR_ATTACK","GLOBAL",3)
+THEN
+	RESPONSE #100
+		DestroySelf()
+END
+
+IF
+	!Global("KULDAHAR_FORCEREMOVE","GLOBAL",0)
+THEN
+	RESPONSE #100
+		DestroySelf()
+END
+
+IF
+	!IsActive(Myself)
+	!Global("KULDAHAR_ATTACK","GLOBAL",0)
+THEN
+	RESPONSE #100
+		Activate(Myself)
+		SetGlobal("IwIHidden","LOCALS",0)
+		Continue()
+END
+
+IF
+	!BitCheck("CREATURE_STATE_VAR","LOCALS",32)
+	Range([PC],35)
+THEN
+	RESPONSE #100
+		BitSet("CREATURE_STATE_VAR","LOCALS",32)
+		Continue()
+END
+
+IF
+	!IsActive(Myself)
+THEN
+	RESPONSE #100
+		NoAction()
+END
+
+IF
+	IsActive(Myself)
+	AttackedBy([ANYTHING],DEFAULT)
+THEN
+	RESPONSE #100
+		BitSet("CREATURE_STATE_VAR","LOCALS",32)
+		ChangeAIScript("KUATKREM",GENERAL)
+END
+
+IF
+	BitCheck("CREATURE_STATE_VAR","LOCALS",32)
+THEN
+	RESPONSE #100
+		ChangeAIScript("KUATKREM",GENERAL)
+END
+
+IF
+	True()
+THEN
+	RESPONSE #100
+		NoAction()
+END
+

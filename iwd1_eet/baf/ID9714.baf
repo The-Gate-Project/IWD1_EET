@@ -1,0 +1,180 @@
+IF
+	//!Sequence("9714MS3",AWAKE)
+	!Global("9714MS3_SEQ","MYAREA",1)
+	!Global("DOOR_1_UNLOCKED","MYAREA",0)
+THEN
+	RESPONSE #100
+		//PlaySequence("9714MS3",AWAKE)
+		StaticSequence("9714MS3",SEQ_AWAKE)
+		SetGlobal("9714MS3_SEQ","MYAREA",1)
+		Continue()
+END
+
+IF
+	Global("AR9714_CUTSCENE","GLOBAL",2)
+THEN
+	RESPONSE #100
+		//PlaySequence("9714MS4",ATTACK)
+		StaticSequence("9714MS4",SEQ_ATTACK)
+		SetGlobal("9714MS4_SEQ","MYAREA",0)
+		SetGlobal("AR9714_CUTSCENE","GLOBAL",0)
+		Continue()
+END
+
+IF
+	!Global("KEYPLAT_VAR","MYAREA",1)
+	OR(6)
+		NearLocation(Player1,1701,1166,12)
+		NearLocation(Player2,1701,1166,12)
+		NearLocation(Player3,1701,1166,12)
+		NearLocation(Player4,1701,1166,12)
+		NearLocation(Player5,1701,1166,12)
+		NearLocation(Player6,1701,1166,12)
+	!Exists("idcutspy")
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		CreateCreatureImpassable("idcutspy",[1701.1166],0)
+		SmallWait(5)
+		ActionOverride("idcutspy",DestroySelf())
+		SetGlobal("KEYPLAT_VAR","MYAREA",1)
+		SetInterrupt(TRUE)
+END
+
+IF
+	!Global("KEYGOLD_VAR","MYAREA",1)
+	OR(6)
+		NearLocation(Player1,1873,1021,12)
+		NearLocation(Player2,1873,1021,12)
+		NearLocation(Player3,1873,1021,12)
+		NearLocation(Player4,1873,1021,12)
+		NearLocation(Player5,1873,1021,12)
+		NearLocation(Player6,1873,1021,12)
+	!Exists("idcutspy")
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		CreateCreatureImpassable("idcutspy",[1873.1021],0)
+		SmallWait(5)
+		ActionOverride("idcutspy",DestroySelf())
+		SetGlobal("KEYGOLD_VAR","MYAREA",1)
+		SetInterrupt(TRUE)
+END
+
+IF
+	!Global("KEYELEC_VAR","MYAREA",1)
+	OR(6)
+		NearLocation(Player1,2141,1001,12)
+		NearLocation(Player2,2141,1001,12)
+		NearLocation(Player3,2141,1001,12)
+		NearLocation(Player4,2141,1001,12)
+		NearLocation(Player5,2141,1001,12)
+		NearLocation(Player6,2141,1001,12)
+	!Exists("idcutspy")
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		CreateCreatureImpassable("idcutspy",[2141.1001],0)
+		SmallWait(5)
+		ActionOverride("idcutspy",DestroySelf())
+		SetGlobal("KEYELEC_VAR","MYAREA",1)
+		SetInterrupt(TRUE)
+END
+
+IF
+	!Global("KEYSILV_VAR","MYAREA",1)
+	OR(6)
+		NearLocation(Player1,2396,1302,12)
+		NearLocation(Player2,2396,1302,12)
+		NearLocation(Player3,2396,1302,12)
+		NearLocation(Player4,2396,1302,12)
+		NearLocation(Player5,2396,1302,12)
+		NearLocation(Player6,2396,1302,12)
+	!Exists("idcutspy")
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		CreateCreatureImpassable("idcutspy",[2396.1302],0)
+		SmallWait(5)
+		ActionOverride("idcutspy",DestroySelf())
+		SetGlobal("KEYSILV_VAR","MYAREA",1)
+		SetInterrupt(TRUE)
+END
+
+IF
+	!Global("KEYCOPP_VAR","MYAREA",1)
+	OR(6)
+		NearLocation(Player1,2241,1464,12)
+		NearLocation(Player2,2241,1464,12)
+		NearLocation(Player3,2241,1464,12)
+		NearLocation(Player4,2241,1464,12)
+		NearLocation(Player5,2241,1464,12)
+		NearLocation(Player6,2241,1464,12)
+	!Exists("idcutspy")
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		CreateCreatureImpassable("idcutspy",[2241.1464],0)
+		SmallWait(5)
+		ActionOverride("idcutspy",DestroySelf())
+		SetGlobal("KEYCOPP_VAR","MYAREA",1)
+		SetInterrupt(TRUE)
+END
+
+IF
+	!Global("KEYBRON_VAR","MYAREA",1)
+	OR(6)
+		NearLocation(Player1,1948,1493,12)
+		NearLocation(Player2,1948,1493,12)
+		NearLocation(Player3,1948,1493,12)
+		NearLocation(Player4,1948,1493,12)
+		NearLocation(Player5,1948,1493,12)
+		NearLocation(Player6,1948,1493,12)
+	!Exists("idcutspy")
+THEN
+	RESPONSE #100
+		SetInterrupt(FALSE)
+		CreateCreatureImpassable("idcutspy",[1948.1493],0)
+		SmallWait(5)
+		ActionOverride("idcutspy",DestroySelf())
+		SetGlobal("KEYBRON_VAR","MYAREA",1)
+		SetInterrupt(TRUE)
+END
+
+IF
+	Exists("idcutspy")
+THEN
+	RESPONSE #100
+		ActionOverride("idcutspy",DestroySelf())
+		Continue()
+END
+
+IF
+	!Global("RETURN_TO_LONELYWOOD","GLOBAL",0)
+THEN
+	RESPONSE #100
+		StartCutSceneMode()
+		StartCutScene("keRtrnLW")
+		SetGlobal("RETURN_TO_LONELYWOOD","GLOBAL",0)
+END
+
+IF
+	OnCreation()
+THEN
+	RESPONSE #100
+		NoAction()
+		Continue()
+END
+
+/*IF
+	!Global("create_arrows","MYAREA",1)
+THEN
+	RESPONSE #100
+		ActionOverride("Treasure Sarcophogus",CreateItem("arow08",40,0,0))
+		ActionOverride("",CreateItem("arow08",40,0,0))
+		ActionOverride("",CreateItem("arow08",40,0,0))
+		ActionOverride("",CreateItem("arow08",40,0,0))
+		ActionOverride("",CreateItem("arow08",40,0,0))
+		SetGlobal("create_arrows","MYAREA",1)
+END*/
+

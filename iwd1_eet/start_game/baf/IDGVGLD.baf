@@ -1,0 +1,73 @@
+//BLOCK GIVE GOLD
+IF
+	True()
+THEN
+	RESPONSE #100
+		ClearAllActions()
+		Continue()
+END
+
+IF
+  Global("SET_PARTY_GOLD","MYAREA",0)
+  OR(3)
+    Class(Player1,MAGE)
+    Class(Player1,SORCERER)
+    Class(Player1,MONK)
+THEN
+  RESPONSE #100
+    SetGlobalRandomPlus("SET_PARTY_GOLD","MYAREA",10,4,5)
+    GiveObjectGoldGlobal("SET_PARTY_GOLD","MYAREA",Player1)
+END
+
+IF
+  Global("SET_PARTY_GOLD","MYAREA",0)
+  OR(10)
+    Class(Player1,FIGHTER)
+    Class(Player1,PALADIN)
+    Class(Player1,RANGER)
+    Class(Player1,FIGHTER_MAGE)
+    Class(Player1,FIGHTER_CLERIC)
+    Class(Player1,FIGHTER_THIEF)
+    Class(Player1,FIGHTER_MAGE_THIEF)
+    Class(Player1,FIGHTER_DRUID)
+    Class(Player1,FIGHTER_MAGE_CLERIC)
+    Class(Player1,CLERIC_RANGER)
+THEN
+  RESPONSE #100
+    SetGlobalRandom("SET_PARTY_GOLD","MYAREA",50,4)
+    GiveObjectGoldGlobal("SET_PARTY_GOLD","MYAREA",Player1)
+END
+
+IF
+  Global("SET_PARTY_GOLD","MYAREA",0)
+  OR(5)
+    Class(Player1,CLERIC)
+    Class(Player1,DRUID)
+    Class(Player1,CLERIC_MAGE)
+    Class(Player1,CLERIC_THIEF)
+    Class(Player1,SHAMAN)
+THEN
+  RESPONSE #100
+    SetGlobalRandom("SET_PARTY_GOLD","MYAREA",30,6)
+    GiveObjectGoldGlobal("SET_PARTY_GOLD","MYAREA",Player1)
+END
+
+IF
+  Global("SET_PARTY_GOLD","MYAREA",0)
+  OR(3)
+    Class(Player1,THIEF)
+    Class(Player1,BARD)
+    Class(Player1,MAGE_THIEF)
+THEN
+  RESPONSE #100
+    SetGlobalRandom("SET_PARTY_GOLD","MYAREA",20,6)
+    GiveObjectGoldGlobal("SET_PARTY_GOLD","MYAREA",Player1)
+END
+
+IF
+	GlobalGT("SET_PARTY_GOLD","MYAREA",0)
+THEN
+	RESPONSE #100
+		SetAreaScript("IDSETREP",OVERRIDE)
+END
+//BLOCKEND

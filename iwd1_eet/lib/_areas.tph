@@ -1,0 +1,1518 @@
+ADD_AREA_TYPE IWDAREA
+OUTER_SET dummy = IDS_OF_SYMBOL (AREATYPE IWDAREA)
+PRINT ~IWDAREA = %IWDAREA% (%dummy%)~
+
+COPY ~iwd1_eet/areas~ ~iwd1_eet/areas~
+  WRITE_SHORT 0x48 THIS | (1 << IWDAREA)
+
+PRINT ~Installing area files...~
+SILENT
+
+/*
+Note Color key:
+gray     - Caves & Dungeon Entrances
+violet   - Inns & Taverns
+green    - Temples
+orange   - Info points
+red      - Open space locations (i.e. city squares)
+blue     - Buildings of note
+darkblue - People
+lightgray - Stores
+
+ADD_MAP_NOTE #3782 #2142 ~red~       ~Выход из города~
+*/
+
+
+	 COPY ~iwd1_eet/areas/id1000.are~ ~override~
+	 	SAY 9852 @3089
+	 	SAY 10048 @3096
+	 	SAY 10244 @3095
+	 	SAY 10440 @3088
+	 	SAY 10636 @3087
+	 	SAY 10832 @3087
+	 	SAY 11028 @3087
+	 	SAY 11224 @3087
+	 	SAY 11420 @3087
+	 	WRITE_LONG 0x58b4 ~%ID1000%~
+	 	WRITE_LONG 0x58b8 ~%ID1000%~
+	 	ADD_MAP_NOTE #2457 #284  ~blue~      @3089
+	 	ADD_MAP_NOTE #2965 #253  ~violet~    @3096
+	 	ADD_MAP_NOTE #3414 #431  ~lightgray~ @3095
+	 	ADD_MAP_NOTE #3268 #1155 ~violet~    @3088
+	 	ADD_MAP_NOTE #443  #275  ~green~     @123
+	 	ADD_MAP_NOTE #1026 #1543 ~blue~      @100000
+	 	ADD_MAP_NOTE #2047 #1104 ~blue~      @100001
+	 	ADD_MAP_NOTE #1953 #235  ~blue~      @100002
+	 	ADD_MAP_NOTE #3720 #2140 ~red~       @100003
+	 	ADD_MAP_NOTE #1065 #2245 ~blue~      @100075
+	 
+	 COPY ~iwd1_eet/areas/id1001.are~ ~override~
+	 	SAY 1124 @2330
+	 	SAY 1320 @3013
+	 	SAY 1516 @2995
+	 	SAY 1712 @2996
+	 	SAY 1908 @3009
+	 	SAY 2104 @3011
+	 	SAY 2300 @17760
+	 	WRITE_LONG 0x1110 ~%ID1001%~
+	 	WRITE_LONG 0x1114 ~%ID1001%~
+	 
+	 COPY ~iwd1_eet/areas/id1002.are~ ~override~
+	 	SAY 852 @3234
+	 
+	 COPY ~iwd1_eet/areas/id1003.are~ ~override~
+	 
+	 COPY ~iwd1_eet/areas/id1004.are~ ~override~
+	 	SAY 852 @3022
+	 	SAY 1048 @3012
+	 	SAY 1244 @3014
+	 	WRITE_LONG 0xbe8 ~%ID1004%~
+	 	WRITE_LONG 0xbec ~%ID1004%~
+	 
+	 COPY ~iwd1_eet/areas/id1005.are~ ~override~
+	 
+	 COPY ~iwd1_eet/areas/id1006.are~ ~override~
+	 
+	 COPY ~iwd1_eet/areas/id1007.are~ ~override~
+	 	SAY 1048 @3219
+	 	SAY 1244 @3084
+	 	SAY 1440 @3213
+	 	SAY 1636 @3218
+	 	SAY 1832 @3217
+	 	SAY 2028 @3216
+	 	SAY 2224 @3084
+	 	SAY 2420 @3084
+	 	SAY 2616 @3215
+	 	SAY 2812 @3215
+	 	SAY 3008 @3215
+	 	SAY 3204 @3215
+	 	SAY 3400 @3215
+	 	SAY 3596 @3215
+	 	SAY 3792 @3215
+	 
+	 COPY ~iwd1_eet/areas/id1008.are~ ~override~
+	 
+	 COPY ~iwd1_eet/areas/id1009.are~ ~override~
+	 	SAY 852 @3214
+	 	SAY 1048 @3234
+	 	SAY 1244 @3234
+	 	SAY 1440 @3233
+	 	SAY 1636 @3233
+	 
+	 COPY ~iwd1_eet/areas/id1010.are~ ~override~
+	 	SAY 852 @3232
+	 	SAY 1048 @3231
+	 	SAY 1244 @3230
+	 	SAY 1440 @3229
+	 	SAY 1636 @3251
+	 	SAY 1832 @3234
+	 	SAY 2028 @3249
+	 
+	 COPY ~iwd1_eet/areas/id1011.are~ ~override~
+	 
+	 COPY ~iwd1_eet/areas/id1012.are~ ~override~
+	 	SAY 852 @3234
+	 	SAY 1048 @3248
+	 	SAY 1244 @3248
+	 	SAY 1440 @3248
+	 	SAY 1636 @3247
+	 
+	 COPY ~iwd1_eet/areas/id1013.are~ ~override~
+	 	SAY 580 @3244
+	 	SAY 776 @3234
+	 
+	 COPY ~iwd1_eet/areas/id1014.are~ ~override~
+	 	SAY 852 @3243
+	 	SAY 1048 @3243
+	 	SAY 1244 @3243
+	 	SAY 1440 @3243
+	 	SAY 1636 @3243
+	 	SAY 1832 @3243
+	 	SAY 2028 @3234
+	 	SAY 2224 @3234
+	 
+	 COPY ~iwd1_eet/areas/id1015.are~ ~override~
+	 	SAY 1668 @3242
+	 	SAY 1864 @3242
+	 	SAY 2060 @3241
+	 	SAY 2256 @3228
+	 
+	 COPY ~iwd1_eet/areas/id1016.are~ ~override~
+	 
+	 COPY ~iwd1_eet/areas/id1100.are~ ~override~
+	 	SAY 14920 @3096
+	 	WRITE_LONG 0x4758 ~%ID1100%~
+	 	WRITE_LONG 0x475c ~%ID1100%~
+	 	ADD_MAP_NOTE #2965 #253  ~violet~    @3096
+	 	ADD_MAP_NOTE #531  #415  ~blue~      @100004
+	 	ADD_MAP_NOTE #2600 #2110 ~orange~    @100005
+	 
+	 COPY ~iwd1_eet/areas/id1101.are~ ~override~
+	 	SAY 852 @17760
+	 
+	 COPY ~iwd1_eet/areas/id1102.are~ ~override~
+	 	SAY 776 @19317
+	 	SAY 972 @19317
+	 	SAY 1168 @19317
+	 	SAY 1364 @19317
+	 	SAY 1560 @19317
+	 	SAY 1756 @19317
+	 	SAY 1952 @3341
+	 	SAY 2148 @3341
+	 	SAY 2344 @3341
+	 	SAY 2540 @3341
+	 	SAY 2736 @3341
+	 	SAY 2932 @3341
+	 
+	 COPY ~iwd1_eet/areas/id1103.are~ ~override~
+	 
+	 COPY ~iwd1_eet/areas/id1104.are~ ~override~
+	 	SAY 776 @18876
+	 
+	 COPY ~iwd1_eet/areas/id1105.are~ ~override~
+	    READ_LONG 0xbc song_off
+        WRITE_LONG (song_off + 0x08) ~%IDBTLE4%~
+        WRITE_LONG (song_off + 0x0c) ~%IDBTLE4%~
+        WRITE_LONG (song_off + 0x10) ~%IDBTLE4%~
+	 
+	 COPY ~iwd1_eet/areas/id1106.are~ ~override~
+	 
+	 COPY ~iwd1_eet/areas/id1109.are~ ~override~
+	 	SAY 852 @3242
+	 	SAY 1048 @3242
+	 	SAY 1244 @3241
+	 	SAY 1440 @3228
+	 
+	 COPY ~iwd1_eet/areas/id1200.are~ ~override~
+	 	SAY 2060 @9237
+	 	ADD_MAP_NOTE #248  #142  ~gray~      @100006
+	 	ADD_MAP_NOTE #741  #834  ~red~       @100007
+	 
+	 COPY ~iwd1_eet/areas/id1201.are~ ~override~
+	 	SAY 13408 @9233
+	 	SAY 13604 @9233
+	 	SAY 13800 @9233
+	 
+	 COPY ~iwd1_eet/areas/id2000.are~ ~override~
+	 	SAY 14844 @2134
+	 	SAY 15040 @2134
+	 	SAY 15236 @2134
+	 	SAY 15432 @2321
+	 	SAY 15628 @2135
+	 	SAY 15824 @14853
+	 	SAY 16020 @14856
+	 	ADD_MAP_NOTE #1480 #200  ~gray~      @100006
+	 	ADD_MAP_NOTE #1690 #620  ~blue~      @100008
+	 	ADD_MAP_NOTE #3140 #400  ~blue~      @100009
+	 	ADD_MAP_NOTE #3530 #1110 ~red~       @100021
+	 
+	 COPY ~iwd1_eet/areas/id2001.are~ ~override~
+	 	WRITE_LONG 0x23a4 ~%ID1201%~
+	 	WRITE_LONG 0x23a8 ~%ID1201%~
+	 	ADD_MAP_NOTE #1160 #240  ~gray~      @100006
+	 
+	 COPY ~iwd1_eet/areas/id2002.are~ ~override~
+	 
+	 COPY ~iwd1_eet/areas/id2003.are~ ~override~
+	 
+	 COPY ~iwd1_eet/areas/id2004.are~ ~override~
+	 
+	 COPY ~iwd1_eet/areas/id2005.are~ ~override~
+	 	SAY 2408 @2132
+	 
+	 COPY ~iwd1_eet/areas/id2006.are~ ~override~
+	 
+	 COPY ~iwd1_eet/areas/id2100.are~ ~override~
+	 	SAY 12648 @14809
+	 	SAY 12844 @14858
+	 	SAY 13040 @14857
+	 	SAY 13236 @6735
+	 	SAY 13432 @23008
+	 	SAY 13628 @7597
+	 	WRITE_LONG 0x547c ~%ID2100A%~
+	 	WRITE_LONG 0x5480 ~%ID2100A%~
+	 	ADD_MAP_NOTE #1075 #1750 ~violet~    @14809
+	 	ADD_MAP_NOTE #2480 #1800 ~orange~    @10896
+	 	ADD_MAP_NOTE #1940 #1510 ~orange~    @14857
+	 	ADD_MAP_NOTE #1155 #410  ~violet~    @6735
+	 	ADD_MAP_NOTE #1590 #225  ~lightgray~ @100012
+	 	ADD_MAP_NOTE #2030 #780  ~violet~    @7597
+	 	ADD_MAP_NOTE #2735 #1175 ~blue~      @100013
+	 	ADD_MAP_NOTE #1420 #1955 ~blue~      @100014
+	 	ADD_MAP_NOTE #3200 #290  ~lightgray~ @100015
+	 	ADD_MAP_NOTE #2840 #580  ~green~     @100074
+	 	ADD_MAP_NOTE #175  #2240 ~red~       @100016
+	 	ADD_MAP_NOTE #3605 #1675 ~red~       @100017
+	 
+	 COPY ~iwd1_eet/areas/id2101.are~ ~override~
+	 
+	 COPY ~iwd1_eet/areas/id2102.are~ ~override~
+	 
+	 COPY ~iwd1_eet/areas/id2103.are~ ~override~
+	 
+	 COPY ~iwd1_eet/areas/id2104.are~ ~override~
+	 
+	 COPY ~iwd1_eet/areas/id2105.are~ ~override~
+	 
+	 COPY ~iwd1_eet/areas/id2106.are~ ~override~
+	 
+	 COPY ~iwd1_eet/areas/id2107.are~ ~override~
+	 
+	 COPY ~iwd1_eet/areas/id2108.are~ ~override~
+	 
+	 COPY ~iwd1_eet/areas/id2109.are~ ~override~
+	 
+	 COPY ~iwd1_eet/areas/id2110.are~ ~override~
+	 
+	 COPY ~iwd1_eet/areas/id2111.are~ ~override~
+	 
+	 COPY ~iwd1_eet/areas/id2112.are~ ~override~
+	 	WRITE_LONG 0x598 ~%ID2112%~
+	 	WRITE_LONG 0x59c ~%ID2112%~
+	 
+	 COPY ~iwd1_eet/areas/id2113.are~ ~override~
+	 
+	 COPY ~iwd1_eet/areas/id2114.are~ ~override~
+	 
+	 COPY ~iwd1_eet/areas/id2115.are~ ~override~
+	 
+	 COPY ~iwd1_eet/areas/id2116.are~ ~override~
+	 
+	 COPY ~iwd1_eet/areas/id3000.are~ ~override~
+	 	SAY 8632 @1155
+	 	SAY 8828 @1409
+	 	SAY 9024 @1410
+	 	SAY 9220 @1411
+	 	WRITE_LONG 0x3148 ~%ID3000%~
+	 	WRITE_LONG 0x314c ~%ID3000%~
+	 	WRITE_LONG 0x3150 ~%IDBTLE1%~
+	 	WRITE_LONG 0x3154 ~%IDBTLE1%~
+	 	WRITE_LONG 0x3158 ~%IDBTLE1%~
+	 	ADD_MAP_NOTE #1792 #818  ~orange~    @10896
+	 	ADD_MAP_NOTE #2015 #1330 ~gray~      @100018
+	 	ADD_MAP_NOTE #1210 #410  ~gray~      @100019
+	 	ADD_MAP_NOTE #1825 #215  ~gray~      @100019
+	 	ADD_MAP_NOTE #2595 #440  ~gray~      @100019
+	 	ADD_MAP_NOTE #3385 #1443 ~gray~      @100019
+	 	ADD_MAP_NOTE #3270 #353  ~gray~      @100020
+	 	ADD_MAP_NOTE #150  #270  ~red~       @100021
+	 
+	 COPY ~iwd1_eet/areas/id3001.are~ ~override~
+	 	SAY 3844 @18599
+	 	SAY 4040 @18787
+	 
+	 COPY ~iwd1_eet/areas/id3101.are~ ~override~
+	 	SAY 6564 @914
+	 	SAY 6760 @985
+	 	SAY 6956 @996
+	 	SAY 7152 @996
+	 	SAY 7348 @1014
+	 	SAY 7544 @1014
+	 	SAY 7740 @1020
+	 	SAY 7936 @1021
+	 	SAY 8132 @1022
+	 
+	 COPY ~iwd1_eet/areas/id3201.are~ ~override~
+	 	SAY 7108 @1093
+	 	SAY 7304 @1118
+	 	SAY 7500 @1118
+	 	SAY 7696 @1119
+	 	SAY 7892 @1119
+	 	SAY 8088 @1118
+	 	SAY 8284 @1118
+	 	SAY 8480 @1135
+	 	SAY 8676 @1136
+	 	SAY 8872 @1137
+	 	SAY 9068 @1139
+	 	SAY 9264 @1139
+	 	SAY 9460 @1139
+	 	SAY 9656 @1139
+	 	SAY 9852 @1139
+	 	SAY 10048 @1021
+	 	SAY 10244 @1021
+	 	SAY 10440 @1021
+	 	SAY 10636 @1021
+	 	SAY 10832 @1140
+	 
+	 COPY ~iwd1_eet/areas/id3301.are~ ~override~
+	 	SAY 7380 @985
+	 	SAY 7576 @985
+	 	SAY 7772 @1141
+	 	SAY 7968 @1141
+	 	SAY 8164 @1141
+	 	SAY 8360 @1141
+	 	SAY 8556 @1141
+	 	SAY 8752 @1141
+	 	SAY 8948 @1141
+	 	SAY 9144 @1141
+	 	SAY 9340 @1141
+	 	SAY 9536 @1141
+	 	SAY 9732 @1141
+	 	SAY 9928 @1141
+	 	SAY 10124 @913
+	 	SAY 10320 @913
+	 	SAY 10516 @913
+	 	SAY 10712 @913
+	 
+	 COPY ~iwd1_eet/areas/id3401.are~ ~override~
+	 	SAY 5748 @1141
+	 	SAY 5944 @1141
+	 	SAY 6140 @1141
+	 	SAY 6336 @1141
+	 	SAY 6532 @1141
+	 	SAY 6728 @1020
+	 	SAY 6924 @1014
+	 	SAY 7120 @1014
+	 	SAY 7316 @1154
+	 
+	 COPY ~iwd1_eet/areas/id3501.are~ ~override~
+	 	SAY 17988 @23252
+	 	SAY 18184 @23782
+	 	SAY 18380 @904
+	 	SAY 18576 @904
+	 	SAY 18772 @905
+	 	SAY 18968 @906
+	 	SAY 19164 @906
+	 	SAY 19360 @907
+	 	SAY 19556 @904
+	 	SAY 19752 @904
+	 	SAY 19948 @908
+	 	SAY 20144 @905
+	 	SAY 20340 @904
+	 	SAY 20536 @909
+	 	SAY 20732 @909
+	 	SAY 21124 @927
+	 	WRITE_LONG 0x79e0 ~%ID3501%~
+	 	WRITE_LONG 0x79e4 ~%ID3501%~
+	 	ADD_MAP_NOTE #770  #1980 ~gray~      @100017
+	 	ADD_MAP_NOTE #2190 #1330 ~gray~      @100022
+	 
+	 COPY ~iwd1_eet/areas/id3502.are~ ~override~
+	 	SAY 19152 @911
+	 	SAY 19348 @911
+	 	SAY 20524 @910
+	 	SAY 20720 @910
+	 	SAY 20916 @910
+	 	SAY 21112 @910
+	 	SAY 21308 @910
+	 	SAY 21504 @910
+	 	ADD_MAP_NOTE #965  #880  ~orange~    @100023
+	 	ADD_MAP_NOTE #1955 #1270 ~gray~      @100024
+	 	ADD_MAP_NOTE #255  #590  ~gray~      @100025
+	 
+	 COPY ~iwd1_eet/areas/id3503.are~ ~override~
+	 	SAY 14528 @912
+	 	SAY 14724 @912
+	 	SAY 14920 @912
+	 	SAY 15116 @912
+	 	SAY 15312 @912
+	 	SAY 15508 @912
+	 	SAY 15704 @912
+	 	SAY 15900 @912
+	 	SAY 16096 @912
+	 	SAY 16292 @915
+	 	SAY 16488 @909
+	 	SAY 16684 @909
+	 	SAY 16880 @916
+	 	SAY 17076 @916
+	 	SAY 17272 @917
+	 	SAY 17468 @917
+	 	SAY 17664 @913
+	 	SAY 17860 @913
+	 	SAY 18056 @913
+	 	SAY 18252 @913
+	 	SAY 18448 @913
+	 	SAY 18644 @913
+	 	SAY 18840 @913
+	 	SAY 19036 @913
+	 	SAY 19232 @913
+	 	SAY 19428 @913
+	 	SAY 19624 @913
+	 	SAY 19820 @913
+	 	SAY 20016 @913
+	 	SAY 20212 @913
+	 	SAY 20408 @913
+	 	SAY 20604 @913
+	 	SAY 20800 @920
+	 	SAY 20996 @921
+	 	WRITE_LONG 0x78a4 ~%ID3503%~
+	 	WRITE_LONG 0x78a8 ~%ID3503%~
+	 	ADD_MAP_NOTE #2470 #1250 ~gray~      @100022
+	 	ADD_MAP_NOTE #350  #520  ~orange~    @100020
+	 
+	 COPY ~iwd1_eet/areas/id3600.are~ ~override~
+	 	SAY 852 @3260
+	 	SAY 1048 @3260
+	 	SAY 1244 @3260
+	 	SAY 1440 @3260
+	 	WRITE_LONG 0x0e0c ~%ID3600%~
+	 	WRITE_LONG 0x0e10 ~%ID3600%~
+	 	ADD_MAP_NOTE #510  #855  ~red~       @100021
+	 	ADD_MAP_NOTE #785  #255  ~gray~      @100026
+	 
+	 COPY ~iwd1_eet/areas/id3601.are~ ~override~
+	 	SAY 10296 @6358
+	 	WRITE_LONG 0x479c ~%ID3601%~
+	 	WRITE_LONG 0x47a0 ~%ID3601%~
+	 	ADD_MAP_NOTE #1300 #935  ~orange~     @10896
+	 	ADD_MAP_NOTE #1720 #1730 ~gray~       @100027
+	 	ADD_MAP_NOTE #835  #430  ~gray~       @100022
+	 	ADD_MAP_NOTE #450  #850  ~orange~     @100028
+	 
+	 COPY ~iwd1_eet/areas/id3602.are~ ~override~
+	 	SAY 7848 @6359
+	 	SAY 8044 @6360
+	 	SAY 8240 @9032
+	 	ADD_MAP_NOTE #230  #1815 ~gray~       @100024
+	 	ADD_MAP_NOTE #3630 #120  ~gray~       @100025
+	 
+	 COPY ~iwd1_eet/areas/id3603.are~ ~override~
+	 	SAY 3224 @9028
+	 	WRITE_LONG 0x1378 ~%ID3603%~
+	 	WRITE_LONG 0x137c ~%ID3603%~
+	 	ADD_MAP_NOTE #610  #840  ~gray~       @100022
+	 	ADD_MAP_NOTE #620  #280  ~orange~     @100029
+	 
+	 COPY ~iwd1_eet/areas/id4000.are~ ~override~
+	 	SAY 1940 @2131
+	 	SAY 2136 @2130
+	 	ADD_MAP_NOTE #510  #230  ~gray~       @100030
+	 
+	 COPY ~iwd1_eet/areas/id4001.are~ ~override~
+	 	WRITE_LONG 0x9040 ~%ID4001%~
+	 	WRITE_LONG 0x9044 ~%ID4001%~
+	 	ADD_MAP_NOTE #2815 #610  ~orange~     @100031
+	 	ADD_MAP_NOTE #330  #1210 ~gray~       @100027
+	 	ADD_MAP_NOTE #3450 #2260 ~gray~       @100022
+	 
+	 COPY ~iwd1_eet/areas/id4002.are~ ~override~
+	 	ADD_MAP_NOTE #2310 #240  ~gray~       @100024
+	 	ADD_MAP_NOTE #2950 #2080 ~gray~       @100025
+	 	ADD_MAP_NOTE #650  #1950 ~green~      @100076
+	 
+	 COPY ~iwd1_eet/areas/id4003.are~ ~override~
+	 	SAY 28248 @2130
+	 	SAY 28444 @2130
+	 	SAY 28640 @2130
+	 	SAY 28836 @2130
+	 	SAY 29032 @2130
+	 	ADD_MAP_NOTE #290  #300  ~gray~       @100022
+	 	ADD_MAP_NOTE #3375 #415  ~gray~       @100032
+	 	ADD_MAP_NOTE #3220 #2195 ~orange~     @100070
+	 
+	 COPY ~iwd1_eet/areas/id4004.are~ ~override~
+	 	SAY 17640 @2129
+	 	SAY 17836 @2129
+	 	SAY 18032 @2136
+	 	SAY 18228 @2129
+	 	SAY 18424 @2129
+	 	SAY 18620 @2129
+	 	SAY 18816 @2129
+	 	SAY 19012 @2129
+	 	SAY 19208 @2129
+	 	SAY 19404 @2129
+	 	SAY 19796 @19321
+	 	SAY 19992 @19321
+	 	SAY 20188 @19321
+	 	SAY 20384 @19321
+	 	ADD_MAP_NOTE #175  #2000 ~gray~       @100025
+	 	ADD_MAP_NOTE #3415 #2500 ~gray~       @100033
+	 
+	 COPY ~iwd1_eet/areas/id4005.are~ ~override~
+	 	SAY 29684 @2133
+	 	SAY 29880 @2123
+	 	SAY 30076 @2133
+	 	SAY 30272 @2123
+	 	SAY 30468 @2127
+	 	SAY 30664 @2127
+	 	SAY 30860 @2127
+	 	SAY 31056 @2127
+	 	SAY 31252 @2126
+	 	SAY 31448 @2126
+	 	SAY 35368 @19322
+	 	SAY 35564 @19322
+	 	SAY 35760 @19322
+	 	SAY 35956 @19322
+	 	SAY 36152 @19322
+	 	SAY 36348 @19322
+	 	SAY 36544 @19322
+	 	SAY 36740 @19322
+	 	SAY 36936 @19322
+	 	SAY 37132 @19322
+	 	SAY 37328 @19322
+	 	SAY 37524 @19322
+	 	SAY 37720 @19322
+	 	SAY 37916 @19322
+	 	SAY 38112 @19322
+	 	SAY 38308 @19322
+	 	WRITE_LONG 0xf9b8 ~%ID4005%~
+	 	WRITE_LONG 0xf9bc ~%ID4005%~
+	 	WRITE_LONG 0xf9c0 ~%IDBTLE2%~
+	 	WRITE_LONG 0xf9c4 ~%IDBTLE2%~
+	 	WRITE_LONG 0xf9c8 ~%IDBTLE2%~
+	 	ADD_MAP_NOTE #3330 #530  ~darkblue~   @100034
+	 	ADD_MAP_NOTE #365  #410  ~orange~     @100035
+	 	ADD_MAP_NOTE #2790 #2350 ~orange~     @100036
+	 	ADD_MAP_NOTE #900  #2475 ~orange~     @100037
+	 	ADD_MAP_NOTE #1310 #1070 ~orange~     @100038
+	 	ADD_MAP_NOTE #3070 #1470 ~orange~     @100039
+	 	ADD_MAP_NOTE #215  #2475 ~gray~       @100032
+	 	ADD_MAP_NOTE #1905 #400  ~orange~     @100077
+	 
+	 COPY ~iwd1_eet/areas/id5000.are~ ~override~
+	 	WRITE_LONG 0x07f8 ~%ID5000%~
+	 	WRITE_LONG 0x07fc ~%ID5000%~
+	 	ADD_MAP_NOTE #300  #245  ~gray~       @100040
+	 
+	 COPY ~iwd1_eet/areas/id5001.are~ ~override~
+	 	SAY 21568 @8713
+	 	WRITE_LONG 0x7334 ~%ID5001%~
+	 	WRITE_LONG 0x7338 ~%ID5001%~
+	 	ADD_MAP_NOTE #1250 #1345 ~gray~       @100027
+	 	ADD_MAP_NOTE #1220 #490  ~gray~       @100022
+	 	ADD_MAP_NOTE #1710 #1320 ~gray~       @100022
+	 	ADD_MAP_NOTE #1610 #2035 ~gray~       @100022
+	 
+	 COPY ~iwd1_eet/areas/id5002.are~ ~override~
+	 	ADD_MAP_NOTE #1005 #580  ~gray~       @100024
+	 	ADD_MAP_NOTE #1870 #1250 ~gray~       @100024
+	 	ADD_MAP_NOTE #1650 #2110 ~gray~       @100024
+	 	ADD_MAP_NOTE #525  #810  ~gray~       @100025
+	 	ADD_MAP_NOTE #1410 #1290 ~gray~       @100025
+	 	ADD_MAP_NOTE #2010 #1465 ~gray~       @100025
+	 
+	 COPY ~iwd1_eet/areas/id5003.are~ ~override~
+	 	SAY 17336 @17739
+	 	ADD_MAP_NOTE #820  #550  ~gray~       @100022
+	 	ADD_MAP_NOTE #1250 #1270 ~gray~       @100022
+	 	ADD_MAP_NOTE #2020 #1415 ~gray~       @100022
+	 	ADD_MAP_NOTE #1290 #1570 ~gray~       @100032
+	 
+	 COPY ~iwd1_eet/areas/id5004.are~ ~override~
+	 	SAY 6532 @8802
+	 	SAY 6728 @8803
+	 	SAY 6924 @8803
+	 	SAY 7120 @8803
+	 	SAY 7316 @8803
+	 	SAY 7512 @8808
+	 	SAY 7708 @8808
+	 	SAY 7904 @8808
+	 	SAY 8100 @8808
+	 	SAY 8296 @8808
+	 	SAY 8492 @8808
+	 	SAY 8688 @8833
+	 	SAY 8884 @8833
+	 	SAY 9080 @8833
+	 	SAY 9276 @8833
+	 	SAY 9472 @8833
+	 	SAY 9668 @8833
+	 	SAY 9864 @8833
+	 	SAY 10060 @19549
+	 	ADD_MAP_NOTE #600  #840  ~darkblue~   @2895
+	 	ADD_MAP_NOTE #2300 #840  ~darkblue~   @15453
+	 	ADD_MAP_NOTE #2160 #330  ~gray~       @100041
+	 	ADD_MAP_NOTE #2820 #1150 ~gray~       @100042
+	 	ADD_MAP_NOTE #1515 #2110 ~gray~       @100043
+	 	ADD_MAP_NOTE #220  #1175 ~gray~       @100044
+	 	ADD_MAP_NOTE #1190 #1340 ~gray~       @100025
+	 
+	 COPY ~iwd1_eet/areas/id5101.are~ ~override~
+	 	SAY 852 @14855
+	 	SAY 1048 @18565
+	 	SAY 1244 @18565
+	 	SAY 1440 @18565
+	 	WRITE_LONG 0x0bc8 ~%ID5101%~
+	 	WRITE_LONG 0x0bcc ~%ID5101%~
+	 
+	 COPY ~iwd1_eet/areas/id5102.are~ ~override~
+	 
+	 COPY ~iwd1_eet/areas/id5103.are~ ~override~
+	 
+	 COPY ~iwd1_eet/areas/id5104.are~ ~override~
+	 
+	 COPY ~iwd1_eet/areas/id5201.are~ ~override~
+	 	SAY 1048 @9029
+	 	SAY 1244 @19557
+	 	SAY 1440 @19557
+	 	SAY 1636 @19557
+	 	SAY 1832 @19557
+	 	SAY 2028 @19557
+	 
+	 COPY ~iwd1_eet/areas/id5202.are~ ~override~
+	 	SAY 4040 @9030
+	 
+	 COPY ~iwd1_eet/areas/id5203.are~ ~override~
+	 
+	 COPY ~iwd1_eet/areas/id5204.are~ ~override~
+	 	SAY 2212 @9031
+	 	SAY 2408 @9031
+	 
+	 COPY ~iwd1_eet/areas/id5301.are~ ~override~
+	 
+	 COPY ~iwd1_eet/areas/id5302.are~ ~override~
+	 	SAY 5128 @9212
+	 	SAY 5324 @9213
+	 
+	 COPY ~iwd1_eet/areas/id5303.are~ ~override~
+	 
+	 COPY ~iwd1_eet/areas/id5304.are~ ~override~
+	 	SAY 3844 @19326
+	 	SAY 4040 @19326
+	 	SAY 4236 @19327
+	 
+	 COPY ~iwd1_eet/areas/id5401.are~ ~override~
+	 
+	 COPY ~iwd1_eet/areas/id5402.are~ ~override~
+	 	SAY 4584 @17718
+	 
+	 COPY ~iwd1_eet/areas/id5403.are~ ~override~
+	 
+	 COPY ~iwd1_eet/areas/id5404.are~ ~override~
+	 
+	 COPY ~iwd1_eet/areas/id5502.are~ ~override~
+	 
+	 COPY ~iwd1_eet/areas/id6000.are~ ~override~
+	 	WRITE_LONG 0x0d2c ~%ID6000%~
+	 	WRITE_LONG 0x0d30 ~%ID6000%~
+	 	ADD_MAP_NOTE #455  #145  ~gray~       @100045
+	 
+	 COPY ~iwd1_eet/areas/id6001.are~ ~override~
+	 	SAY 384 @2322
+	 	SAY 580 @2323
+	 	SAY 776 @2326
+	 	WRITE_LONG 0x0eac ~%ID6001%~
+	 	WRITE_LONG 0x0eb0 ~%ID6001%~
+	 	ADD_MAP_NOTE #530  #190  ~gray~       @100027
+	 	ADD_MAP_NOTE #1555 #470  ~gray~       @100006
+	 	ADD_MAP_NOTE #2085 #200  ~gray~       @100006
+	 	ADD_MAP_NOTE #3035 #450  ~orange~     @100046
+	 	ADD_MAP_NOTE #2160 #1890 ~gray~       @100047
+	 	ADD_MAP_NOTE #3475 #1715 ~gray~       @100048
+	 	ADD_MAP_NOTE #1685 #1320 ~orange~     @100078
+	 
+	 COPY ~iwd1_eet/areas/id6002.are~ ~override~
+	 	SAY 20240 @2327
+	 	WRITE_LONG 0x6634 ~%ID6002%~
+	 	WRITE_LONG 0x6638 ~%ID6002%~
+	 	ADD_MAP_NOTE #2550 #2320 ~gray~       @100027
+	 	ADD_MAP_NOTE #590  #760  ~gray~       @100049
+	 	ADD_MAP_NOTE #1450 #670  ~orange~     @100079
+	 
+	 COPY ~iwd1_eet/areas/id6003.are~ ~override~
+	 	WRITE_LONG 0x1ec4 ~%ID6003%~
+	 	WRITE_LONG 0x1ec8 ~%ID6003%~
+	 	ADD_MAP_NOTE #2700 #700  ~gray~       @100048
+	 	ADD_MAP_NOTE #2260 #2005 ~orange~     @100080
+	 
+	 COPY ~iwd1_eet/areas/id6004.are~ ~override~
+	 	SAY 656 @2329
+	 	ADD_MAP_NOTE #970  #920  ~gray~       @100081
+	 	ADD_MAP_NOTE #1150 #586  ~gray~       @100082
+	 	ADD_MAP_NOTE #1505 #535  ~gray~       @100082
+	 	ADD_MAP_NOTE #1790 #664  ~gray~       @100082
+	 
+	 COPY ~iwd1_eet/areas/id6005.are~ ~override~
+	 	SAY 9132 @3018
+	 	SAY 10112 @3018
+	 	SAY 10308 @3018
+	 	SAY 10504 @3018
+	 	SAY 10700 @3019
+	 	SAY 10896 @3019
+	 	SAY 11288 @3019
+	 	SAY 11484 @3075
+	 	WRITE_LONG 0x5d34 ~%ID6005%~
+	 	WRITE_LONG 0x5d38 ~%ID6005%~
+	 	ADD_MAP_NOTE #1050 #1750 ~gray~       @100083
+	 	ADD_MAP_NOTE #1700 #370  ~gray~       @100084
+	 	LPF fj_are_structure INT_VAR fj_con_itm_idx=14 fj_charge0=40 STR_VAR fj_name=arow08 fj_structure_type=itm END
+	 	LPF fj_are_structure INT_VAR fj_con_itm_idx=6  fj_charge0=40 STR_VAR fj_name=arow08 fj_structure_type=itm END
+	 	LPF fj_are_structure INT_VAR fj_con_itm_idx=21 fj_charge0=40 STR_VAR fj_name=arow08 fj_structure_type=itm END
+	 
+	 COPY ~iwd1_eet/areas/id6006.are~ ~override~
+	 	SAY 2680 @8856
+	 	SAY 2876 @8856
+	 	SAY 3072 @8898
+	 	SAY 3268 @8968
+	 	SAY 3464 @8979
+	 	SAY 3660 @8988
+	 	SAY 3856 @8996
+	 	SAY 4052 @9006
+	 	ADD_MAP_NOTE #575  #1010 ~orange~     @100085
+	 	ADD_MAP_NOTE #1923 #880  ~orange~     @100086
+	 	ADD_MAP_NOTE #1473 #514  ~orange~     @100087
+	 	ADD_MAP_NOTE #510  #240  ~gray~       @100053
+	 	ADD_MAP_NOTE #2100 #1650 ~gray~       @100082
+	 
+	 COPY ~iwd1_eet/areas/id6007.are~ ~override~
+	 	SAY 1864 @3076
+	 	SAY 2060 @3076
+	 	SAY 2256 @3076
+	 	SAY 2452 @3076
+	 	SAY 2648 @3076
+	 	SAY 2844 @3076
+	 	SAY 3040 @3076
+	 	SAY 3236 @3076
+	 	SAY 3432 @3076
+	 	SAY 3628 @3076
+	 	SAY 3824 @3076
+	 	SAY 4020 @3076
+	 
+	 COPY ~iwd1_eet/areas/id6008.are~ ~override~
+	 
+	 COPY ~iwd1_eet/areas/id6009.are~ ~override~
+	 
+	 COPY ~iwd1_eet/areas/id6010.are~ ~override~
+	 
+	 COPY ~iwd1_eet/areas/id6011.are~ ~override~
+	 	SAY 1244 @3083
+	 
+	 COPY ~iwd1_eet/areas/id6013.are~ ~override~
+	 	ADD_MAP_NOTE #970  #920  ~gray~       @100081
+	 	ADD_MAP_NOTE #1150 #586  ~gray~       @100082
+	 	ADD_MAP_NOTE #1505 #535  ~gray~       @100082
+	 	ADD_MAP_NOTE #1790 #664  ~gray~       @100082
+	 
+	 COPY ~iwd1_eet/areas/id6014.are~ ~override~
+	 
+	 COPY ~iwd1_eet/areas/id7000.are~ ~override~
+	 	WRITE_LONG 0x0764 ~%ID7000%~
+	 	WRITE_LONG 0x0768 ~%ID7000%~
+	 	ADD_MAP_NOTE #1065 #165  ~red~        @100051
+	 	ADD_MAP_NOTE #1090 #675  ~gray~       @100052
+	 	ADD_MAP_NOTE #165  #715  ~gray~       @100053
+	 	ADD_MAP_NOTE #590  #150  ~gray~       @100088
+	 
+	 COPY ~iwd1_eet/areas/id7001.are~ ~override~
+	 	SAY 23624 @6364
+	 	SAY 23820 @6364
+	 	SAY 24016 @6364
+	 	SAY 24212 @6364
+	 	SAY 24408 @6364
+	 	SAY 24604 @6364
+	 	SAY 24800 @6364
+	 	SAY 24996 @6364
+	 	SAY 25192 @6366
+	 	SAY 25388 @6366
+	 	SAY 25584 @6366
+	 	SAY 25780 @6366
+	 	SAY 25976 @6366
+	 	SAY 26172 @6367
+	 	SAY 26368 @7604
+	 	SAY 26564 @7656
+	 	SAY 26760 @8566
+	 	SAY 26956 @8567
+	 	SAY 27152 @8610
+	 	SAY 27348 @16048
+	 	WRITE_LONG 0x7c98 ~%ID7001%~
+	 	WRITE_LONG 0x7c9c ~%ID7001%~
+	 	ADD_MAP_NOTE #700  #580  ~orange~     @100089
+	 	ADD_MAP_NOTE #2330 #2347 ~gray~       @100088
+	 	ADD_MAP_NOTE #3235 #2503 ~gray~       @100053
+	 
+	 COPY ~iwd1_eet/areas/id7002.are~ ~override~
+	 	SAY 3736 @7797
+	 	SAY 3932 @7811
+	 	SAY 4128 @7812
+	 	SAY 4324 @7812
+	 	SAY 4520 @7812
+	 
+	 COPY ~iwd1_eet/areas/id7003.are~ ~override~
+	 	SAY 4236 @6362
+	 	SAY 4432 @6362
+	 	SAY 4628 @6362
+	 	SAY 4824 @6362
+	 	SAY 5020 @7658
+	 	SAY 5216 @7660
+	 	SAY 5412 @7661
+	 	SAY 5608 @7704
+	 	SAY 5804 @7724
+	 	SAY 6000 @7740
+	 	SAY 6196 @6362
+	 	SAY 6392 @6362
+	 
+	 COPY ~iwd1_eet/areas/id7004.are~ ~override~
+	 	SAY 23668 @8834
+	 	SAY 23864 @8834
+	 	SAY 24060 @8835
+	 	SAY 24256 @8834
+	 	SAY 24452 @8836
+	 	SAY 24648 @8837
+	 	SAY 24844 @8837
+	 	SAY 25040 @8837
+	 	SAY 25236 @8838
+	 	SAY 25432 @8839
+	 	SAY 25628 @8840
+	 	SAY 25824 @8845
+	 	WRITE_LONG 0x8894 ~%ID7004%~
+	 	WRITE_LONG 0x8898 ~%ID7004%~
+	 	REPLACE_TEXTUALLY ~BLRDECK~ ~BLUN04Q~
+	 	ADD_MAP_NOTE #1180 #2130 ~orange~     @100090
+	 	ADD_MAP_NOTE #1550 #1460 ~orange~     @100091
+	 	ADD_MAP_NOTE #3210 #1255 ~orange~     @100092
+	 	ADD_MAP_NOTE #1860 #635  ~blue~       @100093
+	 	ADD_MAP_NOTE #2200 #585  ~blue~       @100093
+	 	ADD_MAP_NOTE #3471 #1995 ~blue~       @100093
+	 	ADD_MAP_NOTE #3500 #1716 ~blue~       @100093
+	 	ADD_MAP_NOTE #3751 #2375 ~gray~       @100053
+	 
+	 COPY ~iwd1_eet/areas/id7005.are~ ~override~
+	 	ADD_MAP_NOTE #245  #375  ~gray~       @100045
+	 	ADD_MAP_NOTE #1935 #1300 ~blue~       @100054
+	 	ADD_MAP_NOTE #3610 #205  ~gray~       @100027
+	 	ADD_MAP_NOTE #745  #2100 ~orange~     @100055
+	 	ADD_MAP_NOTE #2200 #2148 ~gray~       @100088
+		ADD_MAP_NOTE #400  #2156 ~gray~       @100006
+	 
+	 COPY ~iwd1_eet/areas/id8001.are~ ~override~
+	 	SAY 22396 @19259
+	 	SAY 22592 @19259
+	 	SAY 22788 @18872
+	 	SAY 22984 @18872
+	 	SAY 23180 @18872
+	 	SAY 23376 @18872
+	 	SAY 23572 @18873
+	 	WRITE_LONG 0x796c ~%ID8001%~
+	 	WRITE_LONG 0x7970 ~%ID8001%~
+	 	ADD_MAP_NOTE #3175 #580  ~blue~       @100056
+	 	ADD_MAP_NOTE #2875 #1835 ~blue~       @100062
+	 	ADD_MAP_NOTE #940  #1445 ~red~        @100027
+	 	ADD_MAP_NOTE #822  #705  ~gray~       @100094
+	 	ADD_MAP_NOTE #1545 #280  ~red~        @100095
+	 	ADD_MAP_NOTE #3390 #2400 ~gray~       @100096
+	 
+	 COPY ~iwd1_eet/areas/id8002.are~ ~override~
+	 
+	 COPY ~iwd1_eet/areas/id8003.are~ ~override~
+	 	ADD_MAP_NOTE #495  #955  ~gray~       @100094
+	 
+	 COPY ~iwd1_eet/areas/id8004.are~ ~override~
+	 	SAY 6760 @19257
+	 	SAY 6956 @19257
+	 	SAY 7152 @19257
+	 	SAY 7348 @19257
+	 	SAY 7544 @19258
+	 	SAY 7936 @19258
+	 	SAY 8328 @19258
+	 	SAY 8524 @19258
+	 	SAY 8720 @19258
+	 	SAY 8916 @19260
+	 	SAY 9112 @19261
+	 	WRITE_LONG 0x2c0c ~%ID8004%~
+	 	WRITE_LONG 0x2c10 ~%ID8004%~
+	 	ADD_MAP_NOTE #400  #1775 ~gray~       @100027
+	 	ADD_MAP_NOTE #957  #860  ~violet~     @100097
+	 	ADD_MAP_NOTE #1497 #510  ~green~      @100098
+	 	ADD_MAP_NOTE #1563 #1284 ~lightgray~  @100099
+	 
+	 COPY ~iwd1_eet/areas/id8005.are~ ~override~
+	 	SAY 7348 @19262
+	 	SAY 7544 @19262
+	 	SAY 7740 @19262
+	 	SAY 7936 @19262
+	 	SAY 8132 @19262
+	 	SAY 8328 @19262
+	 	SAY 8524 @19262
+	 	SAY 8720 @19262
+	 	WRITE_LONG 0x2d38 ~%ID8005%~
+	 	WRITE_LONG 0x2d3c ~%ID8005%~
+	 
+	 COPY ~iwd1_eet/areas/id8006.are~ ~override~
+	 	SAY 4312 @19263
+	 	SAY 4508 @19263
+	 	SAY 4704 @19263
+	 	SAY 4900 @19265
+	 	SAY 5096 @19265
+	 	SAY 5292 @19264
+	 	SAY 5488 @19266
+	 	SAY 5684 @19287
+	 	SAY 5880 @19288
+	 	SAY 6076 @18532
+	 	SAY 6272 @18532
+	 	SAY 6468 @18532
+	 	SAY 6664 @18532
+	 	SAY 6860 @18532
+	 	SAY 7056 @18532
+	 	SAY 7252 @18532
+	 	SAY 7448 @18532
+	 	SAY 7644 @18532
+	 	SAY 7840 @18532
+	 	SAY 8036 @18532
+	 	SAY 8232 @18532
+	 	SAY 8428 @18532
+	 	SAY 8624 @18532
+	 	SAY 8820 @18532
+	 	SAY 9016 @18532
+	 	SAY 9212 @18532
+	 
+	 COPY ~iwd1_eet/areas/id8007.are~ ~override~
+	 	SAY 8196 @19289
+	 	SAY 8392 @19290
+	 	SAY 8588 @19291
+	 	SAY 8784 @19291
+	 	SAY 8980 @19305
+	 	SAY 9176 @19306
+	 	SAY 9372 @19307
+	 	SAY 9568 @19308
+	 	SAY 9764 @19308
+	 	SAY 9960 @19308
+	 	SAY 10156 @19308
+	 	SAY 10352 @18532
+	 	SAY 10548 @18532
+	 	SAY 10744 @18532
+	 	SAY 10940 @18532
+	 	SAY 11136 @18532
+	 	SAY 11332 @18532
+	 	SAY 11528 @18532
+	 	SAY 11724 @18532
+	 	SAY 11920 @18532
+	 	SAY 12116 @18532
+	 	SAY 12312 @18532
+	 	SAY 12508 @18532
+	 	SAY 12704 @18532
+	 	SAY 13096 @18532
+	 	SAY 13292 @18532
+	 	SAY 13488 @18532
+	 
+	 COPY ~iwd1_eet/areas/id8008.are~ ~override~
+	 	SAY 8784 @19310
+	 	SAY 8980 @19310
+	 	SAY 9176 @19309
+	 	SAY 9372 @18873
+	 	SAY 9568 @18873
+	 	SAY 9764 @18873
+	 
+	 COPY ~iwd1_eet/areas/id8009.are~ ~override~
+	 	SAY 11308 @18395
+	 	SAY 11504 @18535
+	 	SAY 11700 @18549
+	 	SAY 11896 @18536
+	 	SAY 12092 @18537
+	 	SAY 12288 @18538
+	 	SAY 12484 @18549
+	 	SAY 12680 @18545
+	 	SAY 12876 @18546
+	 	SAY 13072 @18547
+	 	SAY 13268 @18548
+	 	SAY 13464 @18549
+	 	SAY 13660 @18551
+	 	SAY 13856 @18551
+	 	SAY 14052 @18551
+	 	SAY 14248 @18551
+	 	WRITE_LONG 0x55d8 ~%ID8009%~
+	 	WRITE_LONG 0x55dc ~%ID8009%~
+	 	ADD_MAP_NOTE #690  #2712 ~gray~       @100027
+	 	ADD_MAP_NOTE #2013 #2739 ~gray~       @100027
+	 	ADD_MAP_NOTE #1929 #993  ~blue~       @100100
+	 
+	 COPY ~iwd1_eet/areas/id8010.are~ ~override~
+	 	SAY 10916 @18395
+	 	SAY 11112 @18395
+	 	SAY 11308 @18395
+	 	SAY 11504 @18553
+	 	SAY 11700 @18554
+	 	SAY 11896 @18555
+	 	SAY 12092 @18556
+	 	SAY 12288 @18558
+	 	SAY 12484 @18552
+	 	SAY 12680 @18552
+	 	SAY 12876 @18552
+	 	SAY 13072 @18552
+	 	SAY 13268 @18552
+	 	SAY 13464 @18552
+	 	SAY 13660 @18552
+	 	SAY 13856 @18552
+	 	SAY 14052 @18552
+	 	SAY 14248 @18552
+	 	SAY 14444 @18552
+	 	SAY 14640 @18552
+	 	SAY 14836 @18552
+	 	SAY 15032 @18552
+	 	SAY 15228 @18552
+	 	SAY 15424 @18552
+	 	SAY 15620 @18552
+	 	SAY 15816 @18552
+	 	SAY 16012 @18552
+	 	SAY 16208 @18552
+	 	SAY 16404 @18552
+	 	SAY 16600 @18552
+	 	SAY 16796 @18552
+	 
+	 COPY ~iwd1_eet/areas/id8011.are~ ~override~
+	 	SAY 8860 @19311
+	 	SAY 9056 @19311
+	 	SAY 9252 @19311
+	 	SAY 9448 @19311
+	 	SAY 9644 @19312
+	 	SAY 9840 @19312
+	 	SAY 10036 @19313
+	 	SAY 10232 @19313
+	 	SAY 10428 @19313
+	 	SAY 10624 @19313
+	 	SAY 10820 @19314
+	 	SAY 11016 @19314
+	 	SAY 11212 @18533
+	 	SAY 11408 @18533
+	 	SAY 11604 @18533
+	 	SAY 11800 @18533
+	 	SAY 11996 @18533
+	 	SAY 12192 @19315
+	 	SAY 12388 @18873
+	 	SAY 12584 @18873
+	 
+	 COPY ~iwd1_eet/areas/id8012.are~ ~override~
+	 	SAY 12124 @18534
+	 	SAY 12320 @18534
+	 	SAY 12516 @18534
+	 	SAY 12712 @18534
+	 	SAY 12908 @18534
+	 	SAY 13104 @18534
+	 	SAY 13300 @18534
+	 	SAY 13496 @18534
+	 	SAY 13692 @18534
+	 	SAY 13888 @18534
+	 	SAY 14084 @18534
+	 	SAY 14280 @18534
+	 	SAY 14476 @18534
+	 	SAY 14672 @18534
+	 	SAY 14868 @18534
+	 	WRITE_LONG 0x4b90 ~%ID8012%~
+	 	WRITE_LONG 0x4b94 ~%ID8012%~
+	 
+	 COPY ~iwd1_eet/areas/id8013.are~ ~override~
+	 	SAY 3572 @19316
+	 	SAY 3768 @19316
+	 	SAY 3964 @19316
+	 	WRITE_LONG 0x1928 ~%IDBTLE3%~
+	 	WRITE_LONG 0x192c ~%IDBTLE3%~
+	 	WRITE_LONG 0x1930 ~%IDBTLE3%~
+	 
+	 COPY ~iwd1_eet/areas/id8014.are~ ~override~
+	 	SAY 580 @19317
+	 	SAY 776 @19317
+	 	SAY 972 @19317
+	 
+	 COPY ~iwd1_eet/areas/id8015.are~ ~override~
+	 	SAY 852 @19318
+	 	SAY 1048 @19319
+	 
+	 COPY ~iwd1_eet/areas/id8016.are~ ~override~
+	 	SAY 580 @19320
+	 	SAY 776 @19320
+	 	SAY 972 @19317
+	 	SAY 1168 @19317
+	 
+	 COPY ~iwd1_eet/areas/id9100.are~ ~override~
+	 	SAY 7936 @26233
+	 	WRITE_LONG 0x4274 ~%ID9100%~
+	 	WRITE_LONG 0x4278 ~%ID9100%~
+	 	ADD_MAP_NOTE #1940 #1125 ~violet~     @26221
+	 	ADD_MAP_NOTE #2445 #1760 ~green~      @100063
+	 	ADD_MAP_NOTE #3150 #2205 ~lightgray~  @100064
+	 	ADD_MAP_NOTE #3735 #1225 ~red~        @100003
+	 	ADD_MAP_NOTE #420  #285  ~blue~       @100101
+	 	ADD_MAP_NOTE #1473 #560  ~blue~       @100102
+	 	ADD_MAP_NOTE #2691 #350  ~blue~       @100103
+	 	ADD_MAP_NOTE #285  #1985 ~orange~     @100104
+	 	ADD_MAP_NOTE #2075 #2680 ~orange~     @100105
+	 
+	 COPY ~iwd1_eet/areas/id9101.are~ ~override~
+	 	SAY 1864 @26224
+	 	SAY 2060 @26225
+	 
+	 COPY ~iwd1_eet/areas/id9102.are~ ~override~
+	 
+	 COPY ~iwd1_eet/areas/id9103.are~ ~override~
+	 	SAY 852 @26226
+	 	SAY 1048 @26226
+	 	SAY 1244 @26227
+	 	WRITE_LONG 0x0ee0 ~%ID9103%~
+	 	WRITE_LONG 0x0ee4 ~%ID9103%~
+	 
+	 COPY ~iwd1_eet/areas/id9104.are~ ~override~
+	 
+	 COPY ~iwd1_eet/areas/id9105.are~ ~override~
+	 
+	 COPY ~iwd1_eet/areas/id9106.are~ ~override~
+	 
+	 COPY ~iwd1_eet/areas/id9107.are~ ~override~
+	 
+	 COPY ~iwd1_eet/areas/id9108.are~ ~override~
+	 
+	 COPY ~iwd1_eet/areas/id9109.are~ ~override~
+	 
+	 COPY ~iwd1_eet/areas/id9110.are~ ~override~
+	 
+	 COPY ~iwd1_eet/areas/id9200.are~ ~override~
+	 	SAY 25920 @22576
+	 	SAY 26116 @24753
+	 	SAY 26312 @25054
+	 	SAY 26508 @25057
+	 	SAY 26704 @25058
+	 	SAY 26900 @25066
+	 	SAY 27096 @25067
+	 	SAY 27292 @25068
+	 	SAY 27488 @25069
+	 	SAY 27684 @25069
+	 	SAY 27880 @25068
+	 	SAY 28076 @25071
+	 	WRITE_LONG 0x9020 ~%ID9200%~
+	 	WRITE_LONG 0x9024 ~%ID9200%~
+	 	WRITE_LONG 0x9028 ~%IDBTLE5%~
+	 	WRITE_LONG 0x902c ~%IDBTLE5%~
+	 	WRITE_LONG 0x9030 ~%IDBTLE5%~
+	 	ADD_MAP_NOTE #2750 #330  ~blue~    @100065
+	 	ADD_MAP_NOTE #260  #270  ~red~     @100066
+	 
+	 COPY ~iwd1_eet/areas/id9201.are~ ~override~
+	 	SAY 8240 @22469
+	 	SAY 8436 @25042
+	 	SAY 8632 @22469
+	 	SAY 8828 @25043
+	 	SAY 9024 @25044
+	 	SAY 9220 @25044
+	 	SAY 9416 @25044
+	 	SAY 9612 @25045
+	 	SAY 9808 @25046
+	 	SAY 10004 @25047
+	 	SAY 10200 @25047
+	 	SAY 10396 @25048
+	 	SAY 10592 @25048
+	 	SAY 10788 @25049
+	 	WRITE_LONG 0x3584 ~%ID9201%~
+	 	WRITE_LONG 0x3588 ~%ID9201%~
+	 
+	 COPY ~iwd1_eet/areas/id9300.are~ ~override~
+	 	SAY 15704 @25387
+	 	SAY 15900 @25388
+	 	SAY 16096 @25389
+	 	SAY 16292 @25389
+	 	SAY 16488 @25390
+	 	SAY 16684 @25391
+	 	SAY 16880 @25391
+	 	SAY 17076 @25391
+	 	SAY 17272 @25391
+	 	SAY 17468 @25391
+	 	SAY 17664 @25391
+	 	SAY 17860 @25391
+	 	SAY 18056 @25392
+	 	SAY 18252 @25393
+	 	SAY 0x5cf4 @26726
+	 	SAY 0x5cf8 @26726
+	 	WRITE_LONG 0x5c44 ~%ID9300%~
+	 	WRITE_LONG 0x5c48 ~%ID9300%~
+	 	ADD_MAP_NOTE #510  #2235 ~blue~   @100062
+	 	ADD_MAP_NOTE #3015 #1875 ~gray~   @100067
+	 	ADD_MAP_NOTE #3230 #440  ~gray~   @100067
+	 	ADD_MAP_NOTE #1960 #1090 ~gray~   @100067
+	 	ADD_MAP_NOTE #1560 #1760 ~gray~   @100067
+	 	ADD_MAP_NOTE #515  #325  ~orange~ @100068
+	 	ADD_MAP_NOTE #2883 #804  ~green~  @100029
+	 
+	 COPY ~iwd1_eet/areas/id9301.are~ ~override~
+	 
+	 COPY ~iwd1_eet/areas/id9400.are~ ~override~
+	 	SAY 20132 @25394
+	 	SAY 20328 @25395
+	 	SAY 20524 @25396
+	 	SAY 20720 @25397
+	 	SAY 0x7f54 @26724
+	 	SAY 0x7f58 @26724
+	 	WRITE_LONG 0x7ea4 ~%ID9400%~
+	 	WRITE_LONG 0x7ea8 ~%ID9400%~
+	 	ADD_MAP_NOTE #490  #1855 ~orange~ @100069
+	 	ADD_MAP_NOTE #275  #425  ~red~    @100073
+	 	ADD_MAP_NOTE #1525 #950  ~red~    @100073
+	 	ADD_MAP_NOTE #2355 #580  ~red~    @100073
+	 	ADD_MAP_NOTE #3460 #845  ~red~    @100073
+	 	ADD_MAP_NOTE #3485 #1895 ~red~    @100073
+	 
+	 COPY ~iwd1_eet/areas/id9500.are~ ~override~
+	 	SAY 24516 @26232
+	 	SAY 24712 @26530
+	 	SAY 24908 @26252
+	 	SAY 25104 @26252
+	 	SAY 0x7008 @26727
+	 	WRITE_LONG 0x6f58 ~%ID9500%~
+	 	WRITE_LONG 0x6f5c ~%ID9500%~
+	 	ADD_MAP_NOTE #3210 #3600 ~red~    @100066
+	 	ADD_MAP_NOTE #1355 #365  ~gray~   @100072
+	 
+	 COPY ~iwd1_eet/areas/id9501.are~ ~override~
+	 	SAY 8120 @26547
+	 	SAY 8316 @26548
+	 	SAY 8512 @26549
+	 	SAY 8708 @26550
+	 	SAY 8904 @26550
+	 	SAY 9100 @26551
+	 	SAY 9296 @26547
+	 	SAY 9492 @26552
+	 	SAY 9688 @26557
+	 	SAY 9884 @26559
+	 	SAY 10080 @26561
+	 	SAY 10276 @26562
+	 	SAY 10472 @26562
+	 	SAY 10668 @26563
+	 	SAY 10864 @26563
+	 	SAY 11060 @26564
+	 	SAY 11256 @26564
+	 	WRITE_LONG 0x3630 ~%ID9501%~
+	 	WRITE_LONG 0x3634 ~%ID9501%~
+	 	ADD_MAP_NOTE #470  #250  ~red~      @100073
+	 	ADD_MAP_NOTE #3300 #530  ~darkblue~ @25030
+	 	ADD_MAP_NOTE #2605 #175  ~gray~     @100072
+	 
+	 COPY ~iwd1_eet/areas/id9502.are~ ~override~
+	 	SAY 9012 @26562
+	 	SAY 9208 @26562
+	 	SAY 9404 @26563
+	 	SAY 9600 @26565
+	 	SAY 9796 @26565
+	 	WRITE_LONG 0x3958 ~%ID9502A%~
+	 	WRITE_LONG 0x395c ~%ID9502A%~
+	 	WRITE_LONG 0x396c ~%ID9502B%~
+	 	ADD_MAP_NOTE #380  #595  ~red~      @100024
+	 	ADD_MAP_NOTE #3280 #330  ~darkblue~ @25029
+	 
+	 COPY ~iwd1_eet/areas/id9600.are~ ~override~
+	 	SAY 14256 @25398
+	 	SAY 14452 @25813
+	 	SAY 14648 @25814
+	 	SAY 14844 @25815
+	 	WRITE_LONG 0x464c ~%ID9600%~
+	 	WRITE_LONG 0x4650 ~%ID9600%~
+	 	ADD_MAP_NOTE #790  #1900 ~orange~   @100106
+	 	ADD_MAP_NOTE #1115 #360  ~gray~     @100107
+	 
+	 COPY ~iwd1_eet/areas/id9601.are~ ~override~
+	 
+	 COPY ~iwd1_eet/areas/id9602.are~ ~override~
+	 	SAY 18184 @26527
+	 	SAY 18380 @26528
+	 	SAY 18576 @26527
+	 
+	 COPY ~iwd1_eet/areas/id9603.are~ ~override~
+	 	SAY 17564 @26526
+	 	SAY 17760 @26526
+	 	SAY 17956 @26526
+	 	SAY 18152 @26531
+	 	SAY 18348 @26529
+	 	WRITE_LONG 0x68d0 ~%ID9603%~
+	 	WRITE_LONG 0x68d4 ~%ID9603%~
+	 
+	 COPY ~iwd1_eet/areas/id9604.are~ ~override~
+	 	WRITE_LONG 0x1038 ~%IDBTLE6%~
+	 	WRITE_LONG 0x103c ~%IDBTLE6%~
+	 	WRITE_LONG 0x1040 ~%IDBTLE6%~
+	 
+	 COPY ~iwd1_eet/areas/id9700.are~ ~override~
+	 	SAY 10308 @27425
+	 	SAY 10504 @27421
+	 	SAY 10700 @27421
+	 	SAY 10896 @26233
+	 	ADD_MAP_NOTE #792  #300  ~blue~   @100108
+	 	ADD_MAP_NOTE #1985 #648  ~orange~ @100109
+	 	ADD_MAP_NOTE #642  #1092 ~orange~ @100110
+	 	ADD_MAP_NOTE #1430 #750  ~blue~   @100111
+	 	ADD_MAP_NOTE #1735 #530  ~green~  @100112
+	 
+	 COPY ~iwd1_eet/areas/id9701.are~ ~override~
+	 	WRITE_LONG 0x0650 ~%ID8012%~
+	 	WRITE_LONG 0x0654 ~%ID8012%~
+	 
+	 COPY ~iwd1_eet/areas/id9702.are~ ~override~
+	 
+	 COPY ~iwd1_eet/areas/id9703.are~ ~override~
+	 	WRITE_LONG 0x0650 ~%ID8012%~
+	 	WRITE_LONG 0x0654 ~%ID8012%~
+	 
+	 COPY ~iwd1_eet/areas/id9704.are~ ~override~
+	 
+	 COPY ~iwd1_eet/areas/id9705.are~ ~override~
+	 	WRITE_LONG 0x0b70 ~%ID8012%~
+	 	WRITE_LONG 0x0b74 ~%ID8012%~
+	 
+	 COPY ~iwd1_eet/areas/id9706.are~ ~override~
+	 
+	 COPY ~iwd1_eet/areas/id9707.are~ ~override~
+	 	WRITE_LONG 0x0650 ~%ID8012%~
+	 	WRITE_LONG 0x0654 ~%ID8012%~
+	 
+	 COPY ~iwd1_eet/areas/id9708.are~ ~override~
+	 
+	 COPY ~iwd1_eet/areas/id9709.are~ ~override~
+	 
+	 COPY ~iwd1_eet/areas/id9710.are~ ~override~
+	 
+	 COPY ~iwd1_eet/areas/id9711.are~ ~override~
+	 	SAY 24680 @14855
+	 	WRITE_LONG 0x7d0c ~%ID9201%~
+	 	WRITE_LONG 0x7d10 ~%ID9201%~
+	 	ADD_MAP_NOTE #1980 #1743 ~red~        @100027
+	 	ADD_MAP_NOTE #378  #1386 ~gray~       @100113
+	 	ADD_MAP_NOTE #2304 #1527 ~gray~       @100114
+	 	ADD_MAP_NOTE #1083 #654  ~orange~     @100115
+	 	ADD_MAP_NOTE #2244 #405  ~orange~     @100028
+	 	ADD_MAP_NOTE #276  #387  ~orange~     @100116
+	 	ADD_MAP_NOTE #861  #357  ~blue~       @100117
+	 
+	 COPY ~iwd1_eet/areas/id9712.are~ ~override~
+	 	SAY 13908 @27422
+	 	SAY 14104 @27033
+	 	SAY 14300 @27419
+	 	SAY 14496 @27420
+	 	SAY 14692 @27420
+	 	WRITE_LONG 0x6764 ~%ID9201%~
+	 	WRITE_LONG 0x6768 ~%ID9201%~
+	 	ADD_MAP_NOTE #324  #1611 ~red~        @100118
+	 	ADD_MAP_NOTE #1152 #495  ~orange~     @100119
+	 	ADD_MAP_NOTE #1338 #1164 ~orange~     @100120
+	 
+	 COPY ~iwd1_eet/areas/id9713.are~ ~override~
+	  	WRITE_LONG 0x0e90 ~%ID8004%~
+	 	WRITE_LONG 0x0e94 ~%ID8004%~
+	 
+	 COPY ~iwd1_eet/areas/id9714.are~ ~override~
+	 	SAY 50084 @913
+	 	SAY 50280 @913
+	 	SAY 50476 @913
+	 	SAY 50672 @913
+	 	SAY 58120 @27469
+	 	SAY 58316 @27576
+	 	SAY 58512 @27580
+	 	SAY 58708 @27577
+	 	SAY 58904 @27578
+	 	SAY 59100 @27579
+	 	WRITE_LONG 0x198dc ~%ID9502A%~
+	 	WRITE_LONG 0x198e0 ~%ID9502A%~ /**/
+	 	LPF fj_are_structure INT_VAR fj_con_itm_idx=10 fj_charge0=40 STR_VAR fj_name=arow08 fj_structure_type=itm END
+	 	LPF fj_are_structure INT_VAR fj_con_itm_idx=22 fj_charge0=40 STR_VAR fj_name=arow08 fj_structure_type=itm END
+	 	LPF fj_are_structure INT_VAR fj_con_itm_idx=13 fj_charge0=40 STR_VAR fj_name=arow08 fj_structure_type=itm END
+	 	LPF fj_are_structure INT_VAR fj_con_itm_idx=11 fj_charge0=40 STR_VAR fj_name=arow08 fj_structure_type=itm END
+	 	LPF fj_are_structure INT_VAR fj_con_itm_idx=19 fj_charge0=40 STR_VAR fj_name=arow08 fj_structure_type=itm END
+
+COPY ~override/id9714.are~ ~override~
+	READ_LONG  0x54 act_off
+	READ_SHORT 0x58 act_cnt
+	PATCH_IF ( act_cnt > 0 ) BEGIN
+		FOR ( i = 0 ; i < act_cnt ; ++i ) BEGIN
+			READ_ASCII act_off + i * 0x110 + 0x80 cre_file (8) NULL
+			PATCH_IF ( ~%cre_file%~ STR_EQ ~SKELWAR~ ) BEGIN
+				WRITE_ASCII act_off + i * 0x110 + 0x50 ~iddlsw_1~ (8)
+			END
+		END
+	END
+	BUT_ONLY_IF_IT_CHANGES
+
+<<<<<<<<iddlsw_1.baf
+IF
+	!Global("Remow_Sword","LOCALS",1)
+	HasItem("SW1H05",Myself)
+THEN
+	RESPONSE #100
+		SetItemFlags("SW1H05",NONSTEALABLE_NONDROPABLE,TRUE)
+		CreateItem("SW1H04",0,0,0)
+		SetGlobal("Remow_Sword","LOCALS",1)
+		Continue()
+	RESPONSE #25
+		SetGlobal("Remow_Sword","LOCALS",1)
+		Continue()
+END
+>>>>>>>>
+COMPILE ~iddlsw_1.baf~
+	 
+	 COPY ~iwd1_eet/areas/id9715.are~ ~override~
+	 	SAY 852 @27471
+	 	SAY 1048 @27471
+	 	SAY 1244 @27468
+	 	SAY 1440 @27471
+	 	SAY 1636 @27471
+	 	SAY 1832 @27471
+	 
+	 COPY ~iwd1_eet/areas/id9716.are~ ~override~
+	 	WRITE_LONG 0x3330 ~%ID1201%~
+	 	WRITE_LONG 0x3334 ~%ID1201%~
+	 
+	 COPY ~iwd1_eet/areas/id9717.are~ ~override~
+	 	WRITE_LONG 0x6eec ~%ID1201%~
+	 	WRITE_LONG 0x6ef0 ~%ID1201%~
+	 
+	 COPY ~iwd1_eet/areas/id9718.are~ ~override~
+	 	WRITE_LONG 0x3744 ~%ID1201%~
+	 	WRITE_LONG 0x3748 ~%ID1201%~
+	 
+	 COPY ~iwd1_eet/areas/id9800.are~ ~override~
+	 	SAY 18064 @26900
+	 	SAY 18260 @26903
+	 	SAY 18456 @26902
+	 	SAY 18652 @26904
+	 	SAY 18848 @26901
+	 	SAY 20612 @26935
+	 	SAY 20808 @26935
+	 	SAY 21004 @26935
+	 	SAY 21200 @26935
+	 	SAY 21396 @26935
+	 	SAY 21592 @26935
+	 	WRITE_LONG 0x7b0c ~%ID9500%~
+	 	WRITE_LONG 0x7b10 ~%ID9500%~
+	 	LPF fj_are_structure
+		 	INT_VAR fj_loc_x=3230 fj_loc_y=1946 fj_type=4 fj_flags=64 fj_trap_loc_x=3309 fj_trap_loc_y=2021
+		 	STR_VAR fj_structure_type=container fj_name=HeavenDrop
+	 	END
+	 	LPF fj_are_structure
+		 	INT_VAR fj_loc_x=3380 fj_loc_y=1953 fj_type=4 fj_flags=64 fj_trap_loc_x=3309 fj_trap_loc_y=2021
+		 	STR_VAR fj_structure_type=container fj_name=DayDrop
+	 	END
+	 	LPF fj_are_structure
+		 	INT_VAR fj_loc_x=3425 fj_loc_y=2052 fj_type=4 fj_flags=64 fj_trap_loc_x=3309 fj_trap_loc_y=2021
+		 	STR_VAR fj_structure_type=container fj_name=EarthDrop
+	 	END
+	 	LPF fj_are_structure
+		 	INT_VAR fj_loc_x=3317 fj_loc_y=2120 fj_type=4 fj_flags=64 fj_trap_loc_x=3309 fj_trap_loc_y=2021
+		 	STR_VAR fj_structure_type=container fj_name=SeaDrop
+	 	END
+	 	LPF fj_are_structure
+		 	INT_VAR fj_loc_x=3186 fj_loc_y=2058 fj_type=4 fj_flags=64 fj_trap_loc_x=3309 fj_trap_loc_y=2021
+		 	STR_VAR fj_structure_type=container fj_name=NightDrop
+	 	END
+	 	ADD_MAP_NOTE #1575 #339  ~gray~       @100006
+	 	ADD_MAP_NOTE #1278 #1248 ~gray~       @100006
+	 	ADD_MAP_NOTE #2304 #1374 ~gray~       @100006
+	 	ADD_MAP_NOTE #345  #2580 ~gray~       @100006
+	 	ADD_MAP_NOTE #1620 #2604 ~gray~       @100006
+	 	ADD_MAP_NOTE #267  #1218 ~red~        @100027
+	 	ADD_MAP_NOTE #3309 #2025 ~green~      @100121
+	 COPY ~iwd1_eet/areas/id9801.are~ ~override~
+	 	SAY 17792 @26900
+	 	SAY 17988 @26903
+	 	SAY 18184 @26904
+	 	SAY 18380 @26902
+	 	SAY 18576 @26901
+	 	SAY 18772 @26920
+	 	WRITE_LONG 0x6190 ~%ID9500%~
+	 	WRITE_LONG 0x6194 ~%ID9500%~
+	 	ADD_MAP_NOTE #2205 #405  ~gray~       @100027
+	 	ADD_MAP_NOTE #3354 #1233 ~gray~       @100027
+	 	ADD_MAP_NOTE #2151 #1509 ~gray~       @100027
+	 	ADD_MAP_NOTE #984  #2298 ~gray~       @100027
+	 	ADD_MAP_NOTE #2502 #2490 ~gray~       @100027
+	 	ADD_MAP_NOTE #777  #510  ~orange~     @100122
+	 	ADD_MAP_NOTE #2829 #546  ~orange~     @100123
+	 	ADD_MAP_NOTE #2667 #1134 ~orange~     @100124
+	 	ADD_MAP_NOTE #594  #2442 ~orange~     @100125
+	 	ADD_MAP_NOTE #1659 #1869 ~orange~     @100126
+	 	ADD_MAP_NOTE #775  #1516 ~orange~     @100127
+VERBOSE
+PRINT ~Area files installation complete...~
+
+
+
+
+
+
+
+
+
+
+
+
+

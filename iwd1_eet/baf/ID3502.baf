@@ -1,0 +1,8 @@
+IF
+  !Global("Deactivate_Trigger","MYAREA",1)
+THEN
+  RESPONSE #100
+    SetGlobal("Deactivate_Trigger","MYAREA",1)
+    TriggerActivation("To3503",FALSE)
+    Continue()
+END

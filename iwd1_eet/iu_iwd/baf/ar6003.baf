@@ -1,0 +1,7 @@
+IF
+  Global("CDStoutInGame","GLOBAL",1)
+THEN
+  RESPONSE #100
+    SetGlobal("CDStoutInGame","GLOBAL",2)
+    ActionOverride("Container1",CreateItem("cdmitham",0,0,0))
+END

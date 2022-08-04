@@ -1,0 +1,7 @@
+IF
+	!Global("SPRITE_IS_DEADThe_Idol","GLOBAL",0)
+THEN
+	RESPONSE #100
+		Kill(Myself)
+END
+

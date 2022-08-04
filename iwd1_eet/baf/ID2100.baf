@@ -1,0 +1,251 @@
+IF
+	Global("MIREK_YETI","ID2100",0)
+	Global("MIREK_QUEST","GLOBAL",1)
+THEN
+	RESPONSE #100
+		CreateCreature("KUYETI",[3533.1649],4)
+		CreateCreature("KUYETI",[3530.1704],4)
+		SetGlobal("MIREK_YETI","ID2100",1)
+		Continue()
+END
+
+IF
+	Global("IWD1_CHAPTER","GLOBAL",0)
+THEN
+	RESPONSE #100
+		IncrementGlobal("IWD1_CHAPTER","GLOBAL",1)
+		TextScreen("IWD1TXT1")
+		Continue()
+END
+
+IF
+	Global("KULDAHAR_ATTACK","GLOBAL",1)
+THEN
+	RESPONSE #100
+		SetGlobal("KULDAHAR_ATTACK","GLOBAL",2)
+		SetGlobalTimer("2100_ATTACK","GLOBAL",FOUR_DAYS)
+		Continue()
+END
+
+//BLOCK MUSIC
+IF
+  GlobalGT("KULDAHAR_ATTACK","GLOBAL",1)
+  !Global("AREA_MUSIC_SET","MYAREA",1)
+THEN
+  RESPONSE #100
+    SetGlobal("AREA_MUSIC_SET","MYAREA",1)
+    SetMusic(DAY,%ID2100B%)
+    SetMusic(NIGHT,%ID2100B%)
+    Continue()
+END
+
+IF
+  OR(2)
+    GlobalGT("KULDAHAR_ATTACK","GLOBAL",2)
+    !Global("KULDAHAR_FORCEREMOVE","GLOBAL",0)
+  !Global("AREA_MUSIC_RETRIEVE","MYAREA",1)
+  Global("AREA_MUSIC_SET","MYAREA",1)
+THEN
+  RESPONSE #100
+    SetGlobal("AREA_MUSIC_RETRIEVE","MYAREA",1)
+    SetMusic(DAY,%ID2100A%)
+    SetMusic(NIGHT,%ID2100A%)
+    Continue()
+END
+//BLOCKEND
+
+IF
+  OR(2)
+    GlobalGT("Vale_Quest","GLOBAL",0)
+    Global("Mirek_Quest","GLOBAL",4)
+  Global("ID3000_Revealed","MYAREA",0)
+THEN
+  RESPONSE #100
+    SetGlobal("ID3000_Revealed","MYAREA",1)
+    RevealAreaOnMap("ID3000")
+END
+
+IF
+  !Global("Temple_Quest","GLOBAL",0)
+  Global("ID3600_Revealed","MYAREA",0)
+THEN
+  RESPONSE #100
+    SetGlobal("ID3600_Revealed","MYAREA",1)
+    RevealAreaOnMap("ID3600")
+END
+
+IF
+  !Global("Deye_Quest","GLOBAL",0)
+  Global("ID4000_Revealed","MYAREA",0)
+THEN
+  RESPONSE #100
+    SetGlobal("ID4000_Revealed","MYAREA",1)
+    RevealAreaOnMap("ID4000")
+END
+
+IF
+  !Global("Severed_Hand_Reveal","GLOBAL",0)
+  Global("ID5000_Revealed","MYAREA",0)
+THEN
+  RESPONSE #100
+    SetGlobal("ID5000_Revealed","MYAREA",1)
+    RevealAreaOnMap("ID5000")
+END
+
+IF
+  GlobalGT("OpenDornsDeep","GLOBAL",0)
+  Global("ID6000_Revealed","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("ID6000_Revealed","GLOBAL",1)
+    RevealAreaOnMap("ID6000")
+    //Continue()
+END
+
+/* IF
+  GlobalLT("MIREK_QUEST","GLOBAL",3)
+  Global("SPRITE_IS_DEADKU_YETIMRK","GLOBAL",2)
+THEN
+  RESPONSE #100
+    SetGlobal("MIREK_QUEST","GLOBAL",3)
+END */
+
+IF
+  Global("AddOrrickItems","MYAREA",0)
+  GlobalGT("IWD1_CHAPTER","GLOBAL",1)  
+THEN
+  RESPONSE #100
+  	SetGlobal("AddOrrickItems","MYAREA",1)
+  	SetInterrupt(FALSE)
+    AddStoreItem("KUOrk1","SCRL5K",1,1)
+    AddStoreItem("KUOrk1","SCRL2A",1,1)
+    AddStoreItem("KUOrk1","SCRL1S",1,1)
+    AddStoreItem("KUOrk1","SCRL1O",1,1)
+    AddStoreItem("KUOrk1","SCRL1K",1,1)
+    AddStoreItem("KUOrk1","SCRL1I",1,1)
+    AddStoreItem("KUOrk1","SCRL1E",1,1)
+    AddStoreItem("KUOrk1","WANDFRE",11,1)
+    AddStoreItem("KUOrk1","WANDMIS",15,1)
+    AddStoreItem("KUOrk1","JASPER",4,1)
+    AddStoreItem("KUOrk1","ROGUE",1,1)
+    AddStoreItem("KUOrk1","SASH",1,1)
+    AddStoreItem("KUOrk1","SCRCS05",1,1)
+    AddStoreItem("KUOrk1","SPWI517X",1,1)
+    AddStoreItem("KUOrk1","SCRL5H",1,1)
+    AddStoreItem("KUOrk1","BAGH03",1,1)
+    AddStoreItem("KUOrk1","IDKEYR",1,1)
+    SetInterrupt(TRUE)
+    Continue() 
+END
+
+IF
+  Global("AddOrrickItems","MYAREA",1)
+  GlobalGT("IWD1_CHAPTER","GLOBAL",3)
+THEN
+  RESPONSE #100
+    SetGlobal("AddOrrickItems","MYAREA",2)
+    SetInterrupt(FALSE)
+    AddStoreItem("KUOrk1","SCRL5O",1,1)
+    AddStoreItem("KUOrk1","MANTLEHF",16,1)
+    AddStoreItem("KUOrk1","OGI",1,1)
+    AddStoreItem("KUOrk1","SCRCS06",1,1)
+    AddStoreItem("KUOrk1","SPWI517X",1,1)
+    AddStoreItem("KUOrk1","SCRL5H",1,1)
+    SetInterrupt(TRUE)
+    Continue()
+END
+
+IF
+	!Global("EXPANSION_DOOR","GLOBAL",2)
+THEN
+	RESPONSE #100
+		SetGlobal("EXPANSION_DOOR","GLOBAL",2)
+		Unlock("AR2100Door11")
+		Continue()
+END
+
+IF
+	Global("KULDAHAR_MURDER","GLOBAL",0)
+	!Global("TOWNIE_HOSTILE","MYAREA",0)
+	!Global("TOWNIE_DEAD","GLOBAL",0)
+THEN
+	RESPONSE #100
+		SetGlobal("KULDAHAR_MURDER","GLOBAL",1)
+		Continue()
+END
+
+IF
+  !Global("SET_ORRICK_NOTE","MYAREA",1)
+  OR(2)
+    !Global("Know_Orrick","GLOBAL",0)
+    !Global("Orrick_Quest","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("SET_ORRICK_NOTE","MYAREA",1)
+    AddMapNoteColor([365.725],@100011,SLATE)
+    Continue()
+END
+
+IF
+	Global("KULDAHAR_ALARM","GLOBAL",0)
+	!Global("AREA_HOSTILE","MYAREA",0)
+THEN
+	RESPONSE #100
+		SetGlobal("KULDAHAR_ALARM","GLOBAL",1)
+		Continue()
+END
+
+IF
+	Global("AREA_HOSTILE","MYAREA",0)
+	!Global("KULDAHAR_ALARM","GLOBAL",0)
+THEN
+	RESPONSE #100
+		SetGlobal("AREA_HOSTILE","MYAREA",1)
+		Continue()
+END
+
+IF
+	!Global("TOWNIE_DEAD","GLOBAL",0)
+THEN
+	RESPONSE #100
+		SetGlobal("TOWNIE_HOSTILE","MYAREA",0)
+		SetGlobal("TOWNIE_DEAD","GLOBAL",0)
+		Continue()
+END
+
+IF
+	OnCreation()
+THEN
+	RESPONSE #100
+		NoAction()
+		Continue()
+END
+
+IF
+	Global("CloseDoors","MYAREA",0)
+	TimeOfDay(NIGHT)
+THEN
+	RESPONSE #100
+		SetGlobal("CloseDoors","MYAREA",1)
+		CloseDoor("AR2100Door1")
+		CloseDoor("AR2100Door2")
+		CloseDoor("AR2100Door3")
+		CloseDoor("AR2100Door4")
+		CloseDoor("AR2100Door5")
+		CloseDoor("AR2100Door6")
+		CloseDoor("AR2100Door7")
+		CloseDoor("AR2100Door8")
+		CloseDoor("AR2100Door9")
+		CloseDoor("AR2100Door10")
+		CloseDoor("AR2100Door11")
+		CloseDoor("AR2100Door12")
+END
+
+IF
+	!Global("CloseDoors","MYAREA",0)
+	!TimeOfDay(NIGHT)
+THEN
+	RESPONSE #100
+		SetGlobal("CloseDoors","MYAREA",0)
+END
+

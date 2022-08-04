@@ -1,0 +1,9 @@
+IF
+  Global("CDMurduaghDaen","MYAREA",1)
+  Global("CDDaen","GLOBAL",0)
+THEN 
+  RESPONSE #100
+    Wait(2)
+    SetGlobal("CDMurduaghDaen","MYAREA",2)
+    StartDialogueNoSet([PC])
+END

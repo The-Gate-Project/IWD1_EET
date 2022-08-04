@@ -1,0 +1,16 @@
+IF
+  Die()
+THEN
+  RESPONSE #100
+    ChangeSpecifics(Myself,0)
+    Continue()
+END
+
+IF
+  !Global("SET_SPECIFICS","LOCALS",1)
+THEN
+  RESPONSE #100
+    SetGlobal("SET_SPECIFICS","LOCALS",1)
+    ChangeSpecifics(Myself,JAKAL_4)
+    Continue()
+END

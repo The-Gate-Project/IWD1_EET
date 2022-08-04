@@ -1,0 +1,15 @@
+IF
+  !Global("CDBellTollsLeft","GLOBAL",0)
+THEN
+  RESPONSE #100
+    PlaySound("cdbell")
+    Wait(2)
+    IncrementGlobal("CDBellTollsLeft","GLOBAL",-1)
+END
+
+IF
+  Global("CDBellTollsLeft","GLOBAL",0)
+THEN
+  RESPONSE #100
+    DestroySelf()
+END

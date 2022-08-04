@@ -1,0 +1,15 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId("EVERARD")
+		StartCutSceneMode()
+		MultiPlayerSync()
+		ClearAllActions()
+		Activate(Myself)
+		SetGlobal("IwIHidden","LOCALS",0)
+		//CreateCreature("CUTSPY2",[690.585],S)
+		CreateCreatureImpassable("CUTSPY2",[1420.895],S)
+		StartCutScene("EEPEQTLK")
+END
+

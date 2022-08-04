@@ -1,0 +1,68 @@
+IF
+	!Global("SPRITE_IS_DEADEHOLDJED","GLOBAL",0)
+THEN
+	RESPONSE #100
+		DestroySelf()
+END
+
+IF
+	StateCheck(Myself,STATE_PANIC)
+THEN
+	RESPONSE #100
+		RandomWalkContinuous()
+END
+
+IF
+	!BitCheck("CREATURE_STATE_VAR","LOCALS",1)
+THEN
+	RESPONSE #100
+		BitSet("CREATURE_STATE_VAR","LOCALS",1)
+		SetGlobalTimer("JED_FLOAT_TIMER","LOCALS",3)
+		Continue()
+END
+
+IF
+	!Allegiance(Myself,ENEMY)
+	AttackedBy([GOODCUTOFF],DEFAULT)
+THEN
+	RESPONSE #100
+		Enemy()
+		Continue()
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		AttackReevaluate(LastSeenBy(Myself),75)
+END
+
+IF
+	AttackedBy(NearestEnemyOf(Myself),DEFAULT)
+THEN
+	RESPONSE #100
+		MoveToObject(LastAttackerOf(Myself))
+END
+
+IF
+	Global("JED_FLOAT","LOCALS",0)
+	GlobalTimerExpired("JED_FLOAT_TIMER","LOCALS")
+	!Allegiance(Myself,ENEMY)
+THEN
+	RESPONSE #100
+		SetGlobal("JED_FLOAT","LOCALS",1)
+		DisplayStringHead(Myself,@18612)
+		SetGlobalTimer("JED_FLOAT_TIMER","LOCALS",2)
+END
+
+IF
+	Global("JED_FLOAT","LOCALS",1)
+	GlobalTimerExpired("JED_FLOAT_TIMER","LOCALS")
+	!Allegiance(Myself,ENEMY)
+THEN
+	RESPONSE #100
+		SetGlobal("JED_FLOAT","LOCALS",0)
+		DisplayStringHead(Myself,@18062)
+		SetGlobalTimerRandom("JED_FLOAT_TIMER","LOCALS",10,20)
+END
+

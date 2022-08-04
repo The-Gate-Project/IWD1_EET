@@ -1,0 +1,26 @@
+IF
+  Global("SaveSavedLoc","LOCALS",0)
+THEN
+  RESPONSE #100
+    SetGlobal("SaveSavedLoc","LOCALS",1)
+    SaveObjectLocation("LOCALS","SavedLoc",Myself)
+    Continue()
+END
+
+IF
+	OR(2)
+		!Global("GOBLIN_RACE_KILLED","MYAREA",0)
+		!Global("BC_SKELETON_LOST","GLOBAL",0)
+THEN
+	RESPONSE #100
+		//ChangeCurrentScript("BCRTNSAV")
+		ChangeAIScript("BCRTNSAV",DEFAULT)
+END
+
+IF
+	ActionListEmpty()
+THEN
+	RESPONSE #100
+		MoveToObject([0.0.SKELETON])
+END
+

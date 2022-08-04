@@ -1,0 +1,152 @@
+IF
+	!Global("ID9201_INACTIVE","MYAREA",1)
+	Global("BARBARIAN_CAMP_HOSTILE","GLOBAL",0)
+	Global("BC_BATTLE_OVER","GLOBAL",0)
+	Global("GOBLIN_RACE_KILLED","MYAREA",0)
+	Dead("GOB9201_1")
+	Dead("GOB9201_2")
+	Dead("GOB9201_3")
+	Dead("GOB9201_4")
+	Dead("GOB9201_5")
+	Dead("GOB9201_6")
+	Dead("9200_WARRIOR_2")
+	Dead("9200_WARRIOR_5")
+THEN
+	RESPONSE #100
+		SetGlobal("GOBLIN_RACE_KILLED","MYAREA",1)
+END
+
+IF
+	!Global("ID9201_INACTIVE","MYAREA",1)
+	Global("BARBARIAN_CAMP_HOSTILE","GLOBAL",0)
+	Global("BC_BATTLE_OVER","GLOBAL",0)
+	Global("SKELETON_RACE_KILLED","MYAREA",0)
+	Dead("SKEL9201_1")
+	Dead("SKEL9201_2")
+	Dead("SKEL9201_3")
+	Dead("SKEL9201_4")
+	Dead("SKEL9201_5")
+	Dead("SKEL9201_6")
+	Dead("9200_WARRIOR_3")
+	Dead("9200_WARRIOR_6")
+THEN
+	RESPONSE #100
+		SetGlobal("SKELETON_RACE_KILLED","MYAREA",1)
+END
+
+IF
+	!Global("ID9201_INACTIVE","MYAREA",1)
+	!Global("BARBARIAN_CAMP_HOSTILE","GLOBAL",0)
+	Exists("WYLFDENE")
+THEN
+	RESPONSE #100
+		ActionOverride("WYLFDENE",DestroySelf())
+		Continue()
+END
+
+IF
+	!Global("ID9201_INACTIVE","MYAREA",1)
+	!Global("BARBARIAN_CAMP_HOSTILE","GLOBAL",0)
+	Exists("HJOLLDER")
+THEN
+	RESPONSE #100
+		ActionOverride("HJOLLDER",DestroySelf())
+		Continue()
+END
+
+IF
+	!Global("ID9201_INACTIVE","MYAREA",1)
+	!Global("BARBARIAN_CAMP_HOSTILE","GLOBAL",0)
+	Exists("ANNOUNCER")
+THEN
+	RESPONSE #100
+		ActionOverride("ANNOUNCER",DestroySelf())
+		Continue()
+END
+
+IF
+	!Global("ID9201_INACTIVE","MYAREA",1)
+	Global("BARBARIANS_REMOVED","MYAREA",0)
+	!Global("WARRIORS_DEAD","GLOBAL",0)
+THEN
+	RESPONSE #100
+		SetGlobal("BARBARIANS_REMOVED","MYAREA",1)
+		ActionOverride("9200_WARRIOR_1",DestroySelf())
+		ActionOverride("9200_WARRIOR_2",DestroySelf())
+		ActionOverride("9200_WARRIOR_3",DestroySelf())
+		ActionOverride("9200_WARRIOR_4",DestroySelf())
+		ActionOverride("9200_WARRIOR_5",DestroySelf())
+		ActionOverride("9200_WARRIOR_6",DestroySelf())
+		Continue()
+END
+
+IF
+	!Global("ID9201_INACTIVE","MYAREA",1)
+	Global("BC_CUTSCENE","GLOBAL",11)
+	Global("ANNOUNCER_SPOKE","GLOBAL",0)
+THEN
+	RESPONSE #100
+		SetGlobal("BC_CUTSCENE","GLOBAL",0)
+		SetGlobal("ANNOUNCER_SPOKE","GLOBAL",1)
+		StartCutSceneMode()
+		MultiPlayerSync()
+		StartCutScene("BCANNTLK")
+END
+
+IF
+	!Global("ID9201_INACTIVE","MYAREA",1)
+	Global("BC_CUTSCENE","GLOBAL",11)
+	!Global("ANNOUNCER_SPOKE","GLOBAL",0)
+THEN
+	RESPONSE #100
+		SetGlobal("BC_CUTSCENE","GLOBAL",0)
+		StartCutSceneMode()
+		MultiPlayerSync()
+		StartCutScene("BCWYLTLK")
+END
+
+IF
+	!Global("ID9201_INACTIVE","MYAREA",1)
+	Global("GOBLIN_RACE_KILLED","MYAREA",0)
+	!Global("BC_GOBLIN_LOST","GLOBAL",0)
+THEN
+	RESPONSE #100
+		SetGlobal("GOBLIN_RACE_KILLED","MYAREA",1)
+		ActionOverride("GOB9201_1",DestroySelf())
+		ActionOverride("GOB9201_2",DestroySelf())
+		ActionOverride("GOB9201_3",DestroySelf())
+		ActionOverride("GOB9201_4",DestroySelf())
+		ActionOverride("GOB9201_5",DestroySelf())
+		ActionOverride("GOB9201_6",DestroySelf())
+		ActionOverride("9200_WARRIOR_2",DestroySelf())
+		ActionOverride("9200_WARRIOR_5",DestroySelf())
+		SetGlobal("ID9201_INACTIVE","MYAREA",1)
+END
+
+IF
+	!Global("ID9201_INACTIVE","MYAREA",1)
+	Global("SKELETON_RACE_KILLED","MYAREA",0)
+	!Global("BC_SKELETON_LOST","GLOBAL",0)
+THEN
+	RESPONSE #100
+		SetGlobal("SKELETON_RACE_KILLED","MYAREA",1)
+		ActionOverride("SKEL9201_1",DestroySelf())
+		ActionOverride("SKEL9201_2",DestroySelf())
+		ActionOverride("SKEL9201_3",DestroySelf())
+		ActionOverride("SKEL9201_4",DestroySelf())
+		ActionOverride("SKEL9201_5",DestroySelf())
+		ActionOverride("SKEL9201_6",DestroySelf())
+		ActionOverride("9200_WARRIOR_3",DestroySelf())
+		ActionOverride("9200_WARRIOR_6",DestroySelf())
+		SetGlobal("ID9201_INACTIVE","MYAREA",1)
+END
+
+IF
+	!Global("ID9201_INACTIVE","MYAREA",1)
+	OnCreation()
+THEN
+	RESPONSE #100
+		NoAction()
+		Continue()
+END
+

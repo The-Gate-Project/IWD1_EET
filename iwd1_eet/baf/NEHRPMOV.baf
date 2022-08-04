@@ -1,0 +1,48 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId("ID9706_HRPCAT_0")
+		MoveToObject(Player1)
+END
+
+IF
+	True()
+THEN
+	RESPONSE #1
+		CutSceneId("ID9706_HRPCAT_1")
+		MoveToObject(Player1)
+END
+
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId("ID9706_HRPCAT_2")
+		MoveToObject(Player1)
+END
+
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId("ID9706_HRPFND_0")
+		MoveToObject(Player1)
+END
+
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId("ID9706_HRPFND_1")
+		MoveToObject(Player1)
+END
+
+/*IF
+	OnCreation()
+THEN
+	RESPONSE #100
+		NoAction()
+		Continue()
+END*/
+

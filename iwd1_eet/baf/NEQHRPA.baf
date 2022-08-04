@@ -1,0 +1,23 @@
+IF
+	//CheckPartyAverageLevel(16,GREATER_THAN)
+	LevelPartyGT(8)
+THEN
+	RESPONSE #100
+		ChangeAIScript("NEQHRPAH",CLASS)
+END
+
+IF
+	//CheckPartyAverageLevel(14,LESS_THAN)
+	LevelPartyLT(6)
+THEN
+	RESPONSE #100
+		ChangeAIScript("NEQHRPAL",CLASS)
+END
+
+IF
+	True()
+THEN
+	RESPONSE #100
+		ChangeAIScript("NEQHRPAM",CLASS)
+END
+

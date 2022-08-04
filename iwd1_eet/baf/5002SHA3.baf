@@ -1,0 +1,25 @@
+IF
+	StateCheck(Myself,STATE_PANIC)
+THEN
+	RESPONSE #100
+		RandomWalkContinuous()
+END
+
+IF
+	HPPercentLT("Skel_3_1",75)
+	!StateCheck("Skel_3_1",STATE_REALLY_DEAD)
+THEN
+	RESPONSE #100
+		SpellRES("IDIN997","Skel_3_1") //INNATE_SHADOW_PACT
+		//Continue()
+END
+
+IF
+	HPPercentLT("Skel_3_2",75)
+	!StateCheck("Skel_3_2",STATE_REALLY_DEAD)
+THEN
+	RESPONSE #100
+		SpellRES("IDIN997","Skel_3_2") //INNATE_SHADOW_PACT
+		//Continue()
+END
+

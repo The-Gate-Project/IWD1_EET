@@ -1,0 +1,31 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Myself)
+		ClearAllActions()
+		MultiPlayerSync()
+		MoveViewPoint([3310.2026],FAST)
+		Wait(1)
+		//PlaySequence("9800MS1",AWAKE)
+		StaticSequence("9800MS1",SEQ_AWAKE)
+		SmallWait(4)
+		//PlaySequence("9800MS1",ATTACK)
+		StaticSequence("9800MS1",SEQ_ATTACK)
+		SmallWait(4)
+		//PlaySequence("9800MS1",AWAKE)
+		StaticSequence("9800MS1",SEQ_AWAKE)
+		SmallWait(4)
+		//PlaySequence("9800MS1",ATTACK)
+		StaticSequence("9800MS1",SEQ_ATTACK)
+		Wait(1)
+		PlaySound("ID9800C")
+		//PlaySequence("9800MS1",AWAKE)
+		StaticSequence("9800MS1",SEQ_AWAKE)
+		SetGlobal("9800MS1_SEQ","MYAREA",1)
+		Wait(3)
+		//Activate("AM9800D")
+		SoundActivate("AM9800D",TRUE)
+		EndCutSceneMode()
+END
+

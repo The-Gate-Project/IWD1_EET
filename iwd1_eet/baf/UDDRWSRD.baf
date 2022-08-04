@@ -1,0 +1,49 @@
+IF
+	StateCheck(Myself,STATE_PANIC)
+THEN
+	RESPONSE #100
+		RandomWalkContinuous()
+END
+
+IF
+	!GlobalTimerNotExpired("IWD_Rest","LOCALS")
+THEN
+	RESPONSE #100
+		SetGlobalTimer("IWD_Rest","LOCALS",EIGHT_HOURS)
+		ApplySpell(Myself,RESTORE_FULL_HEALTH)
+		Rest()
+END
+
+IF
+	CheckStat(Myself,0,STONESKINS)
+	HaveSpell(WIZARD_STONE_SKIN)
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		Spell(Myself,WIZARD_STONE_SKIN)
+		Wait(2)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		AttackReevaluate(LastSeenBy(Myself),75)
+END
+
+IF
+	AttackedBy(NearestEnemyOf(Myself),DEFAULT)
+THEN
+	RESPONSE #100
+		MoveToObject(LastAttackerOf(Myself))
+END
+
+IF
+	!Allegiance(Myself,ENEMY)
+	See([PC])
+THEN
+	RESPONSE #100
+		Enemy()
+		Continue()
+END
+

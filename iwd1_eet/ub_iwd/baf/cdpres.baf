@@ -1,0 +1,38 @@
+IF // if duel broken or ended, switch back to enemy
+  !Allegiance(Myself,ENEMY)
+  GlobalGT("CDPresioDuel","GLOBAL",4)
+THEN
+  RESPONSE #100
+    Enemy()
+    ChangeAIScript("",OVERRIDE)
+END
+
+IF // change to neutral while dueling
+  GlobalGT("CDPresioDuel","GLOBAL",0)
+  GlobalLT("CDPresioDuel","GLOBAL",5)
+  !Allegiance(Myself,NEUTRAL)
+THEN
+  RESPONSE #100
+    ChangeEnemyAlly(Myself,NEUTRAL)
+END
+
+IF // if attacked after duel started/in progress, break truce
+  GlobalGT("CDPresioDuel","GLOBAL",0)
+  GlobalLT("CDPresioDuel","GLOBAL",5)
+  AttackedBy([GOODCUTOFF],DEFAULT)
+THEN
+  RESPONSE #100
+    SetGlobal("CDPresioDuel","GLOBAL",7)
+    Enemy()
+    ChangeAIScript("",OVERRIDE)
+END
+
+IF // block scripting when duel in progress
+  GlobalGT("CDPresioDuel","GLOBAL",0)
+  GlobalLT("CDPresioDuel","GLOBAL",5)
+THEN
+  RESPONSE #100
+    SetDialog("")
+    SetNumTimesTalkedTo(1)
+    NoAction()
+END      

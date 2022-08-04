@@ -1,0 +1,30 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Myself)
+		ClearAllActions()
+		MultiPlayerSync()
+		SetGlobal("GEM_TRIGGERED","MYAREA",1)
+		MoveViewPoint([166.243],INSTANT)
+		MultiPlayerSync()
+		ActionOverride(LastTrigger(Myself),FaceObject("AR9603_ATTACK_ME"))
+		Wait(1)
+		MultiPlayerSync()
+		//PlaySequence(LastTrigger(Myself),ATTACK)
+		ActionOverride(LastTrigger(Myself),SetSequence(SEQ_ATTACK))
+		SmallWait(8)
+		EndCutSceneMode()
+		ReallyForceSpellRES("IDWI220",Myself)  // WIZARD_SNILLOCS_SNOWBALL_SWARM
+		OpenDoor("AR9603_GEM")
+		Wait(1)
+		MultiPlayerSync()
+		//AddexperienceParty(10000)
+		AddXP2DA("ID1EX4H")
+		MultiPlayerSync()
+		//TomsStringDisplayer(26824)  // Вы разрушили защиту вокруг тела молодого дракона и позволили ему погибнуть.
+		DisplayStringPointLog([1195.740],@26824)
+		MultiPlayerSync()
+		Wait(1)
+END
+

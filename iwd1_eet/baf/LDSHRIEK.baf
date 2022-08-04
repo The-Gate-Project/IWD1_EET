@@ -1,0 +1,78 @@
+IF
+	See([PC])
+THEN
+	RESPONSE #100
+		SetSequence(SEQ_CONJURE)
+		PlaySound("shrie04a")
+		SetSequence(SEQ_CAST)
+		PlaySound("shrie03a")
+		Continue()
+	RESPONSE #100
+		SetSequence(SEQ_CONJURE)
+		PlaySound("shrie04b")
+		SetSequence(SEQ_CAST)
+		PlaySound("shrie03b")
+		Continue()
+END
+
+IF
+	AttackedBy([PC],DEFAULT)
+THEN
+	RESPONSE #100
+		SetSequence(SEQ_CONJURE)
+		PlaySound("shrie04a")
+		SetSequence(SEQ_CAST)
+		PlaySound("shrie03a")
+		Continue()
+	RESPONSE #100
+		SetSequence(SEQ_CONJURE)
+		PlaySound("shrie04b")
+		SetSequence(SEQ_CAST)
+		PlaySound("shrie03b")
+		Continue()
+END
+
+IF
+	HitBy([PC],CRUSHING)
+THEN
+	RESPONSE #100
+		SetSequence(SEQ_CONJURE)
+		PlaySound("shrie04a")
+		SetSequence(SEQ_CAST)
+		PlaySound("shrie03a")
+		Continue()
+	RESPONSE #100
+		SetSequence(SEQ_CONJURE)
+		PlaySound("shrie04b")
+		SetSequence(SEQ_CAST)
+		PlaySound("shrie03b")
+		Continue()
+END
+
+IF
+	See([PC])
+	!GlobalTimerNotExpired("SHRIEKER_SUMMON","MYAREA")
+THEN
+	RESPONSE #100
+		SetGlobalTimer("SHRIEKER_SUMMON","MYAREA",5)
+		SetGlobal("8005_SUMMON","GLOBAL",1)
+END
+
+IF
+	AttackedBy([PC],DEFAULT)
+	!GlobalTimerNotExpired("SHRIEKER_SUMMON","MYAREA")
+THEN
+	RESPONSE #100
+		SetGlobalTimer("SHRIEKER_SUMMON","MYAREA",5)
+		SetGlobal("8005_SUMMON","GLOBAL",1)
+END
+
+IF
+	HitBy([PC],CRUSHING)
+	!GlobalTimerNotExpired("SHRIEKER_SUMMON","MYAREA")
+THEN
+	RESPONSE #100
+		SetGlobalTimer("SHRIEKER_SUMMON","MYAREA",5)
+		SetGlobal("8005_SUMMON","GLOBAL",1)
+END
+

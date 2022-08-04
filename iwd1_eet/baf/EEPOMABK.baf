@@ -1,0 +1,29 @@
+IF
+	Global("POMAB_IMAGES_DEAD","MYAREA",0)
+	!GlobalLT("FAKE_POMAB_DEAD","GLOBAL",5)
+THEN
+	RESPONSE #100
+		FaceObject(PartySlot1)
+		DisplayStringHead(Myself,@17697)
+		Wait(1)
+		ChangeStat(Myself,MAXHITPOINTS,25,SET)
+		ApplySpellRES("IDMXHPS",Myself)
+		SetGlobal("POMAB_IMAGES_DEAD","MYAREA",1)
+		Continue()
+END
+
+IF
+	!Global("POMAB_IMAGES_DEAD","MYAREA",0)
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		RunAwayFromNoLeaveArea(LastSeenBy(Myself),45)
+END
+
+IF
+	!Global("POMAB_IMAGES_DEAD","MYAREA",0)
+THEN
+	RESPONSE #100
+		NoAction()
+END
+

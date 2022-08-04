@@ -1,0 +1,7 @@
+IF
+  HasItem("CDITEM",Myself)
+THEN
+  RESPONSE #100
+    DestroyItem("CDITEM")
+END
+

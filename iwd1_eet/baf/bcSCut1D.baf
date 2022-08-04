@@ -1,0 +1,34 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId("SEER")  // Провидица
+		Activate("SEER")
+		SetGlobal("IwIHidden","LOCALS",0)
+		StartCutSceneMode()
+		HideGUI()
+		SetGlobal("BC_CUTSCENE","GLOBAL",16)
+		SetGlobal("WYLF_SEER_SHOWDOWN","GLOBAL",1)
+		SetGlobal("SEER_GHOST_STATE","GLOBAL",2)
+		MultiPlayerSync()
+		ClearAllActions()
+		MultiPlayerSync()
+		DestroyItem("VIRGIN")
+		MoveViewPoint([793.538],VERY_FAST)
+		EquipItemEx("IDAPORT",0)
+		MultiPlayerSync()
+		StartCutScene("BCTNTFC1")
+		Wait(1)
+		//HideCreature(Myself,FALSE)
+		ApplySpellRES("IDRINVS",Myself)
+		MultiPlayerSync()
+		//Deactivate("MAIN_AMBI_1")
+		AmbientActivate("MAIN_AMBI_1",FALSE)
+		Wait(1)
+		//SetDialogueRange(75)
+		Wait(2)
+		MultiPlayerSync()
+		//Dialogue(Protagonist)
+		StartDialogNoSet([PC])
+END
+

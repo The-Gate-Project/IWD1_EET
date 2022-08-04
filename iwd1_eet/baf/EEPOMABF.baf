@@ -1,0 +1,154 @@
+IF
+	OR(2)
+		!Global("KILL_FAKE_POMAB","GLOBAL",0)
+		!Global("SPRITE_IS_DEADPOMAB","GLOBAL",0)
+THEN
+	RESPONSE #100
+		IncrementGlobal("KILL_FAKE_POMAB","GLOBAL",-1)
+		IncrementGlobal("FAKE_POMAB_DEAD","GLOBAL",1)
+		DestroySelf()
+END
+
+IF
+	HPGT(Myself,3000)
+THEN
+	RESPONSE #100
+		ChangeStat(Myself,MAXHITPOINTS,3000,SET)
+		ApplySpellRES("IDMXHPS",Myself)
+		Continue()
+END
+
+IF
+	GlobalLT("FAKE_POMAB_DEAD","GLOBAL",5)
+	HPLT(Myself,3000)
+THEN
+	RESPONSE #100
+		ChangeStat(Myself,MAXHITPOINTS,3000,SET)
+		ApplySpellRES("IDMXHPS",Myself)
+		JumpToPoint([211.509])
+	RESPONSE #100
+		ChangeStat(Myself,MAXHITPOINTS,3000,SET)
+		ApplySpellRES("IDMXHPS",Myself)
+		JumpToPoint([631.575])
+	RESPONSE #100
+		ChangeStat(Myself,MAXHITPOINTS,3000,SET)
+		ApplySpellRES("IDMXHPS",Myself)
+		JumpToPoint([499.334])
+	RESPONSE #100
+		ChangeStat(Myself,MAXHITPOINTS,3000,SET)
+		ApplySpellRES("IDMXHPS",Myself)
+		JumpToPoint([565.758])
+	RESPONSE #100
+		ChangeStat(Myself,MAXHITPOINTS,3000,SET)
+		ApplySpellRES("IDMXHPS",Myself)
+		JumpToPoint([364.436])
+	RESPONSE #100
+		ChangeStat(Myself,MAXHITPOINTS,3000,SET)
+		ApplySpellRES("IDMXHPS",Myself)
+		JumpToPoint([416.672])
+	RESPONSE #100
+		ChangeStat(Myself,MAXHITPOINTS,3000,SET)
+		ApplySpellRES("IDMXHPS",Myself)
+		JumpToPoint([556.433])
+	RESPONSE #100
+		ChangeStat(Myself,MAXHITPOINTS,3000,SET)
+		ApplySpellRES("IDMXHPS",Myself)
+		JumpToPoint([221.612])
+	RESPONSE #100
+		ChangeStat(Myself,MAXHITPOINTS,3000,SET)
+		ApplySpellRES("IDMXHPS",Myself)
+		JumpToPoint([797.488])
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		IncrementGlobal("SHOTS_FIRED","LOCALS",1)
+		UseItem("WANDFAK",NearestEnemyOf(Myself)) // Жезл Молний
+	RESPONSE #100
+		Continue()
+END
+
+IF
+	!BitCheck("CREATURE_STATE_VAR","LOCALS",1)
+THEN
+	RESPONSE #100
+		BitSet("CREATURE_STATE_VAR","LOCALS",1)
+		SetGlobalTimerRandom("IwTimer24","LOCALS",10,25)
+		Continue()
+END
+
+IF
+	Global("FAKE_POMAB_FLOAT","MYAREA",0)
+	GlobalTimerExpired("IwTimer24","LOCALS")
+THEN
+	RESPONSE #100
+		SetGlobal("FAKE_POMAB_FLOAT","MYAREA",1)
+		DisplayStringHead(Myself,@17693)
+		SetGlobalTimerRandom("IwTimer24","LOCALS",10,25)
+		Continue()
+	RESPONSE #100
+		SetGlobal("FAKE_POMAB_FLOAT","MYAREA",1)
+		DisplayStringHead(Myself,@17694)
+		SetGlobalTimerRandom("IwTimer24","LOCALS",10,25)
+		Continue()
+	RESPONSE #100
+		SetGlobal("FAKE_POMAB_FLOAT","MYAREA",1)
+		DisplayStringHead(Myself,@17695)
+		SetGlobalTimerRandom("IwTimer24","LOCALS",10,25)
+		Continue()
+	RESPONSE #100
+		SetGlobal("FAKE_POMAB_FLOAT","MYAREA",1)
+		DisplayStringHead(Myself,@17696)
+		SetGlobalTimerRandom("IwTimer24","LOCALS",10,25)
+		Continue()
+	RESPONSE #100
+		SetGlobal("FAKE_POMAB_FLOAT","MYAREA",1)
+		DisplayStringHead(Myself,@17703)
+		SetGlobalTimerRandom("IwTimer24","LOCALS",10,25)
+		Continue()
+	RESPONSE #100
+		SetGlobal("FAKE_POMAB_FLOAT","MYAREA",1)
+		DisplayStringHead(Myself,@17699)
+		SetGlobalTimerRandom("IwTimer24","LOCALS",10,25)
+		Continue()
+	RESPONSE #100
+		SetGlobal("FAKE_POMAB_FLOAT","MYAREA",1)
+		DisplayStringHead(Myself,@17700)
+		SetGlobalTimerRandom("IwTimer24","LOCALS",10,25)
+		Continue()
+	RESPONSE #100
+		SetGlobal("FAKE_POMAB_FLOAT","MYAREA",1)
+		DisplayStringHead(Myself,@17701)
+		SetGlobalTimerRandom("IwTimer24","LOCALS",10,25)
+		Continue()
+END
+
+IF
+	GlobalLT("FAKE_POMAB_DEAD","GLOBAL",5)
+THEN
+	RESPONSE #50
+		MoveToPoint([211.509])
+	RESPONSE #50
+		MoveToPoint([631.575])
+	RESPONSE #50
+		MoveToPoint([499.334])
+	RESPONSE #50
+		MoveToPoint([565.758])
+	RESPONSE #50
+		MoveToPoint([364.436])
+	RESPONSE #50
+		MoveToPoint([416.672])
+	RESPONSE #50
+		MoveToPoint([556.433])
+	RESPONSE #50
+		MoveToPoint([221.612])
+	RESPONSE #50
+		MoveToPoint([797.488])
+	RESPONSE #100
+		RunAwayFrom(NearestEnemyOf(Myself),5)
+	RESPONSE #100
+		RunAwayFrom(NearestEnemyOf(Myself),5)
+END
+

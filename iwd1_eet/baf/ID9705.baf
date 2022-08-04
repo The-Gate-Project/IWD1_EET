@@ -1,0 +1,59 @@
+IF
+	!Global("RESET_VISIBLE_RANGE","GLOBAL",0)
+THEN
+	RESPONSE #100
+		//SetVisualRange(0)
+		ActionOverride("cutspy",DestroySelf())
+		SetGlobal("RESET_VISIBLE_RANGE","GLOBAL",0)
+		Continue()
+END
+
+IF
+	Global("TALE_PLACED","MYAREA",0)
+THEN
+	RESPONSE #100
+		ActionOverride("CHEST_1",CreateItem("TALE1",0,0,0))  // История сэра Геддиана
+		SetGlobal("TALE_PLACED","MYAREA",1)
+	RESPONSE #100
+		ActionOverride("CHEST_2",CreateItem("TALE1",0,0,0))  // История сэра Геддиана
+		SetGlobal("TALE_PLACED","MYAREA",1)
+	RESPONSE #100
+		ActionOverride("CHEST_3",CreateItem("TALE1",0,0,0))  // История сэра Геддиана
+		SetGlobal("TALE_PLACED","MYAREA",1)
+	RESPONSE #100
+		ActionOverride("CHEST_4",CreateItem("TALE1",0,0,0))  // История сэра Геддиана
+		SetGlobal("TALE_PLACED","MYAREA",1)
+	RESPONSE #100
+		ActionOverride("CHEST_5",CreateItem("TALE1",0,0,0))  // История сэра Геддиана
+		SetGlobal("TALE_PLACED","MYAREA",1)
+	RESPONSE #100
+		ActionOverride("CHEST_6",CreateItem("TALE1",0,0,0))  // История сэра Геддиана
+		SetGlobal("TALE_PLACED","MYAREA",1)
+END
+
+IF
+	GlobalLT("CHALLENGE_COURAGE","GLOBAL",2)
+	PartyHasItem("TALE1")
+THEN
+	RESPONSE #100
+		SetGlobal("CHALLENGE_COURAGE","GLOBAL",2)
+		Continue()
+END
+
+IF
+	!Global("RETURN_TO_LONELYWOOD","GLOBAL",0)
+THEN
+	RESPONSE #100
+		StartCutSceneMode()
+		StartCutScene("keRtrnLW")
+		SetGlobal("RETURN_TO_LONELYWOOD","GLOBAL",0)
+END
+
+IF
+	OnCreation()
+THEN
+	RESPONSE #100
+		NoAction()
+		Continue()
+END
+

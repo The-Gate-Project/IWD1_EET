@@ -1,0 +1,66 @@
+
+INCLUDE ~iwd1_eet/ub_iwd/lib/functions.tpa~
+
+COMPILE ~iwd1_eet/ub_iwd/ub_dlg/DCAPVIL3.d~
+
+COMPILE ~iwd1_eet/ub_iwd/baf/hb400522.baf~
+
+EXTEND_BOTTOM ~ID4005.bcs~ ~iwd1_eet/ub_iwd/baf/hb4005.baf~
+
+COMPILE ~iwd1_eet/ub_iwd/dlg/highbapt.d~
+        ~iwd1_eet/ub_iwd/baf/cdcapvil.baf~
+
+COPY_EXISTING ~mcapvil.cre~  ~override/cdcapv1a.cre~
+              ~fcapvil.cre~  ~override/cdcapv2a.cre~
+              ~fmcapvil.cre~ ~override/cdcapv3a.cre~
+              ~mcapvil.cre~  ~override/cdcapv4a.cre~
+              ~ffcapvil.cre~ ~override/cdcapv5a.cre~
+              ~mcapvil.cre~  ~override/cdcapv6a.cre~
+              ~fcapvil.cre~  ~override/cdcapv7a.cre~
+              ~fmcapvil.cre~ ~override/cdcapv8a.cre~
+	WRITE_ASCII  0x248 "hb400522" #8             // override script
+	WRITE_ASCII  0x250 "cdcapvil" #8             // class script
+	WRITE_ASCIIE (0x2f1 - (0x68)) "%DEST_RES%" #23  // script name; next write clears out...
+	WRITE_ASCII  (0x2e8 - (0x68)) "captivevillager" // ... all but the [1-8]a form the previous write
+	WRITE_ASCII  (0x334 - (0x68)) "dcapvil3"        // dialogue
+	ADD_CRE_ITEM ~b1-6~ #0 #0 #0 ~NONE~ ~WEAPON1~ EQUIP          // weapon
+
+COPY_EXISTING ~ID4005.are~ ~override~
+	LPF cd_area_alter_cre INT_VAR x_coord = 3166 y_coord = 1553 STR_VAR cre_name = "High_Baptist"  END
+	LPF cd_area_alter_cre INT_VAR x_coord = 3056 y_coord = 1356 STR_VAR cre_name = "Histachii 104" END
+	LPF cd_area_alter_cre INT_VAR x_coord = 2774 y_coord = 1372 STR_VAR cre_name = "Histachii 105" END
+	LPF cd_area_alter_cre INT_VAR x_coord = 2709 y_coord = 1468 STR_VAR cre_name = "Histachii 106" END
+	LPF cd_area_alter_cre INT_VAR x_coord = 3097 y_coord = 1274 STR_VAR cre_name = "Histachii 107" END
+	LPF cd_area_alter_cre INT_VAR x_coord = 3020 y_coord = 1400 STR_VAR cre_name = "Histachii 108" END
+	BUT_ONLY
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

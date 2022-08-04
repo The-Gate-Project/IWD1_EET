@@ -1,0 +1,138 @@
+IF
+  Global("SaveSavedLoc","LOCALS",0)
+THEN
+  RESPONSE #100
+    SetGlobal("SaveSavedLoc","LOCALS",1)
+    SaveObjectLocation("LOCALS","SavedLoc",Myself)
+    Continue()
+END
+
+IF
+	StateCheck(Myself,STATE_PANIC)
+THEN
+	RESPONSE #100
+		RandomWalkContinuous()
+END
+
+IF
+	!GlobalTimerNotExpired("IWD_Rest","LOCALS")
+THEN
+	RESPONSE #100
+		SetGlobalTimer("IWD_Rest","LOCALS",EIGHT_HOURS)
+		ApplySpell(Myself,RESTORE_FULL_HEALTH)
+		Rest()
+END
+
+IF
+	HaveSpell(CLERIC_DEFENSIVE_HARMONY)
+	See([PC])
+THEN
+	RESPONSE #100
+		SpellPoint([900.1970],CLERIC_DEFENSIVE_HARMONY)
+		Help()
+END
+
+IF
+	HaveSpell(CLERIC_SILENCE_15_FOOT)
+	OR(11)
+		See([PC.0.0.FIGHTER_MAGE])
+		See([PC.0.0.FIGHTER_MAGE_CLERIC])
+		See([PC.0.0.FIGHTER_CLERIC])
+		See([PC.0.0.FIGHTER_MAGE_THIEF])
+		See([PC.0.0.MAGE_THIEF])
+		See([PC.0.0.CLERIC_THIEF])
+		See([PC.0.0.CLERIC_RANGER])
+		See([PC.0.0.CLERIC_MAGE])
+		See([PC.0.0.MAGE])
+		See([PC.0.0.CLERIC])
+		See([PC.0.0.SORCERER])
+	!StateCheck(LastSeenBy(Myself),STATE_SILENCED)
+THEN
+	RESPONSE #100
+		Help()
+		Spell(LastSeenBy(Myself),CLERIC_SILENCE_15_FOOT)
+		Wait(2)
+END
+
+IF
+	HaveSpell(CLERIC_HOLD_PERSON)
+	OR(6)
+		See(NearestEnemyOf(Myself))
+		See([PC.0.0.CLERIC])
+		See([PC.0.0.RANGER])
+		See([PC.0.0.PALADIN])
+		See([PC.0.0.FIGHTER])
+		See([PC.0.0.MONK])
+	!StateCheck(LastSeenBy(Myself),STATE_HELPLESS)
+	!BitCheck("CREATURE_STATE_VAR","LOCALS",8)
+THEN
+	RESPONSE #100
+		BitSet("CREATURE_STATE_VAR","LOCALS",8)
+		Help()
+		Spell(LastSeenBy(Myself),CLERIC_HOLD_PERSON)
+		Wait(2)
+END
+
+IF
+	HaveSpell(CLERIC_HOLD_PERSON)
+	OR(6)
+		See([PC.0.0.THIEF])
+		See([PC.0.0.SORCERER])
+		See([PC.0.0.MAGE])
+		See([PC.0.0.SHAMAN])
+		See([PC.0.0.DRUID])
+		See([PC.0.0.CLERIC])
+	!StateCheck(LastSeenBy(Myself),STATE_HELPLESS)
+	!BitCheck("CREATURE_STATE_VAR","LOCALS",16)
+THEN
+	RESPONSE #100
+		BitSet("CREATURE_STATE_VAR","LOCALS",16)
+		Help()
+		Spell(LastSeenBy(Myself),CLERIC_HOLD_PERSON)
+		Wait(2)
+END
+
+IF
+	HaveSpell(CLERIC_HOLD_PERSON)
+	See(NearestEnemyOf(Myself))
+	!StateCheck(LastSeenBy(Myself),STATE_HELPLESS)
+THEN
+	RESPONSE #100
+		Help()
+		Spell(LastSeenBy(Myself),CLERIC_HOLD_PERSON)
+		Wait(2)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		Help()
+		AttackReevaluate(LastSeenBy(Myself),75)
+END
+
+IF
+	AttackedBy(NearestEnemyOf(Myself),DEFAULT)
+THEN
+	RESPONSE #100
+		FaceObject(LastAttackerOf(Myself))
+		Continue()
+END
+
+IF
+	BitCheck("AREA_VAR","MYAREA",1)
+	See("EGENIA")
+THEN
+	RESPONSE #100
+		Help()
+		AttackReevaluate(LastSeenBy(Myself),75)
+END
+
+IF
+	ActionListEmpty()
+	!NearSavedLocation(Myself,"LOCALSSavedLoc",0)
+THEN
+	RESPONSE #100
+		MoveToSavedLocation("SavedLoc","LOCALS")
+END
+

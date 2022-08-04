@@ -1,0 +1,18 @@
+IF
+  True()
+THEN
+  RESPONSE #100
+    CutSceneId(Player1)
+    ClearAllActions()
+    MultiPlayerSync()
+    FadeToColor([20.0],0)
+    ActionOverride("kierannye",MoveToPoint([788.608]))
+    Wait(4)
+    ClearAllActions()
+    ActionOverride("kierannye",MoveToPoint([788.308]))
+    FadeFromColor([20.0],0)
+    Wait(2)
+    SetGlobal("CDGloom","MYAREA",4)
+    MultiPlayerSync()
+    EndCutSceneMode()
+END

@@ -1,0 +1,9 @@
+IF
+	HasItem("POTN17",Myself)
+	HPPercentLT(Myself,75)
+THEN
+	RESPONSE #100
+		UseItem("POTN17",Myself)
+		Continue()
+END
+

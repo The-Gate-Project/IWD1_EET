@@ -1,0 +1,94 @@
+IF
+  Global("SaveSavedLoc","LOCALS",0)
+THEN
+  RESPONSE #100
+    SetGlobal("SaveSavedLoc","LOCALS",1)
+    SaveObjectLocation("LOCALS","SavedLoc",Myself)
+    Continue()
+END
+
+IF
+	StateCheck(Myself,STATE_PANIC)
+THEN
+	RESPONSE #100
+		RandomWalkContinuous()
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	!Global("YXUN_ATTACK","MYAREA",0)
+	Global("CDDispelOnce","LOCALS",0)
+THEN
+	RESPONSE #100
+		ForceSpell(LastSeenBy(Myself),CLERIC_DISPEL_MAGIC)
+		SetGlobal("CDDispelOnce","LOCALS",1) 
+		Wait(2)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	!BitCheck("CREATURE_STATE_VAR","LOCALS",8)
+	!Global("YXUN_ATTACK","MYAREA",0)
+THEN
+	RESPONSE #100
+		BitSet("CREATURE_STATE_VAR","LOCALS",8)
+		Spell(LastSeenBy(Myself),CLERIC_HOLD_PERSON)
+		Wait(2)
+	RESPONSE #100
+		BitSet("CREATURE_STATE_VAR","LOCALS",8)
+		Spell(LastSeenBy(Myself),CLERIC_DISPEL_MAGIC)
+		Wait(2)
+	RESPONSE #100
+		BitSet("CREATURE_STATE_VAR","LOCALS",8)
+		Spell(LastSeenBy(Myself),CLERIC_GLYPH_OF_WARDING)
+		Wait(2)
+	RESPONSE #100
+		BitSet("CREATURE_STATE_VAR","LOCALS",8)
+		Spell(Myself,CLERIC_STRENGTH_OF_ONE)
+		Wait(2)
+END
+
+IF
+	!Global("YXUN_ATTACK","MYAREA",0)
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		AttackReevaluate(LastSeenBy(Myself),75)
+END
+
+IF
+	!Global("YXUN_ATTACK","MYAREA",0)
+	AttackedBy(NearestEnemyOf(Myself),DEFAULT)
+THEN
+	RESPONSE #100
+		MoveToObject(LastAttackerOf(Myself))
+END
+
+IF
+	!Global("YXUN_ATTACK","MYAREA",0)
+	ActionListEmpty()
+	!NearSavedLocation(Myself,"LOCALSSavedLoc",0)
+THEN
+	RESPONSE #100
+		MoveToSavedLocation("SavedLoc","LOCALS")
+END
+
+IF
+	!Global("YXUN_ATTACK","MYAREA",0)
+	ActionListEmpty()
+	!TargetUnreachable([PC])
+THEN
+  RESPONSE #100
+    MoveToObject(Player1)
+  RESPONSE #100
+    NoAction()
+END
+
+IF
+	ActionListEmpty()
+	!NearSavedLocation(Myself,"LOCALSSavedLoc",0)
+THEN
+	RESPONSE #100
+		MoveToSavedLocation("SavedLoc","LOCALS")
+END
+

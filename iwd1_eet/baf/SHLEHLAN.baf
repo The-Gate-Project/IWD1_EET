@@ -1,0 +1,489 @@
+IF
+  Global("SaveSavedLoc","LOCALS",0)
+THEN
+  RESPONSE #100
+    SetGlobal("SaveSavedLoc","LOCALS",1)
+    SaveObjectLocation("LOCALS","SavedLoc",Myself)
+    Continue()
+END
+
+IF
+	Global("MOVEMENT_DEST","LOCALS",0)
+	//NearSavedLocation(Myself,"LOCALSSavedLoc",1)
+THEN
+	RESPONSE #100
+		SetGlobal("MOVEMENT_DEST","LOCALS",1)
+	RESPONSE #100
+		SetGlobal("MOVEMENT_DEST","LOCALS",2)
+	RESPONSE #100
+		SetGlobal("MOVEMENT_DEST","LOCALS",3)
+	RESPONSE #100
+		SetGlobal("MOVEMENT_DEST","LOCALS",4)
+	RESPONSE #100
+		SetGlobal("MOVEMENT_DEST","LOCALS",5)
+END
+
+IF
+	!BitCheck("CREATURE_STATE_VAR","LOCALS",1)
+THEN
+	RESPONSE #100
+		BitSet("CREATURE_STATE_VAR","LOCALS",1)
+		SetGlobalTimer("IwTimer24","LOCALS",5)
+		Continue()
+END
+
+IF
+	Global("MOVEMENT_DEST","LOCALS",6)
+	!GlobalTimerNotExpired("IwTimer24","LOCALS")
+	Global("FLOAT_0_LINE_INDEX","LOCALS",0)
+THEN
+	RESPONSE #100
+		SetGlobal("MOVEMENT_DEST","LOCALS",0)
+		DisplayStringHead(Myself,@14369)
+		IncrementGlobal("FLOAT_0_LINE_INDEX","LOCALS",1)
+		SetGlobalTimer("IwTimer24","LOCALS",5)
+		Continue()
+	RESPONSE #0
+		IncrementGlobal("FLOAT_0_LINE_INDEX","LOCALS",1)
+		SetGlobalTimer("IwTimer24","LOCALS",5)
+		Continue()
+END
+
+IF
+	Global("MOVEMENT_DEST","LOCALS",6)
+	!GlobalTimerNotExpired("IwTimer24","LOCALS")
+	Global("FLOAT_0_LINE_INDEX","LOCALS",1)
+THEN
+	RESPONSE #100
+		SetGlobal("MOVEMENT_DEST","LOCALS",0)
+		DisplayStringHead(Myself,@14370)
+		IncrementGlobal("FLOAT_0_LINE_INDEX","LOCALS",1)
+		SetGlobalTimer("IwTimer24","LOCALS",5)
+		Continue()
+	RESPONSE #0
+		IncrementGlobal("FLOAT_0_LINE_INDEX","LOCALS",1)
+		SetGlobalTimer("IwTimer24","LOCALS",5)
+		Continue()
+END
+
+IF
+	Global("MOVEMENT_DEST","LOCALS",6)
+	!GlobalTimerNotExpired("IwTimer24","LOCALS")
+	Global("FLOAT_0_LINE_INDEX","LOCALS",2)
+THEN
+	RESPONSE #100
+		SetGlobal("MOVEMENT_DEST","LOCALS",0)
+		DisplayStringHead(Myself,@14371)
+		IncrementGlobal("FLOAT_0_LINE_INDEX","LOCALS",1)
+		SetGlobalTimer("IwTimer24","LOCALS",5)
+		Continue()
+	RESPONSE #0
+		IncrementGlobal("FLOAT_0_LINE_INDEX","LOCALS",1)
+		SetGlobalTimer("IwTimer24","LOCALS",5)
+		Continue()
+END
+
+IF
+	Global("MOVEMENT_DEST","LOCALS",6)
+	!GlobalTimerNotExpired("IwTimer24","LOCALS")
+	Global("FLOAT_0_LINE_INDEX","LOCALS",3)
+THEN
+	RESPONSE #100
+		SetGlobal("MOVEMENT_DEST","LOCALS",0)
+		DisplayStringHead(Myself,@14372)
+		SetGlobal("FLOAT_0_LINE_INDEX","LOCALS",0)
+		SetGlobalTimer("IwTimer24","LOCALS",5)
+		Continue()
+	RESPONSE #0
+		SetGlobal("FLOAT_0_LINE_INDEX","LOCALS",0)
+		SetGlobalTimer("IwTimer24","LOCALS",5)
+		Continue()
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		AttackReevaluate(LastSeenBy(Myself),75)
+END
+
+IF
+	AttackedBy(NearestEnemyOf(Myself),DEFAULT)
+THEN
+	RESPONSE #100
+		MoveToObject(LastAttackerOf(Myself))
+END
+
+IF
+	AttackedBy([GOODCUTOFF],DEFAULT)
+THEN
+	RESPONSE #100
+		Enemy()
+		Continue()
+END
+
+IF
+	Global("MOVEMENT_LIST_0_LOC","LOCALS",0)
+	!NearSavedLocation(Myself,"LOCALSSavedLoc",2)
+	Global("MOVEMENT_DEST","LOCALS",1)
+	ActionListEmpty()
+THEN
+	RESPONSE #100
+		MoveToSavedLocation("SavedLoc","LOCALS")
+END
+
+IF
+	Global("MOVEMENT_LIST_0_LOC","LOCALS",0)
+	Global("MOVEMENT_DEST","LOCALS",1)
+	ActionListEmpty()
+THEN
+	RESPONSE #100
+		SetGlobal("MOVEMENT_LIST_0_LOC","LOCALS",1)
+		Continue()
+END
+
+IF
+	Global("MOVEMENT_LIST_0_LOC","LOCALS",1)
+	BitCheck("CREATURE_STATE_VAR","LOCALS",524288)
+	NearLocation(Myself,597,785,8)
+	Global("MOVEMENT_DEST","LOCALS",1)
+THEN
+	RESPONSE #100
+		SetGlobal("MOVEMENT_LIST_0_LOC","LOCALS",2)
+		BitClear("CREATURE_STATE_VAR","LOCALS",524288)
+		Continue()
+END
+
+IF
+	Global("MOVEMENT_LIST_0_LOC","LOCALS",1)
+	Global("MOVEMENT_DEST","LOCALS",1)
+	ActionListEmpty()
+THEN
+	RESPONSE #100
+		BitSet("CREATURE_STATE_VAR","LOCALS",524288)
+		SetHomeLocation([597.785])
+		MoveToPoint([597.785])
+END
+
+IF
+	Global("MOVEMENT_LIST_0_LOC","LOCALS",2)
+	Global("MOVEMENT_DEST","LOCALS",1)
+	ActionListEmpty()
+THEN
+	RESPONSE #100
+		Face(NW)
+		SetGlobal("MOVEMENT_LIST_0_LOC","LOCALS",3)
+END
+
+IF
+	Global("MOVEMENT_LIST_0_LOC","LOCALS",3)
+	Global("MOVEMENT_DEST","LOCALS",1)
+	ActionListEmpty()
+THEN
+	RESPONSE #100
+		WaitRandom(7,10)
+		SetGlobal("MOVEMENT_LIST_0_LOC","LOCALS",4)
+END
+
+IF
+	Global("MOVEMENT_LIST_0_LOC","LOCALS",4)
+	Global("MOVEMENT_DEST","LOCALS",1)
+	ActionListEmpty()
+THEN
+	RESPONSE #100
+		SetGlobal("MOVEMENT_DEST","LOCALS",6)
+		SetGlobal("MOVEMENT_LIST_0_LOC","LOCALS",0)
+END
+
+IF
+	Global("MOVEMENT_LIST_1_LOC","LOCALS",0)
+	!NearSavedLocation(Myself,"LOCALSSavedLoc",2)
+	Global("MOVEMENT_DEST","LOCALS",2)
+	ActionListEmpty()
+THEN
+	RESPONSE #100
+		MoveToSavedLocation("SavedLoc","LOCALS")
+END
+
+IF
+	Global("MOVEMENT_LIST_1_LOC","LOCALS",0)
+	Global("MOVEMENT_DEST","LOCALS",2)
+	ActionListEmpty()
+THEN
+	RESPONSE #100
+		SetGlobal("MOVEMENT_LIST_1_LOC","LOCALS",1)
+		Continue()
+END
+
+IF
+	Global("MOVEMENT_LIST_1_LOC","LOCALS",1)
+	BitCheck("CREATURE_STATE_VAR","LOCALS",524288)
+	NearLocation(Myself,517,880,8)
+	Global("MOVEMENT_DEST","LOCALS",2)
+THEN
+	RESPONSE #100
+		SetGlobal("MOVEMENT_LIST_1_LOC","LOCALS",2)
+		BitClear("CREATURE_STATE_VAR","LOCALS",524288)
+		Continue()
+END
+
+IF
+	Global("MOVEMENT_LIST_1_LOC","LOCALS",1)
+	Global("MOVEMENT_DEST","LOCALS",2)
+	ActionListEmpty()
+THEN
+	RESPONSE #100
+		BitSet("CREATURE_STATE_VAR","LOCALS",524288)
+		SetHomeLocation([517.880])
+		MoveToPoint([517.880])
+END
+
+IF
+	Global("MOVEMENT_LIST_1_LOC","LOCALS",2)
+	Global("MOVEMENT_DEST","LOCALS",2)
+	ActionListEmpty()
+THEN
+	RESPONSE #100
+		Face(S)
+		SetGlobal("MOVEMENT_LIST_1_LOC","LOCALS",3)
+END
+
+IF
+	Global("MOVEMENT_LIST_1_LOC","LOCALS",3)
+	Global("MOVEMENT_DEST","LOCALS",2)
+	ActionListEmpty()
+THEN
+	RESPONSE #100
+		WaitRandom(7,10)
+		SetGlobal("MOVEMENT_LIST_1_LOC","LOCALS",4)
+END
+
+IF
+	Global("MOVEMENT_LIST_1_LOC","LOCALS",4)
+	Global("MOVEMENT_DEST","LOCALS",2)
+	ActionListEmpty()
+THEN
+	RESPONSE #100
+		SetGlobal("MOVEMENT_DEST","LOCALS",6)
+		SetGlobal("MOVEMENT_LIST_1_LOC","LOCALS",0)
+END
+
+IF
+	Global("MOVEMENT_LIST_2_LOC","LOCALS",0)
+	!NearSavedLocation(Myself,"LOCALSSavedLoc",2)
+	Global("MOVEMENT_DEST","LOCALS",3)
+	ActionListEmpty()
+THEN
+	RESPONSE #100
+		MoveToSavedLocation("SavedLoc","LOCALS")
+END
+
+IF
+	Global("MOVEMENT_LIST_2_LOC","LOCALS",0)
+	Global("MOVEMENT_DEST","LOCALS",3)
+	ActionListEmpty()
+THEN
+	RESPONSE #100
+		SetGlobal("MOVEMENT_LIST_2_LOC","LOCALS",1)
+		Continue()
+END
+
+IF
+	Global("MOVEMENT_LIST_2_LOC","LOCALS",1)
+	BitCheck("CREATURE_STATE_VAR","LOCALS",524288)
+	NearLocation(Myself,409,945,8)
+	Global("MOVEMENT_DEST","LOCALS",3)
+THEN
+	RESPONSE #100
+		SetGlobal("MOVEMENT_LIST_2_LOC","LOCALS",2)
+		BitClear("CREATURE_STATE_VAR","LOCALS",524288)
+		Continue()
+END
+
+IF
+	Global("MOVEMENT_LIST_2_LOC","LOCALS",1)
+	Global("MOVEMENT_DEST","LOCALS",3)
+	ActionListEmpty()
+THEN
+	RESPONSE #100
+		BitSet("CREATURE_STATE_VAR","LOCALS",524288)
+		SetHomeLocation([409.945])
+		MoveToPoint([409.945])
+END
+
+IF
+	Global("MOVEMENT_LIST_2_LOC","LOCALS",2)
+	Global("MOVEMENT_DEST","LOCALS",3)
+	ActionListEmpty()
+THEN
+	RESPONSE #100
+		Face(W)
+		SetGlobal("MOVEMENT_LIST_2_LOC","LOCALS",3)
+END
+
+IF
+	Global("MOVEMENT_LIST_2_LOC","LOCALS",3)
+	Global("MOVEMENT_DEST","LOCALS",3)
+	ActionListEmpty()
+THEN
+	RESPONSE #100
+		WaitRandom(7,10)
+		SetGlobal("MOVEMENT_LIST_2_LOC","LOCALS",4)
+END
+
+IF
+	Global("MOVEMENT_LIST_2_LOC","LOCALS",4)
+	Global("MOVEMENT_DEST","LOCALS",3)
+	ActionListEmpty()
+THEN
+	RESPONSE #100
+		SetGlobal("MOVEMENT_DEST","LOCALS",6)
+		SetGlobal("MOVEMENT_LIST_2_LOC","LOCALS",0)
+END
+
+IF
+	Global("MOVEMENT_LIST_3_LOC","LOCALS",0)
+	!NearSavedLocation(Myself,"LOCALSSavedLoc",2)
+	Global("MOVEMENT_DEST","LOCALS",4)
+	ActionListEmpty()
+THEN
+	RESPONSE #100
+		MoveToSavedLocation("SavedLoc","LOCALS")
+END
+
+IF
+	Global("MOVEMENT_LIST_3_LOC","LOCALS",0)
+	Global("MOVEMENT_DEST","LOCALS",4)
+	ActionListEmpty()
+THEN
+	RESPONSE #100
+		SetGlobal("MOVEMENT_LIST_3_LOC","LOCALS",1)
+		Continue()
+END
+
+IF
+	Global("MOVEMENT_LIST_3_LOC","LOCALS",1)
+	BitCheck("CREATURE_STATE_VAR","LOCALS",524288)
+	NearLocation(Myself,650,846,8)
+	Global("MOVEMENT_DEST","LOCALS",4)
+THEN
+	RESPONSE #100
+		SetGlobal("MOVEMENT_LIST_3_LOC","LOCALS",2)
+		BitClear("CREATURE_STATE_VAR","LOCALS",524288)
+		Continue()
+END
+
+IF
+	Global("MOVEMENT_LIST_3_LOC","LOCALS",1)
+	Global("MOVEMENT_DEST","LOCALS",4)
+	ActionListEmpty()
+THEN
+	RESPONSE #100
+		BitSet("CREATURE_STATE_VAR","LOCALS",524288)
+		SetHomeLocation([650.846])
+		MoveToPoint([650.846])
+END
+
+IF
+	Global("MOVEMENT_LIST_3_LOC","LOCALS",2)
+	Global("MOVEMENT_DEST","LOCALS",4)
+	ActionListEmpty()
+THEN
+	RESPONSE #100
+		Face(W)
+		SetGlobal("MOVEMENT_LIST_3_LOC","LOCALS",3)
+END
+
+IF
+	Global("MOVEMENT_LIST_3_LOC","LOCALS",3)
+	Global("MOVEMENT_DEST","LOCALS",4)
+	ActionListEmpty()
+THEN
+	RESPONSE #100
+		WaitRandom(7,10)
+		SetGlobal("MOVEMENT_LIST_3_LOC","LOCALS",4)
+END
+
+IF
+	Global("MOVEMENT_LIST_3_LOC","LOCALS",4)
+	Global("MOVEMENT_DEST","LOCALS",4)
+	ActionListEmpty()
+THEN
+	RESPONSE #100
+		SetGlobal("MOVEMENT_DEST","LOCALS",6)
+		SetGlobal("MOVEMENT_LIST_3_LOC","LOCALS",0)
+END
+
+IF
+	Global("MOVEMENT_LIST_4_LOC","LOCALS",0)
+	!NearSavedLocation(Myself,"LOCALSSavedLoc",2)
+	Global("MOVEMENT_DEST","LOCALS",5)
+	ActionListEmpty()
+THEN
+	RESPONSE #100
+		MoveToSavedLocation("SavedLoc","LOCALS")
+END
+
+IF
+	Global("MOVEMENT_LIST_4_LOC","LOCALS",0)
+	Global("MOVEMENT_DEST","LOCALS",5)
+	ActionListEmpty()
+THEN
+	RESPONSE #100
+		SetGlobal("MOVEMENT_LIST_4_LOC","LOCALS",1)
+		Continue()
+END
+
+IF
+	Global("MOVEMENT_LIST_4_LOC","LOCALS",1)
+	BitCheck("CREATURE_STATE_VAR","LOCALS",524288)
+	NearLocation(Myself,746,758,8)
+	Global("MOVEMENT_DEST","LOCALS",5)
+THEN
+	RESPONSE #100
+		SetGlobal("MOVEMENT_LIST_4_LOC","LOCALS",2)
+		BitClear("CREATURE_STATE_VAR","LOCALS",524288)
+		Continue()
+END
+
+IF
+	Global("MOVEMENT_LIST_4_LOC","LOCALS",1)
+	Global("MOVEMENT_DEST","LOCALS",5)
+	ActionListEmpty()
+THEN
+	RESPONSE #100
+		BitSet("CREATURE_STATE_VAR","LOCALS",524288)
+		SetHomeLocation([746.758])
+		MoveToPoint([746.758])
+END
+
+IF
+	Global("MOVEMENT_LIST_4_LOC","LOCALS",2)
+	Global("MOVEMENT_DEST","LOCALS",5)
+	ActionListEmpty()
+THEN
+	RESPONSE #100
+		Face(W)
+		SetGlobal("MOVEMENT_LIST_4_LOC","LOCALS",3)
+END
+
+IF
+	Global("MOVEMENT_LIST_4_LOC","LOCALS",3)
+	Global("MOVEMENT_DEST","LOCALS",5)
+	ActionListEmpty()
+THEN
+	RESPONSE #100
+		WaitRandom(7,10)
+		SetGlobal("MOVEMENT_LIST_4_LOC","LOCALS",4)
+END
+
+IF
+	Global("MOVEMENT_LIST_4_LOC","LOCALS",4)
+	Global("MOVEMENT_DEST","LOCALS",5)
+	ActionListEmpty()
+THEN
+	RESPONSE #100
+		SetGlobal("MOVEMENT_DEST","LOCALS",6)
+		SetGlobal("MOVEMENT_LIST_4_LOC","LOCALS",0)
+END
+

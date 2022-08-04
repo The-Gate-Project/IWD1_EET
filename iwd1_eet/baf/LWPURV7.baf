@@ -1,0 +1,48 @@
+IF
+	!Global("SPRITE_IS_DEADPURVIS","GLOBAL",0)
+	!IsActive(Myself)
+THEN
+	RESPONSE #100
+		DestroySelf()
+END
+
+IF
+	!Allegiance(Myself,ENEMY)
+THEN
+	RESPONSE #100
+		Enemy()
+		Continue()
+END
+
+IF
+	!IsActive(Myself)
+	GlobalGT("THURLOW_MURDER","GLOBAL",2)
+	Global("PURV7_VIS","GLOBAL",0)
+THEN
+	RESPONSE #100
+		SetGlobal("PURV7_VIS","GLOBAL",1)
+		MultiPlayerSync()
+		Activate(Myself)
+		SetGlobal("IwIHidden","LOCALS",0)
+		XEquipItem("CLCK06",Myself,SLOT_CLOAK,EQUIP)
+		//ApplySpellRES("IDINVIS",Myself)  // No such index
+		Enemy()
+		Continue()
+END
+
+IF
+	!IsActive(Myself)
+THEN
+	RESPONSE #100
+		NoAction()
+END
+
+IF
+	HasItem("POTN52",Myself)  // Зелье улучшенного лечения
+	HPPercentLT(Myself,50)
+THEN
+	RESPONSE #100
+		UseItem("POTN52",Myself)  // Зелье улучшенного лечения
+		Continue()
+END
+

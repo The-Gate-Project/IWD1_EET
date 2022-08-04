@@ -1,0 +1,81 @@
+IF
+  Global("CDDaen","GLOBAL",5)
+THEN
+  RESPONSE #100
+    Wait(2)
+    StartDialogueNoSet("murdaugh")
+END
+
+IF
+  Global("CDDaen","GLOBAL",6)
+THEN
+  RESPONSE #100
+    Wait(2)
+    StartDialogueNoSet("telanis")
+END
+
+IF
+  !Global("CDDaen","GLOBAL",5)
+  !Global("CDDaen","GLOBAL",6)
+  OR(2)
+    Global("CDDaen","GLOBAL",99)
+    !See([PC.0.0.BARD])
+THEN
+  RESPONSE #100
+    SetGlobal("CDDaen","GLOBAL",0)
+    DestroySelf()
+END
+
+IF
+  GlobalGT("CDDaen","GLOBAL",0)
+  GlobalLT("CDDaen","GLOBAL",5)
+  GlobalTimerExpired("CDDaenTimer","GLOBAL")
+  See([PC.0.0.BARD])
+THEN
+  RESPONSE #100
+    StartDialogueNoSet(LastSeenBy(Myself))
+END
+
+IF
+  See([PC.0.0.BARD])
+  Global("CDDaen","GLOBAL",0)
+  CheckStatGT(LastSeenBy(Myself),15,CHR)
+  PartyHasItem("myrloch")
+THEN
+  RESPONSE #100
+    SetGlobal("CDDaen","GLOBAL",4)
+    SetGlobalTimer("CDDaenTimer","GLOBAL",3)
+END
+
+IF
+  See([PC.0.0.BARD])
+  Global("CDDaen","GLOBAL",0)
+  CheckStatGT(LastSeenBy(Myself),15,CHR)
+  !PartyHasItem("myrloch")
+THEN
+  RESPONSE #100
+    SetGlobal("CDDaen","GLOBAL",3)
+    SetGlobalTimer("CDDaenTimer","GLOBAL",3)
+END
+
+IF
+  See([PC.0.0.BARD])
+  Global("CDDaen","GLOBAL",0)
+  !CheckStatGT(LastSeenBy(Myself),15,CHR)
+  PartyHasItem("myrloch")
+THEN
+  RESPONSE #100
+    SetGlobal("CDDaen","GLOBAL",2)
+    SetGlobalTimer("CDDaenTimer","GLOBAL",3)
+END
+
+IF
+  See([PC.0.0.BARD])
+  Global("CDDaen","GLOBAL",0)
+  !CheckStatGT(LastSeenBy(Myself),15,CHR)
+  !PartyHasItem("myrloch")
+THEN
+  RESPONSE #100
+    SetGlobal("CDDaen","GLOBAL",1)
+    SetGlobalTimer("CDDaenTimer","GLOBAL",3)
+END

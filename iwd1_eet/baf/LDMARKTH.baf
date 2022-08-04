@@ -1,0 +1,69 @@
+IF
+	StateCheck(Myself,STATE_PANIC)
+THEN
+	RESPONSE #100
+		RandomWalkContinuous()
+END
+
+IF
+	!BitCheck("CREATURE_STATE_VAR","LOCALS",256)
+	Allegiance(Myself,ENEMY)
+THEN
+	RESPONSE #100
+		BitSet("CREATURE_STATE_VAR","LOCALS",256)
+		DisplayStringHead(Myself,@15409)
+		Continue()
+END
+
+IF
+	Global("MAP_GROUP_HOSTILE5","MYAREA",0)
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		SetGlobal("MAP_GROUP_HOSTILE5","MYAREA",1)
+		Continue()
+END
+
+IF
+	HasItem("POTN10",Myself)
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		Hide()
+		AttackReevaluate(LastSeenBy(Myself),5)
+		UseItem("POTN10",Myself)
+		Help()
+		AttackReevaluate(LastSeenBy(Myself),75)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		AttackReevaluate(LastSeenBy(Myself),75)
+END
+
+IF
+	!Allegiance(Myself,ENEMY)
+	AttackedBy([GOODCUTOFF],DEFAULT)
+THEN
+	RESPONSE #100
+		Enemy()
+		SetGlobal("MAP_GROUP_HOSTILE5","MYAREA",1)
+		Continue()
+END
+
+IF
+	NumTimesTalkedTo(0)
+	See([PC])
+	!Allegiance(Myself,ENEMY)
+	!StateCheck(Myself,STATE_REALLY_DEAD)
+THEN
+	RESPONSE #100
+		StartCutSceneMode()
+		ClearAllActions()
+		MultiPlayerSync()
+		ApplySpellRES("BDCUTSPY",Myself)
+		StartDialogNoSet([PC])
+END
+

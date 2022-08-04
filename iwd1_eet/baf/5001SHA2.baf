@@ -1,0 +1,52 @@
+IF
+	StateCheck(Myself,STATE_PANIC)
+THEN
+	RESPONSE #100
+		RandomWalkContinuous()
+END
+
+IF
+	HPPercentLT("BONE_2_1",75)
+	!StateCheck("BONE_2_1",STATE_REALLY_DEAD)
+THEN
+	RESPONSE #100
+		SpellRES("IDIN997","BONE_2_1") //INNATE_SHADOW_PACT
+		//Continue()
+END
+
+IF
+	HPPercentLT("BONE_2_2",75)
+	!StateCheck("BONE_2_2",STATE_REALLY_DEAD)
+THEN
+	RESPONSE #100
+		SpellRES("IDIN997","BONE_2_2") //INNATE_SHADOW_PACT
+		//Continue()
+END
+
+IF
+	HPPercentLT("BONE_2_3",75)
+	!StateCheck("BONE_2_3",STATE_REALLY_DEAD)
+THEN
+	RESPONSE #100
+		SpellRES("IDIN997","BONE_2_3") //INNATE_SHADOW_PACT
+		//Continue()
+END
+
+IF
+	HPPercentLT("BONE_2_4",75)
+	!StateCheck("BONE_2_4",STATE_REALLY_DEAD)
+THEN
+	RESPONSE #100
+		SpellRES("IDIN997","BONE_2_4") //INNATE_SHADOW_PACT
+		//Continue()
+END
+
+IF
+	HPPercentLT("BONE_2_5",75)
+	!StateCheck("BONE_2_5",STATE_REALLY_DEAD)
+THEN
+	RESPONSE #100
+		SpellRES("IDIN997","BONE_2_5") //INNATE_SHADOW_PACT
+		//Continue()
+END
+

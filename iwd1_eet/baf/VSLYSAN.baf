@@ -1,0 +1,201 @@
+IF
+	!Global("SPRITE_IS_DEADLYSAN","GLOBAL",0)
+	!StateCheck(Myself,STATE_REALLY_DEAD)
+THEN
+	RESPONSE #100
+		DestroySelf()
+END
+
+IF
+  Global("SaveSavedLoc","LOCALS",0)
+THEN
+  RESPONSE #100
+    SetGlobal("SaveSavedLoc","LOCALS",1)
+    SaveObjectLocation("LOCALS","SavedLoc",Myself)
+    Continue()
+END
+
+IF
+	!Allegiance(Myself,ENEMY)
+	!Global("MAP_GROUP_HOSTILE1","MYAREA",0)
+THEN
+	RESPONSE #100
+		Enemy()
+		Continue()
+END
+
+/*IF
+	!BitGlobal(":CREATURE_STATE_VAR","LOCALS",1,AND)
+THEN
+	RESPONSE #100
+		BitGlobal(":CREATURE_STATE_VAR","LOCALS",1,OR)
+		HideCreature(Myself,TRUE)
+		Continue()
+END */
+
+IF
+	!IsActive(Myself)
+	Global("KRESS_QUEST","GLOBAL",3)
+THEN
+	RESPONSE #100
+		Activate(Myself)
+		SetGlobal("IwIHidden","LOCALS",0)
+		Unlock("BOX1")
+		Unlock("BOX2")
+		Unlock("BOX3")
+		Unlock("BOX4")
+		Continue()
+END
+
+IF
+	Global("MAP_GROUP_HOSTILE1","MYAREA",0)
+	IsActive(Myself)
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		SetGlobal("MAP_GROUP_HOSTILE1","MYAREA",1)
+		Continue()
+END
+
+IF
+	!Allegiance(Myself,ENEMY)
+	!Global("MAP_GROUP_HOSTILE1","MYAREA",0)
+THEN
+	RESPONSE #100
+		Enemy()
+		SetGlobal("MAP_GROUP_HOSTILE1","MYAREA",1)
+		Continue()
+END
+
+IF
+	!IsActive(Myself)
+THEN
+	RESPONSE #100
+		NoAction()
+END
+
+IF
+	StateCheck(Myself,STATE_PANIC)
+THEN
+	RESPONSE #100
+		RandomWalkContinuous()
+END
+
+IF
+	!GlobalTimerNotExpired("IWD_Rest","LOCALS")
+THEN
+	RESPONSE #100
+		SetGlobalTimer("IWD_Rest","LOCALS",EIGHT_HOURS)
+		ApplySpell(Myself,RESTORE_FULL_HEALTH)
+		Rest()
+END
+
+IF
+	HaveSpell(CLERIC_BLESS)
+	!StateCheck(Myself,STATE_REALLY_DEAD)
+	HPPercentLT(Myself,75)
+THEN
+	RESPONSE #100
+		Spell(Myself,CLERIC_BLESS)
+		Wait(2)
+		Continue()
+END
+
+IF
+	Global("MAP_GROUP_HOSTILE1","MYAREA",0)
+	AttackedBy([GOODCUTOFF],DEFAULT)
+THEN
+	RESPONSE #100
+		SetGlobal("MAP_GROUP_HOSTILE1","MYAREA",1)
+		Enemy()
+		SetGlobal("MAP_GROUP_HOSTILE1","MYAREA",1)
+		Continue()
+END
+
+IF
+	HaveSpell(CLERIC_SILENCE_15_FOOT)
+	OR(10)
+		See([PC.0.0.CLERIC_MAGE])
+		See([PC.0.0.CLERIC_THIEF])
+		See([PC.0.0.FIGHTER_CLERIC])
+		See([PC.0.0.FIGHTER_MAGE])
+		See([PC.0.0.FIGHTER_MAGE_CLERIC])
+		See([PC.0.0.FIGHTER_MAGE_THIEF])
+		See([PC.0.0.CLERIC_RANGER])
+		See([PC.0.0.MAGE])
+		See([PC.0.0.CLERIC])
+		See([PC.0.0.SORCERER])
+	!StateCheck(LastSeenBy(Myself),STATE_SILENCED)
+	!Global("MAP_GROUP_HOSTILE1","MYAREA",0)
+THEN
+	RESPONSE #100
+		Spell(LastSeenBy(Myself),CLERIC_SILENCE_15_FOOT)
+		Wait(2)
+END
+
+IF
+	HaveSpell(CLERIC_CHARM_PERSON)
+	OR(2)
+		See(NearestEnemyOf(Myself))
+		See([PC.0.0.FIGHTER_ALL])
+	!StateCheck(LastSeenBy(Myself),STATE_CHARMED)
+	!Global("MAP_GROUP_HOSTILE1","MYAREA",0)
+THEN
+	RESPONSE #100
+		Spell(LastSeenBy(Myself),CLERIC_CHARM_PERSON)
+		Wait(2)
+END
+
+IF
+	!Global("MAP_GROUP_HOSTILE1","MYAREA",0)
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		Help()
+		AttackReevaluate(LastSeenBy(Myself),75)
+END
+
+IF
+	!Global("MAP_GROUP_HOSTILE1","MYAREA",0)
+	AttackedBy(NearestEnemyOf(Myself),DEFAULT)
+THEN
+	RESPONSE #100
+		FaceObject(LastAttackerOf(Myself))
+		Continue()
+END
+
+IF
+	NumTimesTalkedTo(0)
+	IsActive(Myself)
+	See([PC])
+	!Allegiance(Myself,ENEMY)
+	!StateCheck(Myself,STATE_REALLY_DEAD)
+THEN
+	RESPONSE #100
+		StartCutSceneMode()
+		ClearAllActions()
+		MultiPlayerSync()
+		ApplySpellRES("BDCUTSPY",Myself)
+		StartDialogNoSet([PC])
+END
+
+IF
+	!Allegiance(Myself,ENEMY)
+	ActionListEmpty()
+	!NearSavedLocation(Myself,"LOCALSSavedLoc",0)
+THEN
+	RESPONSE #100
+		MoveToSavedLocation("SavedLoc","LOCALS")
+END
+
+IF
+	Allegiance(Myself,ENEMY)
+	ActionListEmpty()
+	!See([PC])
+THEN
+  RESPONSE #100
+    MoveToObject(Player1)
+END
+
+
+

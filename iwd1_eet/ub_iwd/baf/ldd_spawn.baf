@@ -1,0 +1,26 @@
+IF
+  Global("CDVoiceLocation","GLOBAL",%cd_glob%)
+  Global("CDVoiceIsHere","MYAREA",0)
+  Global("SPRITE_IS_DEADVoice","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("CDVoiceIsHere","MYAREA",1)
+    CreateCreature("voice",[%cd_x%.%cd_y%],%cd_face%)
+    //ActionOverride("voice",ForceSpellPoint([%cd_x%.%cd_y%],WIZARD_DIMENSION_DOOR))
+    CreateVisualEffectObject("spdimndr","voice")
+    Wait(1)
+    ActionOverride("voice",ApplySpellRES("idinvis5",Myself))
+END
+
+IF
+  !Global("CDVoiceLocation","GLOBAL",%cd_glob%)
+  Exists("voice")
+  Global("SPRITE_IS_DEADVoice","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("CDVoiceIsHere","MYAREA",0)
+    //ActionOverride("voice",ForceSpellPoint([%cd_x%.%cd_y%],WIZARD_DIMENSION_DOOR))
+    CreateVisualEffectObject("spdimndr","voice")
+    Wait(1)
+    ActionOverride("voice",DestroySelf())
+END

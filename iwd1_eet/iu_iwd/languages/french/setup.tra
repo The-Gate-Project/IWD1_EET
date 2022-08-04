@@ -1,0 +1,338 @@
+/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
+/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
+///// \\\\\
+///// Messages d'installation \\\\\
+///// \\\\\
+/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
+/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
+
+@0 = ~Item Upgrade pour Icewind Dale~
+
+/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
+/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
+///// \\\\\
+///// nouvelles descriptions des objets \\\\\
+///// \\\\\
+/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
+/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
+
+@1000 = ~Amure de Peau de Yéti +1~
+@1001 = ~L'Armure de Peau est faite du cuir épais de grands animaux (un yéti, en l'occurrence) ou de plusieurs couches de cuirs plus fins. Elle est considérée comme trop encombrante par les cultures humaines développées, mais les humanoïdes barbares s'en servent souvent. Elle protège mieux que le cuir normal, mais elle est parfois difficile à entretenir et dégage souvent une odeur désagréable ou se montre d'apparence médiocre, ce qui la rend peu pratique.
+
+Cette armure-ci a été traitée par Coulon et enchantée par Orrick. Orrick n'a pas pu la débarrasser entièrement de sa vulnérabilité au feu, bien qu'elle offre une certaine protection naturelle contre le froid.
+
+CARACTERISTIQUES :
+
++15 % de Résistance au Froid
+-3 % de Résistance au Feu
+
+Classe d'armure : 5
+Poids : 28
+Requiert : 6 en Force
+Inutilisable par :
+Mages~
+@1002 = ~Carquois d'Abondance +1~
+
+@1003 = ~Les origines de ce carquois ont été oubliées depuis longtemps, mais on peut supposer sans trop de risque qu'il existe un lien entre ce dernier et l'étrange pénurie de fabricant de flèches au cours du Temps des Troubles.
+
+CARACTERISTIQUES :
+
+Quantité illimitée de flèches +1~
+@1004 = ~Étui d'Abondance +1~
+@1005 =~L'histoire de cet étui magique s'est perdue dans le brouillard du passé, mais elle doit sans aucun doute être liée à l'inexplicable pénurie de fabricants de carreaux au cours du Temps des Troubles.
+
+CARACTERISTIQUES :
+
+Quantité illimitée de carreaux +1~
+@1006 = ~Sac d'Abondance +1~
+@1007 = ~Cette petite poche de tissu est vide, mais cela ne l'empêche pas de rayonner d'une puissante aura magique.
+
+CARACTERISTIQUES :
+
+Quantité illimitée de billes +1~
+@1008 = ~Écailles de Dragon Blanc~
+@1009 = ~Il y a un grand nombre d'écailles couvertes de givre récupérées sur le corps d'Icasaracht. La légende dit qu'elles peuvent être fondues par magie pour faire une puissante armure.~
+@1010 = ~Écaille de Dragon Blanc~
+@1011 = ~Sans surprise, cette armure créée à partir des écailles d'Icasaracht procure au porteur une protection contre le froid et le gel.
+
+CARACTERISTIQUES :
+
++50 % de Résistance au Froid
+
+Classe d'armure : -2
+Poids : 15
+Requiert : 8 en Force
+Inutilisable par :
+Mages~
+@1012 = ~Gond, dieu des Inventions, est rarement vénéré par les aventuriers. Certains voleurs lui vouent toutefois un culte pour le rôle qu'il a joué dans la conception des pièges, serrures et autres mécanismes du même genre. Le cambrioleur Jurmar le Calme était de ceux-là. Connu pour son incroyable sang-froid, Jurmar, qui avait commencé par faire carrière en tant que serrurier, demanda aux prêtres de Gond de lui confectionner cette ceinture à outils. Chaque fois qu'il se retrouvait dans une situation où il ne possédait pas l'outil approprié, l'une des sacoches de la ceinture le lui fournissait.
+
+Oswald a réussi à rajouter de nouveaux outils à la ceinture, renforçant ainsi son utilité.
+
+CARACTERISTIQUES :
+
+Spécial :
++15 en crochetage
++10 en détection / désamorçage des pièges
+Uniquement utilisable par :
+Voleurs (monoclassés, multiclassés ou à classes jumelées)~
+@1013 = ~Ce petit bouclier fut créé pour être offert par le chef du clan Marteaudeguerre à l'un de ses fidèles serviteurs. Ce dernier, Wurdar Fortbrassin, avait défendu la famille du chef contre un yéti. Wurdar porta fièrement le bouclier pendant dix ans, avant de périr sous les coups des orques dans l'Épine Dorsale du Monde. Son sacrifice permit à plusieurs membres importants du clan de s'enfuir.
+
+Combinées à l'icône du clan Marteaudeguerre, les aptitudes du bouclier ont été renforcées.
+
+CARACTERISTIQUES :
+
+Classe d'armure : +2
+Spécial :
++10 au maximum de points de vie
++1 en Force
+Pas de protection contre les armes à projectiles
+Poids : 4
+Inutilisable par :
+Bardes
+Druides
+Mages
+Voleurs~
+
+@1014 = ~Heaume en carapace de Remorrhaz~
+@1015 = ~Façonné à partir d'écailles chitineuses, ce lourd heaume conserve une partie des résistances naturelles du remorrhaz à partir duquel il a été créé.
+
+CARACTERISTIQUES :
+
+Classe d'armure : +1
+Spécial :
++10 % de résistance à la magie
++20 % de résistance aux dégâts magiques
+Protège contre les coups critiques
+Poids : 10
+Inutilisable par :
+Mages
+Bardes
+Voleurs~
+@1016 = ~Cynique~
+@1017 = ~En l'an 834 DR, un magicien du nom de Légedain le Sage surprit un voleur de renom qui cherchait à s'infiltrer dans sa tour. Le malfrat était un cambrioleur cynique appelé Ilfain Plumenoire. Légedain se faisait vieux et en avait assez de son corps fatigué. Afin de remédier à la situation, il lança le sort Réceptacle magique et força l'âme d'Ilfain à occuper une pierre précieuse préparée à cet effet, tandis que lui-même s'emparait du corps du voleur elfe. Cela fait, il posa la gemme sur une étagère. Cent ans plus tard, il décida finalement de s'en servir, forgeant une épée pour Gundak, son arrogant garde du corps, et transféra l'esprit d'Ilfain de la gemme à l'épée. Affecté d'un grand sens critique de son vivant, Ilfain commença à émettre des jugements négatifs sur le style de combat de Gundak. Fou de rage, celui-ci jeta l'arme dans la rue au bout de quinze jours. Plusieurs guerriers la ramassèrent avant de s'en débarrasser rapidement, eux aussi. Les constantes critiques de l'épée affaiblissent aussi les chances de frapper la cible. Au fil du temps, l'épée a fini par perdre son nom d'origine pour son nom actuel.
+
+Kieran Nye a appliqué un sort d'Espoir permanent sur l'épée. Bien que l'épée soit toujours aussi morose, elle ne critique plus son porteur et ses compétences de vol peuvent être utilisées plus souvent.
+
+CARACTERISTIQUES :
+
+Dégâts : 2d4+4
+TAC0 : +4
+Type de dégâts : tranchants
+Spécial : Détection des pièges (2/jour), Déblocage (2/jour)
+Poids : 4
+Facteur de vitesse : 5
+Compétence : épée large
+Type : 1 main
+Inutilisable par :
+Druides
+Prêtres
+Mages~
+
+@1018 = ~La face externe de ce gros bouclier en acier est ornée de décorations à l'émail noir entourant un crâne central. La face interne est couverte de signes anciens. Les seuls mots compréhensibles posent la question "ET QU'EN EST-IL DES MORTS ?" Nul sort de divination ne permet de découvrir l'histoire de cet objet.
+
+Edion a déchiffré une portion de texte supplémentaire, débloquant ainsi de nouvelles compétences du bouclier.
+
+CARACTERISTIQUES :
+
+Classe d'armure : +4
+Spécial :
++1 contre les armes à projectiles
+Le porteur est immunisé à Doigt de Mort et Mot de Pouvoir : Mort
+Soin des blessures critiques 1 fois par jour, Protection contre les Morts-vivants 1 fois par jour
+Poids : 20
+Utilisable uniquement par :
+Humains
+Demi-Elfes
+Inutilisable par :
+Druides
+Voleurs
+Mages
+Bardes~
+@1019 = ~On pense que les fées aidèrent à la création de cette splendide épée, qui aurait, selon la légende, été forgée dans les profondeurs glacées du Myrloch, le grand lac de l'île de Gwynneth, dans l'archipel des Lunaë. Cette arme à l'air surnaturel serait très ancienne. On ne lui connaît qu'un seul et unique propriétaire, un barde demi-elfe nommé Daen Buisdhiver. On prétend qu'à partir du moment où il la trouva par accident, il fit preuve d'une créativité exceptionnelle et d'une grande sensibilité au monde qui l'entourait. Ses voyages se poursuivirent quarante années durant et il a à son actif quelques-unes des plus envoûtantes mélodies de Féerune. L'histoire veut qu'il finit par devenir trop mélancolique à trop voir la misère et l'oppression, et que les fées forgerons des Lunaë l'accueillirent dans les profondeurs du Myrloch.
+
+En chantant la ballade de Daen Buisdhiver et en parlant avec son esprit, vous avez éveillé de nouvelles aptitudes de l'épée.
+
+CARACTERISTIQUES :
+
+Dégâts : 1D8+3
+TAC0 : +3
+Spécial :
++30 au vol à la tire si équipée
++1 en Charisme si équipée
+Type de dégâts : tranchants
+Poids : 4
+Facteur de vitesse : 4
+Type de compétence : épée large
+Type : 1 main
+Inutilisable par :
+Créatures maléfiques
+Druides
+Clercs
+Mages~
+@1020 = ~Cette hache fut forgée pour Hegelfden, un puissant guerrier barbare. Il faisait partie de la tribu de l'Orignal, dont les chamans avaient prédit qu'il deviendrait l'un des plus grands guerriers. Hegelfden grandit, persuadé qu'il était important et supérieur aux gens de son entourage. À l'âge de 17 ans, il était devenu un guerrier accompli. Colossal, rapide et rusé, il était capable de vaincre tous les membres de son clan. Alors qu'il parcourait l'Épine Dorsale du Monde, il captura deux nains rencontrés dans une grotte et refusa de les laisser partir tant qu'ils ne lui auraient pas fabriqué une hache digne de lui. Les deux prisonniers acceptèrent à contrecoeur et donnèrent naissance à une solide hache d'armes à la lame acérée.
+Quand les nains demandèrent à être libérés, Hegelfden refusa, désirant en faire ses serviteurs. Alors, les nains le maudirent, en lui disant que le fruit de ses crimes causerait sa perte. Hegelfden éclata de rire et continua de vivre comme si de rien n'était. Mais, dès le lendemain, au cours d'une bataille contre une tribu rivale, Hegelfden fut pris d'une rage sanguinaire et massacra toutes les créatures qui se trouvaient sur son chemin. Ses semblables, convaincus qu'il était devenu complètement fou, l'abattirent sur place. La hache fut abandonnée sur le champ de bataille alors qu'ils ramenaient le corps de Hegelfden au camp. Quand ils arrivèrent, les nains avaient disparu.
+
+Grâce à l'assistance de Tiernon, les âme irritées des nains de la hache ont été apaisées.
+
+CARACTERISTIQUES :
+
+Dégâts : 1D8+5
+TAC0 : +5
+Type de dégâts : tranchants
+Poids : 6
+Facteur de vitesse : 3
+Type de compétence : hache
+Type : 1 main
+Inutilisable par :
+Druides
+Clercs
+Mages
+Voleurs~
+@1021 = ~On ne sait presque rien de cette arme, si ce n'est que les sages pensent qu'elle provient d'un autre monde appelé "Eibrancha". Les mages capables de se déplacer entre les plans qui s'y sont rendus affirment qu'il s'agit d'un monde sans intérêt, où les héros sont rares et la populace terne à l'extrême. Cela pourrait expliquer pourquoi on ignore tout, ou presque, de ce lieu. Le seul détail connu au sujet du propriétaire de l'arme est qu'il s'agissait d'un homme cultivé. Le bois pourpre dans lequel l'arbalète a été fabriquée est réputé provenir d'un type d'arbre spécifique à Eibrancha.
+
+Après avoir contacté un autre plan et appris certaines choses au sujet de Bren Muller, vous avez appris à maîtriser une nouvelle compétence de cette arme. Une fois par jour, la précision du tir peut être augmentée de manière décisive, pendant deux rounds.
+
+CARACTERISTIQUES :
+
+Une fois par jour, il est possible d'augmenter la visée de l'arbalète pour obtenir un bonus de toucher de +5 pendant deux rounds.
+
+Dégâts : +2
+TAC0 : bonus de +5
+Poids : 7
+facteur de vitesse : 4
+Type de compétence : arbalète
+Type : 2 mains
+Inutilisable par :
+Druide
+Clerc
+Mage
+Voleur~
+@1022 = ~description de la bouteille à génie~
+@1023 = ~Carapace de Remorrhaz~
+@1024 = ~Cotte de mailles elfique~
+@1025 = ~L'artisanat délicat mais réputé solide des peuples elfiques leur permet de concevoir des objets à la fois beaux et efficaces. Parmi ceux-ci la cotte de mailles elfique, forgée si finement qu'elle peut être portée sous des vêtements normaux sans trahir sa présence. Sa discrétion et sa légèreté lui permettent d'être portée presque sans restriction par les voleurs et les guerriers-mages.
+
+CARACTERISTIQUES :
+
+Classe d'armure : 5
+Poids : 7
+Requiert : 5 en Force
+Inutilisable par :
+Druides
+Mages~
+@1026 = ~Dague Boomerang +1~
+@1027 = ~Fullen Filelaine, un petit-homme ambitieux issu d'une famille aisée, quitta ses pénates pour partir à l'aventure pendant plusieurs années. Au cours de ses voyages il s'installa dans une famille de forgerons nains. Très impressionné par leurs haches de lancer qui revenait toujours dans la main de leurs porteurs, Fullen voulut concevoir une dague dotée des mêmes propriétés. Grâce à l'aide de ses amis nains, il finit par y arriver, et fabriqua plusieurs de ces fameuses Dagues de retour.
+
+CARACTERISTIQUES :
+
+Compétences de combat : la dague revient à l'envoyeur
+TAC0 : bonus de +1
+Dégâts : 2D4+1
+Type de dégâts : missile (perforant)
+Poids : 1
+Facteur de vitesse : 1
+Type de compétence : dague
+Type : 1 main
+Requiert : 3 en Force
+Inutilisable par :
+Clercs~
+@1028 = ~Dague boomerang +2~
+@1029 = ~La petite taille de cette arme cache une puissance considérable : dès qu'elle a touché sa cible, elle réapparaît dans la main de son lanceur, prête à être lancée une nouvelle fois.
+
+CARACTERISTIQUES :
+
+La dague revient immédiatement dans la main de l'envoyeur après lancer
+
+TAC0 : bonus de +2
+Dégâts : 1D3 +2
+Type de dégâts : projectiles (perforants)
+Poids : 0
+Facteur de vitesse : 0
+Type de compétence : fléchette
+Type : 1 main
+Inutilisable par :
+Clercs~
+@1030 = ~C'est le fragment d'une carapace de remorrhaz. Leur armure naturelle est réputée pour sa résilience et ses résistances naturelles.~
+@1031 = ~Cape du loup des Glaces~
+@1032 = ~Cette belle cape de fourrure a été fabriquée à partir de peaux de loups des glaces. La cape a été cousue par la couturière de Kuldahar, et elle conserve certaines des résistances naturelles inhérentes aux loups, grâce aux enchantements d'Orrick.
+
+CARACTERISTIQUES :
+
+Classe d'armure : +1 contre les dégâts contondants
+Spécial :
++10 % de Résistance au Froid
+Immunité au souffle de loup des glaces
+Poids : 1
+Inutilisable par :~
+@1033 = ~Marteau de mithril~
+@1034 = ~Symbole du clan Marteaudeguerre~
+@1035 = ~Ce petit marteau de mithril semble être un objet fabriqué avec un soin extrême, bien qu'il ne soit destiné qu'aux cérémonies. Le marteau est légèrement chaud au toucher.~
+@1036 = ~Ce petit marteau de mithril est légèrement chaud au toucher. C'est l'emblème du clan Marteaudeguerre, un clan nain aujourd'hui dirigé par le roi Bruenor Marteaudeguerre, huitième du nom. Le clan a toujours été mené par ses ancêtres et le pouvoir transmis de génération en génération.
+
+A l'origine, le clan résidait à Mithril Hall mais quand ils furent forcés de partir ils prirent la direction des régions nordiques du Val de Bise, près des Dix Cités, où ils s'installèrent un nouveau foyer qui fournit de l'équipement aux villes.~
+@1037 = ~Outils gnomes~
+@1038 = ~Cette boîte en bois choyée et usée contient un assortiment de petits outils, des morceaux brisés de métal, et un adhésif créé à partir d'anatidés.~
+@1039 = ~En l'an 834 DR, un magicien du nom de Légedain le Sage surprit un voleur de renom qui cherchait à s'infiltrer dans sa tour. Le malfrat était un cambrioleur cynique appelé Ilfain Plumenoire. Légedain se faisait vieux et en avait assez de son corps fatigué. Afin de remédier à la situation, il lança le sort Réceptacle magique et força l'âme d'Ilfain à occuper une pierre précieuse préparée à cet effet, tandis que lui-même s'emparait du corps du voleur elfe. Cela fait, il posa la gemme sur une étagère. Cent ans plus tard, il décida finalement de s'en servir, forgeant une épée pour Gundak, son arrogant garde du corps, et transféra l'esprit d'Ilfain de la gemme à l'épée. Affecté d'un grand sens critique de son vivant, Ilfain commença à émettre des jugements négatifs sur le style de combat de Gundak. Fou de rage, celui-ci jeta l'arme dans la rue au bout de quinze jours. Plusieurs guerriers la ramassèrent avant de s'en débarrasser rapidement, eux aussi. Les constantes critiques de l'épée affaiblissent aussi les chances de frapper la cible. Au fil du temps, l'épée a fini par perdre son nom d'origine pour son nom actuel.
+
+CARACTERISTIQUES :
+
+Dégâts : 2D4+4
+TAC0 : +2
+Type de dégâts : tranchant
+Spécial : détection des pièges 1 fois par jour, Déblocage 1 fois par jour
+Poids : 4
+Facteur de vitesse : 5
+Type de compétence : épée large
+Type : 1 main
+Inutilisable par :
+Druides
+Clercs
+Mages~
+@1040 = ~Note pour Edion~
+@1041 = ~C'est une note pour le nécromancien Edion à propos du bannissement des esprits irrités de la Hache de la Jeune Rage.~
+@1042 = ~Esprit de Daen Buisdhiver~
+@1043 = ~La ballade de Daen Buisdhiver~
+@1044 = ~Ce volume poussiéreux est constitué de pages fatiguées, presque effacées. Chaque page contient des notes de musique composant la chronique d'un barde cherchant à écrire une chanson adaptée à son récit. A l'intérieur de la couverture est gravé le nom de 'Daen Buisdhiver'. Vous pourriez essayer de chanter la chanson, si vous le souhaitez.~
+@1045 = ~Jouer la ballade de Daen~
+@1046 = ~L'oeil mort de Bren Muller~
+
+
+// WeiDU prompts
+@-1000= "Le mod %TP2_FILE_NAME% contient"
+@-1001= "composants optionnels distincts.
+Pour gagner du temps, vous pouvez choisir ce que vous souhaitez faire d'eux
+au niveau general plutot que de repondre aux questions pour chacun.
+"
+@-1002= "Que faut-il faire de tous les composants qui NE sont PAS ENCORE installes ?
+Les [I]nstaller, les [S]auter, dem[A]nder pour chacun ? "
+@-1003= "Que faut-il faire de tous les composants qui sont DEJA installes ?
+Les [R]einstaller, les s[U]pprimer, dem[A]nder pour chacun ? "
+
+@-1004= "S'IL VOUS PLAIT, envoyez par e-mail le fichier"
+@-1005= "a"
+
+@-1006= "Installer le composant ["
+@-1007= "] ?
+[R]einstaller, co[N]server, s[U]pprimer ou [Q]uitter ? "
+@-1008= "] ?
+[I]nstaller, [N]e pas installer ou [Q]uitter ? "
+
+@-1009= "Entrez une partie du nom du module : "
+
+@-1010= "Reinstallation du composant ["
+@-1011= "] "
+@-1012= "Reinstallation dans la langue"
+
+@-1013= "Suppression de l'ancienne installation de ["
+@-1014= "] au prealable..."
+@-1015= "SUPPRESSION REUSSIE DE L'ANCIEN"
+
+@-1016= "Installation en cours"
+@-1017= "ERREUR pendant l'installation de ["
+@-1018= "], retour a l'etat anterieur"
+@-1019= "INSTALLATION REUSSIE"
+@-1020= "Saute"
+@-1021= "Suppression de ["
+@-1022= "] (composant #"
+@-1023= ")"
+@-1024= "SUPPRESSION REUSSIE DE ["

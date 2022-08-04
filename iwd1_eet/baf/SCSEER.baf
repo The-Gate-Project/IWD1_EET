@@ -1,0 +1,28 @@
+IF
+	!Global("SPRITE_IS_DEADSEER","GLOBAL",0)
+	!StateCheck(Myself,STATE_REALLY_DEAD)
+THEN
+	RESPONSE #100
+		DestroySelf()
+END
+
+IF
+	NumTimesTalkedTo(0)
+	See([PC])
+	!Allegiance(Myself,ENEMY)
+	!StateCheck(Myself,STATE_REALLY_DEAD)
+THEN
+	RESPONSE #100
+		ApplySpellRES("BDCUTSPY",Myself)
+		StartDialogNoSet([PC])
+END
+
+IF
+	!Allegiance(Myself,ENEMY)
+	See([PC])
+THEN
+	RESPONSE #100
+		FaceObject(LastSeenBy(Myself))
+		Continue()
+END
+

@@ -1,0 +1,28 @@
+IF
+	!Global("EECYCL4_INACTIVE","LOCALS",1)
+	AttackedBy([ANYTHING],DEFAULT)
+THEN
+	RESPONSE #100
+		SetGlobal("EECYCL4_INACTIVE","LOCALS",1)
+END
+
+IF
+	!Global("EECYCL4_INACTIVE","LOCALS",1)
+	Global("SAY_LINE","LOCALS",0)
+	LOS([PC],25)
+THEN
+	RESPONSE #100
+		SetGlobal("SAY_LINE","LOCALS",1)
+		DisplayStringHead(Myself,@16326)
+		Wait(2)
+END
+
+IF
+	!Global("EECYCL4_INACTIVE","LOCALS",1)
+	Global("SAY_LINE","LOCALS",1)
+THEN
+	RESPONSE #100
+		DisplayStringHead(Myself,@16325)
+		SetGlobal("EECYCL4_INACTIVE","LOCALS",1)
+END
+

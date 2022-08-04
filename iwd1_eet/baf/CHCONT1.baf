@@ -1,0 +1,61 @@
+IF
+	Global("MADE_OFFERING","MYAREA",0)
+	Contains("SYMHELM",Myself)  // Священный символ Хельма
+THEN
+	RESPONSE #100
+		DestroyItem("SYMHELM")  // Священный символ Хельма
+		SetGlobal("MADE_OFFERING","MYAREA",1)
+		Continue()
+END
+
+IF
+	Global("MADE_OFFERING","MYAREA",1)
+	!Exists([ENEMY])
+THEN
+	RESPONSE #100
+		MoveViewPoint([666.230],INSTANT)
+		Continue()
+END
+
+IF
+	Global("MADE_OFFERING","MYAREA",1)
+THEN
+	RESPONSE #100
+		StaticSequence("9713MS1",SEQ_AWAKE)
+		SetGlobal("9713MS1_SEQ","MYAREA",1)
+		PlaySound("ID9713B")
+		SetGlobalTimer("OFFER_TIMER","MYAREA",ONE_MINUTE)
+		SetGlobal("MADE_OFFERING","MYAREA",2)
+		Wait(5)
+		Continue()
+END
+
+IF
+	!Global("9713MS1_SEQ","MYAREA",2)
+	Global("MADE_OFFERING","MYAREA",2)
+	!GlobalTimerNotExpired("OFFER_TIMER","MYAREA")
+THEN
+	RESPONSE #100
+		StaticSequence("9713MS1",SEQ_CAST)
+		SetGlobal("9713MS1_SEQ","MYAREA",2)
+		Continue()
+END
+
+IF
+	OpenState("AR9713_DOOR1",FALSE)
+	Global("MADE_OFFERING","MYAREA",2)
+	!GlobalTimerNotExpired("OFFER_TIMER","MYAREA")
+THEN
+	RESPONSE #100
+		OpenDoor("AR9713_DOOR1")
+		TriggerActivation("To9714",TRUE)
+END
+
+IF
+	OnCreation()
+THEN
+	RESPONSE #100
+		NoAction()
+		Continue()
+END
+

@@ -1,0 +1,180 @@
+IF
+	StateCheck(Myself,STATE_PANIC)
+THEN
+	RESPONSE #100
+		RandomWalkContinuous()
+END
+
+IF
+	BitCheck("CREATURE_STATE_VAR","LOCALS",2048)
+	OR(2)
+		See(NearestEnemyOf(Myself))
+		See([0.0.ANKHEG])
+	!Range(LastSeenBy(Myself),4)
+	CanEquipRanged()
+THEN
+	RESPONSE #100
+		EquipRanged()
+		AttackReevaluate(LastSeenBy(Myself),45)
+END
+
+IF
+	BitCheck("CREATURE_STATE_VAR","LOCALS",2048)
+	OR(2)
+		See(NearestEnemyOf(Myself))
+		See([0.0.ANKHEG])
+	Range(LastSeenBy(Myself),4)
+THEN
+	RESPONSE #100
+		EquipMostDamagingMelee()
+		AttackReevaluate(LastSeenBy(Myself),45)
+END
+
+IF
+	BitCheck("CREATURE_STATE_VAR","LOCALS",2048)
+	OR(2)
+		See(NearestEnemyOf(Myself))
+		See([0.0.ANKHEG])
+THEN
+	RESPONSE #100
+		EquipMostDamagingMelee()
+		AttackReevaluate(LastSeenBy(Myself),45)
+END
+
+IF
+	BitCheck("CREATURE_STATE_VAR","LOCALS",2048)
+	OR(2)
+		AttackedBy(NearestEnemyOf(Myself),DEFAULT)
+		AttackedBy([0.0.ANKHEG],DEFAULT)
+THEN
+	RESPONSE #100
+		FaceObject(LastAttackerOf(Myself))
+		Continue()
+END
+
+IF
+	!BitCheck("SCRIPT_BIT_VAR","LOCALS",8192)
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		BitSet("SCRIPT_BIT_VAR","LOCALS",8192)
+		SetGlobalTimer("IwTimer3","LOCALS",3)
+		Continue()
+END
+
+IF
+	!GlobalTimerExpired("IwTimer3","LOCALS")
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		BitSet("CREATURE_STATE_VAR","LOCALS",32)
+		EquipRanged()
+		AttackReevaluate(LastSeenBy(Myself),45)
+END
+
+IF
+	AttackedBy(NearestEnemyOf(Myself),DEFAULT)
+THEN
+	RESPONSE #100
+		BitSet("CREATURE_STATE_VAR","LOCALS",32)
+		FaceObject(LastAttackerOf(Myself))
+		Continue()
+END
+
+IF
+	Global("MOVEMENT_LIST_0_LOC","LOCALS",0)
+	BitCheck("CREATURE_STATE_VAR","LOCALS",524288)
+	NearLocation(Myself,1139,755,8)
+	!BitCheck("CREATURE_STATE_VAR","LOCALS",2048)
+	BitCheck("CREATURE_STATE_VAR","LOCALS",32)
+THEN
+	RESPONSE #100
+		SetGlobal("MOVEMENT_LIST_0_LOC","LOCALS",1)
+		BitClear("CREATURE_STATE_VAR","LOCALS",524288)
+		Continue()
+END
+
+IF
+	Global("MOVEMENT_LIST_0_LOC","LOCALS",0)
+	!BitCheck("CREATURE_STATE_VAR","LOCALS",2048)
+	BitCheck("CREATURE_STATE_VAR","LOCALS",32)
+	ActionListEmpty()
+THEN
+	RESPONSE #100
+		BitSet("CREATURE_STATE_VAR","LOCALS",524288)
+		SetHomeLocation([1139.755])
+		MoveToPoint([1139.755])
+END
+
+IF
+	Global("MOVEMENT_LIST_0_LOC","LOCALS",1)
+	BitCheck("CREATURE_STATE_VAR","LOCALS",524288)
+	NearLocation(Myself,903,795,8)
+	!BitCheck("CREATURE_STATE_VAR","LOCALS",2048)
+	BitCheck("CREATURE_STATE_VAR","LOCALS",32)
+THEN
+	RESPONSE #100
+		SetGlobal("MOVEMENT_LIST_0_LOC","LOCALS",2)
+		BitClear("CREATURE_STATE_VAR","LOCALS",524288)
+		Continue()
+END
+
+IF
+	Global("MOVEMENT_LIST_0_LOC","LOCALS",1)
+	!BitCheck("CREATURE_STATE_VAR","LOCALS",2048)
+	BitCheck("CREATURE_STATE_VAR","LOCALS",32)
+	ActionListEmpty()
+THEN
+	RESPONSE #100
+		BitSet("CREATURE_STATE_VAR","LOCALS",524288)
+		SetHomeLocation([903.795])
+		MoveToPoint([903.795])
+END
+
+IF
+	Global("MOVEMENT_LIST_0_LOC","LOCALS",2)
+	BitCheck("CREATURE_STATE_VAR","LOCALS",524288)
+	NearLocation(Myself,733,1105,8)
+	!BitCheck("CREATURE_STATE_VAR","LOCALS",2048)
+	BitCheck("CREATURE_STATE_VAR","LOCALS",32)
+THEN
+	RESPONSE #100
+		SetGlobal("MOVEMENT_LIST_0_LOC","LOCALS",3)
+		BitClear("CREATURE_STATE_VAR","LOCALS",524288)
+		Continue()
+END
+
+IF
+	Global("MOVEMENT_LIST_0_LOC","LOCALS",2)
+	!BitCheck("CREATURE_STATE_VAR","LOCALS",2048)
+	BitCheck("CREATURE_STATE_VAR","LOCALS",32)
+	ActionListEmpty()
+THEN
+	RESPONSE #100
+		BitSet("CREATURE_STATE_VAR","LOCALS",524288)
+		SetHomeLocation([733.1105])
+		MoveToPoint([733.1105])
+END
+
+IF
+	Global("MOVEMENT_LIST_0_LOC","LOCALS",3)
+	!BitCheck("CREATURE_STATE_VAR","LOCALS",2048)
+	BitCheck("CREATURE_STATE_VAR","LOCALS",32)
+	ActionListEmpty()
+THEN
+	RESPONSE #100
+		Face(NE)
+		SetGlobal("MOVEMENT_LIST_0_LOC","LOCALS",4)
+END
+
+IF
+	Global("MOVEMENT_LIST_0_LOC","LOCALS",4)
+	!BitCheck("CREATURE_STATE_VAR","LOCALS",2048)
+	BitCheck("CREATURE_STATE_VAR","LOCALS",32)
+	ActionListEmpty()
+THEN
+	RESPONSE #100
+		BitSet("CREATURE_STATE_VAR","LOCALS",2048)
+		SetGlobal("MOVEMENT_LIST_0_LOC","LOCALS",0)
+END
+

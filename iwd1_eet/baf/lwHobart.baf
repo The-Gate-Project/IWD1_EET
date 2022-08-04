@@ -1,0 +1,16 @@
+IF
+	Global("9101_HOBART_INIT","GLOBAL",0)
+THEN
+	RESPONSE #100
+		//HideCreature(Myself,FALSE)
+		SetGlobal("9101_SPAWN_HOBART","GLOBAL",0)
+		SetGlobal("9101_HOBART_INIT","GLOBAL",1)
+END
+
+IF
+	GlobalGT("Master_Quest","GLOBAL",0)
+THEN
+	RESPONSE #100
+		DestroySelf()
+END
+

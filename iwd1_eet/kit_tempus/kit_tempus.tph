@@ -1,0 +1,250 @@
+
+INCLUDE ~iwd1_eet/lib/fl#add_kit_ee.tpa~
+INCLUDE ~iwd1_eet/iwdfixpack/lib/functions.tpa~
+
+PRINT ~Installing Priest of Tempus Kit...~
+ADD_KIT ~OHTEMPUS~ //#41
+  // appended to CLASWEAP.2da
+  ~OHTEMPUS            0                   0                   1                   1                   0                   1                   0                   0~
+  // appended column-wise to WEAPPROF.2da
+  ~OHTEMPUS 0 0 0 0 1 1 0 1 0 0 0 0 0 0 0 0 1 1 0 0 1 1 1 0 0 0 0 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
+  // appended to ABCLASRQ.2da
+  ~OHTEMPUS            0                   0                   0                   0                   9                   0~
+  // appended to ABCLSMOD.2da
+  ~OHTEMPUS            0                   0                   0                   0                   0                   0~
+  // appended to ABDCDSRQ.2da
+  ~OHTEMPUS         0                0                0                0                17               0~
+  // appended to ABDCSCRQ.2da
+  ~OHTEMPUS         0                0                0                0                15               0~
+  // appended to ALIGNMNT.2da
+  ~OHTEMPUS            0                   0                   0                   0                   1                   0                   1                   1                   1~
+  // appended to DUALCLAS.2da
+  ~OHTEMPUS            1                   0                   1                   1                   0                   1~
+  // path to your CLAB-style 2da file
+  ~iwd1_eet/kit_tempus/OHTEMPUS.2da~
+  // PC races and classes allowed to use this kit, from KITTABLE.2da
+  ~K_C_H  K_C_D  K_C_G  K_C_E  K_C_HE  K_C_HL  K_C_HO~
+  // usability flags, added to the end of the KITLIST.2da entry
+   ~0x00004000       3~
+   // HLA table to use; see LUABBR.2da
+  ~CL3~
+  // list of starting equipment for PCs starting in ToB. Appended column-wise to 25STWEAP.2da
+  ~CHAN09  *  HELM07  BAG20  RING06  RING31  *  BOOT01  AMUL19  BRAC16  BELT06  AROW11,40  BULL03,40  BOLT06,40  POTN52,5  POTN4,2  POTN14,5  HAM07  SW1H27  STAF08~
+  // Lower, mixed, and help kit names and descriptions, added to KITLIST.2da
+  SAY @40774
+  SAY @40775
+  SAY @40776
+
+LAF fl#add_kit_ee
+  INT_VAR
+    //biography = RESOLVE_STR_REF(@40777)
+    briefdesc = 102495
+  STR_VAR
+    kit_name = "OHTEMPUS"
+    //backstab = "" //- from original CLASS
+    //clsrcreq = "" //- from original CLASS
+    //clswpbon = "0 0 3" //- from original CLASS
+    //hpclass = "" //- from original CLASS
+    //numwslot = "2" //- from original CLASS
+    //thiefskl = "" //- from original CLASS
+    //traplimt = "" //- from original CLASS
+    clascolr = "80 126 127 93 97"
+    //clasiskl = "" //- from original CLASS
+    //clasthac = "" //- from original CLASS
+    //thiefscl = "" //- from original CLASS
+    //sneakatt = "" //- from original CLASS
+    //crippstr = "" //- from original CLASS
+END
+
+/*COPY_EXISTING ~statdesc.2da~ ~override~
+  COUNT_2DA_ROWS 3 rows
+  FOR ( i = 0; i < rows; ++i ) BEGIN
+    READ_2DA_ENTRY i 0 3 num
+    PATCH_IF ( num = 181 ) BEGIN
+      SET_2DA_ENTRY i 1 3 ~XXX181~
+      SET_2DA_ENTRY i 2 3 ~IDBTLCHS~
+    END
+  END
+  BUT_ONLY_IF_IT_CHANGES
+
+COPY_EXISTING ~statdesc.2da~ ~override~
+  REPLACE ~XXX181~ @40778
+  PRETTY_PRINT_2DA*/
+
+OUTER_SET strrefA = RESOLVE_STR_REF (@40778)
+LAF APPEND_STATDESC_ENTRY INT_VAR strref = %strrefA% STR_VAR bam_file = "IDBTLCHS" RET index END
+
+ADD_PROJECTILE ~iwd1_eet/kit_tempus/ohvrpo.PRO~ ~Visual range, party only~
+ADD_PROJECTILE ~iwd1_eet/kit_tempus/ohvrnp.PRO~ ~Visual range, no party~
+
+COPY ~iwd1_eet/kit_tempus/OHTMPS1.spl~ ~override~
+  WRITE_LONG 0x08 6087
+  WRITE_LONG 0x50 6088
+  LPF CONVERT_BG_IWD_DURATION STR_VAR changeto = "bg" END
+
+COPY ~iwd1_eet/kit_tempus/OHTMPS2.spl~ ~override~
+  SAY 0x08 @40778
+  SAY 0x50 @40779
+  
+COPY ~iwd1_eet/kit_tempus/OHTMPS2D.spl~ ~override~
+  WRITE_SHORT 0x098 ~%ohvrpo%~
+  WRITE_SHORT 0x0c0 ~%ohvrpo%~
+  WRITE_SHORT 0x0e8 ~%ohvrpo%~
+  WRITE_SHORT 0x110 ~%ohvrpo%~
+  WRITE_SHORT 0x138 ~%ohvrpo%~
+  SAY         0x1ce @40256 
+  WRITE_LONG  0x202 ~%index%~    
+  SAY         0x4ce @40256 
+  WRITE_LONG  0x502 ~%index%~    
+  SAY         0x7ce @40256 
+  WRITE_LONG  0x802 ~%index%~    
+  SAY         0xace @40256 
+  WRITE_LONG  0xb02 ~%index%~    
+  SAY         0xdce @40256 
+  WRITE_LONG  0xe02 ~%index%~    
+
+COPY ~iwd1_eet/kit_tempus/OHTMPS2E.spl~ ~override~
+  WRITE_SHORT 0x098 ~%ohvrnp%~
+  WRITE_SHORT 0x0c0 ~%ohvrnp%~
+  WRITE_SHORT 0x0e8 ~%ohvrnp%~
+  WRITE_SHORT 0x110 ~%ohvrnp%~
+  WRITE_SHORT 0x138 ~%ohvrnp%~
+  SAY         0x1ce @40257 
+  SAY         0x4ce @40257 
+  SAY         0x7ce @40257 
+  SAY         0xace @40257 
+  SAY         0xdce @40257 
+     
+
+COPY ~iwd1_eet/kit_tempus/OHTMPS2A.BAM~ ~override~
+     ~iwd1_eet/kit_tempus/OHTMPS2B.BAM~ ~override~
+     ~iwd1_eet/kit_tempus/OHTMPS2C.BAM~ ~override~
+     ~iwd1_eet/kit_tempus/IDBTLCHS.BAM~ ~override~
+     ~iwd1_eet/kit_tempus/#EFF_P31.WAV~ ~override~
+     ~iwd1_eet/kit_tempus/IBELTTPS.BAM~ ~override~
+     ~iwd1_eet/kit_tempus/CBELTTPS.BAM~ ~override~
+
+COPY ~iwd1_eet/kit_tempus/BELTTMPS.ITM~ ~override~
+  SAY 0x0c @2000039
+  SAY 0x54 @2000040
+
+<<<<<<<<bld_rep.baf
+IF
+  HasItem("CDHLYSYM",Player6)
+  !Name("Aerie",Player6)
+  !Name("Viconia",Player6)
+  Kit(Player6,OHTYR)
+THEN
+  RESPONSE #100
+    ApplySpellRES("CDHLYSY2",Player6)
+    ActionOverride(Player6,TransformItem("CDHLYSYM","beltty"))
+END
+>>>>>>>>
+
+<<<<<<<<bld_add.baf
+IF
+  HasItem("CDHLYSYM",Player6)
+  !Name("Aerie",Player6)
+  !Name("Viconia",Player6)
+  Kit(Player6,OHTYR)
+THEN
+  RESPONSE #100
+    ApplySpellRES("CDHLYSY2",Player6)
+    ActionOverride(Player6,TransformItem("CDHLYSYM","beltty"))
+END
+
+IF
+	HasItem("CDHLYSYM",Player1)
+	!Name("Aerie",Player1)
+	!Name("Viconia",Player1)
+	Kit(Player1,OHTEMPUS)
+THEN
+	RESPONSE #100
+		ApplySpellRES("CDHLYSY2",Player1)
+		ActionOverride(Player1,TransformItem("CDHLYSYM","BELTTMPS"))
+END
+
+IF
+	HasItem("CDHLYSYM",Player2)
+	!Name("Aerie",Player2)
+	!Name("Viconia",Player2)
+	Kit(Player2,OHTEMPUS)
+THEN
+	RESPONSE #100
+		ApplySpellRES("CDHLYSY2",Player2)
+		ActionOverride(Player2,TransformItem("CDHLYSYM","BELTTMPS"))
+END
+
+IF
+	HasItem("CDHLYSYM",Player3)
+	!Name("Aerie",Player3)
+	!Name("Viconia",Player3)
+	Kit(Player3,OHTEMPUS)
+THEN
+	RESPONSE #100
+		ApplySpellRES("CDHLYSY2",Player3)
+		ActionOverride(Player3,TransformItem("CDHLYSYM","BELTTMPS"))
+END
+
+IF
+	HasItem("CDHLYSYM",Player4)
+	!Name("Aerie",Player4)
+	!Name("Viconia",Player4)
+	Kit(Player4,OHTEMPUS)
+THEN
+	RESPONSE #100
+		ApplySpellRES("CDHLYSY2",Player4)
+		ActionOverride(Player4,TransformItem("CDHLYSYM","BELTTMPS"))
+END
+
+IF
+	HasItem("CDHLYSYM",Player5)
+	!Name("Aerie",Player5)
+	!Name("Viconia",Player5)
+	Kit(Player5,OHTEMPUS)
+THEN
+	RESPONSE #100
+		ApplySpellRES("CDHLYSY2",Player5)
+		ActionOverride(Player5,TransformItem("CDHLYSYM","BELTTMPS"))
+END
+
+IF
+	HasItem("CDHLYSYM",Player6)
+	!Name("Aerie",Player6)
+	!Name("Viconia",Player6)
+	Kit(Player6,OHTEMPUS)
+THEN
+	RESPONSE #100
+		ApplySpellRES("CDHLYSY2",Player6)
+		ActionOverride(Player6,TransformItem("CDHLYSYM","BELTTMPS"))
+END
+>>>>>>>>
+COPY_EXISTING ~baldur.bcs~ ~override~
+              ~baldur25.bcs~ ~override~
+  REPLACE_BCS_BLOCK ~bld_rep.baf~ ~bld_add.baf~
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

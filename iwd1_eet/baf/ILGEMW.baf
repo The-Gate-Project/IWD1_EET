@@ -1,0 +1,18 @@
+IF
+	!Global("ILGEMW_INACTIVE","LOCALS",1)
+	Global("GEM_ACTIVE","GLOBAL",0)
+THEN
+	RESPONSE #100
+		NoAction()
+END
+
+IF
+	!Global("ILGEMW_INACTIVE","LOCALS",1)
+	!IsActive(Myself)
+THEN
+	RESPONSE #100
+		Activate(Myself)
+		SetGlobal("IwIHidden","LOCALS",0)
+		SetGlobal("ILGEMW_INACTIVE","LOCALS",1)
+END
+

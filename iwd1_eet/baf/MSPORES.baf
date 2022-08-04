@@ -1,0 +1,24 @@
+IF
+	!Global("MSPORES_INACTIVE","LOCALS",1)
+	Global("Internal_4","LOCALS",5)
+THEN
+	RESPONSE #300
+		SetGlobal("MSPORES_INACTIVE","LOCALS",1)
+END
+
+IF
+	!Global("MSPORES_INACTIVE","LOCALS",1)
+	!GlobalTimerNotExpired("IwTimer4","LOCALS")
+	See(NearestEnemyOf(Myself))
+	IsActive(Myself)
+THEN
+	RESPONSE #300
+		SetGlobalTimerRandom("IwTimer4","LOCALS",7,21)
+		Continue()
+	RESPONSE #100
+		IncrementGlobal("Internal_4","LOCALS",1)
+		SetGlobalTimerRandom("IwTimer4","LOCALS",7,21)
+		ReallyForceSpellRES("IDIN990",NearestEnemyOf(Myself)) //INNATE_MYCONID_SPORES
+		Wait(2)
+END
+

@@ -1,0 +1,15 @@
+
+
+IF
+  Global("CDOpeningCut","ID1006",0)
+  Global("CHAPTER_BREAK_0","GLOBAL",1)
+THEN
+  RESPONSE #100
+    MultiPlayerSync()
+    StartCutSceneMode()
+    ClearAllActions()
+    MultiPlayerSync()
+    SetGlobal("CDOpeningCut","ID1006",1)
+    StartCutScene("EHHROTHT")
+END
+

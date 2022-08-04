@@ -1,0 +1,61 @@
+//====================================================================================================
+//====================================================================================================
+//BLOCK AREAS
+//====================================================================================================
+//====================================================================================================
+//BLOCK ID1016
+  + SCRL5U.ITM -> Container 1  //BLOCKEND
+//BLOCK ID3001
+  + CDTOOLS.ITM -> Box 2 /* новый предмет, проверить, где используется */ //BLOCKEND
+//BLOCK ID3502
+  + SW1H44.ITM -> Niche (Container 10)//Katana //BLOCKEND
+//BLOCK ID3503
+  + RNDTRE14 -> Sarcophagus (Container 3) /* надо посмотреть мой rndtre */ //BLOCKEND
+//BLOCK ID3601
+  + SCRL6H.ITM -> Container 2 //BLOCKEND
+//BLOCK ID3602
+  + SW1H46.ITM -> AR3602Chest1 //Wakizashi
+  + RNDTRE47.ITM -> AR3602Chest3 /* надо посмотреть мой rndtre */ //BLOCKEND
+//BLOCK ID4001
+  + RNDTRE48.ITM -> Chest 2 /* надо посмотреть мой rndtre */ //BLOCKEND
+//BLOCK ID4003
+  + SCRL6L.ITM -> Presio's Table 1 //BLOCKEND
+//BLOCK ID4004
+  + CDDAEN.ITM -> Bookshelf 6 /* новый предмет */
+
+
+
+
+
+//BLOCKEND
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

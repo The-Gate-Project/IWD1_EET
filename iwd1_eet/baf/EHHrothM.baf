@@ -1,0 +1,19 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Myself)
+		StartCutSceneMode()
+		Wait(1)
+		FadeToColor([0.0],0)
+		Wait(1)
+		AdvanceTime(EIGHT_HOURS)
+		ClearAllActions()
+		MultiPlayerSync()
+		StartMovie("AVALANCH")
+		UnhideGUI()
+		MultiPlayerSync()
+		EndCutSceneMode()
+		StartCutScene("IDUA2000")
+END
+

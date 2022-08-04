@@ -1,0 +1,68 @@
+IF
+	!IsActive(Myself)
+	!Global("SPRITE_IS_DEADKELLY","GLOBAL",0)
+	Global("SPRITE_IS_DEAD8002_ARCHERS","GLOBAL",5)
+	See([PC])
+THEN
+	RESPONSE #100
+		Wait(2)
+		Activate(Myself)
+		SetGlobal("IwIHidden","LOCALS",0)
+		ApplySpellRES("idinvis5",Myself)
+		SetGlobal("8001_FENGLA_REMOVE","GLOBAL",1)
+		Continue()
+END
+
+IF
+	!NumTimesTalkedTo(0)
+THEN
+	RESPONSE #100
+		EscapeArea()
+END
+
+IF
+	OR(2)
+		!IsActive(Myself)
+		StateCheck(Myself,STATE_NOT_VISIBLE)
+THEN
+	RESPONSE #100
+		NoAction()
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		EscapeArea()
+END
+
+IF
+	AttackedBy(NearestEnemyOf(Myself),DEFAULT)
+THEN
+	RESPONSE #100
+		EscapeArea()
+END
+
+IF
+	NumTimesTalkedTo(0)
+	!Allegiance(Myself,ENEMY)
+	See([PC])
+	!StateCheck(Myself,STATE_REALLY_DEAD)
+THEN
+	RESPONSE #100
+		StartCutSceneMode()
+		ClearAllActions()
+		MultiPlayerSync()
+		ApplySpellRES("BDCUTSPY",Myself)
+		StartDialogNoSet([PC])
+END
+
+IF
+	!Allegiance(Myself,ENEMY)
+	AttackedBy([GOODCUTOFF],DEFAULT)
+THEN
+	RESPONSE #100
+		Enemy()
+		Continue()
+END
+

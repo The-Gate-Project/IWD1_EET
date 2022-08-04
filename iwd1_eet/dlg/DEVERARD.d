@@ -1,0 +1,310 @@
+BEGIN ~DEVERARD~
+
+IF ~~ THEN BEGIN 0
+  SAY @486
+  IF ~!Class(LastTalkedToBy,PALADIN_ALL)
+      !Class(LastTalkedToBy,CLERIC_ALL)~ THEN REPLY @487 GOTO 4
+  IF ~Class(LastTalkedToBy,PALADIN_ALL)~ THEN REPLY @488 GOTO 4
+  IF ~Class(LastTalkedToBy,CLERIC_ALL)~ THEN REPLY @489 GOTO 4
+  IF ~Global("Jered_Stone","GLOBAL",1)~ THEN REPLY @490 GOTO 9
+  IF ~GlobalGT("Jered_Stone","GLOBAL",1)~ THEN REPLY @491 GOTO 9
+  IF ~~ THEN REPLY @492 GOTO 5
+  IF ~~ THEN REPLY @493 DO ~SetGlobal("Know_Messenger","GLOBAL",1)~ GOTO 18
+  IF ~Global("Know_Messenger","GLOBAL",1)~ THEN REPLY @494 GOTO 19
+  IF ~~ THEN REPLY @17770 GOTO 39
+  IF ~~ THEN REPLY @495 DO ~StartStore("EHTemple",LastTalkedToBy)~ EXIT
+  IF ~~ THEN REPLY @496 EXIT
+END
+
+IF WEIGHT #7
+~Global("Know_Everard","GLOBAL",0)~ THEN BEGIN 1
+  SAY @497
+  IF ~~ THEN REPLY @498 DO ~SetGlobal("Know_Everard","GLOBAL",1)~ GOTO 3
+  IF ~~ THEN REPLY @496 EXIT
+END
+
+IF WEIGHT #6
+~GlobalGT("Know_Everard","GLOBAL",0)~ THEN BEGIN 2
+  SAY @507
+  IF ~~ THEN REPLY @508 GOTO 0
+  IF ~~ THEN REPLY @495 DO ~StartStore("EHTemple",LastTalkedToBy)~ EXIT
+  IF ~~ THEN REPLY @496 EXIT
+END
+
+IF ~~ THEN BEGIN 3
+  SAY @511
+  IF ~!Class(LastTalkedToBy,PALADIN_ALL)
+      !Class(LastTalkedToBy,CLERIC_ALL)~ THEN REPLY @487 GOTO 4
+  IF ~Class(LastTalkedToBy,PALADIN_ALL)~ THEN REPLY @488 GOTO 4
+  IF ~Class(LastTalkedToBy,CLERIC_ALL)~ THEN REPLY @489 GOTO 4
+  IF ~Global("Jered_Stone","GLOBAL",1)~ THEN REPLY @490 GOTO 9
+  IF ~GlobalGT("Jered_Stone","GLOBAL",1)~ THEN REPLY @491 GOTO 9
+  IF ~~ THEN REPLY @492 GOTO 5
+  IF ~~ THEN REPLY @493 DO ~SetGlobal("Know_Messenger","GLOBAL",1)~ GOTO 18
+  IF ~Global("Know_Messenger","GLOBAL",1)~ THEN REPLY @494 GOTO 19
+  IF ~~ THEN REPLY @17770 GOTO 39
+  IF ~~ THEN REPLY @495 DO ~StartStore("EHTemple",LastTalkedToBy)~ EXIT
+  IF ~~ THEN REPLY @496 EXIT
+END
+
+IF ~~ THEN BEGIN 4
+  SAY @522
+  IF ~~ THEN REPLY @492 GOTO 5
+  IF ~~ THEN REPLY @524 GOTO 0
+  IF ~~ THEN REPLY @496 EXIT
+END
+
+IF ~~ THEN BEGIN 5
+  SAY @526
+  IF ~~ THEN REPLY @527 GOTO 6
+  IF ~~ THEN REPLY @524 GOTO 0
+  IF ~~ THEN REPLY @376 EXIT
+END
+
+IF ~~ THEN BEGIN 6
+  SAY @530
+  IF ~!Class(LastTalkedToBy,PALADIN_ALL)
+      !Class(LastTalkedToBy,CLERIC_ALL)~ THEN REPLY @531 GOTO 7
+  IF ~Class(LastTalkedToBy,PALADIN_ALL)~ THEN REPLY @532 GOTO 7
+  IF ~Class(LastTalkedToBy,CLERIC_ALL)~ THEN REPLY @532 GOTO 7
+  IF ~~ THEN REPLY @524 GOTO 0
+  IF ~~ THEN REPLY @376 EXIT
+END
+
+IF ~~ THEN BEGIN 7
+  SAY @535
+  IF ~~ THEN REPLY @536 GOTO 8
+  IF ~~ THEN REPLY @524 GOTO 0
+  IF ~~ THEN REPLY @376 EXIT
+END
+
+IF ~~ THEN BEGIN 8
+  SAY @539
+  IF ~~ THEN REPLY @540 DO ~SetGlobal("Jered_Stone","GLOBAL",2)~ GOTO 9
+  IF ~~ THEN REPLY @524 GOTO 0
+  IF ~~ THEN REPLY @376 EXIT
+END
+
+IF ~~ THEN BEGIN 9
+  SAY @543
+  IF ~~ THEN REPLY @544 GOTO 10
+  IF ~~ THEN REPLY @524 GOTO 0
+  IF ~~ THEN REPLY @376 EXIT
+END
+
+IF ~~ THEN BEGIN 10
+  SAY @547
+  IF ~Class(LastTalkedToBy,MAGE_ALL)~ THEN REPLY @548 GOTO 11
+  IF ~!Class(LastTalkedToBy,MAGE_ALL)~ THEN REPLY @549 GOTO 12
+  IF ~~ THEN REPLY @524 GOTO 0
+  IF ~~ THEN REPLY @376 EXIT
+END
+
+IF ~~ THEN BEGIN 11
+  SAY @552
+  IF ~~ THEN REPLY @554 GOTO 12
+  IF ~~ THEN REPLY @524 GOTO 0
+  IF ~~ THEN REPLY @376 EXIT
+END
+
+IF ~~ THEN BEGIN 12
+  SAY @557
+  IF ~~ THEN REPLY @558 GOTO 13
+  IF ~~ THEN REPLY @524 GOTO 0
+  IF ~~ THEN REPLY @376 EXIT
+END
+
+IF ~~ THEN BEGIN 13
+  SAY @16051
+  IF ~~ THEN REPLY @16053 GOTO 14
+  IF ~~ THEN REPLY @524 GOTO 0
+  IF ~~ THEN REPLY @376 EXIT
+END
+
+IF ~~ THEN BEGIN 14
+  SAY @16056
+  IF ~!Class(LastTalkedToBy,PALADIN_ALL)
+      !Class(LastTalkedToBy,CLERIC_ALL)~ THEN REPLY @16057 GOTO 15
+  IF ~Class(LastTalkedToBy,PALADIN_ALL)~ THEN REPLY @16060 GOTO 15
+  IF ~Class(LastTalkedToBy,CLERIC_ALL)~ THEN REPLY @16060 GOTO 15
+  IF ~~ THEN REPLY @524 GOTO 0
+  IF ~~ THEN REPLY @376 EXIT
+END
+
+IF ~~ THEN BEGIN 15
+  SAY @16064
+  IF ~~ THEN REPLY @16065 DO ~SetGlobal("Jered_Stone","GLOBAL",3)
+                              AddJournalEntry(@34233,QUEST)~ GOTO 16
+  IF ~~ THEN REPLY @524 GOTO 0
+  IF ~~ THEN REPLY @376 EXIT
+END
+
+IF ~~ THEN BEGIN 16
+  SAY @16068
+  IF ~~ THEN REPLY @16069 GOTO 17
+  IF ~~ THEN REPLY @524 GOTO 0
+  IF ~~ THEN REPLY @376 EXIT
+END
+
+IF ~~ THEN BEGIN 17
+  SAY @16072
+  IF ~~ THEN REPLY @524 GOTO 0
+  IF ~~ THEN REPLY @376 EXIT
+END
+
+IF ~~ THEN BEGIN 18
+  SAY @16077
+  IF ~~ THEN REPLY @16078 GOTO 19
+  IF ~~ THEN REPLY @524 GOTO 0
+  IF ~~ THEN REPLY @376 EXIT
+END
+
+IF ~~ THEN BEGIN 19
+  SAY @16083
+  IF ~~ THEN REPLY @16084 DO ~AddJournalEntry(@34113,QUEST)~ GOTO 20
+  IF ~~ THEN REPLY @524 GOTO 0
+  IF ~~ THEN REPLY @376 EXIT
+END
+
+IF ~~ THEN BEGIN 20
+  SAY @16087
+  IF ~~ THEN REPLY @16088 GOTO 21
+  IF ~~ THEN REPLY @524 GOTO 0
+  IF ~~ THEN REPLY @376 EXIT
+END
+
+IF ~~ THEN BEGIN 21
+  SAY @16091
+  IF ~~ THEN REPLY @16092 GOTO 5
+  IF ~~ THEN REPLY @524 GOTO 0
+  IF ~~ THEN REPLY @376 EXIT
+END
+
+IF WEIGHT #4
+~GlobalGT("Know_Balance","GLOBAL",0)
+ Global("Know_Everard","GLOBAL",0)~ THEN BEGIN 22
+  SAY @16095
+  IF ~~ THEN REPLY @16096 GOTO 24
+END
+
+IF WEIGHT #5
+~GlobalGT("Know_Balance","GLOBAL",0)
+ GlobalGT("Know_Everard","GLOBAL",0)~ THEN BEGIN 23 // from:
+  SAY @16097
+  IF ~~ THEN REPLY @16098 GOTO 26
+  IF ~~ THEN REPLY @16099 GOTO 25
+END
+
+IF ~~ THEN BEGIN 24
+  SAY @16100
+  IF ~~ THEN REPLY @16101 GOTO 26
+  IF ~~ THEN REPLY @16102 GOTO 25
+END
+
+IF ~~ THEN BEGIN 25
+  SAY @16103
+  IF ~~ THEN REPLY @16104 GOTO 26
+END
+
+IF ~~ THEN BEGIN 26
+  SAY @16105
+  IF ~GlobalLT("Jered_Stone","GLOBAL",2)~ THEN REPLY @16106 GOTO 27
+  IF ~GlobalGT("Jered_Stone","GLOBAL",1)~ THEN REPLY @16107 GOTO 28
+END
+
+IF ~~ THEN BEGIN 27
+  SAY @16108
+  IF ~~ THEN REPLY @16110 GOTO 29
+END
+
+IF ~~ THEN BEGIN 28
+  SAY @16111
+  IF ~~ THEN REPLY @16110 GOTO 29
+END
+
+IF ~~ THEN BEGIN 29
+  SAY @16112
+  IF ~Global("Freed_Everard","GLOBAL",0)~ THEN REPLY @16113 DO ~SetGlobal("Freed_Everard","GLOBAL",1)
+                                                                AddXP2DA("ID1EX12A")
+                                                                DisplayStringNoNameDlg(LastTalkedToBy,@16142)
+                                                                AddJournalEntry(@34232,QUEST)~ EXIT
+  IF ~GlobalGT("Freed_Everard","GLOBAL",0)~ THEN REPLY @16113 EXIT
+END
+
+IF WEIGHT #2
+~Global("Freed_Everard","GLOBAL",1)
+ !Global("Everard_In_Temple","GLOBAL",0)~ THEN BEGIN 30
+  SAY @16114
+  IF ~~ THEN REPLY @16115 GOTO 31
+  IF ~~ THEN REPLY @16116 GOTO 31
+END
+
+IF ~~ THEN BEGIN 31
+  SAY @16117
+  IF ~~ THEN REPLY @16118 DO ~SetGlobal("Freed_Everard","GLOBAL",2)
+                              AddJournalEntry(@34220,QUEST)~ EXIT
+END
+
+IF WEIGHT #1
+~Global("Freed_Everard","GLOBAL",2)
+ !Global("Everard_In_Temple","GLOBAL",0)~ THEN BEGIN 32
+  SAY @16121
+  IF ~Global("Darkside","GLOBAL",1)~ THEN REPLY @16122 GOTO 33
+  IF ~~ THEN REPLY @16123 DO ~StartStore("EDTemple",LastTalkedToBy)~ EXIT
+  IF ~~ THEN REPLY @21334 GOTO 34
+END
+
+IF ~~ THEN BEGIN 33
+  SAY @16124
+  IF ~~ THEN REPLY @16125 DO ~AddJournalEntry(@34218,QUEST)
+                              Enemy()~ EXIT
+END
+
+IF ~~ THEN BEGIN 34
+  SAY @16126
+  IF ~~ THEN REPLY @16127 EXIT
+END
+
+IF ~~ THEN BEGIN 35 // from:
+  SAY @16128
+  IF ~~ THEN REPLY @16129 DO ~StartCutSceneMode()
+                              StartCutScene("eeEndCt2")~ EXIT
+END
+
+IF WEIGHT #0
+~Global("End_Portal","GLOBAL",1)~ THEN BEGIN 36
+  SAY @16130
+  IF ~~ THEN REPLY @16131 GOTO 37
+END
+
+IF ~~ THEN BEGIN 37
+  SAY @16132
+  IF ~GlobalLT("Jered_Stone","GLOBAL",2)~ THEN REPLY @11452 GOTO 38
+  IF ~GlobalGT("Jered_Stone","GLOBAL",1)~ THEN REPLY @16134 GOTO 38
+END
+
+IF ~~ THEN BEGIN 38
+  SAY @16135
+  IF ~~ THEN REPLY @16136 DO ~SetGlobal("Freed_Everard","GLOBAL",3)
+                              SaveLocation("LOCALS","SavedLoc",[608.383])
+                              StartCutSceneMode()
+                              StartCutScene("eeEndCt3")~ EXIT
+END
+
+IF ~~ THEN BEGIN 39
+  SAY @17763
+  IF ~GlobalLT("Jered_Stone","GLOBAL",3)~ THEN REPLY @17764 GOTO 9
+  IF ~GlobalGT("Jered_Stone","GLOBAL",2)~ THEN REPLY @17765 GOTO 9
+  IF ~~ THEN REPLY @524 GOTO 0
+  IF ~~ THEN REPLY @376 EXIT
+END
+
+IF WEIGHT #3
+~GlobalGT("Know_Balance","GLOBAL",0)
+ GlobalGT("Freed_Everard","GLOBAL",0)
+ Global("Everard_In_Temple","GLOBAL",0)~ THEN BEGIN 40
+  SAY @16097
+  IF ~~ THEN REPLY @21329 GOTO 29
+  IF ~~ THEN REPLY @21330 DO ~StartStore("EDTemple",LastTalkedToBy)~ EXIT
+  IF ~~ THEN REPLY @21335 EXIT
+END

@@ -1,0 +1,14 @@
+IF
+  True()
+THEN
+  RESPONSE #100
+    CutSceneId(Myself)
+    //HideCreature(Myself,TRUE)
+    ApplySpellRES("IDINVIS3",Myself)
+    //Wait(2)
+    //ChangeAnimation("cdvex")
+   // ChangeAnimationNoEffect("cdvex")
+		Wait(2)
+		CreateCreature("cdvex",[-1.-1],S)  // Тёмные Мысли
+		DestroySelf()
+END

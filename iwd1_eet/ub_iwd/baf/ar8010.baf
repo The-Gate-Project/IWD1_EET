@@ -1,0 +1,19 @@
+IF
+  Dead("IronGolem1")
+  GlobalLT("Golem_Commands","GLOBAL",2)
+  Global("CDGolem1XP","MYAREA",0)
+THEN
+  RESPONSE #100
+    SetGlobal("CDGolem1XP","MYAREA",1)
+    AddexperienceParty(%golem_xp%)
+END    
+
+IF
+  Dead("IronGolem2")
+  GlobalLT("Golem_Commands","GLOBAL",2)
+  Global("CDGolem2XP","MYAREA",0)
+THEN
+  RESPONSE #100
+    SetGlobal("CDGolem2XP","MYAREA",1)
+    AddexperienceParty(%golem_xp%)
+END

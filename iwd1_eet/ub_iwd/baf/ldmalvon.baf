@@ -1,0 +1,15 @@
+IF
+	!Global("LDMALVON_INACTIVE","LOCALS",1)
+	!IsActive(Myself)
+	GlobalGT("Golem_Commands","GLOBAL",1)
+	GlobalGT("SPRITE_IS_DEADMUMBER_HULK","GLOBAL",3)
+	GlobalGT("SPRITE_IS_DEADMSIMULACRUM","GLOBAL",0)
+THEN
+	RESPONSE #100
+		Activate(Myself)
+		SetGlobal("IwIHidden","LOCALS",0)
+		EquipItemEx("RINGMAL",0)
+		GiveItemCreate("MIN1HP",Myself,1,1,1)
+		EquipItemEx("MIN1HP",0)
+		Continue()
+END

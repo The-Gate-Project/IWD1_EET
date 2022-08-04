@@ -1,0 +1,32 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Myself)
+		StartCutSceneMode()
+		SetGlobal("END_PORTAL","GLOBAL",1)
+		MoveViewPoint([603.414],VERY_FAST)
+		Wait(1)
+		Face(N)
+		Wait(2)
+		ForceSpellPointRES("IDIN979",[603.414]) //INNATE_POQUELINS_PORTAL_OPENING
+		Wait(1)
+		StartCutScene("EECRNENT")
+		Wait(1)
+		Activate("GATEWAY")
+		SoundActivate("GATEWAY",TRUE)
+		AmbientActivate("PORTAL1",TRUE)
+		AmbientActivate("PORTAL2",TRUE)
+		AmbientActivate("PORTAL3",TRUE)
+		AmbientActivate("PORTAL4",TRUE)
+		StaticSequence("PORTAL1",SEQ_DAMAGE)
+		StaticSequence("PORTAL2",SEQ_DIE)
+		StaticSequence("PORTAL3",SEQ_HEAD_TURN)
+		StaticSequence("PORTAL4",SEQ_READY)
+		Wait(3)
+		FaceObject(PartySlot1)
+		Wait(2)
+		ApplySpellRES("BDCUTSPY",Myself)
+		StartDialogNoSet(PartySlot1)
+END
+

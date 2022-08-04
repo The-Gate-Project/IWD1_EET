@@ -1,0 +1,7 @@
+IF
+  Global("CDUBItemDrop","MYAREA",0)
+THEN
+  RESPONSE #100
+    ActionOverride("Container8",GiveItemCreate("briath",Myself,0,0,0))
+    SetGlobal("CDUBItemDrop","MYAREA",1)
+END

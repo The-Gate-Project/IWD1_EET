@@ -1,0 +1,70 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId("ALPHEUS")
+		Activate("ALPHEUS")
+		Face(NW)
+		WaitRandom(0,2)
+		//HideCreature("ALPHEUS",FALSE)
+		SetGlobal("IwIHidden","LOCALS",0)
+		ForceSpellPoint([2506.1461],WIZARD_DIMENSION_DOOR)
+		Wait(3)
+END
+
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId("9100_PSHAR")
+		Activate("9100_PSHAR")
+		Face(NW)
+		WaitRandom(0,2)
+		//HideCreature("PSHAR",FALSE)
+		SetGlobal("IwIHidden","LOCALS",0)
+		ForceSpellPoint([2596.1443],WIZARD_DIMENSION_DOOR)
+		Wait(3)
+END
+
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId("9100_MERCWAR1")
+		Activate("9100_MERCWAR1")
+		Face(NW)
+		WaitRandom(0,2)
+		//HideCreature("MERCWAR1",FALSE)
+		SetGlobal("IwIHidden","LOCALS",0)
+		ForceSpellPoint([2512.1385],WIZARD_DIMENSION_DOOR)
+		Wait(3)
+END
+
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId("9100_MERCWAR2")
+		Activate("9100_MERCWAR2")
+		Face(NW)
+		WaitRandom(0,2)
+		//HideCreature("MERCWAR2",FALSE)
+		SetGlobal("IwIHidden","LOCALS",0)
+		ForceSpellPoint([2459.1434],WIZARD_DIMENSION_DOOR)
+		Wait(3)
+END
+
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId("9100_MERCTHF")
+		Activate("9100_MERCTHF")
+		Face(NW)
+		WaitRandom(0,2)
+		//HideCreature("MERCTHF",FALSE)
+		SetGlobal("IwIHidden","LOCALS",0)
+		ForceSpellPoint([2530.1519],WIZARD_DIMENSION_DOOR)
+		Wait(3)
+END
+

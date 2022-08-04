@@ -1,0 +1,40 @@
+IF
+  GlobalGT("CDPresioDuel","GLOBAL",0)
+  GlobalLT("CDPresioDuel","GLOBAL",3)
+THEN
+  RESPONSE #100
+    ActionOverride("presio",DestroySelf())
+    IncrementGlobal("CDPresioDuel","GLOBAL",2)
+    CreateCreature("cdpresio",[2780.2414],5)
+END
+
+IF
+  GlobalGT("CDPresioDuel","GLOBAL",2)
+  GlobalLT("CDPresioDuel","GLOBAL",5)
+  Dead("presio")
+THEN
+  RESPONSE #100
+    //AddXPVar("Level_2_Easy",@403)
+    DisplayString(Player1,@300000403)
+    AddXP2DA("ID1EX2E")
+    IncrementGlobal("CDPresioDuel","GLOBAL",2)
+END
+
+IF
+  GlobalGT("CDPresioDuel","GLOBAL",0)
+  GlobalLT("CDPresioDuel","GLOBAL",5)
+  Global("CDTrapActive","MYAREA",0)
+THEN
+  RESPONSE #100
+    TriggerActivation("cd4003tp",TRUE)
+    SetGlobal("CDTrapActive","MYAREA",1)
+END
+
+IF
+  GlobalGT("CDPresioDuel","GLOBAL",4)
+  Global("CDTrapActive","MYAREA",1)
+THEN
+  RESPONSE #100
+    TriggerActivation("cd4003tp",FALSE)
+    SetGlobal("CDTrapActive","MYAREA",0)
+END

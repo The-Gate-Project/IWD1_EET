@@ -1,0 +1,11 @@
+IF
+	!Global("ZLAURA_INACTIVE","LOCALS",1)
+	LOS([PC],25)
+	IsActive(Myself)
+THEN
+	RESPONSE #100
+		ReallyForceSpellRES("IDIN992",Myself) //INNATE_ZOMBIE_LORD_AURA
+		Wait(2)
+		SetGlobal("ZLAURA_INACTIVE","LOCALS",1)
+END
+

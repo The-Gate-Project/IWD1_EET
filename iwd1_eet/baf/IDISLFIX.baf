@@ -1,0 +1,93 @@
+IF
+  Global("SaveSavedLoc","LOCALS",0)
+THEN
+  RESPONSE #100
+    SetGlobal("SaveSavedLoc","LOCALS",1)
+    SaveObjectLocation("LOCALS","SavedLoc",Myself)
+    Continue()
+END
+
+IF
+	Global("RUN_FROM","LOCALS",0)
+	AttackedBy([GOODCUTOFF],DEFAULT)
+	//OnIsland(LastAttackerOf(Myself))
+	//TriggerOverride(LastAttackerOf(Myself),Range("idonisla",30))
+	//!Global("9300_ON_ISLAND","GLOBAL",0)
+	TriggerOverride(LastAttackerOf(Myself),Global("OnIsland","LOCALS",1))
+THEN
+	RESPONSE #100
+		SetGlobal("RUN_FROM","LOCALS",1)
+		Continue()
+END
+
+IF
+	StateCheck(Myself,STATE_PANIC)
+THEN
+	RESPONSE #100
+		RandomWalkContinuous()
+END
+
+IF
+	!Global("9300_ON_ISLAND","GLOBAL",0)
+	See(NearestEnemyOf(Myself))
+	//!OnIsland(LastSeenBy(Myself))
+	//!TriggerOverride(LastAttackerOf(Myself),Range("idonisla",30))
+	//Global("9300_ON_ISLAND","GLOBAL",0)
+	!TriggerOverride(LastSeenBy(Myself),Global("OnIsland","LOCALS",1))
+THEN
+	RESPONSE #100
+		Help()
+		AttackReevaluate(LastSeenBy(Myself),75)
+END
+
+IF
+	!Global("9300_ON_ISLAND","GLOBAL",0)
+	!Global("RUN_FROM","LOCALS",0)
+	See([PC])
+THEN
+	RESPONSE #100
+		RunAwayFromNoLeaveArea(LastSeenBy(Myself),45)
+END
+
+IF
+	!Global("9300_ON_ISLAND","GLOBAL",0)
+	See(NearestEnemyOf(Myself))
+	//OnIsland(LastSeenBy(Myself))
+	//TriggerOverride(LastSeenBy(Myself),Range("idonisla",30))
+	//!Global("9300_ON_ISLAND","GLOBAL",0)
+	TriggerOverride(LastSeenBy(Myself),Global("OnIsland","LOCALS",1))
+	ActionListEmpty()
+THEN
+	RESPONSE #100
+		FaceObject(LastSeenBy(Myself))
+		WaitRandom(1,3)
+	RESPONSE #100
+		RandomWalk()
+		WaitRandom(2,4)
+END
+
+IF
+	!Global("9300_ON_ISLAND","GLOBAL",0)
+	Global("RUN_FROM","LOCALS",0)
+	//!NearSavedLocation(Myself,"LOCALSSavedLoc",25)
+	ActionListEmpty()
+THEN
+	RESPONSE #100
+		MoveToSavedLocation("SavedLoc","LOCALS")
+END
+
+IF
+	!Global("9300_ON_ISLAND","GLOBAL",0)
+THEN
+	RESPONSE #100
+		NoAction()
+END
+
+IF
+	!Global("RUN_FROM","LOCALS",0)
+THEN
+	RESPONSE #100
+		SetGlobal("RUN_FROM","LOCALS",0)
+		Continue()
+END
+

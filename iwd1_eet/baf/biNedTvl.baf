@@ -1,0 +1,30 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Player1)
+		StartCutSceneMode()
+		//StopJoinRequests()
+		MultiPlayerSync()
+		ClearAllActions()
+		MultiPlayerSync()
+		FadeToColor([0.0],0)
+		Wait(1)
+		MultiPlayerSync()
+		SetGlobal("9100_RESET_JOIN","GLOBAL",1)
+		SetGlobal("NED_IN_9300","GLOBAL",0)
+		AdvanceTime(TWO_HOURS)
+		SmallWait(5)
+		ActionOverride(Player2,LeaveAreaLUA("ID9100","",[460.1940],6))
+		ActionOverride(Player3,LeaveAreaLUA("ID9100","",[500.1930],6))
+		ActionOverride(Player4,LeaveAreaLUA("ID9100","",[410.2050],6))
+		ActionOverride(Player5,LeaveAreaLUA("ID9100","",[450.2040],6))
+		ActionOverride(Player6,LeaveAreaLUA("ID9100","",[490.2030],6))
+		LeaveAreaLUAPanic("ID9100","",[420.1950],6)
+		LeaveAreaLUA("ID9100","",[420.1950],6)
+		SmallWait(5)
+		MultiPlayerSync()
+		EndCutSceneMode()
+		//StartCutScene("IDNED2LW")
+END
+

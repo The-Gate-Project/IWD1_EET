@@ -1,0 +1,62 @@
+IF
+  Global("Golem_Commands","GLOBAL",2)
+  Global("Internal_0","LOCALS",0)
+THEN
+  RESPONSE #100
+    ChangeStat(Myself,XPVALUE,0,SET)
+    ChangeEnemyAlly(Myself,NEUTRAL)
+    SetGlobal("Internal_0","LOCALS",1)
+END
+
+IF
+  Global("Golem_Commands","GLOBAL",3)
+  Global("Internal_0","LOCALS",0)
+THEN
+  RESPONSE #100
+    ChangeStat(Myself,XPVALUE,0,SET)
+    ChangeEnemyAlly(Myself,CONTROLLED)
+    AttackReevaluate("MSimulacrum",6)
+    SetGlobal("Internal_0","LOCALS",1)
+END
+
+IF
+  Global("Golem_Commands","GLOBAL",2)
+  !Allegiance(Myself,NEUTRAL)
+THEN
+  RESPONSE #100
+    ChangeStat(Myself,XPVALUE,0,SET)
+    ChangeEnemyAlly(Myself,NEUTRAL)
+END
+
+IF
+  Global("Golem_Commands","GLOBAL",3)
+  !Allegiance(Myself,CONTROLLED)
+THEN
+  RESPONSE #100
+    ChangeStat(Myself,XPVALUE,0,SET)
+    ChangeEnemyAlly(Myself,CONTROLLED)
+END
+
+IF
+  Global("Golem_Commands","GLOBAL",3)
+  See(NearestEnemyOf(Myself))
+THEN
+  RESPONSE #100
+    AttackReevaluate(LastSeenBy(Myself),75)
+END
+
+IF
+  Global("Golem_Commands","GLOBAL",3)
+  AttackedBy(NearestEnemyOf(Myself),DEFAULT)
+THEN
+  RESPONSE #100
+    MoveToObject(LastAttackerOf(Myself))
+END
+
+IF
+  GlobalGT("Golem_Commands","GLOBAL",1)
+THEN
+  RESPONSE #100
+    NoAction()
+END
+

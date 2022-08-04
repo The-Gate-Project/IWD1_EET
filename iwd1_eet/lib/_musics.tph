@@ -1,0 +1,227 @@
+PRINT ~Installing area music...~
+SILENT
+
+ADD_MUSIC ~IDTHM~ ~iwd1_eet/musics/IDTHM.mus~  //IDTHM
+ADD_MUSIC ~IDCP0~ ~iwd1_eet/musics/IDCP0.mus~  //IDCP
+ADD_MUSIC ~IDCP1~ ~iwd1_eet/musics/IDCP1.mus~
+ADD_MUSIC ~ID1000~ ~iwd1_eet/musics/ID1000.mus~
+ADD_MUSIC ~ID1001~ ~iwd1_eet/musics/ID1001.mus~
+ADD_MUSIC ~ID1004~ ~iwd1_eet/musics/ID1004.mus~
+ADD_MUSIC ~ID1100~ ~iwd1_eet/musics/ID1100.mus~
+ADD_MUSIC ~ID1201~ ~iwd1_eet/musics/ID1201.mus~
+ADD_MUSIC ~ID2100A~ ~iwd1_eet/musics/ID2100A.mus~
+ADD_MUSIC ~ID2100B~ ~iwd1_eet/musics/ID2100B.mus~
+ADD_MUSIC ~ID2112~ ~iwd1_eet/musics/ID2112.mus~
+ADD_MUSIC ~ID3000~ ~iwd1_eet/musics/ID3000.mus~
+ADD_MUSIC ~ID3501~ ~iwd1_eet/musics/ID3501.mus~
+ADD_MUSIC ~ID3503~ ~iwd1_eet/musics/ID3503.mus~
+ADD_MUSIC ~ID3600~ ~iwd1_eet/musics/ID3600.mus~
+ADD_MUSIC ~ID3601~ ~iwd1_eet/musics/ID3601.mus~
+ADD_MUSIC ~ID3603~ ~iwd1_eet/musics/ID3603.mus~
+ADD_MUSIC ~ID4001~ ~iwd1_eet/musics/ID4001.mus~
+ADD_MUSIC ~ID4005~ ~iwd1_eet/musics/ID4005.mus~
+ADD_MUSIC ~ID5000~ ~iwd1_eet/musics/ID5000.mus~
+ADD_MUSIC ~ID5001~ ~iwd1_eet/musics/ID5001.mus~
+ADD_MUSIC ~ID5101~ ~iwd1_eet/musics/ID5101.mus~
+ADD_MUSIC ~ID6000~ ~iwd1_eet/musics/ID6000.mus~
+ADD_MUSIC ~ID6001~ ~iwd1_eet/musics/ID6001.mus~
+ADD_MUSIC ~ID6002~ ~iwd1_eet/musics/ID6002.mus~
+ADD_MUSIC ~ID6003~ ~iwd1_eet/musics/ID6003.mus~
+ADD_MUSIC ~ID6005~ ~iwd1_eet/musics/ID6005.mus~
+ADD_MUSIC ~ID7000~ ~iwd1_eet/musics/ID7000.mus~
+ADD_MUSIC ~ID7001~ ~iwd1_eet/musics/ID7001.mus~
+ADD_MUSIC ~ID7004~ ~iwd1_eet/musics/ID7004.mus~
+ADD_MUSIC ~ID8001~ ~iwd1_eet/musics/ID8001.mus~
+ADD_MUSIC ~ID8004~ ~iwd1_eet/musics/ID8004.mus~
+ADD_MUSIC ~ID8005~ ~iwd1_eet/musics/ID8005.mus~
+ADD_MUSIC ~ID8009~ ~iwd1_eet/musics/ID8009.mus~
+ADD_MUSIC ~ID8012~ ~iwd1_eet/musics/ID8012.mus~
+ADD_MUSIC ~ID9100~ ~iwd1_eet/musics/ID9100.mus~
+ADD_MUSIC ~ID9103~ ~iwd1_eet/musics/ID9103.mus~
+ADD_MUSIC ~ID9200~ ~iwd1_eet/musics/ID9200.mus~
+ADD_MUSIC ~ID9201~ ~iwd1_eet/musics/ID9201.mus~
+ADD_MUSIC ~ID9300~ ~iwd1_eet/musics/ID9300.mus~
+ADD_MUSIC ~ID9400~ ~iwd1_eet/musics/ID9400.mus~
+ADD_MUSIC ~ID9500~ ~iwd1_eet/musics/ID9500.mus~
+ADD_MUSIC ~ID9501~ ~iwd1_eet/musics/ID9501.mus~
+ADD_MUSIC ~ID9502A~ ~iwd1_eet/musics/ID9502A.mus~
+ADD_MUSIC ~ID9502B~ ~iwd1_eet/musics/ID9502B.mus~
+ADD_MUSIC ~ID9600~ ~iwd1_eet/musics/ID9600.mus~
+ADD_MUSIC ~ID9603~ ~iwd1_eet/musics/ID9603.mus~
+ADD_MUSIC ~IDBTLE1~ ~iwd1_eet/musics/D1.mus~
+ADD_MUSIC ~IDBTLE2~ ~iwd1_eet/musics/D2.mus~
+ADD_MUSIC ~IDBTLE3~ ~iwd1_eet/musics/D3.mus~
+ADD_MUSIC ~IDBTLE4~ ~iwd1_eet/musics/D4.mus~
+ADD_MUSIC ~IDBTLE5~ ~iwd1_eet/musics/D5.mus~
+ADD_MUSIC ~IDBTLE6~ ~iwd1_eet/musics/D6.mus~
+
+//SetMusic
+COPY ~iwd1_eet/baf/ID2100.baf~ ~iwd1_eet/baf~ EVALUATE_BUFFER
+
+
+MKDIR ~music/D1~
+MKDIR ~music/D2~
+MKDIR ~music/D3~
+MKDIR ~music/D4~
+MKDIR ~music/D5~
+MKDIR ~music/D6~
+MKDIR ~music/IDTHM~
+MKDIR ~music/IDCP0~
+MKDIR ~music/IDCP1~
+MKDIR ~music/ID1000~
+MKDIR ~music/ID1001~
+MKDIR ~music/ID1004~
+MKDIR ~music/ID1100~
+MKDIR ~music/ID1201~
+MKDIR ~music/ID2100~
+MKDIR ~music/ID2112~
+MKDIR ~music/ID3000~
+MKDIR ~music/ID3501~
+MKDIR ~music/ID3503~
+MKDIR ~music/ID3600~
+MKDIR ~music/ID3601~
+MKDIR ~music/ID3603~
+MKDIR ~music/ID4001~
+MKDIR ~music/ID4005~
+MKDIR ~music/ID5000~
+MKDIR ~music/ID5001~
+MKDIR ~music/ID5101~
+MKDIR ~music/ID6000~
+MKDIR ~music/ID6001~
+MKDIR ~music/ID6002~
+MKDIR ~music/ID6003~
+MKDIR ~music/ID6005~
+MKDIR ~music/ID7000~
+MKDIR ~music/ID7001~
+MKDIR ~music/ID7004~
+MKDIR ~music/ID8001~
+MKDIR ~music/ID8004~
+MKDIR ~music/ID8005~
+MKDIR ~music/ID8009~
+MKDIR ~music/ID8012~
+MKDIR ~music/ID9100~
+MKDIR ~music/ID9103~
+MKDIR ~music/ID9200~
+MKDIR ~music/ID9201~
+MKDIR ~music/ID9300~
+MKDIR ~music/ID9400~
+MKDIR ~music/ID9500~
+MKDIR ~music/ID9501~
+MKDIR ~music/ID9502~
+MKDIR ~music/ID9600~
+MKDIR ~music/ID9603~
+
+
+COPY ~iwd1_eet/musics/D1~ ~music/D1~
+COPY ~iwd1_eet/musics/D2~ ~music/D2~
+COPY ~iwd1_eet/musics/D3~ ~music/D3~
+COPY ~iwd1_eet/musics/D4~ ~music/D4~
+COPY ~iwd1_eet/musics/D5~ ~music/D5~
+COPY ~iwd1_eet/musics/D6~ ~music/D6~
+COPY ~iwd1_eet/musics/IDTHM~ ~music/IDTHM~
+COPY ~iwd1_eet/musics/IDCP0~ ~music/IDCP0~
+COPY ~iwd1_eet/musics/IDCP1~ ~music/IDCP1~
+COPY ~iwd1_eet/musics/ID1000~ ~music/ID1000~
+COPY ~iwd1_eet/musics/ID1001~ ~music/ID1001~
+COPY ~iwd1_eet/musics/ID1004~ ~music/ID1004~
+COPY ~iwd1_eet/musics/ID1100~ ~music/ID1100~
+COPY ~iwd1_eet/musics/ID1201~ ~music/ID1201~
+COPY ~iwd1_eet/musics/ID2100~ ~music/ID2100~
+COPY ~iwd1_eet/musics/ID2112~ ~music/ID2112~
+COPY ~iwd1_eet/musics/ID3000~ ~music/ID3000~
+COPY ~iwd1_eet/musics/ID3501~ ~music/ID3501~
+COPY ~iwd1_eet/musics/ID3503~ ~music/ID3503~
+COPY ~iwd1_eet/musics/ID3600~ ~music/ID3600~
+COPY ~iwd1_eet/musics/ID3601~ ~music/ID3601~
+COPY ~iwd1_eet/musics/ID3603~ ~music/ID3603~
+COPY ~iwd1_eet/musics/ID4001~ ~music/ID4001~
+COPY ~iwd1_eet/musics/ID4005~ ~music/ID4005~
+COPY ~iwd1_eet/musics/ID5000~ ~music/ID5000~
+COPY ~iwd1_eet/musics/ID5001~ ~music/ID5001~
+COPY ~iwd1_eet/musics/ID5101~ ~music/ID5101~
+COPY ~iwd1_eet/musics/ID6000~ ~music/ID6000~
+COPY ~iwd1_eet/musics/ID6001~ ~music/ID6001~
+COPY ~iwd1_eet/musics/ID6002~ ~music/ID6002~
+COPY ~iwd1_eet/musics/ID6003~ ~music/ID6003~
+COPY ~iwd1_eet/musics/ID6005~ ~music/ID6005~
+COPY ~iwd1_eet/musics/ID7000~ ~music/ID7000~
+COPY ~iwd1_eet/musics/ID7001~ ~music/ID7001~
+COPY ~iwd1_eet/musics/ID7004~ ~music/ID7004~
+COPY ~iwd1_eet/musics/ID8001~ ~music/ID8001~
+COPY ~iwd1_eet/musics/ID8004~ ~music/ID8004~
+COPY ~iwd1_eet/musics/ID8005~ ~music/ID8005~
+COPY ~iwd1_eet/musics/ID8009~ ~music/ID8009~
+COPY ~iwd1_eet/musics/ID8012~ ~music/ID8012~
+COPY ~iwd1_eet/musics/ID9100~ ~music/ID9100~
+COPY ~iwd1_eet/musics/ID9103~ ~music/ID9103~
+COPY ~iwd1_eet/musics/ID9200~ ~music/ID9200~
+COPY ~iwd1_eet/musics/ID9201~ ~music/ID9201~
+COPY ~iwd1_eet/musics/ID9300~ ~music/ID9300~
+COPY ~iwd1_eet/musics/ID9400~ ~music/ID9400~
+COPY ~iwd1_eet/musics/ID9500~ ~music/ID9500~
+COPY ~iwd1_eet/musics/ID9501~ ~music/ID9501~
+COPY ~iwd1_eet/musics/ID9502~ ~music/ID9502~
+COPY ~iwd1_eet/musics/ID9600~ ~music/ID9600~
+COPY ~iwd1_eet/musics/ID9603~ ~music/ID9603~
+
+
+
+APPEND ~songlist.ids~ ~%IDTHM% IDTHM
+%IDCP0% IDCP0
+%IDCP1% IDCP1
+%ID1000% ID1000
+%ID1001% ID1001
+%ID1004% ID1004
+%ID1100% ID1100
+%ID1201% ID1201
+%ID2100A% ID2100A
+%ID2100B% ID2100B
+%ID2112% ID2112
+%ID3000% ID3000
+%ID3501% ID3501
+%ID3503% ID3503
+%ID3600% ID3600
+%ID3601% ID3601
+%ID3603% ID3603
+%ID4001% ID4001
+%ID4005% ID4005
+%ID5000% ID5000
+%ID5001% ID5001
+%ID5101% ID5101
+%ID6000% ID6000
+%ID6001% ID6001
+%ID6002% ID6002
+%ID6003% ID6003
+%ID6005% ID6005
+%ID7000% ID7000
+%ID7001% ID7001
+%ID7004% ID7004
+%ID8001% ID8001
+%ID8004% ID8004
+%ID8005% ID8005
+%ID8009% ID8009
+%ID8012% ID8012
+%ID9100% ID9100
+%ID9103% ID9103
+%ID9200% ID9200
+%ID9201% ID9201
+%ID9300% ID9300
+%ID9400% ID9400
+%ID9500% ID9500
+%ID9501% ID9501
+%ID9502A% ID9502A
+%ID9502B% ID9502B
+%ID9600% ID9600
+%ID9603% ID9603
+%IDBTLE1% IDBTLE1
+%IDBTLE2% IDBTLE2
+%IDBTLE3% IDBTLE3
+%IDBTLE4% IDBTLE4
+%IDBTLE5% IDBTLE5
+%IDBTLE6% IDBTLE6~
+
+
+VERBOSE
+PRINT ~Area music installation complete...~
+
+

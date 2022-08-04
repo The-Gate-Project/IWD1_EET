@@ -1,0 +1,310 @@
+IF
+	Global("PARTY_IN_ICEWIND_DALE","GLOBAL",2)
+THEN
+	RESPONSE #100
+		ActionOverride(Player1,DestroyAllDestructableEquipment())
+		ActionOverride(Player2,DestroyAllDestructableEquipment())
+		ActionOverride(Player3,DestroyAllDestructableEquipment())
+		ActionOverride(Player4,DestroyAllDestructableEquipment())
+		ActionOverride(Player5,DestroyAllDestructableEquipment())
+		ActionOverride(Player6,DestroyAllDestructableEquipment())
+		ActionOverride(Player1,MakeUnselectable(0))
+		ActionOverride(Player2,MakeUnselectable(0))
+		ActionOverride(Player3,MakeUnselectable(0))
+		ActionOverride(Player4,MakeUnselectable(0))
+		ActionOverride(Player5,MakeUnselectable(0))
+		ActionOverride(Player6,MakeUnselectable(0))
+		//SetGlobal("IWD_CHAPTER","GLOBAL",0)
+		ActionOverride(Player1,ApplySpellRES("IDINVIS7",Myself))
+		ActionOverride(Player2,ApplySpellRES("IDINVIS7",Myself))
+		ActionOverride(Player3,ApplySpellRES("IDINVIS7",Myself))
+		ActionOverride(Player4,ApplySpellRES("IDINVIS7",Myself))
+		ActionOverride(Player5,ApplySpellRES("IDINVIS7",Myself))
+		ActionOverride(Player6,ApplySpellRES("IDINVIS7",Myself))
+		Wait(1)
+		SetMasterArea("BG2700")
+		FadeFromColor([0.0],0)
+		ClearAllActions()
+		StartCutSceneMode()
+		StartCutScene("IDTOEET1")
+END
+
+IF
+	Global("All_Installed","MYAREA",9)
+THEN
+	RESPONSE #100
+		SetGlobal("All_Installed","MYAREA",10)
+		SetGlobal("PLAYER_EQUIPMENT","MYAREA",3)
+END
+
+IF
+	Global("All_Restored","MYAREA",5)
+THEN
+	RESPONSE #100
+		SetGlobal("All_Restored","MYAREA",10)
+		SetGlobal("PARTY_IN_ICEWIND_DALE","GLOBAL",2)
+END
+
+IF
+  //Global("BG1_COMPLETE","GLOBAL",0)
+  !BitCheck("IWDEET_COMPLETE","GLOBAL",BITS_BG1)
+  Global("PARTY_IN_ICEWIND_DALE","GLOBAL",0)
+  !Global("Play_Movei","MYAREA",1)
+THEN
+  RESPONSE #100
+    SetCutSceneLite(TRUE)
+    FadeToColor([0.0],0)
+		ActionOverride(Player1,ApplySpellRES("IDINVIS6",Myself))
+		ActionOverride(Player2,ApplySpellRES("IDINVIS6",Myself))
+		ActionOverride(Player3,ApplySpellRES("IDINVIS6",Myself))
+		ActionOverride(Player4,ApplySpellRES("IDINVIS6",Myself))
+		ActionOverride(Player5,ApplySpellRES("IDINVIS6",Myself))
+		ActionOverride(Player6,ApplySpellRES("IDINVIS6",Myself))
+    Wait(1)
+    ActionOverride(Player1,DestroyAllDestructableEquipment())
+    ActionOverride(Player2,DestroyAllDestructableEquipment())
+    ActionOverride(Player3,DestroyAllDestructableEquipment())
+    ActionOverride(Player4,DestroyAllDestructableEquipment())
+    ActionOverride(Player5,DestroyAllDestructableEquipment())
+    ActionOverride(Player6,DestroyAllDestructableEquipment())
+    SetGlobal("Play_Movei","MYAREA",1)
+    SetGlobal("IWD1_CHAPTER","GLOBAL",0)
+    SetGlobal("Iwd1WorldDays","GLOBAL",0)
+    SetGlobal("Iwd1CheckWorldDays","GLOBAL",0)
+    SetGlobal("ENDOFBG1","GLOBAL",1)
+    SetGlobal("DREAM","GLOBAL",7)
+    //SetGlobal("IWD_PARTY_GOLD","GLOBAL",0)
+    //SetGlobal("TAKE_PARTY_GOLD","MYAREA",1)
+    //SetGlobal("SET_PARTY_GOLD","MYAREA",1)
+    ActionOverride(Player1,MakeUnselectable(1200))
+	ActionOverride(Player2,MakeUnselectable(1200))
+	ActionOverride(Player3,MakeUnselectable(1200))
+	ActionOverride(Player4,MakeUnselectable(1200))
+	ActionOverride(Player5,MakeUnselectable(1200))
+	ActionOverride(Player6,MakeUnselectable(1200))
+    CreateCreature("iwdmove",[10.10],0)
+    ActionOverride("iwdmove",ChangeAIScript("IDP1EQP",OVERRIDE))
+    CreateCreature("iwdmove",[10.20],0)
+    ActionOverride("iwdmove",ChangeAIScript("IDP2EQP",OVERRIDE))
+    CreateCreature("iwdmove",[10.30],0)
+    ActionOverride("iwdmove",ChangeAIScript("IDP3EQP",OVERRIDE))
+    CreateCreature("iwdmove",[10.40],0)
+    ActionOverride("iwdmove",ChangeAIScript("IDP4EQP",OVERRIDE))
+    CreateCreature("iwdmove",[10.50],0)
+    ActionOverride("iwdmove",ChangeAIScript("IDP5EQP",OVERRIDE))
+    CreateCreature("iwdmove",[10.60],0)
+    ActionOverride("iwdmove",ChangeAIScript("IDP6EQP",OVERRIDE))
+    CreateCreature("iwdmove",[10.70],0)
+    ActionOverride("iwdmove",ChangeAIScript("IDPSCRDL",OVERRIDE))
+    CreateCreature("iwdmove",[10.80],0)
+    ActionOverride("iwdmove",ChangeAIScript("IDSETREP",OVERRIDE))
+    CreateCreature("iwdmove",[10.90],0)
+    ActionOverride("iwdmove",ChangeAIScript("IDTKGLD",OVERRIDE))
+    //Continue()
+END
+
+IF
+  //Global("BG1_COMPLETE","GLOBAL",1)
+  BitCheck("IWDEET_COMPLETE","GLOBAL",BITS_BG1)
+  Global("PARTY_IN_ICEWIND_DALE","GLOBAL",0)
+  !Global("Play_Movei","MYAREA",1)
+THEN
+  RESPONSE #100
+    SetCutSceneLite(TRUE)
+    FadeToColor([0.0],0)
+		ActionOverride(Player1,ApplySpellRES("IDINVIS6",Myself))
+		ActionOverride(Player2,ApplySpellRES("IDINVIS6",Myself))
+		ActionOverride(Player3,ApplySpellRES("IDINVIS6",Myself))
+		ActionOverride(Player4,ApplySpellRES("IDINVIS6",Myself))
+		ActionOverride(Player5,ApplySpellRES("IDINVIS6",Myself))
+		ActionOverride(Player6,ApplySpellRES("IDINVIS6",Myself))
+    Wait(1)
+    StartMovie("IDINTRO")
+    SetGlobal("Play_Movei","MYAREA",1)
+    SetGlobal("IWD1_CHAPTER","GLOBAL",0)
+    SetGlobal("Iwd1WorldDays","GLOBAL",0)
+    SetGlobal("Iwd1CheckWorldDays","GLOBAL",0)
+    //SetGlobal("IWD_PARTY_GOLD","GLOBAL",0)
+    ActionOverride(Player1,MakeUnselectable(1200))
+	ActionOverride(Player2,MakeUnselectable(1200))
+	ActionOverride(Player3,MakeUnselectable(1200))
+	ActionOverride(Player4,MakeUnselectable(1200))
+	ActionOverride(Player5,MakeUnselectable(1200))
+	ActionOverride(Player6,MakeUnselectable(1200))
+    CreateCreature("iwdmove",[10.10],0)
+    ActionOverride("iwdmove",ChangeAIScript("IDP1EQP",OVERRIDE))
+    CreateCreature("iwdmove",[10.20],0)
+    ActionOverride("iwdmove",ChangeAIScript("IDP2EQP",OVERRIDE))
+    CreateCreature("iwdmove",[10.30],0)
+    ActionOverride("iwdmove",ChangeAIScript("IDP3EQP",OVERRIDE))
+    CreateCreature("iwdmove",[10.40],0)
+    ActionOverride("iwdmove",ChangeAIScript("IDP4EQP",OVERRIDE))
+    CreateCreature("iwdmove",[10.50],0)
+    ActionOverride("iwdmove",ChangeAIScript("IDP5EQP",OVERRIDE))
+    CreateCreature("iwdmove",[10.60],0)
+    ActionOverride("iwdmove",ChangeAIScript("IDP6EQP",OVERRIDE))
+    CreateCreature("iwdmove",[10.70],0)
+    ActionOverride("iwdmove",ChangeAIScript("IDPSCRDL",OVERRIDE))
+    CreateCreature("iwdmove",[10.80],0)
+    ActionOverride("iwdmove",ChangeAIScript("IDSETREP",OVERRIDE))
+    CreateCreature("iwdmove",[10.90],0)
+    ActionOverride("iwdmove",ChangeAIScript("IDTKGLD",OVERRIDE))
+    //Continue()
+END
+
+/*IF
+	Global("PARTY_IN_ICEWIND_DALE","GLOBAL",0)
+	Global("PLAYER_EQUIPMENT","MYAREA",0)
+THEN
+	RESPONSE #100
+		SetGlobal("PLAYER_EQUIPMENT","MYAREA",1)
+		//DisableAI(Player1,TRUE)
+		//DisableAI(Player2,TRUE)
+		//DisableAI(Player3,TRUE)
+		//DisableAI(Player4,TRUE)
+		//DisableAI(Player5,TRUE)
+		//DisableAI(Player6,TRUE)
+		//SetAreaScript("IDTKGLD",OVERRIDE)
+END*/
+
+IF
+	Global("PARTY_IN_ICEWIND_DALE","GLOBAL",0)
+	GlobalLT("PLAYER_EQUIPMENT","MYAREA",3)
+THEN
+	RESPONSE #100
+		NoAction()
+END
+
+IF
+	Global("PARTY_IN_ICEWIND_DALE","GLOBAL",0)
+	Global("PLAYER_EQUIPMENT","MYAREA",3)
+THEN
+	RESPONSE #100
+		SetGlobal("PLAYER_EQUIPMENT","MYAREA",4)
+		SetGlobal("PARTY_IN_ICEWIND_DALE","GLOBAL",1)
+		//DisableAI(Player1,FALSE)
+		//DisableAI(Player2,FALSE)
+		//DisableAI(Player3,FALSE)
+		//DisableAI(Player4,FALSE)
+		//DisableAI(Player5,FALSE)
+		//DisableAI(Player6,FALSE)
+		ActionOverride(Player1,MakeUnselectable(0))
+		ActionOverride(Player2,MakeUnselectable(0))
+		ActionOverride(Player3,MakeUnselectable(0))
+		ActionOverride(Player4,MakeUnselectable(0))
+		ActionOverride(Player5,MakeUnselectable(0))
+		ActionOverride(Player6,MakeUnselectable(0))
+		SmallWait(12)
+		ActionOverride(Player1,ApplySpellRES("IDINVIS7",Myself))
+		ActionOverride(Player2,ApplySpellRES("IDINVIS7",Myself))
+		ActionOverride(Player3,ApplySpellRES("IDINVIS7",Myself))
+		ActionOverride(Player4,ApplySpellRES("IDINVIS7",Myself))
+		ActionOverride(Player5,ApplySpellRES("IDINVIS7",Myself))
+		ActionOverride(Player6,ApplySpellRES("IDINVIS7",Myself))
+		FadeFromColor([0.0],0)
+		//SetCutSceneLite(FALSE)
+		StartCutScene("IDTO1006")
+END
+
+IF
+	//Global("IWD_COMPLETE","GLOBAL",1)
+	BitCheck("IWDEET_COMPLETE","GLOBAL",BITS_IWD1HOW)
+	Global("PARTY_IN_ICEWIND_DALE","GLOBAL",1)
+	Global("TP_PLAYERS_RESTORE","MYAREA",0)
+THEN
+	RESPONSE #100
+		SetGlobal("TP_PLAYERS_RESTORE","MYAREA",1)
+		SetCutSceneLite(TRUE)
+		FadeToColor([0.0],0)
+		ActionOverride(Player1,ApplySpellRES("IDINVIS6",Myself))
+		ActionOverride(Player2,ApplySpellRES("IDINVIS6",Myself))
+		ActionOverride(Player3,ApplySpellRES("IDINVIS6",Myself))
+		ActionOverride(Player4,ApplySpellRES("IDINVIS6",Myself))
+		ActionOverride(Player5,ApplySpellRES("IDINVIS6",Myself))
+		ActionOverride(Player6,ApplySpellRES("IDINVIS6",Myself))
+	    ActionOverride(Player1,MakeUnselectable(1200))
+		ActionOverride(Player2,MakeUnselectable(1200))
+		ActionOverride(Player3,MakeUnselectable(1200))
+		ActionOverride(Player4,MakeUnselectable(1200))
+		ActionOverride(Player5,MakeUnselectable(1200))
+		ActionOverride(Player6,MakeUnselectable(1200))
+		SetGlobal("SPRITE_IS_DEADJermsy","GLOBAL",0)
+		SetGlobal("SPRITE_IS_DEADNate","GLOBAL",0)
+		SetGlobal("SPRITE_IS_DEADOrrick","GLOBAL",0)
+		SetGlobal("SPRITE_IS_DEADSheemish","GLOBAL",0)
+		SetGlobal("SPRITE_IS_DEADConlan","GLOBAL",0)
+		SetGlobal("SPRITE_IS_DEADOswald","GLOBAL",0)
+		SetGlobal("SPRITE_IS_DEADEgenia","GLOBAL",0)
+		SetGlobal("SPRITE_IS_DEADNym","GLOBAL",0)
+		SetGlobal("SPRITE_IS_DEADGinafae","GLOBAL",0)
+		SetGlobal("SPRITE_IS_DEADMalavon","GLOBAL",0)
+		SetGlobal("Know_Arundel","GLOBAL",0)
+		SetGlobal("Know_Tolben","GLOBAL",0)
+		SetGlobal("Know_Egenia","GLOBAL",0)
+		SetGlobal("Know_Conlan","GLOBAL",0)
+		SetGlobal("Know_Ilmadia","GLOBAL",0)
+		SetGlobal("Know_Oswald","GLOBAL",0)
+		SetGlobal("Know_Orrick","GLOBAL",0)
+		SetGlobal("Know_Larrel","GLOBAL",0)
+		SetGlobal("Know_Lysan","GLOBAL",0)
+		SetGlobal("Know_Airship","GLOBAL",0)
+		//DisableAI(Player1,TRUE)
+		//DisableAI(Player2,TRUE)
+		//DisableAI(Player3,TRUE)
+		//DisableAI(Player4,TRUE)
+		//DisableAI(Player5,TRUE)
+		//DisableAI(Player6,TRUE)
+		//SetAreaScript("IDPLRES1",OVERRIDE)
+		CreateCreature("iwdmove",[10.10],0)
+		ActionOverride("iwdmove",ChangeAIScript("IDPLRES1",OVERRIDE))
+		CreateCreature("iwdmove",[10.20],0)
+		ActionOverride("iwdmove",ChangeAIScript("IDPLRES2",OVERRIDE))
+		CreateCreature("iwdmove",[10.30],0)
+		ActionOverride("iwdmove",ChangeAIScript("IDPLRES3",OVERRIDE))
+		CreateCreature("iwdmove",[10.40],0)
+		ActionOverride("iwdmove",ChangeAIScript("IDPLRES4",OVERRIDE))
+		CreateCreature("iwdmove",[10.50],0)
+		ActionOverride("iwdmove",ChangeAIScript("IDPLRES5",OVERRIDE))
+END
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

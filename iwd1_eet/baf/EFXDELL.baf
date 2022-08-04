@@ -1,0 +1,19 @@
+IF
+	!Global("EFXDELL_INACTIVE","LOCALS",1)
+	//CheckPartyAverageLevel(14,LESS_THAN)
+	LevelPartyLT(6)
+	//!StoryModeOn()
+	//!NightmareModeOn()
+THEN
+	RESPONSE #100
+		DestroySelf()
+END
+
+IF
+	!Global("EFXDELL_INACTIVE","LOCALS",1)
+	True()
+THEN
+	RESPONSE #100
+		SetGlobal("EFXDELL_INACTIVE","LOCALS",1)
+END
+

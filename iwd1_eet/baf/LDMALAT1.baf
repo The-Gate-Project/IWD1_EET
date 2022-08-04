@@ -1,0 +1,284 @@
+IF
+	StateCheck(Myself,STATE_PANIC)
+THEN
+	RESPONSE #100
+		RandomWalkContinuous()
+END
+
+IF
+	Global("MALAVON_ATTACK","MYAREA",1)
+THEN
+	RESPONSE #100
+		SpellPoint([870.475],WIZARD_WEB)
+		Wait(2)
+		SpellPoint([870.475],WIZARD_CLOUDKILL)
+		Wait(2)
+		SetGlobal("MALAVON_ATTACK","MYAREA",0)
+		IncrementGlobal("MALAVON_PHASE","MYAREA",1)
+END
+
+IF
+	Global("MALAVON_ATTACK","MYAREA",2)
+THEN
+	RESPONSE #100
+		SpellPoint([335.835],WIZARD_WEB)
+		Wait(2)
+		SpellPoint([335.835],WIZARD_CLOUDKILL)
+		Wait(2)
+		SetGlobal("MALAVON_ATTACK","MYAREA",0)
+		IncrementGlobal("MALAVON_PHASE","MYAREA",1)
+END
+
+IF
+	Global("MALAVON_ATTACK","MYAREA",3)
+THEN
+	RESPONSE #100
+		SpellPoint([1240.590],WIZARD_WEB)
+		Wait(2)
+		SpellPoint([1240.590],WIZARD_DEATH_FOG)
+		Wait(2)
+		SetGlobal("MALAVON_ATTACK","MYAREA",0)
+		IncrementGlobal("MALAVON_PHASE","MYAREA",1)
+END
+
+IF
+	Global("MALAVON_ATTACK","MYAREA",4)
+THEN
+	RESPONSE #100
+		SpellPoint([500.1060],WIZARD_WEB)
+		Wait(2)
+		SpellPoint([500.1060],WIZARD_CLOUDKILL)
+		Wait(2)
+		SetGlobal("MALAVON_ATTACK","MYAREA",0)
+		IncrementGlobal("MALAVON_PHASE","MYAREA",1)
+END
+
+IF
+	Global("MALAVON_ATTACK","MYAREA",5)
+THEN
+	RESPONSE #100
+		SpellPoint([580.805],WIZARD_WEB)
+		Wait(2)
+		SpellPoint([580.805],WIZARD_CLOUDKILL)
+		Wait(2)
+		SetGlobal("MALAVON_ATTACK","MYAREA",0)
+		IncrementGlobal("MALAVON_PHASE","MYAREA",1)
+END
+
+IF
+	Global("MALAVON_ATTACK","MYAREA",6)
+THEN
+	RESPONSE #100
+		SpellPoint([335.835],WIZARD_WEB)
+		Wait(2)
+		SpellPoint([335.835],WIZARD_CLOUDKILL)
+		Wait(2)
+		SetGlobal("MALAVON_ATTACK","MYAREA",0)
+		IncrementGlobal("MALAVON_PHASE","MYAREA",1)
+END
+
+IF
+	Global("MALAVON_ATTACK","MYAREA",7)
+THEN
+	RESPONSE #100
+		SpellPoint([895.745],WIZARD_WEB)
+		Wait(2)
+		SpellPoint([895.745],WIZARD_CLOUDKILL)
+		Wait(2)
+		SetGlobal("MALAVON_ATTACK","MYAREA",0)
+		IncrementGlobal("MALAVON_PHASE","MYAREA",1)
+END
+
+IF
+	Global("MALAVON_ATTACK","MYAREA",8)
+THEN
+	RESPONSE #100
+		SpellPoint([2060.810],WIZARD_DEATH_FOG)
+		Wait(2)
+		SetGlobal("MALAVON_ATTACK","MYAREA",0)
+		IncrementGlobal("MALAVON_PHASE","MYAREA",1)
+END
+
+IF
+	Global("MALAVON_ATTACK","MYAREA",9)
+THEN
+	RESPONSE #100
+		SpellPoint([690.600],WIZARD_WEB)
+		Wait(2)
+		SpellPoint([690.600],WIZARD_CLOUDKILL)
+		Wait(2)
+		SetGlobal("MALAVON_ATTACK","MYAREA",0)
+		IncrementGlobal("MALAVON_PHASE","MYAREA",1)
+END
+
+IF
+	GlobalGT("MALAVON_PHASE","MYAREA",3)
+THEN
+	RESPONSE #100
+		ForceSpellRES("IDWI899",Myself) //WIZARD_MONSTER_SUMMONING_VI_MALAVON
+		Wait(2)
+		ForceSpellRES("IDWI598",Myself) //WIZARD_CONJURE_EARTH_ELEMENTAL_MALAVON
+		Wait(2)
+		ForceSpellRES("IDWI598",Myself) //WIZARD_CONJURE_EARTH_ELEMENTAL_MALAVON
+		Wait(2)
+		ChangeAIScript("",RACE)
+END
+
+IF
+	True()
+THEN
+	RESPONSE #100
+		SetGlobal("MALAVON_WARP","MYAREA",1)
+		Continue()
+	RESPONSE #100
+		SetGlobal("MALAVON_WARP","MYAREA",2)
+		Continue()
+	RESPONSE #100
+		SetGlobal("MALAVON_WARP","MYAREA",3)
+		Continue()
+	RESPONSE #100
+		SetGlobal("MALAVON_WARP","MYAREA",4)
+		Continue()
+	RESPONSE #100
+		SetGlobal("MALAVON_WARP","MYAREA",5)
+		Continue()
+	RESPONSE #100
+		SetGlobal("MALAVON_WARP","MYAREA",6)
+		Continue()
+	RESPONSE #100
+		SetGlobal("MALAVON_WARP","MYAREA",7)
+		Continue()
+	RESPONSE #100
+		SetGlobal("MALAVON_WARP","MYAREA",8)
+		Continue()
+	RESPONSE #100
+		SetGlobal("MALAVON_WARP","MYAREA",9)
+		Continue()
+END
+
+IF
+	GlobalLT("MALAVON_WARP","MYAREA",2)
+	Global("MALAVON_WARPED_1","MYAREA",0)
+	!NearLocation(Myself,1240,590,10)
+THEN
+	RESPONSE #100
+		SetGlobal("MALAVON_WARPED_1","MYAREA",1)
+		SetGlobal("MALAVON_WARP","MYAREA",99)
+		SetGlobal("MALAVON_ATTACK","MYAREA",1)
+		ForceSpellPoint([1240.590],WIZARD_DIMENSION_DOOR)
+		Wait(6)
+		Continue()
+END
+
+IF
+	GlobalLT("MALAVON_WARP","MYAREA",3)
+	Global("MALAVON_WARPED_2","MYAREA",0)
+	!NearLocation(Myself,330,610,10)
+THEN
+	RESPONSE #100
+		SetGlobal("MALAVON_WARPED_2","MYAREA",1)
+		SetGlobal("MALAVON_WARP","MYAREA",99)
+		SetGlobal("MALAVON_ATTACK","MYAREA",2)
+		ForceSpellPoint([330.610],WIZARD_DIMENSION_DOOR)
+		Wait(6)
+		Continue()
+END
+
+IF
+	GlobalLT("MALAVON_WARP","MYAREA",4)
+	Global("MALAVON_WARPED_3","MYAREA",0)
+	!NearLocation(Myself,870,475,10)
+THEN
+	RESPONSE #100
+		SetGlobal("MALAVON_WARPED_3","MYAREA",1)
+		SetGlobal("MALAVON_WARP","MYAREA",99)
+		SetGlobal("MALAVON_ATTACK","MYAREA",3)
+		ForceSpellPoint([870.475],WIZARD_DIMENSION_DOOR)
+		Wait(6)
+		Continue()
+END
+
+IF
+	GlobalLT("MALAVON_WARP","MYAREA",5)
+	Global("MALAVON_WARPED_4","MYAREA",0)
+	!NearLocation(Myself,580,805,10)
+THEN
+	RESPONSE #100
+		SetGlobal("MALAVON_WARPED_4","MYAREA",1)
+		SetGlobal("MALAVON_WARP","MYAREA",99)
+		SetGlobal("MALAVON_ATTACK","MYAREA",4)
+		ForceSpellPoint([580.805],WIZARD_DIMENSION_DOOR)
+		Wait(6)
+		Continue()
+END
+
+IF
+	GlobalLT("MALAVON_WARP","MYAREA",6)
+	Global("MALAVON_WARPED_5","MYAREA",0)
+	!NearLocation(Myself,415,1060,10)
+THEN
+	RESPONSE #100
+		SetGlobal("MALAVON_WARPED_5","MYAREA",1)
+		SetGlobal("MALAVON_WARP","MYAREA",99)
+		SetGlobal("MALAVON_ATTACK","MYAREA",5)
+		ForceSpellPoint([415.1060],WIZARD_DIMENSION_DOOR)
+		Wait(6)
+		Continue()
+END
+
+IF
+	GlobalLT("MALAVON_WARP","MYAREA",7)
+	Global("MALAVON_WARPED_6","MYAREA",0)
+	!NearLocation(Myself,335,835,10)
+THEN
+	RESPONSE #100
+		SetGlobal("MALAVON_WARPED_6","MYAREA",1)
+		SetGlobal("MALAVON_WARP","MYAREA",99)
+		SetGlobal("MALAVON_ATTACK","MYAREA",6)
+		ForceSpellPoint([335.835],WIZARD_DIMENSION_DOOR)
+		Wait(6)
+		Continue()
+END
+
+IF
+	GlobalLT("MALAVON_WARP","MYAREA",8)
+	Global("MALAVON_WARPED_7","MYAREA",0)
+	!NearLocation(Myself,1005,945,10)
+THEN
+	RESPONSE #100
+		SetGlobal("MALAVON_WARPED_7","MYAREA",1)
+		SetGlobal("MALAVON_WARP","MYAREA",99)
+		SetGlobal("MALAVON_ATTACK","MYAREA",7)
+		ForceSpellPoint([1005.945],WIZARD_DIMENSION_DOOR)
+		Wait(6)
+		Continue()
+END
+
+IF
+	GlobalLT("MALAVON_WARP","MYAREA",9)
+	Global("MALAVON_WARPED_8","MYAREA",0)
+	!NearLocation(Myself,2060,810,10)
+THEN
+	RESPONSE #100
+		SetGlobal("MALAVON_WARPED_8","MYAREA",1)
+		SetGlobal("MALAVON_WARP","MYAREA",99)
+		SetGlobal("MALAVON_ATTACK","MYAREA",8)
+		ForceSpellPoint([2060.810],WIZARD_DIMENSION_DOOR)
+		Wait(6)
+		Continue()
+END
+
+IF
+	GlobalLT("MALAVON_WARP","MYAREA",10)
+	Global("MALAVON_WARPED_9","MYAREA",0)
+	!NearLocation(Myself,870,475,10)
+THEN
+	RESPONSE #100
+		SetGlobal("MALAVON_WARPED_9","MYAREA",1)
+		SetGlobal("MALAVON_WARP","MYAREA",99)
+		SetGlobal("MALAVON_ATTACK","MYAREA",9)
+		ForceSpellPoint([870.475],WIZARD_DIMENSION_DOOR)
+		Wait(6)
+		Continue()
+END
+

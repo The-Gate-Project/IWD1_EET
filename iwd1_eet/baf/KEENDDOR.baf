@@ -1,0 +1,39 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Myself)
+		MultiPlayerSync()
+		ClearAllActions()
+		MultiPlayerSync()
+		//SetVisualRange(50)
+		CreateCreature("CUTSPY",[-1.-1],0)
+		MultiPlayerSync()
+		MoveViewPoint([1303.918],VERY_FAST)
+		Wait(1)
+		//Deactivate("AM9711D")
+		SoundActivate("ID9711D",FALSE)
+		//PlaySequence("9711MS1",AWAKE)
+		StaticSequence("9711MS1",SEQ_AWAKE)
+		SetGlobal("9711MS1_SEQ","MYAREA",1)
+		Wait(1)
+		Unlock("AR9711_DOOR4")
+		OpenDoor("AR9711_DOOR4")
+		Wait(2)
+		MultiPlayerSync()
+		MoveViewObject([PC],INSTANT)
+		MultiPlayerSync()
+		//SetVisualRange(0)
+		ActionOverride("CUTSPY",DestroySelf())
+		Wait(1)
+		EndCutSceneMode()
+END
+
+/*IF
+	OnCreation()
+THEN
+	RESPONSE #100
+		NoAction()
+		Continue()
+END*/
+

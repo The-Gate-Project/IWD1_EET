@@ -1,0 +1,33 @@
+IF
+	!GlobalTimerNotExpired("IwTimer26","LOCALS")
+	BitCheck("CREATURE_STATE_VAR","LOCALS",1)
+THEN
+	RESPONSE #100
+		DestroySelf()
+END
+
+IF
+	HPPercentLT(MostDamagedOf(GroupOf(Player1)),100)
+THEN
+	RESPONSE #100
+		ForceSpell(MostDamagedOf(GroupOf(Player1)),CLERIC_CURE_SERIOUS_WOUNDS)
+END
+
+IF
+	!BitCheck("CREATURE_STATE_VAR","LOCALS",1)
+THEN
+	RESPONSE #100
+		BitSet("CREATURE_STATE_VAR","LOCALS",1)
+		SetGlobalTimer("IwTimer26","LOCALS",30)
+		Continue()
+END
+
+IF
+	ActionListEmpty()
+	!See(Player1)
+	!TargetUnreachable(Player1)
+THEN
+	RESPONSE #100
+		MoveToObject(Player1)
+END
+

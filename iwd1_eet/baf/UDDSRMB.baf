@@ -1,0 +1,20 @@
+IF
+	GlobalLT("AR6010_TRAP_STATE","GLOBAL",1)
+	Entered([ANYTHING])
+THEN
+	RESPONSE #100
+		DisplayString(Myself,@21295)
+		ReallyForceSpell(LastTrigger,TRAP_LIGHTNING_BOLT)
+		SetGlobal("AR6010_TRAP_STATE","GLOBAL",0)
+END
+
+IF
+	GlobalLT("AR6010_TRAP_STATE","GLOBAL",2)
+	Entered([ANYTHING])
+THEN
+	RESPONSE #100
+		SetGlobal("AR6010_TRAP_STATE","GLOBAL",2)
+		SetGlobal("PUZZLE_B_DISABLED","GLOBAL",1)
+		DisplayString(Myself,@21294)
+END
+

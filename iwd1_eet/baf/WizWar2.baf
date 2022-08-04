@@ -1,0 +1,24 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId("ALPHEUS")
+		Activate("ALPHEUS")
+		SetGlobal("IwIHidden","LOCALS",0)
+		HideGUI()
+		MultiPlayerSync()
+		ClearAllActions()
+		MoveViewPoint([2422.1386],INSTANT)
+		JumpToPoint([2506.1461])
+		SetHomeLocation([2506.1461])
+		CreateVisualEffectObject("SPDIMNDR",Myself)
+		SmallWait(7)
+		ApplySpellRES("idinvis5",Myself)  // No such index
+		Wait(3)
+		FaceObject(PartySlot1)
+		Wait(2)
+		FaceObject("VAARGLAN")
+		Wait(1)
+		StartDialogueNoSet(PartySlot1)
+END
+

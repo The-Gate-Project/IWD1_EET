@@ -1,0 +1,118 @@
+IF
+	StateCheck(Myself,STATE_PANIC)
+THEN
+	RESPONSE #100
+		RandomWalkContinuous()
+END
+
+IF
+	!GlobalTimerNotExpired("IWD_Rest","LOCALS")
+THEN
+	RESPONSE #100
+		SetGlobalTimer("IWD_Rest","LOCALS",EIGHT_HOURS)
+		ApplySpell(Myself,RESTORE_FULL_HEALTH)
+		Rest()
+END
+
+IF
+	HaveSpell(WIZARD_MIRROR_IMAGE)
+	!Global("MAP_GROUP_HOSTILE5","MYAREA",0)
+THEN
+	RESPONSE #100
+		Spell(Myself,WIZARD_MIRROR_IMAGE)
+		Wait(2)
+END
+
+IF
+	HaveSpell(WIZARD_SHIELD)
+	!Global("MAP_GROUP_HOSTILE5","MYAREA",0)
+THEN
+	RESPONSE #100
+		Spell(Myself,WIZARD_SHIELD)
+		Wait(2)
+END
+
+IF
+	!Allegiance(Myself,ENEMY)
+	!Global("MAP_GROUP_HOSTILE5","MYAREA",0)
+THEN
+	RESPONSE #100
+		Enemy()
+		Continue()
+END
+
+IF
+	ActionListEmpty()
+	!Global("MAP_GROUP_HOSTILE5","MYAREA",0)
+	Allegiance(Myself,ENEMY)
+	!See([PC])
+THEN
+  RESPONSE #100
+    MoveToObject(Player1)
+  RESPONSE #100
+    NoAction()
+END
+
+
+
+IF
+	HaveSpell(WIZARD_SLOW)
+	See(NearestEnemyOf(Myself))
+	!StateCheck(LastSeenBy(Myself),STATE_SLOWED)
+	!Global("MAP_GROUP_HOSTILE5","MYAREA",0)
+THEN
+	RESPONSE #100
+		Spell(LastSeenBy(Myself),WIZARD_SLOW)
+		Wait(2)
+END
+
+IF
+	HaveSpell(WIZARD_MELF_ACID_ARROW)
+	See(NearestEnemyOf(Myself))
+	!Global("MAP_GROUP_HOSTILE5","MYAREA",0)
+THEN
+	RESPONSE #100
+		Spell(LastSeenBy(Myself),WIZARD_MELF_ACID_ARROW)
+		Wait(2)
+END
+
+IF
+	HaveSpell(WIZARD_MAGIC_MISSILE)
+	See(NearestEnemyOf(Myself))
+	!Global("MAP_GROUP_HOSTILE5","MYAREA",0)
+THEN
+	RESPONSE #100
+		Spell(LastSeenBy(Myself),WIZARD_MAGIC_MISSILE)
+		Wait(2)
+END
+
+IF
+	//HaveSpell(WIZARD_DECASTAVE) // SPWI221.SPL (Мегапосох)
+	!Global("WIZ_DECASTAVE","LOCALS",1)
+	See(NearestEnemyOf(Myself))
+	!Global("MAP_GROUP_HOSTILE5","MYAREA",0)
+THEN
+	RESPONSE #100
+		//Spell(Myself,WIZARD_DECASTAVE) // SPWI221.SPL (Мегапосох)
+		SetGlobal("WIZ_DECASTAVE","LOCALS",1)
+		ForceSpell(Myself,CLERIC_SHILLELAGH)
+		Wait(2)
+END
+
+IF
+	!Global("MAP_GROUP_HOSTILE5","MYAREA",0)
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		AttackReevaluate(LastSeenBy(Myself),75)
+END
+
+IF
+	Global("MAP_GROUP_HOSTILE5","MYAREA",0)
+	AttackedBy([GOODCUTOFF],DEFAULT)
+THEN
+	RESPONSE #100
+		Enemy()
+		Continue()
+END
+

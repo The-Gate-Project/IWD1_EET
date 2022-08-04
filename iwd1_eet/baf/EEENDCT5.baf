@@ -1,0 +1,14 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Player1)
+		Wait(3)
+		StartCutScene("EEBGNBTL")
+		MoveViewObject(Myself,INSTANT)
+		Wait(1)
+		UnhideGUI()
+		MultiPlayerSync()
+		EndCutSceneMode()
+END
+

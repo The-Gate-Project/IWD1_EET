@@ -1,0 +1,25 @@
+IF
+	!Global("ILMKENUT_INACTIVE","LOCALS",1)
+	Allegiance(Myself,ENEMY)
+THEN
+	RESPONSE #100
+		ChangeEnemyAlly(Myself,NEUTRAL)
+		Continue()
+END
+
+IF
+	!Global("ILMKENUT_INACTIVE","LOCALS",1)
+	!Allegiance(Myself,ENEMY)
+THEN
+	RESPONSE #100
+		SetGlobal("ILMKENUT_INACTIVE","LOCALS",1)
+END
+
+IF
+	!Global("ILMKENUT_INACTIVE","LOCALS",1)
+	True()
+THEN
+	RESPONSE #100
+		NoAction()
+END
+

@@ -1,0 +1,12 @@
+IF
+	!Global("EFJGAZE_INACTIVE","LOCALS",1)
+	LOS([PC],25)
+	IsActive(Myself)
+	Allegiance(Myself,ENEMY)
+THEN
+	RESPONSE #100
+		ReallyForceSpellRES("IDIN178",Myself)
+		Wait(1)
+		SetGlobal("EFJGAZE_INACTIVE","LOCALS",1)
+END
+

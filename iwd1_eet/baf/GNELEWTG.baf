@@ -1,0 +1,41 @@
+IF
+	StateCheck(Myself,STATE_PANIC)
+THEN
+	RESPONSE #100
+		RandomWalkContinuous()
+END
+
+IF
+	BitCheck("CREATURE_STATE_VAR","LOCALS",32)
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		AttackReevaluate(LastSeenBy(Myself),75)
+END
+
+IF
+	!BitCheck("CREATURE_STATE_VAR","LOCALS",32)
+	HasItem("SHLDBCH",LastAttackerOf(Myself))
+	AttackedBy([ANYTHING],DEFAULT)
+THEN
+	RESPONSE #100
+		BitSet("CREATURE_STATE_VAR","LOCALS",32)
+		Continue()
+END
+
+IF
+	!HasItem("SHLDBCH",NearestEnemyOf(Myself))
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		AttackReevaluate(LastSeenBy(Myself),75)
+END
+
+IF
+	!HasItem("SHLDBCH",SecondNearestEnemyOf(Myself))
+	See(SecondNearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		AttackReevaluate(LastSeenBy(Myself),75)
+END
+

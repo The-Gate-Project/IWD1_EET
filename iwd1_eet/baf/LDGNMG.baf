@@ -1,0 +1,59 @@
+IF
+	!Allegiance(Myself,ENEMY)
+	!Global("MAP_GROUP_HOSTILE0","MYAREA",0)
+THEN
+	RESPONSE #100
+		Enemy()
+		Continue()
+END
+
+IF
+	OnCreation()
+	!Global("SPRITE_IS_DEADKELLY","GLOBAL",0)
+	Global("SPRITE_IS_DEAD8002_ARCHERS","GLOBAL",5)
+THEN
+	RESPONSE #100
+		DestroySelf()
+END
+
+IF
+	StateCheck(Myself,STATE_PANIC)
+THEN
+	RESPONSE #100
+		RandomWalkContinuous()
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		Help()
+		RunAwayFromNoLeaveArea(LastSeenBy(Myself),45)
+END
+
+IF
+	AttackedBy(NearestEnemyOf(Myself),DEFAULT)
+THEN
+	RESPONSE #100
+		FaceObject(LastAttackerOf(Myself))
+		Continue()
+END
+
+IF
+	AttackedBy([GOODCUTOFF],DEFAULT)
+THEN
+	RESPONSE #100
+		SetGlobal("MAP_GROUP_HOSTILE0","MYAREA",1)
+		Enemy()
+		Continue()
+END
+
+IF
+	Allegiance([0.0.SVIRFNEBLIN],ENEMY)
+	Help([0.0.SVIRFNEBLIN])
+THEN
+	RESPONSE #100
+		Enemy()
+		Continue()
+END
+

@@ -1,0 +1,19 @@
+/*IF
+	Die()
+THEN
+	RESPONSE #100
+END*/
+
+IF
+	Global("SPRITE_IS_DEADLizard_King","GLOBAL",0)
+	!GlobalTimerNotExpired("IwTimer1","LOCALS")
+	Detect([PC])
+THEN
+	RESPONSE #100
+		DisplayStringHead(Myself,@1826)
+		SetGlobalTimerRandom("IwTimer1","LOCALS",30,45)
+	RESPONSE #100
+		DisplayStringHead(Myself,@1828)
+		SetGlobalTimerRandom("IwTimer1","LOCALS",30,45)
+END
+

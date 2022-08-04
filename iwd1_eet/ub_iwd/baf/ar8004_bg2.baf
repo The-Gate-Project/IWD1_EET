@@ -1,0 +1,21 @@
+IF
+  Global("BEORN_QUEST","GLOBAL",4)
+  Dead("UmberHulk1")
+  Dead("UmberHulk2")
+  Dead("UmberHulk3")
+  Dead("#8003c1")
+  Dead("#8003c2")
+  Dead("#8003c3")
+  Dead("#8003c4")
+  Dead("#8003c5")
+  Dead("#8003c6")
+  Dead("#8003c7")
+  Dead("#8003c8")
+  Dead("#8003c9")
+  Dead("#8003c10")
+  Dead("#8003c11")
+  Dead("#8003c12")
+THEN
+  RESPONSE #100
+    SetGlobal("BEORN_QUEST","GLOBAL",5)
+END

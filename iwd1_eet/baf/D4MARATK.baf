@@ -1,0 +1,67 @@
+IF
+  Allegiance(Myself,ENEMY)
+  //!Global("MAP_GROUP_HOSTILE1","MYAREA",0)
+  !Global("MAP_GROUP_HOSTILE1","MYAREA",1)
+  !StateCheck(Myself,STATE_CHARMED)
+THEN
+  RESPONSE #100
+    SetGlobal("MAP_GROUP_HOSTILE1","MYAREA",1)
+END
+
+////////
+IF
+  !Allegiance(Myself,ENEMY)
+  !GlobalGT("Dead_Yuan","GLOBAL",14)
+  ActionListEmpty()
+  OR(2)
+	!See([PC])
+	!Range([PC],5)
+THEN
+  RESPONSE #100
+    MoveToObject(Player1)
+END
+////////
+
+IF
+	Global("MOVEMENT_LIST_0_LOC","LOCALS",0)
+	BitCheck("CREATURE_STATE_VAR","LOCALS",524288)
+	NearLocation(Myself,1610,390,8)
+	!BitCheck("CREATURE_STATE_VAR","LOCALS",4)
+	!Global("MARCHON_FREE","GLOBAL",0)
+THEN
+	RESPONSE #100
+		SetGlobal("MOVEMENT_LIST_0_LOC","LOCALS",1)
+		BitClear("CREATURE_STATE_VAR","LOCALS",524288)
+		Continue()
+END
+
+IF
+	Global("MOVEMENT_LIST_0_LOC","LOCALS",0)
+	!BitCheck("CREATURE_STATE_VAR","LOCALS",4)
+	!Global("MARCHON_FREE","GLOBAL",0)
+	ActionListEmpty()
+THEN
+	RESPONSE #100
+		BitSet("CREATURE_STATE_VAR","LOCALS",524288)
+		SetHomeLocation([1610.390])
+		MoveToPoint([1610.390])
+END
+
+IF
+	Global("MOVEMENT_LIST_0_LOC","LOCALS",1)
+	!BitCheck("CREATURE_STATE_VAR","LOCALS",4)
+	!Global("MARCHON_FREE","GLOBAL",0)
+	ActionListEmpty()
+THEN
+	RESPONSE #100
+		BitSet("CREATURE_STATE_VAR","LOCALS",4)
+		SetGlobal("MOVEMENT_LIST_0_LOC","LOCALS",0)
+END
+
+IF
+	!Global("MARCHON_FREE","GLOBAL",0)
+THEN
+	RESPONSE #100
+		MoveToObject([ENEMY])
+END
+

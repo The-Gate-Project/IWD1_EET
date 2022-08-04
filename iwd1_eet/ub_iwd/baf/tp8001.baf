@@ -1,0 +1,48 @@
+IF
+  Global("CDMarkHere","ID8001",2)
+THEN
+  RESPONSE #25
+    SetGlobal("CDMarkethTeleporting","GLOBAL",2)
+    SetGlobal("CDMarkHere","ID8001",0)
+    //ActionOverride("cdmark",ForceSpellPoint([2007.1946],WIZARD_DIMENSION_DOOR))
+    CreateVisualEffectObject("spdimndr","cdmark")
+    Wait(1)
+    ActionOverride("cdmark",DestroySelf())
+  RESPONSE #25
+    SetGlobal("CDMarkethTeleporting","GLOBAL",3)
+    SetGlobal("CDMarkHere","ID8001",0)
+    //ActionOverride("cdmark",ForceSpellPoint([2007.1946],WIZARD_DIMENSION_DOOR))
+    CreateVisualEffectObject("spdimndr","cdmark")
+    Wait(1)
+    ActionOverride("cdmark",DestroySelf())
+  RESPONSE #25
+    SetGlobal("CDMarkethTeleporting","GLOBAL",4)
+    SetGlobal("CDMarkHere","ID8001",0)
+    //ActionOverride("cdmark",ForceSpellPoint([2007.1946],WIZARD_DIMENSION_DOOR))
+    CreateVisualEffectObject("spdimndr","cdmark")
+    Wait(1)
+    ActionOverride("cdmark",DestroySelf())
+  RESPONSE #25
+    SetGlobal("CDMarkethTeleporting","GLOBAL",5)
+    SetGlobal("CDMarkHere","ID8001",0)
+    //ActionOverride("cdmark",ForceSpellPoint([2007.1946],WIZARD_DIMENSION_DOOR))
+    CreateVisualEffectObject("spdimndr","cdmark")
+    Wait(1)
+    ActionOverride("cdmark",DestroySelf())
+END
+
+IF
+  Global("CDMarkethTeleporting","GLOBAL",1)
+  Global("CDMarkHere","ID8001",0)
+  !Global("Marketh_Ring","GLOBAL",6)
+THEN
+  RESPONSE #100
+    SetGlobal("CDMarkHere","ID8001",1)
+    CreateCreature("cdmark",[2007.1946],10)
+    //ActionOverride("cdmark",ForceSpellPoint([2007.1946],WIZARD_DIMENSION_DOOR))
+    CreateVisualEffectObject("spdimndr","cdmark")
+    Wait(1)
+    ActionOverride("cdmark",ApplySpellRES("idinvis5",Myself))
+END
+
+

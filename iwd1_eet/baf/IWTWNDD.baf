@@ -1,0 +1,11 @@
+IF
+  OR(2)
+    Die()
+    StateCheck(Myself,STATE_REALLY_DEAD)
+  !Global("Set_Death_Variable","LOCALS",1)
+THEN
+  RESPONSE #100
+    SetGlobal("Set_Death_Variable","LOCALS",1)
+    SetGlobal("Townie_Dead","GLOBAL",1)
+    Continue()
+END

@@ -1,0 +1,19 @@
+IF
+  Global("CDTelanisDaen","MYAREA",1)
+  Global("CDDaen","GLOBAL",0)
+  
+  Exists("telanis")
+  OR(6)
+  	NearLocation(Player1,379,1495,20)
+  	NearLocation(Player2,379,1495,20)
+  	NearLocation(Player3,379,1495,20)
+  	NearLocation(Player4,379,1495,20)
+  	NearLocation(Player5,379,1495,20)
+  	NearLocation(Player6,379,1495,20)
+  
+THEN 
+  RESPONSE #100
+    Wait(2)
+    SetGlobal("CDTelanisDaen","MYAREA",2)
+    ActionOverride("telanis",StartDialogueNoSet([PC]))
+END

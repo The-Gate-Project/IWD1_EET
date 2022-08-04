@@ -1,0 +1,15 @@
+IF
+  Global("CDAddBook","MYAREA",0)
+THEN
+  RESPONSE #100
+    SetGlobal("CDAddBook","MYAREA",1)
+    ActionOverride("Book$helf1",CreateItem("cdmgolem",0,0,0))
+END
+
+IF
+  PartyHasItem("cdmgolem")
+  Global("Golem_Commands","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("Golem_Commands","GLOBAL",1)
+END    

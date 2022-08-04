@@ -1,0 +1,25 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId("POQUELIN")
+		StartCutSceneMode()
+		MultiPlayerSync()
+		SetGlobal("END_PORTAL","GLOBAL",2)
+		ActionOverride("EVERARD",ForceSpellPointRES("IDIN974",[603.414]))
+		Wait(2)
+		SoundActivate("GATEWAY",FALSE)
+		AmbientActivate("PORTAL1",FALSE)
+		AmbientActivate("PORTAL2",FALSE)
+		AmbientActivate("PORTAL3",FALSE)
+		AmbientActivate("PORTAL4",FALSE)
+		Wait(2)
+		StartCutScene("EECRNMVE")
+		Wait(3)
+		FaceObject([PC])
+		MultiPlayerSync()
+		Wait(1)
+		ApplySpellRES("BDCUTSPY",Myself)
+		StartDialogNoSet(Player1)
+END
+

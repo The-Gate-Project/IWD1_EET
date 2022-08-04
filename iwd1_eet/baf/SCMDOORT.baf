@@ -1,0 +1,12 @@
+IF
+	Global("9502_DOOR_OPEN","MYAREA",0)
+	OR(2)
+		PartyHasItem("MIRROR")  // «еркало из черного Ћьда
+		PartyHasItem("MIRROR2")  // јмулет с зеркалом из черного льда
+	Entered([PC])
+THEN
+	RESPONSE #100
+		SetGlobal("9502_DOOR_OPEN","MYAREA",1)
+		StartCutScene("SCMDOORC")
+END
+

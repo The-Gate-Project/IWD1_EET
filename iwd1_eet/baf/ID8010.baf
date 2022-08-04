@@ -1,0 +1,40 @@
+IF
+	Global("MALAVON_DOOR","GLOBAL",0)
+	!Global("MAP_GROUP_HOSTILE1","MYAREA",0)
+THEN
+	RESPONSE #100
+		CloseDoor("AR8010HIDEME")
+		TriggerActivation("To8009",FALSE)
+		SetGlobal("MALAVON_DOOR","GLOBAL",1)
+		Continue()
+END
+
+IF
+	!Global("SPRITE_IS_DEADMALAVON","GLOBAL",0)
+	OpenState("AR8010HIDEME",FALSE)
+THEN
+	RESPONSE #100
+		OpenDoor("AR8010HIDEME")
+		TriggerActivation("To8009",TRUE)
+		Continue()
+END
+
+IF
+	Global("MALAVON_BADGE","GLOBAL",0)
+	PartyHasItem("MALAVON")
+THEN
+	RESPONSE #100
+		SetGlobal("MALAVON_BADGE","GLOBAL",1)
+		AddXP2DA("ID1EX11V")
+		DisplayStringNoName(Player1,@19560)
+		Continue()
+END
+
+IF
+	OnCreation()
+THEN
+	RESPONSE #100
+		NoAction()
+		Continue()
+END
+

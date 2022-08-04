@@ -1,0 +1,97 @@
+IF
+	OpenState(Myself,TRUE)
+	OR(5)
+		!Contains("DGEM08","Heaven")  // Безупречный звездный сапфир
+		!Contains("DGEM02","Day")  // Безупречный солнечный камень
+		!Contains("DGEM09","Earth")  // Безупречный алмаз
+		!Contains("DGEM05","Sea")  // Безупречная водяная звезда
+		!Contains("DGEM04","Night")  // Безупречный лунный камень
+THEN
+	RESPONSE #100
+		SetGlobal("HIDE_STATE","MYAREA",0)
+		//Deactivate("AM9800D")
+		SoundActivate("AM9800D",FALSE)
+		//PlaySequence("9800MS1",ATTACK)
+		StaticSequence("9800MS1",SEQ_ATTACK)
+		SetGlobal("9800MS1_SEQ","MYAREA",0)
+		CloseDoor(Myself)
+		TriggerActivation("To9711",FALSE)
+END
+
+IF
+	Global("HIDE_STATE","MYAREA",0)
+	Contains("DGEM08","Heaven")  // Безупречный звездный сапфир
+	Contains("DGEM02","Day")  // Безупречный солнечный камень
+	Contains("DGEM09","Earth")  // Безупречный алмаз
+	Contains("DGEM05","Sea")  // Безупречная водяная звезда
+	Contains("DGEM04","Night")  // Безупречный лунный камень
+THEN
+	RESPONSE #100
+		SetGlobal("HIDE_STATE","MYAREA",1)
+		Continue()
+END
+
+IF
+	!Global("HIDE_STATE","MYAREA",0)
+	Global("OPENED_HIDE","MYAREA",0)
+	OpenState(Myself,FALSE)
+THEN
+	RESPONSE #100
+		StartCutSceneMode()
+		SetGlobal("OPENED_HIDE","MYAREA",1)
+		OpenDoor(Myself)
+		TriggerActivation("To9711",TRUE)
+		StartCutScene("CAHIDEO")
+END
+
+IF
+	!Global("HIDE_STATE","MYAREA",0)
+	!Global("OPENED_HIDE","MYAREA",0)
+	OpenState(Myself,FALSE)
+THEN
+	RESPONSE #100
+		OpenDoor(Myself)
+		TriggerActivation("To9711",TRUE)
+		//Activate("AM9800D")
+		SoundActivate("AM9800D",TRUE)
+		//PlaySequence("9800MS1",AWAKE)
+		StaticSequence("9800MS1",SEQ_AWAKE)
+		SetGlobal("9800MS1_SEQ","MYAREA",1)
+END
+
+IF
+	Global("HIDE_DOOR_XP","MYAREA",0)
+	!Global("OPENED_HIDE","MYAREA",0)
+THEN
+	RESPONSE #100
+		//AddexperienceParty(30000)
+		AddXP2DA("ID1EX6H")
+		SetGlobal("HIDE_DOOR_XP","MYAREA",1)
+END
+
+IF
+	//!Sequence("9800MS1",AWAKE)
+	!Global("9800MS1_SEQ","MYAREA",1)
+	OpenState(Myself,TRUE)
+THEN
+	RESPONSE #100
+		//Activate("AM9800D")
+		SoundActivate("AM9800D",TRUE)
+		//PlaySequence("9800MS1",AWAKE)
+		StaticSequence("9800MS1",SEQ_AWAKE)
+		SetGlobal("9800MS1_SEQ","MYAREA",1)
+END
+
+IF
+	//!Sequence("9800MS1",ATTACK)
+	!Global("9800MS1_SEQ","MYAREA",0)
+	OpenState(Myself,FALSE)
+THEN
+	RESPONSE #100
+		//Deactivate("AM9800D")
+		SoundActivate("AM9800D",FALSE)
+		//PlaySequence("9800MS1",ATTACK)
+		StaticSequence("9800MS1",SEQ_ATTACK)
+		SetGlobal("9800MS1_SEQ","MYAREA",0)
+END
+

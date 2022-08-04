@@ -1,0 +1,15 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId([PC])
+		MultiPlayerSync()
+		Wait(7)
+		StartCutScene("BCTNTFC3")
+		Wait(1)
+		UnhideGUI()
+		//ResetJoinRequests()
+		MultiPlayerSync()
+		EndCutSceneMode()
+END
+

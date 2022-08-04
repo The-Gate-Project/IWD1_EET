@@ -1,0 +1,77 @@
+IF
+	!BitCheck("CREATURE_STATE_VAR","LOCALS",1)
+THEN
+	RESPONSE #100
+		BitSet("CREATURE_STATE_VAR","LOCALS",1)
+		SetGlobalTimer("IwTimer24","LOCALS",5)
+		Continue()
+END
+
+IF
+	Global("BODY_COUNT","GLOBAL",0)
+	GlobalLT("MURDAUGH_QUEST","GLOBAL",3)
+	GlobalTimerExpired("IwTimer24","LOCALS")
+THEN
+	RESPONSE #50
+		DisplayStringHead(Myself,@24075)
+		SetGlobalTimer("IwTimer24","LOCALS",5)
+		Continue()
+	RESPONSE #50
+		DisplayStringHead(Myself,@24076)
+		SetGlobalTimer("IwTimer24","LOCALS",5)
+		Continue()
+	RESPONSE #50
+		DisplayStringHead(Myself,@24077)
+		SetGlobalTimer("IwTimer24","LOCALS",5)
+		Continue()
+	RESPONSE #50
+		DisplayStringHead(Myself,@24078)
+		SetGlobalTimer("IwTimer24","LOCALS",5)
+		Continue()
+	RESPONSE #250
+		SetGlobalTimer("IwTimer24","LOCALS",5)
+		Continue()
+END
+
+IF
+	Global("BODY_COUNT","GLOBAL",2)
+	GlobalTimerExpired("IwTimer24","LOCALS")
+THEN
+	RESPONSE #25
+		DisplayStringHead(Myself,@24082)
+		SetGlobalTimer("IwTimer24","LOCALS",5)
+		Continue()
+	RESPONSE #25
+		DisplayStringHead(Myself,@24083)
+		SetGlobalTimer("IwTimer24","LOCALS",5)
+		Continue()
+	RESPONSE #25
+		DisplayStringHead(Myself,@24084)
+		SetGlobalTimer("IwTimer24","LOCALS",5)
+		Continue()
+	RESPONSE #300
+		SetGlobalTimer("IwTimer24","LOCALS",5)
+		Continue()
+END
+
+IF
+	Global("BODY_COUNT","GLOBAL",3)
+	GlobalTimerExpired("IwTimer24","LOCALS")
+THEN
+	RESPONSE #25
+		DisplayStringHead(Myself,@24085)
+		SetGlobalTimer("IwTimer24","LOCALS",5)
+		Continue()
+	RESPONSE #25
+		DisplayStringHead(Myself,@24086)
+		SetGlobalTimer("IwTimer24","LOCALS",5)
+		Continue()
+	RESPONSE #25
+		DisplayStringHead(Myself,@24087)
+		SetGlobalTimer("IwTimer24","LOCALS",5)
+		Continue()
+	RESPONSE #300
+		SetGlobalTimer("IwTimer24","LOCALS",5)
+		Continue()
+END
+

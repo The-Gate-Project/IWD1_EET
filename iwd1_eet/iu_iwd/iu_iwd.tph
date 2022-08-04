@@ -1,0 +1,468 @@
+/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
+/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
+/////                                                  \\\\\
+///// item upgrade                                     \\\\\
+/////                                                  \\\\\
+/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
+/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
+
+INCLUDE ~iwd1_eet/functo.tph~
+
+OUTER_SET "iwd-in-bg2" = 1
+OUTER_SET minus = 0 - 1
+
+COMPILE ~iwd1_eet/iu_iwd/dlg/gond.d~
+COMPILE ~iwd1_eet/iu_iwd/dlg/pelts.d~
+
+EXTEND_BOTTOM ~ID2004.bcs~   ~iwd1_eet/iu_iwd/baf/ar2004.baf~
+//CONTAINERS_ADD
+COPY_EXISTING ~ID3001.are~ ~override~
+	LPF fj_are_structure INT_VAR fj_con_itm_idx=2 STR_VAR fj_structure_type=itm fj_name=cdtools END
+COPY_EXISTING ~ID6003.are~ ~override~
+	LPF fj_are_structure INT_VAR fj_con_itm_idx=0 STR_VAR fj_structure_type=itm fj_name=cdmitham END
+EXTEND_BOTTOM ~kuorrick.bcs~ ~iwd1_eet/iu_iwd/baf/kuorrick.baf~
+
+COPY ~iwd1_eet/iu_iwd/bam/cdechain.bam~ ~override~
+     ~iwd1_eet/iu_iwd/bam/cdharmor.bam~ ~override~
+     ~iwd1_eet/iu_iwd/bam/cdmitham.bam~ ~override~
+     ~iwd1_eet/iu_iwd/bam/cdrdagg.bam~  ~override~
+     ~iwd1_eet/iu_iwd/bam/cdrdart.bam~  ~override~
+     ~iwd1_eet/iu_iwd/bam/cdstout.bam~  ~override~
+     ~iwd1_eet/iu_iwd/bam/cdtools.bam~  ~override~
+     ~iwd1_eet/iu_iwd/bam/cdwuff.bam~   ~override~
+     ~iwd1_eet/iu_iwd/bam/ddechain.bam~ ~override~
+     ~iwd1_eet/iu_iwd/bam/ddharmor.bam~ ~override~
+     ~iwd1_eet/iu_iwd/bam/ddmitham.bam~ ~override~
+     ~iwd1_eet/iu_iwd/bam/ddrdagg.bam~  ~override~
+     ~iwd1_eet/iu_iwd/bam/ddrdart.bam~  ~override~
+     ~iwd1_eet/iu_iwd/bam/ddstout.bam~  ~override~
+     ~iwd1_eet/iu_iwd/bam/ddtools.bam~  ~override~
+     ~iwd1_eet/iu_iwd/bam/ddwuff.bam~   ~override~
+
+COPY ~iwd1_eet/iu_iwd/itm/cdechain.itm~ ~override~
+	SAY 0x08 @770081024
+	SAY 0x0c @770081024
+	SAY 0x50 @770081025
+	SAY 0x54 @770081025
+
+COPY_EXISTING ~beltgon.itm~ ~override~
+	WRITE_SHORT 0x42 0
+	BUT_ONLY_IF_IT_CHANGES
+
+COPY_EXISTING ~beltgon.itm~ ~override/cdgond.itm~
+	SAY 0x50 @770081012
+	SAY 0x54 @770081012
+	READ_LONG  0x6a "fx_off" ELSE 0
+	READ_SHORT 0x70 "fx_num" ELSE 0
+	FOR (index = 0 ; index < fx_num ; index = index + 1) BEGIN
+		READ_SHORT ("%fx_off%" +        ("%index%" * 0x30)) "opcode"
+		PATCH_IF ("%opcode%" = 90) BEGIN
+			WRITE_LONG  ("%fx_off%" + 0x04 + ("%index%" * 0x30)) 15
+		END ELSE
+		PATCH_IF ("%opcode%" = 91) BEGIN // find/detect traps
+			WRITE_LONG  ("%fx_off%" + 0x04 + ("%index%" * 0x30)) 10
+		END
+	END
+
+COPY ~iwd1_eet/iu_iwd/itm/cdharmor.itm~ ~override~
+	SAY 0x08 @770081000
+	SAY 0x0c @770081000
+	SAY 0x50 @770081001
+	SAY 0x54 @770081001
+
+COPY ~iwd1_eet/iu_iwd/itm/cdmitham.itm~ ~override~
+	SAY 0x08 @770081033
+	SAY 0x0c @770081034
+	SAY 0x50 @770081035
+	SAY 0x54 @770081036
+
+COPY ~iwd1_eet/iu_iwd/itm/cdrdagg.itm~ ~override~
+	SAY 0x08 @770081026
+	SAY 0x0c @770081026
+	SAY 0x50 @770081027
+	SAY 0x54 @770081027
+
+COPY_EXISTING ~stout.itm~ ~override/cdstout.itm~
+	WRITE_ASCII 0x3a ~cdstout~ #8
+	WRITE_SHORT 0x42 0
+	WRITE_ASCII 0x58 ~ddstout~ #8
+	SAY 0x50 @770081013
+	SAY 0x54 @770081013
+	READ_LONG  0x64 "abil_off"
+	READ_SHORT 0x68 "abil_num"
+	READ_LONG  0x6a "fx_off"
+	READ_SHORT 0x70 "fx_num"
+	SET "delta" = 2
+	// insert new effect
+	INSERT_BYTES  ("%fx_off%"       ) 0x30
+		WRITE_SHORT ("%fx_off%"       )  18
+		WRITE_BYTE  ("%fx_off%" + 0x02)   1
+		WRITE_LONG  ("%fx_off%" + 0x04)  10
+		WRITE_LONG  ("%fx_off%" + 0x08)   3
+		WRITE_BYTE  ("%fx_off%" + 0x0c)   2
+		WRITE_BYTE  ("%fx_off%" + 0x12) 100
+	INSERT_BYTES  ("%fx_off%"       ) 0x30
+		WRITE_SHORT ("%fx_off%"       )  44
+		WRITE_BYTE  ("%fx_off%" + 0x02)   1
+		WRITE_LONG  ("%fx_off%" + 0x04)   1
+		WRITE_BYTE  ("%fx_off%" + 0x0c)   2
+		WRITE_BYTE  ("%fx_off%" + 0x12) 100
+	FOR (index3 = 0 ; index3 < abil_num ; index3 = index3 + 1) BEGIN
+		READ_SHORT  ("%abil_off%" + 0x20 + ("%index3%" * 0x38)) "abil_fx_idx"
+		WRITE_SHORT ("%abil_off%" + 0x20 + ("%index3%" * 0x38)) ("%abil_fx_idx%" + "%delta%")
+	END
+	WRITE_SHORT 0x70 ("%fx_num%" + "%delta%")
+
+COPY ~iwd1_eet/iu_iwd/itm/cdrdart.itm~ ~override~
+	SAY 0x08 @770081028
+	SAY 0x0c @770081028
+	SAY 0x50 @770081029
+	SAY 0x54 @770081029
+
+COPY ~iwd1_eet/iu_iwd/itm/cdtools.itm~ ~override~
+	SAY 0x08 @770081037
+	SAY 0x0c @770081037
+	SAY 0x50 @770081038
+	SAY 0x54 @770081038
+
+COPY ~iwd1_eet/iu_iwd/itm/cdwuff.itm~ ~override~
+	SAY 0x08 @770081031
+	SAY 0x0c @770081031
+	SAY 0x50 @770081032
+	SAY 0x54 @770081032
+	WRITE_LONG  0xd6 ~%minus%~
+	WRITE_ASCII 0xe6 ~IDIN971~ #8
+	LPF ADD_ITEM_EQEFFECT
+		INT_VAR opcode=206 target=1 parameter1=~%minus%~ timing=2 resist_dispel=2
+		STR_VAR resource="WOLFWI1"
+	END
+
+COPY_EXISTING ~kuork1.sto~ ~override~
+	ADD_STORE_ITEM ~cdrdagg~ AFTER ~UROBE1A~ #0 #0 #0 ~IDENTIFIED~ #1
+	BUT_ONLY_IF_IT_CHANGES
+    
+COPY_EXISTING ~shlehlan.sto~ ~override~
+	ADD_STORE_ITEM ~cdechain~ AFTER ~elfwine~ #0 #0 #0 ~IDENTIFIED~ #1
+	ADD_STORE_ITEM ~cdrdart~  AFTER ~udart3b~ #0 #0 #0 ~IDENTIFIED~ #1
+	BUT_ONLY_IF_IT_CHANGES
+
+/////                                                  \\\\\
+///// how                                              \\\\\
+/////                                                  \\\\\
+OUTER_SET cyn = 0
+APPEND ~tooltip.2da~ ~cdgloom           -1           cdgloomtext1        cdgloomtext2~
+APPEND ~tooltip.2da~ ~cdmyst            cdmysttext1        cdmysttext2       -1~
+OUTER_SPRINT ~cin_itm~ ~cynicis~
+ACTION_IF NOT FILE_CONTAINS_EVALUATED (~tooltip.2da~ ~%cin_itm%~) BEGIN
+  APPEND ~tooltip.2da~ ~cynicis           -1           cdcynicistext1        cdcynicistext2~
+  OUTER_SET cyn = 1
+END
+
+COPY_EXISTING ~tooltip.2da~ ~override~
+	REPLACE ~cdgloomtext1~   @12094
+	REPLACE ~cdgloomtext2~   @12131
+	REPLACE ~cdmysttext1~    @12116
+	REPLACE ~cdmysttext2~    @21401
+	PATCH_IF ( cyn = 1 ) BEGIN
+		REPLACE ~cdcynicistext1~ @12094
+		REPLACE ~cdcynicistext2~ @12131
+	END
+
+OUTER_SET cyn = 0
+
+APPEND ~tooltip.2da~ ~cdxbowbm          -1           cdxbowbmtext       -1~
+APPEND ~tooltip.2da~ ~cddaen            cddaentext        -1          -1~
+APPEND ~tooltip.2da~ ~cddaen2           cddaentext        -1          -1~
+COPY_EXISTING ~tooltip.2da~ ~override~
+	REPLACE ~cddaentext~   @770081045
+	REPLACE ~cdxbowbmtext~ @770081046
+
+COMPILE ~iwd1_eet/iu_iwd/dlg/cddaen.d~
+COMPILE ~iwd1_eet/iu_iwd/dlg/conlan_how.d~
+COMPILE ~iwd1_eet/iu_iwd/dlg/gloom.d~
+COMPILE ~iwd1_eet/iu_iwd/dlg/muller.d~
+
+  
+COMPILE ~iwd1_eet/iu_iwd/dlg/remorrhaz.d~
+COMPILE ~iwd1_eet/iu_iwd/dlg/mystery.d~
+
+COPY ~iwd1_eet/iu_iwd/baf/cdgloom.baf~ ~iwd1_eet/iu_iwd/baf~
+	REPLACE_TEXTUALLY ~"kieran"~ ~"kierannye"~
+
+COMPILE ~iwd1_eet/iu_iwd/baf/cddaen.baf~
+COMPILE ~iwd1_eet/iu_iwd/baf/cdgloom.baf~
+COMPILE ~iwd1_eet/iu_iwd/baf/cdyoung.baf~
+
+COPY_EXISTING ~ID4004.are~ ~override~
+	LPF fj_are_structure INT_VAR fj_con_itm_idx=4 fj_charge0=1000 fj_charge1=1 fj_charge2=1 STR_VAR fj_structure_type=itm fj_name=cddaen END
+
+EXTEND_BOTTOM ~ID5004.bcs~   ~iwd1_eet/iu_iwd/baf/ar5004.baf~
+
+COPY_EXISTING ~ID8010.are~ ~override~
+	LPF fj_are_structure INT_VAR fj_con_itm_idx=4 STR_VAR fj_structure_type=itm fj_name=SCRL5H END
+
+EXTEND_BOTTOM ~idedion.bcs~  ~iwd1_eet/iu_iwd/baf/idedion.baf~
+EXTEND_BOTTOM ~lwkieran.bcs~ ~iwd1_eet/iu_iwd/baf/lwkieran.baf~
+EXTEND_BOTTOM ~lwmurd.bcs~   ~iwd1_eet/iu_iwd/baf/lwmurd.baf~
+
+COPY ~iwd1_eet/iu_iwd/bam/cdqbow.bam~   ~override~
+     ~iwd1_eet/iu_iwd/bam/cdqsling.bam~ ~override~
+     ~iwd1_eet/iu_iwd/bam/cdqxbow.bam~  ~override~
+     ~iwd1_eet/iu_iwd/bam/cdrelm.bam~   ~override~
+     ~iwd1_eet/iu_iwd/bam/cdrem.bam~    ~override~
+     ~iwd1_eet/iu_iwd/bam/cdremg.bam~   ~override~
+     ~iwd1_eet/iu_iwd/bam/cdscale.bam~  ~override~
+     ~iwd1_eet/iu_iwd/bam/cdscales.bam~ ~override~
+     ~iwd1_eet/iu_iwd/bam/ddqbow.bam~   ~override~
+     ~iwd1_eet/iu_iwd/bam/ddqsling.bam~ ~override~
+     ~iwd1_eet/iu_iwd/bam/ddqxbow.bam~  ~override~
+     ~iwd1_eet/iu_iwd/bam/ddrelm.bam~   ~override~
+     ~iwd1_eet/iu_iwd/bam/ddrem.bam~    ~override~
+     ~iwd1_eet/iu_iwd/bam/ddscale.bam~  ~override~
+     ~iwd1_eet/iu_iwd/bam/ddscales.bam~ ~override~
+
+COPY ~iwd1_eet/iu_iwd/cre/conv_cddaen.cre~ ~override/cddaen.cre~
+  
+COPY_EXISTING ~cddaen.cre~ ~override~
+	SAY 0x08 @770081042
+	SAY 0x0c @770081042
+  
+COPY_EXISTING ~vaarglan.cre~ ~override~
+	ADD_CRE_ITEM ~SCRL5H~ #0 #0 #0 ~NONE~ ~INV1 INV2 INV3 INV4 INV5 INV6 INV7 INV8 INV9 INV10 INV11 INV12 INV13 INV14 INV15 INV16~
+	BUT_ONLY_IF_IT_CHANGES
+  
+COPY_EXISTING ~icasa.cre~ ~override~
+	ADD_CRE_ITEM ~cdscales~ #0 #0 #0 ~UNSTEALABLE~ ~INV1 INV2 INV3 INV4 INV5 INV6 INV7 INV8 INV9 INV10 INV11 INV12 INV13 INV14 INV15 INV16~
+	BUT_ONLY_IF_IT_CHANGES
+
+COPY_EXISTING ~remorha.cre~  ~override~
+              ~remorhas.cre~ ~override~
+              ~remorhh.cre~  ~override~
+              ~rndremor.cre~ ~override~
+	ADD_CRE_ITEM ~cdrem~ #0 #0 #0 ~UNSTEALABLE~ ~INV1 INV2 INV3 INV4 INV5 INV6 INV7 INV8 INV9 INV10 INV11 INV12 INV13 INV14 INV15 INV16~
+	BUT_ONLY_IF_IT_CHANGES
+
+COPY ~iwd1_eet/iu_iwd/itm/cddaen.itm~   ~override~
+	SAY 0x08 @770081043
+	SAY 0x0c @770081043
+	WRITE_LONG  0x34 30
+	WRITE_SHORT 0x42  0
+	SAY 0x50 @770081044
+	SAY 0x54 @770081044
+    
+COPY_EXISTING ~cddaen.itm~ ~override/cddaen2.itm~
+	WRITE_SHORT 0xec 0
+
+COPY_EXISTING ~cynicis.itm~ ~override/cdgloom.itm~
+	SAY 0x08 @770081016
+	SAY 0x0c @770081016
+	WRITE_SHORT 0x42  0
+	SAY 0x50 @770081017
+	SAY 0x54 @770081017
+	LPF DELETE_ITEM_EFFECT INT_VAR opcode_to_delete = 330 END
+	LPF DELETE_ITEM_EQEFFECT INT_VAR opcode_to_delete = 330 END
+	READ_LONG  0x64 "abil_off"
+	READ_SHORT 0x68 "abil_num"
+	READ_LONG  0x6a "fx_off"
+	READ_SHORT 0x70 "fx_num"
+	FOR (index3 = 0 ; index3 < abil_num ; index3 = index3 + 1) BEGIN
+		READ_BYTE ("%abil_off%" + ("%index3%" * 0x38)) abil_type
+		PATCH_IF ("%abil_type%" = 3) BEGIN
+			WRITE_SHORT ("%abil_off%" + 0x22 + ("%index3%" * 0x38)) 2
+		END
+	END
+
+COPY_EXISTING ~myrloch.itm~ ~override/cdmyr.itm~
+	WRITE_SHORT 0x42  0
+	SAY 0x50 @770081019
+	SAY 0x54 @770081019
+	READ_LONG  0x64 "abil_off"
+	READ_SHORT 0x68 "abil_num"
+	READ_LONG  0x6a "fx_off"
+	READ_SHORT 0x70 "fx_num"
+	SET "delta" = 1
+	FOR (index = 0 ; index < fx_num ; index = index + 1) BEGIN
+		READ_SHORT    ("%fx_off%" +        ("%index%" * 0x30)) "opcode"
+		PATCH_IF      ("%opcode%" = 21) BEGIN
+			WRITE_LONG  ("%fx_off%" + 0x04 + ("%index%" * 0x30)) 30
+		END
+	END
+	LPF ADD_ITEM_EQEFFECT
+		INT_VAR opcode=6 target=1 parameter1=1 timing=2
+	END
+  
+COPY_EXISTING ~mystery.itm~ ~override/cdmyst.itm~
+	WRITE_SHORT 0x42  0
+	SAY 0x50 @770081018
+	SAY 0x54 @770081018
+	READ_LONG   0x64 "abil_off"
+	READ_SHORT  0x68 "abil_num"
+	WRITE_SHORT 0x68 ("%abil_num%" + 2)
+	READ_LONG   0x6a "fx_off"
+	WRITE_LONG  0x6a ("%fx_off%" + 0x70)
+	READ_SHORT  0x70 "fx_num"
+	PATCH_IF ("%abil_num%" != 0) BEGIN
+		READ_SHORT ("%abil_off%" + 0x1e + (("%abil_num%" - 1) * 0x38)) "last_fx_num"
+		READ_SHORT ("%abil_off%" + 0x20 + (("%abil_num%" - 1) * 0x38)) "last_fx_idx"
+		SET "new_fx" = ("%last_fx_idx%" + "%last_fx_num%")
+	END ELSE BEGIN
+		SET "new_fx" = "%fx_num%"
+	END
+	INSERT_BYTES  ("%fx_off%" +        ("%new_fx%" * 0x30)) 0x30      
+		WRITE_SHORT ("%fx_off%" +        ("%new_fx%" * 0x30)) 146       
+		WRITE_BYTE  ("%fx_off%" + 0x02 + ("%new_fx%" * 0x30)) 1         
+		WRITE_LONG  ("%fx_off%" + 0x04 + ("%new_fx%" * 0x30)) 11        
+		WRITE_BYTE  ("%fx_off%" + 0x0c + ("%new_fx%" * 0x30)) 1         
+		WRITE_BYTE  ("%fx_off%" + 0x12 + ("%new_fx%" * 0x30)) 100       
+		WRITE_ASCII ("%fx_off%" + 0x14 + ("%new_fx%" * 0x30)) ~idpr516~ 
+	INSERT_BYTES  ("%fx_off%" +        ("%new_fx%" * 0x30)) 0x30      
+		WRITE_SHORT ("%fx_off%" +        ("%new_fx%" * 0x30)) 146       
+		WRITE_BYTE  ("%fx_off%" + 0x02 + ("%new_fx%" * 0x30)) 2         
+		WRITE_LONG  ("%fx_off%" + 0x04 + ("%new_fx%" * 0x30)) 9         
+		WRITE_BYTE  ("%fx_off%" + 0x0c + ("%new_fx%" * 0x30)) 1         
+		WRITE_BYTE  ("%fx_off%" + 0x12 + ("%new_fx%" * 0x30)) 100       
+		WRITE_ASCII ("%fx_off%" + 0x14 + ("%new_fx%" * 0x30)) ~sppr502~ 
+	INSERT_BYTES  ("%fx_off%"       ) 0x38             
+		WRITE_BYTE  ("%fx_off%"       ) 3                
+		WRITE_BYTE  ("%fx_off%" + 0x01) 1                
+		WRITE_SHORT ("%fx_off%" + 0x02) 3                
+		WRITE_ASCII ("%fx_off%" + 0x04) ~idpr516b~       
+		WRITE_SHORT ("%fx_off%" + 0x0c) 5                
+		WRITE_SHORT ("%fx_off%" + 0x0e) 1                
+		WRITE_SHORT ("%fx_off%" + 0x1e) 1                
+		WRITE_SHORT ("%fx_off%" + 0x20) ("%new_fx%" + 1) 
+		WRITE_SHORT ("%fx_off%" + 0x22) 1                
+		WRITE_BYTE  ("%fx_off%" + 0x24) 3                
+		WRITE_BYTE  ("%fx_off%" + 0x27) 8                
+		WRITE_SHORT ("%fx_off%" + 0x2a) 1                
+	INSERT_BYTES  ("%fx_off%"       ) 0x38             
+		WRITE_BYTE  ("%fx_off%"       ) 3                
+		WRITE_BYTE  ("%fx_off%" + 0x01) 1                
+		WRITE_SHORT ("%fx_off%" + 0x02) 3                
+		WRITE_ASCII ("%fx_off%" + 0x04) ~sppr502b~     
+		WRITE_SHORT ("%fx_off%" + 0x0c) 1               
+		WRITE_SHORT ("%fx_off%" + 0x0e) 1               
+		WRITE_SHORT ("%fx_off%" + 0x1e) 1               
+		WRITE_SHORT ("%fx_off%" + 0x20) ("%new_fx%")    
+		WRITE_SHORT ("%fx_off%" + 0x22) 1               
+		WRITE_BYTE  ("%fx_off%" + 0x24) 3               
+		WRITE_BYTE  ("%fx_off%" + 0x27) 8               
+		WRITE_SHORT ("%fx_off%" + 0x2a) 1               
+
+COPY ~iwd1_eet/iu_iwd/itm/cdqbow.itm~   ~override~
+	SAY 0x08 @770081002
+	SAY 0x0c @770081002
+	SAY 0x50 @770081003
+	SAY 0x54 @770081003
+  
+COPY ~iwd1_eet/iu_iwd/itm/cdqsling.itm~ ~override~
+	SAY 0x08 @770081006
+	SAY 0x0c @770081006
+	SAY 0x50 @770081007
+	SAY 0x54 @770081007
+  
+COPY ~iwd1_eet/iu_iwd/itm/cdqxbow.itm~  ~override~
+	SAY 0x08 @770081004
+	SAY 0x0c @770081004
+	SAY 0x50 @770081005
+	SAY 0x54 @770081005
+
+COPY ~iwd1_eet/iu_iwd/itm/cdrelm.itm~  ~override~
+	SAY 0x08 @770081014
+	SAY 0x0c @770081014
+	SAY 0x50 @770081015
+	SAY 0x54 @770081015
+  
+COPY_EXISTING ~misc12.itm~ ~override/cdrem.itm~
+	SAY 0x08 @770081023
+	SAY 0x0c @770081023
+	WRITE_ASCII 0x3a ~cdrem~  #8
+	WRITE_ASCII 0x44 ~cdremg~ #8
+	WRITE_ASCII 0x58 ~ddrem~  #8
+	SAY 0x50 @770081030
+	SAY 0x54 @770081030
+
+COPY ~iwd1_eet/iu_iwd/itm/cdscale.itm~  ~override~
+	SAY 0x08 @770081010
+	SAY 0x0c @770081010
+	SAY 0x50 @770081011
+	SAY 0x54 @770081011
+  
+COPY ~iwd1_eet/iu_iwd/itm/cdscales.itm~ ~override~
+	SAY 0x08 @770081008
+	SAY 0x0c @770081008
+	SAY 0x50 @770081009
+	SAY 0x54 @770081009
+
+COPY_EXISTING ~lxbowbm.itm~ ~override/cdxbowbm.itm~
+	WRITE_SHORT 0x42  0
+	SAY 0x50 @770081021
+	SAY 0x54 @770081021
+	READ_ASCII 0x3a "icon" (8)
+	READ_LONG  0x64 "abil_off"
+	READ_SHORT 0x68 "abil_num"
+	WRITE_SHORT 0x68 ("%abil_num%" + 1)
+	READ_LONG  0x6a "fx_off"
+	WRITE_LONG  0x6a ("%fx_off%" + 0x38)
+	READ_SHORT 0x70 "fx_num"
+	READ_SHORT ("%abil_off%" + 0x1e + (("%abil_num%" - 1) * 0x38)) "last_fx_num"
+	READ_SHORT ("%abil_off%" + 0x20 + (("%abil_num%" - 1) * 0x38)) "last_fx_idx"
+	SET "new_fx" = ("%last_fx_idx%" + "%last_fx_num%")
+	INSERT_BYTES            ("%fx_off%" +        ("%new_fx%" * 0x30)) 0x30 
+		WRITE_SHORT           ("%fx_off%" +        ("%new_fx%" * 0x30)) 142  
+		WRITE_BYTE            ("%fx_off%" + 0x02 + ("%new_fx%" * 0x30)) 1    
+		WRITE_LONG            ("%fx_off%" + 0x08 + ("%new_fx%" * 0x30)) 17   
+		WRITE_LONG            ("%fx_off%" + 0x0e + ("%new_fx%" * 0x30)) (14 - (2 * "%iwd-in-bg2%"))   
+		WRITE_BYTE            ("%fx_off%" + 0x12 + ("%new_fx%" * 0x30)) 100  
+	INSERT_BYTES            ("%fx_off%" +        ("%new_fx%" * 0x30)) 0x30 
+		WRITE_SHORT           ("%fx_off%" +        ("%new_fx%" * 0x30)) 167  
+		WRITE_BYTE            ("%fx_off%" + 0x02 + ("%new_fx%" * 0x30)) 1    
+		WRITE_LONG            ("%fx_off%" + 0x04 + ("%new_fx%" * 0x30)) 5    
+		WRITE_LONG            ("%fx_off%" + 0x0e + ("%new_fx%" * 0x30)) (14 - (2 * "%iwd-in-bg2%"))
+		WRITE_BYTE            ("%fx_off%" + 0x12 + ("%new_fx%" * 0x30)) 100   
+	INSERT_BYTES   ("%fx_off%"       ) 0x38        
+		WRITE_BYTE   ("%fx_off%"       ) 3           
+		WRITE_BYTE   ("%fx_off%" + 0x01) 1           
+		WRITE_SHORT  ("%fx_off%" + 0x02) 3           
+		WRITE_ASCIIE ("%fx_off%" + 0x04) "%icon%" #8 
+		WRITE_SHORT  ("%fx_off%" + 0x0c) 5           
+		WRITE_SHORT  ("%fx_off%" + 0x0e) 1           
+		WRITE_SHORT  ("%fx_off%" + 0x1e) 2           
+		WRITE_SHORT  ("%fx_off%" + 0x20) ("%new_fx%")
+		WRITE_SHORT  ("%fx_off%" + 0x22) 1           
+		WRITE_BYTE   ("%fx_off%" + 0x24) 3           
+		WRITE_BYTE   ("%fx_off%" + 0x27) 8           
+		WRITE_SHORT  ("%fx_off%" + 0x2a) 1           
+
+COPY_EXISTING ~young.itm~  ~override/cdyoung.itm~
+	WRITE_SHORT 0x42 0
+	SAY 0x50 @770081020
+	SAY 0x54 @770081020
+	LPF DELETE_ITEM_EFFECT INT_VAR opcode_to_delete=3   END
+	LPF DELETE_ITEM_EFFECT INT_VAR opcode_to_delete=139 END
+	LPF DELETE_ITEM_EFFECT INT_VAR opcode_to_delete=142 END
+
+COPY_EXISTING ~misc78.itm~ ~override/cdyoungn.itm~
+	SAY 0x08 @770081040
+	SAY 0x0c @770081040
+	SAY 0x50 @770081041
+	SAY 0x54 @770081041
+
+COPY_EXISTING ~emmeric.sto~ ~override~
+	ADD_STORE_ITEM ~cdqsling~ AFTER ~xbow04~ #0 #0 #0 ~IDENTIFIED~ #1
+	ADD_STORE_ITEM ~cdqxbow~  AFTER ~xbow04~ #0 #0 #0 ~IDENTIFIED~ #1
+	ADD_STORE_ITEM ~cdqbow~   AFTER ~xbow04~ #0 #0 #0 ~IDENTIFIED~ #1
+	BUT_ONLY_IF_IT_CHANGES
+
+COPY ~iwd1_eet/iu_iwd/audio/cddaen.wav~ ~override~
+
+COMPILE ~iwd1_eet/iu_iwd/dlg/vexing.d~
+COMPILE ~iwd1_eet/iu_iwd/baf/cdvexcut.baf~
+  
+COPY_EXISTING ~vexing.cre~ ~override/cdvex.cre~
+	WRITE_ASCII 0x248 ~efdlgf~ #8
+	WRITE_ASCII (0x334 - 0x68) ~cdvex~ #8
+  
+APPEND ~itemexcl.2da~ ~cdscale   1~
+
+

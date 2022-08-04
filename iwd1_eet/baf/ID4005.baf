@@ -1,0 +1,112 @@
+IF
+  !Global("ID4005_VISITED","GLOBAL",1)
+THEN
+  RESPONSE #100
+    SetGlobal("ID4005_VISITED","GLOBAL",1)
+    Continue()
+END
+
+IF
+	!Global("4005_SPAWN","GLOBAL",0)
+	!Global("SPRITE_IS_DEADYXUNOMEI","GLOBAL",0)
+THEN
+	RESPONSE #100
+		SetGlobal("4004_SPAWN","GLOBAL",0)
+		SetGlobal("4005_SPAWN","GLOBAL",0)
+		Continue()
+END
+
+IF
+  Global("Kuldahar_Attack","GLOBAL",0)
+  !Global("SPRITE_IS_DEADYXUNOMEI","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("Kuldahar_Attack","GLOBAL",1)
+    Continue()
+END
+
+IF
+  Global("OPEN_YXUN_DOOR","MYAREA",0)
+  !Global("SPRITE_IS_DEADYXUNOMEI","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetInterrupt(FALSE)
+    Unlock("AR4005Door12")
+    OpenDoor("AR4005Door12")
+    SetGlobal("OPEN_YXUN_DOOR","MYAREA",1)
+    SetInterrupt(TRUE)
+    Continue()
+END
+
+IF
+	Global("D5_DEATH_FOG_TRAP_SET","MYAREA",1)
+THEN
+	RESPONSE #100
+		SetGlobal("D5_DEATH_FOG_TRAP_SET","MYAREA",2)
+		CloseDoor("AR4005DOOR1")
+		CloseDoor("AR4005DOOR2")
+		Lock("AR4005DOOR1")
+		Lock("AR4005DOOR2")
+		SetGlobalTimer("D5_TRAP_TIMER","MYAREA",30)
+		Continue()
+END
+
+IF
+	Global("D5_DEATH_FOG_TRAP_SET","MYAREA",2)
+	GlobalTimerExpired("D5_TRAP_TIMER","MYAREA")
+THEN
+	RESPONSE #100
+		SetGlobal("D5_DEATH_FOG_TRAP_SET","MYAREA",3)
+		Unlock("AR4005DOOR1")
+		Unlock("AR4005DOOR2")
+		OpenDoor("AR4005DOOR1")
+		OpenDoor("AR4005DOOR2")
+		Continue()
+END
+
+IF
+	Global("YXUNOMEI_SLAIN","GLOBAL",0)
+	PartyHasItem("HEARTGM")
+THEN
+	RESPONSE #100
+		SetGlobal("YXUNOMEI_SLAIN","GLOBAL",1)
+		AddXP2DA("ID1EX5A")
+		DisplayStringNoName(Player1,@11176)
+		Continue()
+END
+
+IF
+  !Global("YXUN_ATTACK","MYAREA",0)
+  Global("OPEN_DOORS","MYAREA",0)
+THEN
+  RESPONSE #100
+    SetInterrupt(FALSE)
+    OpenDoor("AR4005Door1")
+    OpenDoor("AR4005Door2")
+    OpenDoor("AR4005Door3")
+    OpenDoor("AR4005Door4")
+    OpenDoor("AR4005Door5")
+    OpenDoor("AR4005Door6")
+    OpenDoor("AR4005Door8")
+    OpenDoor("AR4005Door9")
+    OpenDoor("AR4005Door10")
+    OpenDoor("AR4005Door11")
+    OpenDoor("AR4005Door13")
+    OpenDoor("AR4005Door14")
+    OpenDoor("AR4005Door15")
+    OpenDoor("AR4005Door16")
+    CloseDoor("AR4005Door12")
+    Lock("AR4005Door12")
+    SetGlobal("OPEN_DOORS","MYAREA",1)
+    SetInterrupt(TRUE)
+    Continue()
+END
+
+IF
+	OnCreation()
+THEN
+	RESPONSE #100
+		NoAction()
+		Continue()
+END
+

@@ -1,0 +1,25 @@
+IF
+	StateCheck(Myself,STATE_PANIC)
+THEN
+	RESPONSE #100
+		RandomWalkContinuous()
+END
+
+IF
+	!GlobalTimerNotExpired("IWD_Rest","LOCALS")
+THEN
+	RESPONSE #100
+		SetGlobalTimer("IWD_Rest","LOCALS",EIGHT_HOURS)
+		ApplySpell(Myself,RESTORE_FULL_HEALTH)
+		Rest()
+END
+
+IF
+	HaveSpellRES("IDWI220")  // WIZARD_SNILLOCS_SNOWBALL_SWARM
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		SpellRES("IDWI220",LastSeenBy(Myself))  // WIZARD_SNILLOCS_SNOWBALL_SWARM
+		Wait(2)
+END
+

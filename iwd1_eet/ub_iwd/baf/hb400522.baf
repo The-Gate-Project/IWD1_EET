@@ -1,0 +1,27 @@
+/*IF
+  Global("Hyp_Villager_Dead","GLOBAL",0)
+  OR(8)
+    Dead("captivevillager1a")
+    Dead("captivevillager2a")
+    Dead("captivevillager3a")
+    Dead("captivevillager4a")
+    Dead("captivevillager5a")
+    Dead("captivevillager6a")
+    Dead("captivevillager7a")
+    Dead("captivevillager8a")
+THEN
+  RESPONSE #100
+    SetGlobal("Hyp_Villager_Dead","GLOBAL",1)
+END*/
+
+IF
+  OR(2)
+    Die()
+    StateCheck(Myself,STATE_REALLY_DEAD)
+  !Global("Set_Death_Variable","LOCALS",1)
+THEN
+  RESPONSE #100
+    SetGlobal("Set_Death_Variable","LOCALS",1)
+    IncrementGlobal("Hyp_Villager_Dead","GLOBAL",1)
+    Continue()
+END

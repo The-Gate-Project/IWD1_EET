@@ -1,0 +1,21 @@
+IF
+	Allegiance(Myself,ENEMY)
+	!Help([PC])
+	Global("HEARD_HELP","LOCALS",0)
+	Help([ANYTHING])
+THEN
+	RESPONSE #100
+		SetGlobal("HEARD_HELP","LOCALS",1)
+END
+
+IF
+	!Global("HEARD_HELP","LOCALS",0)
+	!See([PC])
+	ActionListEmpty()
+THEN
+  RESPONSE #100
+    MoveToObject(Player1)
+END
+
+
+

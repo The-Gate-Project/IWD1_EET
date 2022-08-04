@@ -1,0 +1,16 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Myself)
+		ClearAllActions()
+		MultiPlayerSync()
+		ReallyForceSpellRES("IDIN181",Myself)
+		Wait(3)
+		SmallWait(4)
+		TakePartyItemAll("RINGLUR")
+		MultiPlayerSync()
+		EndCutSceneMode()
+		StartCutScene("IDUA9101")
+END
+

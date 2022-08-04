@@ -1,0 +1,31 @@
+IF
+	!Global("EFXKEEPH_INACTIVE","LOCALS",1)
+	//CheckPartyAverageLevel(16,GREATER_THAN)
+	OR(3)	  
+		LevelPartyGT(8)
+		StoryModeOn()
+		NightmareModeOn()
+THEN
+	RESPONSE #100
+		SetGlobal("EFXKEEPH_INACTIVE","LOCALS",1)
+END
+
+IF
+	!Global("EFXKEEPH_INACTIVE","LOCALS",1)
+	Race(Myself,HARPY)
+	True()
+THEN
+	RESPONSE #100
+		IncrementGlobal("SPRITE_IS_DEADHarpyDuel","GLOBAL",1)
+		DestroySelf()
+END
+
+IF
+	!Global("EFXKEEPH_INACTIVE","LOCALS",1)
+	Race(Myself,WYVERN)
+	True()
+THEN
+	RESPONSE #100
+		IncrementGlobal("SPRITE_IS_DEADWyvernDuel","GLOBAL",1)
+		DestroySelf()
+END

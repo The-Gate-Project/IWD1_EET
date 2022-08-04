@@ -1,0 +1,10 @@
+IF
+	!Global("EETPLDOR_STATE_VAR512","LOCALS",1)
+	!Global("FREED_EVERARD","GLOBAL",0)
+	OpenState("AR1100TowerDoor",FALSE)
+THEN
+	RESPONSE #100
+		SetGlobal("EETPLDOR_STATE_VAR512","LOCALS",1)
+		OpenDoor("AR1100TowerDoor")
+END
+

@@ -1,0 +1,20 @@
+IF
+	//Opened([ANYTHING])
+	OpenState("AR3502Switch1",TRUE)
+THEN
+	RESPONSE #100
+		Unlock("3502HIDE")
+		OpenDoor("3502HIDE")
+		TriggerActivation("To3503",TRUE)
+END
+
+IF
+	//Closed([ANYTHING])
+	OpenState("AR3502Switch1",FALSE)
+THEN
+	RESPONSE #100
+		CloseDoor("3502HIDE")
+		Lock("3502HIDE")
+		TriggerActivation("To3503",FALSE)
+END
+

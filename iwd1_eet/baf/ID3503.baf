@@ -1,0 +1,9 @@
+IF
+  Global("KRESS_QUEST","GLOBAL",4)
+  !Global("Containers_Unlocked","MYAREA",1)
+THEN
+  RESPONSE #100
+    Unlock("Sarcophagus1")
+    SetGlobal("Containers_Unlocked","MYAREA",1)
+    Continue()
+END

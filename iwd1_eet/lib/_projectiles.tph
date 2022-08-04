@@ -1,0 +1,76 @@
+
+ADD_PROJECTILE ~iwd1_eet/pro/idpro000.pro~ ~Sunscoch~
+ADD_PROJECTILE ~iwd1_eet/pro/idpro001.pro~ ~Salamander Aura~
+ADD_PROJECTILE ~iwd1_eet/pro/idpro209.pro~ ~Malavons rage~
+ADD_PROJECTILE ~iwd1_eet/pro/idpro217.pro~ ~Snilloc snowball swarm~
+ADD_PROJECTILE ~iwd1_eet/pro/idpro230.pro~ ~Travel necromancy~
+ADD_PROJECTILE ~iwd1_eet/pro/idpro234.pro~ ~Travel divination~
+ADD_PROJECTILE ~iwd1_eet/pro/idpro237.pro~ ~Curse~
+ADD_PROJECTILE ~iwd1_eet/pro/idpro246.pro~ ~Dispel magic IWD~
+ADD_PROJECTILE ~iwd1_eet/pro/idpro251.pro~ ~Icelance~
+ADD_PROJECTILE ~iwd1_eet/pro/idpro255.pro~ ~Emotion~
+ADD_PROJECTILE ~iwd1_eet/pro/idpro269.pro~ ~Otilukes Freezing Sphere~
+ADD_PROJECTILE ~iwd1_eet/pro/idpro270.pro~ ~Flame Oil~
+ADD_PROJECTILE ~iwd1_eet/pro/idpro271.pro~ ~Sol searing orb~
+ADD_PROJECTILE ~iwd1_eet/pro/idpro279.pro~ ~Malavons corrosive fog~
+ADD_PROJECTILE ~iwd1_eet/pro/idpro281.pro~ ~Umber Hulk Gaze~
+ADD_PROJECTILE ~iwd1_eet/pro/idpro283.pro~ ~Zombie lord aura~
+ADD_PROJECTILE ~iwd1_eet/pro/idpro284.pro~ ~Iron golem cloud~
+ADD_PROJECTILE ~iwd1_eet/pro/idpro285.pro~ ~Myconid spores~
+ADD_PROJECTILE ~iwd1_eet/pro/idpro286.pro~ ~Incendiary cloud explosion~
+ADD_PROJECTILE ~iwd1_eet/pro/idpro288.pro~ ~Heavenly inferno~
+ADD_PROJECTILE ~iwd1_eet/pro/idpro294.pro~ ~Portal animation open~
+ADD_PROJECTILE ~iwd1_eet/pro/idpro296.pro~ ~Winter wolf breath~
+ADD_PROJECTILE ~iwd1_eet/pro/idpro297.pro~ ~Portal animation close~
+ADD_PROJECTILE ~iwd1_eet/pro/idpro299.pro~ ~Soul eater~
+ADD_PROJECTILE ~iwd1_eet/pro/idpro310.pro~ ~Undead ward~
+ADD_PROJECTILE ~iwd1_eet/pro/idpro313.pro~ ~Lance of disruption~
+ADD_PROJECTILE ~iwd1_eet/pro/idpro315.pro~ ~Shout~
+ADD_PROJECTILE ~iwd1_eet/pro/idpro319.pro~ ~Great shout~
+ADD_PROJECTILE ~iwd1_eet/pro/idpro320.pro~ ~Mournful wail~
+ADD_PROJECTILE ~iwd1_eet/pro/idpro321.pro~ ~Death knell~
+ADD_PROJECTILE ~iwd1_eet/pro/idpro323.pro~ ~Undying lament~
+ADD_PROJECTILE ~iwd1_eet/pro/idpro342.pro~ ~Great roar~
+ADD_PROJECTILE ~iwd1_eet/pro/idpro343.pro~ ~Will-o-wisp spray~
+ADD_PROJECTILE ~iwd1_eet/pro/idpro345.pro~ ~Retribution~
+ADD_PROJECTILE ~iwd1_eet/pro/idpro349.pro~ ~Dragon breath~
+ADD_PROJECTILE ~iwd1_eet/pro/idpro351.pro~ ~Mustard jelly vapor~
+ADD_PROJECTILE ~iwd1_eet/pro/idpro353.pro~ ~Container glow~
+ADD_PROJECTILE ~iwd1_eet/pro/idpro354.pro~ ~Container glow bad~
+ADD_PROJECTILE ~iwd1_eet/pro/idpro402.pro~ ~Werewolf Gaze~
+ADD_PROJECTILE ~iwd1_eet/pro/idpro405.pro~ ~Harpy Wail~
+ADD_PROJECTILE ~iwd1_eet/pro/idshrflm.PRO~ ~Shroud of Flame~
+
+APPEND ~clearair.2da~ ~Iron_golem_cloud    %idpro284%~ UNLESS ~Iron_golem_cloud~
+ACTION_IF FILE_EXISTS_IN_GAME ~clearcld.2da~ BEGIN
+	APPEND ~clearcld.2da~ ~Iron_golem_cloud    %idpro284%~ UNLESS ~Iron_golem_cloud~
+END
+APPEND ~clearair.2da~ ~Incendiary_cloud_explosion    %idpro286%~ UNLESS ~Incendiary_cloud_explosion~
+ACTION_IF FILE_EXISTS_IN_GAME ~clearcld.2da~ BEGIN
+	APPEND ~clearcld.2da~ ~Incendiary_cloud_explosion    %idpro286%~ UNLESS ~Incendiary_cloud_explosion~
+END
+
+//Text projectile
+COPY ~override/IDPRO284.PRO~ ~override~
+  SAY 0x30 @4387
+
+COPY ~override/IDPRO351.PRO~ ~override~
+  SAY 0x30 @27030
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

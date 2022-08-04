@@ -1,0 +1,86 @@
+IF
+	See(Player1)
+THEN
+	RESPONSE #100
+		SetGlobal("CAST_SPECIAL","LOCALS",1)
+		SpellRES("IDWI404",LastSeenBy(Myself))
+		WaitRandom(3,5)
+		Continue()
+	RESPONSE #100
+		SetGlobal("CAST_SPECIAL","LOCALS",1)
+		Spell(LastSeenBy(Myself),WIZARD_STINKING_CLOUD)
+		WaitRandom(3,5)
+		Continue()
+	RESPONSE #100
+		SetGlobal("CAST_SPECIAL","LOCALS",1)
+		Spell(LastSeenBy(Myself),WIZARD_DIRE_CHARM)
+		WaitRandom(3,5)
+		Continue()
+	RESPONSE #100
+		SetGlobal("CAST_SPECIAL","LOCALS",1)
+		Spell(LastSeenBy(Myself),WIZARD_BLINDNESS)
+		WaitRandom(3,5)
+		Continue()
+	RESPONSE #100
+		SetGlobal("CAST_SPECIAL","LOCALS",1)
+		SpellRES("IDWI404",LastSeenBy(Myself))
+		WaitRandom(3,5)
+		Continue()
+	RESPONSE #100
+		SetGlobal("CAST_SPECIAL","LOCALS",1)
+		Spell(LastSeenBy(Myself),WIZARD_GREATER_MALISON)
+		WaitRandom(3,5)
+		Continue()
+	RESPONSE #100
+		SetGlobal("CAST_SPECIAL","LOCALS",1)
+		SpellRES("IDWI612",LastSeenBy(Myself))
+		WaitRandom(3,5)
+		Continue()
+	RESPONSE #100
+		SetGlobal("CAST_SPECIAL","LOCALS",1)
+		Spell(LastSeenBy(Myself),WIZARD_COLOR_SPRAY)
+		WaitRandom(3,5)
+		Continue()
+	RESPONSE #100
+		SetGlobal("CAST_SPECIAL","LOCALS",1)
+		SpellRES("IDWI220",LastSeenBy(Myself))
+		WaitRandom(3,5)
+		Continue()
+	RESPONSE #100
+		SetGlobal("CAST_SPECIAL","LOCALS",1)
+		Spell(LastSeenBy(Myself),WIZARD_DEATH_FOG)
+		WaitRandom(3,5)
+		Continue()
+	RESPONSE #100
+		SetGlobal("CAST_SPECIAL","LOCALS",1)
+		Spell(LastSeenBy(Myself),WIZARD_SLOW)
+		WaitRandom(3,5)
+		Continue()
+END
+
+IF
+	!Global("CAST_SPECIAL","LOCALS",0)
+THEN
+	RESPONSE #100
+		SetGlobal("CAST_SPECIAL","LOCALS",0)
+		Continue()
+	RESPONSE #100
+		SetGlobal("CAST_SPECIAL","LOCALS",0)
+		ChangeAIScript("ilGem2",RACE)
+	RESPONSE #100
+		SetGlobal("CAST_SPECIAL","LOCALS",0)
+		ChangeAIScript("ilGem3",RACE)
+	RESPONSE #100
+		SetGlobal("CAST_SPECIAL","LOCALS",0)
+		ChangeAIScript("ilGem4",RACE)
+	RESPONSE #100
+		SetGlobal("CAST_SPECIAL","LOCALS",0)
+		ChangeAIScript("ilGem5",RACE)
+	RESPONSE #100
+		SetGlobal("CAST_SPECIAL","LOCALS",0)
+		ChangeAIScript("ilGem6",RACE)
+	RESPONSE #100
+		SetGlobal("CAST_SPECIAL","LOCALS",0)
+		ChangeAIScript("ilGemL",RACE)
+END
+

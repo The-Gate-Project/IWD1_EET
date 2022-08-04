@@ -1,0 +1,62 @@
+IF
+	!Global("ARUNDEL_OUTSIDE","GLOBAL",0)
+THEN
+	RESPONSE #100
+		DestroySelf()
+END
+
+IF
+	!NumTimesTalkedTo(0)
+	!StateCheck(Myself,STATE_REALLY_DEAD)
+THEN
+	RESPONSE #100
+		SetGlobal("SPRITE_IS_DEADARUNDEL","GLOBAL",1)
+		Kill(Myself)
+END
+
+IF
+	!IsActive(Myself)
+	!Global("BIG_SCARY_GLOBAL","GLOBAL",0)
+THEN
+	RESPONSE #100
+		//PlaySequence(Myself,SLEEP)
+		SmallWait(12)
+		Activate(Myself)
+		SetGlobal("IwIHidden","LOCALS",0)
+		SetSequence(SEQ_SLEEP)
+		ApplySpellRES("IDINVIS5",Myself)
+		Continue()
+END
+
+IF
+  !IsActive(Myself)
+THEN
+  RESPONSE #100
+    NoAction()
+END
+
+IF
+	!BitCheck("CREATURE_STATE_VAR","LOCALS",1)
+THEN
+	RESPONSE #100
+		BitSet("CREATURE_STATE_VAR","LOCALS",1)
+		SetGlobal("DYING_ARUNDEL","LOCALS",1)
+		Continue()
+END
+
+IF
+	NumTimesTalkedTo(0)
+	IsActive(Myself)
+	See([PC])
+	!Allegiance(Myself,ENEMY)
+	!StateCheck(Myself,STATE_REALLY_DEAD)
+	!StateCheck(Myself,STATE_NOT_VISIBLE)
+THEN
+	RESPONSE #100
+		StartCutSceneMode()
+		ClearAllActions()
+		MultiPlayerSync()
+		ApplySpellRES("BDCUTSPY",Myself)
+		StartDialogNoSet([PC])
+END
+

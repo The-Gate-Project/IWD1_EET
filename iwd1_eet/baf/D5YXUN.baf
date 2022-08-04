@@ -1,0 +1,56 @@
+IF
+	!BitCheck("AREA_VAR","MYAREA",2)
+THEN
+	RESPONSE #100
+		BitSet("AREA_VAR","MYAREA",2)
+		SetGlobal("YXUN_ATTACK","MYAREA",1)
+		SaveLocation("LOCALS","SavedLoc",[3260.530])
+		SetHomeLocation([3260.530])
+		Enemy()
+		Continue()
+END
+
+IF
+	!GlobalTimerNotExpired("IWD_Rest","LOCALS")
+THEN
+	RESPONSE #100
+		SetGlobalTimer("IWD_Rest","LOCALS",EIGHT_HOURS)
+		ApplySpell(Myself,RESTORE_FULL_HEALTH)
+		Rest()
+END
+
+IF
+	HaveSpell(WIZARD_CLOUDKILL)
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		Spell(Myself,WIZARD_CLOUDKILL)
+		Wait(2)
+END
+
+IF
+	HaveSpell(WIZARD_ANIMATE_DEAD)
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		Spell(LastSeenBy(Myself),WIZARD_ANIMATE_DEAD)
+		Wait(2)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		AttackReevaluate(LastSeenBy(Myself),75)
+END
+
+IF
+	ActionListEmpty()
+	!See([PC])
+THEN
+  RESPONSE #100
+    MoveToObject(Player1)
+END
+
+
+

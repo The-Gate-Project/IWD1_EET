@@ -1,0 +1,77 @@
+IF
+	StateCheck(Myself,STATE_PANIC)
+THEN
+	RESPONSE #100
+		RandomWalkContinuous()
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		AttackReevaluate(LastSeenBy(Myself),75)
+END
+
+IF
+	!GlobalTimerNotExpired("TROLL_BOMB","MYAREA")
+	See([0.0.0.0.SNOW_TROLL])
+	HP([0.0.0.0.SNOW_TROLL],1)
+	HasItem("BFLAOIL",Myself)
+	//See([0.0.0.0.SNOW_TROLL])
+THEN
+	RESPONSE #100
+		SetGlobalTimer("TROLL_BOMB","MYAREA",3)
+		UseItem("BFLAOIL",LastSeenBy(Myself))
+		Wait(2)
+		Continue()
+END
+
+IF
+	Heard("JORN",11)
+	!Dead("JORN")
+	!See("JORN")
+THEN
+	RESPONSE #100
+		MoveToObject("JORN")  // Йорн
+END
+
+IF
+	!GlobalTimerNotExpired("TROLL_BOMB","MYAREA")
+	See([0.0.0.0.SNOW_TROLL])
+	HP([0.0.0.0.SNOW_TROLL],1)
+	!Dead("JORN")  // Йорн
+	//See([0.0.0.0.SNOW_TROLL])
+THEN
+	RESPONSE #100
+		SetGlobalTimer("TROLL_BOMB","MYAREA",3)
+		Shout(12)
+		Continue()
+END
+
+IF
+	HPGT([ENEMY],1)
+	See([ENEMY])
+THEN
+	RESPONSE #100
+		AttackReevaluate(LastSeenBy(Myself),15)
+END
+
+IF
+	See([ENEMY])
+	!Race([ENEMY],TROLL)
+	//See([ENEMY])
+THEN
+	RESPONSE #100
+		AttackReevaluate(LastSeenBy(Myself),75)
+END
+
+IF
+	OR(3)
+		See([0.0.TROLL])
+		See([0.0.BEAR])
+		See([0.0.UMBERHULK])
+THEN
+	RESPONSE #100
+		AttackReevaluate(LastSeenBy(Myself),75)
+END
+

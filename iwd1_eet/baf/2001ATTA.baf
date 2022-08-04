@@ -1,0 +1,38 @@
+IF
+	StateCheck(Myself,STATE_PANIC)
+THEN
+	RESPONSE #100
+		RandomWalkContinuous()
+END
+
+IF
+	Global("ID2001_Attack","ID2001",1)
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		Attack(NearestEnemyOf(Myself))
+END
+
+IF
+	AttackedBy([PC],DEFAULT)
+THEN
+	RESPONSE #100
+		Attack(LastAttackerOf(Myself))
+END
+
+IF
+	Global("ID2001_Attack","ID2001",0)
+	Allegiance(Myself,ENEMY)
+	Detect([PC])
+THEN
+	RESPONSE #100
+		DisplayStringHead(Myself,@1708)
+		WaitRandom(10,25)
+	RESPONSE #100
+		DisplayStringHead(Myself,@1758)
+		WaitRandom(10,25)
+	RESPONSE #100
+		DisplayStringHead(Myself,@1759)
+		WaitRandom(10,25)
+END
+

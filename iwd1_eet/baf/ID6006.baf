@@ -1,0 +1,52 @@
+IF
+  !Global("ID6006_VISITED","GLOBAL",1)
+THEN
+  RESPONSE #100
+    SetGlobal("ID6006_VISITED","GLOBAL",1)
+    Continue()
+END
+
+IF
+	Global("KILL_LICH_MINIONS","MYAREA",0)
+	!Global("SPRITE_IS_DEADIDLICH","GLOBAL",0)
+THEN
+	RESPONSE #100
+		SetGlobal("LICH_MINIONS_FOLLOW","MYAREA",0)
+		SetGlobal("KILL_LICH_MINIONS","MYAREA",1)
+		Continue()
+END
+
+IF
+	GlobalGT("SPRITE_IS_DEADUD_LICH_SPAWN","GLOBAL",0)
+	GlobalGT("UD_LICH_SPAWN_CNT","MYAREA",0)
+THEN
+	RESPONSE #100
+		IncrementGlobal("SPRITE_IS_DEADUD_LICH_SPAWN","GLOBAL",-1)
+		IncrementGlobal("UD_LICH_SPAWN_CNT","MYAREA",-1)
+		Continue()
+END
+
+IF
+	!Global("6005_NOXP_LICH_SPAWN","GLOBAL",0)
+THEN
+	RESPONSE #100
+		SetGlobal("6005_NOXP_LICH_SPAWN","GLOBAL",0)
+		Continue()
+END
+
+IF
+	!Global("6005_LICH_SPAWN","GLOBAL",0)
+THEN
+	RESPONSE #100
+		SetGlobal("6005_LICH_SPAWN","GLOBAL",0)
+		Continue()
+END
+
+IF
+	OnCreation()
+THEN
+	RESPONSE #100
+		NoAction()
+		Continue()
+END
+

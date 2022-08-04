@@ -1,0 +1,102 @@
+IF
+	!BitCheck("CREATURE_STATE_VAR","LOCALS",1)
+THEN
+	RESPONSE #100
+		BitSet("CREATURE_STATE_VAR","LOCALS",1)
+		SetGlobalTimerRandom("IwTimer24","LOCALS",5,10)
+		Continue()
+END
+
+IF
+	!IsActive(Myself)
+	Global("MOVE_HAILEE","GLOBAL",1)
+THEN
+	RESPONSE #100
+		Activate(Myself)
+		SetGlobal("IwIHidden","LOCALS",0)
+		SetGlobal("MOVE_HAILEE","GLOBAL",2)
+		Continue()
+END
+
+IF
+	!IsActive(Myself)
+THEN
+	RESPONSE #100
+		NoAction()
+END
+
+IF
+	Global("HAILEE_HOME","GLOBAL",1)
+	GlobalTimerExpired("IwTimer24","LOCALS")
+	Detect([PC])
+THEN
+	RESPONSE #25
+		DisplayStringHead(Myself,@24101)
+		SetGlobalTimerRandom("IwTimer24","LOCALS",5,10)
+		Continue()
+	RESPONSE #150
+		SetGlobalTimerRandom("IwTimer24","LOCALS",5,10)
+		Continue()
+END
+
+IF
+	Global("HAILEE_HOME","GLOBAL",2)
+	GlobalTimerExpired("IwTimer24","LOCALS")
+	Detect([PC])
+THEN
+	RESPONSE #25
+		DisplayStringHead(Myself,@24592)
+		SetGlobalTimerRandom("IwTimer24","LOCALS",5,10)
+		Continue()
+	RESPONSE #150
+		SetGlobalTimerRandom("IwTimer24","LOCALS",5,10)
+		Continue()
+END
+
+IF
+	Global("HAILEE_HOME","GLOBAL",5)
+	GlobalTimerExpired("IwTimer24","LOCALS")
+	Detect([PC])
+THEN
+	RESPONSE #25
+		DisplayStringHead(Myself,@24593)
+		SetGlobalTimerRandom("IwTimer24","LOCALS",5,10)
+		Continue()
+	RESPONSE #150
+		SetGlobalTimerRandom("IwTimer24","LOCALS",5,10)
+		Continue()
+END
+
+IF
+	Global("HAILEE_HOME","GLOBAL",6)
+	GlobalTimerExpired("IwTimer24","LOCALS")
+	Detect([PC])
+THEN
+	RESPONSE #25
+		DisplayStringHead(Myself,@24594)
+		SetGlobalTimerRandom("IwTimer24","LOCALS",5,10)
+		Continue()
+	RESPONSE #150
+		SetGlobalTimerRandom("IwTimer24","LOCALS",5,10)
+		Continue()
+END
+
+IF
+	GlobalGT("HAILEE_HOME","GLOBAL",2)
+	GlobalLT("HAILEE_HOME","GLOBAL",5)
+	GlobalTimerExpired("IwTimer24","LOCALS")
+	Detect([PC])
+THEN
+	RESPONSE #50
+		DisplayStringHead(Myself,@24591)
+		SetGlobalTimerRandom("IwTimer24","LOCALS",5,10)
+		Continue()
+	RESPONSE #50
+		DisplayStringHead(Myself,@24100)
+		SetGlobalTimerRandom("IwTimer24","LOCALS",5,10)
+		Continue()
+	RESPONSE #150
+		SetGlobalTimerRandom("IwTimer24","LOCALS",5,10)
+		Continue()
+END
+

@@ -1,0 +1,9 @@
+IF
+	Global("ALTAR_OF_SUNSET","MYAREA",1)
+THEN
+	RESPONSE #100
+		CreateItem("DGEM04",1,1,1)
+		SetGlobal("ALTAR_OF_SUNSET","MYAREA",2)
+		ForceSpellRES("IDIN184",Myself)
+END
+

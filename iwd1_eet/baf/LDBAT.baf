@@ -1,0 +1,82 @@
+IF
+	Global("8001_FENGLA_REMOVE","GLOBAL",0)
+	Global("ARROW_MESSAGE","MYAREA",1)
+	!GlobalTimerNotExpired("ARROW_TIMER","MYAREA")
+THEN
+	RESPONSE #100
+		DisplayString(Myself,@18610)
+		SetGlobal("ARROW_MESSAGE","MYAREA",0)
+		SetGlobalTimer("ARROW_TIMER","MYAREA",3)
+		Continue()
+	RESPONSE #100
+		DisplayString(Myself,@18611)
+		SetGlobal("ARROW_MESSAGE","MYAREA",0)
+		SetGlobalTimer("ARROW_TIMER","MYAREA",3)
+		Continue()
+	RESPONSE #100
+		DisplayString(Myself,@19564)
+		SetGlobal("ARROW_MESSAGE","MYAREA",0)
+		SetGlobalTimer("ARROW_TIMER","MYAREA",3)
+		Continue()
+	RESPONSE #100
+		DisplayString(Myself,@19565)
+		SetGlobal("ARROW_MESSAGE","MYAREA",0)
+		SetGlobalTimer("ARROW_TIMER","MYAREA",3)
+		Continue()
+	RESPONSE #100
+		DisplayString(Myself,@19605)
+		SetGlobal("ARROW_MESSAGE","MYAREA",0)
+		SetGlobalTimer("ARROW_TIMER","MYAREA",3)
+		Continue()
+	RESPONSE #100
+		DisplayString(Myself,@19606)
+		SetGlobal("ARROW_MESSAGE","MYAREA",0)
+		SetGlobalTimer("ARROW_TIMER","MYAREA",3)
+		Continue()
+	RESPONSE #100
+		DisplayString(Myself,@19607)
+		SetGlobal("ARROW_MESSAGE","MYAREA",0)
+		SetGlobalTimer("ARROW_TIMER","MYAREA",3)
+		Continue()
+END
+
+IF
+	Global("8001_FENGLA_REMOVE","GLOBAL",0)
+	Entered([PC])
+	IsActive(LastTrigger)
+THEN
+	RESPONSE #100
+		ReallyForceSpell(LastTrigger,TRAP_ARROW)
+		SetGlobal("ARROW_MESSAGE","MYAREA",1)
+END
+
+IF
+	Global("8001_FENGLA_REMOVE","GLOBAL",0)
+	Opened([PC])
+	IsActive(LastTrigger)
+THEN
+	RESPONSE #100
+		ReallyForceSpell(LastTrigger,TRAP_ARROW)
+		SetGlobal("ARROW_MESSAGE","MYAREA",1)
+END
+
+IF
+	Global("8001_FENGLA_REMOVE","GLOBAL",0)
+	Entered([0.0.SVIRFNEBLIN])
+	IsActive(LastTrigger)
+THEN
+	RESPONSE #100
+		ReallyForceSpell(LastTrigger,TRAP_ARROW)
+		SetGlobal("ARROW_MESSAGE","MYAREA",1)
+END
+
+IF
+	Global("8001_FENGLA_REMOVE","GLOBAL",0)
+	Opened([0.0.SVIRFNEBLIN])
+	IsActive(LastTrigger)
+THEN
+	RESPONSE #100
+		ReallyForceSpell(LastTrigger,TRAP_ARROW)
+		SetGlobal("ARROW_MESSAGE","MYAREA",1)
+END
+

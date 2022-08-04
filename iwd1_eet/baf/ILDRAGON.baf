@@ -1,0 +1,56 @@
+IF
+	Global("GEM_ACTIVE","GLOBAL",0)
+	HP(Myself,1)
+THEN
+	RESPONSE #100
+		SetGlobal("GEM_ACTIVE","GLOBAL",1)
+		StartCutSceneMode()
+		HideGUI()
+		StartCutScene("ILDRGDIE")
+END
+
+IF
+	!Global("GEM_ACTIVE","GLOBAL",0)
+THEN
+	RESPONSE #100
+		Kill(Myself)
+END
+
+IF
+	!GlobalTimerNotExpired("IwTimer27","LOCALS")
+	!GlobalTimerNotExpired("IwTimer24","LOCALS")
+	See([PC])
+THEN
+	RESPONSE #100
+		SetGlobalTimerRandom("IwTimer27","LOCALS",28,35)
+		ForceSpellRES("IDIN161",[PC])  // INNATE_DRAGON_BREATH
+		Wait(2)
+END
+
+IF
+	!GlobalTimerNotExpired("IwTimer25","LOCALS")
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		SetGlobalTimerRandom("IwTimer25","LOCALS",14,21)
+		SetGlobalTimer("IwTimer24","LOCALS",3)
+		Wait(10)
+		//StartCutScene("ILWNGBUF")
+		SetInterrupt(FALSE)
+		PlaySound("RDAGON12")
+		SetSequence(SEQ_SHOOT)
+		Wait(1)
+		ReallyForceSpellRES("IDIN159",NearestEnemyOf(Myself))  // Удар крылом
+		SetSequence(SEQ_SHOOT)
+		SetInterrupt(TRUE)
+		Wait(1)
+END
+
+IF
+	!GlobalTimerNotExpired("IwTimer24","LOCALS")
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		AttackReevaluate(LastSeenBy(Myself),45)
+END
+

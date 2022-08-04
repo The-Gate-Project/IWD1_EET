@@ -1,0 +1,19 @@
+IF
+	!BitCheck("CREATURE_STATE_VAR","LOCALS",512)
+	HPPercentLT(Myself,100)
+	!StateCheck(Myself,STATE_REALLY_DEAD)
+THEN
+	RESPONSE #100
+		BitSet("CREATURE_STATE_VAR","LOCALS",512)
+		ReallyForceSpellRES("IDWI220",Myself) //WIZARD_SNILLOCS_SNOWBALL_SWARM
+		AddXPWorth(Myself)
+		Kill(Myself)
+END
+
+IF
+	BitCheck("CREATURE_STATE_VAR","LOCALS",512)
+THEN
+	RESPONSE #100
+		Kill(Myself)
+END
+

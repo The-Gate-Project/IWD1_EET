@@ -1,0 +1,27 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId("LUREMASTER")
+		StartCutSceneMode()
+		ClearAllActions()
+		MultiPlayerSync()
+		FaceObject([PC])
+		Wait(1)
+		GiveItemCreate("CIFADE",Myself,1,1,1)
+		MoveViewPoint([1197.1102],INSTANT)
+		Wait(2)
+		CloseDoor("AR9718_DOOR1")
+		MultiPlayerSync()
+		Wait(2)
+		MoveViewObject(Myself,VERY_FAST)
+		Wait(3)
+		EquipItemEx("CIFADE",0)
+		Wait(1)
+		//HideCreature(Myself,TRUE)
+		ApplySpellRES("IDINVIS4",Myself)
+		MultiPlayerSync()
+		EndCutSceneMode()
+		DestroySelf()
+END
+

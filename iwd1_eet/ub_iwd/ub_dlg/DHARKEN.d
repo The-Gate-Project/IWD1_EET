@@ -1,0 +1,51 @@
+BEGIN ~DHARKEN~
+
+IF ~NumTimesTalkedTo(0)~ THEN BEGIN 0
+  SAY @9178
+  IF ~~ THEN REPLY @10432 GOTO 1
+  IF ~~ THEN REPLY @1428 GOTO 2
+END
+
+IF ~~ THEN BEGIN 1
+  SAY @10434
+  IF ~~ THEN REPLY @10437 GOTO 3
+  IF ~~ THEN REPLY @10438 GOTO 3
+END
+
+IF ~~ THEN BEGIN 2
+  SAY @10439
+  IF ~~ THEN REPLY @10440 GOTO 1
+END
+
+IF ~~ THEN BEGIN 3
+  SAY @10441
+  IF ~Class(LastTalkedToBy,PALADIN_ALL)
+      !Kit(LastTalkedToBy,BLACKGUARD)~ THEN REPLY @10442 DO ~SetGlobal("Harken_Quest","GLOBAL",1)~ GOTO 4
+  IF ~Class(LastTalkedToBy,CLERIC_ALL)~ THEN REPLY @10442 DO ~SetGlobal("Harken_Quest","GLOBAL",1)~ GOTO 4
+  IF ~OR(2)
+        !Class(LastTalkedToBy,PALADIN_ALL)
+        Kit(LastTalkedToBy,BLACKGUARD)
+      !Class(LastTalkedToBy,CLERIC_ALL)~ THEN REPLY @10444 DO ~SetGlobal("Harken_Quest","GLOBAL",1)~ GOTO 5
+END
+
+IF ~~ THEN BEGIN 4
+  SAY @10445
+  IF ~~ THEN EXIT
+END
+
+IF ~~ THEN BEGIN 5
+  SAY @10446
+  IF ~~ THEN EXIT
+END
+
+IF ~NumTimesTalkedToGT(0)
+    GlobalLT("Voice_Quest","GLOBAL",2)~ THEN BEGIN 6
+  SAY @10447
+  IF ~~ THEN REPLY @10448 EXIT
+END
+
+IF ~NumTimesTalkedToGT(0)
+    Global("Voice_Quest","GLOBAL",2)~ THEN BEGIN 7
+  SAY @10449
+  IF ~~ THEN EXIT
+END

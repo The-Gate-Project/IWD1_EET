@@ -1,0 +1,56 @@
+IF
+  !Global("TRIGGER_INITIALIZE","MYAREA",1)
+THEN
+  RESPONSE #100
+    SetGlobal("TRIGGER_INITIALIZE","MYAREA",1)
+    TriggerActivation("To8013",FALSE)
+    Continue()
+END
+
+IF
+  !Global("crazy_priests","GLOBAL",1)
+  !Global("SPRITE_IS_DEADThe_Idol","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("crazy_priests","GLOBAL",1)
+    Continue()
+END
+
+IF
+	!Global("8012_SPAWN","GLOBAL",0)
+	!Global("SPRITE_IS_DEADThe_Idol","GLOBAL",0)
+THEN
+	RESPONSE #100
+		OpenDoor("AR8012STATUE")
+		SetGlobal("8012_SPAWN","GLOBAL",0)
+		Continue()
+END
+
+IF
+	Global("8012_SPAWN","GLOBAL",0)
+	Global("SPRITE_IS_DEADThe_Idol","GLOBAL",0)
+THEN
+	RESPONSE #100
+		SetGlobal("8012_SPAWN","GLOBAL",1)
+		Continue()
+END
+
+IF
+	Global("PERDIEM_BADGE","GLOBAL",0)
+	PartyHasItem("PERDIEM")
+THEN
+	RESPONSE #100
+		SetGlobal("PERDIEM_BADGE","GLOBAL",1)
+		AddXP2DA("ID1EX11A")
+		DisplayStringNoName(Player1,@19563)
+		Continue()
+END
+
+IF
+	OnCreation()
+THEN
+	RESPONSE #100
+		NoAction()
+		Continue()
+END
+

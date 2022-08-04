@@ -1,0 +1,19 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Myself)
+		Enemy()
+		SetSequence(SEQ_CAST)
+		SmallWait(5)
+		CreateVisualEffectObject("ILLUSH",Myself)
+		CreateCreature("POMIMG",[461.536],S)
+		CreateCreature("POMIMG",[451.536],S)
+		CreateCreature("POMIMG",[460.539],S)
+		CreateCreature("POMIMG",[460.533],S)
+		CreateCreature("POMIMG",[452.539],S)
+		CreateCreature("EEPOMAB",[452.533],S)
+		SmallWait(5)
+		EndCutSceneMode()
+		DestroySelf()
+END

@@ -1,0 +1,147 @@
+BEGIN ~DCAPVIL~
+
+IF WEIGHT #19
+~RandomNum(10,1)
+ !Global("SPRITE_IS_DEADLizard_King","GLOBAL",1)~ THEN BEGIN 0
+  SAY @1874
+  IF ~~ THEN EXIT
+END
+
+IF WEIGHT #20
+~RandomNum(10,2)
+ !Global("SPRITE_IS_DEADLizard_King","GLOBAL",1)~ THEN BEGIN 1
+  SAY @1877
+  IF ~~ THEN EXIT
+END
+
+IF WEIGHT #0
+~RandomNum(10,3)
+ !Global("SPRITE_IS_DEADLizard_King","GLOBAL",1)~ THEN BEGIN 2
+  SAY @1878
+  IF ~~ THEN EXIT
+END
+
+IF WEIGHT #1
+~RandomNum(10,4)
+ !Global("SPRITE_IS_DEADLizard_King","GLOBAL",1)~ THEN BEGIN 3
+  SAY @1879
+  IF ~~ THEN EXIT
+END
+
+IF WEIGHT #2
+~RandomNum(10,5)
+ !Global("SPRITE_IS_DEADLizard_King","GLOBAL",1)~ THEN BEGIN 4
+  SAY @1880
+  IF ~~ THEN EXIT
+END
+
+IF WEIGHT #3
+~RandomNum(10,6)
+ !Global("SPRITE_IS_DEADLizard_King","GLOBAL",1)~ THEN BEGIN 5
+  SAY @1882
+  IF ~~ THEN EXIT
+END
+
+IF WEIGHT #4
+~RandomNum(10,7)
+ !Global("SPRITE_IS_DEADLizard_King","GLOBAL",1)~ THEN BEGIN 6
+  SAY @1883
+  IF ~~ THEN EXIT
+END
+
+IF WEIGHT #5
+~RandomNum(10,8)
+ !Global("SPRITE_IS_DEADLizard_King","GLOBAL",1)~ THEN BEGIN 7
+  SAY @1884
+  IF ~~ THEN EXIT
+END
+
+IF WEIGHT #6
+~RandomNum(10,9)
+ !Global("SPRITE_IS_DEADLizard_King","GLOBAL",1)~ THEN BEGIN 8
+  SAY @1885
+  IF ~~ THEN EXIT
+END
+
+IF WEIGHT #7
+~RandomNum(10,10)
+ !Global("SPRITE_IS_DEADLizard_King","GLOBAL",1)~ THEN BEGIN 9
+  SAY @1888
+  IF ~~ THEN EXIT
+END
+
+IF WEIGHT #8
+~RandomNum(10,1)
+ Global("SPRITE_IS_DEADLizard_King","GLOBAL",1)~ THEN BEGIN 10
+  SAY @1889
+  IF ~~ THEN EXIT
+END
+
+IF WEIGHT #9
+~RandomNum(10,2)
+ Global("SPRITE_IS_DEADLizard_King","GLOBAL",1)~ THEN BEGIN 11
+  SAY @1890
+  IF ~~ THEN EXIT
+END
+
+IF WEIGHT #10
+~RandomNum(10,3)
+ Global("SPRITE_IS_DEADLizard_King","GLOBAL",1)~ THEN BEGIN 12
+  SAY @1891
+  IF ~~ THEN EXIT
+END
+
+IF WEIGHT #11
+~RandomNum(10,4)
+ Global("SPRITE_IS_DEADLizard_King","GLOBAL",1)~ THEN BEGIN 13
+  SAY @1893
+  IF ~~ THEN EXIT
+END
+
+IF WEIGHT #12
+~RandomNum(10,5)
+ Global("SPRITE_IS_DEADLizard_King","GLOBAL",1)~ THEN BEGIN 14
+  SAY @1894
+  IF ~~ THEN EXIT
+END
+
+IF WEIGHT #13
+~RandomNum(10,6)
+ Global("SPRITE_IS_DEADLizard_King","GLOBAL",1)~ THEN BEGIN 15
+  SAY @1895
+  IF ~~ THEN EXIT
+END
+
+IF WEIGHT #14
+~RandomNum(10,7)
+ Global("SPRITE_IS_DEADLizard_King","GLOBAL",1)~ THEN BEGIN 16
+  SAY @1896
+  IF ~~ THEN EXIT
+END
+
+IF WEIGHT #15
+~RandomNum(10,8)
+ Global("SPRITE_IS_DEADLizard_King","GLOBAL",1)~ THEN BEGIN 17
+  SAY @1897
+  IF ~~ THEN EXIT
+END
+
+IF WEIGHT #16
+~RandomNum(10,9)
+ Global("SPRITE_IS_DEADLizard_King","GLOBAL",1)~ THEN BEGIN 18
+  SAY @1898
+  IF ~~ THEN EXIT
+END
+
+IF WEIGHT #17
+~RandomNum(10,10)
+ Global("SPRITE_IS_DEADLizard_King","GLOBAL",1)~ THEN BEGIN 19
+  SAY @1899
+  IF ~~ THEN EXIT
+END
+
+IF WEIGHT #18
+~True()~ THEN BEGIN 20
+  SAY @1900
+  IF ~~ THEN EXIT
+END

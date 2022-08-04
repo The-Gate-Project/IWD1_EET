@@ -1,0 +1,13 @@
+IF
+	NumTimesTalkedTo(0)
+	See([PC])
+	!Allegiance(Myself,ENEMY)
+	//!Dead("yself)")
+	!StateCheck(Myself,STATE_REALLY_DEAD)
+THEN
+	RESPONSE #100
+		//SetDialogueRange(300)
+		ApplySpellRES("BDCUTSPY",Myself)
+		StartDialogNoSet(Player1)
+END
+

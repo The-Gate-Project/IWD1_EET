@@ -1,0 +1,59 @@
+IF
+	StateCheck(Myself,STATE_PANIC)
+THEN
+	RESPONSE #100
+		RandomWalkContinuous()
+END
+
+IF
+	!BitCheck("CREATURE_STATE_VAR","LOCALS",256)
+	Range([0.0.ELEMENTAL],2)
+THEN
+	RESPONSE #100
+		BitSet("CREATURE_STATE_VAR","LOCALS",256)
+		DisplayStringHead(Myself,@15475)
+		Continue()
+END
+
+IF
+	BitCheck("CREATURE_STATE_VAR","LOCALS",256)
+	!Range([0.0.ELEMENTAL],2)
+THEN
+	RESPONSE #100
+		BitClear("CREATURE_STATE_VAR","LOCALS",256)
+		Continue()
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		Help()
+		AttackReevaluate(LastSeenBy(Myself),75)
+END
+
+IF
+	AttackedBy(NearestEnemyOf(Myself),DEFAULT)
+THEN
+	RESPONSE #100
+		MoveToObject(LastAttackerOf(Myself))
+END
+
+IF
+	Allegiance([0.0.SALAMANDER],ENEMY)
+	Help([0.0.SALAMANDER])
+THEN
+	RESPONSE #100
+		Enemy()
+		MoveToObject(LastHelp(Myself))
+END
+
+IF
+	Allegiance([0.0.ELEMENTAL],ENEMY)
+	Help([0.0.ELEMENTAL])
+THEN
+	RESPONSE #100
+		Enemy()
+		MoveToObject(LastHelp(Myself))
+END
+

@@ -1,0 +1,39 @@
+IF
+	!Global("SHACFLT1_INACTIVE","LOCALS",1)
+	BitCheck("AREA_GROUP_VAR","MYAREA",1)
+THEN
+	RESPONSE #100
+		SetGlobal("SHACFLT1_INACTIVE","LOCALS",1)
+END
+
+IF
+	!Global("SHACFLT1_INACTIVE","LOCALS",1)
+	!BitCheck("CREATURE_STATE_VAR","LOCALS",1)
+THEN
+	RESPONSE #100
+		BitSet("CREATURE_STATE_VAR","LOCALS",1)
+		SetGlobalTimer("IwTimer24","LOCALS",4)
+		Continue()
+END
+
+IF
+	!Global("SHACFLT1_INACTIVE","LOCALS",1)
+	GlobalTimerExpired("IwTimer24","LOCALS")
+THEN
+	RESPONSE #90
+		DisplayStringHead(Myself,@16937)
+		SetGlobalTimer("IwTimer24","LOCALS",4)
+		Continue()
+	RESPONSE #90
+		DisplayStringHead(Myself,@17220)
+		SetGlobalTimer("IwTimer24","LOCALS",4)
+		Continue()
+	RESPONSE #90
+		DisplayStringHead(Myself,@17222)
+		SetGlobalTimer("IwTimer24","LOCALS",4)
+		Continue()
+	RESPONSE #40
+		SetGlobalTimer("IwTimer24","LOCALS",4)
+		Continue()
+END
+

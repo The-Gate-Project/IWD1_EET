@@ -1,0 +1,9 @@
+IF
+	!GlobalTimerNotExpired("IwTimer27","LOCALS")
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		SetGlobalTimerRandom("IwTimer27","LOCALS",3,18)
+		Help()
+END
+

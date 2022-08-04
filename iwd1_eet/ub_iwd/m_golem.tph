@@ -1,0 +1,61 @@
+
+EXTEND_TOP    ~ldmalvon.bcs~ ~iwd1_eet/ub_iwd/baf/ldmalvon.baf~
+
+COMPILE ~iwd1_eet/ub_iwd/baf/cdmalgol.baf~
+        ~iwd1_eet/ub_iwd/dlg/malgolem.d~
+
+EXTEND_BOTTOM ~ID8007.bcs~   ~iwd1_eet/ub_iwd/baf/ar8007.baf~
+
+COPY_EXISTING ~ID8010.are~ ~override~
+	READ_LONG  0x54 "actor_off"
+	READ_SHORT 0x58 "actor_num"
+	FOR (index = 0 ; index < actor_num ; index = index + 1) BEGIN
+		READ_ASCII ("%actor_off%" + 0x80 + ("%index%" * 0x110)) "cre_file"
+		PATCH_IF ("%cre_file%" STRING_COMPARE_CASE "golemiro" = 0) BEGIN
+			WRITE_ASCII ("%actor_off%" + 0x78 + ("%index%" * 0x110)) ~cdmalgol~  #8 // specific script
+		END ELSE
+		PATCH_IF ("%cre_file%" STRING_COMPARE_CASE "svirblnd" = 0) BEGIN
+			READ_ASCII ("%actor_off%" + 0x48 + ("%index%" * 0x110)) "dialogue"
+			PATCH_IF ("%dialogue%" STRING_COMPARE_CASE "" = 0) BEGIN // if no dialogue file, assign one
+				WRITE_ASCII ("%actor_off%" + 0x48 + ("%index%" * 0x110)) ~dgnomebl~  #8 // dialogue file
+			END
+		END
+	END
+	BUT_ONLY_IF_IT_CHANGES
+
+COPY_EXISTING ~book01.itm~ ~override/cdmgolem.itm~
+	WRITE_SHORT 0x42 0
+	SAY 0x08 @300000101
+	SAY 0x0c @300000101
+	SAY 0x50 @18713
+	SAY 0x54 @18713
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

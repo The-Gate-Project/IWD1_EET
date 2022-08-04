@@ -1,0 +1,21 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId("ANGAAR")
+		StartCutSceneMode()
+		ActionOverride("9200_WARRIOR_1",FaceObject("ANGAAR"))
+		ActionOverride("9200_WARRIOR_2",FaceObject("ANGAAR"))
+		ActionOverride("9200_WARRIOR_3",FaceObject("ANGAAR"))
+		ActionOverride("9200_WARRIOR_4",FaceObject("ANGAAR"))
+		ActionOverride("9200_WARRIOR_5",FaceObject("ANGAAR"))
+		ActionOverride("9200_WARRIOR_6",FaceObject("ANGAAR"))
+		Wait(1)
+		//SetDialogueRange(300)
+		MultiPlayerSync()
+		Face(W)
+		MultiPlayerSync()
+		//Dialogue(Protagonist)
+		StartDialogNoSet(PartySlot1)
+END
+

@@ -1,0 +1,128 @@
+IF
+	Global("SQUIRRELS_VIS","MYAREA",0)
+	!Global("ARBOR_SQUIRRELS","GLOBAL",0)
+THEN
+	RESPONSE #100
+		SetGlobal("DO_FADE","MYAREA",1)
+		Continue()
+END
+
+IF
+	Global("BIRDS_VIS","MYAREA",0)
+	!Global("ARBOR_BIRDS","GLOBAL",0)
+THEN
+	RESPONSE #100
+		SetGlobal("DO_FADE","MYAREA",1)
+		Continue()
+END
+
+IF
+	Global("WATER_VIS","MYAREA",0)
+	!Global("ARBOR_WATER","GLOBAL",0)
+THEN
+	RESPONSE #100
+		SetGlobal("DO_FADE","MYAREA",1)
+		Continue()
+END
+
+IF
+	Global("SEEDS_VIS","MYAREA",0)
+	!Global("ARBOR_SEEDS","GLOBAL",0)
+THEN
+	RESPONSE #100
+		SetGlobal("DO_FADE","MYAREA",1)
+		Continue()
+END
+
+IF
+	Global("DO_FADE","MYAREA",1)
+THEN
+	RESPONSE #100
+		StartCutSceneMode()
+		ClearAllActions()
+		FadeToColor([0.0],0)
+		Wait(1)
+		Continue()
+END
+
+IF
+	Global("DO_FADE","MYAREA",1)
+	Global("SQUIRRELS_VIS","MYAREA",0)
+	!Global("ARBOR_SQUIRRELS","GLOBAL",0)
+THEN
+	RESPONSE #100
+		SetGlobal("SQUIRRELS_VIS","MYAREA",1)
+		Activate("IDSQUIRREL00")
+		Activate("IDSQUIRREL01")
+		Activate("IDSQUIRREL02")
+		Activate("IDSQUIRREL03")
+		Activate("IDSQUIRREL04")
+		Activate("IDSQUIRREL05")
+		ActionOverride("IDSQUIRREL00",SetGlobal("IwIHidden","LOCALS",0))
+		ActionOverride("IDSQUIRREL01",SetGlobal("IwIHidden","LOCALS",0))
+		ActionOverride("IDSQUIRREL02",SetGlobal("IwIHidden","LOCALS",0))
+		ActionOverride("IDSQUIRREL03",SetGlobal("IwIHidden","LOCALS",0))
+		ActionOverride("IDSQUIRREL04",SetGlobal("IwIHidden","LOCALS",0))
+		ActionOverride("IDSQUIRREL05",SetGlobal("IwIHidden","LOCALS",0))
+		Continue()
+END
+
+IF
+	Global("DO_FADE","MYAREA",1)
+	Global("BIRDS_VIS","MYAREA",0)
+	!Global("ARBOR_BIRDS","GLOBAL",0)
+THEN
+	RESPONSE #100
+		SetGlobal("BIRDS_VIS","MYAREA",1)
+		Activate("IDBIRD00")
+		Activate("IDBIRD01")
+		Activate("IDBIRD02")
+		Activate("IDBIRD03")
+		Activate("IDBIRD04")
+		ActionOverride("IDBIRD00",SetGlobal("IwIHidden","LOCALS",0))
+		ActionOverride("IDBIRD01",SetGlobal("IwIHidden","LOCALS",0))
+		ActionOverride("IDBIRD02",SetGlobal("IwIHidden","LOCALS",0))
+		ActionOverride("IDBIRD03",SetGlobal("IwIHidden","LOCALS",0))
+		ActionOverride("IDBIRD04",SetGlobal("IwIHidden","LOCALS",0))
+		Continue()
+END
+
+IF
+	Global("DO_FADE","MYAREA",1)
+	Global("WATER_VIS","MYAREA",0)
+	!Global("ARBOR_WATER","GLOBAL",0)
+THEN
+	RESPONSE #100
+		SetGlobal("WATER_VIS","MYAREA",1)
+		OpenDoor("AR5304WATER1")
+		Continue()
+END
+
+IF
+	Global("DO_FADE","MYAREA",1)
+	Global("SEEDS_VIS","MYAREA",0)
+	!Global("ARBOR_SEEDS","GLOBAL",0)
+THEN
+	RESPONSE #100
+		SetGlobal("SEEDS_VIS","MYAREA",1)
+		OpenDoor("AR5304GARDEN1")
+		Continue()
+END
+
+IF
+	Global("DO_FADE","MYAREA",1)
+THEN
+	RESPONSE #100
+		EndCutSceneMode()
+		FadeFromColor([0.0],0)
+		SetGlobal("DO_FADE","MYAREA",0)
+END
+
+IF
+	OnCreation()
+THEN
+	RESPONSE #100
+		NoAction()
+		Continue()
+END
+

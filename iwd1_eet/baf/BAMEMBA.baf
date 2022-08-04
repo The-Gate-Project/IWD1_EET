@@ -1,0 +1,55 @@
+IF
+	StateCheck(Myself,STATE_PANIC)
+THEN
+	RESPONSE #100
+		RandomWalkContinuous()
+END
+
+IF
+	GlobalGT("CAST_KNELL","LOCALS",1)
+	!Difficulty(EASIEST)
+	!GlobalTimerNotExpired("IwTimer25","LOCALS")
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #50
+		SetGlobal("CAST_KNELL","LOCALS",0)
+		ForceSpellRES("IDIN135",NearestEnemyOf(Myself)) //INNATE_DEATH_KNELL
+		SetGlobalTimerRandom("IwTimer25","LOCALS",4,7)
+	RESPONSE #25
+		ForceSpellRES("IDIN134",NearestEnemyOf(Myself)) //INNATE_MOURNFUL_WAIL
+		SetGlobalTimerRandom("IwTimer25","LOCALS",4,7)
+	RESPONSE #25
+		ForceSpellRES("IDIN137",NearestEnemyOf(Myself)) //INNATE_UNDYING_LAMENT
+		SetGlobalTimerRandom("IwTimer25","LOCALS",4,7)
+END
+
+IF
+	!GlobalTimerNotExpired("IwTimer25","LOCALS")
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #50
+		IncrementGlobal("CAST_KNELL","LOCALS",1)
+		ForceSpellRES("IDIN134",NearestEnemyOf(Myself)) //INNATE_MOURNFUL_WAIL
+		SetGlobalTimerRandom("IwTimer25","LOCALS",4,7)
+	RESPONSE #50
+		IncrementGlobal("CAST_KNELL","LOCALS",1)
+		ForceSpellRES("IDIN137",NearestEnemyOf(Myself)) //INNATE_UNDYING_LAMENT
+		SetGlobalTimerRandom("IwTimer25","LOCALS",4,7)
+END
+
+IF
+	Allegiance(Myself,ENEMY)
+	AttackedBy([GOODCUTOFF],DEFAULT)
+THEN
+	RESPONSE #100
+		RunAwayFromNoLeaveArea(LastAttackerOf(Myself),45)
+END
+
+IF
+	See([PC])
+THEN
+	RESPONSE #100
+		FaceObject(LastSeenBy(Myself))
+		Continue()
+END
+

@@ -1,0 +1,10 @@
+IF
+  !Global("ITEM_NO_DROP","LOCALS",1)
+THEN
+  RESPONSE #100
+    SetGlobal("ITEM_NO_DROP","LOCALS",1)
+    SetItemFlags("CMAX03",10,TRUE)
+    CreateItem("AX1H01",0,0,0)
+    Continue()
+END
+

@@ -1,0 +1,390 @@
+BEGIN ~DLARREL~
+
+IF WEIGHT #1
+~GlobalLT("Astrolab","GLOBAL",4)~ THEN BEGIN 0
+  SAY @15159
+  IF ~~ THEN REPLY @15164 GOTO 1
+  IF ~~ THEN REPLY @15165 DO ~Enemy()~ EXIT
+  IF ~~ THEN REPLY @15167 EXIT
+  IF ~~ THEN REPLY @15169 EXIT
+END
+
+IF ~~ THEN BEGIN 1
+  SAY @15170
+  IF ~~ THEN REPLY @15171 DO ~Enemy()~ EXIT
+  IF ~~ THEN REPLY @15172 EXIT
+END
+
+IF ~~ THEN BEGIN 2
+  SAY @15173
+  IF ~~ THEN EXIT
+END
+
+IF ~~ THEN BEGIN 3
+  SAY @15174
+  IF ~~ THEN EXIT
+END
+
+IF ~~ THEN BEGIN 4
+  SAY @15175
+  IF ~~ THEN EXIT
+END
+
+IF ~~ THEN BEGIN 5
+  SAY @15176
+  IF ~~ THEN EXIT
+END
+
+IF ~~ THEN BEGIN 6
+  SAY @15177
+  IF ~~ THEN EXIT
+END
+
+IF ~~ THEN BEGIN 7
+  SAY @15178
+  IF ~~ THEN EXIT
+END
+
+IF ~~ THEN BEGIN 8
+  SAY @15179
+  IF ~~ THEN EXIT
+END
+
+IF WEIGHT #2
+~Global("Astrolab","GLOBAL",4)
+ Global("Know_Larrel","GLOBAL",0)~ THEN BEGIN 9
+  SAY @15182
+  IF ~~ THEN REPLY @15183 DO ~SetGlobal("Know_Larrel","GLOBAL",1)~ GOTO 11
+  IF ~~ THEN REPLY @15184 DO ~SetGlobal("Know_Larrel","GLOBAL",1)~ GOTO 12
+  IF ~~ THEN REPLY @15185 DO ~SetGlobal("Know_Larrel","GLOBAL",1)~ GOTO 13
+END
+
+IF ~~ THEN BEGIN 10
+  SAY @15186
+  IF ~~ THEN EXIT
+END
+
+IF ~~ THEN BEGIN 11
+  SAY @15187
+  IF ~~ THEN REPLY @15188 GOTO 14
+  IF ~~ THEN REPLY @15189 GOTO 18
+END
+
+IF ~~ THEN BEGIN 12
+  SAY @15190
+  IF ~~ THEN REPLY @15191 GOTO 14
+  IF ~~ THEN REPLY @15192 GOTO 18
+END
+
+IF ~~ THEN BEGIN 13
+  SAY @15193
+  IF ~~ THEN REPLY @15194 GOTO 14
+  IF ~~ THEN REPLY @15195 GOTO 18
+  IF ~~ THEN REPLY @15196 DO ~Enemy()~ EXIT
+END
+
+IF ~~ THEN BEGIN 14
+  SAY @15197
+  IF ~~ THEN GOTO 15
+END
+
+IF ~~ THEN BEGIN 15
+  SAY @15198
+  IF ~~ THEN GOTO 16
+END
+
+IF ~~ THEN BEGIN 16
+  SAY @15199
+  IF ~~ THEN REPLY @15200 GOTO 17
+  IF ~~ THEN REPLY @15201 GOTO 17
+  IF ~~ THEN REPLY @15202 GOTO 17
+END
+
+IF ~~ THEN BEGIN 17
+  SAY @15203
+  IF ~~ THEN REPLY @15204 DO ~SetGlobal("Larrel_Cutscene","GLOBAL",1)
+                              TakePartyItem("HeartGM")
+                              SetGlobal("HearstoneGiven","GLOBAL",1)
+                              AddXP2DA("ID1EX7H")
+                              DisplayStringNoNameDlg(LastTalkedToBy,@6516)
+                              AddJournalEntry(@34238,QUEST)
+                              StartCutScene("ShLarMov")~ EXIT
+END
+
+IF ~~ THEN BEGIN 18
+  SAY @15205
+  IF ~~ THEN REPLY @15206 GOTO 19
+  IF ~~ THEN REPLY @15207 GOTO 22
+  IF ~~ THEN REPLY @15208 GOTO 32
+  IF ~Global("DarkestHourRead","GLOBAL",1)~ THEN REPLY @15209 GOTO 47
+  IF ~~ THEN REPLY @15210 EXIT
+END
+
+IF ~~ THEN BEGIN 19
+  SAY @15213
+  IF ~~ THEN REPLY @15214 GOTO 20
+  IF ~~ THEN REPLY @15215 GOTO 18
+  IF ~~ THEN REPLY @15216 EXIT
+END
+
+IF ~~ THEN BEGIN 20
+  SAY @15217
+  IF ~~ THEN REPLY @15214 GOTO 21
+  IF ~~ THEN REPLY @15215 GOTO 18
+  IF ~~ THEN REPLY @15216 EXIT
+END
+
+IF ~~ THEN BEGIN 21
+  SAY @15220
+  IF ~~ THEN REPLY @15222 GOTO 22
+  IF ~~ THEN REPLY @15208 GOTO 32
+  IF ~~ THEN REPLY @15216 EXIT
+END
+
+IF ~~ THEN BEGIN 22
+  SAY @15227
+  IF ~~ THEN REPLY @15214 GOTO 23
+  IF ~~ THEN REPLY @15215 GOTO 18
+  IF ~~ THEN REPLY @15216 EXIT
+END
+
+IF ~~ THEN BEGIN 23
+  SAY @15233
+  IF ~~ THEN REPLY @15214 GOTO 24
+  IF ~~ THEN REPLY @15215 GOTO 18
+  IF ~~ THEN REPLY @15216 EXIT
+END
+
+IF ~~ THEN BEGIN 24
+  SAY @15238
+  IF ~~ THEN REPLY @15214 GOTO 25
+  IF ~~ THEN REPLY @15215 GOTO 18
+  IF ~~ THEN REPLY @15216 EXIT
+END
+
+IF ~~ THEN BEGIN 25
+  SAY @15243
+  IF ~~ THEN REPLY @15214 GOTO 26
+  IF ~~ THEN REPLY @15215 GOTO 18
+  IF ~~ THEN REPLY @15216 EXIT
+END
+
+IF ~~ THEN BEGIN 26
+  SAY @15250
+  IF ~~ THEN REPLY @15214 GOTO 27
+  IF ~~ THEN REPLY @15215 GOTO 18
+  IF ~~ THEN REPLY @15216 EXIT
+END
+
+IF ~~ THEN BEGIN 27
+  SAY @15263
+  IF ~~ THEN REPLY @15214 GOTO 29
+  IF ~~ THEN REPLY @15215 GOTO 18
+  IF ~~ THEN REPLY @15216 EXIT
+END
+
+IF ~~ THEN BEGIN 28
+  SAY @15269
+  IF ~~ THEN REPLY @15214 EXIT
+  IF ~~ THEN REPLY @18833 EXIT
+  IF ~~ THEN REPLY @15216 EXIT
+END
+
+IF ~~ THEN BEGIN 29
+  SAY @15273
+  IF ~~ THEN REPLY @15214 GOTO 31
+  IF ~~ THEN REPLY @15215 GOTO 18
+  IF ~~ THEN REPLY @15216 EXIT
+END
+
+IF ~~ THEN BEGIN 30
+  SAY @15277
+  IF ~~ THEN EXIT
+END
+
+IF ~~ THEN BEGIN 31
+  SAY @15278
+  IF ~~ THEN REPLY @15215 GOTO 18
+  IF ~~ THEN REPLY @15210 EXIT
+END
+
+IF ~~ THEN BEGIN 32
+  SAY @15281
+  IF ~~ THEN REPLY @15214 GOTO 33
+  IF ~~ THEN REPLY @15215 GOTO 18
+  IF ~~ THEN REPLY @15216 EXIT
+END
+
+IF ~~ THEN BEGIN 33
+  SAY @15285
+  IF ~~ THEN REPLY @15214 GOTO 34
+  IF ~~ THEN REPLY @15215 GOTO 18
+  IF ~~ THEN REPLY @15216 EXIT
+END
+
+IF ~~ THEN BEGIN 34
+  SAY @15290
+  IF ~~ THEN REPLY @15214 GOTO 35
+  IF ~~ THEN REPLY @15215 GOTO 18
+  IF ~~ THEN REPLY @15216 EXIT
+END
+
+IF ~~ THEN BEGIN 35
+  SAY @15296
+  IF ~~ THEN REPLY @15214 GOTO 36
+  IF ~~ THEN REPLY @15215 GOTO 18
+  IF ~~ THEN REPLY @15216 EXIT
+END
+
+IF ~~ THEN BEGIN 36
+  SAY @15300
+  IF ~~ THEN REPLY @15214 GOTO 37
+  IF ~~ THEN REPLY @15215 GOTO 18
+  IF ~~ THEN REPLY @15216 EXIT
+END
+
+IF ~~ THEN BEGIN 37
+  SAY @15311
+  IF ~~ THEN REPLY @15214 GOTO 38
+  IF ~~ THEN REPLY @15215 GOTO 18
+  IF ~~ THEN REPLY @15216 EXIT
+END
+
+IF ~~ THEN BEGIN 38
+  SAY @15319
+  IF ~~ THEN REPLY @15214 GOTO 39
+  IF ~~ THEN REPLY @15215 GOTO 18
+  IF ~~ THEN REPLY @15216 EXIT
+END
+
+IF ~~ THEN BEGIN 39
+  SAY @15344
+  IF ~~ THEN REPLY @15214 GOTO 40
+  IF ~~ THEN REPLY @15215 GOTO 18
+  IF ~~ THEN REPLY @15216 EXIT
+END
+
+IF ~~ THEN BEGIN 40
+  SAY @15348
+  IF ~~ THEN REPLY @15214 GOTO 41
+  IF ~~ THEN REPLY @15215 GOTO 18
+  IF ~~ THEN REPLY @15216 EXIT
+END
+
+IF ~~ THEN BEGIN 41
+  SAY @15352
+  IF ~~ THEN REPLY @15214 GOTO 42
+  IF ~~ THEN REPLY @15215 GOTO 18
+  IF ~~ THEN REPLY @15216 EXIT
+END
+
+IF ~~ THEN BEGIN 42
+  SAY @15360
+  IF ~~ THEN REPLY @15214 GOTO 43
+  IF ~~ THEN REPLY @15215 GOTO 18
+  IF ~~ THEN REPLY @15216 EXIT
+END
+
+IF ~~ THEN BEGIN 43
+  SAY @15364
+  IF ~~ THEN REPLY @15214 GOTO 44
+  IF ~~ THEN REPLY @15215 GOTO 18
+  IF ~~ THEN REPLY @15216 EXIT
+END
+
+IF ~~ THEN BEGIN 44
+  SAY @15368
+  IF ~~ THEN REPLY @15214 DO ~SetGlobal("DarkestHourRead","GLOBAL",1)
+                              AddJournalEntry(@34237,QUEST)~ GOTO 45
+  IF ~~ THEN REPLY @15215 GOTO 18
+  IF ~~ THEN REPLY @15216 EXIT
+END
+
+IF ~~ THEN BEGIN 45
+  SAY @15372
+  IF ~~ THEN REPLY @15215 GOTO 18
+  IF ~~ THEN REPLY @15210 EXIT
+END
+
+IF WEIGHT #3
+~Global("Astrolab","GLOBAL",4)
+ Global("Know_Larrel","GLOBAL",1)~ THEN BEGIN 46
+  SAY @15373
+  IF ~Global("HearstoneGiven","GLOBAL",0)~ THEN REPLY @15188 GOTO 14
+  IF ~~ THEN REPLY @15189 GOTO 18
+  IF ~Global("DarkestHourRead","GLOBAL",0)~ THEN REPLY @15376 GOTO 47
+  IF ~PartyHasItem("BookEva")~ THEN REPLY @15377 DO ~TakePartyItem("BookEva")
+                                                     DestroyItem("BookEva")
+                                                     SetGlobal("Eva_quest","GLOBAL",1)~ GOTO 48
+  IF ~PartyHasItem("EvaJour")~ THEN REPLY @15378 DO ~SetGlobal("Know_Larrel","GLOBAL",2)
+                                                     TakePartyItem("EvaJour")
+                                                     DestroyItem("EvaJour")
+                                                     //SetQuestDone(@14408)
+                                                     AddJournalEntry(@34236,QUEST)~ GOTO 50
+  IF ~Global("HearstoneGiven","GLOBAL",1)~ THEN REPLY @15379 DO ~SetGlobal("OpenDornsDeep","GLOBAL",1)
+                                                                 StartCutScene("SHLarWrp")~ EXIT
+  IF ~Global("HearstoneGiven","GLOBAL",1)~ THEN REPLY @19612 DO ~SetGlobal("OpenDornsDeep","GLOBAL",1)
+                                                                 StartCutScene("ShLarKul")~ EXIT
+  IF ~~ THEN REPLY @15380 EXIT
+END
+
+IF ~~ THEN BEGIN 47
+  SAY @15381
+  IF ~~ THEN REPLY @15382 EXIT
+END
+
+IF ~~ THEN BEGIN 48
+  SAY @15383
+  IF ~~ THEN REPLY @15384 GOTO 49
+  IF ~~ THEN REPLY @15385 EXIT
+END
+
+IF ~~ THEN BEGIN 49
+  SAY @15386
+  IF ~~ THEN EXIT
+END
+
+IF ~~ THEN BEGIN 50
+  SAY @15387
+  IF ~~ THEN REPLY @15388 DO ~AddXP2DA("ID1EX9A")
+                              DisplayStringNoNameDlg(LastTalkedToBy,@6517)~ EXIT
+END
+
+IF WEIGHT #4
+~Global("Astrolab","GLOBAL",4)
+ Global("Know_Larrel","GLOBAL",2)~ THEN BEGIN 51
+  SAY @15389
+  IF ~~ THEN REPLY @15390 GOTO 52
+  IF ~~ THEN REPLY @15394 EXIT
+END
+
+IF ~~ THEN BEGIN 52
+  SAY @15395
+  IF ~Global("HearstoneGiven","GLOBAL",1)~ THEN REPLY @21306 DO ~SetGlobal("OpenDornsDeep","GLOBAL",1)
+                                                                 StartCutScene("SHLarWrp")~ EXIT
+  IF ~Global("HearstoneGiven","GLOBAL",1)~ THEN REPLY @21307 DO ~SetGlobal("OpenDornsDeep","GLOBAL",1)
+                                                                 StartCutScene("ShLarKul")~ EXIT
+  IF ~~ THEN REPLY @15396 EXIT
+END
+
+IF WEIGHT #0
+~Global("Larrel_Cutscene","GLOBAL",1)~ THEN BEGIN 53
+  SAY @15397
+  IF ~~ THEN DO ~SetGlobal("Larrel_Cutscene","GLOBAL",2)~ GOTO 54
+END
+
+IF ~~ THEN BEGIN 54
+  SAY @15398
+  IF ~~ THEN GOTO 55
+END
+
+IF ~~ THEN BEGIN 55
+  SAY @15399
+  IF ~~ THEN REPLY @15400 DO ~SetGlobal("OpenDornsDeep","GLOBAL",1)
+                              StartCutScene("ShLarWrp")~ EXIT
+  IF ~~ THEN REPLY @19613 DO ~SetGlobal("OpenDornsDeep","GLOBAL",1)
+                              StartCutScene("ShLarKul")~ EXIT
+  IF ~PartyHasItem("BookEva")~ THEN REPLY @19622 DO ~TakePartyItem("BookEva")
+                                                     SetGlobal("Eva_quest","GLOBAL",1)~ GOTO 48
+  IF ~~ THEN REPLY @15401 DO ~SetGlobal("OpenDornsDeep","GLOBAL",1)~ EXIT
+END

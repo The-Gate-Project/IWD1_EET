@@ -1,0 +1,206 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId("GOB9201_1")
+		Enemy()
+		SmallWait(4)
+		FaceObject([PC])
+END
+
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId("GOB9201_2")
+		Enemy()
+		SmallWait(6)
+		FaceObject([PC])
+END
+
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId("GOB9201_3")
+		Enemy()
+		SmallWait(4)
+		FaceObject([PC])
+END
+
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId("GOB9201_4")
+		Enemy()
+		SmallWait(2)
+		FaceObject([PC])
+END
+
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId("GOB9201_5")
+		Enemy()
+		SmallWait(4)
+		FaceObject([PC])
+END
+
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId("GOB9201_6")
+		Enemy()
+		SmallWait(2)
+		FaceObject([PC])
+END
+
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId("SKEL9201_1")
+		SmallWait(2)
+		FaceObject([0.0.GOBLIN])
+END
+
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId("SKEL9201_2")
+		SmallWait(6)
+		FaceObject([0.0.GOBLIN])
+END
+
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId("SKEL9201_3")
+		SmallWait(4)
+		FaceObject([0.0.GOBLIN])
+END
+
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId("SKEL9201_4")
+		SmallWait(2)
+		FaceObject([0.0.GOBLIN])
+END
+
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId("SKEL9201_5")
+		SmallWait(6)
+		FaceObject([0.0.GOBLIN])
+END
+
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId("SKEL9201_6")
+		SmallWait(4)
+		FaceObject([0.0.GOBLIN])
+END
+
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId("9200_WARRIOR_2")
+		Enemy()
+		SmallWait(2)
+		FaceObject([PC])
+END
+
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId("9200_WARRIOR_3")
+		SmallWait(6)
+		FaceObject([0.0.GOBLIN])
+END
+
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId("9200_WARRIOR_5")
+		Enemy()
+		SmallWait(2)
+		FaceObject([PC])
+END
+
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId("9200_WARRIOR_6")
+		SmallWait(4)
+		FaceObject([0.0.GOBLIN])
+END
+
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Player1)
+		SmallWait(6)
+		FaceObject([0.0.GOBLIN])
+END
+
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Player2)
+		SmallWait(2)
+		FaceObject([0.0.GOBLIN])
+END
+
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Player3)
+		SmallWait(4)
+		FaceObject([0.0.GOBLIN])
+END
+
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Player4)
+		SmallWait(2)
+		FaceObject([0.0.GOBLIN])
+END
+
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Player5)
+		SmallWait(4)
+		FaceObject([0.0.GOBLIN])
+END
+
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Player6)
+		SmallWait(2)
+		FaceObject([0.0.GOBLIN])
+END
+

@@ -1,0 +1,99 @@
+IF
+  Global("SaveSavedLoc","LOCALS",0)
+THEN
+  RESPONSE #100
+    SetGlobal("SaveSavedLoc","LOCALS",1)
+    SaveObjectLocation("LOCALS","SavedLoc",Myself)
+    Continue()
+END
+
+IF
+	!Global("SET_ATTACK","LOCALS",0)
+	HaveSpellRES("IDIN177")  // SPIN177.SPL (No such index)
+	!Range(NearestEnemyOf(Myself),8)
+THEN
+	RESPONSE #100
+		SetGlobal("SET_ATTACK","LOCALS",0)
+		Continue()
+END
+
+IF
+	Global("SET_ATTACK","LOCALS",0)
+	OR(2)
+		Range(NearestEnemyOf(Myself),4)
+		!HaveSpellRES("IDIN177")  // SPIN177.SPL (No such index)
+THEN
+	RESPONSE #100
+		SetGlobal("SET_ATTACK","LOCALS",1)
+		Continue()
+END
+
+IF
+	Global("SUMMONER_TURN","MYAREA",1)
+	OR(2)
+		!Global("SET_ATTACK","LOCALS",0)
+		!HaveSpellRES("IDIN177")  // SPIN177.SPL (No such index)
+THEN
+	RESPONSE #100
+		SetGlobal("SUMMONER_TURN","MYAREA",2)
+		Continue()
+END
+
+IF
+	Global("SET_ATTACK","LOCALS",0)
+	Global("SUMMONER_TURN","MYAREA",2)
+	Dead("JACKAL_SUMMONER_2")
+THEN
+	RESPONSE #100
+		SetGlobal("SUMMONER_TURN","MYAREA",1)
+		Continue()
+END
+
+IF
+	StateCheck(Myself,STATE_PANIC)
+THEN
+	RESPONSE #100
+		RandomWalkContinuous()
+END
+
+
+
+IF
+	!GlobalTimerNotExpired("IWD_Rest","LOCALS")
+THEN
+	RESPONSE #100
+		SetGlobalTimer("IWD_Rest","LOCALS",EIGHT_HOURS)
+		ApplySpell(Myself,RESTORE_FULL_HEALTH)
+		Rest()
+END
+
+IF
+	HaveSpellRES("IDIN177")
+	Global("SUMMONER_TURN","MYAREA",1)
+	!Global("MAP_GROUP_HOSTILE4","MYAREA",0)
+	!GlobalTimerNotExpired("SUMMONER_TIMER","MYAREA")
+	NearSavedLocation(Myself,"LOCALSSavedLoc",2)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("SUMMONER_TIMER","MYAREA",30)
+		SetGlobal("SUMMONER_TURN","MYAREA",2)
+		//ForceSpellPoint([875.2181],3177)  // SPIN177.SPL (No such index)
+		ForceSpellPointRES("IDIN177",[875.2181])
+		Wait(2)
+END
+
+IF
+	!Global("SET_ATTACK","LOCALS",0)
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		AttackReevaluate(LastSeenBy(Myself),75)
+END
+
+IF
+	Global("SET_ATTACK","LOCALS",0)
+THEN
+	RESPONSE #100
+		NoAction()
+END
+

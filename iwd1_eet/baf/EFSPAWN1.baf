@@ -1,0 +1,15 @@
+IF
+	//CreatureHidden(Myself)
+	!Global("I_AM_SPAWN","LOCALS",1)
+THEN
+	RESPONSE #100
+		SetGlobal("I_AM_SPAWN","LOCALS",1)
+		//UseItem("SPAWN",Myself)
+		CreateVisualEffectObject("HEALH",Myself)
+		SmallWait(14)
+		FaceObject(NearestEnemyOf(Myself))
+		//HideCreature(Myself,FALSE)
+		ApplySpellRES("IDINVIS5",Myself)
+		Continue()
+END
+

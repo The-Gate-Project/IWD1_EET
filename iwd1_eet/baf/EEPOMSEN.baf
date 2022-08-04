@@ -1,0 +1,68 @@
+IF
+	!Global("SPRITE_IS_DEADPOMABR","GLOBAL",0)
+THEN
+	RESPONSE #100
+		DestroyItem("IDMNHPAM")
+		Kill(Myself)
+END
+
+IF
+	Global("POMAB_IMAGES_DEAD","MYAREA",0)
+	!HasItem("IDMNHPAM",Myself)
+	!StateCheck(Myself,STATE_REALLY_DEAD)
+THEN
+	RESPONSE #100
+		GiveItemCreate("IDMNHPAM",Myself,1,0,0)
+		EquipItemEx("IDMNHPAM",0)
+		Continue()
+END
+
+IF
+	!Global("POMAB_IMAGES_DEAD","MYAREA",0)
+	HasItem("IDMNHPAM",Myself)
+THEN
+	RESPONSE #100
+		EquipItemEx("IDMNHPAM",1)
+		DestroyItem("IDMNHPAM")
+		Continue()
+END
+
+IF
+	HP(Myself,1)
+THEN
+	RESPONSE #100
+		PlayDead(300)
+		SetSequence(SEQ_AWAKE)
+		ChangeStat(Myself,MAXHITPOINTS,500,SET)
+		ApplySpellRES("IDMXHPS",Myself)
+END
+
+IF
+	OR(15)
+		See(NearestEnemyOf(Myself))
+		See([PC.0.0.FIGHTER_DRUID])
+		See([PC.0.0.FIGHTER_MAGE_THIEF])
+		See([PC.0.0.FIGHTER_MAGE_CLERIC])
+		See([PC.0.0.FIGHTER_CLERIC])
+		See([PC.0.0.BARD])
+		See([PC.0.0.CLERIC_THIEF])
+		See([PC.0.0.MAGE_THIEF])
+		See([PC.0.0.FIGHTER_MAGE])
+		See([PC.0.0.DRUID])
+		See([PC.0.0.CLERIC_MAGE])
+		See([PC.0.0.CLERIC])
+		See([PC.0.0.MAGE])
+		See([PC.0.0.SORCERER])
+		See([PC.0.0.SHAMAN])
+THEN
+	RESPONSE #100
+		AttackReevaluate(LastSeenBy(Myself),75)
+END
+
+IF
+	AttackedBy([GOODCUTOFF],DEFAULT)
+THEN
+	RESPONSE #100
+		MoveToObject(LastAttackerOf(Myself))
+END
+

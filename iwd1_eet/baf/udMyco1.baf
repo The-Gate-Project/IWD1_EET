@@ -1,0 +1,91 @@
+IF
+	StateCheck(Myself,STATE_PANIC)
+THEN
+	RESPONSE #100
+		RandomWalkContinuous()
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	!Range(LastSeenBy(Myself),4)
+	CanEquipRanged()
+THEN
+	RESPONSE #100
+		EquipRanged()
+		Help()
+		Attack(LastSeenBy(Myself))
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	Range(LastSeenBy(Myself),4)
+THEN
+	RESPONSE #100
+		EquipMostDamagingMelee()
+		Help()
+		Attack(LastSeenBy(Myself))
+END
+
+IF
+	AttackedBy(NearestEnemyOf(Myself),DEFAULT)
+	!Range(LastAttackerOf(Myself),4)
+	CanEquipRanged()
+THEN
+	RESPONSE #100
+		EquipRanged()
+		Help()
+		Attack(LastAttackerOf(Myself))
+END
+
+IF
+	AttackedBy(NearestEnemyOf(Myself),DEFAULT)
+	Range(LastAttackerOf(Myself),4)
+THEN
+	RESPONSE #100
+		EquipMostDamagingMelee()
+		Help()
+		Attack(LastAttackerOf(Myself))
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		EquipMostDamagingMelee()
+		Help()
+		Attack(LastSeenBy(Myself))
+END
+
+IF
+	AttackedBy([ANYONE],DEFAULT)
+THEN
+	RESPONSE #100
+		NoAction()
+END
+
+IF
+	Help([ANYONE])
+THEN
+	RESPONSE #100
+END
+
+IF
+	AttackedBy([ANYONE],DEFAULT)
+	!Range(LastAttackerOf(Myself),4)
+THEN
+	RESPONSE #100
+		EquipRanged()
+		Help()
+		Attack(LastAttackerOf(Myself))
+END
+
+IF
+	AttackedBy([ANYONE],DEFAULT)
+	Range(LastAttackerOf(Myself),4)
+THEN
+	RESPONSE #100
+		EquipMostDamagingMelee()
+		Help()
+		Attack(LastAttackerOf(Myself))
+END
+

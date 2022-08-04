@@ -1,0 +1,18 @@
+IF
+	!Global("EFDELNOR_INACTIVE","LOCALS",1)
+	DifficultyLT(NORMAL)
+	!StoryModeOn()
+	!See([PC])
+THEN
+	RESPONSE #100
+		DestroySelf()
+END
+
+IF
+	!Global("EFDELNOR_INACTIVE","LOCALS",1)
+	True()
+THEN
+	RESPONSE #100
+		SetGlobal("EFDELNOR_INACTIVE","LOCALS",1)
+END
+

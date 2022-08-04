@@ -1,0 +1,13 @@
+IF
+	Global("SCANMTR6_TRIGGERED","GLOBAL",0)
+	Entered([PC])
+THEN
+	RESPONSE #100
+		SetGlobal("SCANMTR6_TRIGGERED","GLOBAL",1)
+		MultiPlayerSync()
+		StaticSequence("9501MS2",SEQ_AWAKE)
+		PlaySound("ID9501D")
+		Wait(4)
+		StaticSequence("9501MS2",SEQ_ATTACK)
+END
+

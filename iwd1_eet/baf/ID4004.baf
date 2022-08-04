@@ -1,0 +1,98 @@
+IF
+  !Global("ID4004_VISITED","GLOBAL",1)
+THEN
+  RESPONSE #100
+    SetGlobal("ID4004_VISITED","GLOBAL",1)
+    Continue()
+END
+
+IF
+	!Global("4004_SPAWN","GLOBAL",0)
+	!Global("SPRITE_IS_DEADYXUNOMEI","GLOBAL",0)
+THEN
+	RESPONSE #100
+		SetGlobal("4004_SPAWN","GLOBAL",0)
+		SetGlobal("4005_SPAWN","GLOBAL",0)
+		//SetRestEncounterProbabilityDay(0)
+		//SetRestEncounterProbabilityNight(0)
+		Continue()
+END
+
+IF
+  OR(3)
+    OpenState("AR4004Door1",TRUE)
+    OpenState("AR4004Door5",TRUE)
+    OpenState("AR4004Door12",TRUE)
+  Global("YUANTI_INFERNO","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("YUANTI_INFERNO","GLOBAL",1)
+    Continue()
+END
+
+IF
+  OpenState("AR4004Door8",TRUE)
+  Global("YUANTI_INFERNO","GLOBAL",0)
+  GlobalLT("GEELO_TRICK","GLOBAL",2)
+THEN
+  RESPONSE #100
+    SetGlobal("YUANTI_INFERNO","GLOBAL",1)
+    Continue()
+END
+
+IF
+  !Global("YUANTI_INFERNO","GLOBAL",0)
+  Global("OPEN_DOORS","MYAREA",0)
+THEN
+  RESPONSE #100
+    SetInterrupt(FALSE)
+    Unlock("AR4004Door1")
+    Unlock("AR4004Door2")
+    Unlock("AR4004Door3")
+    Unlock("AR4004Door4")
+    Unlock("AR4004Door5")
+    Unlock("AR4004Door6")
+    Unlock("AR4004Door7")
+    Unlock("AR4004Door8")
+    Unlock("AR4004Door9")
+    Unlock("AR4004Door10")
+    Unlock("AR4004Door12")
+    Unlock("AR4004Door14")
+    Unlock("AR4004Door15")
+    OpenDoor("AR4004Door1")
+    OpenDoor("AR4004Door2")
+    OpenDoor("AR4004Door3")
+    OpenDoor("AR4004Door4")
+    OpenDoor("AR4004Door5")
+    OpenDoor("AR4004Door6")
+    OpenDoor("AR4004Door7")
+    OpenDoor("AR4004Door8")
+    OpenDoor("AR4004Door9")
+    OpenDoor("AR4004Door10")
+    OpenDoor("AR4004Door12")
+    OpenDoor("AR4004Door14")
+    OpenDoor("AR4004Door15")
+    SetGlobal("OPEN_DOORS","MYAREA",1)
+    SetInterrupt(TRUE)
+    Continue()
+END
+
+///////////////
+IF
+  !Global("CreateItems","MYAREA",1)
+THEN
+  RESPONSE #100
+    ActionOverride("Cushions",CreateItem("SPWI517X",1,1,1))
+    SetGlobal("CreateItems","MYAREA",1)
+    Continue()
+END
+///////////////
+
+IF
+	OnCreation()
+THEN
+	RESPONSE #100
+		NoAction()
+		Continue()
+END
+

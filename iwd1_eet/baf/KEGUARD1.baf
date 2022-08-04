@@ -1,0 +1,43 @@
+IF
+	!BitCheck("CREATURE_STATE_VAR","LOCALS",1)
+THEN
+	RESPONSE #100
+		BitSet("CREATURE_STATE_VAR","LOCALS",1)
+		SetGlobalTimerRandom("IwTimer24","LOCALS",5,10)
+		Continue()
+END
+
+IF
+	!Allegiance(Myself,ENEMY)
+	!GlobalTimerNotExpired("IwTimer24","LOCALS")
+	Detect([PC])
+THEN
+	RESPONSE #50
+		DisplayStringHead(Myself,@27383)
+		SetGlobalTimerRandom("IwTimer24","LOCALS",5,10)
+		Continue()
+	RESPONSE #50
+		DisplayStringHead(Myself,@27384)
+		SetGlobalTimerRandom("IwTimer24","LOCALS",5,10)
+		Continue()
+	RESPONSE #50
+		DisplayStringHead(Myself,@27385)
+		SetGlobalTimerRandom("IwTimer24","LOCALS",5,10)
+		Continue()
+	RESPONSE #50
+		DisplayStringHead(Myself,@27386)
+		SetGlobalTimerRandom("IwTimer24","LOCALS",5,10)
+		Continue()
+	RESPONSE #50
+		DisplayStringHead(Myself,@16836)
+		SetGlobalTimerRandom("IwTimer24","LOCALS",5,10)
+		Continue()
+	RESPONSE #50
+		DisplayStringHead(Myself,@27387)
+		SetGlobalTimerRandom("IwTimer24","LOCALS",5,10)
+		Continue()
+	RESPONSE #350
+		SetGlobalTimerRandom("IwTimer24","LOCALS",5,10)
+		Continue()
+END
+

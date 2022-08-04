@@ -1,0 +1,36 @@
+IF
+	StateCheck(Myself,STATE_PANIC)
+THEN
+	RESPONSE #100
+		RandomWalkContinuous()
+END
+
+IF
+	GlobalGT("ATTACK_STATE","GLOBAL",2)
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		AttackReevaluate(LastSeenBy(Myself),75)
+END
+
+IF
+	GlobalLT("ATTACK_STATE","GLOBAL",3)
+	AttackedBy([GOODCUTOFF],DEFAULT)
+THEN
+	RESPONSE #100
+		SetGlobal("ATTACK_STATE","GLOBAL",3)
+END
+
+IF
+	Global("FRIENDS_DEAD","LOCALS",0)
+	Dead("VAARGLAN")
+	Dead("ALPHEUS")
+	Dead("9100_MERCWAR1")
+	Dead("9100_MERCWAR2")
+	Dead("9100_MERCTHF")
+THEN
+	RESPONSE #100
+		SetGlobal("FRIENDS_DEAD","LOCALS",1)
+		SetGlobal("ATTACK_STATE","GLOBAL",3)
+END
+

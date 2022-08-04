@@ -1,0 +1,11 @@
+IF
+	!Global("UHGAZE_INACTIVE","LOCALS",1)
+	LOS([PC],25)
+	IsActive(Myself)
+THEN
+	RESPONSE #100
+		ReallyForceSpellRES("IDIN994",Myself) //INNATE_UMBER_HULK_GAZE
+		Wait(2)
+		SetGlobal("UHGAZE_INACTIVE","LOCALS",1)
+END
+

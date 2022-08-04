@@ -1,0 +1,29 @@
+IF
+  !Global("ID6011_VISITED","GLOBAL",1)
+THEN
+  RESPONSE #100
+    SetGlobal("ID6011_VISITED","GLOBAL",1)
+    Continue()
+END
+
+IF
+  Global("Forge_On","GLOBAL",0)
+  Global("Triggers_Forge_On","MYAREA",0)
+THEN
+  RESPONSE #100
+    SetGlobal("Triggers_Forge_On","MYAREA",1)
+    TriggerActivation("To6004",TRUE)
+    TriggerActivation("To6013",FALSE)
+    Continue()
+END
+
+IF
+  Global("Forge_On","GLOBAL",1)
+  !Global("Triggers_Forge_On","MYAREA",0)
+THEN
+  RESPONSE #100
+    SetGlobal("Triggers_Forge_On","MYAREA",0)
+    TriggerActivation("To6013",TRUE)
+    TriggerActivation("To6004",FALSE)
+    Continue()
+END

@@ -1,0 +1,20 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId("POQUELIN")
+		StartCutSceneMode()
+		MultiPlayerSync()
+		//ExportParty("IWD")
+		Wait(1)
+		MultiPlayerSync()
+		MultiPlayerSync()
+		ClearAllActions()
+		Explore()
+		CreateCreature("CUTSPY",[690.585],0)
+		Wait(1)
+		MoveViewObject(Myself,VERY_FAST)
+		Wait(3)
+		StartDialogNoSet(PartySlot1)
+END
+

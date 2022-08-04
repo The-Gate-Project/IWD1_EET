@@ -1,0 +1,16 @@
+IF
+	Entered([PC])
+THEN
+	RESPONSE #100
+		BitSet("AREA_GROUP_VAR","MYAREA",1)
+		DisplayString(Myself,14381)
+END
+
+IF
+	Opened([PC])
+THEN
+	RESPONSE #100
+		BitSet("AREA_GROUP_VAR","MYAREA",1)
+		DisplayString(Myself,14381)
+END
+

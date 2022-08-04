@@ -1,0 +1,26 @@
+IF
+	Global("ID2000_INIT","GLOBAL",0)
+THEN
+	RESPONSE #100
+		SetGlobal("ID2000_INIT","GLOBAL",1)
+		HideAreaOnMap("ID1000")
+		RevealAreaOnMap("ID1100")
+		SaveGame(0)
+END
+
+IF
+	Global("CHICKEN_ALL_DEAD","MYAREA",0)
+	GlobalGT("KP_DEAD_CHICKENS","GLOBAL",2)
+THEN
+	RESPONSE #100
+		SetGlobal("CHICKEN_ALL_DEAD","MYAREA",1)
+END
+
+IF
+	OnCreation()
+THEN
+	RESPONSE #100
+		NoAction()
+		Continue()
+END
+

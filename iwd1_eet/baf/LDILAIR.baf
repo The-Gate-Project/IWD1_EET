@@ -1,0 +1,207 @@
+IF
+	StateCheck(Myself,STATE_PANIC)
+THEN
+	RESPONSE #100
+		RandomWalkContinuous()
+END
+
+IF
+	!GlobalTimerNotExpired("IWD_Rest","LOCALS")
+THEN
+	RESPONSE #100
+		SetGlobalTimer("IWD_Rest","LOCALS",EIGHT_HOURS)
+		ApplySpell(Myself,RESTORE_FULL_HEALTH)
+		Rest()
+END
+
+IF
+	HaveSpell(WIZARD_STONE_SKIN)
+	IsActive(Myself)
+THEN
+	RESPONSE #100
+		Spell(Myself,WIZARD_STONE_SKIN)
+		Wait(2)
+END
+
+IF
+	//HaveSpell(WIZARD_TROLLISH_FORTITUDE) // SPWI620.SPL (Стойкость Троллей)
+	!Global("WIZ_TROLLISH_FORTITUDE","LOCALS",1)
+	HPPercentLT(Myself,50)
+	IsActive(Myself)
+THEN
+	RESPONSE #100
+		//Spell(Myself,WIZARD_TROLLISH_FORTITUDE) // SPWI620.SPL (Стойкость Троллей)
+		SetGlobal("WIZ_TROLLISH_FORTITUDE","LOCALS",1)
+		ForceSpell(Myself,CLERIC_REGENERATE)
+		Wait(2)
+END
+
+IF
+	HaveSpell(WIZARD_SHIELD)
+	IsActive(Myself)
+THEN
+	RESPONSE #100
+		Spell(Myself,WIZARD_SHIELD)
+		Wait(2)
+END
+
+IF
+	!HaveSpell(WIZARD_CONFUSION)
+	!HaveSpell(WIZARD_LIGHTNING_BOLT)
+	!HaveSpell(WIZARD_MONSTER_SUMMONING_3)
+	!HaveSpell(WIZARD_COLOR_SPRAY)
+	!HaveSpell(WIZARD_HORROR)
+	!HaveSpellRES("IDWI612")
+THEN
+	RESPONSE #100
+		ChangeAIScript("LDILAIR2",RACE)
+END
+
+IF
+	!Global("MY_TEAM_HOSTILE","LOCALS",0)
+	Global("MAP_GROUP_HOSTILE0","MYAREA",0)
+	Global("MAP_GROUP_HOSTILE1","MYAREA",0)
+	Global("MAP_GROUP_HOSTILE2","MYAREA",0)
+	Global("MAP_GROUP_HOSTILE3","MYAREA",0)
+	Global("MAP_GROUP_HOSTILE4","MYAREA",0)
+	Global("MAP_GROUP_HOSTILE5","MYAREA",0)
+	Global("MAP_GROUP_HOSTILE6","MYAREA",0)
+	Global("MAP_GROUP_HOSTILE7","MYAREA",0)
+	Global("MAP_GROUP_HOSTILE8","MYAREA",0)
+	Global("MAP_GROUP_HOSTILE9","MYAREA",0)
+THEN
+	RESPONSE #100
+		SetGlobal("MY_TEAM_HOSTILE","LOCALS",0)
+		Continue()
+END
+
+IF
+	!Allegiance(Myself,ENEMY)
+	!Global("MAP_GROUP_HOSTILE0","MYAREA",0)
+THEN
+	RESPONSE #100
+		Enemy()
+		Continue()
+END
+
+IF
+	!IsActive(Myself)
+	OR(2)
+		!Global("MAP_GROUP_HOSTILE0","MYAREA",0)
+		!Global("MAP_GROUP_HOSTILE5","MYAREA",0)
+THEN
+	RESPONSE #100
+		Activate(Myself)
+		SetGlobal("IwIHidden","LOCALS",0)
+		Continue()
+END
+
+IF
+	!IsActive(Myself)
+THEN
+	RESPONSE #100
+		NoAction()
+END
+
+IF
+  ActionListEmpty()
+	Or(2)
+		!Global("MAP_GROUP_HOSTILE0","MYAREA",0)
+		!Global("MAP_GROUP_HOSTILE5","MYAREA",0)
+	Allegiance(Myself,ENEMY)
+	!See([PC])
+THEN
+  RESPONSE #100
+    MoveToObject(Player1)
+  RESPONSE #100
+    NoAction()
+END
+
+
+
+IF
+	True()
+THEN
+	/*RESPONSE #100
+		SetGlobal("LOCAL_CAST_SPELL","LOCALS",0)
+		Continue()
+	RESPONSE #100
+		SetGlobal("LOCAL_CAST_SPELL","LOCALS",1)
+		Continue()
+	RESPONSE #100
+		SetGlobal("LOCAL_CAST_SPELL","LOCALS",2)
+		Continue()
+	RESPONSE #100
+		SetGlobal("LOCAL_CAST_SPELL","LOCALS",3)
+		Continue()
+	RESPONSE #100
+		SetGlobal("LOCAL_CAST_SPELL","LOCALS",4)
+		Continue()
+	RESPONSE #100
+		SetGlobal("LOCAL_CAST_SPELL","LOCALS",5)
+		Continue()*/
+	RESPONSE #100
+		SetGlobalRandomPlus("LOCAL_CAST_SPELL","LOCALS",1,6,-1)
+		Continue()
+END
+
+IF
+	HaveSpell(WIZARD_CONFUSION)
+	GlobalLT("LOCAL_CAST_SPELL","LOCALS",1)
+	See(NearestEnemyOf(Myself))
+	!StateCheck(LastSeenBy(Myself),STATE_CONFUSED)
+THEN
+	RESPONSE #100
+		Spell(LastSeenBy(Myself),WIZARD_CONFUSION)
+		Wait(2)
+END
+
+IF
+	HaveSpell(WIZARD_LIGHTNING_BOLT)
+	GlobalLT("LOCAL_CAST_SPELL","LOCALS",2)
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		Spell(LastSeenBy(Myself),WIZARD_LIGHTNING_BOLT)
+		Wait(2)
+END
+
+IF
+	HaveSpell(WIZARD_MONSTER_SUMMONING_3)
+	GlobalLT("LOCAL_CAST_SPELL","LOCALS",3)
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		Spell(LastSeenBy(Myself),WIZARD_MONSTER_SUMMONING_3)
+		Wait(2)
+END
+
+IF
+	HaveSpell(WIZARD_COLOR_SPRAY)
+	GlobalLT("LOCAL_CAST_SPELL","LOCALS",4)
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		Spell(LastSeenBy(Myself),WIZARD_COLOR_SPRAY)
+		Wait(2)
+END
+
+IF
+	HaveSpell(WIZARD_HORROR)
+	GlobalLT("LOCAL_CAST_SPELL","LOCALS",5)
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		Spell(LastSeenBy(Myself),WIZARD_HORROR)
+		Wait(2)
+END
+
+IF
+	HaveSpellRES("IDWI612")
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		SpellRES("IDWI612",LastSeenBy(Myself))
+		Wait(2)
+END
+

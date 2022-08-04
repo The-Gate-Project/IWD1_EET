@@ -1,0 +1,18 @@
+IF
+	!Global("4002_SPAWN","GLOBAL",0)
+	!Global("SPRITE_IS_DEADHIGH_SUMMONER","GLOBAL",0)
+THEN
+	RESPONSE #100
+		SetGlobal("4001_SPAWN","GLOBAL",0)
+		SetGlobal("4002_SPAWN","GLOBAL",0)
+		Continue()
+END
+
+IF
+	OnCreation()
+THEN
+	RESPONSE #100
+		NoAction()
+		Continue()
+END
+

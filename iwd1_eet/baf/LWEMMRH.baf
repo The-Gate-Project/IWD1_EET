@@ -1,0 +1,68 @@
+IF
+	IsActive(Myself)
+	IsWeaponRanged(Myself)
+	Range(NearestEnemyOf(Myself),2)
+THEN
+	RESPONSE #100
+		SetSequence(SEQ_HIDE)
+		SmallWait(2)
+		ApplySpellRES("IDINVIS",Myself)
+		RunAwayFromNoLeaveArea(NearestEnemyOf(Myself),5)
+END
+
+IF
+	!Global("SPRITE_IS_DEADEMMERICH","GLOBAL",0)
+	!StateCheck(Myself,STATE_REALLY_DEAD)
+THEN
+	RESPONSE #100
+		DestroySelf()
+END
+
+IF
+	!IsActive(Myself)
+	Global("WEREWOLF_ACTIVE","GLOBAL",0)
+	OR(2)
+		!Global("LONELYWOOD_ALARM","GLOBAL",0)
+		!Global("EMMERICH_OUTSIDE","GLOBAL",0)
+THEN
+	RESPONSE #100
+		SetGlobal("EMMERICH_OUTSIDE","GLOBAL",1)
+		Enemy()
+		Activate(Myself)
+		SetGlobal("IwIHidden","LOCALS",0)
+		Continue()
+END
+
+IF
+	!IsActive(Myself)
+THEN
+	RESPONSE #100
+		NoAction()
+END
+
+IF
+	StateCheck(Myself,STATE_PANIC)
+THEN
+	RESPONSE #100
+		RandomWalkContinuous()
+END
+
+IF
+	HasItem("POTN52",Myself)
+	HPPercentLT(Myself,25)
+THEN
+	RESPONSE #100
+		UseItem("POTN52",Myself)
+		Continue()
+END
+
+IF
+  ActionListEmpty()
+	!See([PC])
+THEN
+  RESPONSE #100
+    MoveToObject(Player1)
+END
+
+
+

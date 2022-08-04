@@ -1,0 +1,66 @@
+IF
+	OnCreation()
+	//Global("BRIDGE_STATE_VAR256","MYAREA",1)
+	BitCheck("BRIDGE_STATE_VAR","MYAREA",256)
+	Global("BRIDGE_FIXED","MYAREA",0)
+THEN
+	RESPONSE #100
+		//SetGlobal("BRIDGE_STATE_VAR256","MYAREA",0)
+		BitClear("BRIDGE_STATE_VAR","MYAREA",256)
+		Continue()
+END
+
+IF
+	Global("BRIDGE_FIXED","MYAREA",0)
+	PartyHasItem("BOOKENG")
+	Entered([PC])
+THEN
+	RESPONSE #100
+		TakePartyItem("BOOKENG")
+		OpenDoor("AR7005BRIDGE")
+		AddXP2DA("ID1EX10E")
+		DisplayStringNoName(LastTrigger,@9238)
+		AddJournalEntry(@34311,QUEST)
+		SetGlobal("BRIDGE_FIXED","MYAREA",1)
+END
+
+IF
+	Global("BRIDGE_FIXED","MYAREA",0)
+	PartyHasItem("BOOKENG")
+	Opened([PC])
+THEN
+	RESPONSE #100
+		TakePartyItem("BOOKENG")
+		OpenDoor("AR7005BRIDGE")
+		AddXP2DA("ID1EX10E")
+		DisplayStringNoName(LastTrigger,@9238)
+		AddJournalEntry(@34311,QUEST)
+		SetGlobal("BRIDGE_FIXED","MYAREA",1)
+END
+
+IF
+	Global("BRIDGE_FIXED","MYAREA",0)
+	//!Global("BRIDGE_STATE_VAR256","MYAREA",1)
+	!BitCheck("BRIDGE_STATE_VAR","MYAREA",256)
+	Entered([PC])
+THEN
+	RESPONSE #100
+		//SetGlobal("BRIDGE_STATE_VAR256","MYAREA",1)
+		BitSet("BRIDGE_STATE_VAR","MYAREA",256)
+		DisplayString(Myself,@14227)
+		SetGlobal("BRIDGE_BROKEN","GLOBAL",1)
+END
+
+IF
+	Global("BRIDGE_FIXED","MYAREA",0)
+	//!Global("BRIDGE_STATE_VAR256","MYAREA",1)
+	!BitCheck("BRIDGE_STATE_VAR","MYAREA",256)
+	Opened([PC])
+THEN
+	RESPONSE #100
+		//SetGlobal("BRIDGE_STATE_VAR256","MYAREA",1)
+		BitSet("BRIDGE_STATE_VAR","MYAREA",256)
+		DisplayString(Myself,@14227)
+		SetGlobal("BRIDGE_BROKEN","GLOBAL",1)
+END
+

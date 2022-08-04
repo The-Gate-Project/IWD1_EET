@@ -1,0 +1,70 @@
+IF
+	True()
+THEN
+	/*RESPONSE #100
+		SetGlobal("LOCAL_CAST_SPELL","LOCALS",0)
+		Continue()
+	RESPONSE #100
+		SetGlobal("LOCAL_CAST_SPELL","LOCALS",1)
+		Continue()
+	RESPONSE #100
+		SetGlobal("LOCAL_CAST_SPELL","LOCALS",2)
+		Continue()*/
+	RESPONSE #100
+		SetGlobalRandomPlus("LOCAL_CAST_SPELL","LOCALS",1,3,-1)
+		Continue()
+END
+
+IF
+	StateCheck(Myself,STATE_PANIC)
+THEN
+	RESPONSE #100
+		RandomWalkContinuous()
+END
+
+
+
+IF
+	!GlobalTimerNotExpired("IWD_Rest","LOCALS")
+THEN
+	RESPONSE #100
+		SetGlobalTimer("IWD_Rest","LOCALS",EIGHT_HOURS)
+		ApplySpell(Myself,RESTORE_FULL_HEALTH)
+		Rest()
+END
+
+IF
+	HaveSpellRES("IDWI220")  // WIZARD_SNILLOCS_SNOWBALL_SWARM
+	GlobalLT("LOCAL_CAST_SPELL","LOCALS",1)
+	See(NearestEnemyOf(Myself))
+	!GlobalTimerNotExpired("IwTimer27","LOCALS")
+THEN
+	RESPONSE #100
+		SetGlobalTimerRandom("IwTimer27","LOCALS",18,24)
+		SpellRES("IDWI220",LastSeenBy(Myself))  //WIZARD_SNILLOCS_SNOWBALL_SWARM
+		Wait(2)
+END
+
+IF
+	HaveSpellRES("IDWI318")  // WIZARD_ICELANCE
+	GlobalLT("LOCAL_CAST_SPELL","LOCALS",2)
+	See(NearestEnemyOf(Myself))
+	!GlobalTimerNotExpired("IwTimer27","LOCALS")
+THEN
+	RESPONSE #100
+		SetGlobalTimerRandom("IwTimer27","LOCALS",18,24)
+		SpellRES("IDWI318",LastSeenBy(Myself))  // WIZARD_ICELANCE
+		Wait(2)
+END
+
+IF
+	HaveSpellRES("IDWI404")  // WIZARD_ICE_STORM
+	See(NearestEnemyOf(Myself))
+	!GlobalTimerNotExpired("IwTimer27","LOCALS")
+THEN
+	RESPONSE #100
+		SetGlobalTimerRandom("IwTimer27","LOCALS",18,24)
+		SpellRES("IDWI404",LastSeenBy(Myself))  // WIZARD_ICE_STORM
+		Wait(2)
+END
+

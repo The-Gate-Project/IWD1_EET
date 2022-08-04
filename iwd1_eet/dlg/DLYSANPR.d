@@ -1,0 +1,185 @@
+BEGIN ~DLYSANPR~
+
+IF WEIGHT #1
+~NumTimesTalkedTo(0)~ THEN BEGIN 0
+  SAY @1498
+  IF ~~ THEN REPLY @1428 GOTO 2
+  IF ~~ THEN REPLY @1500 GOTO 3
+  IF ~GlobalGT("Kress_Quest","GLOBAL",0)~ THEN REPLY @1501 GOTO 6
+  IF ~~ THEN REPLY @1502 EXIT
+END
+
+IF WEIGHT #2
+~NumTimesTalkedToGT(0)~ THEN BEGIN 1
+  SAY @1503
+  IF ~~ THEN REPLY @1428 GOTO 2
+  IF ~~ THEN REPLY @1500 GOTO 3
+  IF ~GlobalGT("Kress_Quest","GLOBAL",0)~ THEN REPLY @1501 GOTO 6
+  IF ~~ THEN REPLY @1502 EXIT
+END
+
+IF ~~ THEN BEGIN 2
+  SAY @1508
+  IF ~~ THEN REPLY @1500 GOTO 3
+  IF ~GlobalGT("Kress_Quest","GLOBAL",0)~ THEN REPLY @1501 GOTO 6
+  IF ~~ THEN REPLY @1502 EXIT
+END
+
+IF ~~ THEN BEGIN 3
+  SAY @1513
+  IF ~~ THEN REPLY @1514 GOTO 4
+  IF ~GlobalGT("Kress_Quest","GLOBAL",0)~ THEN REPLY @1501 GOTO 6
+  IF ~~ THEN REPLY @1516 EXIT
+END
+
+IF ~~ THEN BEGIN 4
+  SAY @1517
+  IF ~~ THEN REPLY @1518 GOTO 5
+  IF ~GlobalGT("Kress_Quest","GLOBAL",0)~ THEN REPLY @1501 GOTO 6
+  IF ~~ THEN REPLY @1516 EXIT
+END
+
+IF ~~ THEN BEGIN 5
+  SAY @1521
+  IF ~GlobalGT("Kress_Quest","GLOBAL",0)~ THEN REPLY @1501 GOTO 6
+  IF ~~ THEN REPLY @1516 EXIT
+END
+
+IF ~~ THEN BEGIN 6
+  SAY @1524
+  IF ~~ THEN REPLY @1525 GOTO 7
+  IF ~~ THEN REPLY @1526 GOTO 8
+  IF ~Global("Know_Lysan","GLOBAL",1)~ THEN REPLY @1527 DO ~SetGlobal("Know_Lysan","GLOBAL",2)~ GOTO 10
+  IF ~~ THEN REPLY @1528 EXIT
+END
+
+IF ~~ THEN BEGIN 7
+  SAY @1529
+  IF ~Global("Know_Lysan","GLOBAL",1)~ THEN REPLY @1527 DO ~SetGlobal("Know_Lysan","GLOBAL",2)~ GOTO 10
+  IF ~~ THEN REPLY @1502 EXIT
+END
+
+IF ~~ THEN BEGIN 8
+  SAY @1532
+  IF ~~ THEN REPLY @1533 DO ~SetGlobal("Know_Lysan","GLOBAL",2)~ GOTO 9
+  IF ~Global("Know_Lysan","GLOBAL",1)~ THEN REPLY @1527 DO ~SetGlobal("Know_Lysan","GLOBAL",2)~ GOTO 10
+  IF ~~ THEN REPLY @1535 EXIT
+END
+
+IF ~~ THEN BEGIN 9
+  SAY @1536
+  IF ~~ THEN REPLY @1537 GOTO 11
+  IF ~Class(LastTalkedToBy,DRUID_ALL)
+      !Class(LastTalkedToBy,SHAMAN)~ THEN REPLY @1538 GOTO 11
+  IF ~Class(LastTalkedToBy,CLERIC_ALL)~ THEN REPLY @1538 GOTO 11
+  IF ~~ THEN REPLY @1539 GOTO 13
+  IF ~~ THEN REPLY @1540 DO ~AddJournalEntry(@1349,QUEST)
+                             Enemy()~ EXIT
+  IF ~~ THEN REPLY @1541 EXIT
+END
+
+IF ~~ THEN BEGIN 10
+  SAY @1542
+  IF ~~ THEN REPLY @1537 GOTO 11
+  IF ~~ THEN REPLY @1539 GOTO 13
+  IF ~~ THEN REPLY @1540 DO ~AddJournalEntry(@1349,QUEST)
+                             Enemy()~ EXIT
+  IF ~~ THEN REPLY @1541 EXIT
+END
+
+IF ~~ THEN BEGIN 11
+  SAY @1547
+  IF ~~ THEN REPLY @1548 GOTO 12
+  IF ~~ THEN REPLY @1539 GOTO 13
+  IF ~~ THEN REPLY @1550 DO ~AddJournalEntry(@1349,QUEST)
+                             Enemy()~ EXIT
+END
+
+IF ~~ THEN BEGIN 12
+  SAY @1551
+  IF ~~ THEN REPLY @1552 GOTO 13
+  IF ~~ THEN REPLY @1553 DO ~AddJournalEntry(@1349,QUEST)
+                             Enemy()~ EXIT
+  IF ~~ THEN REPLY @1554 GOTO 21
+END
+
+IF ~~ THEN BEGIN 13
+  SAY @1555
+  IF ~~ THEN REPLY @1556 GOTO 14
+  IF ~~ THEN REPLY @1557 GOTO 18
+  IF ~~ THEN REPLY @1558 GOTO 22
+END
+
+IF ~~ THEN BEGIN 14
+  SAY @1559
+  IF ~~ THEN REPLY @1560 GOTO 15
+  IF ~~ THEN REPLY @1561 GOTO 18
+  IF ~~ THEN REPLY @1562 DO ~AddJournalEntry(@1349,QUEST)
+                             Enemy()~ EXIT
+  IF ~~ THEN REPLY @1558 GOTO 22
+END
+
+IF ~~ THEN BEGIN 15
+  SAY @1564
+  IF ~~ THEN REPLY @1565 GOTO 16
+  IF ~~ THEN REPLY @1566 DO ~AddJournalEntry(@1349,QUEST)
+                             Enemy()~ EXIT
+  IF ~~ THEN REPLY @1558 GOTO 22
+END
+
+IF ~~ THEN BEGIN 16
+  SAY @1568
+  IF ~~ THEN REPLY @1569 GOTO 17
+  IF ~~ THEN REPLY @1570 GOTO 17
+  IF ~~ THEN REPLY @1571 DO ~AddJournalEntry(@1349,QUEST)
+                             Enemy()~ EXIT
+  IF ~~ THEN REPLY @1558 GOTO 22
+END
+
+IF ~~ THEN BEGIN 17
+  SAY @1573
+  IF ~~ THEN REPLY @1574 GOTO 18
+  IF ~~ THEN REPLY @1575 GOTO 20
+  IF ~~ THEN REPLY @1576 DO ~AddJournalEntry(@1349,QUEST)
+                             Enemy()~ EXIT
+  IF ~~ THEN REPLY @1558 GOTO 22
+END
+
+IF ~~ THEN BEGIN 18
+  SAY @1578
+  IF ~~ THEN REPLY @1579 GOTO 19
+  IF ~~ THEN REPLY @1558 GOTO 22
+END
+
+IF ~~ THEN BEGIN 19
+  SAY @1581
+  IF ~~ THEN REPLY @1582 DO ~AddJournalEntry(@1415,QUEST)
+                             Enemy()~ EXIT
+END
+
+IF ~~ THEN BEGIN 20
+  SAY @1583
+  IF ~~ THEN REPLY @1582 DO ~AddJournalEntry(@1415,QUEST)
+                             Enemy()~ EXIT
+END
+
+IF ~~ THEN BEGIN 21
+  SAY @1587
+  IF ~~ THEN REPLY @1582 DO ~AddJournalEntry(@1415,QUEST)
+                             Enemy()~ EXIT
+END
+
+IF ~~ THEN BEGIN 22
+  SAY @1589
+  IF ~~ THEN REPLY @1582 DO ~AddJournalEntry(@1415,QUEST)
+                             Enemy()~ EXIT
+END
+
+IF WEIGHT #0
+~Global("Know_Lysan","GLOBAL",2)~ THEN BEGIN 23
+  SAY @1591
+  IF ~~ THEN REPLY @1537 GOTO 11
+  IF ~~ THEN REPLY @1539 GOTO 13
+  IF ~~ THEN REPLY @1540 DO ~AddJournalEntry(@1349,QUEST)
+                             Enemy()~ EXIT
+END

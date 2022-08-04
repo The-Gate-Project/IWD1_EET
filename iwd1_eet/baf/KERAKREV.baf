@@ -1,0 +1,20 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId([PC])
+		SetGlobal("HOBART_TRANSFORM","MYAREA",1)
+		ClearAllActions()
+		MultiPlayerSync()
+		ActionOverride("Rakshasa1",Enemy())
+		MoveViewObject("Rakshasa1",INSTANT)
+		ActionOverride("Rakshasa1",FaceObject(NearestEnemyOf(Myself)))
+		SmallWait(6)
+		SetGlobal("MAP_GROUP_HOSTILE8","MYAREA",1)
+		ActionOverride("Rakshasa1",ForceSpellRES("IDIN180",Myself))  // No such index
+		Wait(2)
+		MoveViewObject([PC],INSTANT)
+		Wait(1)
+		EndCutSceneMode()
+END
+

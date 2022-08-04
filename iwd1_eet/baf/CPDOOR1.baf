@@ -1,0 +1,21 @@
+IF
+	!Global("DOOR_1_UNLOCKED","MYAREA",0)
+THEN
+	RESPONSE #100
+		Deactivate(Myself)
+END
+
+IF
+	Global("DOOR_1_UNLOCKED","MYAREA",0)
+	OR(2)
+		Unlocked("AR9714_DOOR1")
+		OpenState(Myself,TRUE)
+THEN
+	RESPONSE #100
+		//PlaySequence("9714MS3",AWAKE)
+		StaticSequence("9714MS3",SEQ_AWAKE)
+		SetGlobal("9714MS3_SEQ","MYAREA",1)
+		SetGlobal("DOOR_1_UNLOCKED","MYAREA",1)
+		TakePartyItemAll("KeyPlat")
+END
+

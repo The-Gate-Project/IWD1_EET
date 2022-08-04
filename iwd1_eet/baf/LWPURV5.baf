@@ -1,0 +1,25 @@
+IF
+	!Global("SPRITE_IS_DEADPURVIS","GLOBAL",0)
+	!IsActive(Myself)
+THEN
+	RESPONSE #100
+		DestroySelf()
+END
+
+IF
+	Global("THURLOW_MURDER","GLOBAL",0)
+	Global("BODY_COUNT","GLOBAL",4)
+	See([PC])
+THEN
+	RESPONSE #100
+		Activate(Myself)
+		SetGlobal("IwIHidden","LOCALS",0)
+		XEquipItem("CLCK06",Myself,SLOT_CLOAK,EQUIP)
+		//ApplySpellRES("IDINVIS",Myself)
+		StartCutSceneMode()
+		MultiPlayerSync()
+		FadeToColor([0.0],0)
+		Wait(1)
+		StartCutScene("LWPRVFND")
+END
+

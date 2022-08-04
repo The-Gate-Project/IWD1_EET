@@ -1,0 +1,172 @@
+IF
+	Global("DONE_HERE","LOCALS",0)
+	HPPercentLT(Myself,50)
+THEN
+	RESPONSE #100
+		ClearAllActions()
+		StartCutSceneMode()
+		SetGlobal("DONE_HERE","LOCALS",1)
+		StartCutScene("LDPOQUEC")
+END
+
+IF
+	Global("POQUELIN_HOSTILE","GLOBAL",2)
+THEN
+	RESPONSE #100
+		SetGlobal("POQUELIN_HOSTILE","GLOBAL",3)
+		ForceSpellPoint([817.551],WIZARD_DIMENSION_DOOR)
+		Wait(2)
+END
+
+IF
+	Global("POQUELIN_HOSTILE","GLOBAL",0)
+	Allegiance(Myself,ENEMY)
+THEN
+	RESPONSE #100
+		SetGlobal("POQUELIN_HOSTILE","GLOBAL",1)
+		CloseDoor("8013_HIDE_STAIRS")
+		TriggerActivation("To8012",FALSE)
+		DisplayStringHead(Myself,@18561)
+		Continue()
+END
+
+IF
+	Allegiance(Myself,ENEMY)
+THEN
+	RESPONSE #80
+		SetGlobal("POQUE_ATTACK","GLOBAL",0)
+		Continue()
+	RESPONSE #20
+		SetGlobal("POQUE_ATTACK","GLOBAL",1)
+		Continue()
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	Global("POQUELIN_HOSTILE","GLOBAL",1)
+THEN
+	RESPONSE #100
+		SetGlobal("POQUELIN_HOSTILE","GLOBAL",2)
+		ForceSpell(LastSeenBy(Myself),CLERIC_FLAME_STRIKE)
+		Wait(2)
+END
+
+IF
+	!GlobalTimerNotExpired("IWD_Rest","LOCALS")
+THEN
+	RESPONSE #100
+		SetGlobalTimer("IWD_Rest","LOCALS",EIGHT_HOURS)
+		ApplySpell(Myself,RESTORE_FULL_HEALTH)
+		Rest()
+END
+
+IF
+	True()
+THEN
+/*	RESPONSE #100
+		SetGlobal("LOCAL_CAST_SPELL","LOCALS",0)
+		Continue()
+	RESPONSE #100
+		SetGlobal("LOCAL_CAST_SPELL","LOCALS",1)
+		Continue()
+	RESPONSE #100
+		SetGlobal("LOCAL_CAST_SPELL","LOCALS",2)
+		Continue()
+	RESPONSE #100
+		SetGlobal("LOCAL_CAST_SPELL","LOCALS",3)
+		Continue()*/
+	RESPONSE #100
+		SetGlobalRandomPlus("LOCAL_CAST_SPELL","LOCALS",1,4,-1)
+		Continue()
+END
+
+IF
+	HaveSpell(CLERIC_INSECT_PLAGUE)
+	GlobalLT("LOCAL_CAST_SPELL","LOCALS",1)
+	See(NearestEnemyOf(Myself))
+	Global("POQUE_ATTACK","GLOBAL",0)
+THEN
+	RESPONSE #100
+		Spell(LastSeenBy(Myself),CLERIC_INSECT_PLAGUE)
+		Wait(2)
+END
+
+IF
+	HaveSpell(CLERIC_MAGIC_STONE)
+	GlobalLT("LOCAL_CAST_SPELL","LOCALS",2)
+	See(NearestEnemyOf(Myself))
+	Global("POQUE_ATTACK","GLOBAL",0)
+THEN
+	RESPONSE #100
+		Spell(Myself,CLERIC_MAGIC_STONE)
+		Wait(2)
+END
+
+IF
+	HaveSpell(CLERIC_UNHOLY_BLIGHT)
+	GlobalLT("LOCAL_CAST_SPELL","LOCALS",3)
+	See(NearestEnemyOf(Myself))
+	Global("POQUE_ATTACK","GLOBAL",0)
+THEN
+	RESPONSE #100
+		Spell(LastSeenBy(Myself),CLERIC_UNHOLY_BLIGHT)
+		Wait(2)
+END
+
+IF
+	HaveSpell(CLERIC_FLAME_STRIKE)
+	See(NearestEnemyOf(Myself))
+	Global("POQUE_ATTACK","GLOBAL",0)
+THEN
+	RESPONSE #100
+		Spell(LastSeenBy(Myself),CLERIC_FLAME_STRIKE)
+		Wait(2)
+END
+
+IF
+	Global("POQUE_ATTACK","GLOBAL",0)
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		AttackReevaluate(LastSeenBy(Myself),210)
+END
+
+IF
+	Global("POQUE_ATTACK","GLOBAL",1)
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		AttackReevaluate(LastSeenBy(Myself),210)
+END
+
+IF
+	!Allegiance(Myself,ENEMY)
+	AttackedBy([GOODCUTOFF],DEFAULT)
+THEN
+	RESPONSE #100
+		Enemy()
+		Continue()
+END
+
+IF
+	NumTimesTalkedTo(0)
+	See([PC])
+	!Allegiance(Myself,ENEMY)
+	!StateCheck(Myself,STATE_REALLY_DEAD)
+THEN
+	RESPONSE #100
+		StartCutSceneMode()
+		ClearAllActions()
+		MultiPlayerSync()
+		ApplySpellRES("BDCUTSPY",Myself)
+		StartDialogNoSet([PC])
+END
+
+IF
+	Allegiance(Myself,ENEMY)
+	AttackedBy([GOODCUTOFF],DEFAULT)
+THEN
+	RESPONSE #100
+		MoveToObject(LastAttackerOf(Myself))
+END
+

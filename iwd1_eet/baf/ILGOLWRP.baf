@@ -1,0 +1,32 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId("ID9600_GOLEM_1")
+		ClearActions(Myself)
+		//CreateCreatureAtLocation("SavedLoc","LOCALS","IDGOLS1")
+		ReallyForceSpellRES("IDIN154",Myself)  // INNATE_ICE_GOLEM_DISAPPEAR
+		//Wait(1)
+		//JumpToObject("IDGOLMSVLC1")
+		//SmallWait(4)
+		//ActionOverride("IDGOLMSVLC1",DestroySelf())
+		MoveToSavedLocation("SavedLoc","LOCALS")
+		Face(0)
+END
+
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId("ID9600_GOLEM_2")
+		ClearActions(Myself)
+		//CreateCreatureAtLocation("SavedLoc","LOCALS","IDGOLS2")
+		ReallyForceSpellRES("IDIN154",Myself)  // INNATE_ICE_GOLEM_DISAPPEAR
+		//Wait(1)
+		//JumpToObject("IDGOLMSVLC2")
+		//SmallWait(4)
+		//ActionOverride("IDGOLMSVLC2",DestroySelf())
+		MoveToSavedLocation("SavedLoc","LOCALS")
+		Face(14)
+END
+

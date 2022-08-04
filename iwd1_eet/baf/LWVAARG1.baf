@@ -1,0 +1,424 @@
+IF
+	!Global("BELT02_REMOVE","GLOBAL",0)
+	!Global("BELT02_REMOVE","LOCALS",1)
+	HasItem("BELT02",Myself)
+THEN
+	RESPONSE #100
+		SetGlobal("BELT02_REMOVE","LOCALS",1)
+		SetItemFlags("BELT02",10,TRUE)
+		Continue()
+END
+
+IF
+	StateCheck(Myself,STATE_PANIC)
+THEN
+	RESPONSE #100
+		RandomWalkContinuous()
+END
+
+IF
+	!GlobalTimerNotExpired("IWD_Rest","LOCALS")
+THEN
+	RESPONSE #100
+		SetGlobalTimer("IWD_Rest","LOCALS",EIGHT_HOURS)
+		ApplySpell(Myself,RESTORE_FULL_HEALTH)
+		Rest()
+END
+
+IF
+	True()
+THEN
+	/*RESPONSE #100
+		SetGlobal("LOCAL_CAST_SPELL","LOCALS",0)
+		Continue()
+	RESPONSE #100
+		SetGlobal("LOCAL_CAST_SPELL","LOCALS",1)
+		Continue()
+	RESPONSE #100
+		SetGlobal("LOCAL_CAST_SPELL","LOCALS",2)
+		Continue()
+	RESPONSE #100
+		SetGlobal("LOCAL_CAST_SPELL","LOCALS",3)
+		Continue()
+	RESPONSE #100
+		SetGlobal("LOCAL_CAST_SPELL","LOCALS",4)
+		Continue()*/
+	RESPONSE #100
+		SetGlobalRandomPlus("LOCAL_CAST_SPELL","LOCALS",1,5,-1)
+		Continue()
+END
+
+IF
+	HaveSpell(WIZARD_BLUR)
+	GlobalLT("LOCAL_CAST_SPELL","LOCALS",1)
+	See(NearestEnemyOf(Myself))
+	GlobalGT("ATTACK_CNT","LOCALS",2)
+THEN
+	RESPONSE #100
+		SetGlobal("ATTACK_CNT","LOCALS",0)
+		Spell(Myself,WIZARD_BLUR)
+		Wait(2)
+END
+
+IF
+	HaveSpell(WIZARD_INVISIBILITY)
+	GlobalLT("LOCAL_CAST_SPELL","LOCALS",2)
+	See(NearestEnemyOf(Myself))
+	GlobalGT("ATTACK_CNT","LOCALS",2)
+THEN
+	RESPONSE #100
+		SetGlobal("ATTACK_CNT","LOCALS",0)
+		Spell(Myself,WIZARD_INVISIBILITY)
+		Wait(2)
+END
+
+IF
+	HaveSpell(WIZARD_MIRROR_IMAGE)
+	GlobalLT("LOCAL_CAST_SPELL","LOCALS",3)
+	See(NearestEnemyOf(Myself))
+	GlobalGT("ATTACK_CNT","LOCALS",2)
+THEN
+	RESPONSE #100
+		SetGlobal("ATTACK_CNT","LOCALS",0)
+		Spell(Myself,WIZARD_MIRROR_IMAGE)
+		Wait(2)
+END
+
+IF
+	HaveSpell(WIZARD_STONE_SKIN)
+	GlobalLT("LOCAL_CAST_SPELL","LOCALS",4)
+	See(NearestEnemyOf(Myself))
+	GlobalGT("ATTACK_CNT","LOCALS",2)
+THEN
+	RESPONSE #100
+		SetGlobal("ATTACK_CNT","LOCALS",0)
+		Spell(Myself,WIZARD_STONE_SKIN)
+		Wait(2)
+END
+
+IF
+	HaveSpell(WIZARD_DISPEL_MAGIC)
+	See(NearestEnemyOf(Myself))
+	GlobalGT("ATTACK_CNT","LOCALS",2)
+THEN
+	RESPONSE #100
+		SetGlobal("ATTACK_CNT","LOCALS",0)
+		Spell(LastSeenBy(Myself),WIZARD_DISPEL_MAGIC)
+		Wait(2)
+END
+
+IF
+	True()
+THEN
+	/*RESPONSE #100
+		SetGlobal("LOCAL_CAST_SPELL","LOCALS",0)
+		Continue()
+	RESPONSE #100
+		SetGlobal("LOCAL_CAST_SPELL","LOCALS",1)
+		Continue()
+	RESPONSE #100
+		SetGlobal("LOCAL_CAST_SPELL","LOCALS",2)
+		Continue()
+	RESPONSE #100
+		SetGlobal("LOCAL_CAST_SPELL","LOCALS",3)
+		Continue()
+	RESPONSE #100
+		SetGlobal("LOCAL_CAST_SPELL","LOCALS",4)
+		Continue()
+	RESPONSE #100
+		SetGlobal("LOCAL_CAST_SPELL","LOCALS",5)
+		Continue()
+	RESPONSE #100
+		SetGlobal("LOCAL_CAST_SPELL","LOCALS",6)
+		Continue()
+	RESPONSE #100
+		SetGlobal("LOCAL_CAST_SPELL","LOCALS",7)
+		Continue()
+	RESPONSE #100
+		SetGlobal("LOCAL_CAST_SPELL","LOCALS",8)
+		Continue()
+	RESPONSE #100
+		SetGlobal("LOCAL_CAST_SPELL","LOCALS",9)
+		Continue()
+	RESPONSE #100
+		SetGlobal("LOCAL_CAST_SPELL","LOCALS",10)
+		Continue()
+	RESPONSE #100
+		SetGlobal("LOCAL_CAST_SPELL","LOCALS",11)
+		Continue()
+	RESPONSE #100
+		SetGlobal("LOCAL_CAST_SPELL","LOCALS",12)
+		Continue()
+	RESPONSE #100
+		SetGlobal("LOCAL_CAST_SPELL","LOCALS",13)
+		Continue()
+	RESPONSE #100
+		SetGlobal("LOCAL_CAST_SPELL","LOCALS",14)
+		Continue()
+	RESPONSE #100
+		SetGlobal("LOCAL_CAST_SPELL","LOCALS",15)
+		Continue()
+	RESPONSE #100
+		SetGlobal("LOCAL_CAST_SPELL","LOCALS",16)
+		Continue()
+	RESPONSE #100
+		SetGlobal("LOCAL_CAST_SPELL","LOCALS",17)
+		Continue()
+	RESPONSE #100
+		SetGlobal("LOCAL_CAST_SPELL","LOCALS",18)
+		Continue()
+	RESPONSE #100
+		SetGlobal("LOCAL_CAST_SPELL","LOCALS",19)
+		Continue()
+	RESPONSE #100
+		SetGlobal("LOCAL_CAST_SPELL","LOCALS",20)
+		Continue()*/
+	RESPONSE #100
+		SetGlobalRandomPlus("LOCAL_CAST_SPELL","LOCALS",1,21,-1)
+		Continue()
+END
+
+IF
+	HaveSpell(WIZARD_DIRE_CHARM)
+	GlobalLT("LOCAL_CAST_SPELL","LOCALS",1)
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		IncrementGlobal("ATTACK_CNT","LOCALS",1)
+		Spell(LastSeenBy(Myself),WIZARD_DIRE_CHARM)
+		Wait(2)
+END
+
+IF
+	HaveSpell(WIZARD_BLINDNESS)
+	GlobalLT("LOCAL_CAST_SPELL","LOCALS",2)
+	See(NearestEnemyOf(Myself))
+	!StateCheck(LastSeenBy(Myself),STATE_BLIND)
+THEN
+	RESPONSE #100
+		IncrementGlobal("ATTACK_CNT","LOCALS",1)
+		Spell(LastSeenBy(Myself),WIZARD_BLINDNESS)
+		Wait(2)
+END
+
+IF
+	HaveSpellRES("IDWI805")
+	GlobalLT("LOCAL_CAST_SPELL","LOCALS",3)
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		IncrementGlobal("ATTACK_CNT","LOCALS",1)
+		SpellRES("IDWI805",LastSeenBy(Myself))
+		Wait(2)
+END
+
+IF
+	HaveSpell(WIZARD_STINKING_CLOUD)
+	GlobalLT("LOCAL_CAST_SPELL","LOCALS",4)
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		IncrementGlobal("ATTACK_CNT","LOCALS",1)
+		Spell(LastSeenBy(Myself),WIZARD_STINKING_CLOUD)
+		Wait(2)
+END
+
+IF
+	HaveSpell(WIZARD_CHAIN_LIGHTNING)
+	GlobalLT("LOCAL_CAST_SPELL","LOCALS",5)
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		IncrementGlobal("ATTACK_CNT","LOCALS",1)
+		Spell(LastSeenBy(Myself),WIZARD_CHAIN_LIGHTNING)
+		Wait(2)
+END
+
+IF
+	HaveSpell(WIZARD_CHAOS)
+	GlobalLT("LOCAL_CAST_SPELL","LOCALS",6)
+	See(NearestEnemyOf(Myself))
+	!StateCheck(LastSeenBy(Myself),STATE_CONFUSED)
+THEN
+	RESPONSE #100
+		IncrementGlobal("ATTACK_CNT","LOCALS",1)
+		Spell(LastSeenBy(Myself),WIZARD_CHAOS)
+		Wait(2)
+END
+
+IF
+	HaveSpell(WIZARD_CHROMATIC_ORB)
+	GlobalLT("LOCAL_CAST_SPELL","LOCALS",7)
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		IncrementGlobal("ATTACK_CNT","LOCALS",1)
+		Spell(LastSeenBy(Myself),WIZARD_CHROMATIC_ORB)
+		Wait(2)
+END
+
+IF
+	HaveSpell(WIZARD_CLOUDKILL)
+	GlobalLT("LOCAL_CAST_SPELL","LOCALS",8)
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		IncrementGlobal("ATTACK_CNT","LOCALS",1)
+		Spell(LastSeenBy(Myself),WIZARD_CLOUDKILL)
+		Wait(2)
+END
+
+IF
+	HaveSpell(WIZARD_CONE_OF_COLD)
+	GlobalLT("LOCAL_CAST_SPELL","LOCALS",9)
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		IncrementGlobal("ATTACK_CNT","LOCALS",1)
+		Spell(LastSeenBy(Myself),WIZARD_CONE_OF_COLD)
+		Wait(2)
+END
+
+IF
+	HaveSpell(WIZARD_DOMINATION)
+	GlobalLT("LOCAL_CAST_SPELL","LOCALS",10)
+	See(NearestEnemyOf(Myself))
+	!StateCheck(LastSeenBy(Myself),STATE_CHARMED)
+THEN
+	RESPONSE #100
+		IncrementGlobal("ATTACK_CNT","LOCALS",1)
+		Spell(LastSeenBy(Myself),WIZARD_DOMINATION)
+		Wait(2)
+END
+
+IF
+	HaveSpell(WIZARD_FEEBLEMIND)
+	GlobalLT("LOCAL_CAST_SPELL","LOCALS",11)
+	See(NearestEnemyOf(Myself))
+	!StateCheck(LastSeenBy(Myself),STATE_FEEBLEMINDED)
+THEN
+	RESPONSE #100
+		IncrementGlobal("ATTACK_CNT","LOCALS",1)
+		Spell(LastSeenBy(Myself),WIZARD_FEEBLEMIND)
+		Wait(2)
+END
+
+IF
+	HaveSpell(WIZARD_DEATH_SPELL)
+	GlobalLT("LOCAL_CAST_SPELL","LOCALS",12)
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		IncrementGlobal("ATTACK_CNT","LOCALS",1)
+		Spell(LastSeenBy(Myself),WIZARD_DEATH_SPELL)
+		Wait(2)
+END
+
+IF
+	HaveSpell(WIZARD_HOLD_PERSON)
+	GlobalLT("LOCAL_CAST_SPELL","LOCALS",13)
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		IncrementGlobal("ATTACK_CNT","LOCALS",1)
+		Spell(LastSeenBy(Myself),WIZARD_HOLD_PERSON)
+		Wait(2)
+END
+
+IF
+	HaveSpell(WIZARD_HORROR)
+	GlobalLT("LOCAL_CAST_SPELL","LOCALS",14)
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		IncrementGlobal("ATTACK_CNT","LOCALS",1)
+		Spell(LastSeenBy(Myself),WIZARD_HORROR)
+		Wait(2)
+END
+
+IF
+	HaveSpell(WIZARD_CONTAGION)
+	GlobalLT("LOCAL_CAST_SPELL","LOCALS",15)
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		IncrementGlobal("ATTACK_CNT","LOCALS",1)
+		Spell(LastSeenBy(Myself),WIZARD_CONTAGION)
+		Wait(2)
+END
+
+IF
+	HaveSpell(WIZARD_LIGHTNING_BOLT)
+	GlobalLT("LOCAL_CAST_SPELL","LOCALS",16)
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		IncrementGlobal("ATTACK_CNT","LOCALS",1)
+		Spell(LastSeenBy(Myself),WIZARD_LIGHTNING_BOLT)
+		Wait(2)
+END
+
+IF
+	HaveSpell(WIZARD_MAGIC_MISSILE)
+	GlobalLT("LOCAL_CAST_SPELL","LOCALS",17)
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		IncrementGlobal("ATTACK_CNT","LOCALS",1)
+		Spell(LastSeenBy(Myself),WIZARD_MAGIC_MISSILE)
+		Wait(2)
+END
+
+IF
+	HaveSpell(WIZARD_MAGIC_MISSILE)
+	GlobalLT("LOCAL_CAST_SPELL","LOCALS",18)
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		IncrementGlobal("ATTACK_CNT","LOCALS",1)
+		Spell(LastSeenBy(Myself),WIZARD_MAGIC_MISSILE)
+		Wait(2)
+END
+
+IF
+	HaveSpell(WIZARD_POWER_WORD_SILENCE)
+	GlobalLT("LOCAL_CAST_SPELL","LOCALS",19)
+	See(NearestEnemyOf(Myself))
+	!StateCheck(LastSeenBy(Myself),STATE_SILENCED)
+THEN
+	RESPONSE #100
+		IncrementGlobal("ATTACK_CNT","LOCALS",1)
+		Spell(LastSeenBy(Myself),WIZARD_POWER_WORD_SILENCE)
+		Wait(2)
+END
+
+IF
+	HaveSpell(WIZARD_SLOW)
+	GlobalLT("LOCAL_CAST_SPELL","LOCALS",20)
+	See(NearestEnemyOf(Myself))
+	!StateCheck(LastSeenBy(Myself),STATE_SLOWED)
+THEN
+	RESPONSE #100
+		IncrementGlobal("ATTACK_CNT","LOCALS",1)
+		Spell(LastSeenBy(Myself),WIZARD_SLOW)
+		Wait(2)
+END
+
+IF
+	HaveSpellRES("IDWI220")
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		IncrementGlobal("ATTACK_CNT","LOCALS",1)
+		SpellRES("IDWI220",LastSeenBy(Myself))
+		Wait(2)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		IncrementGlobal("ATTACK_CNT","LOCALS",1)
+		AttackReevaluate(LastSeenBy(Myself),75)
+END
+

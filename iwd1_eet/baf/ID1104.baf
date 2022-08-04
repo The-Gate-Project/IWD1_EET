@@ -1,0 +1,7 @@
+IF
+  !Global("ID1104_VISITED","GLOBAL",1)
+THEN
+  RESPONSE #100
+    SetGlobal("ID1104_VISITED","GLOBAL",1)
+    Continue()
+END

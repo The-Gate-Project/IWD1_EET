@@ -1,0 +1,121 @@
+IF
+	!BitCheck("CREATURE_STATE_VAR","LOCALS",1)
+THEN
+	RESPONSE #100
+		BitSet("CREATURE_STATE_VAR","LOCALS",1)
+		SetGlobalTimer("IdTimer24","LOCALS",5)
+		SaveObjectLocation("LOCALS","SavedLoc",Myself)
+		Continue()
+END
+
+IF
+	StateCheck(Myself,STATE_PANIC)
+THEN
+	RESPONSE #100
+		RandomWalkContinuous()
+END
+
+IF
+	GlobalLT("SIREN_QUEST","GLOBAL",3)
+	GlobalTimerExpired("IdTimer24","LOCALS")
+	Global("FLOAT_0_LINE_INDEX","LOCALS",0)
+	Detect([PC])
+THEN
+	RESPONSE #100
+		DisplayStringHead(Myself,@3802)
+		IncrementGlobal("FLOAT_0_LINE_INDEX","LOCALS",1)
+		SetGlobalTimer("IdTimer24","LOCALS",5)
+		Continue()
+	RESPONSE #0
+		IncrementGlobal("FLOAT_0_LINE_INDEX","LOCALS",1)
+		SetGlobalTimer("IdTimer24","LOCALS",5)
+		Continue()
+END
+
+IF
+	GlobalLT("SIREN_QUEST","GLOBAL",3)
+	GlobalTimerExpired("IdTimer24","LOCALS")
+	Global("FLOAT_0_LINE_INDEX","LOCALS",1)
+	Detect([PC])
+THEN
+	RESPONSE #100
+		DisplayStringHead(Myself,@3804)
+		IncrementGlobal("FLOAT_0_LINE_INDEX","LOCALS",1)
+		SetGlobalTimer("IdTimer24","LOCALS",5)
+		Continue()
+	RESPONSE #0
+		IncrementGlobal("FLOAT_0_LINE_INDEX","LOCALS",1)
+		SetGlobalTimer("IdTimer24","LOCALS",5)
+		Continue()
+END
+
+IF
+	GlobalLT("SIREN_QUEST","GLOBAL",3)
+	GlobalTimerExpired("IdTimer24","LOCALS")
+	Global("FLOAT_0_LINE_INDEX","LOCALS",2)
+	Detect([PC])
+THEN
+	RESPONSE #100
+		DisplayStringHead(Myself,@3803)
+		SetGlobal("FLOAT_0_LINE_INDEX","LOCALS",0)
+		SetGlobalTimer("IdTimer24","LOCALS",5)
+		Continue()
+	RESPONSE #0
+		SetGlobal("FLOAT_0_LINE_INDEX","LOCALS",0)
+		SetGlobalTimer("IdTimer24","LOCALS",5)
+		Continue()
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		Help()
+		AttackReevaluate(LastSeenBy(Myself),75)
+END
+
+IF
+	AttackedBy(NearestEnemyOf(Myself),DEFAULT)
+THEN
+	RESPONSE #100
+		MoveToObject(LastAttackerOf(Myself))
+END
+
+IF
+	Help(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		MoveToObject(LastHelp(Myself))
+END
+
+IF
+	AttackedBy([GOODCUTOFF],DEFAULT)
+THEN
+	RESPONSE #100
+		Enemy()
+		Continue()
+END
+
+IF
+	Help([PC])
+THEN
+	RESPONSE #100
+		FaceObject(LastHelp(Myself))
+		Continue()
+END
+
+IF
+	Help([0.0.HUMAN])
+THEN
+	RESPONSE #100
+		MoveToObject(LastHelp(Myself))
+END
+
+IF
+	ActionListEmpty()
+	!NearSavedLocation(Myself,"LOCALSSavedLoc",0)
+THEN
+	RESPONSE #100
+		MoveToSavedLocation("SavedLoc","LOCALS")
+END
+

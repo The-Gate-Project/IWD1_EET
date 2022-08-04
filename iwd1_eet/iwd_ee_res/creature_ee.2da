@@ -1,0 +1,1050 @@
+
+CRE_FILE	OVERRIDE	CLASS	RACE	GENERAL	DEFAULT	ITEMS	DIALOG
+ACCALIA	None	None	None	None	EHACCALI	2	DACCALIA
+ACOLDEAD	None	None	None	None	None	0	None
+ACOLPOIS	None	None	None	None	None	0	None
+ACOLYTE	None	None	None	None	None	1	None
+ACOLYTED	None	None	None	None	None	1	DACOLYTE
+AD1SKLM	None	None	None	None	GNSUMMM	2	None
+AD2SKLM	None	None	None	None	GNSUMMM	2	None
+AD2SKLR	None	None	None	None	GNSUMMB	4	None
+AD2ZOMB	None	None	None	None	GNSUMMM	2	None
+AD3SKLM	None	None	None	None	GNSUMMM	2	None
+AD3SKLR	None	None	None	None	GNSUMMB	4	None
+AD3ZOMB	None	None	None	None	GNSUMMM	2	None
+AD4SKLR	None	None	None	None	GNSUMMB	4	None
+AD4ZOMB	None	None	None	None	GNSUMMM	2	None
+AD5ZOMB	None	None	None	None	GNSUMMM	2	None
+ADRAN	None	None	None	None	None	13	None
+ALBION	None	None	None	None	None	1	None
+ALDWIN	None	None	None	None	None	2	DALDWIN
+ALPHEUS			lwvaartm	lwalpwg	lwalph1	7	DALPHEUS
+ALPHEUSD						7	DALPHEUS
+AMBERE	None	None	None	None	None	0	DAMBERE
+AMBEREH		efpikwrn	eftwnchk	lwambei	efatkmel	0	DAMBERE
+AMELIA	None	None	None	None	None	0	DAMELIA
+ANGAAR	None	None	None	None	None	4	DANGAAR
+ANIMTEST	animtest	None	None	None	None	10	None
+APSEL	None	None	None	None	None	0	DAPSEL
+ARDEN	None	None	None	None	None	0	DARDEN
+ARDEND	None	None	None	None	None	0	DARDEN
+ARUNDEL	None	None	None	None	KUARUND	2	DARUNDEL
+ARUNDEL1		eftwnchk			kuarund1	1	DARUNDEL
+AS1BEAR	None	None	None	None	GNSUMMM	1	None
+AS1WOLF	None	None	None	None	GNSUMMM	1	None
+AS2CAVE	None	None	None	None	GNSUMMM	1	None
+AS2DIRE	None	None	None	None	GNSUMMM	1	None
+AS3POLR	None	None	None	None	GNSUMMM	1	None
+AS3WINT	None	None	None	None	GNSUMMM	2	None
+BADSON	None	None	None	None	None	1	None
+BALDEMAD	None	None	None	None	None	0	DBALDEMR
+BALDEMAR	None	None	None	None	None	0	DBALDEMR
+BANDOTH	None	None	None	None	None	0	None
+BAR1AXE	None	None	None	None	None	5	None
+BAR1MCE	None	None	None	None	None	5	None
+BAR1SWD	None	None	None	None	None	5	None
+BAR2AXE	None	None	None	None	None	4	None
+BAR2HMR	None	None	None	None	None	4	None
+BAR2SWD	None	None	None	None	None	4	None
+BAR3AXE	None	None	None	None	None	4	None
+BAR3MCE	None	None	None	None	None	4	None
+BAR3SWD	None	None	None	None	None	4	None
+BARKEEP	None	None	None	None	None	0	DGRISELL
+BATCAT	None	None	None	None	None	1	None
+BBSPIR		gnteam1	idislfix	efatkmel	effolpty	3	None
+BBSPIR2		gnteam1h	idislfix	efatkmel	effolpty	3	None
+BEARBEL	None	None	None	None	None	1	None
+BEARBL	SUMSHT02	None	BEAR	HUNTER	WDASIGHT	1	
+BEARBLSU	SUMSHT02	None		None		1	
+BEARBR	SUMSHT02	None	BEAR	hunter	WDASIGHT	1	
+BEARBRSU	SUMSHT02	None		None	wtasight	1	
+BEARCASU	SUMSHT02	None		None	wtasight	1	
+BEARPOLD	None	None	None	None	None	1	None
+BEARPOLR	None	None	None	None	None	1	None
+BEARPOSU		None		None	gnsummm	1	
+BEDD1	None	None	None	None	None	0	
+BEETBOMB	None	None	BBCLOUD	None	None	2	None
+BEETBOR	None	None	None	None	None	1	None
+BEETLED	None	None	None	None	None	1	None
+BEETLEG	None	None	None	None	None	1	None
+BEETRHIN	None	None	None	None	None	2	None
+BEHOLDER	None	None	None	None	None	1	None
+BEHOLDH		keteam1	kebehld1	effolpty		1	None
+BELHIF	None	None	None	EEBELHI1	EEBELWA	4	DBELHIFE
+BEORN	None	None	None	None	None	0	None
+BEORNEN	None	None	None	None	None	3	DBEORNEN
+BERGCLAW	None	None	None	None	None	1	None
+BERSERK	None	None	None	GNBZKWAR	None	2	None
+BHARKEN	None	None	None	None	None	1	None
+BIKNIGHT	None	None	None	None	None	2	None
+BIRD					shbird	0	None
+BKNIGHT	None	None	None	GNBLKKNI	None	4	None
+BON8005	None	None	None	LDSHKSUM	None	2	None
+BON8013	None	None	None	LDSPAWN1	None	2	None
+BONEGARD	None	None	None	GNMMG9GH	None	2	None
+BPARTY01	NONE	IWDPGEN	NONE	NONE	DPLAYER3	0	MULTIG
+BPARTY02	NONE	IWDPGEN	NONE	NONE	DPLAYER3	0	MULTIG
+BPARTY03	NONE	IWDPGEN	NONE	NONE	DPLAYER3	0	MULTIG
+BPARTY04	NONE	IWDPGEN	NONE	NONE	DPLAYER3	0	MULTIG
+BPARTY05	NONE	IWDPGEN	NONE	NONE	DPLAYER3	0	MULTIG
+BPARTY06	NONE	IWDPGEN	NONE	NONE	DPLAYER3	0	MULTIG
+BPERDIEM	None	None	None	None	None	2	None
+BRONSEN					udbronsn	4	None
+CALLARD	None	None	None	None	None	2	None
+CALLARDS	None	None	None	None	None	1	None
+CALLIANA	None	None	None	None	None	1	DCALLIAN
+CARRIOSU	None	CCRAWLER	None	None	none	1	
+CAT	None	None	None	None	None	0	None
+CATJAGSU	SUMSHT01	None	None	None	WTASIGHT	1	
+CATLIOSU	None	None	None	None	wtasight	1	
+CDBETHLA	None	None	None	None	None	1	None
+CDCAPV1A	cdcapvil	None	None	None	None	1	dcapvil3
+CDCAPV2A	cdcapvil	None	None	None	None	1	dcapvil3
+CDCAPV3A	cdcapvil	None	None	None	None	1	dcapvil3
+CDCAPV4A	cdcapvil	None	None	None	None	1	dcapvil3
+CDCAPV5A	cdcapvil	None	None	None	None	1	dcapvil3
+CDCAPV6A	cdcapvil	None	None	None	None	1	dcapvil3
+CDCAPV7A	cdcapvil	None	None	None	None	1	dcapvil3
+CDCAPV8A	cdcapvil	None	None	None	None	1	dcapvil3
+CDDAEN	CDDAEN	None	None	None	None	3	CDDAEN
+CDIGOLEM	None	None	IGCLOUD	None	None	3	None
+CDISLAND	cdisland	None	None	None	None	0	
+CDNEFGAS	None	None	None	cdnef	WDRUNSGT	0	None
+CDPRESIO	cdpresio	d3pres	None	None	None	4	None
+CDSHWELE	None	GNELEWTF	None	None	GNSUMMM	2	None
+CDTROLL1	cdtroll1		None	None	wtatroll	5	
+CDUH8004	None	None	UHGAZE	GNMMGSGH	None	2	None
+CDVEX	efdlgf	None	None	None		5	cdvex
+CDYUCHAM	None	None	None	None	None	1	None
+CFCAPVIL	None	None	None	None	None	0	None
+CHAIRM1	None	None	None	None	None	0	DTOWNGEN
+CHAIRM2	None	None	None	None	None	0	DTOWNGEN
+CHAIRM3	None	None	None	None	None	0	DTOWNGEN
+CHAIRM4	None	None	None	None	None	0	DTOWNGEN
+CHALTROL	chaltrol	GRPSHT01	chalDIE	None	WTASIGHT	4	chevil03
+CHARBASE	None	None	None	None	EHACCALI	2	DACCALIA
+CHICKEN	None	None	None	None	None	0	None
+CHURIN	None	None	None	None	None	1	DCHURIN
+CKINVST		gnteam8h	efatkmel	effolpty		1	None
+CKNIGHT	None	GNTEAM1	D4CLERIC	D4MARATK	None	4	DADVEN
+CKSPGRD	None	None	None	None	None	6	DSPGRD
+CKSPGRD2		kelurded	efatkmel	gnt2move		6	DSPGRD
+CKSPGRD3		kelurded	efatkmel	gnt3move		6	DSPGRD
+CKSPGRD4	GNTEAM4	kelurded	efatkmel	gnt4move		6	DSPGRD
+CKSPGRD5	GNTEAM5	kelurded	efatkmel	gnt5move		6	DSPGRD
+CKSPGRD6		kelurded	efatkmel	gnt6move		6	DSPGRD
+CKSPGRD7	GNTEAM7	kelurded	efatkmel	gnt7move		6	DSPGRD
+CKSPGRDH	GNTEAM1	kelurded	efatkmel	gnt1move		6	DSPGRD
+CMCAPVIL	None	None	None	None	None	0	None
+CONLAN	None	None	None	None	None	2	DCONLAN
+COOK	None	None	None	None	None	0	None
+COPSPIR	None	EFDLGF	None	None	None	0	DPLANAR
+CORCAT	None	EFSPAWN1	EFATKMEL	EFFOLPTY	None	5	None
+CORNUGO	None	None	None	None	None	4	None
+COW	None	None	None	None	None	0	DCOW
+CPMUMG	None	None	None	None	None	5	None
+CRIEK	None	None	None	None	None	4	DCRIECK
+CRYPTHNG	None	None	None	None	None	2	None
+CUSTOS	None	None	None	None	None	2	DCUSTHAN
+CUTSPY	NONE	NONE	NONE	NONE	NONE	2	NONE
+CUTSPY2	NONE	NONE	NONE	NONE	NONE	2	NONE
+CYANIMP1	None	EFSPAWN1	EFATKMEL		None	6	None
+CYANIMP2	None	EFSPAWN1	EFATKMEL		None	6	None
+CYANIMP3	None	EFSPAWN1	EFATKMEL	NONE	None	6	None
+CYBEETR	None	None	None	None	None	1	None
+CYCLOPS	None	None	None	None	GNMMGSG	1	None
+CYEARTHE	None	SWCLGWIT	EFSPAWN1	EFATKMEL	None	3	None
+CYFIREE	None	SWCLGWIT	EFSPAWN1	EFATKMEL	None	3	None
+CYICEG	None	SWCLGWIT	EFSPAWN1	EFATKMEL	None	2	None
+CYIRONG	None	SWCLGWIT	EFSPAWN1	IGCLOUD	EFATKMEL	4	None
+CYMYCON	None	EFSPAWN1	MSPORES	EFATKMEL	None	3	None
+CYSHAMB	None	EFSPAWN1	SESHAMB	None	None	4	None
+CYSPIDPH	PSPIDER	None	None	None	#iwd_wta	2	
+CYSPIDSW	None	None	None	None	#iwd_wta	3	
+CYWATERE	None	SWCLGWIT	EFSPAWN1	EFATKMEL	None	4	None
+DAMIEN	None	None	None	None	None	0	DDAMIEN
+DAMIEN2		eftwnchk			ehdamie2	0	DDAMIEN
+DAVIN	None	None	None	None	None	0	DDAVIN
+DBAR1	None	None	None	None	None	3	None
+DBAR2	None	None	None	None	None	3	None
+DBAR3	None	None	None	None	None	3	None
+DBAR4	None	None	None	None	None	3	None
+DBAR5	None	None	None	None	None	3	None
+DBAR6	None	None	None	None	None	3	None
+DEADVIL	None	None	None	None	None	0	None
+DEADVILF						0	
+DEADWOLF	None	None	None	None	None	0	None
+DEDDOG	None	None	None	None	None	2	None
+DEEPGNUN	None	None	None	None	None	2	None
+DEMGLASU	demglasu	none	None	None	wtasight	3	None
+DEMNABSU	demnabsu	none	None	None	wtasight	3	None
+DEMPITSU	dempitsu	none	None	None	wtasight	4	None
+DENAINI	None	None	None	None	None	4	DDENAINI
+DEVAEVIL	devaevil	None	None	None	wtasight	2	devaevil
+DEVAGOOD	devagood	None	None	None	wtasight	2	devagood
+DIGBY	None	None	None	None	None	2	DDIGBY
+DIREB	None	None	None	None	None	1	None
+DIRTLLEW	None	None	None	None	None	2	DDIRTYLL
+DJINNI		sedjinni	EFATKMEL	GNT1MOVE		2	None
+DJINNISU	None	None	None	DJINNI01	gnsummm	1	
+DLBAR1A	None	None	None	None	None	5	None
+DLBAR1M	None	None	None	None	None	5	None
+DLBAR1S	None	None	None	None	None	5	None
+DLBAR3A	None	None	None	None	None	5	None
+DLBAR3M	None	None	None	None	None	5	None
+DLBAR3S	None	None	None	None	None	5	None
+DLBNEGRD	None	None	None	None	None	3	None
+DLBONEC	None	None	None	None	None	2	None
+DLCLDAXE	None	None	None	None	None	4	None
+DLCLDHND	None	None	None	None	None	3	None
+DLCLDMCE	None	None	None	None	None	4	None
+DLCLDSWD	None	None	None	None	None	4	None
+DLFZNBNE	None	None	None	None	None	3	None
+DLGOLEM	None	None	None	None	None	2	None
+DLICEAXE	None	None	None	None	None	3	None
+DLICEHND	None	None	None	None	None	3	None
+DLICESWD	None	None	None	None	None	3	None
+DLICETR	None	None	None	None	None	2	None
+DLSCRAG	None	None	None	None	None	2	None
+DLSGEM		ilgemw	ilgems	ilgemn	ilgemu	3	None
+DLSNOTR	None	None	None	None	None	3	None
+DLWATER	None	None	None	None	None	3	None
+DLYETI	None	None	None	None	None	2	None
+DOGWASU	None	None	None	None	WTASIGHT	1	
+DOGWISU	None	None	None	None	WTASIGHT	1	
+DOLAN	None	None	None	None	None	2	DDOLAN
+DOOGAL	None	None	None	None	None	2	DDOOGAL
+DROWNED	None	None	None	None	None	3	None
+DROWPM	None	None	None	None	None	2	None
+DROWSOR	None	None	None	None	None	2	None
+DROWSPE	None	None	None	None	None	1	None
+DROWVAN	None	None	None	None	None	4	None
+DRUEAR01	None	None	None	None	None	2	
+DRUFIR01	None	None	None	None	WTASIGHT	2	
+DRUIDBB	None	None	None	None	None	1	None
+DRUIDEE	None	None	None	None	GNSUMMM	1	None
+DRUIDFE	None	None	None	None	GNSUMMM	1	None
+DRUIDPB	None	None	None	None	None	1	None
+DRUIDWE	None	GNELEWTF	None	None	GNSUMMM	2	None
+DRUIDWW	None	None	None	None	None	2	None
+DVER	None	None	None	None	None	1	None
+EBOY1	None	None	None	None	None	0	DCHILGEN
+EBOY2	None	None	None	None	None	0	DCHILGEN
+ECOGRE	None	None	None	None	None	4	
+EDION	None	None	None	None	None	0	DEDION
+EECORPSE						1	
+EECYC1					eecycl3	1	None
+EECYC2					eecycl9	1	None
+EEEVERAR	None	None	None	None	EHEVERAR	4	DEVERARD
+EELE8013	None	None	None	LDSPAWN1	None	2	None
+EEPOMAB	None	EEPOMABK	None	eePomabR		4	DPOMEND
+EESQUIR2	None	None	None	None		2	None
+EESQUIR3	None	None	None	None		2	None
+EESQUIR4	None	None	None	None		2	None
+EESQUIR5	eesqlmob			efatkmel	gnt6move	2	None
+EESQUIR6	eesqlmob			efatkmel	gnt7move	2	None
+EESQUIR7	eesqlmob		gnteam8e	efatkmel	gnt8move	2	None
+EESQUIRL		gnteam9s			eesquirl	2	None
+EFREETSU	None	None	None	EFREET01	gnsummm	1	
+EGENIA	None	None	None	None	None	0	DEGENIA
+EGIRL1	None	None	None	None	None	0	DCHILGEN
+EGIRL2	None	None	None	None	None	0	DCHILGEN
+EHBEETLE	None	None	None	None	_MBFI	1	None
+ELAIRSU1	WIZELSUM	None	None	None	WTASIGHT	2	
+ELAIRSU2	WIZELSU2	None	None	None	WTASIGHT	2	
+ELAIRSU3	WIZELSU2	None	None	None	WTASIGHT	2	
+ELAIRSUW	WIZELSU2	None	None	None	WTASIGHT	2	
+ELDATHH	None	None	None	None	None	0	None
+ELDATHL	None	None	None	None	None	2	None
+ELDATHYF	None	None	None	None	None	0	DELDATH
+ELDATHYN	None	None	None	None	None	0	DELDATH
+ELEARG01	GENSHT01	None	None	None	WDASIGHT	2	
+ELEARPR	None	None	None	None	WTASIGHT	2	
+ELEARPR2	None	None	None	None	WTASIGHT	2	
+ELEARPR3	None	None	None	None	WTASIGHT	2	
+ELEARSU2	WIZELSU2	None	None	None	wtasight	2	
+ELEARSU3	WIZELSU2	None	None	None	wtasight	2	
+ELEARSU4	WIZELSU2	None	None	None	wtasight	2	
+ELEARSUW	WIZELSUM	None	None	None	WTASIGHT	2	
+ELEMCHAN	elemchan	None	None	None	WTASIGHT	2	
+ELEMEART	None	None	None	None	None	2	None
+ELEMFIRE	None	None	None	None	None	2	None
+ELEMSUNN	elemsunn	None	None	None	WTASIGHT	2	
+ELEMWAT	None	None	None	None	None	3	None
+ELEMZAAM	elemzaam	None	None	None	wtasight	2	
+ELETRO01	eletro03	GENSHT01	eletro	None	WTASIGHT	6	None
+ELFIRPR	None	None	None	None	WTASIGHT	2	
+ELFIRPR2	None	None	None	None	WTASIGHT	2	
+ELFIRPR3	None	None	None	None	WTASIGHT	2	
+ELFIRSU2	WIZELSU2	None	None	None	WTASIGHT	2	
+ELFIRSU3	WIZELSU2	None	None	None	WTASIGHT	2	
+ELFIRSU4	WIZELSU2	None	None	None	WTASIGHT	2	
+ELFIRSUW	WIZELSUM	None	None	None	WTASIGHT	2	
+ELISIA	None	None	None	None	None	2	DELISIA
+EMMERICH	#emmr_dv	None	None	None	None	9	DEMMRCH
+EMMRCHD	None	None	None	None	None	8	DEMMRCH
+EMMRCHH			lwemmrh	efinvnot	efatkbth	9	DEMMRCH
+EREVAIN	None	None	None	None	None	5	DEREVAIN
+EREVDEAD	None	None	None	None	None	5	DEREVAIN
+ERRIS		cperris0		EFDLGF		5	DWKNGHT
+ES12ERTH	None	None	None	None	GNSUMMM	1	None
+ES12FIRE	None	None	None	None	GNSUMMM	1	None
+ES12WATR	None	GNELEWTF	None	None	GNSUMMM	3	None
+ES16ERTH	None	None	None	None	GNSUMMM	1	None
+ES16FIRE	None	None	None	None	GNSUMMM	1	None
+ES16WATR	None	GNELEWTF	None	None	GNSUMMM	3	None
+ES20ERTH	None	None	None	None	GNSUMMM	1	None
+ES20FIRE	None	None	None	None	GNSUMMM	1	None
+ES20WATR	None	GNELEWTF	None	None	GNSUMMM	3	None
+ES24ERTH	None	None	None	None	GNSUMMM	1	None
+ES24FIRE	None	None	None	None	GNSUMMM	1	None
+ES24WATR	None	GNELEWTF	None	None	GNSUMMM	3	None
+ES8AIR	None		None	None	GNSUMMM	2	None
+ES8ERTH	None	None	None	None	GNSUMMM	1	None
+ES8FIRE	None	None	None	None	GNSUMMM	1	None
+ES8WATR	None	GNELEWTF	None	None	GNSUMMM	3	None
+ESMERTH	None	LDMALSUM	None	None	GNELEM1	2	None
+ETTERCSU	None	None	ETTERCAP	None	None	3	
+ETTIN	None	None	None	None	None	1	None
+EVERARD	None	None	None	None	EHEVERAR	4	DEVERARD
+EVERARD2	None	None	None	None	EHEVERAR	1	DEVERARD
+FAMCAT		None	None	None		6	famil3
+FAMDUST		None	None	None		8	famil2
+FAMFAIR		None	None	None		6	famil1
+FAMFER		None	None	None		6	famil3
+FAMIMP		None	None	None		6	famil2
+FAMPSD		None	None	None		8	famil1
+FAMQUAS			None	None		6	famil2
+FAMRAB		None	None	None		6	famil3
+FCAPVIL	None	None	None	None	None	0	None
+FENGLA	None	None	None	None	None	1	None
+FENGLA2				LDFENG2		0	DFENGLA
+FERG	None	None	None	None	None	0	DFERG
+FFCAPVIL	None	None	None	None	None	0	None
+FINCOR01	NONE	NONE	NONE	NONE	NONE	4	NONE
+FINCOR02	NONE	NONE	NONE	NONE	NONE	4	NONE
+FINGOL01	NONE	NONE	IGCLOUD	NONE	NONE	3	NONE
+FINGOL02	NONE	NONE	IGCLOUD	NONE	NONE	3	NONE
+FLEEZUM	None	None	None	None	None	4	None
+FLEEZUM2				ldfleez2		4	None
+FLOZEM	None	None	None	None	None	5	None
+FLOZEM2				ldfloz2		5	None
+FMCAPVIL	None	None	None	None	None	0	None
+FROSTBIT	None	None	None	None	None	3	DFROSTBI
+FROSTSAL	None	None	SAFROST	None	None	2	None
+GARETH	None	None	None	None	None	0	DGARETH
+GASFORM1	None	None	None	DJINNI02	WDRUNSGT	0	None
+GASFORM2	None	None	None	None	WDRUNSGT	0	None
+GASFORM3	None	None	None	EFREET02	WDRUNSGT	0	None
+GASPAR	None	None	None	None	None	1	DGASPAR
+GBARD	None	None	None	None	None	4	DLURE
+GEDDIAN		cpgeddi0		EFDLGF		6	DWKNGHT
+GEEZER	None	None	None	None	None	0	DAPSEL
+GELARITH	None	None	None	None	None	2	
+GENDJI01	GENSHT01	None	None	DJINNI01	WTASIGHT	1	
+GENEFN01	GENSHT01	None	None	EFREET04	WTASIGHT	1	
+GENEFR01	GENSHT01	None	None	EFREET01	WTASIGHT	1	
+GENEK	None	None	None	None	None	1	None
+GERTH	None	None	None	None	None	0	DGERTH
+GHAST	None	None	None	None	None	2	None
+GHEREG	None	None	None	None	None	2	DOGRE
+GHOST	None	None	None	None	None	3	None
+GIANTFG	None	None	None	None	None	4	None
+GIANTFI2	None	None	None	None	None	2	DGENMOND
+GIANTFIR	None	None	None	None	None	2	DGENMOND
+GIANTFN	None	None	None	None	None	4	None
+GIANTFRO	None	None	None	None	None	2	None
+GIANTFS	None	None	None	None	None	3	None
+GILES		cpgiles0		EFDLGF		5	DWKNGHT
+GINAFAE	None	None	None	None	None	0	None
+GISBOMB	None	None	BBCLOUD	None	GNSUMMM	2	None
+GISBORB	None	None	None	None	GNSUMMM	1	None
+GLBCAT	None	EFATKMEL	EFFOLPTY	None	None	3	None
+GNOLLSU	GENSHT01	None	None		WTASIGHT	2	
+GOBEHQ1	None	None	None	None	None	5	None
+GOBLIN	None	None	None	None	None	2	None
+GOBLINA	None	None	None	None	None	3	None
+GOBLINAD	None	None	None	None	None	3	None
+GOBLIND	None	None	None	None	None	2	None
+GOBLINE	None	None	None	None	None	2	None
+GOBLINEA	None	None	None	None	None	3	None
+GOBLINSP	None	None	None	None	None	2	None
+GOBOAXE	None	None	None	None	None	1	None
+GOBOBOW	None	None	None	None	None	3	None
+GOLADA01	GENSHT01	None	None	GOLIRO01	WDASIGHT	3	
+GOLEMIC	None	None	None	None	None	1	None
+GOLEMIRO	None	None	IGCLOUD	None	None	3	None
+GOLJUG01	GENSHT01	None	None	GOLSTO01	WDASIGHT	3	
+GOLSAN01	GENSHT01	None	None	GOLCLY01	WDASIGHT	2	
+GORG	None	None	None	None	None	4	None
+GUELLO	None	None	None	None	None	0	None
+GUELLOH			gnteam3	ldguello		0	None
+GUS	None	None	None	None	None	0	DGUS
+HAILEE	None	None	None	None	None	0	DHAILEE
+HAILEEH		efpikwrn	eftwnchk	lwhaili	efflee00	0	DHAILEE
+HAKSU	Nishru01	None	None	None	None	2	
+HARALD	None	None	None	None	None	6	DHARALD
+HERMIT	None	None	None	None	None	2	DHERMIT
+HIGHARCH	None	None	None	GNMBG3GH	None	3	None
+HIGHBAPT	None	None	None	None	None	1	None
+HIGHRITU	None	None	None	None	None	1	None
+HIGHSUMM	None	None	None	None	None	2	None
+HIGHTORT						2	DHIGHTOR
+HILDRETH	None	None	None	None	None	3	DHILDRTH
+HISTACH	None	None	None	GNMMGSGH	None	3	None
+HJOLLDER	None	None	None	None	None	2	DHJOLLDE
+HJOLLDRH		bchjol0	efpikhst	lwhjolo	efrtnstr	2	DHJOLLDE
+HOBART	None	None	None	None	None	5	DHOBART
+HOBART2	None	None	None	None	None	5	DHOBART
+HOBARTF	None	None	None	None	None	3	DRAKSH
+HOBARTH						5	DHOBART
+HOBGOBSU	None	None	KOBOLSU	None	WTARSGT	7	None
+HORSE	None	None	None	None	None	0	DMUTE
+HPARTY01	NONE	IWDPGEN	NONE	NONE	DPLAYER3	11	MULTIG
+HPARTY02	NONE	IWDPGEN	NONE	NONE	DPLAYER3	8	MULTIG
+HPARTY03	NONE	IWDPGEN	NONE	NONE	DPLAYER3	6	MULTIG
+HPARTY04	NONE	IWDPGEN	NONE	NONE	DPLAYER3	13	MULTIG
+HPARTY05	NONE	IWDPGEN	NONE	NONE	DPLAYER3	6	MULTIG
+HPARTY06	NONE	IWDPGEN	NONE	NONE	DPLAYER3	6	MULTIG
+HROTH	None	None	None	None	None	3	DHROTH
+HROTH1		eftwnchk			ehhero1	3	DHROTH
+HRPCAT	None	None	None	None	None	1	None
+HRPFND	None	None	None	None	None	2	None
+HRPINF	None	None	None	None	None	2	None
+HRPMAT	None	None	None	None	None	6	DHARPY
+ICASA	None	None	None	None	None	4	None
+IDOL	None	None	None	None	None	2	None
+ILAIR		efdeldef	ldilair	gnt5move		2	None
+ILMADIA	None	None	None	None	None	6	None
+INNKPR	None	None	None	None	None	0	DQUIMBY
+INVISSAL			safrost	wttrprun		2	None
+INVISTRL			eftrolg	wttrprun		3	None
+INVSTLK		efdeldef	efinvnot	efatkmel	gnt5move	1	None
+IQUINVA	None	GNTEAM1	D4FIGHT2	D4MARATK	None	6	DADVEN
+JELLMU	None	None	None	None	wtasight	3	
+JEMEL	None	None	None	None	None	2	DJEMELD
+JERMSY						0	DJERMSY
+JHONEN	None	None	None	None	None	0	DJHONEN
+JKLDOG	None	None	None	None	None	2	None
+JKLGTR	None	None	None	None	None	2	None
+JKLLDR	None	None	None	None	None	2	None
+JKLSHM	None	None	None	None	None	2	None
+JKLSUM	None	None	None	None	None	2	None
+JKLWAR	None	None	None	None	None	2	None
+JORIL	None	None	None	None	None	6	DJORIL
+JORN	None	None	None	None	None	2	DJORN
+KAARUND	none	none	none	none	kuarundd	1	DARUNDEL
+KALABAC	None	None	None	None	None	2	None
+KAOROG				kuatkeff	kuatkoro	1	None
+KAOROGE				kuatkeff	kuatkoro	1	None
+KARRL	None	None	None	None	None	2	DKARRL1D
+KATOWN1		eftwnchk		kuatkeff	kuatktwn	1	DKATOWN
+KATOWN2		eftwnchk		kuatkeff	kuatktwn	1	DKATOWN
+KATOWN3		eftwnchk		kuatkeff	kuatktwn	1	DKATOWN
+KAYLESSA	None		EFPIKHST	None	None	8	DKAYLESS
+KEANIMP2		ketspwn2	effolpty			5	None
+KEANIMPH		ketspwn1	effolpty			5	None
+KELLY	None	None	None	LDKELLY	None	4	None
+KERISH	None	None	None	None	None	4	None
+KIERAN	None	None	None	None	None	3	DKIERAN2
+KOBOLDSU	None	None	KOBOLSU	None	WTASIGHT	6	
+KONTIK	None	None	None	None	None	6	None
+KRAKMAG	GNTEAM5M	efdeldef	ldkramge			3	None
+KRESS	None	None	None	None	None	3	None
+KTGHL1	None	None	None	None	None	2	None
+KTGST1	None	None	None	None	None	2	None
+KTMUM1	None	None	None	None	None	3	None
+KTSK1	None	None	None	None	None	2	None
+KTSK1H				gntrpm1		2	None
+KTSKA1	None	None	None	None	None	5	None
+KTSKA2	None	None	None	None	None	5	None
+KTSKA3	None	None	None	None	None	5	None
+KTSKH2	None	None	None	None	None	2	None
+KTSKH3	None	None	None	None	None	2	None
+KTSKT1	None	None	None	None	None	2	None
+KTSKT2	None	None	None	None	None	2	None
+KTSMG2	None	None	None	None	None	4	None
+KTTAS1	None	None	None	None	None	2	None
+KTTAS2	None	None	None	None	None	2	None
+KTTAS2H	None	None	None	None	None	2	None
+KTTGA1	None	None	None	None	None	2	None
+KTTGA2	None	None	None	None	None	2	None
+KTTGA3	None	None	None	None	None	2	None
+KTTGM1	None	None	None	None	None	2	None
+KTTGM3	None	None	None	None	None	2	None
+KTWGT1	None	None	None	None	None	3	None
+KTWGTI1	None	None	None	None	None	3	None
+KTZOM1	None	None	None	None	None	2	None
+KTZOMJ	None	None	None	None	None	4	None
+KUBEAR	None	None	None	None	None	1	None
+KUMIREK	None	None	None	None		0	DTOWNGEN
+KUYETI	None	None	None	None	2100YETI	2	None
+LARREL	None	None	None	None	None	2	DLARREL
+LARREL2	None	None	None	None	None	3	
+LDDARCHR	None	None	None	GNMBGSG	None	3	None
+LDDTHIE2	None	None	None	LDTHIEF	None	3	None
+LDDTHIE3	None	None	None	LDTHIEF	None	3	None
+LDDTHIEF				ldthief		3	None
+LEHLAND	None	None	None	None	None	2	DLEHLAND
+LETHIAS	None	None	None	None	None	3	DLETHIAS
+LGHAST	None	None	None	UDSPNEFF	GNMMGSG	2	None
+LGHOUL	None	None	None	UDSPNEFF	GNMMGSG	2	None
+LICH	None	None	None	None	None	4	None
+LICH2	None	None	None	None	None	4	None
+LIZDEAD	None	None	None	None	None	0	None
+LIZKING	None	None	None	None	None	1	None
+LM1HWAX	None	None	None	None	GNMMGSGH	2	None
+LM1HWAXY	None	None	D4INFMOV	GNMMGSGH	None	2	None
+LM1HWMS	None	None	None	None	GNMMGSGH	2	None
+LM1HWMSY	None	None	D4INFMOV	GNMMGSGH	None	2	None
+LM1HWPO	None	None	None	None	GNMMGSGH	2	None
+LM1HWPOY	None	None	D4INFMOV	GNMMGSGH	None	2	None
+LM2HWLA	None	None	None	None	GNMMGSGH	2	None
+LM2HWLAY	None	None	D4INFMOV	GNMMGSGH	None	2	None
+LM2HWNA	None	None	None	None	GNMMGSGH	2	None
+LM2HWNAY	None	None	D4INFMOV	GNMMGSGH	None	2	None
+LM2HWTE	None	None	None	None	GNMMGSGH	2	None
+LM2HWTEY	None	None	D4INFMOV	GNMMGSGH	None	2	None
+LMSHAM1	None	None	None	None	None	3	None
+LMSHAM2	None	None	None	None	None	3	None
+LMSHAM3	None	None	None	None	None	2	None
+LMSHKID	None	None	None	None	None	2	None
+LORDM	None	None	None	None	None	5	DLORD
+LSKARMMS	None	None	None	UDSPNEFF	GNMMGSG	2	None
+LSKARMSW	None	None	None	UDSPNEFF	GNMMGSG	1	None
+LWIGHT	None	None	None	UDSPNEFF	GNMMGSG	3	None
+LYSAN				vslysan		2	DLYSANPR
+LYSANBAR	None	None	None	None	None	1	DLYSANBA
+LZOMBIE	None	None	None	UDSPNEFF	GNMMGSG	2	None
+LZOMBIEJ	None	None	None	UDSPNEFF	GNMMGSG	4	None
+MALAVON		ldmalvon	ldmalat1	ldmalat2		8	DMALAVON
+MALAVONS	None	None	None	None	None	1	None
+MARKETH	None	None	None	None	None	5	None
+MCAPVIL	None	None	None	None	None	0	
+MCAR	None	None	None	None	none	1	
+MDK2DOC	none	mdkshout	none	wtasight		2	
+MDK2KURT	none	mdkshout	none	wtasight		2	
+MDK2MAX	none	mdkshout	none	wtasight		2	
+MEBDING	None	None	None	None	None	2	DMEBD
+MERCTHF				lwvaartm	efatkmel	3	None
+MERCTHFD	None	None	None	None	None	3	None
+MERCWAR1				lwvaartm	efatkmel	3	None
+MERCWAR2				lwvaartm	efatkmel	4	None
+MERCWR1D	None	None	None	None	None	3	None
+MERCWR2D	None	None	None	None	None	4	None
+MIN8005	None	None	None	LDSHKSUM	None	1	None
+MIN8013	None	None	None	None	LDSPAWN1	1	None
+MINCAT	None	None	None	None	None	1	None
+MINELD	None	None	None	None	None	1	None
+MINFLE	None	None	None	None	None	2	None
+MINLRD	None	None	None	None	None	3	None
+MINOTAUB	None	None	None	None	None	1	None
+MOUTH	None	None	None	None	None	0	DMOUTH
+MS1FB	None	None	None	None	GNSUMMM	1	None
+MS1GOBA	None	None	None	None	GNSUMMB	3	None
+MS1GOBM	None	None	None	None	GNSUMMM	1	None
+MS2BBTL	None	None	None	None	GNSUMMM	1	None
+MS2GOBB	None	None	None	None	GNSUMMB	3	None
+MS2GOBE	None	None	None	None	GNSUMMM	1	None
+MS2LIZM	None	None	None	None	GNSUMMM	1	None
+MS3BORB	None	None	None	None	GNSUMMM	1	None
+MS3GHL	None	None	None	None	GNSUMMM	2	None
+MS3HSPI	None	None	None	None	GNSUMMM	2	
+MS3OROG	None	None	None	None	GNSUMMM	1	None
+MS3TLIZ	None	None	None	None	GNSUMMM	1	None
+MS4GHST	None	None	None	None	GNSUMMM	2	None
+MS4OGR	None	None	None	None	GNSUMMM	1	
+MS4YETI	None	None	None	None	GNSUMMM	1	None
+MS5GSPI	None	None		None	GNSUMMM	2	
+MS5JZOM	None	None	None	None	GNSUMMM	2	None
+MS5MINO	None	None	None	None	GNSUMMM	1	None
+MS6CRWL	None	None	None	None	GNSUMMM	1	None
+MS6PSPI	PSPIDER	None	None	None	GNSUMMM	2	
+MS6SALC	None	None	SAFROST	None	GNSUMMM	1	None
+MS6SALF	None	None	SAFIRE		GNSUMMM	1	None
+MS7BGRD	None	None	None		GNSUMMM	2	None
+MS7UMBH	None	None	UHGAZE	None	GNSUMMM	1	None
+MSMCRWL	None	LDMALSUM	None	None	GNELEM1	1	None
+MSMPSPI	PSPIDER	LDMALSUM	None	None	GNELEM1	2	
+MSMSALC	None	LDMALSUM	SAFROST	None	GNELEM1	1	None
+MSMSALF	None	LDMALSUM	SAFIRE		GNELEM1	1	None
+MUMMY	None	None	None	None	None	3	None
+MUMMYG	None	None	None	None	None	3	None
+MURDAUGH	None	None	None	None	None	1	DMURDAUG
+MUSJELLY	None	None	None	None	None	4	None
+MWATER	None	GNTEAM1	D4FIGHT1	D4MARATK	None	3	DMARCH
+MYC8013	None	None	None	MSPORES	LDSPAWN1	1	None
+MYCONIDB	None	None	None	MSPORES	None	1	None
+MYCONIDR	None	None	MSPORES	GNMMGSGH	None	1	None
+MYRKULS	None	None	None	None	None	4	None
+MYTOS	None	None	None	None	None	4	None
+NATE	None	None	None	None	None	0	DNATE
+NEOOROG	None	None	None	None	None	1	None
+NEOOROGC	None	None	None	None	None	3	None
+NEOOROGE	None	None	None	None	None	1	None
+NEOOROGG	None	None	None	None	None	1	None
+NEOOROGS	None	None	None	None	None	1	None
+NISHRUSU	Nishru01	None	None	None	None	1	
+NORL	None	None	None	GNMMG3G	None	2	None
+NORLINOR	None	None	None	None	None	0	None
+NYM	None	None	None	None	efatkmel	0	DNYM
+NYMPHSU	nymph	None	None	None	None	1	None
+OBSICE01	GENSHT01	None	None	obsice11	WTASIGHT	5	
+OCHJELLY	None	None	None	None	None	1	None
+OGRE	None	None	None	None	None	3	
+OGREGRSU	None	None	None	None	WTASIGHT	1	
+OGRELESU	None	None	None	None	wtasight	1	
+OGRESU	None	None	None	None	WTASIGHT	1	
+OHLURE	OHLURE					2	
+OHYTRND					WTASIGHT	1	
+OLDJED	None	None	None	None	None	0	DOLDJED
+OLVSLIME	None	None	None	None	None	2	None
+ORC2004	None	None	None	None	None	2	DGENMOND
+ORCA2004	None	None	None	GNMBGSG	None	4	DGENMOND
+ORCEWAXE	None	None	None	None	None	2	None
+ORCEWBOW	None	None	None	None	None	3	None
+ORCSHAM	None	None	None	None	None	1	None
+ORCWAXE	None	None	None	None	None	2	None
+ORCWBOW	None	None	None	GNMBGSG	None	4	None
+ORRICK	None	None	None	None	None	8	DORRICK
+OSWALD	None	None	None	None	None	11	DOSWALD
+PBSPIR	None	None	None	None	None	3	DPOLARBE
+PLANEVIL	plangood	None	None	None	wtasight	2	planevil
+PLANGOOD	plangood	None	None	None	wtasight	2	plangood
+PLANWISH	planet	None	None	None	wtasight	2	planevil
+PLYBASS	None	None	LBASILSK	None	None	3	
+PLYFLIND	GNOLLF	None	WTASIGHT	None	None	3	
+PLYOGRE	None	None	OGRE	None	WTASIGHT	3	
+PLYSALA	None	None	None	None	wtasight	2	
+PLYSPID	None	None	None	None	wtasight	3	
+PLYWOLF	None	DREADWLF	None	None	wtasight	1	
+PLYWYVRN	None	None	WYVERN	None	wtasight	3	
+POMAB	None	None	None	None	None	1	DPOMAB
+POMIMG	EEPOMABI					4	DPOMEND
+POMIMG1	None	None	None	None	eePomabF	4	DPOMEND
+POMIMG2	None	None	None	None	eePomabF	4	DPOMEND
+POMIMG3	None	None	None	None	eePomabF	4	DPOMEND
+POMIMG4	None	None	None	None	eePomabF	4	DPOMEND
+POMIMG5	None	None	None	None	eePomabF	4	DPOMEND
+POQUELIN	None	None	None	None	None	2	None
+PPTROLL1	pptroll2	None	None		WTASIGHT	7	
+PRESAPP	None	None	None	None	None	2	None
+PRESFIG	None	None	None	None	None	5	None
+PRESIO	None	None	None	None	None	4	None
+PRIESTD	None	None	None	None	None	3	
+PSENTRY		ldpoqpal		EFATKBTH		4	None
+PSHAR	LWVAARTM	LWSHAR1	LWSHAR2	LWSHAR3	LWSHAR4	2	None
+PSHARD	None	None	None	None	None	2	None
+PURVIS	None	None	None	None	None	5	DPURVIS
+PURVISH	None	None	None	None	None	6	DPURVIS
+PURVISH2		efpikhst	lwpurv2	efheali1	lwprvatk	6	DPURVIS
+PURVISH3		efpikhst	lwpurv3	efheali1	lwprvatk	6	DPURVIS
+PURVISH4		efpikhst	lwpurv4	efheali1	lwprvatk	6	DPURVIS
+PURVISH5		efpikhst	efheali1	lwpurv5	lwprvatk	6	DPURVIS
+PURVISH6					lwpurv6	6	DPURVIS
+PURVISH7		lwpurv7	lwprvatk			6	DPURVIS
+QUINN	None	None	None	None	None	3	DQUINN
+RABBITSU	None	None	None	None	wdrunsgt	0	None
+RAKSHASA	None	None	KERAKSHA	EFFOLPTY	None	3	DRAKSH
+RAKSHINV	efxdell	gnteam8h	efinvnot	keraksha	effolpty	4	None
+RAWLEIGH	None	None	None	None	None	3	DRAWL
+RBIBARR	None	None	None	EFATKMEL	None	3	None
+RBIDROW	None	None	None	EFATKMEL	None	3	None
+RCOPPER	None	GNTEAM1	D4MAGE	D4MARATK	None	1	DADVEN
+RDECWIG	None	None	None	None	GNMMG3G	3	None
+RDEJKLW			EFJGAZE		WTASIGHT	2	
+RDELIZA	None	None	None	None	GNMMG3G	2	None
+RDELIZTL	None	None	None	None	GNMMG3G	1	None
+RDESPIW	None	None	None	None	GNMMG3G	4	
+RDEYUANE	None	None	None	None	GNMMG3G	1	None
+REMORHA	None	None	None	None	None	3	None
+REMORHAS	None	None	None	None	None	3	None
+REMORHH	None	None	None	None	None	2	None
+REVNANT	None	None	None	None	None	3	None
+RIKASHA	None	None	None	None	None	2	None
+RKPGOBE	None	None	None	None	GNMMG3G	2	None
+RKPGOBEA	None	None	None	None	GNMBG3G	3	None
+RKTSKELM	None	None	None	None	GNMMG3G	2	None
+RKTSKELR	None	None	None	None	GNMBG9G	4	None
+RKTTGUAM	None	None	None	None	GNMMG3G	2	None
+RLDMYCR	None	None	MSPORES	None	GNMMGSGH	1	None
+RLDSALFI	None	None	SAFIRE	GNMMG9GH	None	2	None
+RLDTHIEF	None	None	None	LDTHIEF2	None	3	None
+RLDUMBH	None	None	UHGAZE	None	GNMMG3G	1	None
+RNDBOMB	None	None	BBCLOUD	EFATKMEL	None	2	None
+RNDCRYP	None	CPCTTELE	EFATKMEL	None	None	2	None
+RNDFSAL	None	None	SAFROST	EFATKMEL	None	2	None
+RNDGHOS	None	EFATKMEL	None	None	None	4	None
+RNDHRPC	None	None	EFHARPY	EFATKMEL	None	1	None
+RNDIGOLM	None	None	None	EFATKMEL	None	1	None
+RNDOSLM	None	None	EFATKMEL	None	None	2	None
+RNDPSPD		PSPIDER	EFATKMEL	EFFOLPTY		2	
+RNDREMOR	None	None	None	EFATKMEL	None	2	None
+RNDREVN	None	eftrolg	EFATKMEL	None	None	3	None
+RNDSAWAR	None	EFATKMEL	None	None	None	1	None
+RNDSKLW	None	EFATKMEL	None	None	None	2	None
+RNDSPG	None	KELURDED	EFATKMEL	None	None	6	None
+RNDSTROL	None	None	EFTROLG	EFATKMEL	None	2	None
+RNDWWOLF	None	None	None	EFWINWLF	EFATKMEL	2	None
+RNDWYV	None	None	None	EFATKMEL	None	1	None
+ROALD	None	None	None	None	None	2	DROALD
+ROCORCA	None	None	None	None	GNMMG3G	2	None
+RSHEAC	None		None	GNMMG3G	None	2	None
+RSHELFB	None		None	GNMMG3G	None	5	None
+RSHELFS	None		None	None	GNMMG3G	3	None
+RSHORCA	None			GNMMG3G	None	2	None
+RSHORCB	None			GNMMG3G	None	4	None
+RTFGVERB	None	None	None	None	GNMMG3G	2	None
+RUDOROG	None	None	None	None	GNMMG3G	1	None
+RUDOROGE	None	None	None	None	GNMMG3G	1	None
+RVSYETI	None	None	None	None	GNMMG3G	2	None
+RWTGICE	None	None		None	GNMMG3G	1	None
+RWTWWOLF	None	None	EFWINWLF	GNMMG9G	None	1	None
+SAABLIC	None	None	None	None	None	1	None
+SACLER	None	None	None	None	None	2	None
+SACLERBW	None	None	None	None	None	4	None
+SACLERSP	None	None	None	None	None	2	None
+SAEGUARD	None	None	None	None	None	5	None
+SAGOLEM	None	None	None	None	None	2	None
+SAGRDM	None	None	None	None	None	3	None
+SAKING	None	None	None	None	None	8	None
+SAL8001	None	None	SAFIRE	GNMMG9GH	None	2	None
+SAL8005	None	None	SAFIRE	LDSHKSUM	None	2	None
+SAL8008	None	None	SAFIRE	GNMMGSGH	None	2	None
+SAL8013	None	None	SAFROST	LDSPAWN1	None	2	None
+SALAMAND	None	None	SAFIRE	GNMMG9GH	None	2	None
+SALAMANF		safrost	gnteam1m	efatkmel	effowfix	2	None
+SALAMANR	None	None	SAFIRE	None	None	2	None
+SAPRINCE	None	None	None	None	None	5	None
+SARGUARD	None	None	None	None	None	5	None
+SARPRIES	None	None	None	None	None	4	None
+SARUNPR	None	None	None	None	None	2	None
+SAUMBER	None	None	None	None	None	2	None
+SAUMBER2	None	ILUMBKIL	EFATKMEL	EFFOLPTY	None	1	None
+SAWAR	None	None	None	None	None	2	None
+SAWARBW	None	None	None	None	None	4	None
+SAWARSP	None	None	None	None	None	2	None
+SBETHLA	None	None	None	None	None	0	None
+SDELFAC	None		None	None	None	3	None
+SDELFAH1	#prst_dv			gnteff1	gntrpm1	3	None
+SDELFAH2	#prst_dv			gnteff1	gnmmgss	3	None
+SDELFBW1	None		None	None	None	6	None
+SDELFBW2	None		None	None	None	6	None
+SDELFBWH			shfade1		gntrpb1	6	None
+SDELFCH1	#prst_dv			gnteff1	shelfcs1	4	None
+SDELFCH2	#prst_dv		gnteff1	shelfcs1	gntrpb1	4	None
+SDELFCL	None		None	None	None	4	None
+SDELFCL2	None		None	None	None	4	None
+SDELFCLH				gnteff1	shelfcs1	4	None
+SDELFOF1	None		None	None	None	4	None
+SDELFOF2	None		None	None	None	4	None
+SDELFOF3	None		None	None	None	4	None
+SDELFPR	None		None	None	None	5	None
+SDELFSW2			shfade1		gntrpm1	4	None
+SDELFSW3	None		None	None	None	4	None
+SDELFSW4	None		None	None	None	4	None
+SDELFSW5	None		None	None	None	4	None
+SDELFWZ1	None		None	None	None	3	None
+SDELFWZH			gnteff1	shshdwz1	gntrpm1	3	None
+SDGOBAX1	None			None	None	3	None
+SDGOBAX2	None			None	None	3	None
+SDGOBAXH			gnteff2	shgaflt	gntrpm2	3	None
+SDGOBBW1	None			None	None	5	None
+SDGOBBW2	None			None	None	5	None
+SDGOBBWH	None			None	None	5	None
+SDGOBTRN			gnteff1	shfloat1	gntrpm1	4	None
+SDOGRE	None		None	None	None	3	None
+SDOGREH1				gnteff1	gntrpm1	3	None
+SDOGREH2				gnteff2	gntrpm2	3	None
+SDORAXH1	None			None	None	3	None
+SDORAXH2	None			None	None	3	None
+SDORCAX1	None			None	None	3	None
+SDORCAX3				gnteff2	gntrpm2	4	None
+SDORCBW1	None			None	None	5	None
+SDORCBW2	None			None	None	5	None
+SDORCBWH			gnteff1	shoaflt	gntrpb1	5	None
+SDORCSHM	None			None	None	3	None
+SDORSHH1	None			None	None	3	None
+SDORSHH2			gnteff2	shgaflt	shorcsh1	3	None
+SDORSHH3			gnteff2	shoaflt	shorcsh1	3	None
+SDORSHH4			gnteff2	shorcsh1	gntrpb2	3	None
+SDWORG			gnteff1	shfloat2	gntrpm1	3	None
+SEER	None	None	None	None	None	2	DSEER
+SEERCUT						4	DSEER
+SEERCUT2	None	None	None	None	None	4	DSEER
+SENTRY	None	None	None		None	5	
+SERRHYA	None	None	None	None	None	2	None
+SERVSU	servsu	None	None		gnsummm	3	
+SETH	None	None	None	None	None	4	None
+SETHH	None	None	None	None	None	4	None
+SEVSOUL	None	None	None	None	None	4	None
+SHADOW	None	None	None	None	None	4	None
+SHADSOUL	None	None	None	None	None	3	None
+SHAMGHO	None	None	None	None	None	3	None
+SHAMGN	None	None	None	None	None	3	None
+SHATSOUL	None	None	None	None	None	3	None
+SHDELFPT	None	None	None	None	None	2	None
+SHEARTH	None	None	None	None	GNSUMMM	1	None
+SHEEMISH		eftwnchk			kusheem	1	DSHEEMIS
+SHELHAI	None	None	None	None	None	7	None
+SHFIRE	None	None	None	None	GNSUMMM	1	None
+SHIKATA	None	None	SASHIKAT	None	None	3	None
+SHIRON		None	None			3	
+SHMBLR	None	None	None	None	None	1	None
+SHMIND			None			1	
+SHRIEKER	None	None	None	None	None	0	None
+SHTROLL			None	None		0	
+SHWOLF	None		None	None	None	3	None
+SINCYLIA	None	None	None	None	None	1	None
+SKALDAR	None	None	None	None	None	2	DSKALD
+SKARMAX	None	None	None	None	None	2	None
+SKARMMS	None	None	None	None	None	2	None
+SKARMSW	None	None	None	None	None	2	None
+SKELARH1			gnteff1	gntrpm1		2	None
+SKELARH2			gnteff1	gntrpm1	gnmmgsgh	2	None
+SKELARM	None	None	None	None	None	2	None
+SKELBLAD	None	None	None	None	None	2	None
+SKELBLAH			gnteff1	shbrnskl	gntrpb1	2	None
+SKELBLAZ	None	None	None	None	None	2	None
+SKELBLST	None	None	None	None	None	1	None
+SKELBOW	None	None	None	None	None	4	None
+SKELSERR	None	None	None	None	None	5	None
+SKELSU01	None	None	None	None	WTASIGHT	2	
+SKELSU07	None	None	None	None	WTASIGHT	3	
+SKELSU11	None	None	None	None	WTASIGHT	3	
+SKELWAR	None	None	None	None	None	2	None
+SKELWASU	None	None	None	None	WTASIGHT	4	
+SLAVEDF1	None	None	None	None	None	0	
+SLAVEDF2	None	None	None	None	None	0	
+SLAVEDM1	None	None	None	None	None	0	
+SLAVEDM2	None	None	None	None	None	0	
+SLAVEF1	None	None	None	None	None	0	
+SLAVEF2	None	None	None	None	None	0	
+SLAVEF3	None	None	None	None	None	0	
+SLAVEF4	None	None	None	None	None	0	
+SLAVEF5	None	None	None	None	None	0	
+SLAVEM1	None	None	None	None	None	0	
+SLAVEM2	None	None	None	None	None	0	
+SLAVEM3	None	None	None	None	None	0	
+SLAVEM5	None	None	None	None	None	0	
+SLMZOMB	None	None	None	None	None	2	None
+SOTH	None	None	None	None	None	1	DSOTH
+SPBEAR1					GNSUMMM	2	
+SPBEAR2					GNSUMMM	2	
+SPBEAR3					GNSUMMM	2	
+SPBEAR4					GNSUMMM	2	
+SPBEAR5					GNSUMMM	3	
+SPCOOK	None	None	None	None	None	1	DSPCRT
+SPCOURTF	None	None	None	None	None	1	DSPCRT
+SPCOURTM	None	None	None	None	None	1	DSPCRT
+SPGUARD	None	None	None	None	None	5	None
+SPIDGISU	None	None		None	gnsummm	2	
+SPIDKID	None	None	None	None	#iwd_wta	4	
+SPIDPH	PSPIDER	None	None	None	#iwd_wta	2	
+SPIDPHSU	PSPIDER	None	None	None	gnsummm	2	
+SPIDSW	None	None	None	None	#iwd_wta	3	
+SPIDSWSU	None	None	None	None	gnsummm	3	
+SPIDWR	None	None	None	None	#iwd_wta	4	
+SPIRBEAR	None	None	None	None	gnsummm	3	
+SPIRLION	None	None	None	None	gnsummm	3	
+SPIRSNAK	None	None	None	None	gnsummm	3	
+SPIRWOLF	None	None	None	None	gnsummm	3	
+SPKNIGHT	None	None	None	None	None	2	None
+SPLION1					GNSUMMM	2	
+SPLION2					GNSUMMM	2	
+SPLION3					GNSUMMM	2	
+SPLION4					GNSUMMM	2	
+SPLION5					GNSUMMM	3	
+SPSNAK1					GNSUMMM	2	
+SPSNAK2					GNSUMMM	2	
+SPSNAK3					GNSUMMM	2	
+SPSNAK4					GNSUMMM	2	
+SPSNAK5					GNSUMMM	3	
+SPWOLF1					GNSUMMM	2	
+SPWOLF2					GNSUMMM	2	
+SPWOLF3					GNSUMMM	2	
+SPWOLF4					GNSUMMM	2	
+SPWOLF5					GNSUMMM	3	
+SQUIREL	#sqrl_dv	None	None	None	None	1	None
+SQUIREL2					shsqrl	0	None
+SQUIRL	None	None	prey	None	WDRUNSGT	0	None
+SQUIRR	None	None	prey	None	WDRUNSGT	0	None
+SS1GOB1	None	None	None	None	GNSUMMM	3	None
+SS1GOB2	None	None	None	None	GNSUMMM	3	None
+SS1GOB3	None	None	None	None	GNSUMMM	3	None
+SS1LIZ3	None	None	None	None	GNSUMMM	3	None
+SS1LIZ4	None	None	None	None	GNSUMMM	3	None
+SS1TRL6	None	None		None	GNSUMMM	3	None
+SS1TRL7	None	None		None	GNSUMMM	3	None
+SS1TRL8	None	None		None	GNSUMMM	3	None
+SS2GOB1	None	None	None	None	GNSUMMM	3	None
+SS2GOB2	None	None	None	None	GNSUMMM	3	None
+SS2GOB3	None	None	None	None	GNSUMMM	3	None
+SS2LIZ5	None	None	None	None	GNSUMMM	3	None
+SS2LIZ6	None	None	None	None	GNSUMMM	3	None
+SS2LIZ7	None	None	None	None	GNSUMMM	3	None
+SS3TRL7	None	None	EFTROLG	None	GNSUMMM	4	None
+SS3TRL8	None	None	EFTROLG	None	GNSUMMM	4	None
+SS3UMB8	None	None	UHGAZE	None	GNSUMMM	3	None
+SS3UMB9	None	None	UHGAZE	None	GNSUMMM	3	None
+SSHAMB	None	None	None	EFATKMEL	None	1	None
+STALKE	None	None	None	None	wtasight	3	None
+STNNUI						1	None
+STOOLM1	None	None	None	None	None	0	DTOWNGEN
+STOOLM2	None	None	None	None	None	0	DTOWNGEN
+STOOLM3	None	None	None	None	None	0	DTOWNGEN
+SUMDOOM	None	None	None	None	GNSUMMM	1	None
+SUMSHAD	None	None	None	None	GNSUMMM	3	None
+SUMSTLK	None	None	None	None	GNSUMMM	1	None
+SUTROLL	sutroll2	ATTKNEU2	None	None	WTASIGHT	5	
+SVIRBLND	None	None	None	None	None	1	None
+SVIRFNEB	None	None	None	None	None	0	None
+SWAAIR01	None	None	None	None	WTASIGHT	2	
+SWAEAR01	None	None	None	None	WTASIGHT	2	
+SWAFIR01	None	None	None	None	WTASIGHT	2	
+SWORD01	None	None	None	None	morsword	2	
+TALODEAD	None	None	None	None	None	3	None
+TALONAF	None	None	None	None	None	3	None
+TALONAM	None	None	None	None	None	3	None
+TANARRI	None	None	None	D5YXUN	None	5	None
+TARNELM	None	None	None	None	None	1	None
+TARNSEN	None	None	None	GNMBG9GH	None	5	None
+TELANIS	None	None	None	None	None	3	None
+THERIK						3	
+THOM	None	None	None	None	None	0	DTHOM
+TIERNON	None	None	None	None	None	4	DTIERNON
+TOWNIEF1	None	None	None	None	None	0	DTOWNGEN
+TOWNIEF2	None	None	None	None	None	0	DTOWNGEN
+TOWNIEF3	None	None	None	None	None	0	DTOWNGEN
+TOWNIEF4	None	None	None	None	None	0	DTOWNGEN
+TOWNIEF5	None	None	None	None	None	0	DTOWNGEN
+TOWNIEM1	None	None	None	None	None	1	DTOWNGEN
+TOWNIEM2	None	None	None	None	None	1	DTOWNGEN
+TOWNIEM3	None	None	None	None	None	1	DTOWNGEN
+TOWNIEM4	None	None	None	None	None	1	DTOWNGEN
+TOWNIEM5	None	None	None	None	None	1	DTOWNGEN
+TRADRAN		kelurded	dulpoof	duadran	effolpty	8	None
+TRCRIEK		kelurded	dulpoof	ducriek	effolpty	4	
+TRGBARD	None	None	None	None	None	9	DLURE
+TRHARLD		kelurded	dulpoof	efatkmel	effolpty	4	
+TRHOBRT		kelurded	dulpoof	efatkbth	effolpty	7	
+TROLIC03	GENSHT01	None	None	TROLIC03	WTASIGHT	3	
+TROLL	None	EFTROLG	GNMMG9GH		None	2	None
+TROLLICE	None	None		None	None	1	None
+TROLLSNO	None	None	EFTROLG	None	None	2	None
+TROLLT	None	EFTROLG		GNMMGSGH	None	2	None
+TROLLY	None	EFTROLG	D4INFMOV	GNMMGSGH	None	2	None
+TRSHELH		kelurded	dulpoof	efatkmel	effolpty	4	None
+TRSPH1		kelurded	dulpoof	efatkmel	effolenm	6	None
+TRSPH2		kelurded	dulpoof	efatkmel	effolpty	4	None
+TRSPH3		kelurded	dulpoof	duhero3	effolpty	4	None
+TRSPH4		kelurded	dulpoof	efatkbth	effolpty	6	None
+TRSPH5		kelurded	dulpoof	duhero5	effolpty	4	None
+TRSPH6		kelurded	dulpoof	efatkmel	effolpty	5	None
+TRSPH7		kelurded	dulpoof	efatkbth	effolpty	6	None
+TRSPH8		kelurded	dulpoof	duhero8	effolpty	6	None
+TRSPH9		kelurded	dulpoof	efatkmel	effolpty	6	None
+TYBALD	None	None	None	None	None	0	DTYBALD
+UDGHAST	None	None	None	None	None	2	None
+UDGHOUL	None	None	None	None	None	2	None
+UDSPIDER			gnteam1	pspider	gnmmgsg	2	
+UDWIGHT	None	None	None	None	None	3	None
+UHL8009B		gnteff2	uhgaze	gnmmgsgh		2	None
+UHLK8009		gnteff1	uhgaze	gnmmgsgh		2	None
+UHLK8010	None	None	UHGAZE		None	2	DGENMOND
+ULIGAR						3	
+UMBERHLK	None	None	UHGAZE	GNMMGSGH	None	2	None
+UNDEADLT	None	GNUNDEAD	None	None	None	1	None
+URNST	None	None	None	None	None	0	DURNST
+VAARGLAN				lwvaartm	lwvaarg1	10	DVAARGLN
+VAARGLND	None	None	None	None	None	6	DVAARGLN
+VALESTIS	None	None	None	None	None	4	DVALESTI
+VAMANC01	GENSHT01	None	None	VAMPIR01	WDASIGHT	3	None
+VAMMAT01	GENSHT01	None	None	VAMPIR01	WDASIGHT	3	None
+VAMOLD01	GENSHT01	None	None	VAMPIR01	WDASIGHT	3	None
+VAMVER01	GENSHT01	None	None	VAMPIR01	WDASIGHT	3	None
+VERA	None	None	None	None	None	3	DVERA
+VERBDEAD	None	None	None	None	None	2	None
+VERBEEG	None	None	None	None	None	2	None
+VERBEEGD	None	None	None	None	None	2	DREDTOE
+VEXING	None	None	None	None		5	
+VEXING2	None	None	None	None	BAVEX2	3	None
+VEXING3	None	None	None	None	BAVEX3	2	None
+VEXING4	None	None	None	None	BAVEX1	3	None
+VOICE	None	None	None	LDDURD01	gnmmgsgh	6	DVOICEDA
+VSCYETI	None	None	None	None	None	4	None
+VSSHAD1		gnmmgsg		vsshds2		3	DSHADOW
+VSSHADOH				gntrpm1		3	None
+VSSHADOW	None	None	None	None	None	3	None
+VSYETI	None	None	None	None	None	2	None
+VSYETII				vsyeti		2	None
+VSYETII2				vsyetic		2	None
+WBISHOP	None	None	None	GNWHTBIS	None	1	None
+WEENOG	None	None	None	None	None	3	DWEENOG
+WEREGRDR	None	WTASIGHT	None	None	None	2	None
+WEREWLF	#emmr_dv	None	None	None	LWWAREW	4	None
+WEREWODR	None	WTASIGHT	None	None	None	2	None
+WHITCOMB	None	None	None	None	None	3	DWHITCOM
+WIGHT	None	None	None	None	None	3	None
+WIGHT2	None	None	None	None	None	3	None
+WIGHT3	None	None	None	None	None	3	None
+WIGHTBA	None	None	None	None	None	3	None
+WIGHTCLD	None	None	None	GNMMG9GH	None	3	None
+WINWOLF	None	None	None	None	None	2	None
+WINWOLFP	None	None	None	None	None	2	None
+WISH01	WISH01	None	None	None	None	3	wish
+WISH02	WISH01	None	None	None	None	3	wish25
+WIZEYE	wizeye	None	None	None		1	
+WOLF	None	None	None	None	None	1	None
+WOLF12	None	None	None	GNMMGSGH	None	1	None
+WOLFBEL	None	None	None	None	None	1	None
+WOLFCHAR	None	DREADWLF	None	None	wtasight	1	
+WOLFDISU	None	None	DIREWOLF	None	wtasight	1	
+WOLFE	#emmr_dv	None	None	None	LWWOLF	2	None
+WOLFWWSU	None	None	None	None	WTARSGT	3	
+WORGSU	None	None	None	None	wtasight	1	
+WSBIRD					RANDFLY	0	
+WSPIR		gnteam1h	idislfix	efatkmel	effolpty	3	None
+WTCYETI	None	None	None	None	None	3	None
+WTETTIN	None	None	None	None	None	2	None
+WTICETR1	None	None		None	None	2	None
+WTICETRL	None	None		None	None	2	None
+WTSALF1	None	None		None	None	3	None
+WTSALF2	None	None		None	None	3	None
+WTSALF3	None	None		None	None	3	None
+WTSALFD	None	None	None	None	None	0	None
+WTSNOTRO	None	None		None	None	3	None
+WTYETI	None	None	None	None	None	3	None
+WVIRGIN	None	None	None	None	None	3	None
+WVIRGIN1		efdelins	bawail0			3	None
+WVIRGIN3		efdelins	bawail0			3	None
+WVIRGIN4		efdelins	bawail0			3	None
+WVIRGIN6		efdeleas	bawail0			3	None
+WVIRGIN7		efdelins	bawail0			3	None
+WVIRGIN8		efdeleas	bawail0			3	None
+WVIRGINN		bateam2m	bawail0			3	None
+WYLFDENE	None	None	None	None	None	1	None
+WYRM	None	None	None	None	None	2	None
+WYVERN	None	None	None	None	None	1	None
+WYVERNSU	None	None	WYVERN	None	gnsummm	4	
+WYVMAT	None	None	None	None	None	1	None
+XACTILE	None	None	None	None	None	3	None
+YOUNGNED	None	None	None	None	None	1	DYOUNGNE
+YUAEWAX	None	None	None	GNMMGSGH	None	1	None
+YUAEWBL	None	None	None	None	None	1	None
+YUAEWBO	None	None	None	GNMBG3GH	None	3	None
+YUAEWSW	None	None	None	GNMMGSGH	None	1	None
+YUANMAG		efdeldef	D4YUMAGE			1	None
+YUANTIP	None	None	None	None	None	1	None
+YUANWAX	None	None	None	None	None	1	None
+YUANWBI	None	None	None	None	None	1	None
+YUANWSW	None	None	None	None	None	1	None
+YUAXDIN	None	None	None	None	None	1	None
+YUBLDIN	None	None	None	None	None	1	None
+YUCHAMP	None	None	None	None	None	1	None
+YUSWDIN	None	None	None	None	None	1	None
+YXUNGIRL	None	None	None	None	None	1	None
+ZIERKKI		cpzierk0		EFDLGF		5	DWKNGHT
+ZOMBIE	None	None	None	None	None	2	None
+ZOMBIEL	None	None	ZLAURA	None	None	2	None
+ZOMBIEP	None	None	None	None	None	2	None

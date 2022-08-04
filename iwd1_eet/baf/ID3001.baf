@@ -1,0 +1,12 @@
+IF
+  OnCreation()
+	Global("KRESS_QUEST","GLOBAL",3)
+	!Global("Containers_Unlocked","MYAREA",1)
+THEN
+  RESPONSE #100
+    Unlock("Box1")
+    Unlock("Box2")
+    Unlock("Box3")
+	Unlock("Box4")
+	SetGlobal("Containers_Unlocked","MYAREA",1)
+END

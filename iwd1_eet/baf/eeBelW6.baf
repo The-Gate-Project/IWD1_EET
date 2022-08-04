@@ -1,0 +1,40 @@
+IF
+	!GlobalTimerNotExpired("IwTimer25","LOCALS")
+THEN
+	RESPONSE #100
+		SetGlobalTimerRandom("IwTimer25","LOCALS",9,27)
+		ForceSpellPointRES("IDIN978",[917.1098]) //INNATE_INFERNAL_CONVEYANCE
+		Wait(4)
+		BitSet("CREATURE_STATE_VAR","LOCALS",8)
+		FaceObject([PC])
+		ChangeAIScript("eeBelW1",DEFAULT)
+	RESPONSE #100
+		SetGlobalTimerRandom("IwTimer25","LOCALS",9,27)
+		ForceSpellPointRES("IDIN978",[1275.639]) //INNATE_INFERNAL_CONVEYANCE
+		Wait(4)
+		BitSet("CREATURE_STATE_VAR","LOCALS",8)
+		FaceObject([PC])
+		ChangeAIScript("eeBelW2",DEFAULT)
+	RESPONSE #100
+		SetGlobalTimerRandom("IwTimer25","LOCALS",9,27)
+		ForceSpellPointRES("IDIN978",[386.573]) //INNATE_INFERNAL_CONVEYANCE
+		Wait(4)
+		BitSet("CREATURE_STATE_VAR","LOCALS",8)
+		FaceObject([PC])
+		ChangeAIScript("eeBelW3",DEFAULT)
+	RESPONSE #100
+		SetGlobalTimerRandom("IwTimer25","LOCALS",9,27)
+		ForceSpellPointRES("IDIN978",[956.509]) //INNATE_INFERNAL_CONVEYANCE
+		Wait(4)
+		BitSet("CREATURE_STATE_VAR","LOCALS",8)
+		FaceObject([PC])
+		ChangeAIScript("eeBelW4",DEFAULT)
+	RESPONSE #100
+		SetGlobalTimerRandom("IwTimer25","LOCALS",9,27)
+		ForceSpellPointRES("IDIN978",[572.1035]) //INNATE_INFERNAL_CONVEYANCE
+		Wait(4)
+		BitSet("CREATURE_STATE_VAR","LOCALS",8)
+		FaceObject([PC])
+		ChangeAIScript("eeBelW5",DEFAULT)
+END
+

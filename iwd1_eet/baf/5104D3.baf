@@ -1,0 +1,19 @@
+/*IF
+	Global("AREA_DOOR","MYAREA",1)
+	!GlobalTimerNotExpired("IW_AREA_TIMER1","MYAREA")
+THEN
+	RESPONSE #100
+		OpenDoor("AR5104Door3")
+		SetGlobal("AREA_DOOR","MYAREA",2)
+END
+
+IF
+	Global("AREA_DOOR","MYAREA",0)
+	!GlobalTimerNotExpired("IW_AREA_TIMER1","MYAREA")
+THEN
+	RESPONSE #100
+		StartTimer(1,5)
+		SetGlobalTimer("IW_AREA_TIMER1","MYAREA",5)
+		SetGlobal("AREA_DOOR","MYAREA",1)
+END*/
+

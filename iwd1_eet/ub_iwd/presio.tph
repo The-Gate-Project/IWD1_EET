@@ -1,0 +1,105 @@
+
+/*
+CDPresioDuel
+0 - no challenge
+1 - challenge accepted by mage
+2 - challenge accepted by paladin
+3 - presio moved, mage challenge
+4 - presio moved, paladin challenge
+5 - challenge won, mage
+6 - challenge won, paladin
+7 - challenge ended prematurely (treachery)
+*/
+
+COPY_EXISTING ~PRESIO.CRE~ ~override~
+	ADD_KNOWN_SPELL ~idwi417~ #3 ~wizard~
+	ADD_MEMORIZED_SPELL ~idwi417~ #3 ~wizard~ (1)
+	WRITE_ASCII 0x280 ~Presio~ (32)
+
+COPY_EXISTING ~ID4003.ini~ ~override~
+	REPLACE_TEXTUALLY ~\(cre_file[ %TAB%]+=[ %TAB%]+WIGHTCLD\)~
+    ~\1
+script_Override = cdpres~
+	BUT_ONLY_IF_IT_CHANGES
+
+COMPILE ~iwd1_eet/ub_iwd/baf/cd4003tp.baf~
+        ~iwd1_eet/ub_iwd/baf/cdpres.baf~
+        ~iwd1_eet/ub_iwd/baf/cdpresio.baf~
+        ~iwd1_eet/ub_iwd/dlg/dundlt2.d~ 
+
+EXTEND_BOTTOM ~ID4003.bcs~ ~iwd1_eet/ub_iwd/baf/ar4003.baf~
+
+COPY_EXISTING ~presio.cre~ ~override/cdpresio.cre~
+	WRITE_ASCII 0x248 ~cdpresio~ #8
+	WRITE_ASCII 0x250 ~GNTEAM6M~ #8
+	WRITE_ASCII 0x258 ~d3pres~   #8
+	WRITE_ASCII 0x260 ~4003RET~  #8
+	WRITE_ASCII 0x268 ~EFFOWFIX~ #8
+
+COPY_EXISTING ~ID4003.are~ ~override~
+	READ_LONG  0x54 actor_off
+	READ_SHORT 0x58 actor_num
+	FOR (index = 0 ; index < actor_num ; ++index) BEGIN
+		READ_ASCII (actor_off + 0x80 + (index * 0x110)) cre_file
+		PATCH_IF ("presio" STRING_COMPARE_CASE "%cre_file%" = 0) BEGIN // presio
+			WRITE_ASCII (actor_off + 0x50 + (index * 0x110)) "cdpresio" #8 // new override script
+		END ELSE BEGIN // everyone but presio
+			WRITE_ASCII (actor_off + 0x50 + (index * 0x110)) "cdpres" #8 // new override script
+		END
+	END
+	LPF fj_are_structure // new trap on bridge enforces single combat
+		INT_VAR
+			fj_type        = 0     // trap
+			fj_box_left    = 2313
+			fj_box_top     = 2151
+			fj_box_right   = 2439
+			fj_box_bottom  = 2241
+			fj_vertex_0    = 2411 + (2241 << 16)
+			fj_vertex_1    = 2439 + (2174 << 16)
+			fj_vertex_2    = 2336 + (2151 << 16)
+			fj_vertex_3    = 2313 + (2217 << 16)
+			fj_flags       = (BIT1 + BIT7 + BIT8) // deactivated to start
+			fj_trap_active = 1
+		STR_VAR
+			fj_structure_type = region
+			fj_name           = cd4003tp
+			fj_reg_script     = cd4003tp
+	END
+	BUT_ONLY_IF_IT_CHANGES
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

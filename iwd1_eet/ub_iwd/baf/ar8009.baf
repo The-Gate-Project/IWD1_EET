@@ -1,0 +1,17 @@
+IF // disable trap
+  GlobalLT("Voice_Quest","GLOBAL",2)
+  Global("CDPaleJustice","ID8009",0)
+THEN
+  RESPONSE #100
+    TriggerActivation("HulkTrap1",FALSE)
+    SetGlobal("CDPaleJustice","ID8009",1)
+END
+
+IF // disable trap
+  GlobalGT("Voice_Quest","GLOBAL",1)
+  Global("CDPaleJustice","ID8009",1)
+THEN
+  RESPONSE #100
+    TriggerActivation("HulkTrap1",TRUE)
+    SetGlobal("CDPaleJustice","ID8009",0)
+END

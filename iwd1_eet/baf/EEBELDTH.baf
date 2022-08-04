@@ -1,0 +1,13 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId("EEBELHI1")
+		MoveViewObject(Myself,INSTANT)
+		Wait(1)
+		ReallyForceSpellRES("IDIN973",Myself) //INNATE_BELHIFETS_DEATH_ANIMATION
+		AddXPWorth(Myself)
+		SetSequence(SEQ_DIE)
+		StartCutScene("EEBELKIL")
+END
+

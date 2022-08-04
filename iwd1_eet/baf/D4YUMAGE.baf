@@ -1,0 +1,131 @@
+IF
+	HaveSpell(WIZARD_STONE_SKIN)
+	IsActive(Myself)
+	!Global("MAP_GROUP_HOSTILE5","MYAREA",0)
+THEN
+	RESPONSE #100
+		Spell(Myself,WIZARD_STONE_SKIN)
+		Wait(2)
+END
+
+IF
+	HaveSpell(WIZARD_PROTECTION_FROM_NORMAL_MISSILES)
+	IsActive(Myself)
+	!Global("MAP_GROUP_HOSTILE5","MYAREA",0)
+THEN
+	RESPONSE #100
+		Spell(Myself,WIZARD_PROTECTION_FROM_NORMAL_MISSILES)
+		Wait(2)
+END
+
+IF
+	!Allegiance(Myself,ENEMY)
+	!Global("MAP_GROUP_HOSTILE5","MYAREA",0)
+THEN
+	RESPONSE #100
+		Enemy()
+		Continue()
+END
+
+IF
+	!IsActive(Myself)
+	!Global("MAP_GROUP_HOSTILE5","MYAREA",0)
+THEN
+	RESPONSE #100
+		Activate(Myself)
+		SetGlobal("IwIHidden","LOCALS",0)
+		Continue()
+END
+
+IF
+	ActionListEmpty()
+	IsActive(Myself)
+	!Global("MAP_GROUP_HOSTILE5","MYAREA",0)
+	Allegiance(Myself,ENEMY)
+	!See([PC])
+THEN
+  RESPONSE #100
+    MoveToObject(Player1)
+  RESPONSE #100
+    NoAction()
+END
+
+
+
+IF
+	!IsActive(Myself)
+THEN
+	RESPONSE #100
+		NoAction()
+END
+
+IF
+	StateCheck(Myself,STATE_PANIC)
+THEN
+	RESPONSE #100
+		RandomWalkContinuous()
+END
+
+IF
+	!GlobalTimerNotExpired("IWD_Rest","LOCALS")
+THEN
+	RESPONSE #100
+		SetGlobalTimer("IWD_Rest","LOCALS",EIGHT_HOURS)
+		ApplySpell(Myself,RESTORE_FULL_HEALTH)
+		Rest()
+END
+
+IF
+	HaveSpell(WIZARD_FEEBLEMIND)
+	See([PC.0.0.MAGE_ALL])
+	!StateCheck(LastSeenBy(Myself),STATE_FEEBLEMINDED)
+THEN
+	RESPONSE #100
+		Spell(LastSeenBy(Myself),WIZARD_FEEBLEMIND)
+		Wait(2)
+END
+
+IF
+	HaveSpell(WIZARD_DIRE_CHARM)
+	See(NearestEnemyOf(Myself))
+	!StateCheck(LastSeenBy(Myself),STATE_CHARMED)
+THEN
+	RESPONSE #100
+		Spell(LastSeenBy(Myself),WIZARD_DIRE_CHARM)
+		Wait(2)
+END
+
+IF
+	HaveSpell(WIZARD_MAGIC_MISSILE)
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		Spell(LastSeenBy(Myself),WIZARD_MAGIC_MISSILE)
+		Wait(2)
+END
+
+IF
+	HaveSpell(WIZARD_CHROMATIC_ORB)
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		Spell(LastSeenBy(Myself),WIZARD_CHROMATIC_ORB)
+		Wait(2)
+END
+
+IF
+	HaveSpell(WIZARD_MELF_ACID_ARROW)
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		Spell(LastSeenBy(Myself),WIZARD_MELF_ACID_ARROW)
+		Wait(2)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		AttackReevaluate(LastSeenBy(Myself),75)
+END
+

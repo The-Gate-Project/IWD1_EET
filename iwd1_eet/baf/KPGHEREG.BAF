@@ -1,0 +1,90 @@
+IF
+	//!BitGlobal("CREATURE_STATE_VAR","LOCALS",1,AND)
+	!BitCheck("CREATURE_STATE_VAR","LOCALS",1)
+THEN
+	RESPONSE #100
+		//BitGlobal("CREATURE_STATE_VAR","LOCALS",1,OR)
+		BitSet("CREATURE_STATE_VAR","LOCALS",1)
+		//StartRandomTimer(24,3,5)
+		SetGlobalTimerRandom("IwTimer24","LOCALS",3,5)
+		Continue()
+END
+
+IF
+	RandomNumLT(100,20)
+	//!TimerActive(24)
+	GlobalTimerExpired("IwTimer24","LOCALS")
+THEN
+	RESPONSE #100
+		//FloatMessage(Myself,14822)  // А-А-А-А-А-А-А!  Голова больно!
+		DisplayStringHead(Myself,@14822)
+		//StartRandomTimer(24,3,5)
+		SetGlobalTimerRandom("IwTimer24","LOCALS",3,5)
+		Continue()
+	RESPONSE #100
+		//FloatMessage(Myself,14823)  // Герег не делать плохое!  Не надо больно!
+		DisplayStringHead(Myself,@14823)
+		//StartRandomTimer(24,3,5)
+		SetGlobalTimerRandom("IwTimer24","LOCALS",3,5)
+		Continue()
+END
+
+IF
+	StateCheck(Myself,STATE_PANIC)
+THEN
+	RESPONSE #100
+		RandomWalkContinuous()
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		AttackReevaluate(LastSeenBy(Myself),75)
+END
+
+IF
+	AttackedBy(NearestEnemyOf(Myself),DEFAULT)
+THEN
+	RESPONSE #100
+		MoveToObject(LastAttackerOf(Myself))
+END
+
+IF
+	AttackedBy([GOODCUTOFF],DEFAULT)
+THEN
+	RESPONSE #100
+		Enemy()
+		Continue()
+END
+
+IF
+	RandomNumLT(100,50)
+	ActionListEmpty()
+THEN
+	RESPONSE #100
+		RandomWalk()
+		WaitRandom(0,10)
+END
+
+IF
+	True()
+THEN
+	RESPONSE #100
+		//Log("ATTACK_BACKSLASH")
+		SetSequence(SEQ_ATTACK_BACKSLASH)
+		Wait(3)
+	RESPONSE #100
+		//Log("ATTACK")
+		SetSequence(SEQ_ATTACK)
+		Wait(3)
+	RESPONSE #100
+		//Log("ATTACK_SLASH")
+		SetSequence(SEQ_ATTACK_SLASH)
+		Wait(3)
+	RESPONSE #100
+		//Log("ATTACK_JAB")
+		SetSequence(SEQ_ATTACK_JAB)
+		Wait(3)
+END
+

@@ -1,0 +1,26 @@
+IF
+	!Global("SPRITE_IS_DEADEVERARD","GLOBAL",0)
+	!StateCheck(Myself,STATE_REALLY_DEAD)
+THEN
+	RESPONSE #100
+		DestroySelf()
+END
+
+IF
+	Global("EVERARD_IN_TEMPLE","GLOBAL",0)
+THEN
+	RESPONSE #100
+		StartCutSceneMode()
+		ClearAllActions()
+		MultiPlayerSync()
+		Wait(1)
+		StartCutScene("EEEVECT0")
+END
+
+IF
+	!Global("EVERARD_IN_TEMPLE","GLOBAL",0)
+THEN
+	RESPONSE #100
+		ChangeAIScript("EEEVERAR",DEFAULT)
+END
+

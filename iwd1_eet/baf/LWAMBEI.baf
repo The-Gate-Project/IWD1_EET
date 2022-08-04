@@ -1,0 +1,18 @@
+IF
+	!IsActive(Myself)
+	Global("MOVE_AMBERE","GLOBAL",1)
+THEN
+	RESPONSE #100
+		Activate(Myself)
+		SetGlobal("IwIHidden","LOCALS",0)
+		SetGlobal("MOVE_AMBERE","GLOBAL",2)
+		Continue()
+END
+
+IF
+	!IsActive(Myself)
+THEN
+	RESPONSE #100
+		NoAction()
+END
+

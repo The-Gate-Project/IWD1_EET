@@ -1,0 +1,63 @@
+IF
+	!Global("CYDUELWY_INACTIVE","LOCALS",1)
+	AttackedBy([GOODCUTOFF],DEFAULT)
+THEN
+	RESPONSE #100
+		SetGlobal("MAP_GROUP_HOSTILE6","MYAREA",0)
+		SetGlobal("CYDUELWY_INACTIVE","LOCALS",1)
+END
+
+IF
+	!Global("CYDUELWY_INACTIVE","LOCALS",1)
+	StateCheck(Myself,STATE_PANIC)
+THEN
+	RESPONSE #100
+		RandomWalkContinuous()
+END
+
+IF
+	!Global("CYDUELWY_INACTIVE","LOCALS",1)
+	AttackedBy([0.0.HARPY],DEFAULT)
+THEN
+	RESPONSE #100
+		AttackReevaluate(LastAttackerOf(Myself),75)
+END
+
+IF
+	!Global("CYDUELWY_INACTIVE","LOCALS",1)
+	//!Dead("HARPY_0")
+	//See("HARPY_0")
+	See([0.0.0.0.HARPY_DUEL])
+	!StateCheck(LastSeenBy(Myself),STATE_REALLY_DEAD)
+THEN
+	RESPONSE #100
+		AttackReevaluate(LastSeenBy(Myself),75)
+END
+
+/*IF
+	!Global("CYDUELWY_INACTIVE","LOCALS",1)
+	!Dead("HARPY_1")
+	See("HARPY_1")
+THEN
+	RESPONSE #100
+		AttackReevaluate(LastSeenBy(Myself),75)
+END
+
+IF
+	!Global("CYDUELWY_INACTIVE","LOCALS",1)
+	!Dead("HARPY_2")
+	See("HARPY_2")
+THEN
+	RESPONSE #100
+		AttackReevaluate(LastSeenBy(Myself),75)
+END
+
+IF
+	!Global("CYDUELWY_INACTIVE","LOCALS",1)
+	!Dead("HARPY_3")
+	See("HARPY_3")
+THEN
+	RESPONSE #100
+		AttackReevaluate(LastSeenBy(Myself),75)
+END*/
+

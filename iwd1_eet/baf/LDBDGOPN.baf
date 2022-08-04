@@ -1,0 +1,10 @@
+IF
+	!Global("LDBDGOPN_INACTIVE","MYAREA",1)
+	Global("ALL_KEYS","GLOBAL",6)
+THEN
+	RESPONSE #100
+		OpenDoor("AR8012HideMe")
+		TriggerActivation("To8013",TRUE)
+		SetGlobal("LDBDGOPN_INACTIVE","MYAREA",1)
+END
+

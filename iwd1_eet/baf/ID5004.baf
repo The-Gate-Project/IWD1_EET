@@ -1,0 +1,22 @@
+IF
+	OnCreation()
+THEN
+	RESPONSE #100
+		ActionOverride("CUTSPY",DestroySelf())
+END
+
+IF
+  !Global("ID5004_VISITED","GLOBAL",1)
+THEN
+  RESPONSE #100
+    SetGlobal("ID5004_VISITED","GLOBAL",1)
+    Continue()
+END
+
+IF
+	OnCreation()
+THEN
+	RESPONSE #100
+		NoAction()
+		Continue()
+END

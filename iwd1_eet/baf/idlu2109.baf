@@ -1,0 +1,18 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Player1)
+		StartCutSceneMode()
+		SmallWait(5)
+		ActionOverride(Player2,LeaveAreaLUA("ID2109","",[272.237],10))
+		ActionOverride(Player3,LeaveAreaLUA("ID2109","",[315.232],6))
+		ActionOverride(Player4,LeaveAreaLUA("ID2109","",[337.262],8))
+		ActionOverride(Player5,LeaveAreaLUA("ID2109","",[202.275],12))
+		ActionOverride(Player6,LeaveAreaLUA("ID2109","",[279.273],0))
+		LeaveAreaLUAPanic("ID2109","",[290.198],8)
+		LeaveAreaLUA("ID2109","",[290.198],8)
+		SmallWait(5)
+		MultiPlayerSync()
+		EndCutSceneMode()
+END

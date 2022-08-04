@@ -1,0 +1,35 @@
+IF
+	!Global("SLAVE_DEAD7000","GLOBAL",0)
+THEN
+	RESPONSE #100
+		SetGlobal("SLAVE_DEAD7000","GLOBAL",0)
+		Continue()
+END
+
+IF
+	Global("IWD1_CHAPTER","GLOBAL",4)
+THEN
+	RESPONSE #100
+		IncrementGlobal("IWD1_CHAPTER","GLOBAL",1)
+		TextScreen("IWD1TXT5")
+		Continue()
+END
+
+IF
+  !Global("ID7000_MASTER_AREA","MYAREA",1)
+THEN
+  RESPONSE #100
+    SetGlobal("ID7000_MASTER_AREA","MYAREA",1)
+    RevealAreaOnMap("ID7000")
+    //SetMasterArea("ID7000")
+    Continue()
+END
+
+IF
+	OnCreation()
+THEN
+	RESPONSE #100
+		NoAction()
+		Continue()
+END
+

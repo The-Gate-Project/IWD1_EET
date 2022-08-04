@@ -1,0 +1,11 @@
+IF
+	!IsActive(Myself)
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		//HideCreature(Myself,FALSE)
+		Activate(Myself)
+		SetGlobal("IwIHidden","LOCALS",0)
+		Continue()
+END
+

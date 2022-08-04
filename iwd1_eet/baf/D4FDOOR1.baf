@@ -1,0 +1,20 @@
+IF
+	Opened([ANYTHING])
+	Global("YUANTI_ROOM","GLOBAL",0)
+THEN
+	RESPONSE #100
+		SetGlobal("YUANTI_ROOM","GLOBAL",1)
+		SetGlobal("YUANTI_SURPRISE","GLOBAL",1)
+		DisplayStringHead(LastTrigger,@16938)
+END
+
+IF
+	Unlocked([ANYTHING])
+	Global("YUANTI_ROOM","GLOBAL",0)
+THEN
+	RESPONSE #100
+		SetGlobal("YUANTI_ROOM","GLOBAL",1)
+		SetGlobal("YUANTI_SURPRISE","GLOBAL",1)
+		DisplayStringHead(LastTrigger,@16938)
+END
+

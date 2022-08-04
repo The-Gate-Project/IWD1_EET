@@ -1,0 +1,22 @@
+IF
+	!Global("BBCLOUD_INACTIVE","LOCALS",1)
+	Global("Internal_4","LOCALS",2)
+THEN
+	RESPONSE #100
+		SetGlobal("BBCLOUD_INACTIVE","LOCALS",1)
+END
+
+IF
+	!Global("BBCLOUD_INACTIVE","LOCALS",1)
+	!GlobalTimerNotExpired("IwTimer4","LOCALS")
+	See(NearestEnemyOf(Myself))
+	Range(NearestEnemyOf(Myself),7)
+	IsActive(Myself)
+THEN
+	RESPONSE #100
+		IncrementGlobal("Internal_4","LOCALS",1)
+		SetGlobalTimer("IwTimer4","LOCALS",21)
+		ReallyForceSpellRES("IDIN993",Myself) //INNATE_BOMBARDIER_BEETLE_CLOUD
+		Wait(2)
+END
+

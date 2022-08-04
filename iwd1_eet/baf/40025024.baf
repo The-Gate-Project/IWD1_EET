@@ -1,0 +1,42 @@
+IF
+  Global("SaveSavedLoc","LOCALS",0)
+THEN
+  RESPONSE #100
+    SetGlobal("SaveSavedLoc","LOCALS",1)
+    SaveObjectLocation("LOCALS","SavedLoc",Myself)
+    Continue()
+END
+
+IF
+	StateCheck(Myself,STATE_PANIC)
+THEN
+	RESPONSE #100
+		RandomWalkContinuous()
+END
+
+IF
+	!NearSavedLocation(Myself,"LOCALSSavedLoc",15)
+THEN
+	RESPONSE #100
+		MoveToSavedLocation("SavedLoc","LOCALS")
+END
+
+IF
+	!GlobalTimerNotExpired("IwTimer1","LOCALS")
+	Global("Internal_0","LOCALS",0)
+THEN
+	RESPONSE #100
+		RandomWalk()
+		SetGlobalTimer("IwTimer1","LOCALS",3)
+		SetGlobal("Internal_0","LOCALS",1)
+END
+
+IF
+	!GlobalTimerNotExpired("IwTimer1","LOCALS")
+	Global("Internal_0","LOCALS",1)
+THEN
+	RESPONSE #100
+		WaitRandom(20,40)
+		SetGlobal("Internal_0","LOCALS",0)
+END
+

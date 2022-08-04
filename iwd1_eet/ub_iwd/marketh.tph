@@ -1,0 +1,97 @@
+
+
+ADD_JOURNAL EXISTING TITLE (@2000038) @34271 @15780
+
+<<<<<<<<iii.baf
+IF
+  OR(2)
+    Global("SPRITE_IS_DEADMarketh","GLOBAL",1)
+    Global("Marketh_Gone","GLOBAL",1)
+  !Global("Marketh_Journal","ID8007",1)
+THEN
+  RESPONSE #100
+    SetGlobal("Marketh_Journal","ID8007",1)
+    EraseJournalEntry(@34271)
+    EraseJournalEntry(@15780)
+    EraseJournalEntry(@16530)
+    EraseJournalEntry(@16028)
+    EraseJournalEntry(@34266)
+    EraseJournalEntry(@34168)
+    SetQuestDone(@34249)
+    Continue()
+END
+>>>>>>>>
+
+EXTEND_TOP ~ID8007.bcs~ ~iii.baf~
+
+APPEND ~state.ids~  ~0x00000FC0 STATE_REALLY_DEAD~ UNLESS ~0x00000FC0 STATE_REALLY_DEAD~
+
+COMPILE ~iwd1_eet/ub_iwd/ub_dlg/DGINAFAE.d~
+
+COPY ~iwd1_eet/ub_iwd/itm/cdminhp1.itm~ ~override~
+
+COPY_EXISTING ~ID8007.are~ ~override~
+	READ_LONG  0x54 "actor_off"
+	READ_SHORT 0x58 "actor_num"
+	FOR (index = 0 ; index < actor_num ; index = index + 1) BEGIN
+		READ_ASCII ("%actor_off%" + 0x80 + ("%index%" * 0x110)) "cre_file"
+		PATCH_IF ("%cre_file%" STRING_COMPARE_CASE "MARKETH" = 0) BEGIN
+			WRITE_ASCII ("%actor_off%" + 0x50 + ("%index%" * 0x110)) ~IWHIDE1~  #8 // override file
+		END
+	END
+	BUT_ONLY_IF_IT_CHANGES
+
+COMPILE ~iwd1_eet/ub_iwd/dlg/ring.d~
+        ~iwd1_eet/ub_iwd/baf/cdmark.baf~
+
+EXTEND_TOP ~ldmarkth.bcs~ ~iwd1_eet/ub_iwd/baf/ldmarkth.baf~
+
+EXTEND_BOTTOM ~ID8001.bcs~ ~iwd1_eet/ub_iwd/baf/tp8001.baf~
+EXTEND_BOTTOM ~ID8005.bcs~ ~iwd1_eet/ub_iwd/baf/tp8005.baf~
+EXTEND_BOTTOM ~ID8008.bcs~ ~iwd1_eet/ub_iwd/baf/tp8008.baf~
+EXTEND_BOTTOM ~ID8009.bcs~ ~iwd1_eet/ub_iwd/baf/tp8009.baf~
+EXTEND_BOTTOM ~ID8011.bcs~ ~iwd1_eet/ub_iwd/baf/tp8011.baf~
+
+COPY_EXISTING ~ID8006.are~ ~override~
+	READ_LONG  0x54 "actor_off"
+	READ_SHORT 0x58 "actor_num"
+	FOR (index = 0 ; index < actor_num ; index = index + 1) BEGIN
+		READ_ASCII ("%actor_off%" + 0x80 + ("%index%" * 0x110)) "cre_file"
+		PATCH_IF ("%cre_file%" STRING_COMPARE_CASE "ginafae" = 0) BEGIN // ginafae
+			WRITE_ASCII ("%actor_off%" + 0x48 + ("%index%" * 0x110)) ~dginafae~  #8 // dialogue file
+		END
+	END
+	BUT_ONLY_IF_IT_CHANGES
+
+COPY_EXISTING ~marketh.cre~ ~override~
+	ADD_CRE_ITEM ~cdminhp1~ #0 #0 #0 ~NONE~ ~LRING RRING AMULET~
+	BUT_ONLY_IF_IT_CHANGES
+
+COPY_EXISTING ~marketh.cre~ ~override/cdmark.cre~
+	WRITE_ASCII 0x248 ~cdmark~  #8 // override script
+	WRITE_ASCII (0x2e8 - (0x68)) ~cdmark~ #32 // dv
+	LPF ADD_CRE_EFFECT
+		INT_VAR opcode=20 timing=1 target=1 power=5 resist_dispel=1
+	END
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

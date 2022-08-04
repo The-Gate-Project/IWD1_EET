@@ -1,0 +1,291 @@
+/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
+/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
+/////                                                  \\\\\
+///// Setup Messages                                   \\\\\
+/////                                                  \\\\\
+/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
+/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
+
+   @0 = ~Item Upgrade for Icewind Dale~
+
+/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
+/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
+/////                                                  \\\\\
+///// new item descriptions                            \\\\\
+/////                                                  \\\\\
+/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
+/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
+
+@1000 = ~Yeti Hide Armor +1~
+@1001 = ~Hide Armor is made from the thick skin of large animals (yeti, in this case) or layers of thinner, more common leather.  It is considered too cumbersome for use in advanced human cultures, but is common among more barbaric humanoids.  It offers better protection than normal leather, but can be hard to maintain, often resulting in an offensive odor or shoddy appearance that prevents effective use.
+
+This particular set of armor was cured by Conlan and enchanted by Orrick. Orrick was not able to quite get rid of its inherited weakness against fire, though it offers some natural protection against cold.
+
+STATISTICS:
+   +15% Resistance to Cold
+   -3% Resistance to Fire
+
+Armor Class: 5
+Weight: 28
+Requires: 6 Strength
+Not Usable By:
+ Mage~
+@1002 = ~Quiver of Plenty +1~
+@1003 = ~The history of this magical quiver has been long forgotten, though it likely had something to do with the inexplicable but well documented shortage of competent fletchers during the Time of Troubles.
+
+STATISTICS:
+
+Unlimited +1 Arrows~
+@1004 = ~Case of Plenty +1~
+@1005 = ~The history of this magical case has been long forgotten, though it likely had something to do with the inexplicable but well documented shortage of competent fletchers during the Time of Troubles.
+
+STATISTICS:
+
+Unlimited +1 Bolts~
+@1006 = ~Bag of Plenty +1~
+@1007 = ~Although this soft cloth pouch is empty right now, there is still a powerful aura of magic surrounding it.
+
+STATISTICS:
+
+Unlimited +1 sling bullets~
+@1008 = ~White Dragon Scales~
+@1009 = ~There are a large number of frost covered scales salvaged from Icasaracht's corpse.  Legend has it they can be magically forged into powerful armor.~
+@1010 = ~White Dragon Scale~
+@1011 = ~Not surprisingly, this armor created from the scales of Icasaracht provides the wearer with protection from cold and ice.
+
+STATISTICS:
+   +50% Resistance to Cold
+
+Armor Class: -2
+Weight: 15
+Requires: 8 Strength
+Not Usable By:
+ Mage~
+@1012 = ~Gond, god of invention and artifice, is a deity rarely worshipped by traditional adventurers.  Some thieves, however, revere Gond for his role in the development of locks, traps, and other complex machines.  One such thief was the burglar Jurmar the Calm, who began his career as a locksmith.  Known for his cool demeanor and steady hand, Jurmar paid priests of Gond to fashion this tool belt for him.  Whenever Jurmar was stuck in a situation where he didn't have the right tool for a job, one of the small pouches on the belt would supply him with what he needed.
+
+Oswald has managed to add even more tools for the belt, further enhancing its usefulness.
+
+STATISTICS:
+
+Special: 
+  +15 Open Locks
+  +10 to Find/Remove Traps
+Only Usable By:
+  Thief (Single, Dual-, and Multi-Class)~
+@1013 = ~This small shield was created as a gift from the leader of Clan Battlehammer to one of his trusted servants.  The servant, Wurdar Stoutbrew, protected the clan leader's family from being killed and eaten by yeti.  Wurdar wore the shield proudly for ten years before he was killed by orcs in the Spine of the World.  His sacrifice allowed a few key members of the Battlehammer clan to escape to safety.
+
+Combined with the icon of Clan Battlehammer, the shield's abilities have been further enhanced.
+
+STATISTICS:
+
+Armor Class Bonus:  2
+Special: 
+ +10 to Max Hit Points
+ +1 Strength
+ No  Missile Weapon Protection
+Weight:  4
+Not Usable By:
+ Bard
+ Druid
+ Mage 
+ Thief~
+@1014 = ~Remorrhaz Shell Helm~
+@1015 = ~Crafted from chitinous scales, this heavy helmet retains some of the natural resistances of the remorrhaz from which it was crafted.
+
+STATISTICS:
+
+Armor Class Bonus: 1
+Special:
+  +10% to magic resistance
+  +20% to resistance to magic damage
+  Protects Against Critical Hits
+Weight: 10
+Not Usable By:
+ Mage
+ Bard
+ Thief~
+@1016 = ~Gloom~
+@1017 = ~In 834 DR, a wizard named Legedain the Wiser caught a renowned thief breaking into his tower.  The thief was a cynical burglar named Ilfain Blackfeather.  Legedain was growing old and becoming tired of his frail body.  To remedy the situation, he cast Magic Jar and forced Ilfain's spirit into a host gem.  Legedain then transferred his soul to the young elf's body and left the gem on a shelf nearby.  One hundred years later, Legedain decided to do something with it.  He created a sword for his arrogant bodyguard, Gundak, and transferred Ilfain's spirit from the host gem into the sword.  Ilfain, always highly critical in life, started telepathically criticizing Gundak in combat.  Gundak became annoyed with the sword after two weeks and he threw it into the street.  A series of warriors picked it up and discarded it after short periods of ownership. The constant criticism from the sword also makes it difficult to hit its target. Over time, the weapon has simply come to be known by its current name.
+
+Kieran Nye has applied a permanent Hope spell to the sword. While the sword is still very gloomy, it no longer criticizes its wielder and its thieving abilities can be used more often.
+
+STATISTICS:
+
+Damage:  2D4 +4
+THAC0:  +4
+Damage Type: Slashing
+Special:  Find Traps 2/Day, Knock 2/Day
+Weight: 4
+Speed Factor: 5
+Proficiency Type: Large Swords
+Type: 1-handed
+Not Usable By:
+ Druid
+ Cleric
+ Mage~
+@1018 = ~This front of this huge steel shield is decorated with black enameled patterns and a single skull set in the center.  The interior of the shield is etched with encrypted ancient writings.  The only legible words are at the top, and read, "AND WHAT OF THE DEAD?"  The history of the item is completely hidden from divination.
+
+Edion has deciphered a bit more of the text, unlocking new abilities of the shield.
+
+STATISTICS:
+
+Armor Class Bonus: 4
+Special:
+ +1 vs. Missile Weapons
+ Bearer is immune to Finger of Death and Power Word: Kill
+ Cure Critical Wounds 1/Day, Undead Ward 1/Day
+Weight: 20
+Only Usable By:
+ Humans
+ Half-Elves
+Not Usable By:
+ Druid
+ Thief
+ Mage
+ Bard~
+@1019 = ~It is believed that fae creatures helped create this beautiful sword, and legends say that it was forged in the cool depths of Myrloch, the large lake at the center of Gwynneth in the Moonshaes.  The weapon has an unearthly look to it, and it is believed to be quite old.  The only individual known to have carried the weapon was a half-elven bard named Daen Winterbrush.  It is said by some that after he found the sword, quite by accident, that he was blessed with exceptional creativity and powerful sensitivity to the world around him.  He traveled for forty years and is known for some of the most unique, haunting melodies in Faerun.  It is believed that Daen eventually became too melancholy at the sights of misery and oppression that he encountered in his travels, and that the fae smiths of the Moonshae Isles welcomed him into the breast of Myrloch.
+
+By singing the ballad of Daen Winterbrush and speaking with his spirit, more abilities of the blade have been awakened.
+
+STATISTICS:
+
+Damage:  1D8 +3
+THAC0:  +3
+Special:  
+  +30 to Lore skill while equipped
+  +1 Charisma while equipped
+Damage Type:  Slashing
+Weight:  4
+Speed Factor:  4
+Proficiency Type:  Large Swords
+Type:  1-handed
+Not Usable By:
+ Evil Creatures
+ Druid
+ Cleric
+ Mage~
+@1020 = ~This axe was crafted for a powerful young barbarian warrior named Hegelfden.  He was born into the Tribe of the Elk and the shamans prophesized that he would be a powerful warrior.  Hegelfden grew up believing that he was special, important, and somehow better than those around him.  By the age of seventeen, Hegelfden was an accomplished warrior.  Huge, fast, and cunning, he was more than a match for his kinsmen.  On a journey into the Spine of the World, Hegelfden captured two dwarves that he came across in a cave.  He refused to let the two workers go until they created a magnificent axe for him.  The two dwarves reluctantly agreed, creating a stout battle axe with a keen blade and a thick handle.  When the dwarves asked to be released, Hegelfden denied their request.  He wanted to keep them as servants.  The dwarves then laid a curse upon Hegelfden.  They told him that the fruit of his abuse would be the end of him.  Hegelfden laughed at the dwarves' claim and continued on with his life.  The next day, in a battle with a rival tribe, Hegelfden went berserk with blood lust, slaying every creature he came across.  His kin, convinced that he had gone mad, cut him down where he stood.  The axe was left on the field when the warriors brought Hegelfden's body back to the camp.  When they arrived, the dwarves were nowhere to be found.
+
+With Tiernon's guidance, the angry dwarven souls in the axe have been laid to rest.
+
+STATISTICS:
+
+Damage:  1D8 +5
+THAC0:  +5
+Damage Type: Slashing
+Weight: 6
+Speed Factor: 3
+Proficiency Type: Axe
+Type:  1-handed
+Not Usable By:
+ Druid
+ Cleric
+ Mage 
+ Thief~
+@1021 = ~Not much is known about the owner of this weapon, save that sages believe it is from another world, called "Eibrancha."  Plane-traveling wizards who have investigated life on "Eibrancha" report that it is dull, commonplace, and ordinary in the extreme, a place where heroes are rare and the populace is, by and large, incredibly average.  This might explain the virtually non-existent body of recorded information about the place.  The only thing known about the weapon's owner is that he was an educated man. The purple wood that the crossbow is constructed from is believed to be from a unique type of tree in Eibrancha.
+
+After contacting another plane and learning about Bren Muller, you have learned a new ability of the weapon. Once per day, it can dramatically increase accuracy for two rounds.
+
+STATISTICS:
+
+Once per day can increase bow's aim to an additional +5 to hit for two rounds
+
+Damage: +2
+THAC0: +5 bonus
+Weight: 7
+Speed Factor:  4
+Proficiency Type:  Crossbow
+Type:  2-handed
+Not Usable By:
+ Druid
+ Cleric
+ Mage
+ Thief~
+@1022 = ~genie bottle descript~
+@1023 = ~Remorrhaz Shell~
+@1024 = ~Elven Chain Mail~
+@1025 = ~The delicate yet sturdy craftsmanship of the Elven races allows them to design many beautiful yet utilitarian goods.  Among these is Elven chain mail, which is so finely wrought that it can be worn under normal clothing without revealing its presence.  This and its lightness allows it to be worn by thieves and fighter/mages with few restrictions.
+
+STATISTICS:
+
+Armor Class: 5
+Weight: 7
+Requires: 5 Strength
+Not Usable By:
+ Druid 
+ Mage~
+@1026 = ~Boomerang Dagger +1~
+@1027 = ~Fullen Woolspinner, an ambitious halfling from a well to do family, left his home to spend several years adventuring.  During his travels he ended up staying with a family of dwarven weaponsmiths.  Much impressed by their throwing axes, which always returned to the hands of their wielder, Fullen sought to make a dagger that could do the same.  With the help of his dwarven friends he succeeded, creating several of the famous Fullen Boomerang daggers.
+
+STATISTICS:
+
+Combat Abilities: dagger returns to the thrower
+THAC0:  +1 bonus
+Damage:  2d4 +1
+Damage type:  missile (piercing)
+Weight: 1
+Speed Factor: 1
+Proficiency Type: Dagger
+Type:  1-handed
+Requires: 3 Strength
+Not Usable By:
+ Cleric~
+@1028 = ~Returning Dart +2~
+@1029 = ~The small size of this weapon belies its great power.  Immediately after striking its target, this dart reappears in the hand of the wielder, ready to be hurled again.
+
+STATISTICS:
+
+Dart returns instantly to user's hand after being thrown.
+
+THAC0: +2 bonus
+Damage:  1d3 +2
+Damage type:  missile (piercing)
+Weight: 0
+Speed Factor: 0
+Proficiency Type: Dart
+Type:  1-handed
+Not Usable By:
+ Cleric~
+@1030 = ~This is a portion of the carapace of a dead remorrhaz. Their natural armor is known for its resilience and natural resistances.~
+@1031 = ~Cloak of the Winter Wolf~
+@1032 = ~This beautiful fur cloak is made from the pelts of winter wolves. The cloak was sewn by the local seamstress in Kuldahar, and it retains some of the natural resistances inherent to the wolves thanks to Orrick's enchantments.
+
+STATISTICS:
+
+Armor Class Bonus: +1 vs. Crushing
+Special:
+  +10% Cold Resistance
+  Immune to Winter Wolf Breath Attack
+Weight:  1
+Not usable by:~
+@1033 = ~Mithril Hammer~
+@1034 = ~Symbol of Clan Battlehammer~
+@1035 = ~This small, mithril hammer appears to be an exquisitively crafted, though ceremonial, item. The hammer feels slightly warm to the touch.~
+@1036 = ~This small mithril hammer is slightly warm to the touch. It is a symbol for Clan Battlehammer, a clan of dwarves currently lead by the eighth king Bruenor Battlehammer. The clan had always been led by his ancestors and passed on from generation to generation.
+
+Originally the clan resided in Mithril Hall but when they were forced out they moved to the northern regions of Icewind Dale near Ten Towns where they set up a new home providing equipment for the towns.~
+@1037 = ~Gnomish Tools~
+@1038 = ~This well-loved and worn wooden box contains an assortment of small tools, broken bits of metal, and an Anatidae-based adhesive.~
+@1039 = ~In 834 DR, a wizard named Legedain the Wiser caught a renowned thief breaking into his tower.  The thief was a cynical burglar named Ilfain Blackfeather.  Legedain was growing old and becoming tired of his frail body.  To remedy the situation, he cast Magic Jar and forced Ilfain's spirit into a host gem.  Legedain then transferred his soul to the young elf's body and left the gem on a shelf nearby.  One hundred years later, Legedain decided to do something with it.  He created a sword for his arrogant bodyguard, Gundak, and transferred Ilfain's spirit from the host gem into the sword.  Ilfain, always highly critical in life, started telepathically criticizing Gundak in combat.  Gundak became annoyed with the sword after two weeks and he threw it into the street.  A series of warriors picked it up and discarded it after short periods of ownership. The constant criticism from the sword also makes it difficult to hit its target. Over time, the weapon has simply come to be known by its current name.
+
+STATISTICS:
+
+Damage:  2D4 +4
+THAC0:  +2
+Damage Type: Slashing
+Special:  Find Traps 1/Day, Knock 1/Day
+Weight: 4
+Speed Factor: 5
+Proficiency Type: Large Swords
+Type: 1-handed
+Not Usable By:
+ Druid
+ Cleric
+ Mage~
+@1040 = ~Note for Edion~
+@1041 = ~This is a note for the necromancer Edion about banishing the angry spirits from the Young Rage axe.~
+@1042 = ~Spirit of Daen Winterbrush~
+@1043 = ~The Ballad of Daen Winterbrush~
+@1044 = ~This dusty tome consists of fading, well-worn pages. Page after page contain notes and music, a chronicle of a bard trying to write a song to fit his tale. Inside the cover are scratched the name 'Daen Winterbrush'. You could try singing the song, if you wish.~
+@1045 = ~Play Daen's Ballad~
+@1046 = ~Bren Muller's Deadeye~

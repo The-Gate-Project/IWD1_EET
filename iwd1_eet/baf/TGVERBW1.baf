@@ -1,0 +1,52 @@
+IF
+	OnCreation()
+THEN
+	RESPONSE #100
+		SaveObjectLocation("LOCALS","SavedLoc",Myself)
+END
+
+IF
+	StateCheck(Myself,STATE_PANIC)
+THEN
+	RESPONSE #100
+		RandomWalkContinuous()
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		Help()
+		AttackReevaluate(NearestEnemyOf(Myself),45)
+END
+
+IF
+	AttackedBy([ANYONE],DEFAULT)
+THEN
+	RESPONSE #100
+		Help()
+		AttackReevaluate(LastAttackerOf(Myself),45)
+END
+
+IF
+	Help([ANYONE])
+	!Help([PC])
+THEN
+	RESPONSE #100
+		MoveToObject(LastHelp)
+END
+
+IF
+	!NearSavedLocation(Myself,"LOCALSSavedLoc",10)
+THEN
+	RESPONSE #100
+		MoveToSavedLocation("SavedLoc","LOCALS")
+END
+
+IF
+	True()
+THEN
+	RESPONSE #100
+		RandomWalk()
+END
+

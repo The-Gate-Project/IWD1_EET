@@ -1,0 +1,69 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId("LUREMASTER")
+		//SetDialogueRange(300)
+		MultiPlayerSync()
+		Face(NW)
+		CreateCreature("CUTSPY",[-1.-1],0)
+		Wait(2)
+		MoveViewPoint([802.790],VERY_FAST)
+		Wait(2)
+		StartDialogNoSet(Player1)
+END
+
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Player1)
+		MoveToPoint([916.929])
+		FaceObject("LUREMASTER")
+END
+
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Player2)
+		MoveToPoint([968.905])
+		FaceObject("LUREMASTER")
+END
+
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Player3)
+		MoveToPoint([954.977])
+		FaceObject("LUREMASTER")
+END
+
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Player4)
+		MoveToPoint([1001.952])
+		FaceObject("LUREMASTER")
+END
+
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Player5)
+		MoveToPoint([967.1001])
+		FaceObject("LUREMASTER")
+END
+
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Player6)
+		MoveToPoint([1032.977])
+		FaceObject("LUREMASTER")
+END
+

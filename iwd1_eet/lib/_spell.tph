@@ -1,0 +1,371 @@
+PRINT ~Installing spells...~
+SILENT
+
+COPY ~iwd1_eet/spl/IDMXHPS.SPL~ ~override~
+     ~iwd1_eet/spl/IDIN181.SPL~ ~override~
+     ~iwd1_eet/spl/IDIN973.SPL~ ~override~
+     ~iwd1_eet/spl/IDWI023.SPL~ ~override~
+     ~iwd1_eet/spl/IDWI021.SPL~ ~override~
+     ~iwd1_eet/spl/IDIN993.SPL~ ~override~
+     ~iwd1_eet/spl/IDSETHP1.SPL~ ~override~
+     ~iwd1_eet/spl/IDSTHP25.SPL~ ~override~
+     ~iwd1_eet/spl/IDIN984.SPL~ ~override~
+     ~iwd1_eet/spl/IDIN987.SPL~ ~override~
+     ~iwd1_eet/spl/IDWI014.SPL~ ~override~
+     ~iwd1_eet/spl/IDWI019.SPL~ ~override~
+     ~iwd1_eet/spl/IDWI017.SPL~ ~override~
+     ~iwd1_eet/spl/IDWI016.SPL~ ~override~
+     ~iwd1_eet/spl/IDIN972.SPL~ ~override~
+     ~iwd1_eet/spl/IDIN995.SPL~ ~override~
+     ~iwd1_eet/spl/IDIN996.SPL~ ~override~
+     ~iwd1_eet/spl/IDIN994.SPL~ ~override~
+     ~iwd1_eet/spl/IDIN989.SPL~ ~override~
+     //~iwd1_eet/spl/IDWI024.SPL~ ~override~
+     ~iwd1_eet/spl/IDIN149.SPL~ ~override~
+     ~iwd1_eet/spl/IDIN150.SPL~ ~override~
+     ~iwd1_eet/spl/IDIN153.SPL~ ~override~
+     ~iwd1_eet/spl/IDWI404.SPL~ ~override~
+     ~iwd1_eet/spl/IDIN157.SPL~ ~override~
+     ~iwd1_eet/spl/IDIN155.SPL~ ~override~
+     ~iwd1_eet/spl/IDIN162.SPL~ ~override~
+     ~iwd1_eet/spl/IDWI022.SPL~ ~override~
+     ~iwd1_eet/spl/IDIN160.SPL~ ~override~
+     ~iwd1_eet/spl/IDIN158.SPL~ ~override~
+     ~iwd1_eet/spl/IDIN165.SPL~ ~override~
+     ~iwd1_eet/spl/IDIN174.SPL~ ~override~
+     ~iwd1_eet/spl/IDIN168.SPL~ ~override~
+     ~iwd1_eet/spl/IDIN172.SPL~ ~override~
+     ~iwd1_eet/spl/IDIN170.SPL~ ~override~
+     ~iwd1_eet/spl/IDIN171.SPL~ ~override~
+     ~iwd1_eet/spl/IDIN175.SPL~ ~override~
+     ~iwd1_eet/spl/IDIN173.SPL~ ~override~
+     ~iwd1_eet/spl/IDIN169.SPL~ ~override~
+     ~iwd1_eet/spl/IDIN167.SPL~ ~override~
+     ~iwd1_eet/spl/IDIN167A.SPL~ ~override~
+     ~iwd1_eet/spl/IDWI020.SPL~ ~override~
+     ~iwd1_eet/spl/IDWI805.SPL~ ~override~
+     ~iwd1_eet/spl/IDIN180.SPL~ ~override~
+     ~iwd1_eet/spl/IDIN178.SPL~ ~override~
+     ~iwd1_eet/spl/IDIN177.SPL~ ~override~
+     ~iwd1_eet/spl/IDWI599.SPL~ ~override~
+     ~iwd1_eet/spl/IDWI899.SPL~ ~override~
+     ~iwd1_eet/spl/IDWI598.SPL~ ~override~
+     //~iwd1_eet/spl/IDIN187.SPL~ ~override~
+     //~iwd1_eet/spl/IDIN187.SPL~ ~override/IDIN188.SPL~
+     ~iwd1_eet/spl/IDIN986.SPL~ ~override~
+     ~iwd1_eet/spl/IDTRLREG.SPL~ ~override~
+     ~iwd1_eet/spl/IDPR608B.SPL~ ~override~
+     ~iwd1_eet/spl/IDPR608C.SPL~ ~override~
+     ~iwd1_eet/spl/IDWI619B.SPL~ ~override~
+     ~iwd1_eet/spl/IDIN977.SPL~ ~override~
+     ~iwd1_eet/spl/IDIN976.SPL~ ~override~
+     ~iwd1_eet/spl/IDWI304A.SPL~ ~override~
+     ~iwd1_eet/spl/IDWI304B.SPL~ ~override~
+     ~iwd1_eet/spl/IDINVIS.SPL~ ~override~
+     ~iwd1_eet/spl/IDINVIS1.SPL~ ~override~
+     ~iwd1_eet/spl/IDINVIS3.SPL~ ~override~
+     ~iwd1_eet/spl/IDRINVS.SPL~ ~override~
+     //~iwd1_eet/spl/IDINVUL.SPL~ ~override~
+     ~iwd1_eet/spl/IDINVIS4.SPL~ ~override~
+     ~iwd1_eet/spl/IDINVIS5.SPL~ ~override~
+     ~iwd1_eet/spl/IDINVIS6.SPL~ ~override~
+     ~iwd1_eet/spl/IDRINVUL.SPL~ ~override~
+     //~iwd1_eet/spl/#evasion.SPL~ ~override~
+     ~iwd1_eet/spl/#JEDSLP.SPL~ ~override~
+     ~iwd1_eet/spl/IDWI417X.SPL~ ~override~
+     ~iwd1_eet/spl/IDIN163.SPL~ ~override~
+     ~iwd1_eet/spl/IDWI511X.SPL~ ~override~
+     //~iwd1_eet/spl/IDRM517.SPL~ ~override~
+     ~iwd1_eet/spl/ID9716FD.SPL~ ~override~
+     
+COPY ~iwd1_eet/spl/IDRM517.SPL~ ~override~
+	LPF ADD_SPELL_EFFECT INT_VAR opcode=17 power=3 target=2 parameter1=100 parameter2=2 timing=1 resist_dispel=2 dicesize=8 END
+     
+COPY ~iwd1_eet/spl/IDRM517.SPL~ ~override/IDRM516.spl~
+	LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete=172 END
+	LPF ADD_SPELL_EFFECT INT_VAR opcode=17 power=3 target=2 parameter1=100 parameter2=2 timing=1 resist_dispel=2 dicesize=8 END
+
+COPY ~iwd1_eet/spl/IDIN187.SPL~ ~override~
+     ~iwd1_eet/spl/IDIN187.SPL~ ~override/IDIN188.SPL~
+  WRITE_LONG 0x08 "-1"
+     
+
+COPY ~iwd1_eet/spl/IDWI024.SPL~ ~override~
+  //WRITE_LONG 0xd2 ~%IDPETRIF%~
+COPY ~iwd1_eet/spl/IDINVUL.SPL~ ~override~
+  WRITE_LONG 0x1122 ~%IDPETRIF%~
+/**/
+
+COPY ~iwd1_eet/spl/IDPR608.SPL~ ~override~
+  SAY 0x08 @2840
+  SAY 0x50 @8055
+  WRITE_SHORT 0x98 ~%idpro271%~
+
+COPY ~iwd1_eet/spl/IDIN974.SPL~ ~override~
+  WRITE_SHORT 0x98 ~%idpro297%~
+
+COPY ~iwd1_eet/spl/IDIN991.SPL~ ~override~
+  WRITE_SHORT 0x98 ~%idpro284%~
+
+COPY ~iwd1_eet/spl/IDIN979.SPL~ ~override~
+  WRITE_SHORT 0x98 ~%idpro294%~
+
+COPY ~iwd1_eet/spl/IDIN985.SPL~ ~override~
+  WRITE_SHORT 0x98 ~%idpro246%~
+
+COPY ~iwd1_eet/spl/IDWI220.SPL~ ~override~
+  SAY 0x08 @12093
+  SAY 0x50 @6393
+  WRITE_SHORT 0x98 ~%idpro217%~
+
+COPY ~iwd1_eet/spl/IDPR399.SPL~ ~override~
+  SAY 0x08 @899
+
+COPY ~iwd1_eet/spl/IDPR398.SPL~ ~override~
+  SAY 0x08 @1207
+
+COPY ~iwd1_eet/spl/IDIN998.SPL~ ~override~
+  SAY 0x08 @4362
+
+COPY ~iwd1_eet/spl/IDIN999.SPL~ ~override~
+  SAY 0x08 @3261
+
+COPY ~iwd1_eet/spl/IDIN997.SPL~ ~override~
+  SAY 0x08 @4363
+  WRITE_SHORT 0x98 ~%idpro234%~
+
+COPY ~iwd1_eet/spl/IDIN971.SPL~ ~override~
+  WRITE_SHORT 0x98 ~%idpro296%~
+
+COPY ~iwd1_eet/spl/IDIN983.SPL~ ~override~
+  WRITE_SHORT 0x98 ~%idpro286%~
+
+COPY ~iwd1_eet/spl/IDIN990.SPL~ ~override~
+  WRITE_SHORT 0x98 ~%idpro285%~
+
+COPY ~iwd1_eet/spl/IDIN992.SPL~ ~override~
+  WRITE_SHORT 0x98 ~%idpro283%~
+
+COPY ~iwd1_eet/spl/IDIN133.SPL~ ~override~
+  SAY 0x08 @21442
+
+COPY ~iwd1_eet/spl/IDIN140.SPL~ ~override~
+  SAY 0x08 @25041
+  WRITE_SHORT 0x98 ~%idpro345%~
+
+COPY ~iwd1_eet/spl/IDIN138.SPL~ ~override~
+  SAY 0x08 @24731
+  WRITE_SHORT 0x98 ~%idpro342%~
+
+COPY ~iwd1_eet/spl/IDIN136.SPL~ ~override~
+  SAY 0x08 @24735
+
+COPY ~iwd1_eet/spl/IDIN137.SPL~ ~override~
+  SAY 0x08 @24734
+  WRITE_SHORT 0x98 ~%idpro323%~
+
+COPY ~iwd1_eet/spl/IDIN134.SPL~ ~override~
+  SAY 0x08 @24737
+  WRITE_SHORT 0x98 ~%idpro320%~
+
+COPY ~iwd1_eet/spl/IDIN135.SPL~ ~override~
+  SAY 0x08 @24736
+  WRITE_SHORT 0x98 ~%idpro321%~
+
+COPY ~iwd1_eet/spl/IDWI619.SPL~ ~override~
+  SAY 0x08 @21432
+  SAY 0x50 @21461
+  WRITE_SHORT 0x98 ~%idpro299%~
+
+COPY ~iwd1_eet/spl/IDWI612.SPL~ ~override~
+  SAY 0x08 @12130
+  SAY 0x50 @7552
+  WRITE_SHORT 0x98 ~%idpro269%~
+
+COPY ~iwd1_eet/spl/IDWI318.SPL~ ~override~
+  SAY 0x08 @926
+  SAY 0x50 @6399
+  WRITE_SHORT 0x98 ~%idpro251%~
+
+COPY ~iwd1_eet/spl/IDIN161.SPL~ ~override~
+  WRITE_SHORT 0x98 ~%idpro349%~
+
+COPY ~iwd1_eet/spl/IDIN154.SPL~ ~override~
+  SAY 0x08 @26442
+
+COPY ~iwd1_eet/spl/IDIN159.SPL~ ~override~
+  SAY 0x08 @26661
+
+COPY ~iwd1_eet/spl/IDPR613.SPL~ ~override~
+  SAY 0x08 @21398
+  SAY 0x50 @21472
+
+COPY ~iwd1_eet/spl/IDIN186.SPL~ ~override~
+  WRITE_SHORT 0x98 ~%idpro230%~
+
+COPY ~iwd1_eet/spl/IDIN185.SPL~ ~override~
+  WRITE_SHORT 0x98 ~%idpro354%~
+
+COPY ~iwd1_eet/spl/IDIN184.SPL~ ~override~
+  WRITE_SHORT 0x98 ~%idpro353%~
+
+COPY ~iwd1_eet/spl/IDIN182.SPL~ ~override~
+  WRITE_SHORT 0x98 ~%idpro351%~
+
+COPY ~iwd1_eet/spl/IDPR111.SPL~ ~override~
+  SAY 0x08 @757
+  SAY 0x50 @7903
+  WRITE_SHORT 0x98 ~%idpro237%~
+
+COPY ~iwd1_eet/spl/IDPR113.SPL~ ~override~
+  SAY 0x08 @21425
+  SAY 0x50 @21479
+  WRITE_SHORT 0x98 ~%idpro000%~
+
+COPY ~iwd1_eet/spl/IDPR415.SPL~ ~override~
+  SAY 0x08 @21403
+  SAY 0x50 @24810
+  WRITE_LONG 0x2b2 ~%IDBLDRG%~
+
+COPY ~iwd1_eet/spl/IDIN978.SPL~ ~override~
+  SAY 0x08 @17899
+
+COPY ~iwd1_eet/spl/IDWI707.SPL~ ~override~
+  SAY 0x08 @1416
+  SAY 0x50 @7576
+  WRITE_SHORT 0x98 ~%idpro209%~
+
+COPY ~iwd1_eet/spl/IDWI904.SPL~ ~override~
+  SAY 0x08 @5711
+  WRITE_SHORT 0x98 ~%idpro279%~
+
+COPY ~iwd1_eet/spl/IDITM99.SPL~ ~override~
+  SAY 0x08 @1418
+
+COPY ~iwd1_eet/spl/IDWI511.SPL~ ~override~
+  SAY 0x08 @1954
+  SAY 0x50 @7516
+COPY ~iwd1_eet/spl/IDWI511Y.SPL~ ~override~
+  WRITE_SHORT 0x98 ~%idshrflm%~
+
+COPY ~iwd1_eet/spl/IDWI419.SPL~ ~override~
+  SAY 0x08 @1848
+  SAY 0x50 @7510
+  WRITE_SHORT 0x98 ~%idpro255%~
+
+COPY ~iwd1_eet/spl/IDPR323.SPL~ ~override~
+  SAY 0x08 @21422
+  SAY 0x50 @24255
+
+COPY ~iwd1_eet/spl/IDWI601.SPL~ ~override~
+  SAY 0x08 @2419
+  SAY 0x50 @7538
+
+COPY ~iwd1_eet/spl/IDPR419.SPL~ ~override~
+  SAY 0x08 @21405
+  SAY 0x50 @24248
+
+COPY ~iwd1_eet/spl/IDPR714.SPL~ ~override~
+  SAY 0x08 @2938
+  SAY 0x50 @8099
+  //SAY 0x1ee @18628
+  WRITE_LONG 0x1f2 ~%IDPAIN%~
+  SAY 0x21e @18628
+
+COPY ~iwd1_eet/spl/IDWI418.SPL~ ~override~
+  SAY 0x08 @1866
+  SAY 0x50 @6515
+
+COPY ~iwd1_eet/spl/IDWI417.SPL~ ~override~
+  SAY 0x08 @1865
+  SAY 0x50 @6513
+
+COPY ~iwd1_eet/spl/IDITM06.SPL~ ~override~
+  SAY 0x08 @21439
+  SAY 0x50 @24812
+  WRITE_SHORT 0x98 ~%idpro313%~
+
+COPY ~iwd1_eet/spl/IDWI806.SPL~ ~override~
+  SAY 0x08 @21427
+  SAY 0x50 @21470
+  WRITE_SHORT 0x98 ~%idpro319%~
+
+COPY ~iwd1_eet/spl/IDPR516.SPL~ ~override~
+  SAY 0x08 @21401
+  SAY 0x50 @24247
+  WRITE_SHORT 0x98 ~%idpro310%~
+
+COPY ~iwd1_eet/spl/IDWI423.SPL~ ~override~
+  SAY 0x08 @21437
+  SAY 0x50 @21468
+  WRITE_SHORT 0x98 ~%idpro315%~
+
+COPY ~iwd1_eet/spl/IDWI516.SPL~ ~override~
+  SAY 0x08 @2693
+  SAY 0x50 @7536
+
+COPY ~iwd1_eet/spl/IDPR517.SPL~ ~override~
+  SAY 0x08 @21402
+  SAY 0x50 @24251
+  WRITE_LONG 0x162 ~%IDANIMRG%~
+
+COPY ~iwd1_eet/spl/IDIN975.SPL~ ~override~
+  WRITE_SHORT 0x98 ~%idpro288%~
+
+COPY ~iwd1_eet/spl/IDIN994X.SPL~ ~override~
+  WRITE_SHORT 0x98 ~%idpro281%~
+  SAY 0xce @100058
+
+COPY ~iwd1_eet/spl/IDIN165X.SPL~ ~override~
+  SAY 0x08 @26936
+  WRITE_SHORT 0x98 ~%idpro405%~
+
+COPY ~iwd1_eet/spl/IDIN178X.SPL~ ~override~
+  WRITE_SHORT 0x98 ~%idpro402%~
+  SAY 0x1be @26939
+
+COPY ~iwd1_eet/spl/IDWI517.SPL~ ~override~
+  SAY 0x08 @21434
+  SAY 0x50 @24244
+/**/
+
+COPY ~iwd1_eet/spl/IDIN995X.SPL~ ~override~
+     ~iwd1_eet/spl/IDIN996X.SPL~ ~override~
+     ~iwd1_eet/spl/IDIN989X.SPL~ ~override~
+     ~iwd1_eet/spl/IDIN155X.SPL~ ~override~
+  WRITE_SHORT 0x98 ~%idpro001%~
+
+COPY ~iwd1_eet/spl/eff_string/IDIN995.eff~ ~override/IDIN995.eff~
+     ~iwd1_eet/spl/eff_string/IDIN995.eff~ ~override/IDIN996.eff~
+     ~iwd1_eet/spl/eff_string/IDIN995.eff~ ~override/IDIN989.eff~
+     ~iwd1_eet/spl/eff_string/IDIN995.eff~ ~override/IDIN155.eff~
+	WRITE_EVALUATED_ASCII 0x30 ~%DEST_RES%X~ (8)
+/* AURA */
+
+COPY ~iwd1_eet/spl/eff_nostring~ ~override~
+
+VERBOSE
+PRINT ~Spells installation complete...~
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

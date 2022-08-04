@@ -1,0 +1,46 @@
+IF
+	Global("AR9708_DOOR1","MYAREA",0)
+THEN
+	RESPONSE #100
+		TriggerActivation("To9707",FALSE)
+		SetGlobal("AR9708_DOOR1","MYAREA",1)
+		Continue()
+END
+
+IF
+	Global("AR9708_HIDDEN_DOOR_STATE","GLOBAL",0)
+	OpenState("AR9708_HIDE_DOOR1",TRUE)
+THEN
+	RESPONSE #100
+		CloseDoor("AR9708_HIDE_DOOR1")
+		TriggerActivation("To9707",FALSE)
+		Continue()
+END
+
+IF
+	!Global("AR9708_HIDDEN_DOOR_STATE","GLOBAL",0)
+	OpenState("AR9708_HIDE_DOOR1",FALSE)
+THEN
+	RESPONSE #100
+		OpenDoor("AR9708_HIDE_DOOR1")
+		TriggerActivation("To9707",TRUE)
+		Continue()
+END
+
+IF
+	!Global("RETURN_TO_LONELYWOOD","GLOBAL",0)
+THEN
+	RESPONSE #100
+		StartCutSceneMode()
+		StartCutScene("keRtrnLW")
+		SetGlobal("RETURN_TO_LONELYWOOD","GLOBAL",0)
+END
+
+IF
+	OnCreation()
+THEN
+	RESPONSE #100
+		NoAction()
+		Continue()
+END
+

@@ -1,0 +1,16 @@
+IF
+	!IsActive(Myself)
+	GlobalGT("HJOLLDER_QUEST","GLOBAL",7)
+THEN
+	RESPONSE #100
+		DestroySelf()
+END
+
+IF
+	!IsActive(Myself)
+THEN
+	RESPONSE #100
+		Activate(Myself)
+		SetGlobal("IwIHidden","LOCALS",0)
+END
+

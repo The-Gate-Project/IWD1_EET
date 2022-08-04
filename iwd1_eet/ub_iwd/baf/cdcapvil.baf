@@ -1,0 +1,127 @@
+IF
+  Global("SPRITE_IS_DEADHigh_Baptist","GLOBAL",1)
+  Global("CDFree","LOCALS",0)
+THEN
+  RESPONSE #100
+    ChangeEnemyAlly(Myself,NEUTRAL)
+    SetGlobal("CDFree","LOCALS",1)
+    SetGlobal("CDFlockHostile","MYAREA",0)
+    ChangeAIScript("IWTWNKI",OVERRIDE)
+    ClearAllActions()
+END
+
+IF
+  //!BitGlobal(":AREA_VAR","MYAREA",4,AND)
+  //!Global("AREA_VAR4","MYAREA",1)
+  !BitCheck("AREA_VAR","MYAREA",4)
+  Allegiance(Myself,ENEMY)
+  Global("CDFree","LOCALS",0)
+THEN
+  RESPONSE #100
+    //BitGlobal(":AREA_VAR","MYAREA",4,OR)
+    //SetGlobal("AREA_VAR4","MYAREA",1)
+    BitSet("AREA_VAR","MYAREA",4)
+    Continue()
+END
+
+IF
+  !Allegiance(Myself,ENEMY)
+  Global("CDFlockHostile","MYAREA",1)
+  !Global("SPRITE_IS_DEADHigh_Baptist","GLOBAL",1)
+THEN
+  RESPONSE #100
+    Enemy()
+    Continue()
+END
+
+IF
+  !Allegiance(Myself,ENEMY)
+  AttackedBy([GOODCUTOFF],DEFAULT)
+THEN
+  RESPONSE #100
+    Enemy()
+    Continue()
+END
+
+IF
+  See(NearestEnemyOf(Myself))
+  Global("CDFree","LOCALS",0)
+THEN
+  RESPONSE #100
+    AttackReevaluate(LastSeenBy(Myself),75)
+END
+
+IF
+  AttackedBy(NearestEnemyOf(Myself),DEFAULT)
+  Global("CDFree","LOCALS",0)
+THEN
+  RESPONSE #100
+    MoveToObject(LastAttackerOf(Myself))
+END
+
+IF
+  !See([PC])
+  Global("Baptist_Quest","GLOBAL",1)
+THEN
+  RESPONSE #100
+    EscapeArea()
+END
+
+IF
+  OnCreation()
+  Global("Baptist_Quest","GLOBAL",1)
+THEN
+  RESPONSE #100
+    DestroySelf()
+END
+
+IF
+  See(NearestEnemyOf(Myself))
+  Global("CDFree","LOCALS",1)
+THEN
+  RESPONSE #100
+    RunAwayFromNoLeaveArea(NearestEnemyOf(Myself),150)
+END
+
+IF
+  ActionListEmpty()
+  Global("CDFree","LOCALS",0)
+THEN
+  RESPONSE #100
+    FaceObject("High_Baptist")
+END
+
+IF
+  ActionListEmpty()
+  Global("CDFree","LOCALS",1)
+  !Range(NearestEnemyOf(Myself),50)
+THEN
+  RESPONSE #100
+    NoAction()
+    Wait(7)
+  RESPONSE #100
+    NoAction()
+    Wait(7)
+  RESPONSE #100
+    NoAction()
+    Wait(7)
+  RESPONSE #100
+    NoAction()
+    Wait(7)
+  RESPONSE #100
+    NoAction()
+    Wait(7)
+  RESPONSE #100
+    NoAction()
+    Wait(7)
+  RESPONSE #100
+    RandomWalk()
+END
+
+IF
+  ActionListEmpty()
+  Global("CDFree","LOCALS",1)
+THEN
+  RESPONSE #100
+    FaceObject(Nearest([PC]))
+END

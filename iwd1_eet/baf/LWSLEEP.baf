@@ -1,0 +1,19 @@
+IF
+	!BitCheck("CREATURE_STATE_VAR","LOCALS",1)
+THEN
+	RESPONSE #100
+		BitSet("CREATURE_STATE_VAR","LOCALS",1)
+		SetGlobalTimerRandom("IwTimer24","LOCALS",9,12)
+		Continue()
+END
+
+IF
+	GlobalTimerExpired("IwTimer24","LOCALS")
+	Detect([PC])
+THEN
+	RESPONSE #100
+		DisplayStringHead(Myself,@3805)
+		SetGlobalTimerRandom("IwTimer24","LOCALS",9,12)
+		Continue()
+END
+

@@ -1,0 +1,27 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId("WYLFDENE")
+		StartCutSceneMode()
+		MultiPlayerSync()
+		ClearAllActions()
+		MultiPlayerSync()
+		HideGUI()
+		Wait(1)
+		//Activate("MAIN_AMBI_2")
+		AmbientActivate("MAIN_AMBI_2",TRUE)
+		SetGlobal("BC_CUTSCENE","GLOBAL",17)
+		StartCutScene("BCTNTFC2")
+		ForceSpellRES("IDIN140","SEER") //INNATE_RETRIBUTION
+		Activate("SEERTALK")
+		ActionOverride("SEERTALK",SetGlobal("IwIHidden","LOCALS",0))
+		ActionOverride("SEERTALK",UseItem("ADIS","SEER"))
+		Wait(3)
+		MoveViewObject("WYLFDENE",VERY_FAST)
+		ActionOverride("SEER",DestroySelf())
+		Wait(1)
+		StartCutScene("BCSCUT4")
+		ReallyForceSpellRES("IDIN153","WYLFDENE") //INNATE_WYLFDENES_DEATH_ANIMATION
+END
+

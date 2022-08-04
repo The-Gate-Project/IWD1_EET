@@ -1,0 +1,191 @@
+PRINT ~Installing stores...~
+SILENT
+
+COPY ~iwd1_eet/sto/ehtemple.sto~ ~override~
+  SAY 0x0c @123
+
+COPY ~iwd1_eet/sto/edtemple.sto~ ~override~
+  SAY 0x0c @123
+
+COPY ~iwd1_eet/sto/ehtav.sto~ ~override~
+  SAY 0x00c @127
+  SAY 0x0cc @133
+  SAY 0x0e0 @128
+  SAY 0x0f4 @129
+  SAY 0x108 @130
+  SAY 0x11c @131
+
+COPY ~iwd1_eet/sto/ehpomab.sto~ ~override~
+  SAY 0x00c @122
+  LPF REPLACE_STORE_ITEM INT_VAR number_in_stock=2 STR_VAR old_item=2HAXE new_item=Z2HAXE END
+
+COPY ~iwd1_eet/sto/ehinn.sto~ ~override~
+  SAY 0x00c @124
+
+COPY ~iwd1_eet/sto/kuork1.sto~ ~override~
+  SAY 0x00c @3372
+
+COPY ~iwd1_eet/sto/kusmith.sto~ ~override~
+  SAY 0x00c @125
+
+COPY ~iwd1_eet/sto/kutemple.sto~ ~override~
+
+COPY ~iwd1_eet/sto/kuoswald.sto~ ~override~
+  SAY 0x00c @11694
+
+COPY ~iwd1_eet/sto/kutav.sto~ ~override~
+  SAY 0x00c @11692
+  SAY 0x0a4 @3220
+  SAY 0x0b8 @3221
+  SAY 0x0cc @129
+  SAY 0x0e0 @130
+  SAY 0x0f4 @131
+  SAY 0x108 @3182
+  SAY 0x11c @3223
+  SAY 0x130 @132
+
+COPY ~iwd1_eet/sto/kugerth.sto~ ~override~
+  SAY 0x00c @23499
+
+COPY ~iwd1_eet/sto/kuinn1.sto~ ~override~
+     ~iwd1_eet/sto/kuinn2.sto~ ~override~
+     ~iwd1_eet/sto/kuinn3.sto~ ~override~
+  SAY 0x00c @10235
+
+COPY ~iwd1_eet/sto/detemple.sto~ ~override~
+
+COPY ~iwd1_eet/sto/de_lib.sto~ ~override~
+
+COPY ~iwd1_eet/sto/detempe.sto~ ~override~
+  SAY 0x00c @3374
+
+COPY ~iwd1_eet/sto/shlehlan.sto~ ~override~
+  SAY 0x00c @18700
+
+COPY ~iwd1_eet/sto/norlinor.sto~ ~override~
+  SAY 0x00c @18563
+
+COPY ~iwd1_eet/sto/bandoth.sto~ ~override~
+  SAY 0x00c @3373
+
+COPY ~iwd1_eet/sto/ldd_guel.sto~ ~override~
+  SAY 0x00c @11625
+
+COPY ~iwd1_eet/sto/ldd_dl1.sto~ ~override~
+    // ~iwd1_eet/sto/ldd_dl2.sto~ ~override~
+  SAY 0x00c @11624
+
+COPY ~iwd1_eet/sto/ldd_nym.sto~ ~override~
+  SAY 0x00c @11626
+
+COPY ~iwd1_eet/sto/ldd_beor.sto~ ~override~
+  SAY 0x00c @11625
+
+COPY ~iwd1_eet/sto/ldd_per.sto~ ~override~
+
+COPY ~iwd1_eet/sto/emmeric.sto~ ~override~
+  SAY 0x00c @18701
+
+COPY ~iwd1_eet/sto/kieran1.sto~ ~override~
+  SAY 0x00c @26221
+  SAY 0x0b8 @131
+  SAY 0x0cc @129
+  SAY 0x108 @130
+  SAY 0x11c @26650
+
+COPY ~iwd1_eet/sto/kieran3.sto~ ~override~
+  SAY 0x00c @26221
+
+COPY ~iwd1_eet/sto/kieran2.sto~ ~override~
+  SAY 0x00c @21871
+
+COPY ~iwd1_eet/sto/waukeen.sto~ ~override~
+  SAY 0x00c @21870
+
+COPY ~iwd1_eet/sto/djorn.sto~ ~override~
+  SAY 0x00c @26697
+
+COPY ~iwd1_eet/sto/edion.sto~ ~override~
+  SAY 0x00c @21869
+
+COPY ~iwd1_eet/sto/tiernon.sto~ ~override~
+  SAY 0x00c @24587
+
+COPY ~iwd1_eet/sto/xactile.sto~ ~override~
+  SAY 0x00c @26698
+
+COPY ~iwd1_eet/sto/hobart.sto~ ~override~
+  SAY 0x00c @26218
+
+COPY ~iwd1_eet/sto/rikasha.sto~ ~override~
+  SAY 0x00c @27584
+
+COPY ~iwd1_eet/sto/BAGH01.sto~  ~override/BAGH01.sto~
+     ~iwd1_eet/sto/BAGH02.sto~  ~override/BAGH02.sto~
+  WRITE_SHORT 0x22 999
+COPY ~iwd1_eet/sto/GEMBG01.sto~ ~override/GEMBG01.sto~
+     ~iwd1_eet/sto/GEMBG01.sto~ ~override/GEMBG02.sto~
+     ~iwd1_eet/sto/GEMBG01.sto~ ~override/GEMBG03.sto~
+     ~iwd1_eet/sto/GEMBG01.sto~ ~override/GEMBG04.sto~
+     ~iwd1_eet/sto/GEMBG01.sto~ ~override/GEMBG05.sto~
+     ~iwd1_eet/sto/GEMBG01.sto~ ~override/GEMBG06.sto~
+     ~iwd1_eet/sto/GEMBG01.sto~ ~override/GEMBG07.sto~
+     ~iwd1_eet/sto/GEMBG01.sto~ ~override/GEMBG08.sto~
+     ~iwd1_eet/sto/PTNBG01.sto~ ~override/PTNBG01.sto~
+     ~iwd1_eet/sto/PTNBG01.sto~ ~override/PTNBG02.sto~
+     ~iwd1_eet/sto/PTNBG01.sto~ ~override/PTNBG03.sto~
+     ~iwd1_eet/sto/PTNBG01.sto~ ~override/PTNBG04.sto~
+     ~iwd1_eet/sto/PTNBG01.sto~ ~override/PTNBG05.sto~
+     ~iwd1_eet/sto/PTNBG01.sto~ ~override/PTNBG06.sto~
+     ~iwd1_eet/sto/PTNBG01.sto~ ~override/PTNBG07.sto~
+     ~iwd1_eet/sto/PTNBG01.sto~ ~override/PTNBG08.sto~
+     ~iwd1_eet/sto/PTNBG01.sto~ ~override/PTNBG09.sto~
+     ~iwd1_eet/sto/PTNBG01.sto~ ~override/PTNBG10.sto~
+     ~iwd1_eet/sto/SCRCS01.sto~ ~override/SCRCS01.sto~
+     ~iwd1_eet/sto/SCRCS01.sto~ ~override/SCRCS02.sto~
+     ~iwd1_eet/sto/SCRCS01.sto~ ~override/SCRCS03.sto~
+     ~iwd1_eet/sto/SCRCS01.sto~ ~override/SCRCS04.sto~
+     ~iwd1_eet/sto/SCRCS01.sto~ ~override/SCRCS05.sto~
+     ~iwd1_eet/sto/SCRCS01.sto~ ~override/SCRCS06.sto~
+     ~iwd1_eet/sto/SCRCS01.sto~ ~override/SCRCS07.sto~
+     ~iwd1_eet/sto/SCRCS01.sto~ ~override/SCRCS08.sto~
+     ~iwd1_eet/sto/SCRCS01.sto~ ~override/SCRCS09.sto~
+     ~iwd1_eet/sto/SCRCS01.sto~ ~override/SCRCS10.sto~
+  WRITE_SHORT 0x22 100
+
+COPY ~override/BAGH01.sto~ ~override/BAGH03.sto~
+     ~override/BAGH01.itm~ ~override/BAGH03.itm~
+
+COPY_EXISTING ~BDKEYR.sto~ ~override/IDKEYR.sto~
+COPY_EXISTING ~BDKEYR.itm~ ~override/IDKEYR.itm~
+	WRITE_LONG 0x34 2000
+	READ_BYTE  0x18 bitw
+	LPF GET_BIT INT_VAR number = bitw RET bit_value END
+	PATCH_IF ( bit_value ) BEGIN WRITE_BYTE 0x18 ( bitw - 1 ) END
+
+
+VERBOSE
+PRINT ~Stores installation complete...~
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

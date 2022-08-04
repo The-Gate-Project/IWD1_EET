@@ -1,0 +1,45 @@
+3 Attack(O:Target*)
+5 BackStab(O:Target*)
+31 Spell(O:Target*,I:Spell*Spell)
+31 SpellRES(S:RES*, O:Target*)
+94 GroupAttack(O:Target*)
+95 SpellPoint(P:Target*,I:Spell*Spell)
+95 SpellPointRES(S:RES*, P:Target*)
+105 AttackOneRound(O:Target*)
+113 ForceSpell(O:Target,I:Spell*Spell)
+113 ForceSpellRES(S:RES*, O:Target)
+114 ForceSpellPoint(P:Target,I:Spell*Spell)
+114 ForceSpellPointRES(S:RES*, P:Target)
+134 AttackReevaluate(O:Target*,I:ReevaluationPeriod*)
+181 ReallyForceSpell(O:Target,I:Spell*Spell)
+181 ReallyForceSpellRES(S:RES*, O:TargetI:Spell*Spell)
+191 SpellNoDec(O:Target*,I:Spell*Spell)
+191 SpellNoDecRES(S:RES*,O:Target*)
+192 SpellPointNoDec(P:Target*,I:Spell*Spell)
+192 SpellPointNoDecRES(S:RES*,P:Target*)
+240 ReallyForceSpellDead(O:Target,I:Spell*Spell)
+240 ReallyForceSpellDeadRES(S:RES*,O:Target)
+318 ForceSpellRange(O:Target,I:Spell*Spell)
+318 ForceSpellRangeRES(S:RES*,O:Target)
+319 ForceSpellPointRange(P:Target,I:Spell*Spell)
+319 ForceSpellPointRangeRES(S:RES*,P:Target)
+337 ReallyForceSpellPoint(P:Target*,I:Spell*Spell)
+337 ReallyForceSpellPointRES(S:RES*,P:Target*)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

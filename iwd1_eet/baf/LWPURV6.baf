@@ -1,0 +1,96 @@
+IF
+	!Global("SPRITE_IS_DEADPURVIS","GLOBAL",0)
+	!IsActive(Myself)
+THEN
+	RESPONSE #100
+		DestroySelf()
+END
+
+IF
+	!Allegiance(Myself,ENEMY)
+THEN
+	RESPONSE #100
+		Enemy()
+		Continue()
+END
+
+IF
+	!IsActive(Myself)
+	Global("THURLOW_MURDER","GLOBAL",2)
+THEN
+	RESPONSE #100
+		SetGlobal("THURLOW_MURDER","GLOBAL",3)
+		MultiPlayerSync()
+		Activate(Myself)
+		SetGlobal("IwIHidden","LOCALS",0)
+		XEquipItem("CLCK06",Myself,SLOT_CLOAK,EQUIP)
+		//ApplySpellRES("IDINVIS",Myself)  // No such index
+		EquipMostDamagingMelee()
+		Continue()
+END
+
+IF
+	!IsActive(Myself)
+THEN
+	RESPONSE #100
+		NoAction()
+END
+
+IF
+	StateCheck(Myself,STATE_NOT_VISIBLE)
+	Global("BACKSTAB_PC","MYAREA",0)
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		SetGlobal("BACKSTAB_PC","MYAREA",1)
+		SetGlobalTimer("PURV_STAB","MYAREA",3)
+		AttackReevaluate(LastSeenBy(Myself),30)
+END
+
+IF
+	Global("MOVEMENT_LIST_0_LOC","LOCALS",0)
+	BitCheck("CREATURE_STATE_VAR","LOCALS",524288)
+	NearLocation(Myself,502,754,8)
+	!StateCheck(Myself,STATE_NOT_VISIBLE)
+	GlobalTimerExpired("PURV_STAB","MYAREA")
+THEN
+	RESPONSE #100
+		SetGlobal("MOVEMENT_LIST_0_LOC","LOCALS",1)
+		BitClear("CREATURE_STATE_VAR","LOCALS",524288)
+		Continue()
+END
+
+IF
+	Global("MOVEMENT_LIST_0_LOC","LOCALS",0)
+	!StateCheck(Myself,STATE_NOT_VISIBLE)
+	GlobalTimerExpired("PURV_STAB","MYAREA")
+	ActionListEmpty()
+THEN
+	RESPONSE #100
+		BitSet("CREATURE_STATE_VAR","LOCALS",524288)
+		SetHomeLocation([502.754])
+		MoveToPoint([502.754])
+END
+
+IF
+	Global("MOVEMENT_LIST_0_LOC","LOCALS",1)
+	!StateCheck(Myself,STATE_NOT_VISIBLE)
+	GlobalTimerExpired("PURV_STAB","MYAREA")
+	ActionListEmpty()
+THEN
+	RESPONSE #100
+		SetGlobal("THURLOW_MURDER","GLOBAL",3)
+		SetGlobal("MOVEMENT_LIST_0_LOC","LOCALS",2)
+END
+
+IF
+	Global("MOVEMENT_LIST_0_LOC","LOCALS",2)
+	!StateCheck(Myself,STATE_NOT_VISIBLE)
+	GlobalTimerExpired("PURV_STAB","MYAREA")
+	ActionListEmpty()
+THEN
+	RESPONSE #100
+		DestroySelf()
+		SetGlobal("MOVEMENT_LIST_0_LOC","LOCALS",0)
+END
+

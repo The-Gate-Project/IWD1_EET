@@ -1,0 +1,413 @@
+
+OUTER_SET strref = RESOLVE_STR_REF (@34245)
+
+ADD_JOURNAL EXISTING TITLE (@2000012) @34245
+
+COPY_EXISTING ~DCALLIAN.DLG~ ~override~
+	DECOMPILE_AND_PATCH BEGIN
+		REPLACE_TEXTUALLY ~TakePartyItem("VoiceBn")~ ~TakePartyItem("VoiceBn") EraseJournalEntry(%strref%)~
+	END
+
+INCLUDE ~iwd1_eet/ub_iwd/lib/functions.tpa~
+
+APPEND ~state.ids~  ~0x00000FC0 STATE_REALLY_DEAD~ UNLESS ~0x00000FC0 STATE_REALLY_DEAD~
+
+COMPILE ~iwd1_eet/ub_iwd/ub_dlg/dharken.d~
+        ~iwd1_eet/ub_iwd/ub_dlg/dvoiceda.d~
+
+COMPILE ~iwd1_eet/ub_iwd/baf/cdbell.baf~
+
+COPY_EXISTING ~lddthief.cre~ ~override/cdbell.cre~
+	WRITE_ASCIIE 0x248 "%DEST_RES%" #8                              // override scripts
+	WRITE_ASCII  0x250 "" #32                                       // blanks other scripts
+	WRITE_BYTE   (0x2d8 - (0x68)) 128                               // neutral
+	WRITE_ASCIIE (0x2e8 - (0x68)) "%DEST_RES%" #32                  // dv
+	REPLACE_CRE_ITEM ~clck06~ #1 #1 #1 ~UNDROPPABLE~ ~CLOAK~        // lazy way to make undetectable
+	LPF ADD_CRE_EFFECT
+		INT_VAR opcode=69 timing=1 target=1 power=5
+	END
+	LPF ADD_CRE_EFFECT
+		INT_VAR opcode=20 timing=1 target=1 power=5 resist_dispel=0 parameter2=1
+	END
+
+COPY_EXISTING ~sincylia.cre~ ~override/cdbethla.cre~
+	SAY 0x08 @3000001
+	SAY 0x0c @3000001
+
+COPY ~iwd1_eet/ub_iwd/ub_cre/voice.cre~ ~override~
+	SAY 0x08 @1197
+	SAY 0x0c @3021
+	WRITE_ASCII  0x268 ~gnmmgsgh~
+	REPLACE_CRE_ITEM ~min2hp~  #1 #1 #1 ~NONE~ ~AMULET~
+	ADD_CRE_ITEM     ~ringtom~ #1 #1 #1 ~NONE~ ~QITEM1 QITEM2 QITEM3~
+	LPF ADD_CRE_EFFECT
+		INT_VAR opcode=20 timing=1 target=1 power=5 resist_dispel=1
+	END
+
+COMPILE ~iwd1_eet/ub_iwd/baf/lddurd01.baf~
+
+COMPILE ~iwd1_eet/ub_iwd/dlg/voice.d~
+
+COPY ~iwd1_eet/ub_iwd/wav/cdbell.wav~  ~override~
+
+EXTEND_BOTTOM ~ID8001.bcs~ ~iwd1_eet/ub_iwd/baf/ar8001.baf~
+
+EXTEND_BOTTOM ~ID8009.bcs~ ~iwd1_eet/ub_iwd/baf/ar8009.baf~
+
+EXTEND_BOTTOM ~ID8001.bcs~ ~iwd1_eet/ub_iwd/baf/ldd_area.baf~
+EXTEND_BOTTOM ~ID8002.bcs~ ~iwd1_eet/ub_iwd/baf/ldd_area.baf~
+EXTEND_BOTTOM ~ID8003.bcs~ ~iwd1_eet/ub_iwd/baf/ldd_area.baf~
+EXTEND_BOTTOM ~ID8004.bcs~ ~iwd1_eet/ub_iwd/baf/ldd_area.baf~
+EXTEND_BOTTOM ~ID8005.bcs~ ~iwd1_eet/ub_iwd/baf/ldd_area.baf~
+EXTEND_BOTTOM ~ID8006.bcs~ ~iwd1_eet/ub_iwd/baf/ldd_area.baf~
+EXTEND_BOTTOM ~ID8007.bcs~ ~iwd1_eet/ub_iwd/baf/ldd_area.baf~
+EXTEND_BOTTOM ~ID8008.bcs~ ~iwd1_eet/ub_iwd/baf/ldd_area.baf~
+EXTEND_BOTTOM ~ID8009.bcs~ ~iwd1_eet/ub_iwd/baf/ldd_area.baf~
+EXTEND_BOTTOM ~ID8010.bcs~ ~iwd1_eet/ub_iwd/baf/ldd_area.baf~
+EXTEND_BOTTOM ~ID8011.bcs~ ~iwd1_eet/ub_iwd/baf/ldd_area.baf~
+EXTEND_BOTTOM ~ID8012.bcs~ ~iwd1_eet/ub_iwd/baf/ldd_area.baf~
+EXTEND_BOTTOM ~ID8013.bcs~ ~iwd1_eet/ub_iwd/baf/ldd_area.baf~
+EXTEND_BOTTOM ~ID8014.bcs~ ~iwd1_eet/ub_iwd/baf/ldd_area.baf~
+EXTEND_BOTTOM ~ID8015.bcs~ ~iwd1_eet/ub_iwd/baf/ldd_area.baf~
+EXTEND_BOTTOM ~ID8016.bcs~ ~iwd1_eet/ub_iwd/baf/ldd_area.baf~
+
+OUTER_SET cd_glob = 1 OUTER_SET cd_face = 6 OUTER_SET cd_x = 1239 OUTER_SET cd_y = 1754
+EXTEND_BOTTOM ~ID8001.bcs~ ~iwd1_eet/ub_iwd/baf/ldd_spawn.baf~ EVALUATE_BUFFER
+
+OUTER_SET cd_glob = 2 OUTER_SET cd_face = 2 OUTER_SET cd_x = 1212 OUTER_SET cd_y = 1170
+EXTEND_BOTTOM ~ID8005.bcs~ ~iwd1_eet/ub_iwd/baf/ldd_spawn.baf~ EVALUATE_BUFFER
+
+OUTER_SET cd_glob = 3 OUTER_SET cd_face = 0 OUTER_SET cd_x = 1344 OUTER_SET cd_y = 1814
+EXTEND_BOTTOM ~ID8009.bcs~ ~iwd1_eet/ub_iwd/baf/ldd_spawn.baf~ EVALUATE_BUFFER
+
+OUTER_SET cd_glob = 4 OUTER_SET cd_face = 5 OUTER_SET cd_x = 2806 OUTER_SET cd_y = 908
+EXTEND_BOTTOM ~ID8011.bcs~ ~iwd1_eet/ub_iwd/baf/ldd_spawn.baf~ EVALUATE_BUFFER
+
+OUTER_SET cd_glob = 5 OUTER_SET cd_face = 4 OUTER_SET cd_x = 1615 OUTER_SET cd_y = 1249
+EXTEND_BOTTOM ~ID8012.bcs~ ~iwd1_eet/ub_iwd/baf/ldd_spawn.baf~ EVALUATE_BUFFER
+
+COPY_EXISTING ~ID8012.are~ ~override~
+	READ_LONG  0x54 "actor_off"
+	READ_SHORT 0x58 "actor_num"
+	FOR (index = 0 ; index < actor_num ; index = index + 1) BEGIN
+		READ_ASCII ("%actor_off%" + 0x80 + ("%index%" * 0x110)) "cre_file"
+		PATCH_IF ("%cre_file%" STRING_COMPARE_CASE "sbethla" = 0) BEGIN // dead priestess becomes harken
+			WRITE_ASCII ("%actor_off%" +        ("%index%" * 0x110)) ~Brother_Harken~ #32
+			WRITE_LONG  ("%actor_off%" + 0x28 + ("%index%" * 0x110)) 9
+			WRITE_ASCII ("%actor_off%" + 0x48 + ("%index%" * 0x110)) ~dharken~  #8 // dialogue file
+			WRITE_ASCII ("%actor_off%" + 0x58 + ("%index%" * 0x110)) ~ldhark~   #8 // class script; provides goofy stringheads
+			WRITE_ASCII ("%actor_off%" + 0x68 + ("%index%" * 0x110)) ~ldidlrng~ #8 // general script; purges antimagic ring
+			WRITE_ASCII ("%actor_off%" + 0x80 + ("%index%" * 0x110)) ~bharken~  #8 // creature file
+		END ELSE
+		PATCH_IF ("%cre_file%" STRING_COMPARE_CASE "bharken" = 0) BEGIN // old harken becomes sister beth
+			WRITE_ASCII ("%actor_off%" +        ("%index%" * 0x110)) ~Sister_Beth~ #32
+			WRITE_LONG  ("%actor_off%" + 0x28 + ("%index%" * 0x110)) 9
+			WRITE_ASCII ("%actor_off%" + 0x58 + ("%index%" * 0x110)) ~~         #8 // class script; purges goofy stringheads
+			WRITE_ASCII ("%actor_off%" + 0x80 + ("%index%" * 0x110)) ~cdbethla~ #8 // creature file
+		END
+	END
+	BUT_ONLY_IF_IT_CHANGES
+
+COPY_EXISTING ~glory.itm~ ~override~
+	LPF cd_item_alter_effect INT_VAR equipped = 1 opcode = 18 parameter2 = 3 dicesize = 0 END
+	BUT_ONLY
+
+
+//BELL
+<<<<<<<<a8005.baf
+IF
+	Global("Voice_No_Spawn","GLOBAL",1)
+	Global("LDD_BELL_BROKE","GLOBAL",0)
+	Global("SPRITE_IS_DEADCallard","GLOBAL",0)
+	Global("SPRITE_IS_DEADCallards_Son","GLOBAL",0)
+THEN
+	RESPONSE #100
+		ClearAllActions()
+		StartCutSceneMode()
+		StartCutScene("LDDBLBRK")
+END
+
+IF
+	Global("Voice_No_Spawn","GLOBAL",1)
+	Global("LDD_BELL_BROKE","GLOBAL",0)
+	Global("SPRITE_IS_DEADCallard","GLOBAL",0)
+	!Global("SPRITE_IS_DEADCallards_Son","GLOBAL",0)
+THEN
+	RESPONSE #100
+		ClearAllActions()
+		StartCutSceneMode()
+		StartCutScene("LDDBLBR1")
+END
+
+IF
+	Global("Voice_No_Spawn","GLOBAL",1)
+	Global("LDD_BELL_BROKE","GLOBAL",0)
+	!Global("SPRITE_IS_DEADCallard","GLOBAL",0)
+	Global("SPRITE_IS_DEADCallards_Son","GLOBAL",0)
+THEN
+	RESPONSE #100
+		ClearAllActions()
+		StartCutSceneMode()
+		StartCutScene("LDDBLBR2")
+END
+
+IF
+	Global("Voice_No_Spawn","GLOBAL",1)
+	Global("LDD_BELL_BROKE","GLOBAL",0)
+	!Global("SPRITE_IS_DEADCallard","GLOBAL",0)
+	!Global("SPRITE_IS_DEADCallards_Son","GLOBAL",0)
+THEN
+	RESPONSE #100
+		ClearAllActions()
+		StartCutSceneMode()
+		StartCutScene("LDDBLBR3")
+END
+>>>>>>>>
+EXTEND_TOP ~ID8005.bcs~ ~a8005.baf~
+
+<<<<<<<<a8007.baf
+IF
+	GlobalGT("LDD_BELL_BROKE","GLOBAL",0)
+	Global("BELL_BROKE","MYAREA",0)
+THEN
+	RESPONSE #100
+		OpenDoor("AR8007Bell")
+		TriggerActivation("Bell",FALSE)
+		SetGlobal("BELL_BROKE","MYAREA",1)
+		Continue()
+END
+>>>>>>>>
+EXTEND_TOP ~ID8007.bcs~ ~a8007.baf~
+
+<<<<<<<<LDDBLBRK.baf
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Player1)
+		MoveViewPoint([1520.865],BD_NORMAL)
+		Wait(1)
+		CreateCreature("CUTSPY",[1585.925],S)
+		Wait(2)
+		ScreenShake([15.15],45)
+		Wait(3)
+		OpenDoor("AR8005Bell")
+		Wait(1)
+		SmallWait(5)
+		ActionOverride("Callard",ApplyDamage(Myself,1,CRUSHING))
+		SmallWait(2)
+		ActionOverride("Callard",PlayDead(45))
+		ActionOverride("Callards_Son",JumpToPoint([1630.960]))
+		ActionOverride("Callards_Son",SetHomeLocation([1630.960]))
+		SmallWait(3)
+		ActionOverride("Callards_Son",ApplyDamage(Myself,1,CRUSHING))
+		SmallWait(2)
+		ActionOverride("Callards_Son",PlayDead(45))
+		SmallWait(8)
+		Wait(6)
+		ScreenShake([15.15],45)
+		Wait(2)
+		Wait(1)
+		SmallWait(5)
+		ActionOverride("Callard",ApplyDamage(Myself,1,CRUSHING))
+		SmallWait(2)
+		ActionOverride("Callard",PlayDead(45))
+		SmallWait(3)
+		ActionOverride("Callards_Son",ApplyDamage(Myself,1,CRUSHING))
+		SmallWait(2)
+		ActionOverride("Callards_Son",PlayDead(45))
+		SmallWait(8)
+		Wait(7)
+		SetGlobal("LDD_BELL_BROKE","GLOBAL",1)
+		//MoveViewObject(Player1,BD_NORMAL)
+		//ActionOverride("CUTSPY",DestroySelf())
+		Wait(1)
+		EndCutSceneMode()
+		ActionOverride("Callard",StartDialogNoSet([PC]))
+END
+>>>>>>>>
+COMPILE ~LDDBLBRK.baf~
+
+/*1 */
+<<<<<<<<LDDBLBR1.baf
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Player1)
+		MoveViewPoint([1520.865],BD_NORMAL)
+		Wait(1)
+		CreateCreature("CUTSPY",[1585.925],S)
+		Wait(2)
+		ScreenShake([15.15],45)
+		Wait(3)
+		OpenDoor("AR8005Bell")
+		Wait(1)
+		SmallWait(5)
+		ActionOverride("Callard",ApplyDamage(Myself,1,CRUSHING))
+		SmallWait(2)
+		ActionOverride("Callard",PlayDead(45))
+		//ActionOverride("Callards_Son",JumpToPoint([1630.960]))
+		//ActionOverride("Callards_Son",SetHomeLocation([1630.960]))
+		//SmallWait(3)
+		//ActionOverride("Callards_Son",ApplyDamage(Myself,1,CRUSHING))
+		//SmallWait(2)
+		//ActionOverride("Callards_Son",PlayDead(45))
+		SmallWait(8)
+		Wait(6)
+		ScreenShake([15.15],45)
+		Wait(2)
+		Wait(1)
+		SmallWait(5)
+		ActionOverride("Callard",ApplyDamage(Myself,1,CRUSHING))
+		SmallWait(2)
+		ActionOverride("Callard",PlayDead(45))
+		//SmallWait(3)
+		//ActionOverride("Callards_Son",ApplyDamage(Myself,1,CRUSHING))
+		//SmallWait(2)
+		//ActionOverride("Callards_Son",PlayDead(45))
+		SmallWait(8)
+		Wait(6)
+		SetGlobal("LDD_BELL_BROKE","GLOBAL",1)
+		//MoveViewObject(Player1,BD_NORMAL)
+		//ActionOverride("CUTSPY",DestroySelf())
+		Wait(1)
+		EndCutSceneMode()
+		ActionOverride("Callard",StartDialogNoSet([PC]))
+END
+>>>>>>>>
+COMPILE ~LDDBLBR1.baf~
+
+/*2 */
+<<<<<<<<LDDBLBR2.baf
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Player1)
+		MoveViewPoint([1520.865],BD_NORMAL)
+		Wait(1)
+		CreateCreature("CUTSPY",[1585.925],S)
+		Wait(2)
+		ScreenShake([15.15],45)
+		Wait(3)
+		OpenDoor("AR8005Bell")
+		Wait(1)
+		SmallWait(5)
+		//ActionOverride("Callard",ApplyDamage(Myself,1,CRUSHING))
+		//SmallWait(2)
+		//ActionOverride("Callard",PlayDead(45))
+		ActionOverride("Callards_Son",JumpToPoint([1630.960]))
+		ActionOverride("Callards_Son",SetHomeLocation([1630.960]))
+		SmallWait(3)
+		ActionOverride("Callards_Son",ApplyDamage(Myself,1,CRUSHING))
+		SmallWait(2)
+		ActionOverride("Callards_Son",PlayDead(45))
+		SmallWait(8)
+		Wait(6)
+		ScreenShake([15.15],45)
+		Wait(2)
+		Wait(1)
+		SmallWait(5)
+		//ActionOverride("Callard",ApplyDamage(Myself,1,CRUSHING))
+		//SmallWait(2)
+		//ActionOverride("Callard",PlayDead(45))
+		//SmallWait(3)
+		ActionOverride("Callards_Son",ApplyDamage(Myself,1,CRUSHING))
+		SmallWait(2)
+		ActionOverride("Callards_Son",PlayDead(45))
+		SmallWait(8)
+		Wait(5)
+		SetGlobal("LDD_BELL_BROKE","GLOBAL",2)
+		//MoveViewObject(Player1,BD_NORMAL)
+		//ActionOverride("CUTSPY",DestroySelf())
+		ActionOverride("Callards_Son",FaceObject(Player1))
+		SmallWait(6)
+		ActionOverride("Callards_Son",PlayDead(90))
+		Wait(1)
+		MoveViewObject(Player1,INSTANT)
+		ActionOverride("CUTSPY",DestroySelf())
+		EndCutSceneMode()
+		//ActionOverride("Callard",StartDialogNoSet([PC]))
+END
+>>>>>>>>
+COMPILE ~LDDBLBR2.baf~
+
+/*3 */
+<<<<<<<<LDDBLBR3.baf
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Player1)
+		MoveViewPoint([1520.865],BD_NORMAL)
+		Wait(1)
+		CreateCreature("CUTSPY",[1585.925],S)
+		Wait(2)
+		ScreenShake([15.15],45)
+		Wait(3)
+		OpenDoor("AR8005Bell")
+		Wait(1)
+		//SmallWait(5)
+		//ActionOverride("Callard",ApplyDamage(Myself,1,CRUSHING))
+		//SmallWait(2)
+		//ActionOverride("Callard",PlayDead(45))
+		//ActionOverride("Callards_Son",JumpToPoint([1630.960]))
+		//ActionOverride("Callards_Son",SetHomeLocation([1630.960]))
+		//SmallWait(3)
+		//ActionOverride("Callards_Son",ApplyDamage(Myself,1,CRUSHING))
+		//SmallWait(2)
+		//ActionOverride("Callards_Son",PlayDead(45))
+		SmallWait(8)
+		Wait(6)
+		ScreenShake([15.15],45)
+		Wait(2)
+		Wait(1)
+		SmallWait(5)
+		//ActionOverride("Callard",ApplyDamage(Myself,1,CRUSHING))
+		//SmallWait(2)
+		//ActionOverride("Callard",PlayDead(45))
+		//SmallWait(3)
+		//ActionOverride("Callards_Son",ApplyDamage(Myself,1,CRUSHING))
+		//SmallWait(2)
+		//ActionOverride("Callards_Son",PlayDead(45))
+		//SmallWait(8)
+		Wait(1)
+		SetGlobal("LDD_BELL_BROKE","GLOBAL",2)
+		//MoveViewObject(Player1,BD_NORMAL)
+		//ActionOverride("CUTSPY",DestroySelf())
+		//ActionOverride("Callards_Son",FaceObject(Player1))
+		//SmallWait(6)
+		//ActionOverride("Callards_Son",PlayDead(90))
+		Wait(1)
+		MoveViewObject(Player1,INSTANT)
+		ActionOverride("CUTSPY",DestroySelf())
+		EndCutSceneMode()
+		//ActionOverride("Callard",StartDialogNoSet([PC]))
+END
+>>>>>>>>
+COMPILE ~LDDBLBR3.baf~
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,38 @@
+IF
+	Global("MAIDEN_BADGE","GLOBAL",0)
+	PartyHasItem("MAIDEN")
+THEN
+	RESPONSE #100
+		SetGlobal("MAIDEN_BADGE","GLOBAL",1)
+		AddXP2DA("ID1EX11H")
+		DisplayStringNoName(Player1,@19562)
+		Continue()
+END
+
+IF
+	GlobalLT("BEORN_QUEST","GLOBAL",3)
+	GlobalGT("SPRITE_IS_DEAD8008_SALAMANDERS","GLOBAL",11)
+	!Global("SPRITE_IS_DEADSHIKATA","GLOBAL",0)
+THEN
+	RESPONSE #100
+		SetGlobal("BEORN_QUEST","GLOBAL",3)
+		Continue()
+END
+
+IF
+	Global("MAP_GROUP_HOSTILE2","MYAREA",0)
+	!Global("SPRITE_IS_DEADILMADIA","GLOBAL",0)
+THEN
+	RESPONSE #100
+		SetGlobal("MAP_GROUP_HOSTILE2","MYAREA",1)
+		Continue()
+END
+
+IF
+	OnCreation()
+THEN
+	RESPONSE #100
+		NoAction()
+		Continue()
+END
+

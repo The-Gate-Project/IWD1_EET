@@ -1,0 +1,9 @@
+IF
+	!GlobalTimerNotExpired("SalfDamageTimer","MYAREA")
+	IsOverMe([0.0.SALAMANDER])
+THEN
+	RESPONSE #100
+		SetGlobalTimerRandom("SalfDamageTimer","MYAREA",6,9)
+		ActionOverride(LastTrigger,ApplySpellRES("IDSALF1",Myself))
+		ActionOverride(LastTrigger,MoveToPoint([822.632])
+END

@@ -1,0 +1,8 @@
+IF
+	GlobalGT("END_PORTAL","GLOBAL",9)
+	Exists("EEBELHI1")
+THEN
+	RESPONSE #100
+		Wait(4)
+		DestroySelf()
+END

@@ -1,0 +1,14 @@
+IF
+	!Global("SPRITE_IS_DEADKieranNye","GLOBAL",0)
+THEN
+	RESPONSE #100
+		DestroySelf()
+END
+
+IF
+	!IsActive(Myself)
+THEN
+	RESPONSE #100
+		NoAction()
+END
+

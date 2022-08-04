@@ -1,0 +1,173 @@
+IF
+	StateCheck(Myself,STATE_PANIC)
+THEN
+	RESPONSE #100
+		RandomWalkContinuous()
+END
+
+IF
+	!GlobalTimerNotExpired("IWD_Rest","LOCALS")
+THEN
+	RESPONSE #100
+		SetGlobalTimer("IWD_Rest","LOCALS",EIGHT_HOURS)
+		ApplySpell(Myself,RESTORE_FULL_HEALTH)
+		Rest()
+END
+
+IF
+	HaveSpell(WIZARD_MIRROR_IMAGE)
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		Spell(Myself,WIZARD_MIRROR_IMAGE)
+		Wait(2)
+END
+
+IF
+	HaveSpell(WIZARD_PROTECTION_FROM_NORMAL_MISSILES)
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		Spell(Myself,WIZARD_PROTECTION_FROM_NORMAL_MISSILES)
+		Wait(2)
+END
+
+IF
+	HaveSpell(WIZARD_HASTE)
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		SpellPoint([1825.1862],WIZARD_HASTE)
+END
+
+IF
+	HaveSpell(WIZARD_DIMENSION_DOOR)
+	OR(5)
+		See(SixthNearestEnemyOf(Myself))
+		See(FifthNearestEnemyOf(Myself))
+		See(FourthNearestEnemyOf(Myself))
+		See(ThirdNearestEnemyOf(Myself))
+		See(SecondNearestEnemyOf(Myself))
+	!BitCheck("CREATURE_STATE_VAR","LOCALS",8)
+	RandomNum(6,1)
+THEN
+	RESPONSE #100
+		BitSet("CREATURE_STATE_VAR","LOCALS",8)
+		Spell(LastSeenBy(Myself),WIZARD_DIMENSION_DOOR)
+		Wait(2)
+END
+
+IF
+	HaveSpell(WIZARD_DIMENSION_DOOR)
+	See(NearestEnemyOf(Myself))
+	!BitCheck("CREATURE_STATE_VAR","LOCALS",8)
+THEN
+	RESPONSE #100
+		BitSet("CREATURE_STATE_VAR","LOCALS",8)
+		Spell(LastSeenBy(Myself),WIZARD_DIMENSION_DOOR)
+		Wait(2)
+END
+
+IF
+	HaveSpell(WIZARD_MELF_ACID_ARROW)
+	OR(12)
+		See(NearestEnemyOf(Myself))
+		See([PC.0.0.CLERIC_RANGER])
+		See([PC.0.0.FIGHTER_MAGE_CLERIC])
+		See([PC.0.0.DRUID])
+		See([PC.0.0.SHAMAN])
+		See([PC.0.0.FIGHTER_MAGE_THIEF])
+		See([PC.0.0.FIGHTER_CLERIC])
+		See([PC.0.0.FIGHTER_MAGE])
+		See([PC.0.0.CLERIC_MAGE])
+		See([PC.0.0.CLERIC])
+		See([PC.0.0.MAGE])
+		See([PC.0.0.SORCERER])
+	!BitCheck("CREATURE_STATE_VAR","LOCALS",512)
+THEN
+	RESPONSE #100
+		BitSet("CREATURE_STATE_VAR","LOCALS",512)
+		BitClear("CREATURE_STATE_VAR","LOCALS",8)
+		Spell(LastSeenBy(Myself),WIZARD_MELF_ACID_ARROW)
+		Wait(2)
+END
+
+IF
+	True()
+THEN
+/*	RESPONSE #100
+		SetGlobal("LOCAL_CAST_SPELL","LOCALS",0)
+		Continue()
+	RESPONSE #100
+		SetGlobal("LOCAL_CAST_SPELL","LOCALS",1)
+		Continue()
+	RESPONSE #100
+		SetGlobal("LOCAL_CAST_SPELL","LOCALS",2)
+		Continue()
+	RESPONSE #100
+		SetGlobal("LOCAL_CAST_SPELL","LOCALS",3)
+		Continue()*/
+	RESPONSE #100
+		SetGlobalRandomPlus("LOCAL_CAST_SPELL","LOCALS",1,4,-1)
+		Continue()
+END
+
+IF
+	HaveSpell(WIZARD_MELF_ACID_ARROW)
+	GlobalLT("LOCAL_CAST_SPELL","LOCALS",1)
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		BitClear("CREATURE_STATE_VAR","LOCALS",8)
+		Spell(LastSeenBy(Myself),WIZARD_MELF_ACID_ARROW)
+		Wait(2)
+END
+
+IF
+	HaveSpell(WIZARD_AGANNAZAR_SCORCHER)
+	GlobalLT("LOCAL_CAST_SPELL","LOCALS",2)
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		BitClear("CREATURE_STATE_VAR","LOCALS",8)
+		Spell(LastSeenBy(Myself),WIZARD_AGANNAZAR_SCORCHER)
+		Wait(2)
+END
+
+IF
+	HaveSpell(WIZARD_MAGIC_MISSILE)
+	GlobalLT("LOCAL_CAST_SPELL","LOCALS",3)
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		BitClear("CREATURE_STATE_VAR","LOCALS",8)
+		Spell(LastSeenBy(Myself),WIZARD_MAGIC_MISSILE)
+		Wait(2)
+END
+
+IF
+	HaveSpell(WIZARD_FLAME_ARROW)
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		BitClear("CREATURE_STATE_VAR","LOCALS",8)
+		Spell(LastSeenBy(Myself),WIZARD_FLAME_ARROW)
+		Wait(2)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		BitClear("CREATURE_STATE_VAR","LOCALS",8)
+		AttackReevaluate(LastSeenBy(Myself),75)
+END
+
+IF
+	AttackedBy([GOODCUTOFF],DEFAULT)
+THEN
+	RESPONSE #100
+		FaceObject(LastAttackerOf(Myself))
+		Continue()
+END
+

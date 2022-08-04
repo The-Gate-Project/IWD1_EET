@@ -1,0 +1,96 @@
+IF
+	HasItem("TERIKAN",Player1) 
+	Entered(Player1)
+THEN
+	RESPONSE #100
+		TakePartyItem("TERIKAN")
+		DestroyItem("TERIKAN")
+		SetGlobal("6006_LICH_SPAWN","GLOBAL",0)
+		SetGlobal("FORGE_ON","GLOBAL",1)
+		AddXP2DA("ID1EX8H")
+		DisplayStringNoName(LastTrigger,@11627)
+		TriggerActivation(Myself,FALSE)
+		ReallyForceSpellRES("IDIN972",LastTrigger) //INNATE_REMOVE_TERIKANS_ITEM_ANIMATION
+		Wait(2)
+END
+
+IF
+	HasItem("TERIKAN",Player2) 
+	Entered(Player2)
+THEN
+	RESPONSE #100
+		TakePartyItem("TERIKAN")
+		DestroyItem("TERIKAN")
+		SetGlobal("6006_LICH_SPAWN","GLOBAL",0)
+		SetGlobal("FORGE_ON","GLOBAL",1)
+		AddXP2DA("ID1EX8H")
+		DisplayStringNoName(LastTrigger,@11627)
+		TriggerActivation(Myself,FALSE)
+		ReallyForceSpellRES("IDIN972",LastTrigger) //INNATE_REMOVE_TERIKANS_ITEM_ANIMATION
+		Wait(2)
+END
+
+IF
+	HasItem("TERIKAN",Player3) 
+	Entered(Player3)
+THEN
+	RESPONSE #100
+		TakePartyItem("TERIKAN")
+		DestroyItem("TERIKAN")
+		SetGlobal("6006_LICH_SPAWN","GLOBAL",0)
+		SetGlobal("FORGE_ON","GLOBAL",1)
+		AddXP2DA("ID1EX8H")
+		DisplayStringNoName(LastTrigger,@11627)
+		TriggerActivation(Myself,FALSE)
+		ReallyForceSpellRES("IDIN972",LastTrigger) //INNATE_REMOVE_TERIKANS_ITEM_ANIMATION
+		Wait(2)
+END
+
+IF
+	HasItem("TERIKAN",Player4) 
+	Entered(Player4)
+THEN
+	RESPONSE #100
+		TakePartyItem("TERIKAN")
+		DestroyItem("TERIKAN")
+		SetGlobal("6006_LICH_SPAWN","GLOBAL",0)
+		SetGlobal("FORGE_ON","GLOBAL",1)
+		AddXP2DA("ID1EX8H")
+		DisplayStringNoName(LastTrigger,@11627)
+		TriggerActivation(Myself,FALSE)
+		ReallyForceSpellRES("IDIN972",LastTrigger) //INNATE_REMOVE_TERIKANS_ITEM_ANIMATION
+		Wait(2)
+END
+
+IF
+	HasItem("TERIKAN",Player5) 
+	Entered(Player5)
+THEN
+	RESPONSE #100
+		TakePartyItem("TERIKAN")
+		DestroyItem("TERIKAN")
+		SetGlobal("6006_LICH_SPAWN","GLOBAL",0)
+		SetGlobal("FORGE_ON","GLOBAL",1)
+		AddXP2DA("ID1EX8H")
+		DisplayStringNoName(LastTrigger,@11627)
+		TriggerActivation(Myself,FALSE)
+		ReallyForceSpellRES("IDIN972",LastTrigger) //INNATE_REMOVE_TERIKANS_ITEM_ANIMATION
+		Wait(2)
+END
+
+IF
+	HasItem("TERIKAN",Player6)
+	Entered(Player6)
+THEN
+	RESPONSE #100
+		TakePartyItem("TERIKAN")
+		DestroyItem("TERIKAN")
+		SetGlobal("6006_LICH_SPAWN","GLOBAL",0)
+		SetGlobal("FORGE_ON","GLOBAL",1)
+		AddXP2DA("ID1EX8H")
+		DisplayStringNoName(LastTrigger,@11627)
+		TriggerActivation(Myself,FALSE)
+		ReallyForceSpellRES("IDIN972",LastTrigger) //INNATE_REMOVE_TERIKANS_ITEM_ANIMATION
+		Wait(2)
+END
+

@@ -1,0 +1,15 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId(Myself)
+		//PlaySequence("9714MS4",AWAKE)
+		StaticSequence("9714MS4",SEQ_AWAKE)
+		SetGlobal("9714MS4_SEQ","MYAREA",1)
+		Wait(2)
+		//PlaySequence("9714MS4",ATTACK)
+		StaticSequence("9714MS4",SEQ_ATTACK)
+		SetGlobal("9714MS4_SEQ","MYAREA",0)
+		SetGlobal("AR9714_CUTSCENE","GLOBAL",0)
+END
+

@@ -1,0 +1,11 @@
+IF
+	!GlobalTimerNotExpired("IwTimer4","LOCALS")
+	See(NearestEnemyOf(Myself))
+	Range(NearestEnemyOf(Myself),10)
+	IsActive(Myself)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("IwTimer4","LOCALS",42)
+		ForceSpellRES("IDIN991",NearestEnemyOf(Myself))
+END
+

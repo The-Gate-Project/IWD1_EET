@@ -1,0 +1,10 @@
+IF
+	GlobalGT("CHALLENGE_WITS","GLOBAL",2)
+THEN
+	RESPONSE #100
+		//UseItem("SPAWN",Myself)
+		CreateVisualEffectObject("HEALH",Myself)
+		SmallWait(10)
+		DestroySelf()
+END
+

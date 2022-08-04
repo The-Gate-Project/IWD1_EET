@@ -1,0 +1,132 @@
+// set treachery variable if any PC non-mage, non-paladin crosses bridge
+IF
+  GlobalGT("CDPresioDuel","GLOBAL",0)
+  GlobalLT("CDPresioDuel","GLOBAL",5)
+  IsOverMe([PC.0.0.FIGHTER])
+THEN
+  RESPONSE #100
+    SetGlobal("CDPresioDuel","GLOBAL",7)
+END
+
+IF
+  GlobalGT("CDPresioDuel","GLOBAL",0)
+  GlobalLT("CDPresioDuel","GLOBAL",5)
+  IsOverMe([PC.0.0.CLERIC])
+THEN
+  RESPONSE #100
+    SetGlobal("CDPresioDuel","GLOBAL",7)
+END
+
+IF
+  GlobalGT("CDPresioDuel","GLOBAL",0)
+  GlobalLT("CDPresioDuel","GLOBAL",5)
+  IsOverMe([PC.0.0.THIEF])
+THEN
+  RESPONSE #100
+    SetGlobal("CDPresioDuel","GLOBAL",7)
+END
+
+IF
+  GlobalGT("CDPresioDuel","GLOBAL",0)
+  GlobalLT("CDPresioDuel","GLOBAL",5)
+  IsOverMe([PC.0.0.BARD])
+THEN
+  RESPONSE #100
+    SetGlobal("CDPresioDuel","GLOBAL",7)
+END
+
+IF
+  GlobalGT("CDPresioDuel","GLOBAL",0)
+  GlobalLT("CDPresioDuel","GLOBAL",5)
+  IsOverMe([PC.0.0.FIGHTER_CLERIC])
+THEN
+  RESPONSE #100
+    SetGlobal("CDPresioDuel","GLOBAL",7)
+END
+
+IF
+  GlobalGT("CDPresioDuel","GLOBAL",0)
+  GlobalLT("CDPresioDuel","GLOBAL",5)
+  IsOverMe([PC.0.0.FIGHTER_THIEF])
+THEN
+  RESPONSE #100
+    SetGlobal("CDPresioDuel","GLOBAL",7)
+END
+
+IF
+  GlobalGT("CDPresioDuel","GLOBAL",0)
+  GlobalLT("CDPresioDuel","GLOBAL",5)
+  IsOverMe([PC.0.0.DRUID_ALL])
+THEN
+  RESPONSE #100
+    SetGlobal("CDPresioDuel","GLOBAL",7)
+END
+
+IF
+  GlobalGT("CDPresioDuel","GLOBAL",0)
+  GlobalLT("CDPresioDuel","GLOBAL",5)
+  IsOverMe([PC.0.0.RANGER_ALL])
+THEN
+  RESPONSE #100
+    SetGlobal("CDPresioDuel","GLOBAL",7)
+END
+
+IF
+  GlobalGT("CDPresioDuel","GLOBAL",0)
+  GlobalLT("CDPresioDuel","GLOBAL",5)
+  IsOverMe([PC.0.0.CLERIC_THIEF])
+THEN
+  RESPONSE #100
+    SetGlobal("CDPresioDuel","GLOBAL",7)
+END
+
+IF
+  GlobalGT("CDPresioDuel","GLOBAL",0)
+  GlobalLT("CDPresioDuel","GLOBAL",5)
+  IsOverMe([PC.0.0.PALADIN_ALL])
+  Kit(LastTrigger,BLACKGUARD)
+THEN
+  RESPONSE #100
+    SetGlobal("CDPresioDuel","GLOBAL",7)
+END
+
+// set treachery variable if any PC paladin crosses on mage challenge
+// two different blocks to account for no OR() in non-HoW
+IF
+  OR(2)
+    Global("CDPresioDuel","GLOBAL",1)
+    Global("CDPresioDuel","GLOBAL",3)
+  IsOverMe([PC.0.0.PALADIN_ALL])
+  //!Kit(LastTrigger,BLACKGUARD)
+THEN
+  RESPONSE #100
+    SetGlobal("CDPresioDuel","GLOBAL",7)
+END
+
+/*IF
+  Global("CDPresioDuel","GLOBAL",3)
+  IsOverMe([PC.0.0.PALADIN])
+THEN
+  RESPONSE #100
+    SetGlobal("CDPresioDuel","GLOBAL",7)
+END*/
+
+// set treachery variable if any PC mage crosses on paladin challenge
+// two different blocks to account for no OR() in non-HoW
+IF
+  OR(2)
+    Global("CDPresioDuel","GLOBAL",2)
+    Global("CDPresioDuel","GLOBAL",4)
+  IsOverMe([PC.0.0.MAGE_ALL])
+THEN
+  RESPONSE #100
+    SetGlobal("CDPresioDuel","GLOBAL",7)
+END
+
+/*IF
+  Global("CDPresioDuel","GLOBAL",4)
+  IsOverMe([PC.0.0.MAGE_ALL])
+THEN
+  RESPONSE #100
+    SetGlobal("CDPresioDuel","GLOBAL",7)
+END*/

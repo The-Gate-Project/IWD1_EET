@@ -1,0 +1,79 @@
+IF
+  Global("SaveSavedLoc","LOCALS",0)
+THEN
+  RESPONSE #100
+    SetGlobal("SaveSavedLoc","LOCALS",1)
+    SaveObjectLocation("LOCALS","SavedLoc",Myself)
+    Continue()
+END
+
+IF
+	StateCheck(Myself,STATE_PANIC)
+THEN
+	RESPONSE #100
+		RandomWalkContinuous()
+END
+
+IF
+	!BitCheck("AREA_VAR","MYAREA",1)
+	Allegiance(Myself,ENEMY)
+THEN
+	RESPONSE #100
+		BitSet("AREA_VAR","MYAREA",1)
+		Continue()
+END
+
+IF
+	AttackedBy([GOODCUTOFF],DEFAULT)
+THEN
+	RESPONSE #100
+		BitSet("AREA_VAR","MYAREA",1)
+		Enemy()
+		Continue()
+END
+
+IF
+	Help([PC])
+THEN
+	RESPONSE #100
+		BitSet("AREA_VAR","MYAREA",1)
+		FaceObject(LastHelp(Myself))
+		Continue()
+END
+
+IF
+	//ActionListEmpty()
+	//NearSavedLocation(Myself,"LOCALSSavedLoc",5)
+	
+	//OR(2)
+	//	NearSavedLocation(Myself,"LOCALSSavedLoc",5)
+		!NearSavedLocation(Myself,"LOCALSSavedLoc",9)
+THEN
+	RESPONSE #100
+		MoveToSavedLocation("SavedLoc","LOCALS")
+END
+
+IF
+	ActionListEmpty()
+	NearSavedLocation(Myself,"LOCALSSavedLoc",9)
+THEN
+	RESPONSE #100
+		RandomWalk()
+		WaitRandom(3,7)
+END
+/*
+IF
+	NearSavedLocation(Myself,"SavedLoc",4)
+THEN
+	RESPONSE #100
+		MoveToSavedLocation("SavedLoc","LOCALS")
+END
+
+IF
+	!NearSavedLocation(Myself,"SavedLoc",4)
+THEN
+	RESPONSE #100
+		RandomWalk()
+		WaitRandom(3,7)
+END*/
+

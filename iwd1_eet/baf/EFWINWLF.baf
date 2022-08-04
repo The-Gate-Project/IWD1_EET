@@ -1,0 +1,20 @@
+IF
+	StateCheck(Myself,STATE_PANIC)
+THEN
+	RESPONSE #100
+		RandomWalkContinuous()
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	!GlobalTimerNotExpired("WOLF_BREATH","LOCALS")
+	Range(LastSeenBy(Myself),10)
+	RandomNum(3,1)
+	IsActive(Myself)
+THEN
+	RESPONSE #100
+		SetGlobalTimer("WOLF_BREATH","LOCALS",70)
+		ForceSpellRES("IDIN971",LastSeenBy(Myself)) //INNATE_WINTER_WOLF_BREATH
+		Wait(2)
+END
+

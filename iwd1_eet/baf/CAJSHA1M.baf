@@ -1,0 +1,149 @@
+IF
+	!Global("CAJSHA1M_INACTIVE","LOCALS",1)
+	Global("ATTACK_PHASE","LOCALS",3)
+	!See([PC])
+THEN
+	RESPONSE #100
+		SetGlobal("CAJSHA1M_INACTIVE","LOCALS",1)
+END
+
+IF
+	!Global("CAJSHA1M_INACTIVE","LOCALS",1)
+	Global("ATTACK_PHASE","LOCALS",1)
+	OR(2)
+		Range(NearestEnemyOf(Myself),3)
+		!HaveSpell(0)
+THEN
+	RESPONSE #100
+		SetGlobal("ATTACK_PHASE","LOCALS",2)
+		Continue()
+END
+
+IF
+	!Global("CAJSHA1M_INACTIVE","LOCALS",1)
+	Global("ATTACK_PHASE","LOCALS",0)
+	AttackedBy([GOODCUTOFF],DEFAULT)
+THEN
+	RESPONSE #100
+		SetGlobal("ATTACK_PHASE","LOCALS",1)
+		Continue()
+END
+
+IF
+	!Global("CAJSHA1M_INACTIVE","LOCALS",1)
+	Global("ATTACK_PHASE","LOCALS",0)
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		SetGlobal("ATTACK_PHASE","LOCALS",1)
+		Continue()
+END
+
+IF
+	StateCheck(Myself,STATE_PANIC)
+THEN
+	RESPONSE #100
+		RandomWalkContinuous()
+END
+
+IF
+	!GlobalTimerNotExpired("IWD_Rest","LOCALS")
+THEN
+	RESPONSE #100
+		SetGlobalTimer("IWD_Rest","LOCALS",EIGHT_HOURS)
+		ApplySpell(Myself,RESTORE_FULL_HEALTH)
+		Rest()
+END
+
+IF
+	!Global("CAJSHA1M_INACTIVE","LOCALS",1)
+	HaveSpell(CLERIC_DISPEL_MAGIC)
+	See(NearestEnemyOf(Myself))
+	Global("ATTACK_PHASE","LOCALS",1)
+THEN
+	RESPONSE #100
+		Spell(LastSeenBy(Myself),CLERIC_DISPEL_MAGIC)
+		Wait(2)
+END
+
+IF
+	!Global("CAJSHA1M_INACTIVE","LOCALS",1)
+	Global("ATTACK_PHASE","LOCALS",1)
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		AttackReevaluate(LastSeenBy(Myself),75)
+END
+
+IF
+	!Global("CAJSHA1M_INACTIVE","LOCALS",1)
+	Global("MOVEMENT_LIST_0_LOC","LOCALS",0)
+	BitCheck("CREATURE_STATE_VAR","LOCALS",524288)
+	NearLocation(Myself,1053,471,8)
+	Global("ATTACK_PHASE","LOCALS",2)
+THEN
+	RESPONSE #100
+		SetGlobal("MOVEMENT_LIST_0_LOC","LOCALS",1)
+		BitClear("CREATURE_STATE_VAR","LOCALS",524288)
+		Continue()
+END
+
+IF
+	!Global("CAJSHA1M_INACTIVE","LOCALS",1)
+	Global("MOVEMENT_LIST_0_LOC","LOCALS",0)
+	Global("ATTACK_PHASE","LOCALS",2)
+	ActionListEmpty()
+THEN
+	RESPONSE #100
+		BitSet("CREATURE_STATE_VAR","LOCALS",524288)
+		SetHomeLocation([1053.471])
+		MoveToPoint([1053.471])
+END
+
+IF
+	!Global("CAJSHA1M_INACTIVE","LOCALS",1)
+	Global("MOVEMENT_LIST_0_LOC","LOCALS",1)
+	BitCheck("CREATURE_STATE_VAR","LOCALS",524288)
+	NearLocation(Myself,881,663,8)
+	Global("ATTACK_PHASE","LOCALS",2)
+THEN
+	RESPONSE #100
+		SetGlobal("MOVEMENT_LIST_0_LOC","LOCALS",2)
+		BitClear("CREATURE_STATE_VAR","LOCALS",524288)
+		Continue()
+END
+
+IF
+	!Global("CAJSHA1M_INACTIVE","LOCALS",1)
+	Global("MOVEMENT_LIST_0_LOC","LOCALS",1)
+	Global("ATTACK_PHASE","LOCALS",2)
+	ActionListEmpty()
+THEN
+	RESPONSE #100
+		BitSet("CREATURE_STATE_VAR","LOCALS",524288)
+		SetHomeLocation([881.663])
+		MoveToPoint([881.663])
+END
+
+IF
+	!Global("CAJSHA1M_INACTIVE","LOCALS",1)
+	Global("MOVEMENT_LIST_0_LOC","LOCALS",2)
+	Global("ATTACK_PHASE","LOCALS",2)
+	ActionListEmpty()
+THEN
+	RESPONSE #100
+		Face(NE)
+		SetGlobal("MOVEMENT_LIST_0_LOC","LOCALS",3)
+END
+
+IF
+	!Global("CAJSHA1M_INACTIVE","LOCALS",1)
+	Global("MOVEMENT_LIST_0_LOC","LOCALS",3)
+	Global("ATTACK_PHASE","LOCALS",2)
+	ActionListEmpty()
+THEN
+	RESPONSE #100
+		SetGlobal("ATTACK_PHASE","LOCALS",3)
+		SetGlobal("MOVEMENT_LIST_0_LOC","LOCALS",4)
+END
+

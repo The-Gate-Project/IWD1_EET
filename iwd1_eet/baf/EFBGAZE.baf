@@ -1,0 +1,16 @@
+IF
+	!Global("EFBGAZE_INACTIVE","LOCALS",1)
+	IsActive(Myself)
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		//ReallyForceSpell(Myself,3163)  // SPIN163.SPL (No such index)
+		//ReallyForceSpellRES("IDIN163",Myself)
+		FaceObject(NearestEnemyOf(Myself))
+		//ForceSpell(NearestEnemyOf(Myself),3163)  // SPIN163.SPL (No such index)
+		ForceSpell(NearestEnemyOf(Myself),BEHOLDER_ANTIMAGIC_RAY) 
+		IncrementGlobal("BEHOLDER_CASTS","LOCALS",-1)
+		Wait(1)
+		SetGlobal("EFBGAZE_INACTIVE","LOCALS",1)
+END
+
