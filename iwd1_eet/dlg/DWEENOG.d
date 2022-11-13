@@ -42,14 +42,14 @@ END
 IF ~~ THEN BEGIN 5
   SAY @6417
   IF ~~ THEN REPLY @6445 GOTO 8
-  IF ~~ THEN REPLY @6457 DO ~IncrementGlobalOnce("Chaotic_Weenog_1","GLOBAL","Law","GLOBAL",-1)~ GOTO 10
+  IF ~~ THEN REPLY @34557 DO ~IncrementGlobalOnce("Chaotic_Weenog_1","GLOBAL","Law","GLOBAL",-1)~ GOTO 10
   IF ~~ THEN REPLY @6447 EXIT
 END
 
 IF ~~ THEN BEGIN 6
   SAY @6418
   IF ~~ THEN REPLY @6460 DO ~SetGlobal("Know_Orrick","GLOBAL",1)~ GOTO 8
-  IF ~~ THEN REPLY @6457 DO ~IncrementGlobalOnce("Chaotic_Weenog_1","GLOBAL","Law","GLOBAL",-1)
+  IF ~~ THEN REPLY @34557 DO ~IncrementGlobalOnce("Chaotic_Weenog_1","GLOBAL","Law","GLOBAL",-1)
                              SetGlobal("Know_Orrick","GLOBAL",1)~ GOTO 10
   IF ~~ THEN REPLY @6447 DO ~SetGlobal("Know_Orrick","GLOBAL",1)~ EXIT
 END

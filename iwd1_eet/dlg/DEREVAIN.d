@@ -10,7 +10,7 @@ IF ~NumTimesTalkedTo(0)~ THEN BEGIN 0
 END
 
 IF ~~ THEN BEGIN 1
-  SAY @387
+  SAY @34504
   IF ~CheckStatLT(LastTalkedToBy,9,CHR)
       CheckStatLT(LastTalkedToBy,9, INT)~ THEN REPLY @405 GOTO 4
   IF ~~ THEN REPLY @406 DO ~IncrementGlobalOnce("Chaotic_Erevain_1","GLOBAL","Law","GLOBAL",-1)~ GOTO 5
@@ -53,7 +53,7 @@ IF ~~ THEN BEGIN 5
 END
 
 IF ~~ THEN BEGIN 6
-  SAY @392
+  SAY @34505
   IF ~CheckStatLT(LastTalkedToBy,8,CHR)
       !Race(LastTalkedToBy,ELF)~ THEN REPLY @427 GOTO 4
   IF ~~ THEN REPLY @428 GOTO 9
@@ -69,7 +69,7 @@ IF ~~ THEN BEGIN 7
 END
 
 IF ~~ THEN BEGIN 8
-  SAY @394
+  SAY @34506
   IF ~~ THEN REPLY @434 DO ~SetGlobal("Erevain_Jerk","GLOBAL",1)~ EXIT
   IF ~~ THEN REPLY @435 GOTO 4
 END
@@ -85,8 +85,8 @@ IF ~NumTimesTalkedToGT(0)
     Global("Erevain_Jerk","GLOBAL",0)~ THEN BEGIN 10
   SAY @396
   IF ~!Race(LastTalkedToBy,ELF)~ THEN REPLY @442 GOTO 4
-  IF ~~ THEN REPLY @443 GOTO 9
-  IF ~~ THEN REPLY @444 EXIT
+  IF ~~ THEN REPLY @34507 GOTO 9
+  IF ~~ THEN REPLY @34508 EXIT
 END
 
 IF ~NumTimesTalkedToGT(0)

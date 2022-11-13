@@ -896,9 +896,9 @@ COPY ~iwd1_eet/items/SLINGED.ITM~ ~override~
   SAY 0x54 @17715
 
 COPY ~iwd1_eet/items/SEEDS.ITM~ ~override~
-  SAY 0x08 @8330
+  SAY 0x08 @34559
   SAY 0x0c @8331
-  SAY 0x54 @8332
+  SAY 0x54 @34560
 
 COPY ~iwd1_eet/items/WATER.ITM~ ~override~
   SAY 0x08 @8335
@@ -1145,8 +1145,8 @@ COPY ~iwd1_eet/items/UDAGG2A.ITM~ ~override~
 COPY ~iwd1_eet/items/MARKETH.ITM~ ~override~
   SAY 0x08 @3524
   SAY 0x0c @3586
-  SAY 0x50 @3587
-  SAY 0x54 @3587
+  SAY 0x50 @34522
+  SAY 0x54 @34522
 
 COPY ~iwd1_eet/items/DRAGARM.ITM~ ~override~
   SAY 0x08 @2965
@@ -1170,8 +1170,8 @@ COPY ~iwd1_eet/items/SLAYER.ITM~ ~override~
 COPY ~iwd1_eet/items/MALAVON.ITM~ ~override~
   SAY 0x08 @3487
   SAY 0x0c @3491
-  SAY 0x50 @3520
-  SAY 0x54 @3520
+  SAY 0x50 @34521
+  SAY 0x54 @34521
 
 COPY ~iwd1_eet/items/WATCHER.ITM~ ~override~
   SAY 0x08 @7637
@@ -1949,7 +1949,7 @@ COPY ~iwd1_eet/items/DARTZIL.ITM~ ~override~
 
 COPY ~iwd1_eet/items/XAIN.ITM~ ~override~
   SAY 0x08 @21637
-  SAY 0x0c @21639
+  SAY 0x0c @34567
   SAY 0x50 @21638
   SAY 0x54 @21640
   WRITE_SHORT 0x9c ~%idpro270%~
@@ -2143,7 +2143,7 @@ COPY ~iwd1_eet/items/FLAILSK.ITM~ ~override~
   SAY 0x54 @27373
 
 COPY ~iwd1_eet/items/HQMSTAR.ITM~ ~override~
-  SAY 0x08 @5701
+  SAY 0x08 @34556
   SAY 0x0c @5702
   SAY 0x50 @6376
   SAY 0x54 @6376
@@ -2165,7 +2165,7 @@ COPY ~iwd1_eet/items/APPLEBN.ITM~ ~override~
   SAY 0x54 @4369
 
 COPY ~iwd1_eet/items/GLIMGLM.ITM~ ~override~
-  SAY 0x0c @4373
+  SAY 0x0c @34525
   SAY 0x54 @4372
 
 COPY ~iwd1_eet/items/STOUT.ITM~ ~override~

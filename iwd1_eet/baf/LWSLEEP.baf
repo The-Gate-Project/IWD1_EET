@@ -12,7 +12,7 @@ IF
 	Detect([PC])
 THEN
 	RESPONSE #100
-		DisplayStringHead(Myself,@3805)
+		DisplayStringHead(Myself,@34524)
 		SetGlobalTimerRandom("IwTimer24","LOCALS",9,12)
 		Continue()
 END

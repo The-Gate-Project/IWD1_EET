@@ -3,14 +3,14 @@ BEGIN ~DTOWNGEN~
 IF ~~ THEN BEGIN 0
   SAY @365
   IF ~Global("Easthaven_Rumor","GLOBAL",0)~ THEN REPLY @366 DO ~IncrementGlobal("Easthaven_Rumor","GLOBAL",1)~ GOTO 32
-  IF ~Global("Easthaven_Rumor","GLOBAL",1)~ THEN REPLY @367 DO ~IncrementGlobal("Easthaven_Rumor","GLOBAL",1)~ GOTO 33
+  IF ~Global("Easthaven_Rumor","GLOBAL",1)~ THEN REPLY @34501 DO ~IncrementGlobal("Easthaven_Rumor","GLOBAL",1)~ GOTO 33
   IF ~Global("Easthaven_Rumor","GLOBAL",2)~ THEN REPLY @368 DO ~IncrementGlobal("Easthaven_Rumor","GLOBAL",1)~ GOTO 34
   IF ~Global("Easthaven_Rumor","GLOBAL",3)~ THEN REPLY @369 DO ~IncrementGlobal("Easthaven_Rumor","GLOBAL",1)~ GOTO 35
   IF ~Global("Easthaven_Rumor","GLOBAL",4)~ THEN REPLY @370 DO ~IncrementGlobal("Easthaven_Rumor","GLOBAL",1)~ GOTO 36
   IF ~Global("Easthaven_Rumor","GLOBAL",5)~ THEN REPLY @371 DO ~IncrementGlobal("Easthaven_Rumor","GLOBAL",1)~ GOTO 37
   IF ~Global("Easthaven_Rumor","GLOBAL",6)~ THEN REPLY @372 DO ~IncrementGlobal("Easthaven_Rumor","GLOBAL",1)~ GOTO 40
   IF ~Global("Easthaven_Rumor","GLOBAL",7)~ THEN REPLY @373 DO ~SetGlobal("Easthaven_Rumor","GLOBAL",0)~ GOTO 41
-  IF ~~ THEN REPLY @374 GOTO 29
+  IF ~~ THEN REPLY @34502 GOTO 29
   IF ~~ THEN REPLY @375 GOTO 23
   IF ~~ THEN REPLY @376 EXIT
 END
@@ -21,7 +21,7 @@ IF WEIGHT #4
  RandomNum(3,1)~ THEN BEGIN 1
   SAY @377
   IF ~Global("Know_Hildreth","GLOBAL",0)~ THEN REPLY @378 GOTO 2
-  IF ~Global("Know_Hildreth","GLOBAL",1)~ THEN REPLY @379 GOTO 3
+  IF ~Global("Know_Hildreth","GLOBAL",1)~ THEN REPLY @34503 GOTO 3
   IF ~~ THEN REPLY @380 GOTO 3
   IF ~~ THEN REPLY @381 GOTO 0
   IF ~~ THEN REPLY @376 EXIT
@@ -441,7 +441,7 @@ IF WEIGHT #5
  RandomNum(3,2)~ THEN BEGIN 58
   SAY @17467
   IF ~Global("Know_Hildreth","GLOBAL",0)~ THEN REPLY @378 GOTO 2
-  IF ~Global("Know_Hildreth","GLOBAL",1)~ THEN REPLY @379 GOTO 3
+  IF ~Global("Know_Hildreth","GLOBAL",1)~ THEN REPLY @34503 GOTO 3
   IF ~~ THEN REPLY @380 GOTO 3
   IF ~~ THEN REPLY @381 GOTO 0
   IF ~~ THEN REPLY @376 EXIT
@@ -453,7 +453,7 @@ IF WEIGHT #6
  RandomNumLT(3,4)~ THEN BEGIN 59
   SAY @17473
   IF ~Global("Know_Hildreth","GLOBAL",0)~ THEN REPLY @378 GOTO 2
-  IF ~Global("Know_Hildreth","GLOBAL",1)~ THEN REPLY @379 GOTO 3
+  IF ~Global("Know_Hildreth","GLOBAL",1)~ THEN REPLY @34503 GOTO 3
   IF ~~ THEN REPLY @380 GOTO 3
   IF ~~ THEN REPLY @381 GOTO 0
   IF ~~ THEN REPLY @376 EXIT

@@ -9,24 +9,24 @@ IF WEIGHT #3
 END
 
 IF ~~ THEN BEGIN 1
-  SAY @4397
-  IF ~Global("SPRITE_IS_DEADYxunomei","GLOBAL",0)~ THEN REPLY @4398 DO ~SetGlobal("Know_Egenia","GLOBAL",1)
+  SAY @34532
+  IF ~Global("SPRITE_IS_DEADYxunomei","GLOBAL",0)~ THEN REPLY @34533 DO ~SetGlobal("Know_Egenia","GLOBAL",1)
                                                                         AddJournalEntry(@2028,QUEST)~ GOTO 3
   IF ~GlobalGT("SPRITE_IS_DEADYxunomei","GLOBAL",0)
       Global("SPRITE_IS_DEADEgenia","GLOBAL",0)
-      Global("Talonite_Dead","GLOBAL",4)~ THEN REPLY @4399 DO ~SetGlobal("Know_Egenia","GLOBAL",1)~ GOTO 10
-  IF ~Global("SPRITE_IS_DEADYxunomei","GLOBAL",0)~ THEN REPLY @4399 DO ~SetGlobal("Know_Egenia","GLOBAL",1)~ GOTO 4
+      Global("Talonite_Dead","GLOBAL",4)~ THEN REPLY @34534 DO ~SetGlobal("Know_Egenia","GLOBAL",1)~ GOTO 10
+  IF ~Global("SPRITE_IS_DEADYxunomei","GLOBAL",0)~ THEN REPLY @34534 DO ~SetGlobal("Know_Egenia","GLOBAL",1)~ GOTO 4
   IF ~~ THEN REPLY @4400 DO ~StartStore("KUTemple",LastTalkedToBy)~ EXIT
 END
 
 IF ~~ THEN BEGIN 2
   SAY @4401
-  IF ~Global("SPRITE_IS_DEADYxunomei","GLOBAL",0)~ THEN REPLY @4398 DO ~SetGlobal("Know_Egenia","GLOBAL",1)
+  IF ~Global("SPRITE_IS_DEADYxunomei","GLOBAL",0)~ THEN REPLY @34533 DO ~SetGlobal("Know_Egenia","GLOBAL",1)
                                                                         AddJournalEntry(@2028,QUEST)~ GOTO 3
   IF ~GlobalGT("SPRITE_IS_DEADYxunomei","GLOBAL",0)
       Global("SPRITE_IS_DEADEgenia","GLOBAL",0)
-      Global("Talonite_Dead","GLOBAL",4)~ THEN REPLY @4399 DO ~SetGlobal("Know_Egenia","GLOBAL",1)~ GOTO 10
-  IF ~Global("SPRITE_IS_DEADYxunomei","GLOBAL",0)~ THEN REPLY @4399 DO ~SetGlobal("Know_Egenia","GLOBAL",1)~ GOTO 4
+      Global("Talonite_Dead","GLOBAL",4)~ THEN REPLY @34534 DO ~SetGlobal("Know_Egenia","GLOBAL",1)~ GOTO 10
+  IF ~Global("SPRITE_IS_DEADYxunomei","GLOBAL",0)~ THEN REPLY @34534 DO ~SetGlobal("Know_Egenia","GLOBAL",1)~ GOTO 4
   IF ~~ THEN REPLY @4400 DO ~StartStore("KUTemple",LastTalkedToBy)~ EXIT
 END
 

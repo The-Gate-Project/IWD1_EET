@@ -27,7 +27,7 @@ IF ~~ THEN BEGIN 3
 END
 
 IF ~~ THEN BEGIN 4
-  SAY @4742
+  SAY @34538
   IF ~~ THEN REPLY @4743 DO ~SetGlobal("Know_Oswald","GLOBAL",1)
                              SetGlobal("Know_Orrick","GLOBAL",1)~ EXIT
 END

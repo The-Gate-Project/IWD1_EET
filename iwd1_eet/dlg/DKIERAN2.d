@@ -19,7 +19,7 @@ IF ~~ THEN BEGIN 1
       Global("SPRITE_IS_DEADEmmerich","GLOBAL",0)~ THEN REPLY @26621 DO ~SetGlobal("Kieran_Cure","GLOBAL",1)~ GOTO 25
   IF ~Global("Know_Doogal_Weapon","GLOBAL",1)~ THEN REPLY @26374 DO ~SetGlobal("Know_Doogal_Weapon","GLOBAL",2)~ GOTO 7
   IF ~CheckStatGT(LastTalkedToBy,13,INT)
-      Global("Know_Foreigner","GLOBAL",0)~ THEN REPLY @24106 DO ~SetGlobal("Know_Foreigner","GLOBAL",1)~ GOTO 9
+      Global("Know_Foreigner","GLOBAL",0)~ THEN REPLY @34569 DO ~SetGlobal("Know_Foreigner","GLOBAL",1)~ GOTO 9
   IF ~Global("Body_Count","GLOBAL",1)
       Global("Know_Digby_Dead","GLOBAL",1)~ THEN REPLY @25916 GOTO 10
   IF ~GlobalGT("Body_Count","GLOBAL",1)

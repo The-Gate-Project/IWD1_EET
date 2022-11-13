@@ -4,7 +4,7 @@ IF WEIGHT #5
 ~NumTimesTalkedTo(0)
  Global("Jhonen_Leaving","GLOBAL",0)
  GlobalLT("Siren_Quest","GLOBAL",3)~ THEN BEGIN 0
-  SAY @4383
+  SAY @34526
   IF ~~ THEN REPLY @5079 GOTO 2
   IF ~~ THEN REPLY @5080 GOTO 3
   IF ~~ THEN REPLY @5081 EXIT

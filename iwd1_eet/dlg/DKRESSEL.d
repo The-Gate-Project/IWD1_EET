@@ -115,7 +115,7 @@ END
 IF ~~ THEN BEGIN 19
   SAY @16747
   IF ~~ THEN REPLY @1636 DO ~SetGlobal("Kress_Quest","GLOBAL",1)
-                             AddJournalEntry(@34501,QUEST)~ GOTO 20
+                             AddJournalEntry(@40175,QUEST)~ GOTO 20
 END
 
 IF ~~ THEN BEGIN 20
@@ -177,7 +177,7 @@ IF WEIGHT #2
                                                                      DisplayStringNoNameDlg(LastTalkedToBy,@16769)
                                                                      EraseJournalEntry(@1349)
                                                                      EraseJournalEntry(@1415)
-                                                                     SetQuestDone(@34501)
+                                                                     SetQuestDone(@40175)
                                                                      SetQuestDone(@18314)
                                                                      AddJournalEntry(@416,QUEST)~ GOTO 29
   IF ~Global("SPRITE_IS_DEADLysan","GLOBAL",0)~ THEN REPLY @1659 GOTO 31

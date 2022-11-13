@@ -242,7 +242,7 @@ ADD_MAP_NOTE #3782 #2142 ~red~       ~Выход из города~
 	 	ADD_MAP_NOTE #3200 #290  ~lightgray~ @100015
 	 	ADD_MAP_NOTE #2840 #580  ~green~     @100074
 	 	ADD_MAP_NOTE #175  #2240 ~red~       @100016
-	 	ADD_MAP_NOTE #3605 #1675 ~red~       @100017
+	 	ADD_MAP_NOTE #3605 #1675 ~red~       @100003 //@100017
 	 
 	 COPY ~iwd1_eet/areas/id2101.are~ ~override~
 	 
@@ -640,8 +640,36 @@ ADD_MAP_NOTE #3782 #2142 ~red~       ~Выход из города~
 	 
 	 COPY ~iwd1_eet/areas/id5202.are~ ~override~
 	 	SAY 4040 @9030
+	 	LPF ALTER_AREA_ACTOR_EX
+	 		STR_VAR
+	 			match_override_script = "IWHIDE1"
+	 			match_cre_file = "SDELFCL"
+	 			override_script = "IWHIDE1Z"
+	 			cre_file = "SDELFCLZ"
+	 	END
+	 	LPF ALTER_AREA_ACTOR_EX
+	 		STR_VAR
+	 			match_override_script = "IWHIDE1"
+	 			match_cre_file = "SDELFAC"
+	 			override_script = "IWHIDE1Z"
+	 			cre_file = "SDELFACZ"
+	 	END
 	 
 	 COPY ~iwd1_eet/areas/id5203.are~ ~override~
+	 	LPF ALTER_AREA_ACTOR_EX
+	 		STR_VAR
+	 			match_override_script = "IWHIDE1"
+	 			match_cre_file = "SDELFCL"
+	 			override_script = "IWHIDE1Z"
+	 			cre_file = "SDELFCLZ"
+	 	END
+	 	LPF ALTER_AREA_ACTOR_EX
+	 		STR_VAR
+	 			match_override_script = "IWHIDE1"
+	 			match_cre_file = "SDELFAC"
+	 			override_script = "IWHIDE1Z"
+	 			cre_file = "SDELFACZ"
+	 	END
 	 
 	 COPY ~iwd1_eet/areas/id5204.are~ ~override~
 	 	SAY 2212 @9031
@@ -729,8 +757,8 @@ ADD_MAP_NOTE #3782 #2142 ~red~       ~Выход из города~
 	 	LPF fj_are_structure INT_VAR fj_con_itm_idx=21 fj_charge0=40 STR_VAR fj_name=arow08 fj_structure_type=itm END
 	 
 	 COPY ~iwd1_eet/areas/id6006.are~ ~override~
-	 	SAY 2680 @8856
-	 	SAY 2876 @8856
+	 	SAY 2680 @34561
+	 	SAY 2876 @34561
 	 	SAY 3072 @8898
 	 	SAY 3268 @8968
 	 	SAY 3464 @8979
@@ -1122,6 +1150,7 @@ ADD_MAP_NOTE #3782 #2142 ~red~       ~Выход из города~
 	 COPY ~iwd1_eet/areas/id9102.are~ ~override~
 	 
 	 COPY ~iwd1_eet/areas/id9103.are~ ~override~
+	 	WRITE_ASCII 0x19c ~IDQUINN~ (8)
 	 	SAY 852 @26226
 	 	SAY 1048 @26226
 	 	SAY 1244 @26227
@@ -1236,6 +1265,12 @@ ADD_MAP_NOTE #3782 #2142 ~red~       ~Выход из города~
 	 	WRITE_LONG 0x6f5c ~%ID9500%~
 	 	ADD_MAP_NOTE #3210 #3600 ~red~    @100066
 	 	ADD_MAP_NOTE #1355 #365  ~gray~   @100072
+	 	LPF ALTER_AREA_ACTOR_EX
+	 		STR_VAR
+	 			match_override_script = "IWHIDE"
+	 			match_cre_file = "SALAMANF"
+	 			override_script = "IWHIDESL"
+	 	END
 	 
 	 COPY ~iwd1_eet/areas/id9501.are~ ~override~
 	 	SAY 8120 @26547

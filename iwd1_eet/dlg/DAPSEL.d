@@ -4,13 +4,13 @@ IF ~NumTimesTalkedTo(0)
     Global("Know_Balance","GLOBAL",0)~ THEN BEGIN 0
   SAY @449
   IF ~~ THEN REPLY @466 GOTO 1
-  IF ~~ THEN REPLY @467 GOTO 2
+  IF ~~ THEN REPLY @34513 GOTO 2
   IF ~~ THEN REPLY @470 EXIT
 END
 
 IF ~~ THEN BEGIN 1
   SAY @450
-  IF ~~ THEN REPLY @467 GOTO 2
+  IF ~~ THEN REPLY @34513 GOTO 2
   IF ~~ THEN REPLY @470 EXIT
 END
 
@@ -29,7 +29,7 @@ IF ~~ THEN BEGIN 3
 END
 
 IF ~~ THEN BEGIN 4
-  SAY @453
+  SAY @34509
   IF ~~ THEN REPLY @479 DO ~SetGlobal("Apsel_Quest","GLOBAL",1)~ GOTO 6
   IF ~~ THEN REPLY @480 DO ~IncrementGlobalOnce("Chaotic_Apsel_2","GLOBAL","Law","GLOBAL",-1)~ GOTO 7
   IF ~Class(LastTalkedToBy,THIEF_ALL)~ THEN REPLY @481 GOTO 14
@@ -48,14 +48,14 @@ IF ~~ THEN BEGIN 6
 END
 
 IF ~~ THEN BEGIN 7
-  SAY @457
+  SAY @34510
   IF ~~ THEN REPLY @479 DO ~SetGlobal("Apsel_Quest","GLOBAL",1)~ GOTO 6
   IF ~~ THEN REPLY @3357 DO ~SetGlobal("Apsel_Quest","GLOBAL",2)~ EXIT
 END
 
 IF ~Global("Apsel_Quest","GLOBAL",2)
     Global("Know_Balance","GLOBAL",0)~ THEN BEGIN 8
-  SAY @458
+  SAY @34511
   IF ~~ THEN REPLY @479 DO ~SetGlobal("Apsel_Quest","GLOBAL",1)~ GOTO 6
   IF ~~ THEN REPLY @470 EXIT
 END
@@ -82,7 +82,7 @@ END
 
 IF ~Global("Apsel_Quest","GLOBAL",3)
     Global("Know_Balance","GLOBAL",0)~ THEN BEGIN 11
-  SAY @461
+  SAY @34512
   IF ~~ THEN REPLY @1668 EXIT
 END
 
@@ -91,7 +91,7 @@ IF ~NumTimesTalkedToGT(0)
     Global("Know_Balance","GLOBAL",0)
     Global("Chaotic_Apsel_1","GLOBAL",0)~ THEN BEGIN 12
   SAY @462
-  IF ~~ THEN REPLY @467 GOTO 2
+  IF ~~ THEN REPLY @34513 GOTO 2
   IF ~~ THEN REPLY @470 EXIT
 END
 

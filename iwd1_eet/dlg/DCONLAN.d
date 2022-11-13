@@ -20,8 +20,8 @@ END
 
 IF ~~ THEN BEGIN 2
   SAY @4626
-  IF ~~ THEN REPLY @4627 DO ~SetGlobal("Know_Conlan","GLOBAL",2)~ GOTO 3
-  IF ~~ THEN REPLY @4628 DO ~StartStore("KUSmith",LastTalkedToBy)~ EXIT
+  IF ~~ THEN REPLY @34535 DO ~SetGlobal("Know_Conlan","GLOBAL",2)~ GOTO 3
+  IF ~~ THEN REPLY @34536 DO ~StartStore("KUSmith",LastTalkedToBy)~ EXIT
   IF ~~ THEN REPLY @607 EXIT
 END
 
@@ -75,7 +75,7 @@ IF ~~ THEN BEGIN 9
 END
 
 IF ~~ THEN BEGIN 10
-  SAY @4670
+  SAY @34537
   IF ~~ THEN REPLY @4671 DO ~StartStore("KUSmith",LastTalkedToBy)~ EXIT
   IF ~~ THEN REPLY @4672 EXIT
 END
@@ -89,7 +89,7 @@ END
 
 IF ~~ THEN BEGIN 12
   SAY @4676
-  IF ~~ THEN REPLY @4627 GOTO 3
+  IF ~~ THEN REPLY @34535 GOTO 3
   IF ~~ THEN REPLY @4678 DO ~StartStore("KUSmith",LastTalkedToBy)~ EXIT
   IF ~~ THEN REPLY @607 EXIT
 END
@@ -98,8 +98,8 @@ IF WEIGHT #4
 ~NumTimesTalkedToGT(0)
  Global("Know_Conlan","GLOBAL",0)~ THEN BEGIN 13
   SAY @4689
-  IF ~~ THEN REPLY @4627 DO ~SetGlobal("Know_Conlan","GLOBAL",2)~ GOTO 3
-  IF ~~ THEN REPLY @4628 DO ~StartStore("KUSmith",LastTalkedToBy)~ EXIT
+  IF ~~ THEN REPLY @34535 DO ~SetGlobal("Know_Conlan","GLOBAL",2)~ GOTO 3
+  IF ~~ THEN REPLY @34536 DO ~StartStore("KUSmith",LastTalkedToBy)~ EXIT
   IF ~~ THEN REPLY @607 EXIT
 END
 
