@@ -20,6 +20,16 @@ THEN
 END
 
 IF
+	Global("DeactivateTrigger","MYAREA",0)
+	OpenState("AR9502_DOOR1",TRUE)
+THEN
+	RESPONSE #100
+		TriggerActivation("Door Trigger",FALSE)
+		SetGlobal("DeactivateTrigger","MYAREA",1)
+		Continue()
+END
+
+IF
 	OnCreation()
 THEN
 	RESPONSE #100

@@ -2,7 +2,7 @@ IF
 	True()
 THEN
 	RESPONSE #100
-		CutSceneId([PC])
+		CutSceneId(Player1)
 		MultiPlayerSync()
 		Wait(7)
 		StartCutScene("BCTNTFC3")

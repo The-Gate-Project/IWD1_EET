@@ -3,6 +3,7 @@ IF
 THEN
 	RESPONSE #100
 		FaceObject([PC])
+		SetGlobal("FORCE_TALK","LOCALS",1)
 		Continue()
 END
 

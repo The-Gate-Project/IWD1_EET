@@ -2,7 +2,7 @@ IF
 	True()
 THEN
 	RESPONSE #100
-		CutSceneId([PC])
+		CutSceneId(Player1)
 		SetGlobal("HOBART_TRANSFORM","MYAREA",1)
 		ClearAllActions()
 		MultiPlayerSync()

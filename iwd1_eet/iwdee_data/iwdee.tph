@@ -40,8 +40,8 @@ COPY ~%itemee%/ohbrac02.ITM~  ~override~
 	SAY 0x54 @40269
 
 COPY ~%itemee%/ohfullp.ITM~   ~override~
-	SAY 0x0c @40268
-	SAY 0x54 @40269
+	//SAY 0x0c @40268
+	//SAY 0x54 @40269
 
 COPY ~%itemee%/ohioun01.ITM~  ~override~
 	SAY 0x0c @40266
@@ -88,7 +88,7 @@ COPY ~%itemee%/ELFGLOV.ITM~   ~override~
 	SAY 0x08 @18602
 	SAY 0x0c @18603
 	SAY 0x50 @18604
-	SAY 0x50 @18604
+	SAY 0x54 @18604
 
 COPY ~%itemee%/ELFBOOT.ITM~   ~override~
 	SAY 0x08 @18595
@@ -105,8 +105,8 @@ COPY ~%itemee%/ELFCLCK.ITM~   ~override~
 COPY ~%itemee%/PELLON.ITM~    ~override~
 	SAY 0x08 @7646
 	SAY 0x0c @7648
-	SAY 0x54 @7647
-	SAY 0x50 @7649
+	SAY 0x50 @7647
+	SAY 0x54 @7649
 
 COPY ~%itemee%/GVALOR1.ITM~   ~override~
      ~%itemee%/GVALOR2.ITM~   ~override~

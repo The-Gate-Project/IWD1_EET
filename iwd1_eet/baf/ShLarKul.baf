@@ -12,5 +12,6 @@ THEN
 		ActionOverride(Player5,LeaveAreaLUA("ID2100","",[2249.1916],10))
 		ActionOverride(Player6,LeaveAreaLUA("ID2100","",[2294.1955],10))
 		SmallWait(7)
+		EndCutSceneMode()
 END
 

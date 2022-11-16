@@ -199,6 +199,7 @@ COPY ~iwd1_eet/spl/IDIN159.SPL~ ~override~
 COPY ~iwd1_eet/spl/IDPR613.SPL~ ~override~
   SAY 0x08 @21398
   SAY 0x50 @21472
+  WRITE_SHORT 0x98 (IDS_OF_SYMBOL ( ~projectl~ ~WHIRLW~ ) + 1)
 
 COPY ~iwd1_eet/spl/IDIN186.SPL~ ~override~
   WRITE_SHORT 0x98 ~%idpro230%~

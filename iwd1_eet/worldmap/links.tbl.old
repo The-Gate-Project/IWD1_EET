@@ -1,0 +1,42 @@
+
+SRC_AREA  SRC_NWSE  TARGET_ARE  ENTRY_NAME  TRV_TIME  DEF_ENTRY  ENC1     ENC2     ENC3     ENC4     ENC5     ENC_PROB
+
+ID2000    E         ID2100      FRWMAPW     2         8          N        N        N        N        N        5
+
+ID2100    W         ID2000      FRWMAP      2         2          N        N        N        N        N        5
+ID2100    E         ID3000      FRWMAP      2         8          N        N        N        N        N        5
+ID2100    E         ID3600      FRWMAP      10        4          N        N        N        N        N        5
+ID2100    E         ID4000      FRWMAP      18        4          N        N        N        N        N        5
+ID2100    E         ID5000      FRWMAP      30        4          N        N        N        N        N        5
+ID2100    E         ID6000      FRWMAP      20        2          N        N        N        N        N        5
+ID2100    E         ID7000      FRWMAP      96        1          N        N        N        N        N        5
+
+ID3000    W         ID2100      FRWMAPE     2         2          N        N        N        N        N        5
+
+ID3600    S         ID2100      FRWMAPE     10        2          N        N        N        N        N        5
+
+ID4000    S         ID2100      FRWMAPE     18        2          N        N        N        N        N        5
+ID4000    S         ID5000      FRWMAP      14        4          N        N        N        N        N        5
+
+ID5000    S         ID2100      FRWMAPE     30        2          N        N        N        N        N        5
+ID5000    S         ID4000      FRWMAP      14        4          N        N        N        N        N        5
+ID5000    S         ID6000      FRWMAP      12        2          N        N        N        N        N        5
+ID5000    S         ID7000      FRWMAP      72        1          N        N        N        N        N        5
+
+ID6000    W         ID7000      FRWMAP      8         1          N        N        N        N        N        5
+ID6000    E         ID2100      FRWMAPE     20        2          N        N        N        N        N        5
+ID6000    E         ID5000      FRWMAP      12        4          N        N        N        N        N        5
+
+ID7000    N         ID6000      FRWMAP      8         2          N        N        N        N        N        5
+ID7000    N         ID2100      FRWMAPE     96        2          N        N        N        N        N        5
+ID7000    N         ID5000      FRWMAP      72        4          N        N        N        N        N        5
+
+ID9100    E         ID9200      FRWMAP      4         8          N        N        N        N        N        5
+ID9100    E         ID9500      FRWMAP      20        4          N        N        N        N        N        5
+
+ID9200    W         ID9100      FRWMAP      4         2          N        N        N        N        N        5
+ID9200    W         ID9500      FRWMAP      20        4          N        N        N        N        N        5
+
+ID9500    S         ID9100      FRWMAP      20        2          N        N        N        N        N        5
+ID9500    S         ID9200      FRWMAP      20        8          N        N        N        N        N        5
+

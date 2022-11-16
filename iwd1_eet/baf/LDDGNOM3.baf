@@ -45,6 +45,7 @@ END
 IF
 	!Allegiance(Myself,ENEMY)
 	AttackedBy([GOODCUTOFF],DEFAULT)
+	!Race(LastAttackerOf(Myself),GOLEM)
 THEN
 	RESPONSE #100
 		Enemy()

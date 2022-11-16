@@ -2,7 +2,7 @@ IF
 	True()
 THEN
 	RESPONSE #100
-		CutSceneId(Myself)
+		CutSceneId(Player1)
 		StartCutSceneMode()
 		ClearAllActions()
 		MultiPlayerSync()

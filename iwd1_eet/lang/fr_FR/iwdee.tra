@@ -1,0 +1,200 @@
+
+@35592 = ~Coup vorpal~
+
+
+@35923 = ~Sombre gloire +2~
+@35925 = ~Sombre Gloire
+À l'origine, cette arme appartenait à une jeune officière dont la tâche était de protéger un représentant diplomatique de Kara-Tur. Lorsqu'il advint que la caravane du représentant fut attaquée par une petite force de pilleurs yuan-ti, les gardes ont, pour la plupart, été rapidement défaits, sauf la jeune femme qui protégeait un wagon. Les yuan-ti avaient beau lancer des vagues d'attaques contre elle, elle les tranchait net grâce à la vitesse et la fureur de son acier. Lorsqu'enfin, le chef des yuan-ti fit face à la jeune femme, elle fut finalement vaincue, mais son habileté au combat l'a tout de même stupéfait. Le katana de la jeune guerrière fut récupéré, et quelques temps plus tard, enchanté par un grand prêtre de Sseth. La lame, autrefois gracieuse, fut corrompue par la magie noire, et sert à ceux qui l'utilisent à infliger de plus graves blessures à leurs adversaires.
+
+PARAMÈTRES :
+
+Capacités de combat :
+- probabilité de coup critique augmenté de +5% (avec cette arme uniquement)
+- lance une malédiction sur la cible à chaque coup critique
+
+TAC0 : +2
+Dégâts : 1d10 +2 (tranchant)
+Facteur de vitesse : 2
+Type de compétence : katana
+Type : arme à une main
+Nécessite : 6 en force
+
+Poids : 6~
+
+@40017 = ~Devoir solennel +3, +5 contre les extra-planaires~
+@40018 = ~Devoir Solennel
+On sait très peu de choses de ce katana, dont les origines sont depuis longtemps oubliées. Le tranchant de la lame est aiguisé à la perfection, ce qui permet à son possesseur de tuer son adversaire en un coup (à moins que ce dernier ne puisse survivre à une décapitation). Les gravures sur la garde du sabre suggèrent qu'il est particulièrement efficace contre les créatures des plans extérieurs. Dans le même temps, des enchantements protecteurs permettent à son propriétaire d'écarter le doute de son esprit, ce qui lui offre une meilleure concentration. Nul ne sait qui a commandé la création de cette épée, ni dans quelles circonstances, mais deux mots sont gravés à même la lame : "Devoir Solennel".
+
+PARAMÈTRES :
+
+Capacités d'équipement :
+- immunité à la confusion
+
+Capacités de combat :
+- 3% de chances de décapiter l'adversaire à chaque coup au but
+
+TAC0 : +3, +5 contre les créatures extra-planaires
+Dégâts : 1d10 +3, bonus de +2 points de dégâts magiques contre les créatures extra-planaires
+Type de dégâts : tranchant
+Facteur de vitesse : 1
+Type de compétence : katana
+Type : arme à une main
+Nécessite : 6 en force
+
+Poids : 3~
+
+
+
+@40264 = ~Poings enflammés de Lin Mei~
+@40265 = ~Les Poings Enflammés de Lin Mei
+L'on disait de Lin Mei qu'elle était une jeune femme d'une exquise beauté, mais au tempérament incendiaire. Lorsque sa famille la pressa de se trouver un mari, elle organisa un concours pour tous les hommes de la région : quiconque serait capable de la battre en combat singulier pourrait l'épouser. Des hommes venus des quatre coins de Kara-Tur se pressèrent pour relever le défi, mais aucun d'entre eux ne put la vaincre, alors même qu'elle combattait sans autre arme que ses mains nues. Tous les prétendants, déçus, rentrèrent chez eux, sauf un : un jeune homme au regard brillant, propriétaire d'une paire de bracelets dorés qu'il lui offrit. Il lui dit alors : "Nul ne peut dompter votre passion, et tous ceux qui s'y essaieront ne comprendront jamais votre cœur. Que ces ornements puissent vous rappeler que votre âme n'appartient qu'à vous seule, et qu'elle ne saurait être soumise par un autre." Lin Mei n'a jamais épousé cet homme, mais elle partit avec lui le jour même en quête d'aventure. Il passèrent le reste de leur vie ensemble, et formèrent un couple plus uni que n'importe quel mari et femme. Après de longues années, les deux amants finirent par prendre leur retraite, et Lin Mei disparut sans grand bruit des annales de l'Histoire. Ces bracelets qu'elle a toujours portés sont tout ce qu'il reste d'elle. Ils brûlent encore de sa fougue insoumise.
+
+PARAMÈTRES :
+
+Capacités de combat :
+- Bonus de 2 au TAC0 lorsque le porteur combat à mains nues
+- A 25 % de chances d'infliger 1d2 points de dégâts de feu à chaque coup au but lorsque le porteur combat à mains nues
+
+Capacités de charge :
+- Mains ardentes une fois par jour
+
+Poids : 2~
+
+@40266 = ~Pierre ionique rouge foncé~
+@40267 = ~Pierre Ionique Rouge Foncé
+À l'origine, cette pierre ionique rouge foncé a été fabriquée pour un maître-voleur, mais elle fut retrouvée avec les vestiges d'un crâne de gnome dans la carapace d'une palourde géante au large de la Côte des Épées. Bien que son pouvoir a été depuis utilisé à des fins plus nobles par des chasseurs, des tisseurs et un joueur de harpe particulièrement vaniteux, cette pierre pourrait toujours constituer un avantage conséquent pour des personnes aux tendances moins honorables.
+
+PARAMÈTRES :
+
+Capacités d'équipement :
+- Dextérité : Bonus de 1
+
+Poids : 0~
+
+@40268 = ~Brise-pierre de Sarutobi~
+@40269 = ~Les Brise-Pierre de Sarutobi
+Ces bracelets ont été jadis offerts au légendaire artiste martial Sarutobi par le riche marchand Shou Lung, en vue d'un duel entre Sarutobi et un puissant géant des pierres. Pourtant, l'histoire veut que lorsqu'il reçut le cadeau, Sarutobi refusa de porter les bracelets. Il dit alors : "J'écraserai le crâne de ce géant à la seule force de mes mains nues ; je n'ai besoin de nulle magie pour m'y aider !" Sarutobi sortit vainqueur du combat, et le marchand conserva les bracelets dans son coffre-fort. Lorsqu'un beau jour, Sarutobi disparut à travers un portail planaire, Shou Lung en profita pour offrir les bracelets à son fils, en guise de compensation pour la perte de son père. Le jeune homme accepta le cadeau, et consacra le reste de son existence à rechercher Sarutobi. Il ne le retrouva jamais.
+
+PARAMÈTRES :
+
+Capacités d’équipement :
+- Force : Bonus de 1
+
+Capacités de combat :
+- Bonus de 2 aux dégâts à mains nues
+- Inflige 2d6 points de dégâts supplémentaires lors d'un coup critique à mains nues
+
+Poids : 2~
+
+@40369 = ~Pierre ionique translucide~
+@40370 = ~Pierre Ionique Translucide
+Cette pierre ionique a connu nombre de propriétaires durant les siècles passés, dont un voleur qui la gardait sur lui comme porte-bonheur et un ogre qui croyait qu'il tenait là la plus petite boule de cristal du monde. Elle a même été utilisée comme œil de verre par un gnome borgne, bien que ses propriétés magiques n'aient nullement amélioré sa vision. Finalement, cette pierre est tombée entre les mains d'un groupe de magiciens elfes, sans que l'on sache vraiment s'ils la gardaient pour leurs recherches magiques ou pour se protéger des sorciers ennemis. Contrairement aux pierres ioniques communes, celle-ci est incolore et presque entièrement transparente.
+
+PARAMÈTRES :
+
+Capacités d'équipement :
+- résistance à la magie : Bonus de 5 %
+
+Poids : 0~
+
+@40371 = ~Pierre ionique bleue et écarlate~
+@40372 = ~Pierre Ionique Bleue et Écarlate
+Nombre d'histoires ont été contées au sujet de l'ascension du chef Geraq au sein de sa tribu des gobelins Tourne-Pivot. D'aucunes insistent sur son talent inné pour la stratégie, qui lui permettait de nourrir sa tribu pendant des semaines avec le butin d'une seule rapine, tandis que d'autres mettent l'accent sur sa connaissance des arts noirs. La vérité est à la fois plus intéressante et moins palpitante que ça : la source du pouvoir de Geraq provenait d'une curieuse pierre qu'il gardait toujours sur lui. Nul ne sait où il a trouvé cette pierre, ni ce qu'il en est advenu après la mystérieuse disparition de Geraq, mais celui qui la tient dans sa main peut entendre des murmures prodiguant toute l'expertise que Geraq a accumulée il y a des siècles. Bien entendu, les murmures sont prononcés en langue gobeline, ce qui les rend plutôt inutiles pour les races humanoïdes. Malgré cela, la pierre offre tout de même une meilleure compréhension du monde à qui la possède.
+
+PARAMÈTRES :
+
+Capacités d'équipement :
+- Intelligence : Bonus de 1
+
+Poids : 0~
+
+@40662 = ~Morohanotsurugi +3~
+@40663 = ~Morohanotsurugi
+À l'origine, cette arme appartenait à un suzerain de Kara-Tur du nom de Yodama Akira, connu pour avoir fait brûler entièrement l'un des villages sous sa protection sous le prétexte que des paysans l'auraient, selon lui, offensé. Même s'il en avait le droit en tant que suzerain, cette action fut source de grande honte pour le daimyo de Yodama, qui a en conséquence fait forger Morohanotsurugi, l'épée à double-tranchant. Yodama reçut cette arme pour lui enseigner une leçon toute simple : faire du mal aux autres a toujours des conséquences. 
+
+PARAMÈTRES :
+
+Capacités d'équipement :
+- inflige 1d8 +3 dégâts au porteur à chaque coup au but
+- ne peut être ôté qu'à l'aide d'un sort de Délivrance de la malédiction
+
+TAC0 : +3
+Dégâts : 1d8 +3 (perforant)
+Facteur de vitesse : 0
+Type de compétence : cimeterre / wakizashi / ninjatō
+Type : arme à une main
+Nécessite : 5 en force
+
+Poids : 2~
+
+@40741 = ~Bâton de l'invocateur +3~
+@40742 = ~Le Bâton de l'Invocateur
+Ce puissant bâton fut créé par l'archimage Urbath du Signe Céleste. Le talent de convocation des monstres et élémentaires de ce natif d'Aglarond lui avait valu le respect de ses collègues. Mais sa soif de pouvoir finit par le pousser trop loin, et il succomba à une entité des Plans Inférieurs qu'il avait eu l'imprudence d'appeler. Ce bâton est le plus puissant objet qui reste de lui. Il fut retrouvé légèrement noirci après la déportation de son maître en Achéron.
+
+PARAMÈTRES :
+
+Capacités de charge :
+- Flèche enflammée (deux flèches qui infligent 1d6 dégâts projectile +4d6 dégâts de feu ; jet de sauvegarde contre les sorts pour diviser par deux les dégâts de feu)
+  Portée : 9 mètres
+
+- Convocation de monstres IV (invoque 1d3 monstres de niveau 4)
+  Portée : 6 mètres
+  Durée : 15 rounds
+
+- Chasseur invisible (invoque un chasseur invisible de 8 DV)
+  Portée : 9 mètres
+  Durée : 2 heures
+
+TAC0 : +3
+Dégâts : 1d6 +3 (contondant)
+Facteur de vitesse : 1
+Type de compétence : bâton
+Type : arme à deux mains
+Nécessite : 5 en force
+
+Poids : 3~
+@40743 = ~Le Bâton de l'Invocateur
+Ce puissant bâton fut créé par l'archimage Urbath du Signe Céleste. Le talent de convocation des monstres et élémentaires de ce natif d'Aglarond lui avait valu le respect de ses collègues. Mais sa soif de pouvoir finit par le pousser trop loin, et il succomba à une entité des Plans Inférieurs qu'il avait eu l'imprudence d'appeler. Ce bâton est le plus puissant objet qui reste de lui. Il fut retrouvé légèrement noirci après la déportation de son maître en Achéron. Il ne reste aucune charge au bâton.
+
+PARAMÈTRES :
+
+TAC0 : +3
+Dégâts : 1d6 +3 (contondant)
+Facteur de vitesse : 1
+Type de compétence : bâton
+Type : arme à deux mains
+Nécessite : 5 en force
+
+Poids : 3~
+
+
+@40780 = ~Bonjour, Accalia. Je suis <GABBER>. Je vois que vous êtes une initiée de Tempus, tout comme moi... Je ne pensais pas que le Seigneur des Batailles était aussi populaire, dans le coin.~
+@40781 = ~Salutations, Accalia. Vous parlez de rituels ? Quelles sortes de rituels sont célébrés par les temples du Nord ?~
+@40782 = ~Il est bon de voir que nos rituels sont maintenus, même aussi loin au nord. Quelles batailles célébrez-vous ?~
+@40783 = ~Les barbares n'observent-ils pas les mêmes rituels que nous ? Ne pourrait-on pas construire quelque chose sur la base de notre foi commune ?~
+@40784 = ~Je connais bien les tenants et les aboutissants de notre foi. Le conflit fait partie de l'ordre naturel des choses.~
+@40785 = ~Everard est-il nouveau-venu dans l'Ordre des Lames Brisées ?~
+@40786 = ~Nos rituels sont très différents que ceux observés par le reste de l'ordre.~
+@40787 = ~Les barbares l'appellent "Tempos". Cette seule différence est source de défiance pour eux. Les barbares croient que les étrangers ne comprennent pas ce que "Tempos" signifie réellement. Les barbares ne vivent qu'à quelques montagnes d'ici, et nous autres, les immigrants, sommes bien conscients du danger qu'ils font peser sur nos vies.~
+@40788 = ~Oui. Comme nombre d'entre nous, Everard a eu son compte de batailles, et de blessures de guerre qui vont avec. Sa place est ici, maintenant.~
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

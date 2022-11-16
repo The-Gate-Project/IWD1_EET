@@ -120,7 +120,7 @@ ACTION_IF FILE_EXISTS_IN_GAME ~bgee.lua~ BEGIN
 	{"ID8004", "Lower Dorn's Deep - free gnome camp, Nym"},
 	{"ID8005", "Lower Dorn's Deep - Order of the Kraken garde"},
 	{"ID8006", "Lower Dorn's Deep - Order of the Kraken manor - first floor, Ginafae"},
-	{"ID8007", "Lower Dorn's Deep - Order of the Kraken manor - second floor, Mekrath"},
+	{"ID8007", "Lower Dorn's Deep - Order of the Kraken manor - second floor, Marketh"},
 	{"ID8008", "Lower Dorn's Deep - mines, Guello, Shikata"},
 	{"ID8009", "Lower Dorn's Deep - artisan's district"},
 	{"ID8010", "Lower Dorn's Deep - Malavon's lair"},

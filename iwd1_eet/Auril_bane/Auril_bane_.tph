@@ -1,0 +1,299 @@
+
+DEFINE_PATCH_FUNCTION ~add_area_cre_acti~
+  INT_VAR
+    pos_x       =   1
+    pos_y       =   1
+    dest_x      =   ~%pos_x%~
+    dest_y      =   ~%pos_y%~
+    flags       =   1
+    anim        =   25602
+    dir         =   0
+    expiri_time = ~-1~
+    wander_dist =   0
+    follow_dist =   0
+    present_at  =   0b11111111111111111111111111111111
+    talked_to   =   0
+  STR_VAR
+    actor_name  = ""
+    dialogue    = ""
+    over_scr    = ""
+    genr_scr    = ""
+    clas_scr    = ""
+    race_scr    = ""
+    defl_scr    = ""
+    spec_scr    = ""
+    cre_file    = ""
+  BEGIN
+      READ_LONG   0x54 actor_off
+      READ_SHORT  0x58 actor_num
+      WRITE_SHORT 0x58 ~%actor_num%~ + 1
+      READ_LONG   0x5c triggers_off
+      PATCH_IF (~%triggers_off%~ >= ~%actor_off%~) BEGIN
+        WRITE_LONG 0x5c ~%triggers_off%~ + 0x110
+      END
+      READ_LONG   0x60 spawn_off
+      PATCH_IF (~%spawn_off%~ >= ~%actor_off%~) BEGIN
+        WRITE_LONG 0x60 ~%spawn_off%~ + 0x110
+      END
+      READ_LONG   0x68 entrance_off
+      PATCH_IF (~%entrance_off%~ >= ~%actor_off%~) BEGIN
+        WRITE_LONG 0x68 ~%entrance_off%~ + 0x110
+      END
+      READ_LONG   0x70 contain_off
+      PATCH_IF (~%contain_off%~ >= ~%actor_off%~) BEGIN
+        WRITE_LONG 0x70 ~%contain_off%~ + 0x110
+      END
+      READ_LONG   0x78 item_off
+      PATCH_IF (~%item_off%~ >= ~%actor_off%~) BEGIN
+        WRITE_LONG 0x78 ~%item_off%~ + 0x110
+      END
+      READ_LONG   0x7c vert_off
+      PATCH_IF (~%vert_off%~ >= ~%actor_off%~) BEGIN
+        WRITE_LONG 0x7c ~%vert_off%~ + 0x110
+      END
+      READ_LONG   0x84 ambi_off
+      PATCH_IF (~%ambi_off%~ >= ~%actor_off%~) BEGIN
+        WRITE_LONG 0x84 ~%ambi_off%~ + 0x110
+      END
+      READ_LONG   0x88 var_off
+      PATCH_IF (~%var_off%~ >= ~%actor_off%~) BEGIN
+        WRITE_LONG 0x88 ~%var_off%~ + 0x110
+      END
+      READ_LONG   0xa0 explore_off
+      PATCH_IF (~%explore_off%~ >= ~%actor_off%~) BEGIN
+        WRITE_LONG 0xa0 ~%explore_off%~ + 0x110
+      END
+      READ_LONG   0xa8 door_off
+      PATCH_IF (~%door_off%~ >= ~%actor_off%~) BEGIN
+        WRITE_LONG 0xa8 ~%door_off%~ + 0x110
+      END
+      READ_LONG   0xb0 anim_off
+      PATCH_IF (~%anim_off%~ >= ~%actor_off%~) BEGIN
+        WRITE_LONG 0xb0 ~%anim_off%~ + 0x110
+      END
+      READ_LONG   0xb8 tiled_off
+      PATCH_IF (~%tiled_off%~ >= ~%actor_off%~) BEGIN
+        WRITE_LONG 0xb8 ~%tiled_off%~ + 0x110
+      END
+      READ_LONG   0xbc song_off
+      PATCH_IF (~%song_off%~ >= ~%actor_off%~) BEGIN
+        WRITE_LONG 0xbc ~%song_off%~ + 0x110
+      END
+      READ_LONG   0xc0 rest_enc_off
+      PATCH_IF (~%rest_enc_off%~ >= ~%actor_off%~) BEGIN
+        WRITE_LONG 0xc0 ~%rest_enc_off%~ + 0x110
+      END
+      READ_LONG   0xc4 auto_map_off
+      PATCH_IF (~%auto_map_off%~ >= ~%actor_off%~) BEGIN
+        WRITE_LONG 0xc4 ~%auto_map_off%~ + 0x110
+      END
+      INSERT_BYTES ~%actor_off%~ 0x110
+        WRITE_ASCIIE ~%actor_off%~ + 0x00 ~%actor_name%~ (32)
+        WRITE_SHORT  ~%actor_off%~ + 0x20 ~%pos_x%~
+        WRITE_SHORT  ~%actor_off%~ + 0x22 ~%pos_y%~
+        WRITE_SHORT  ~%actor_off%~ + 0x24 ~%dest_x%~
+        WRITE_SHORT  ~%actor_off%~ + 0x26 ~%dest_y%~
+        WRITE_BYTE   ~%actor_off%~ + 0x28 ~%flags%~
+        WRITE_LONG   ~%actor_off%~ + 0x30 ~%anim%~
+        WRITE_SHORT  ~%actor_off%~ + 0x34 ~%dir%~
+        WRITE_LONG   ~%actor_off%~ + 0x38 ~%expiri_time%~
+        WRITE_SHORT  ~%actor_off%~ + 0x3c ~%wander_dist%~
+        WRITE_SHORT  ~%actor_off%~ + 0x3e ~%follow_dist%~
+        WRITE_LONG   ~%actor_off%~ + 0x40 ~%present_at%~
+        WRITE_LONG   ~%actor_off%~ + 0x44 ~%talked_to%~
+        WRITE_ASCIIE ~%actor_off%~ + 0x48 ~%dialogue%~ (8)
+        WRITE_ASCIIE ~%actor_off%~ + 0x50 ~%over_scr%~ (8)
+        WRITE_ASCIIE ~%actor_off%~ + 0x58 ~%genr_scr%~ (8)
+        WRITE_ASCIIE ~%actor_off%~ + 0x60 ~%clas_scr%~ (8)
+        WRITE_ASCIIE ~%actor_off%~ + 0x68 ~%race_scr%~ (8)
+        WRITE_ASCIIE ~%actor_off%~ + 0x70 ~%defl_scr%~ (8)
+        WRITE_ASCIIE ~%actor_off%~ + 0x78 ~%spec_scr%~ (8)
+        WRITE_ASCIIE ~%actor_off%~ + 0x80 ~%cre_file%~ (8)
+END
+
+ADD_JOURNAL TITLE (@4034637) @4034638 @4034639 @4034640 @4034641 @4034642 @4034643
+
+COPY ~iwd1_eet/Auril_bane/cre/CMKING.CRE~ ~override~
+  SAY 0x08 @4034621
+  SAY 0x0c @4034622
+  READ_LONG 0x28 anims2
+  PATCH_PRINT ~Copy %SOURCE_FILE% into override...~
+
+COPY ~iwd1_eet/Auril_bane/cre/cmdwarf.cre~ ~override~
+  SAY 0x08 @4034623
+  SAY 0x0c @4034622
+  READ_LONG 0x28 anims
+  PATCH_PRINT ~Copy %SOURCE_FILE% into override...~
+
+COPY_EXISTING ~ID7000.are~ ~override~
+  LPF add_area_cre_acti
+    INT_VAR pos_x = 502 pos_y = 401 anim = %anims%
+    STR_VAR actor_name = "Dwarf Royal Guard" dialogue = "CMDWARF" over_scr = "IDAXUDRP" race_scr = "GNTEAM1" defl_scr = "KUCONLS_" cre_file = "CMDWARF"
+  END
+  LPF add_area_cre_acti
+    INT_VAR pos_x = 697 pos_y = 521 anim = %anims%
+    STR_VAR actor_name = "Dwarf Royal Guard" dialogue = "CMDWARF" over_scr = "IDAXUDRP" race_scr = "GNTEAM1" defl_scr = "KUCONLS_" cre_file = "CMDWARF"
+  END
+  LPF add_area_cre_acti
+    INT_VAR pos_x = 543 pos_y = 515 anim = %anims%
+    STR_VAR actor_name = "Dwarf Royal Guard" dialogue = "CMDWARF" race_scr = "GNTEAM1" defl_scr = "KUCONLA_" cre_file = "CMDWARF"
+  END
+  LPF add_area_cre_acti
+    INT_VAR pos_x = 684 pos_y = 431 anim = %anims%
+    STR_VAR actor_name = "Dwarf Royal Guard" dialogue = "CMDWARF" over_scr = "IDAXUDRP" race_scr = "GNTEAM1" defl_scr = "KUCONLS_" cre_file = "CMDWARF"
+  END
+  LPF add_area_cre_acti
+    INT_VAR pos_x = 581 pos_y = 436 anim = %anims%
+    STR_VAR actor_name = "Dwarf Royal Guard" dialogue = "CMDWARF" over_scr = "IDAXUDRP" race_scr = "GNTEAM1" defl_scr = "KUCONLS_" cre_file = "CMDWARF"
+  END
+  LPF add_area_cre_acti
+    INT_VAR pos_x = 639 pos_y = 449 anim = %anims2%
+    STR_VAR actor_name = "Dwarf Noble" clas_scr = "EFPIKWRN" race_scr = "GNTEAM1" defl_scr = "KUCONLS_" cre_file = "CMKING"
+  END
+  PATCH_PRINT ~Append actors to area %SOURCE_RES%...~
+
+COPY ~iwd1_eet/Auril_bane/itm/ICMH01.ITM~ ~override~
+  SAY 0x0c @4034624
+  SAY 0x54 @4034625
+  PATCH_PRINT ~Copy %SOURCE_FILE% into override...~
+
+COPY ~iwd1_eet/Auril_bane/itm/PLATCM03.ITM~ ~override~
+  SAY 0x0c @4034626
+  SAY 0x54 @4034627
+  PATCH_PRINT ~Copy %SOURCE_FILE% into override...~
+
+COPY ~iwd1_eet/Auril_bane/itm/AX2HCM01.ITM~ ~override~
+  SAY 0x08 @9785
+  SAY 0x0c @4034628
+  SAY 0x50 @8564
+  SAY 0x54 @4034629
+  PATCH_PRINT ~Copy %SOURCE_FILE% into override...~
+
+COPY ~iwd1_eet/Auril_bane/itm/PLATCM04.ITM~ ~override~
+  SAY 0x0c @4034630
+  SAY 0x54 @4034631
+  PATCH_PRINT ~Copy %SOURCE_FILE% into override...~
+
+COPY ~iwd1_eet/Auril_bane/itm/CMAX03.ITM~ ~override~
+  SAY 0x0c @4034632
+  SAY 0x54 @4034633
+  PATCH_PRINT ~Copy %SOURCE_FILE% into override...~
+
+COPY ~iwd1_eet/Auril_bane/bam~ ~override~
+
+COMPILE ~iwd1_eet/Auril_bane/dlg~
+COMPILE ~iwd1_eet/Auril_bane/bcs~
+
+COPY_EXISTING ~SDORCAX1.cre~ ~override/CMORCAX1.cre~
+  WRITE_ASCII 0x268 ~GNMMGSG~ #8
+  PATCH_PRINT ~Create %DEST_RES% from %SOURCE_FILE%...~
+
+COPY_EXISTING ~SDORCAX3.cre~ ~override/CMORCAX3.cre~
+  WRITE_ASCII 0x260 ~SHOAFLT~ #8
+  WRITE_ASCII 0x268 ~GNMMGSG~ #8
+  REMOVE_CRE_ITEM ~SH8TRES~
+  PATCH_PRINT ~Create %DEST_RES% from %SOURCE_FILE%...~
+
+<<<<<<<<8007.baf
+IF
+  PartyHasItem("icmh01")
+  !Global("AUD_ORC_SPAWN","MYAREA",1)
+THEN
+  RESPONSE #100
+    SetGlobal("AUD_ORC_SPAWN","MYAREA",1)
+    CreateVisualEffect("MSUMM1H",[1430.275])
+    CreateVisualEffect("MSUMM1H",[1380.325])
+    CreateVisualEffect("MSUMM1H",[1410.380])
+    CreateVisualEffect("MSUMM1H",[1490.425])
+    CreateVisualEffect("MSUMM1H",[1550.360])
+    SmallWait(7)
+    CreateCreature("CMORCAX1",[1430.275],14)
+    CreateCreature("CMORCAX1",[1380.325],12)
+    CreateCreature("CMORCAX3",[1410.380],8)
+    CreateCreature("CMORCAX3",[1490.425],8)
+    CreateCreature("CMORCAX1",[1550.360],6)
+    Continue()
+END
+
+IF
+	PartyHasItem("ICMH01")
+	GlobalGT("King_Crown","GLOBAL",0)
+	Global("Journal_King_Crown","MYAREA",0)
+THEN
+	RESPONSE #100
+		SetGlobal("Journal_King_Crown","MYAREA",1)
+		AddJournalEntry(@4034640,QUEST)
+END
+
+IF
+	PartyHasItem("ICMH01")
+	Global("King_Crown","GLOBAL",0)
+	Global("Journal_King_Crown","MYAREA",0)
+THEN
+	RESPONSE #100
+		SetGlobal("Journal_King_Crown","MYAREA",1)
+		AddJournalEntry(@4034641,QUEST)
+END
+
+/*IF
+  !Global("AUD_ITEM_CREATE","MYAREA",1)
+THEN
+  RESPONSE #100
+    SetGlobal("AUD_ITEM_CREATE","MYAREA",1)
+    ActionOverride("Book$helf 1",CreateItem("icmh01",0,0,0))
+    Continue()
+END*/
+>>>>>>>>
+
+EXTEND_BOTTOM ~ID8007.bcs~ ~8007.baf~
+
+COPY_EXISTING ~ID8007.are~ ~override~
+	LPF fj_are_structure INT_VAR fj_con_itm_idx=2 fj_flags=1 STR_VAR fj_structure_type=itm fj_name = ICMH01 END
+
+<<<<<<<<7000.baf
+IF
+	OR(2)
+		Allegiance("Hreidmar",ENEMY)
+		Dead("Hreidmar")
+	Global("Journal_King_Crown","MYAREA",0)
+THEN
+	RESPONSE #100
+		SetGlobal("Journal_King_Crown","MYAREA",1)
+		EraseJournalEntry(@4034638)
+		EraseJournalEntry(@4034639)
+		EraseJournalEntry(@4034640)
+		EraseJournalEntry(@4034641)
+END
+>>>>>>>>
+
+EXTEND_BOTTOM ~ID7000.bcs~ ~7000.baf~
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

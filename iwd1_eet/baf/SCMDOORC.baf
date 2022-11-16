@@ -11,7 +11,7 @@ THEN
 		OpenDoor("AR9502_DOOR1")
 		PlaySound("ID9502D")
 		EndCutSceneMode()
-		Deactivate(Myself)
+		//Deactivate(Myself)
 		//TriggerActivation("Door Trigger",FALSE)
 END
 

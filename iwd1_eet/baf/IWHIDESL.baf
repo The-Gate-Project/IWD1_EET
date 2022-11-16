@@ -1,0 +1,45 @@
+IF
+  IsActive(Myself)
+  Global("IwIHidden","LOCALS",0)
+  Global("FirstIwIHidden","LOCALS",0)
+THEN
+  RESPONSE #100
+    SetGlobal("IwIHidden","LOCALS",1)
+    SetGlobal("FirstIwIHidden","LOCALS",1)
+    DestroyItem("CSALRING")
+    CreateItem("CSALRING",0,0,0)
+    Deactivate(Myself)
+    //Continue()
+END
+
+IF
+  IsActive(Myself)
+  !Global("IwIHidden","LOCALS",0)
+THEN
+  RESPONSE #100
+    Deactivate(Myself)
+    //Continue()
+END
+
+IF
+  IsActive(Myself)
+  !Global("FirstIwIHidden","LOCALS",0)
+  Global("EquipRing","LOCALS",0)
+  HasItem("CSALRING",Myself)
+THEN
+  RESPONSE #100
+    SetGlobal("EquipRing","LOCALS",1)
+    XEquipItem("CSALRING",Myself,SLOT_RING_LEFT,EQUIP)
+    Continue()
+END
+
+IF
+  IsActive(Myself)
+  !Global("FirstIwIHidden","LOCALS",0)
+  Global("EquipRing","LOCALS",0)
+  !HasItem("CSALRING",Myself)
+THEN
+  RESPONSE #100
+    CreateItem("CSALRING",0,0,0)
+END
+

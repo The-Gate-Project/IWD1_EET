@@ -1,141 +1,141 @@
-@100000 = ~Apsel's House~
-@100001 = ~Old Jed's House~
-@100002 = ~House of Hrothgar~
-@100003 = ~Town Exit~
-@100004 = ~Ice Tower~
-@100005 = ~Prisoner Camp~
+@100000 = ~Maison de Apsel~
+@100001 = ~Maison du vieux Jed~
+@100002 = ~Maison de Hrothgar~
+@100003 = ~Sortie de la ville~
+@100004 = ~Tour de glace~
+@100005 = ~Camp des Prisonniers~
 @100006 = ~Cave~
-@100007 = ~To Easthaven~
-@100008 = ~Ruined Tower~
+@100007 = ~Vers Havredest~
+@100008 = ~Tour en ruine~
 @100009 = ~Mill~
-@100010 = ~Tolben's Statue~
-@100011 = ~Orrick's Tower~
-@100012 = ~Conlan's Forge~
-@100013 = ~Yolder's House~
-@100014 = ~Arundel's House~
-@100015 = ~Oswald's Ship~
-@100016 = ~To the Kuldahar Pass~
-@100017 = ~To Shadow Valley~
-@100018 = ~Ice Cave~
-@100019 = ~Crypt~
-@100020 = ~Tomb of Kresselak~
-@100021 = ~To Kuldahar~
-@100022 = ~To the second level~
+@100010 = ~Statue de Tolben~
+@100011 = ~Tour d'Orrick~
+@100012 = ~Forge de Conlan ~
+@100013 = ~Maison de Yolder~
+@100014 = ~Maison de Arundel~
+@100015 = ~Bateau d'Oswald~
+@100016 = ~Vers le col de Kuldahar~
+@100017 = ~Vers la vallée de l'ombre~
+@100018 = ~Grotte de glace~
+@100019 = ~Crypte~
+@100020 = ~Tombe de Kresselak~
+@100021 = ~Vers Kuldahar~
+@100022 = ~Vers le deuxième étage~
 @100023 = ~Lever~
-@100024 = ~To the first level~
-@100025 = ~To the third level~
-@100026 = ~Temple Entrance~
-@100027 = ~Exit~
-@100028 = ~Library~
-@100029 = ~Altar~
-@100030 = ~Entrance to the Dragon's Eye~
-@100031 = ~Hall of the Lizard Man King~
-@100032 = ~To the fourth level~
-@100033 = ~To the fifth level~
-@100034 = ~Ixunomei's Chambers~
-@100035 = ~Yuan-ti Treasure~
-@100036 = ~Torture Rooms~
-@100037 = ~Yuan-ti Barracks~
-@100038 = ~Histachi Creation Room~
-@100039 = ~Baptismal~
-@100040 = ~Entrance to the Severed Hand~
-@100041 = ~To Corellon Tower~
-@100042 = ~To Shevarash Tower~
-@100043 = ~To Solonar Tower~
-@100044 = ~To Labelas Tower~
-@100045 = ~Into the Caverns of Dorn~
-@100046 = ~Bendot Tower~
+@100024 = ~Vers le premier étage~
+@100025 = ~Vers le troisième étage~
+@100026 = ~Entrée du temple~
+@100027 = ~Sortie~
+@100028 = ~Bibliothèque~
+@100029 = ~Autel~
+@100030 = ~Entrée de l'Œil du dragon~
+@100031 = ~Salle du Roi Homme Lézard~
+@100032 = ~Vers le quatrième étage~
+@100033 = ~Vers le cinquième étage~
+@100034 = ~Chambres d'Ixunomei~
+@100035 = ~Trésor des Yuan-ti~
+@100036 = ~Salles de torture~
+@100037 = ~Caserne Yuan-ti~
+@100038 = ~Salle de création Histachi~
+@100039 = ~Baptême~
+@100040 = ~Entrée de la Main tranchée~
+@100041 = ~Vers la tour Corellon~
+@100042 = ~Vers la tour Shevarash~
+@100043 = ~Vers la tour Solonar~
+@100044 = ~Vers la tour Labelas~
+@100045 = ~Dans les cavernes de Dorn~
+@100046 = ~Tour de Bendot~
 @100047 = ~Caves~
-@100048 = ~To the barracks~
-@100049 = ~Into the maze~
-@100050 = ~Secret Door~
-@100051 = ~Road to Kuldahar~
-@100052 = ~To the Lower Caverns of Dorn~
-@100053 = ~To Serpent Tooth Glacier~
-@100054 = ~Museum Entrance~
-@100055 = ~Bridge~
-@100056 = ~Durdel Anatha Palace~
-@100057 = ~Creature from another plane destroyed~
+@100048 = ~Vers la caserne~
+@100049 = ~Dans le labyrinthe~
+@100050 = ~Porte secrète~
+@100051 = ~Route de Kuldahar~
+@100052 = ~Vers les cavernes souterraines de Dorn~
+@100053 = ~Vers le glacier de la dent du Serpent~
+@100054 = ~Entrée du musée~
+@100055 = ~Pont~
+@100056 = ~Palais de Durdel Anatha~
+@100057 = ~Créature d'un autre plan détruite~
 @100058 = ~Brown Hump's Gaze~
-@100059 = ~Return to East Harbor~
-@100060 = ~You finally returned to East Harbor and wondered what happened here.  The whole city is frozen and crowds of cyclops roam the streets.  It looks like you need to act as quickly as possible to save the city and the entire North...~
-@100061 = ~Castle Maluradek~
-@100062 = ~Tower~
-@100063 = ~Waukeen Temple~
-@100064 = ~Ranger's House~
-@100065 = ~Honey Chamber~
-@100066 = ~To Lonelywood~
-@100067 = ~Descent to Kurgan~
-@100068 = ~Island~
-@100069 = ~Tomb~
-@100070 = ~Presio's Cabinet~
-@100071 = ~Undead destroyed~
-@100072 = ~To the Seer's Cave~
+@100059 = ~Retour à Havredest~
+@100060 = ~Vous êtes finalement de retour à Havredest et vous vous demandez ce qui s'est passé ici. La ville entière est gelée et des hordes de cyclopes errent dans les rues. Il semble que vous deviez agir le plus rapidement possible pour sauver la ville et même le Nord tout entier...~
+@100061 = ~Château Maluradek~
+@100062 = ~Tour~
+@100063 = ~Temple de Waukeen~
+@100064 = ~Maison du Rôdeur~
+@100065 = ~Chambre à miel~
+@100066 = ~Vers le bois isolé~
+@100067 = ~Descente vers Kurgan~
+@100068 = ~Île~
+@100069 = ~Tombe~
+@100070 = ~Cabinet de Presio~
+@100071 = ~Morts-vivants détruits~
+@100072 = ~Vers la grotte du devin~
 @100073 = ~Surface~
-@100074 = ~Ilmater Temple~
-@100075 = ~Warehouse~
+@100074 = ~Temple d'Ilmater~
+@100075 = ~Entrepôt~
 @100076 = ~Ziggurat~
-@100077 = ~Bleeding Rooms~
+@100077 = ~Salles de saignée~
 @100078 = ~Statue~
-@100079 = ~Huge table~
-@100080 = ~Horned Camp~
-@100081 = ~To the computer room~
-@100082 = ~To the Tiers of the Dead~
-@100083 = ~To the Great Forge~
-@100084 = ~Hall of Heroes~
-@100085 = ~Tomb of the Lich~
-@100086 = ~Tomb of Jamot~
-@100087 = ~Tomb of Ewaina~
-@100088 = ~To the basement of the museum~
-@100089 = ~Temperature control room~
-@100090 = ~Joril's Throne Room~
-@100091 = ~Slave Pens~
-@100092 = ~Barracks~
+@100079 = ~Grande table~
+@100080 = ~Camp de la corne~
+@100081 = ~Vers la salle des ordinateurs~
+@100082 = ~Vers les Tierces des Morts~
+@100083 = ~Vers la Grande Forge~
+@100084 = ~Hall des Héros~
+@100085 = ~Tombe de la Liche~
+@100086 = ~Tombe de Jamot~
+@100087 = ~Tombe de Ewaina~
+@100088 = ~Vers le sous-sol du musée~
+@100089 = ~Salle de contrôle des températures~
+@100090 = ~Salle du trône de Joril~
+@100091 = ~Cages à esclave~
+@100092 = ~Caserne~
 @100093 = ~Tunnel~
-@100094 = ~Hoist~
-@100095 = ~To the inner caves~
-@100096 = ~To the mines~
-@100097 = ~Overnight~
+@100094 = ~Treuil~
+@100095 = ~Vers les grottes intérieures~
+@100096 = ~Vers les mines~
+@100097 = ~Nuitée~
 @100098 = ~Temple~
-@100099 = ~Market~
-@100100 = ~Green Domes~
-@100101 = ~Hunter's Hut~
-@100102 = ~Cartwright House~
-@100103 = ~Cooper's House~
-@100104 = ~Boats~
-@100105 = ~Trading Post~
-@100106 = ~Barbarian Camp~
-@100107 = ~Glacier Entrance~
-@100108 = ~Castle Entrance~
-@100109 = ~Towers East~
-@100110 = ~West Towers~
-@100111 = ~Hobart's Shack~
-@100112 = ~Helm Temple~
-@100113 = ~Second floor~
-@100114 = ~Into the Dungeon~
-@100115 = ~Throne Room~
-@100116 = ~Kitchen~
-@100117 = ~Throne~
-@100118 = ~First floor~
-@100119 = ~Ballroom~
-@100120 = ~Lord Maluradek's Quarters~
-@100121 = ~Star Altar~
-@100122 = ~Symbol of Heaven~
-@100123 = ~Symbol of the Night~
-@100124 = ~Earth Symbol~
-@100125 = ~Symbol of the Day~
-@100126 = ~Symbol of the Sea~
-@100127 = ~Symbol of the Seasons~
+@100099 = ~Marché~
+@100100 = ~Dômes verts~
+@100101 = ~Cabane du chasseur~
+@100102 = ~Maison de Cartwright~
+@100103 = ~Maison de Cooper~
+@100104 = ~Bateaux~
+@100105 = ~Poste de commerce~
+@100106 = ~Camp des barbares~
+@100107 = ~Entrée du Glacier~
+@100108 = ~Entrée du château~
+@100109 = ~Tours Est~
+@100110 = ~Tours Ouest~
+@100111 = ~La cabane de Hobart~
+@100112 = ~Temple de Helm~
+@100113 = ~Deuxième étage~
+@100114 = ~Dans le donjon~
+@100115 = ~Salle du trône~
+@100116 = ~Cuisine~
+@100117 = ~Trône~
+@100118 = ~Premier étage~
+@100119 = ~Salle de bal~
+@100120 = ~Les quartiers du Seigneur Maluradek~
+@100121 = ~Autel des étoiles~
+@100122 = ~Symbole du Paradis~
+@100123 = ~Symbole de la Nuit~
+@100124 = ~Symbole de la terre~
+@100125 = ~Symbole du Jour~
+@100126 = ~Symbole de la Mer~
+@100127 = ~Symbole des Saisons~
 
 //GRIZELLA QUEST
-@120000 = ~Beetles in the cellar~
-@120001 = ~At the Winter's Cradle Tavern, we inquired about a drink. The hostess replied that it was inconvenient for her to admit it ... but there, in the old dirty cellar, living creatures were divorced, and she was simply afraid to go down there.  She's terrified of bugs!~
-@120002 = ~We told Grisella that we have cleared the bugs out of the cellar. She was very grateful, only asked ... that this little problem stay between us.  She doesn't want to hear rumors spread around town that she's not a tavern, but a pigsty.~
+@120000 = ~Des scarabées dans la cave~
+@120001 = ~À la taverne du Berceau de l'hiver, nous avons demandé à boire. L'hôtesse nous a répondu que même si cela n'était pas facile à admettre... elle avais peur de descendre dans sa vieille cave poussiéreuse, des créatures y ont élu domicile, et elle est terrifiée par les insectes !~
+@120002 = ~Nous avons dit à Grisella que nous avions éliminé les insectes. Elle était très reconnaissante, elle a seulement demandé ... que ce petit problème reste entre nous. Elle ne veut pas que des rumeurs se répandent dans la ville, à propos de sa porcherie... sa taverne.~
 
 //BANDOTH QUEST
-@120010 = ~Service to Bandoth~
-@120011 = ~In the Dorn's Deep, a mage named Bandoth asked us to do him a favor for information. He said that he had sent his apprentice to look for the razor vine extract, and he had been gone for several days.  And he is afraid that he stumbled upon some unpleasant inhabitants of these caves.  And he promised that he would tell us what we want to know if we find the student.~
-@120012 = ~We've brought a razorvine extract to Bandoth. And they said that they found him on the body of a dead man who was found in the ettin caves to the south of here.  He was annoyed that now the extract is there, but the student is gone.  Yes, a sad turn of events.~
+@120010 = ~Un Service pour Bandoth~
+@120011 = ~Dans le Gouffre de Dorn, un mage nommé Bandoth nous a demandé de lui rendre service en échange d'informations. Il nous a dit avoir envoyé son apprenti chercher de l'extrait de razorvigne, et que celui-ci était parti depuis plusieurs jours. Craignant qu'il ne soit tombé sur des habitants hostile dans les grottes, il a promis qu'il nous dirait ce que nous voulons savoir si nous trouvons son apprenti.~
+@120012 = ~Nous avons rapporté à Bandoth un extrait de razorvine que nous avons trouvé sur le corps d'un homme dans les grottes des Ettins au sud d'ici. Il était contrarié que maintenant que l'extrait était à sa disposition, son apprenti ne le soit plus. En effet, c'est une triste tournure des événements.~
 
 
 
@@ -144,198 +144,220 @@
 
 //JOURNAL
 @2000000 = ~Icewind Dale~
-@2000001 = ~The Lost Caravan~
-@2000002 = ~Expedition Supplies~
-@2000003 = ~Jonen's Dreams~
-@2000004 = ~Wolf in Apsel's workshop~
-@2000005 = ~Boy, Fish and Monsters~
-@2000006 = ~Wine for Old Jed~
-@2000007 = ~Sick Ogre Head~
-@2000008 = ~Mirek's Necklace~
-@2000009 = ~Priestess of Auril~
-@2000010 = ~Mythal's enchantment~
-@2000011 = ~Find Sheemish, son of Conlan~
-@2000012 = ~Voice of Durdel Anatha~
+@2000001 = ~La caravane perdue~
+@2000002 = ~Des provisions pour l'expédition~
+@2000003 = ~Les rêves de Jhonen~
+@2000004 = ~Un loup dans l'atelier d'Apsel~
+@2000005 = ~Un enfant, des poissons et des monstres~
+@2000006 = ~Du vin pour le Vieux Jed~
+@2000007 = ~Maux de tête~
+@2000008 = ~Le trésor de famille de Mirek~
+@2000009 = ~La prêtresse d'Aurile~
+@2000010 = ~Mythal~
+@2000011 = ~Sheemish fils de Coulon~
+@2000012 = ~la Voix de Durdel Anatha~
 @2000013 = ~Who is the innkeeper?~
-@2000014 = ~Larrell's Daughter~
-@2000015 = ~Kill the Orog Chief~
-@2000016 = ~Destroy Terikan~
-@2000017 = ~Holy water for the shrine~
-@2000018 = ~Put the priests to rest~
-@2000019 = ~Rebuild the Arboretum~
-@2000020 = ~Put Kylessa's warriors to rest~
-@2000021 = ~Slaves of Ice Salamanders - Vera~
-@2000022 = ~Slaves of Ice Salamanders~
-@2000023 = ~Joril - Ruler of the Glacier~
-@2000024 = ~Broken bridge~
-@2000025 = ~Slaves of the Frost Giants~
-@2000026 = ~Slaves of the Frost Giants - Sacrifice~
-@2000027 = ~Girl with no tongue~
-@2000028 = ~Feed the Gnomes~
-@2000029 = ~Heart of Winter~
+@2000014 = ~Fille de Larrell~
+@2000015 = ~Éliminer le chef orog~
+@2000016 = ~Terikan doit mourir~
+@2000017 = ~Bassins bénits~
+@2000018 = ~Repos éternel~
+@2000019 = ~Arboretum~
+@2000020 = ~Les guerriers fatigués~
+@2000021 = ~Véra, cheffe des esclaves~
+@2000022 = ~Esclaves des salamandres~
+@2000023 = ~Joril Barbedegivre~
+@2000024 = ~Pont brisé~
+@2000025 = ~Esclaves des géants des glaces~
+@2000026 = ~Sacrifiés~
+@2000027 = ~Silencieuse~
+@2000028 = ~L'estomac des Gnomes~
+@2000029 = ~Le Cœur de l'Hiver~
 @2000030 = ~Hailee Dunn~
-@2000031 = ~Dunn Family~
-@2000032 = ~Kieran's Secret~
-@2000033 = ~Werewolf in Lonelywood~
-@2000034 = ~Ice Rose~
-@2000035 = ~Vexing Thoughts~
-@2000038 = ~Marketh is the king of the Dorn's Deep~
-@2000041 = ~Trials of the Luremaster~
+@2000031 = ~La famille Dunn~
+@2000032 = ~Le secret de Kieran~
+@2000033 = ~Des loups et...  Emmerich~
+@2000034 = ~Rose glacée~
+@2000035 = ~Frustralion~
+@2000038 = ~Le Roi de Profondorn~
+@2000041 = ~Les Épreuves du Maître des Leurres~
 
-@2000036 = ~The death of the spirit of Icasaracht put an end to the hatred that had been burning for centuries.
-The tribes of the North and the inhabitants of the Ten Towns laid down their arms and once again carefully look at each other ... they will live in peace - as long as their neighbors can live in peace.  Wylfdene's body was again buried on Burial Isle.  With his return, the crying of the maidens ceased ... they again sleep underground next to their master.  And what will happen to the brave heroes who came to defend the North?  What will become of you?  I look at you and see what you were and what you will become in the distant, radiant future.  Legends leave you behind, and legends await you ahead, as well as everyone whose hearts burn with the desire for adventure and glory.  But I will not say more about the future.  Everything I talk about, everything I see will be revealed to you ... when the time comes.
+@2000036 = ~Le Cœur de L'Hiver
 
-We managed to defeat the dragon Icasaracht, prove to the barbarian tribes that an evil spirit has infiltrated their leader, Wylfdene, and ward off the threat of a barbarian attack on the Ten Towns.~
-@2000037 = ~We have succeeded in slaying the demon Belhifet, intent on taking over the entire north and destroying Easthaven.
-The portal is now closed and the threat of invasion has been stopped.  Kuldahar, and especially the Easthaven, are slowly coming to their senses, people are rebuilding destroyed houses and buildings.  Residents of both cities jointly cleared the Kuldahar pass and communication between the cities improved.
+Avec la mort de l'esprit d'Icasaracht, ce sont des siècles de haine qui cessèrent enfin.
+Les tribus du Nord et les habitants des Dix-Cités rengainèrent leurs armes et recommencèrent à se surveiller les uns les autres... cette période de « paix », ne durerait sans doute pas plus longtemps que les précédentes. Le corps de Wylfdene fut ramené sur l'île aux tertres. À son retour, la complainte se tut... et les vestales retournèrent à leur sommeil éternel, au côté de leur roi. 
+Et les braves venus défendre le Nord ? Qu'en est-il advenu ? Je vous regarde et je vous vois tels que vous étiez, tel que vous serez, en route vers un avenir glorieux. Mais inutile d'en dire davantage... car tout ce que je raconte, tout ce que j'ai vu, vous sera révélé... en temps voulu.
 
-And the saviors of the city were last seen in the "Winter's Cradle" tavern, where for them, Grisella set new tables and took out everything that remained from her reserves.  And in the morning they were gone in the city ...~
+En dévoilant la duplicité de Wylfdene au conseil, nous avons réussi à empêcher la guerre entre les barbares et les Dix-Cités.~
+@2000037 = ~Icewind Dale
+
+Nous avons réussi à tuer le démon Belhifet, qui voulait s'emparer du nord et détruire Havredest.
+Le portail est maintenant fermé et l'invasion a été interrompue. Kuldahar, et surtout Havredest, reprennent lentement leurs esprits, les habitants reconstruisent les maisons et les bâtiments détruits. La population des deux villes a participé au nettoyage du col de Kuldahar et leurs relations se sont améliorées.
+
+Les sauveurs de la ville ont été vus pour la dernière fois à la taverne du Berceau de l'hiver, où pour eux, Grisella avait dressé de nouvelles tables et sorti toutes ses réserves. Mais au petit matin, ils avaient disparu...~
 
 //Tempus
 @2000039 = ~~ 
 @2000040 = ~~
 
 //UNFINISHED BUSINESS
-@3000001 = ~Sister Bethla~
+@3000001 = ~Sœur Bethla~
 
-@300000102 = ~Ah, what an excellent job you did disposing of my simulacrum! It took me a long time to make him, but money is no object when the suffering of others is the greatest reward.  Ha ha ha!~
-@300000101 = ~Golem Building Book~
+@300000102 = ~Ah, vous vous rendez compte de ce que vous avez fait en éliminant mon simulacre ! J'ai mis un temps fou à le faire, mais l'argent importe peu quand la souffrance d'autrui est la plus grande des récompenses. Ha ha ha !~
+@300000101 = ~Traité de construction de golem~
 
-@300000301 = ~Well, I'm afraid you'll have to catch me. Good luck.~
-@300000302 = ~This morning, I woke up and realized that my little ring was a fake. I have no idea who you are, but I feel safe in assuming that *you* are responsible.~
-@300000303 = ~I should have killed you the first time I saw you. I knew you'd be trouble. Well, you've done it.  My ring is gone, with Ginafae's help, no doubt. Clever girl. You both outsmarted me.~
-@300000304 = ~Why don't you confront Marketh?~
-@300000305 = ~Would you like to help us take down Marketh?~
-@300000306 = ~Do you have any ideas for Marketh's ring?~
-@300000307 = ~Not yet. Farewell.~
-@300000308 = ~Hello again. I managed to switch Marketh's ring.~
-@300000309 = ~Please, don't forget your promise.~
+@300000301 = ~Et bien, il ne vous reste qu'à m'attraper, maintenant. Bon courage !~
+@300000302 = ~Ce matin, je me suis réveillé, et j'ai constaté que mon anneau était un faux. Je n'ai aucune idée de qui vous êtes, mais je suis à peu près certain que vous en êtes responsables !~
+@300000303 = ~J'aurais dû vous tuer dès que je vous ai vus. Je savais que vous ne feriez que m'attirer des ennuis ! Et bien mon instinct ne m'avait pas menti : mon anneau a disparu. Ginafae a sans doute était partie prenante dans cette affaire. La petite rusée. Ensemble, vous m'avez bien eu.~
+@300000304 = ~Pourquoi ne pas vous confronter directement à Marketh ?~
+@300000305 = ~Acceptez-vous de nous aider à neutraliser Marketh ?~
+@300000306 = ~Vous avez une idée, concernant l'anneau de Marketh ?~
+@300000307 = ~Pas encore... nous continuons nos recherches. Adieu.~
+@300000308 = ~Bonjour. J'ai échangé l'anneau de Marketh.~
+@300000309 = ~Je vous en prie, n'oubliez pas votre promesse.~
 
-@300000401 = ~Then face me on your own. Or must you hide behind your minions?~
-@300000402 = ~Come then, witch, and face me in single combat. Let us test my righteous faith against your twisted arts.~
-@300000403 = ~You challenged Presio to single combat and prevailed.~
-@300000404 = ~Treachery!~
+@300000401 = ~Alors faites-moi face en personne, au lieu de vous cacher derrière vos larbins !~
+@300000402 = ~Dans ce cas, venez à moi, sorcière, et affronter moi en combat singulier. Nous verrons qui sera le vainqueur, entre ma foi en la justice et votre art corrompu.~
+@300000403 = ~Vous avez défié Présio en combat singulier, et avez gagné.~
+@300000404 = ~Trahison !~
 
-@300000501 = ~Is that a shield made from a rhino beetle? It's a very tough material, and I've read that it takes to enchantments quite well.~
-@300000502 = ~I could enhance it further for you, if you wish.~
-@300000503 = ~What's involved with upgrading the shield?~
-@300000504 = ~Perhaps later.~
-@300000505 = ~If you change your mind, let me know. Is there anything else I can do for you?~
-@300000506 = ~It will take a few days to lay in the proper enchantments, and the materials are fairly expensive.~
-@300000507 = ~Since you brought me this excellent tome on mythals, I'm willing to waive most of the cost. Let's say 15,000 gold.~
-@300000508 = ~For materials and time, it'll cost 30,000 gold.~
-@300000509 = ~You have yourself a deal.~
-@300000510 = ~Excellent. Come back in three days and the shield will be ready. Can I help you with anything else?~
-@300000511 = ~Welcome back travelers. I have your new shield ready. I laid in several enchantments to make it much tougher.~
-@300000512 = ~Is there anything else I can do for you?~
-@300000513 = ~You mentioned upgrading the rhino beetle shield before. What's involved with that?~
+@300000501 = ~Est-ce qu'il s'agit d'un bouclier en carapace de scarabée rhinocéros ? C'est un matériau très résistant, et j'ai lu quelque part qu'il est très facile à enchanter.~
+@300000502 = ~Je pourrai l'améliorer pour vous, si vous le souhaitez.~
+@300000503 = ~Que faudrait-il, pour l'améliorer ?~
+@300000504 = ~Peut-être plus tard.~
+@300000505 = ~Si vous changez d'avis, n'hésitez pas à me le faire savoir. Puis-je faire autre chose pour vous ?~
+@300000506 = ~Il me faudra quelques jours pour appliquer les enchantements appropriés, et le matériel dont j'aurai besoin sera assez coûteux.~
+@300000507 = ~Mais puisque vous m'avez rapporté cet excellent livre sur les mythals, je suis prêt à consentir à un geste commercial. Disons que cela ne vous coûtera que 15 000 pièces d'or.~
+@300000508 = ~Cela vous coûtera 30 000 pièces d'or, pour le matériel et pour mon temps.~
+@300000509 = ~C'est d'accord.~
+@300000510 = ~Excellent ! Revenez me voir dans trois jours, et vous aurez votre bouclier. Y avait-il autre chose pour votre service ?~
+@300000511 = ~Bonjour, voyageurs. Votre nouveau bouclier est fin prêt. J'y ai appliqué plusieurs enchantements pour le rendre plus résistant.~
+@300000512 = ~Puis-je faire autre chose pour vous ?~
+@300000513 = ~Vous aviez mentionné que vous pouvez améliorer ce bouclier en carapace de scarabée rhinocéros. Que vous faudrait-il, pour le fabriquer ?~
 
-//Auril's Bane
-@4034588 = ~Good day to ye travelers may I have your attention for a moment?~
-@4034589 = ~What business could I possibly have with a dwarf?~
-@4034590 = ~I've always time to help a fellow dwarf.~
-@4034591 = ~If your cause is just, we shall offer what aid we can.~
-@4034592 = ~What is it you need?~
-@4034593 = ~I'm sorry but we must make haste.  We cannot aid thee.~
-@4034594 = ~Bugger off!~
-@4034595 = ~I should 'ave known better than to ask a cowardly elf.~
-@4034596 = ~Farewell.~
-@4034597 = ~I knew I could count on ye.  My name is Hreidmar Orcslayer.  A long time ago, my clan used to live in Dorn's Deep.  Very few of us survived the invasion of these *spits* orcs.  Many important artifacts and heirlooms had to be left behind during the evacuation. Now, as you can see, the Deep lies in ruins and is being occupied by an evil force.  I seek a specific heirloom that I would rather not be in the hands of these evil creatures. Its a crown of me fathers and I would like it back. Can ye help me?~
-@4034598 = ~Sorry, we have something else to do at the moment.  Maybe later.~
-@4034599 = ~We would be honored to help you out any way we can.  Where was this heirloom last located?~
-@4034600 = ~Very well, but if ye change your mind we will be here.~
-@4034601 = ~It was in the royal chambers on the third floor of the royal palace is where me kin say they saw it last.  I hope the invaiders did not sell it off.  Such fine dwarven craftsmanship does not deserve to be pawned off by foul thieves.  I do still hope its there.~
-@4034602 = ~On second thought, we'll skip this one.~
-@4034603 = ~Do not worry your lordship. We will get your family's heirloom back any way we can. We shall return shortly.~
-@4034604 = ~Ye DARE insult me? Guards, let's teach these fools some manners!~
-@4034605 = ~Ah, I see ye have returned.~
-@4034606 = ~Yes, but we have not yet found your crown.~
-@4034607 = ~We decided not to take your stupid quest after all.~
-@4034608 = ~Yes, but we decided to keep the crown for ourselves. Have a problem with that?~
-@4034609 = ~Here is your family's crown.~
-@4034610 = ~Common thieves are ye? Ye bones shall be buried deep in the snow here! Guards exterminate these fools!~
-@4034611 = ~May Moradin bless ye travelers and many thanks.~
-@4034612 = ~You are welcome your highness.~
-@4034613 = ~Thank you for find me heirloom.~
-@4034614 = ~It was nothing.  Farewell.~
-@4034615 = ~I have nothing to talk to you about.~
-@4034616 = ~Talk to our leader.~
-@4034617 = ~We have nothing to talk about. Talk to Hreidmar.~
-@4034618 = ~We need to return this artifact. Only this is important.~
-@4034619 = ~I am on duty. Do not disturb me.~
-@4034620 = ~Harr! I will break you to pieces.~
+//Auril's Bane  Francais pris à partir de Auril's Bane TotL version dispo sur teambg.com
+@4034588 = ~Bonne journée voyageurs. Puis-je m'entretenir un moment avec vous ?~
+@4034589 = ~Quelle sorte d'affaire pourrais-je conclure avec un nain ?~
+@4034590 = ~J'ai toujours du temps pour aider un camarade nain.~
+@4034591 = ~Si votre cause est juste, nous offrirons toute l'aide que nous pourrons.~
+@4034592 = ~De quoi avez vous besoin ?~
+@4034593 = ~Je suis désolé mais nous devons faire vite. Nous ne pouvons vous aider.~ ~Je suis désolée mais nous devons faire vite. Nous ne pouvons vous aider.~
+@4034594 = ~Fichez le camp !~
+@4034595 = ~J'aurais dû réfléchir plus longuement avant de demander de l'aide à un elfe trouillard.~
+@4034596 = ~Adieu.~
+@4034597 = ~Je savais que je pouvais compter sur vous. Mon nom est Hreidmar Tueur d'Orcs. Il y a longtemps, mon clan vivait dans les profondeurs de Dorn. Très peu d'entre nous survécurent à l'invasion des orcs *crache par terre*. De nombreux artefacts de grande valeur ont été laissés sur place pendant notre fuite. Maintenant, comme vous pouvez le voir, Profondorn sont en ruines et sont occupées par une force démoniaque. Je recherche une pièce spécifique de mon héritage que je ne voudrais pas voir tomber entre les mains de ces créatures du démon. Il s'agit de la couronne de mon père et je veux qu'elle me revienne. Pouvez-vous m'aider ?~
+@4034598 = ~Désolé, nous avons d'autres projets pour le moment. Peut-être plus tard.~ ~Désolée, nous avons d'autres projets pour le moment. Peut-être plus tard.~
+@4034599 = ~Nous serions honorés de vous aider du mieux que nous pourrons. Où a été vue cette couronne pour la dernière fois ?~
+@4034600 = ~Très bien, mais si vous changez d'avis, nous serons là.~
+@4034601 = ~Les miens l'on vu pour la dernière fois dans la chambre royale, au troisième étage du palais. J'espère que nos envahisseurs ne l'ont pas revendue. Une pièce si finement travaillée par l'artisanat nain ne mérite pas d'être mise en gage par des voleurs puants. J'espère qu'elle est toujours là-bas.~
+@4034602 = ~Après réflexion, nous allons décliner cette offre.~
+@4034603 = ~Ne vous inquiétez pas, votre Seigneurie. Nous allons chercher l'héritage de votre famille du mieux que nous pourrons. Nous devrions revenir promptement.~
+@4034604 = ~Vous OSEZ m'insulter? Gardes, apprenez les bonnes manières à ces imbéciles !~
+@4034605 = ~Ah ! Je vois que vous êtes de retour.~
+@4034606 = ~Oui mais nous n'avons toujours pas retrouvé la couronne.~
+@4034607 = ~Nous avons finalement décidé de laisser tomber votre quête stupide.~
+@4034608 = ~Oui, mais nous avons décidé de garder la couronne. Cela vous pose un problème ?~
+@4034609 = ~Voici la couronne de votre famille.~
+@4034610 = ~Vous n'êtes que de simples voleurs ? Vos os seront ensevelis profondément dans la neige ici-même ! Gardes, exterminez ces imbéciles !~
+@4034611 = ~Que Moradin vous bénisse, voyageurs, et merci beaucoup.~
+@4034612 = ~Tout le plaisir est pour nous votre Seigneurie.~
+@4034613 = ~Merci d'avoir retrouvé mon héritage.~
+@4034614 = ~Ce n'était rien. Adieu.~
+@4034615 = ~Je n'ai rien à vous dire.~
+@4034616 = ~Parlez à notre chef.~
+@4034617 = ~Nous n'avons rien à nous dire. Parlez à Hreidmar.~
+@4034618 = ~Nous devons retourner cet artefact. C'est la seule chose qui importe.~
+@4034619 = ~Je suis de garde. Ne me dérangez pas.~
+@4034620 = ~Harr ! Je vais te mettre en pièces.~
 
-@4034621 = ~Hreidmar Orcslayer~
-@4034622 = ~Dwarf~
-@4034623 = ~Royal Guard~
-@4034624 = ~King's Crown~
-@4034625 = ~Worn by a king of the Stonecutter Clan itвЂ™s an old heirloom that the present king wants.
+@4034621 = ~Hreidmar Tueur d'Orques~
+@4034622 = ~Nain~
+@4034623 = ~Garde Royal~
+@4034624 = ~Couronne du roi~
+@4034625 = ~Posé jusqu'à présent sur la tête d'un roi du clan des coupeurs de pierres, il s'agit d'un ancien artefact et le roi actuel voudrait la récupérer.
 
-STATISTICS:
+PARAMÈTRES :
 
-Armor Class Bonus: 1
-Special: +2 Constitution while worn
-Weight: 1~
-@4034626 = ~Royal Dwarf Plate +1~
-@4034627 = ~Full plate armor is the best armor a warrior can buy, both in appearance and protection.  The perfectly fitted interlocking plates are specially angled to deflect arrows and blows, and the entire suit is carefully adorned with rich engraving and embossed detail.  With its magical enchantments, this suit of full plate is ideal for warriors.
+Classe d'armure : Bonus de 1
+Spécial : Bonus de 2 en Constitution quand équipée
+Poids : 1~
+@4034626 = ~Armure de plaques naine royale +1~
+@4034627 = ~Une armure de plaques complète constitue le meilleur investissement pour un guerrier d'un point de vue esthétique comme du point de vue de l’efficacité. Les différentes plaques qui composent l'armure s'imbriquent parfaitement les unes dans les autres. Elles sont orientées de façon à pouvoir détourner les flèches et les souffles. L'armure entière est soigneusement ornée de gravures riches et de reliefs détaillés. Avec l'enchantement qu'elle contient, cette armure de plaques complète est idéale pour un guerrier.
 
-STATISTICS:
+PARAMÈTRES :
 
-Armor Class: 0
-Weight: 35~
-@4034628 = ~The Stunner~
-@4034629 = ~Evets Nitsua was a hardy dwarven warrior who was also a gladiatorial master.  His favorite weapon was his beloved axe which could freeze its victims cold, and stop them dead in their tracks.
+Classe d'armure : 0
+Poids : 35
+Utilisable uniquement par :
+ Nain~
+@4034628 = ~L'étourdisseur~
+@4034629 = ~Evets Nitsua était un puissant guerrier nain qui fut également un maître gladiateur. Son arme favorite était sa hache bien aimée qui pouvait geler ses victimes d'effroi, et les laisser mortes dans son sillage.
 
-STATISTICS:
+PARAMÈTRES :
 
-Damage: 1D10 +2
-THAC0: +2
-Special:  
-   30% chance Target is Stunned for 3 rounds 
-Damage type: Slashing
-Weight: 10
-Speed Factor: 9
-Proficiency Type: Axe
-Type: 2-handed~
-@4034630 = ~Dwarf King Plate +1~
-@4034631 = ~Full plate armor is the best armor a warrior can buy, both in appearance and protection.  The perfectly fitted interlocking plates are specially angled to deflect arrows and blows, and the entire suit is carefully adorned with rich engraving and embossed detail.  With its magical enchantments, this suit of full plate is ideal for warriors.
+Dégâts : 1D10 +2
+TAC0 : +2
+Spécial : 
+ 30 % de chance d'étourdir la cible pendant 3 tours
+Type de dégâts : tranchant
+Poids : 10
+Facteur de vitesse : 9
+Compétence : hache
+Type : Arme à deux mains
+Non utilisable par :
+ Druide
+ Clerc
+ Mage
+ Voleur~
+@4034630 = ~Armure de plaques du roi nain +1~
+@4034631 = ~Une armure de plaques complète constitue le meilleur investissement pour un guerrier d'un point de vue esthétique comme du point de vue de l’efficacité. Les différentes plaques qui composent l'armure s'imbriquent parfaitement les unes dans les autres. Elles sont orientées de façon à pouvoir détourner les flèches et les souffles. L'armure entière est soigneusement ornée de gravures riches et de reliefs détaillés. Avec l'enchantement qu'elle contient, cette armure de plaques complète est idéale pour un guerrier.
 
-STATISTICS:
+PARAMÈTRES :
 
-Armor Class: 0
-Special: +50% Cold Resistance
-Weight: 35~
-@4034632 = ~Cold Hearted~
-@4034633 = ~This axe was created by a snow dwarf who was a follower of Auril. Skrymir was a twisted insane dwarf who enjoyed freezing his victims with this axe. Unlucky for him he fought a warrior who was skilled at disarming his enemies. H'rathgorn disarmed Skrymir, picked up his axe and used it on him. Skrymir's body is now a frozen statue somewhere out in the Dale lands. 
+Classe d'armure : 0
+Spécial :
+ Résistance au froid : Bonus de 50 %
+Poids : 35
+Utilisable uniquement par :
+ Nain~
+@4034632 = ~Cœur de glace~
+@4034633 = ~Cette hache a été créée par un nain des neiges qui était un adorateur d'Aurile. Skrymir était un nain complètement fou qui prenait plaisir à geler ses victimes avec sa hache. Malheureusement pour lui il tomba sur un guerrier extrêmement adroit pour désarmer ses ennemis. H'rathgorn désarma Skrymir, prit sa hache et l'utilisa sur son propre propriétaire. Le corps de Skrymir est maintenant une statue de glace quelque part dans les Vaux.
 
-STATISTICS:
+PARAMÈTRES :
 
-Damage:  1D8 +1
-THACO: +1
-Special: 
-  +25% Cold Resistance
-  +2d6 Cold Damage
-  30% chance that target will be frozen solid
-Damage type:  Slashing
-Weight: 5
-Speed Factor: 5
-Proficiency Type: Axe
-Type:  1-handed~
-@4034634 = ~Yes. It seems you were looking for help.~
-@4034635 = ~Yes. Will you help me to find the relic?~
-@4034636 = ~Thank you for helping me find the Crown of our King.~
+Dégâts : 1D8
+TAC0 : Bonus de 1
+Spécial :
+ Bonus de 25 % de résistance au froid
+ 2D6 points de dégâts de froid supplémentaires
+ 30 % de chance d'enfermer la cible dans un bloc de glace
+Type de dégâts : tranchant
+Poids : 5
+Facteur de vitesse : 5
+Compétence : hache
+Type : une main
+Non utilisable par :
+ Druide
+ Clerc
+ Mage
+ Voleur~
+@4034634 = ~Oui. Il semble que vous cherchiez de l'aide.~
+@4034635 = ~Oui. Allez-vous m'aider à trouver la relique ?~
+@4034636 = ~Merci de m'avoir aidé à trouver la couronne de notre roi.~
 
-@4034637 = ~Crown of the Dwarven King~
+@4034637 = ~La couronne du roi~
  // quest
-@4034638 = ~We met a dwarf named Hreidmar Orcslayer. He revealed that his clan once dwelt in the Dorn's Deep.  But they had to leave their homeland under the onslaught of the orcs.  In doing so, they had to abandon many relics and artifacts.  And now he is looking for one of the relics lost during his departure.~
-@4034639 = ~We met a dwarf named Hreidmar Orcslayer. He revealed that his clan once dwelt in the Dorn's Deep.  But they had to leave their homeland under the onslaught of the orcs.  In doing so, they had to abandon many relics and artifacts.  And now he is looking for one of the relics lost during his departure.  According to him, it should be on the third floor of the palace.~
-@4034640 = ~Crown of the King.
-In a palace in the Dorn's Deep, we found the King's Crown, an ancient relic of the dwarves.  This appears to be the very thing that Hreidmar Orcslayer wants to bring back.~
-@4034641 = ~Crown of the King.
-In a palace in the Dorn's Deep, we found the King's Crown, an ancient relic of the dwarves.~
+@4034638 = ~Nous avons rencontré un nain nommé Hreidmar Tueur d'Orques. Il nous a révélé que son clan habitait autrefois dans le Gouffre de Dorn. Mais ils ont dû quitter leur foyer face à l'assaut des orcs. Ce faisant, ils ont abandonner de nombreuses reliques et artefacts. Et maintenant, il est à la recherche de l'une de ces reliques perdues.~
+@4034639 = ~Nous avons rencontré un nain nommé Hreidmar Tueur d'Orques. Il nous a révélé que son clan habitait autrefois dans le Gouffre de Dorn. Mais ils ont dû quitter leur foyer face à l'assaut des orcs. Ce faisant, ils ont abandonner de nombreuses reliques et artefacts. Et maintenant, il est à la recherche de l'une de ces reliques perdues. Selon lui, elle devrait être au troisième étage du palais.~
+@4034640 = ~La couronne du roi
+
+Dans un palais au Gouffre de Dorn, nous avons trouvé la Couronne du Roi, une ancienne relique des nains. Il semble que ce soit la relique que Hreidmar Tueur d'Orques recherche.~
+@4034641 = ~La couronne du roi
+
+Dans un palais au Gouffre de Dorn, nous avons trouvé la Couronne du Roi, une ancienne relique des nains.~
  // done
-@4034642 = ~We have returned to Hreidmar Orcslayer the sacred relic of his clan, the King's Crown.  He was very grateful and thanked us with a lot of gold.~
-@4034643 = ~We found the King's Crown that Hreidmar Orcslayer was looking for.  But they refused to return it to him.  Such a relic will be useful to us.  This greatly exaggerated the dwarf and he and his companions attacked us.~
+@4034642 = ~Nous avons rendu la relique sacrée de son clan à Hreidmar Tueur d'Orques. Il était très reconnaissant et nous a remercié avec une grande quantité d'or.~
+@4034643 = ~Nous avons trouvé la Couronne du Roi que Hreidmar Tueur d'Orques cherchait. Mais nous avons refusé de la lui rendre. Une telle relique nous sera utile. Cela a fortement exaspéré le nain, lui et ses compagnons nous ont attaqués.~
 
 
 
@@ -346,463 +368,531 @@ In a palace in the Dorn's Deep, we found the King's Crown, an ancient relic of t
 
 
 
-@1100102 = ~Oh, and if you come across any other items that could help restore the Arboretum, I would be most grateful.  Farewell, my friends.~
-@1100103 = ~Farewell.~
-@1100104 = ~The Arboretum has been returned to its former glory, my friends.  I feel that my work here is done, that it is time to move on.  I thank you.  Farewell.~
-@1100105 = ~Farewell, Valestis.~
-@1100106 = ~Think nothing of it.~
+@1100102 = ~Oh, et si vous trouvez d'autres objets pouvant rendre à l'Arboretum sa splendeur d'antan, je vous en serais reconnaissant. Adieu, mes amis.~
+@1100103 = ~Adieu.~
+@1100104 = ~L'Arboretum a retrouvé sa splendeur d'antan, mes amis. Mon œuvre est achevée, et il est temps pour moi de partir. Merci à vous. Adieu.~
+@1100105 = ~Adieu, Valestis.~
+@1100106 = ~De rien.~
 
- @770000 = ~:With the song in the air, a ghostly figure appears before you, shimmering and transparent.:~
- @770001 = ~:It takes one last, sad look at the party before fading away.:~
- @770002 = ~:The figure moves its mouth as if to speak, but no words come out.:~
- @770003 = ~:The figure moves its mouth as if to speak, but no words come out. It gestures to the empty scabbard on its hip as it tries to speak.:~
- @770004 = ~Blade... my old blade... where's my blade?~
- @770005 = ~Ah, my old rousing music. It is good to see this world once again.~
- @770006 = ~Only a gifted player could restore me to such clarity. For this, I must thank you, young bard.~
- @770007 = ~I can teach you a few tricks with her--I think you'll find her even more useful.~
- @770008 = ~Farewell, travelers.~
- @770009 = ~Murdaugh, we found this old journal from a bard. Could you try playing it for us?~
-@7700010 = ~Let's see, let's see... this is a difficult piece, but I think I'm up to it.~
-@7700011 = ~Your blade? Speak plainly, spirit.~
-@7700012 = ~My blade... my blade...~
-@7700013 = ~A rousing tale to be sure, but the spirit is restless. It's looking for its old weapon.~
-@7700014 = ~Perhaps if you could find it, he would be at rest once again.~
-@7700015 = ~It is also good to see my trusty blade again, The Sword of Myrloch Vale.~
-@7700016 = ~You flatter me, spirit.~
-@7700017 = ~We have found Daen's blade, the Sword of Myrloch Vale.~
-@7700018 = ~Well done, travelers. Let us try the ballad once more.~
-@7700019 = ~Telanis, we found this ballad. Could you play it for us?~
-@7700020 = ~How could a bard refuse such a request? Let me see it.~
-@7700021 = ~You are too kind, spirit.~
-@7700022 = ~Accurate, yes, but much too kind.~
-@7700023 = ~A fellow spirit. Like many of my brethren, he seems to be out of sorts.~
-@7700024 = ~What is it, friend? What can we do for you?~
-@7700025 = ~What about it? We wish to help you.~
-@7700026 = ~Another poor, trapped spirit. However, it does seem like, unlike the cursed elves here, we may be able to help him.~
-@7700027 = ~Should you find his sword, return and we can try summoning him once more.~
-@7700028 = ~We think that the Sword of Myrloch Vale is the spirit's old weapon.~
-@7700029 = ~Indeed? Well let's try the ballad again.~
+ @770000 = ~ : La chanson flotte dans les airs, et fait apparaître un spectre, à la fois brillant et translucide :~
+ @770001 = ~ : Il lance un regard triste au groupe avant de s'évaporer :~
+ @770002 = ~ : Le spectre bouge les lèvres, comme s'il essayait de parler, sans qu'un seul mot ne sorte de sa bouche :~
+ @770003 = ~ : Le spectre bouge ses lèvres comme s'il essayait de parler, mais aucun mot ne sort de sa bouche. Il fait également un signe de la main en direction du fourreau à sa hanche :~
+ @770004 = ~Épée... ma vieille épée... où est mon épée ?~
+ @770005 = ~Ah, ma vieille chanson. Ça fait un bien fou de revoir ce monde.~
+ @770006 = ~Seul un musicien de grand talent aurait pu me faire revenir. Je vous en remercie du fond du cœur, jeune barde.~
+ @770007 = ~Je vais vous apprendre à mieux vous en servir. Vous allez voir, elle vous sera beaucoup plus utile.~
+ @770008 = ~Adieu, voyageurs.~
+ @770009 = ~Murdaugh, nous avons trouvé ceci, ça a été écrit par un barde. Vous pourriez jouer ce qu'il y a dessus pour nous ?~
+@7700010 = ~Mmmh, voyons voir... c'est un peu délicat à jouer, mais je crois que je peux y arriver.~
+@7700011 = ~Votre épée ? Parlez donc plus clairement, esprit.~
+@7700012 = ~Mon épée... mon épée...~
+@7700013 = ~Une ballade absolument bouleversante. Mais l'esprit n'a pas trouvé le repos. Il est à la recherche de son arme.~
+@7700014 = ~Si vous pouviez la trouver, il arriverait sans doute à trouver le repos.~
+@7700015 = ~C'est également un vrai plaisir de revoir ma vieille épée. L'épée du Val du Myrloch.~
+@7700016 = ~Vous me flattez, esprit.~
+@7700017 = ~Nous avons mis la main sur l'arme de Daen, l'épée du Val du Myrloch~
+@7700018 = ~Félicitations, voyageurs. Il est temps de jouer la ballade à nouveau.~
+@7700019 = ~Télanis, nous avons récemment mis la main sur ce chant. Pourriez-vous la jouer pour nous ?~
+@7700020 = ~Un barde digne de ce nom ne pourrait jamais refuser une telle requête ! Voyons voir...~
+@7700021 = ~Vous êtes trop bon, esprit.~
+@7700022 = ~C'est vrai, oui, mais la flatterie est exagérée.~
+@7700023 = ~Un autre esprit. Il a l'air de ne pas avoir trouvé le repos, tout comme mon peuple.~
+@7700024 = ~Qu'y a-t-il, l'ami ? Que pouvons-nous faire pour vous ?~
+@7700025 = ~Oui, et ensuite ? Nous pouvons vous aider.~
+@7700026 = ~Encore un autre esprit, lui aussi pris au piège. Mais il semble différent des elfes maudits dans cette forteresse. On peut peut-être lui venir en aide.~
+@7700027 = ~Si vous retrouvez son épée, nous pourrions essayer de l'invoquer de nouveau.~
+@7700028 = ~Nous pensons que l'épée du Val du Myrloch est l'arme qui a appartenu à l'esprit.~
+@7700029 = ~Vraiment ? Et bien, dans ce cas, nous allons jouer la ballade de nouveau.~
 
- @770010 = ~As a necromancer, can you decipher this text on the Mystery of the Dead?~
- @770011 = ~Let me see... I can decipher some of it, yes. It's a very ancient dialect of, I believe, eastern necromancers.~
- @770012 = ~It appears to be spell incantations. I think this shield may be able to cast spells, if we can decrypt this text.~
- @770013 = ~I'd be willing to do so, for a price. As I mentioned before, I'm interested in buying armor to barter with the spirits of the island.~
- @770014 = ~They seem to prefer old, rusted shells of armor. Bring me three of them and I'll translate your text.~
- @770015 = ~Here you are.~
- @770016 = ~I'll be back with some armor.~
- @770017 = ~Perfect, just what I'm looking for. The translation shouldn't take more than a few hours to complete.~
- @770018 = ~Is there anything else you need?~
- @770019 = ~We have brought three suits of armor. Can you translate the text on Mystery of the Dead now?~
-@7700110 = ~I have translated as much text as possible. Some of it is simply beyond me, but I have deciphered two incantations.~
-@7700111 = ~One is for repelling undead, and the other appears to be a healing spell.~
-@7700112 = ~Do you know anything about the Young Rage axe?~
-@7700113 = ~Can't say I've heard o' it, laddie. Let me hold it for a moment.~
-@7700114 = ~Aye, I can feel the rage of my kin again't the one who forced them to make it.~
-@7700115 = ~'Tis a terrible thing, but ye need more 'en me. Ye need the help of a necromancer.~
-@7700116 = ~Edion, over on the barbarian's Burial Isle, is a necromancer.~
-@7700117 = ~We have a necromancer in our party.~
-@7700118 = ~If I meet one, I'll come back.~
-@7700119 = ~Anything else ye be wantin'?~
-@7700120 = ~Do ye now? Well, I can do my part. Once we're done here, take the axe to 'im.~
-@7700121 = ~He'll need to put their spirits to rest.~
-@770012212 = ~Lend me your necromancer and let's get started.~
-@7700122 = ~Aye, thanks for yer help with the spirits. The rage trapped in the axe has been put to rest.~
-@7700123 = ~There we go. I've done me part, now ye need to take this to Edion.~
-@7700124 = ~This scroll explains what he has to do.~
-@7700125 = ~What were you saying about the Young Rage axe again?~
-@7700126 = ~What do I need to do with Young Rage again?~
-@7700127 = ~Take that note to your necromancer friend over on Burial Isle, so he can put the spirits in the axe to rest.~
-@7700128 = ~I need you to banish the spirits of Young Rage.~
-@7700129 = ~You need me to--what?~
-@7700130 = ~A blind dwarven smith said we can banish the spirits plaguing this axe with the aid of a necromancer. He sent instructions.~
-@7700131 = ~Let me see that.~
-@7700132 = ~Yes, this seems straightforward enough. I'll need 300 gold for my services.~
-@7700133 = ~Perhaps we'll do this later.~
-@7700134 = ~It's a simple exorcism, for a cost of 300 gold.~
-@7700135 = ~What's needed for the Young Rage axe again?~
+ @770010 = ~Comme vous pratiquez la nécromancie, je me demandais si vous pouviez déchiffrer les inscriptions gravées sur le Mystère des Morts.~
+ @770011 = ~Montrez-moi ça... Oui, je peux en traduire une partie. C'est un dialecte très ancien, il me semble qu'il était pratiqué par un groupe de nécromanciens de l'est.~
+ @770012 = ~On dirait des incantations. Je pense que ce bouclier peut servir à lancer des sorts, à condition de pouvoir lire ce qui est gravé dessus.~
+ @770013 = ~Je pourrais faire ça pour vous, mais contre paiement. Comme je vous le disais, j'aimerais faire l'acquisition d'armures pour négocier avec les esprits de l'île.~
+ @770014 = ~Ils préfèrent les armures vieilles et rouillées. Rapportez-m'en trois, et je traduirai ces inscriptions pour vous.~
+ @770015 = ~Tenez.~
+ @770016 = ~Je reviendrai avec des armures.~
+ @770017 = ~Parfait, c'est exactement ce qu'il me fallait. La traduction ne devrait pas me prendre plus de quelques heures.~
+ @770018 = ~Il vous fallait autre chose ?~
+ @770019 = ~Nous vous avons rapporté trois armures. Est-ce que vous pouvez traduire les inscriptions sur le Mystères des Morts, maintenant ?~
+@7700110 = ~J'ai traduit autant de texte que possible. Certains passages sont au-delà de ma compétence, mais j'ai réussi à déchiffrer deux incantations.~
+@7700111 = ~La première sert à éloigner les morts-vivants, tandis que la seconde semble être un sort de soin.~
+@7700112 = ~Qu'est-ce que vous pouvez me dire sur la hache Jeune Rage ?~
+@7700113 = ~J'ai pas vraiment entendu parler de cette hache, jeune homme. J'aimerais la tenir un moment.~ ~J'ai pas vraiment entendu parler de cette hache, jeune fille. J'aimerais la tenir un moment.~
+@7700114 = ~Oui, je peux sentir toute la rage de mon peuple contre celui qui les a forcés à la fabriquer.~
+@7700115 = ~C'est bien terrible, mais je peux rien de plus pour cette hache. Il faudrait l'aide d'un nécromancien.~
+@7700116 = ~Édion, il vit sur l'île aux tertres, c'est un nécromancien.~
+@7700117 = ~Il y a un nécromancien dans le groupe.~
+@7700118 = ~Si je rencontre un nécromancien, je reviendrai.~
+@7700119 = ~Autre chose ?~
+@7700120 = ~C'est vrai ? Bon, je ferai ce que je peux, mais quand j'aurai fini, il faudra la lui apporter immédiatement.~
+@7700121 = ~Il devra mettre les esprits au repos.~
+@770012212 = ~Je vais avoir besoin du nécromancien. On va pouvoir s'y mettre.~
+@7700122 = ~Oui, merci de votre aide pour avoir libéré les esprits piégés dans la hache. Leur colère ne hante plus l'arme, désormais.~
+@7700123 = ~Et voilà. J'ai fait mon boulot. Maintenant, il faut l'apporter à Édion.~
+@7700124 = ~Ce parchemin lui dira ce qu'il doit faire.~
+@7700125 = ~Vous pouvez me répéter ce que vous m'avez dit sur la hache Jeune Rage ?~
+@7700126 = ~Qu'est-ce qu'il faut que je fasse de la hache Jeune Rage, déjà ?~
+@7700127 = ~Il faut apporter cette note au nécromancien sur l'île aux tertres, pour qu'il puisse mettre les esprits de la hache au repos.~
+@7700128 = ~J'ai besoin que vous bannissiez les esprits de la Jeune Rage.~
+@7700129 = ~Vous avez besoin de... quoi ?~
+@7700130 = ~Un forgeron nain aveugle nous a dit qu'un nécromancien pourrait bannir les esprits qui hantent cette hache. Il nous a même donné la marche à suivre par écrit.~
+@7700131 = ~Voyons voir.~
+@7700132 = ~Oui, ça a l'air assez simple. Ça vous coûtera 300 pièces d'or, pour le service.~
+@7700133 = ~Peut-être plus tard, dans ce cas.~
+@7700134 = ~C'est un simple exorcisme. Ça vous coûtera 300 pièces d'or.~
+@7700135 = ~Qu'est-ce qu'il faut faire pour la Jeune Rage, déjà ?~
 
- @770020 = ~Welcome back. I have your cloak ready, though I had forgotten how much I hate working with fur. I hope you enjoy it, for I will not be making another.~
- @770021 = ~From the reek, you can probably tell your yeti hide armor is ready. It will take many months for the smell to leave, and I will not be working with any more yeti pelts.~
- @770022 = ~Orrick may be able to make something out of those pelts, too.~
- @770023 = ~Mirek mentioned you may be able to do something with these winter wolf pelts.~
- @770024 = ~Mirek mentioned you may be able to do something with these yeti pelts.~
- @770025 = ~How about winter wolf pelts?~
- @770026 = ~How about yeti pelts?~
- @770027 = ~The pelts can be sewn together into a cloak. With a few cantrips, we can preserve some of the winter wolf's natural protections in the cloak.~
- @770028 = ~But it takes a lot of raw material and work. I'd need at least five pelts and 3500 gold.~
- @770029 = ~That sounds great. Let's do it.~
-@7700210 = ~No, I don't think I'm interested.~
-@7700211 = ~Yeti pelts are not the best of materials to work with, but Conlan and myself may be able to make some hide armor out of them.~
-@7700212 = ~It's a bit tougher and stiffer than leather. I'll be able to lay some enchantments into the materials as they cure.~
-@7700213 = ~It'll take a lot of material, though, and some pricey spell components. We'll probably need 10 pelts and, oh, 2500 gold.~
-@7700214 = ~Excellent. I shall send these to the seamstress straightaway. Come back in a day or so and I'll have your cloak ready.~
-@7700215 = ~Very well. I'll go and talk with Conlan about making some armor and enchanting it. Return in three days or so.~
-@7700216 = ~Can I help you with anything else?~
+ @770020 = ~Bonjour. Votre cape est prête. J'avais oublié pourquoi je détestais travailler avec de la fourrure. J'espère que vous en profiterez bien, car je ne vous en ferai aucune autre.~
+ @770021 = ~Vous sentez cette puanteur ? Ça veut dire que votre armure en peau de yéti est fin prête. Il faudra plusieurs mois avant que l'odeur ne se dissipe. Je ne travaillerai plus jamais avec de la fourrure de yéti !~
+ @770022 = ~Orrick pourra peut-être faire quelque chose de ces fourrures.~
+ @770023 = ~Mirek nous a dit que vous pourriez faire quelque chose de ces fourrures de loup arctique.~
+ @770024 = ~Mirek nous a dit que vous pourriez faire quelque chose de ces fourrures de yéti.~
+ @770025 = ~Et pour les fourrures de loup arctique ?~
+ @770026 = ~Et pour les fourrures de yéti ?~
+ @770027 = ~On peut coudre les fourrures ensemble pour en faire une cape. Avec quelques enchantements mineurs, la cape pourrait retenir une partie de la résistance naturelle des loups arctiques au froid.~
+ @770028 = ~Mais il va me falloir une quantité non négligeable de matière brute, et ça va me demander beaucoup de travail. Il me faut au moins cinq fourrures de loups arctiques et 3500 pièces d'or.~
+ @770029 = ~Ça me va. Allons-y.~
+@7700210 = ~Non, ça ne m'intéresse pas.~
+@7700211 = ~La fourrure de yéti n'est pas la matière la plus pratique à travailler, mais avec l'aide de Coulon, je peux en faire une armure.~
+@7700212 = ~Elle sera plus résistance, mais aussi moins souple qu'une armure de cuir. Je peux aussi l'enchanter.~
+@7700213 = ~Mais il me faudra beaucoup de matière brute, et des composantes matérielles rares et chères pour l'enchantement. J'aurai probablement besoin de 10 fourrures, et, oh, 2500 pièces d'or.~
+@7700214 = ~Parfait. Je vais les envoyer directement à la couturière. Revenez demain à la même heure, et votre cape sera prête.~
+@7700215 = ~Très bien. Je vais dire à Coulon de fabriquer cette armure, puis je l'enchanterai. Revenez dans, disons, trois jours.~
+@7700216 = ~Puis-je faire autre chose pour vous ?~
 
- @770030 = ~I couldn't help notice that wooden box in your pack. May I take a closer look at it?~
- @770031 = ~Here you go.~
- @770032 = ~Why do you want to see it?~
- @770033 = ~It appears to be a collection of gnomish tools. There may be something there I could use to repair my airship.~
- @770034 = ~Oh yes, look at this! Where did you find this?~
- @770035 = ~It was in a yeti cave.~
- @770036 = ~That's none of your business.~
- @770037 = ~Does it really matter?~
- @770038 = ~I guess it doesn't really matter. I was merely curious.~
- @770039 = ~Yes, I think this could be very useful to me. And, I suspect, probably just deadweight for adventurers.~
-@7700310 = ~For the toolbox, I'm willing to part with some of best potions. I think those may be more useful in your travels than some musty old toolbox.~
-@7700311 = ~Sorry, Oswald, but I'd really rather have some gold.~
-@7700312 = ~I'm interested... but what kind of potions?~
-@7700313 = ~That sounds fair. You've got yourself a deal, Oswald.~
-@7700314 = ~Ha! Think a bit of coin might be more useful! Fair enough, but I don't think I have as much coin to offer as potions. How does 150 gold sound?~
-@7700315 = ~What potions, then, could you offer?~
-@7700316 = ~Sorry Oswald, I'm not interested.~
-@7700317 = ~Agreed.~
-@7700318 = ~How about two potions of healing, a potion of invisibility, and a potion of heroism?~
-@7700319 = ~Excellent, excellent. Now is there anything else I can help you with? Something from my stock, perhaps?~
-@7700320 = ~I don't think you'll get a better offer. Ask around, and if you change your mind, come back and see me.~
-@7700321 = ~Is there anything else I can help you with? Something from my stock, perhaps?~
-@7700322 = ~Are you still interested in these tools?~
-@7700323 = ~Yes I am. My offer remains two potions of healing, a potion of invisibility, and a potion of heroism.~
-@7700324 = ~On second thought, I'm still not ready to sell these.~
-@7700325 = ~Welcome back. I heard from Orrick that you bought the Girdle of Gond from him. I had my eye on that Girdle for some time but didn't act fast enough.~
-@7700326 = ~I have a proposal that may be beneficial to both of us, if you'll hear me out.~
-@7700327 = ~I wanted to examine the Girdle to see how it works--what enchantments have been used, how it's assembled, in the hopes that I may be able to make one myself.~
-@7700328 = ~If you would be willing to part with it for a day... let's call it a loan... I would be most grateful.~
-@7700329 = ~Sure Oswald, if it'll help your studies.~
-@7700330 = ~I know too many gnomes. You're not going to take it apart, are you?~
-@7700331 = ~I'll need some collateral.~
-@7700332 = ~Sorry Oswald, I need this for my travels.~
-@7700333 = ~Oh, err, no, of course not.~
-@7700334 = ~Well, then go ahead.~
-@7700335 = ~I'm afraid I don't have much I can spare at the moment. Would you take 50 gold?~
-@7700336 = ~If that's all you have, just take the belt. I don't need the gold.~
-@7700337 = ~Yeah, 50 gold is fine.~
-@7700338 = ~Thank you! A day should be enough to sort out your little secrets...~
-@7700339 = ~Did you still want to borrow the Girdle of Gond?~
-@7700340 = ~Thank you for loaning me your Girdle of Gond. I've learned a great deal more than I had thought I would.~
-@7700341 = ~So much, in fact, that I think I can make it work even better.~
-@7700342 = ~With a few more enchantments, I think I can incorporate some of the tools from that dusty old toolbox you sold to me.~
-@7700343 = ~The spell components are pretty costly, though. I'd need at least 1200 gold to get it done.~
-@7700344 = ~The spell components are pretty costly, though. I'd need at least 1600 gold to get it done.~
-@7700345 = ~That sounds great. Let's do it.~
-@7700346 = ~That sounds interesting, but you'll have to give me some time to raise that much gold.~
-@7700347 = ~No, I just want my Girdle back.~
-@7700348 = ~Well, then here's your Girdle back. If you change your mind, I'd love to do some tinkering.~
-@7700349 = ~I'll begin immediately. Come back in a day or so and I'll have it ready.~
-@7700350 = ~Hello again friends. I'm pleased to have your completed belt.~
-@7700351 = ~I've added more pouches and added some tools. You should be able to tackle better locks and traps now.~
-@7700352 = ~You can still upgrade the Girdle of Gond, right?~
+ @770030 = ~Je n'ai pas pu m'empêcher de remarquer que vous avez une petite boîte en bois, dans votre sac à dos. Vous me permettez d'y jeter un coup d'œil ?~
+ @770031 = ~Tenez.~
+ @770032 = ~Pourquoi voulez-vous y jeter un coup d'œil ?~
+ @770033 = ~On dirait un ensemble d'outils de fabrication gnome. Ça pourrait peut-être m'aider à réparer mon vaisseau.~
+ @770034 = ~Oh, oui ! Regardez-moi ça ! Où avez-vous trouvé ça ?~
+ @770035 = ~Dans une caverne de yétis.~
+ @770036 = ~Ça ne vous regarde pas.~
+ @770037 = ~Ça a vraiment de l'importance ?~
+ @770038 = ~Sans doute que non, je me posais juste la question.~
+ @770039 = ~Oui, je pense que je pourrai en faire quelque chose. Et je pense que des aventuriers comme vous n'en ont aucune utilité.~
+@7700310 = ~Je suis prêt à me séparer de quelques-unes de mes meilleures potions contre cette boîte à outils. Elles vous seront sans doute bien plus utiles dans vos voyages qu'une vieille boîte à outils toute recouverte de poussière.~
+@7700311 = ~Pardon, Oswald, mais je préférerais de l'or.~
+@7700312 = ~Ça pourrait m'intéresser... mais quelles potions proposez-vous, au juste ?~
+@7700313 = ~C'est un marché honnête. C'est d'accord, Oswald.~
+@7700314 = ~Ha ! Vous pensez que l'or vous sera plus utile ? Comme vous voulez, mais je n'ai pas autant d'or que de potions. Que diriez-vous de 150 pièces d'or ?~
+@7700315 = ~Dans ce cas, quelles potions pouvez-vous me donner contre la boîte ?~
+@7700316 = ~Toutes mes excuses, Oswald, mais ça ne m'intéresse pas.~
+@7700317 = ~C'est d'accord.~
+@7700318 = ~Que pensez-vous de deux potions de guérison, une potion d'invisibilité et une potion d'héroïsme ?~
+@7700319 = ~Parfait, parfait. Y a-t-il autre chose que je puisse faire pour vous ? Vous voulez voir mes marchandises, peut-être ?~
+@7700320 = ~Vous ne trouverez pas de meilleure offre. Demandez autour de vous. Et si vous changez d'avis, revenez me voir.~
+@7700321 = ~Y a-t-il autre chose que je puisse faire pour vous ? Vous voulez voir mes marchandises, peut-être ?~
+@7700322 = ~J'ai toujours les outils gnomes. Vous êtes toujours intéressé ?~
+@7700323 = ~Tout à fait. Mon offre est restée la même : deux potions de guérison, une potion d'invisibilité et une potion d'héroïsme.~
+@7700324 = ~Finalement, je ne préfère pas m'en séparer.~
+@7700325 = ~Bonjour. J'ai entendu dire d'Orrick qu'il vous avait vendu la Ceinture de Gond. J'étais moi-même intéressé depuis quelques temps par cette ceinture, mais je n'ai pas été suffisamment rapide pour l'acheter avant vous.~
+@7700326 = ~J'ai une proposition qui pourrait nous être mutuellement bénéfique, si vous acceptez de m'écouter.~
+@7700327 = ~Je voulais mettre la main sur cette ceinture pour l'examiner, voir comment elle fonctionne, quels enchantements ont été utilisés, comment elle a été assemblée, dans l'espoir de pouvoir en créer une moi-même.~
+@7700328 = ~Si vous pouviez vous en séparer pour, disons, une journée... disons que c'est un prêt... je vous en serait très reconnaissant.~
+@7700329 = ~Bien sûr, Oswald, si ça peut vous aider dans vos recherches.~
+@7700330 = ~Je connais trop bien les gnomes. Vous n'allez pas me la démonter, j'espère ?~
+@7700331 = ~Il me faudra un dédommagement.~
+@7700332 = ~Pardon, Oswald, mais j'en ai besoin, pour le moment.~
+@7700333 = ~Oh, euh, bien sûr que non.~
+@7700334 = ~Bon, alors dans ce cas, tenez, la voilà.~
+@7700335 = ~J'ai peur de ne pas avoir beaucoup d'or, pour le moment. Que diriez-vous de 50 pièces d'or ?~
+@7700336 = ~Si c'est tout ce que vous avez, alors pas besoin de me payer. Tenez, voici la ceinture.~
+@7700337 = ~Oui, 50 pièces d'or, ça suffira.~
+@7700338 = ~Merci ! Une journée, ça sera bien suffisant pour percer à jour tous tes petits secrets...~
+@7700339 = ~Vous voulez toujours m'emprunter la Ceinture de Gond ?~
+@7700340 = ~Merci de m'avoir prêté la Ceinture de Gond. J'en ai appris bien plus que ce que je pensais.~
+@7700341 = ~À tel point que je vous l'ai améliorée, d'ailleurs.~
+@7700342 = ~Avec quelques enchantements supplémentaires, je pense que je pourrai même y intégrer quelques-uns des outils de cette vieille boîte que vous m'avez vendue.~
+@7700343 = ~Mais les composantes matérielles pour l'enchanter coûtent assez cher. Il me faudra au moins 1200 pièces d'or.~
+@7700344 = ~Mais les composantes matérielles pour l'enchanter coûtent assez cher. Il me faudra au moins 1600 pièces d'or.~
+@7700345 = ~Ma foi, c'est d'accord. Allons-y.~
+@7700346 = ~Ça pourrait m'intéresser, mais il me faudra un peu de temps pour trouver l'or.~
+@7700347 = ~Non merci, je préfère que vous me rendiez ma ceinture.~
+@7700348 = ~Bon, tenez, voici votre ceinturon. Si vous changez d'avis, j'adorerais la bricoler pour vous.~
+@7700349 = ~Je vais m'y mettre sur-le-champ. Revenez me voir dans une journée, et ce sera prêt.~
+@7700350 = ~Bonjour, les amis. Devinez quoi : j'ai fini d'enchanter votre ceinturon.~
+@7700351 = ~J'y ai ajouté quelques poches supplémentaires, ainsi que de nouveaux outils. Comme ça, vous pourrez crocheter et désamorcer des mécanismes plus élaborés.~
+@7700352 = ~Vous pouvez toujours améliorer la Ceinture de Gond ?~
 
- @770040 = ~Can you help us with this Cynicism sword?~
- @770041 = ~Perhaps. Weapons are not my forte, but I can certainly examine it.~
- @770042 = ~Ah yes. I can see what you mean. It simply radiates cynicism and depression.~
- @770043 = ~I may be able to alleviate that somewhat, but I don't have the needed spell at hand.~
- @770044 = ~Do you have a scroll of Emotion: Hope? I can combine that with a permanence spell to, hopefully, relieve some of its depressing effects.~
- @770045 = ~Yes, here you are.~
- @770046 = ~No, but I'll return if I find one.~
- @770047 = ~Good, good. Excuse me for a moment, I don't want to do magic in front of my customers.~
- @770048 = ~How else may I be of service?~
- @770049 = ~There we are. I couldn't quite cheer it up entirely but it's much improved.~
-@7700410 = ~I've brought some Emotion: Hope scrolls for you.~
+ @770040 = ~Pouvez-vous nous aider avec cette arme, Cynisme ?~
+ @770041 = ~Peut-être. Les armes ne sont pas mon fort, mais je peux au moins y jeter un œil.~
+ @770042 = ~Ah, oui, je comprends mieux. Cette épée irradie littéralement le cynisme et la déprime.~
+ @770043 = ~Je peux peut-être arranger ça, mais je n'ai pas le sort qu'il faut dans ma réserve.~
+ @770044 = ~Est-ce que vous avez parchemin du sort Émotion : espoir ? Je pourrais le combiner avec un sort de Permanence. Ça permettra, je l'espère, d'alléger le fardeau de cette épée.~
+ @770045 = ~Oui, tenez.~
+ @770046 = ~Non, mais je reviendrai vous voir si j'en trouve un.~
+ @770047 = ~Bien, bien, bien. Si vous voulez bien m'excuser un moment, je ne préfère pas manipuler la magie devant des clients.~
+ @770048 = ~Que puis-je faire d'autre pour vous ?~
+ @770049 = ~Et voilà. Je n'ai pas pu lui rendre complètement le moral, mais elle est quand même beaucoup moins pessimiste.~
+@7700410 = ~Je vous ai apporté un parchemin d'Émotion, espoir.~
 
-@770050 = ~Can you do anything with these remorrhaz shells?~
-@770051 = ~Sure. I know some craftsmen who can make helmets out of them. It'll cost 8000 gold.~
-@770052 = ~I need some time to gather that much gold.~
-@770053 = ~Thanks for the information.~
-@770054 = ~Come back in three days and I'll have your helmet ready.~
-@770055 = ~Anything else I can do for you?~
-@770056 = ~Is my helmet ready yet, Dirty Llew?~
-@770057 = ~Here you are.~
-@770058 = ~Sure. I know some craftsmen who can make helmets out of them. It'll cost 7000 gold.~
-@770059 = ~For you, my lovely, I know some craftsmen who can make helmets out of them. It'll cost 5000 gold.~
+@770050 = ~Est-ce que vous pouvez faire quoi que ce soit de ces carapaces de remorhaz ?~
+@770051 = ~Oui. Je connais certains artisans qui pourraient en faire un casque. Mais ça vous coûtera 8000 pièces d'or.~
+@770052 = ~Il va me falloir un peu de temps pour réunir cette somme.~
+@770053 = ~Merci m'avoir fait partager cette information.~
+@770054 = ~Revenez dans trois jours, et votre casque sera fin prêt.~
+@770055 = ~Puis-je faire autre chose pour vous ?~
+@770056 = ~Mon casque est prêt, Llew le Crasseux ?~
+@770057 = ~Oui, tenez.~
+@770058 = ~Oui. Je connais certains artisans qui pourraient en faire un casque. Ça vous coûtera 8000 pièces d'or.~
+@770059 = ~Je connais certains artisans qui pourraient en faire un casque, et pour vous, ma chérie, ça ne vous coûtera que 5000 pièces d'or.~
 
-@770060 = ~Can you tell me more about Bren Muller?~
-@770061 = ~Ah. You ask not for Bren Muller, but for his crossbow, yes?~
-@770062 = ~Bren Muller was more than a scholar, but a mage of some repute.~
-@770063 = ~Unusually for a mage, he relied on a crossbow. Even more unusual was his incredible accuracy.~
-@770064 = ~It is believed that he took grat pains to build and enchant his crossbow to maximize his accuracy.~
-@770065 = ~Not only is it unusually accurate, but it can be boosted even further for a short period of time.~
+@770060 = ~Est-ce que vous pouvez m'en dire plus, sur Bren Muller ?~
+@770061 = ~Ah. Vous ne demandez pas pour Bren Muller, mais pour son arbalète, oui ?~
+@770062 = ~Bren Muller était bien plus qu'un simple érudit. C'était un mage de grande réputation.~
+@770063 = ~Étrangement, pour un mage, il utilisait une arbalète. Encore plus étrangement, sa visée était parfaite.~
+@770064 = ~Il paraît qu'il s'est échiné à enchanter son arbalète pour en améliorer drastiquement la précision.~
+@770065 = ~Elle est non seulement assez précise, mais sa précision peut être encore améliorée pendant un court moment.~
 
-@770070 = ~What do you make of this mithril hammer?~
-@770071 = ~Interesting. I believe this is the symbol of one of the local dwarven clans--the Battlehammers.~
-@770072 = ~The dwarves are known for their craftmanship, and I can see it. This feels like it's magical as well.~
-@770073 = ~What does it do?~
-@770074 = ~Interesting. Thanks Conlan.~
-@770075 = ~Well, the dwarves are also very secretive of their methods so I can't say for sure, but it doesn't feel very... focused.~
-@770076 = ~What do you mean?~
-@770077 = ~It's hard to explain. Usually you can feel a... purpose to most magic. This seems... vague and fuzzy, like it wasn't enchanted with a clear goal.~
-@770078 = ~If I could get a better feel for the type of magic used by these dwarves... well, just keep your eyes open for more Battlehammer items and maybe I can figure it out.~
-@770079 = ~This Stoutward shield is from Clan Battlehammer.~
-@7700710 = ~Here, let me see that.~
-@7700711 = ~Yes, I can feel the similarity. Even more interesting, these seem to have an affinity for each other.~
-@7700712 = ~It's possible we may be able to combine them.~
-@7700713 = ~What would that involve?~
-@7700714 = ~I'd rather not risk it.~
-@7700715 = ~It's fairly tricky, and mithril doesn't always react well after its been imbued.~
-@7700716 = ~I think I could probably add this as a standard for the shield. I'm not sure what, exactly, that would do for Stoutward's abilities.~
-@7700717 = ~And it's a solid day of work. But since you've rescued Smeesh I'll waive most of the costs. How about 1000 gold?~
-@7700718 = ~If you change your mind, let me know.~
-@7700719 = ~What else can I do for you?~
-@7700720 = ~Sure, that sounds like a bargain.~
-@7700721 = ~And it's a solid day of work. How about 4500 gold?~
-@7700722 = ~I don't have enough gold at the moment. Perhaps later.~
-@7700723 = ~When you've got the gold, I've got the time.~
-@7700724 = ~Come back in a day and your new shield will be ready.~
-@7700725 = ~What were you saying about this mithril hammer again?~
-@7700726 = ~Welcome back. I have successfully merged the symbol with Stoutward.~
-@7700727 = ~Combining them was fairly straightforward, like they were meant for each other.~
-@7700728 = ~Here's Stoutward back. I think you'll find it's a lot stronger now.~
-@7700729 = ~Can I commission armor from these white dragon scales?~
-@7700730 = ~Dragon! I never thought I'd see something like this.~
-@7700731 = ~I I don't have much experience with exotic materials such as these, but I should be able to make some armor from them.~
-@7700732 = ~I'll take it slow--let's say three days to finish--and make sure it's right, as dragon scales don't grow on trees.~
-@7700733 = ~My commission is 5000 gold.~
-@7700734 = ~For dragon scale armor? Yes, let's do it.~
-@7700735 = ~Alright. Come back in three days and I should have it ready for you.~
-@7700736 = ~Sorry Conlan, I'm not interested.~
-@7700737 = ~What was involved in making White Dragon Scale again?~
-@7700738 = ~Welcome back. I was just putting a last coat of polish the white dragon armor.~
-@7700739 = ~Well, of course, it's your armor now.~
-@7700740 = ~Travel well, friend. I doubt you'll find better protection than this.~
+@770070 = ~Que pouvez-vous faire de ce marteau en Mithral ?~
+@770071 = ~Intéressant. Je crois que vous tenez là le symbole d'un clan nain local : le clan Marteaudeguerre.~
+@770072 = ~Les nains sont connus pour la qualité de leur artisanat, et ce que j'ai sous les yeux justifie cette réputation. On dirait que c'est magique, en plus.~
+@770073 = ~Est-ce que cette magie peut nous être utile ?~
+@770074 = ~Intéressant, en effet. Merci, Coulon.~
+@770075 = ~Et bien, les nains tiennent leurs méthodes très secrètes, donc je ne peux pas vraiment vous en dire plus, mais le marteau n'a pas l'air très... focalisé.~
+@770076 = ~Que voulez-vous dire ?~
+@770077 = ~C'est difficile à expliquer. Normalement, on peut sentir une... raison d'être à la plupart des enchantements. La magie de ce marteau semble... vague, et sans but, comme s'il avait été enchanté sans raison particulière.~
+@770078 = ~Si seulement je pouvais mieux comprendre à quels types d'enchantements ces nains ont recours... Si vous pouvez me trouver d'autres objets appartenant au clan Marteaudeguerre, je pourrais y arriver.~
+@770079 = ~Ce bouclier Brasfidèle a été fabriqué par le clan Marteaudeguerre.~
+@7700710 = ~Montrez-le moi.~
+@7700711 = ~Oui, je peux sentir leurs similitudes. Encore mieux, on dirait que ces deux objets ont une affinité l'un envers l'autre.~
+@7700712 = ~On peut peut-être les combiner...~
+@7700713 = ~Qu'est-ce qu'il faudrait faire, pour cela ?~
+@7700714 = ~Je ne veux pas prendre ce risque.~
+@7700715 = ~Ce serait un peu compliqué à réaliser, d'autant plus que le mithral ne réagit pas toujours très bien aux enchantements.~
+@7700716 = ~Mais je pense que je pourrai enchâsser le marteau dans le bouclier. Par contre, je ne sais pas exactement de quelle façon cela améliorerait les capacités du Brasfidèle.~
+@7700717 = ~Et ça me prendrait une bonne journée de travail. Mais puisque vous avez secouru mon Sheemish, je prendrai en charge la plupart des coûts. Vous n'aurez qu'à verser 1000 pièces d'or. Qu'en dites-vous ?~
+@7700718 = ~Si vous changez d'avis, vous savez où me trouver.~
+@7700719 = ~Que puis-je faire d'autre pour vous ?~
+@7700720 = ~D'accord, faisons ça.~
+@7700721 = ~Et ça me prendrait une bonne journée de travail. Ça vous coûtera 4500 pièces d'or. Qu'en dites-vous ?~
+@7700722 = ~Je n'ai pas assez d'or pour le moment. Peut-être plus tard.~
+@7700723 = ~Quand vous aurez suffisamment d'or, nous en reparlerons.~
+@7700724 = ~Revenez demain à la même heure, et votre bouclier sera prêt.~
+@7700725 = ~Répétez-moi ce que vous m'avez dit sur le marteau de mithral en ma possession.~
+@7700726 = ~Bonjour. J'ai réussi à enchâsser le symbole du clan Marteaudeguerre dans le bouclier Brasfidèle.~
+@7700727 = ~En fait, ça a été très facile. Les deux objets étaient faits l'un pour l'autre.~
+@7700728 = ~Tenez, voici votre bouclier. Vous allez voir, il vous protégera beaucoup mieux, maintenant.~
+@7700729 = ~Est-ce que vous pouvez me fabriquer une armure à partir de ces écailles de dragon blanc ?~
+@7700730 = ~Du dragon ! Je n'avais jamais vu ça.~
+@7700731 = ~Je n'ai pas beaucoup d'expérience avec un matériau aussi rare, mais je devrais pouvoir en faire quelque chose.~
+@7700732 = ~Je vais prendre mon temps pour être certain de m'appliquer au mieux. Après tout, les écailles de dragon, ça ne pousse pas sur les arbres. Je vous fais ça en, disons, trois jours.~
+@7700733 = ~Et ma commission s'élèvera à 5000 pièces d'or.~
+@7700734 = ~Pour une armure en écailles de dragon ? C'est d'accord !~
+@7700735 = ~Très bien, revenez me voir dans trois jours, et ce sera prêt.~
+@7700736 = ~Toutes mes excuses, Coulon, mais ça ne m'intéresse pas.~
+@7700737 = ~Qu'est-ce qu'il vous fallait, pour faire cette armure en écailles de dragon blanc, déjà ?~
+@7700738 = ~Bonjour. J'étais justement en train de polir une dernière fois l'armure en écailles de dragon blanc.~
+@7700739 = ~Enfin, votre armure en écailles de dragon blanc, bien sûr.~
+@7700740 = ~Bonne chance dans vos voyage, l'ami. Je doute que vous trouverez meilleure protection que cette armure.~ ~Bonne chance dans vos voyage, l'amie. Je doute que vous trouverez meilleure protection que cette armure.~
 
-@770081000 = ~Yeti Hide Armor +1~
-@770081001 = ~Hide Armor is made from the thick skin of large animals (yeti, in this case) or layers of thinner, more common leather.  It is considered too cumbersome for use in advanced human cultures, but is common among more barbaric humanoids.  It offers better protection than normal leather, but can be hard to maintain, often resulting in an offensive odor or shoddy appearance that prevents effective use.
+@770081000 = ~Armure en peau de yéti +1~
+@770081001 = ~Comme son nom l'indique, cette armure est taillée dans la peau épaisse d'un gros animal (un éléphant, par exemple) ou obtenue en ajoutant plusieurs couches de cuir d'animal plus courant (vache, etc.). Elle est bien trop rigide et encombrante pour que les civilisations avancées choisissent de l'utiliser, mais cela ne l'empêche pas d'être courante chez les barbares des forêts et de la jungle. Elle protège mieux que l'armure de cuir, mais il faut savoir passer sur son aspect et son odeur, qui n'ont vraiment rien d'attirant. Les voleurs peuvent la revêtir, mais elle complique l'utilisation de leurs talents.
+L'armure a été traitée par Coulon, puis enchantée par Orrick. Ce dernier n'a pu débarrasser l'armure de sa faiblesse contre le feu, mais elle offre tout de même une protection substantielle contre le froid.
 
-This particular set of armor was cured by Conlan and enchanted by Orrick. Orrick was not able to quite get rid of its inherited weakness against fire, though it offers some natural protection against cold.
+PARAMÈTRES :
 
-STATISTICS:
-   +15% Resistance to Cold
-   -3% Resistance to Fire
+Capacités d'équipement :
+- résistance au froid : Bonus de 15 %
+- résistance au feu : Malus de 3 %
+- crochetage des serrures : Malus de 10 %
+- détection des pièges : Malus de 10 %
+- vol à la tire : Malus de 10 %
+- déplacement silencieux : Malus de 20 %
+- se cacher dans l'ombre : Malus de 20 %
 
-Armor Class: 5
-Weight: 28
-Requires: 6 Strength~
-@770081002 = ~Quiver of Plenty +1~
-@770081003 = ~The history of this magical quiver has been long forgotten, though it likely had something to do with the inexplicable but well documented shortage of competent fletchers during the Time of Troubles.
+Classe d'armure : 5 (7 contre les armes perforantes et les projectiles)
+Nécessite : 6 en force
 
-STATISTICS:
+Poids : 28~
+@770081002 = ~Carquois d'Abondance +1~
+@770081003 = ~Les origines de ce carquois ont été oubliées depuis longtemps, mais on peut supposer sans trop de risque qu'il existe un lien entre lui et l'étrange pénurie de fabricant de flèches au cours du Temps des Troubles.
 
-Unlimited +1 Arrows~
-@770081004 = ~Case of Plenty +1~
-@770081005 = ~The history of this magical case has been long forgotten, though it likely had something to do with the inexplicable but well documented shortage of competent fletchers during the Time of Troubles.
+PARAMETRES
 
-STATISTICS:
+Quantité illimitée de flèches +1~
+@770081004 = ~Étui d'Abondance +1~
+@770081005 = ~L'histoire de cet étui magique s'est perdue dans le brouillard du passé, mais elle doit sans aucun doute être liée à l'inexplicable pénurie de fabricants de flèches au cours du Temps des Troubles.
 
-Unlimited +1 Bolts~
-@770081006 = ~Bag of Plenty +1~
-@770081007 = ~Although this soft cloth pouch is empty right now, there is still a powerful aura of magic surrounding it.
+PARAMETRES
 
-STATISTICS:
+Capacité spéciale :
+Quantité illimitée de carreaux +1.~
+@770081006 = ~Sac d'Abondance +1~
+@770081007 = ~Cette petite poche de tissu est vide, mais cela ne l'empêche pas de rayonner d'une puissante aura magique
 
-Unlimited +1 sling bullets~
-@770081008 = ~White Dragon Scales~
-@770081009 = ~There are a large number of frost covered scales salvaged from Icasaracht's corpse.  Legend has it they can be magically forged into powerful armor.~
-@770081010 = ~White Dragon Scale~
-@770081011 = ~Not surprisingly, this armor created from the scales of Icasaracht provides the wearer with protection from cold and ice.
+PARAMÈTRES
 
-STATISTICS:
-   +50% Resistance to Cold
+Quantité illimité de billes +1.~
+@770081008 = ~Écailles de dragon blanc~
+@770081009 = ~Un grand nombre d'écailles couvertes de gel ont été prélevées du cadavre d'Icasaracht. La légende dit que de telles écailles pourraient être forgées en une puissante armure.
+								 
+Poids : 15~
+@770081010 = ~Écailles de dragon blanc~
+@770081011 = ~Armure d'Écailles de Dragon Blanc
+Comme on pourrait s'y attendre, cette armure fabriquée à partir des écailles d'Icasaracht protège son propriétaire du froid et de la glace.
 
-Armor Class: -2
-Weight: 15
-Requires: 8 Strength~
-@770081012 = ~Gond, god of invention and artifice, is a deity rarely worshipped by traditional adventurers.  Some thieves, however, revere Gond for his role in the development of locks, traps, and other complex machines.  One such thief was the burglar Jurmar the Calm, who began his career as a locksmith.  Known for his cool demeanor and steady hand, Jurmar paid priests of Gond to fashion this tool belt for him.  Whenever Jurmar was stuck in a situation where he didn't have the right tool for a job, one of the small pouches on the belt would supply him with what he needed.
+PARAMÈTRES :
 
-Oswald has managed to add even more tools for the belt, further enhancing its usefulness.
+Capacités d'équipement :
+- résistance au froid : Bonus de 50 %
 
-STATISTICS:
+Classe d'armure : -2 (-3 contre les armes perforantes et les projectiles, -4 contre les armes contondantes)
+Nécessite : 8 en force
 
-Special: 
-  +15 Open Locks
-  +10 to Find/Remove Traps~
-@770081013 = ~This small shield was created as a gift from the leader of Clan Battlehammer to one of his trusted servants.  The servant, Wurdar Stoutbrew, protected the clan leader's family from being killed and eaten by yeti.  Wurdar wore the shield proudly for ten years before he was killed by orcs in the Spine of the World.  His sacrifice allowed a few key members of the Battlehammer clan to escape to safety.
+Poids : 15~
+@770081012 = ~La Ceinture de Gond
+Gond, dieu des Inventions, est rarement vénéré par les aventuriers. Certains voleurs lui vouent toutefois un culte pour le rôle qu'il a joué dans la conception des pièges, serrures et autres mécanismes de ce genre. Le cambrioleur Jurmar le Calme était de ceux-là. Connu pour son incroyable sang-froid, Jurmar, qui avait commencé par faire carrière en tant que serrurier, demanda aux prêtres de Gond de lui confectionner cette ceinture à outils. Chaque fois qu'il se retrouvait dans une situation où il ne possédait pas l'outil approprié, une des sacoches de la ceinture le lui fournissait.
+Oswald a réussi à rajouter encore plus d'outils à la ceinture, ce qui la rend plus utile.
 
-Combined with the icon of Clan Battlehammer, the shield's abilities have been further enhanced.
+PARAMÈTRES :
 
-STATISTICS:
+Capacités d'équipement :
+- crochetage : Bonus de 15 %
+- détection des pièges : Bonus de 10 %
 
-Armor Class Bonus:  2
-Special: 
- +10 to Max Hit Points
- +1 Strength
- No  Missile Weapon Protection
-Weight:  4~
-@770081014 = ~Remorrhaz Shell Helm~
-@770081015 = ~Crafted from chitinous scales, this heavy helmet retains some of the natural resistances of the remorrhaz from which it was crafted.
+Poids : 2~
+@770081013 = ~Brasfidèle
+Ce petit bouclier fut créé pour être offert par le chef du clan Marteaudeguerre à l'un de ses fidèles serviteurs. Ce dernier, Wurdar Fortbrassin, avait défendu la famille du chef contre un yéti. Wurdar porta fièrement le bouclier pendant dix ans, avant de périr sous les coups des orques dans l'Épine Dorsale du Monde. Son sacrifice permit à plusieurs membres importants du clan de s'enfuir.
+Avec le symbole du clan Marteaudeguerre, le bouclier est devenu encore plus puissant.
 
-STATISTICS:
+PARAMÈTRES :
 
-Armor Class Bonus: 1
-Special:
-  +10% to magic resistance
-  +20% to resistance to magic damage
-  Protects Against Critical Hits
-Weight: 10~
-@770081016 = ~Gloom~
-@770081017 = ~In 834 DR, a wizard named Legedain the Wiser caught a renowned thief breaking into his tower.  The thief was a cynical burglar named Ilfain Blackfeather.  Legedain was growing old and becoming tired of his frail body.  To remedy the situation, he cast Magic Jar and forced Ilfain's spirit into a host gem.  Legedain then transferred his soul to the young elf's body and left the gem on a shelf nearby.  One hundred years later, Legedain decided to do something with it.  He created a sword for his arrogant bodyguard, Gundak, and transferred Ilfain's spirit from the host gem into the sword.  Ilfain, always highly critical in life, started telepathically criticizing Gundak in combat.  Gundak became annoyed with the sword after two weeks and he threw it into the street.  A series of warriors picked it up and discarded it after short periods of ownership. The constant criticism from the sword also makes it difficult to hit its target. Over time, the weapon has simply come to be known by its current name.
+Capacités d'équipement :
+- classe d'armure : Bonus de 2
+- force : Bonus de 1
+- points de vie : +10
+- ne protège pas contre les projectiles
 
-Kieran Nye has applied a permanent Hope spell to the sword. While the sword is still very gloomy, it no longer criticizes its wielder and its thieving abilities can be used more often.
+Nécessite : 4 en force~
+@770081014 = ~Casque en écailles de remorhaz~
+@770081015 = ~Conçu à partir des écailles chitineuses d'un remorhaz, ce lourd heaume conserve une partie des résistances naturelles de la créature à partir duquel il a été fabriqué.
 
-STATISTICS:
+PARAMÈTRES:
 
-Damage:  2D4 +4
-THAC0:  +4
-Damage Type: Slashing
-Special:  Find Traps 2/Day, Knock 2/Day
-Weight: 4
-Speed Factor: 5
-Proficiency Type: Large Swords
-Type: 1-handed~
-@770081018 = ~This front of this huge steel shield is decorated with black enameled patterns and a single skull set in the center.  The interior of the shield is etched with encrypted ancient writings.  The only legible words are at the top, and read, "AND WHAT OF THE DEAD?"  The history of the item is completely hidden from divination.
+Capacités d'équipement :
+- protège contre les coups critiques
+- classe d'armure : Bonus de 1
+- résistance à la magie : Bonus de10 %
+- résistance aux dégâts magiques : Bonus de20 %
 
-Edion has deciphered a bit more of the text, unlocking new abilities of the shield.
+Poids : 10~
+@770081016 = ~Cynisme +4~
+@770081017 = ~Cynisme
+En l'an 834 CV, un magicien du nom de Légedain le Sage surprit un voleur de renom qui cherchait à s'infiltrer dans sa tour. Le malfrat était un cambrioleur cynique appelé Ilfain Plumenoire. Légedain se faisait vieux et en avait assez de son corps fatigué. Afin de remédier à la situation, il lança le sort Réceptacle magique et força l'âme d'Ilfain à occuper une pierre précieuse préparée à cet effet, tandis que lui-même s'emparait du corps du voleur elfe. Cela fait, il posa la gemme sur une étagère. Cent ans plus tard, il décida finalement de s'en servir, forgeant une épée pour Gundak, son arrogant garde du corps, et transféra l'esprit d'Ilfain de la gemme à l'épée. Affecté d'un grand sens critique de son vivant, Ilfain commença à émettre des jugements négatifs sur le style de combat de Gundak. Fou de rage, celui-ci jeta l'arme dans la rue au bout de quinze jours. Plusieurs guerriers la ramassèrent avant de s'en débarrasser rapidement, eux aussi. Au fil du temps, l'épée a fini par perdre son nom d'origine pour être appelée simplement "Cynisme".
+Kiéran Nye a lancé un sort d'Émotion : espoir permanent sur l'épée. Même si cette dernière reste passablement cynique, elle ne porte plus de jugement négatif sur son propriétaire, et celui-ci peut faire appel aux capacités de voleur de la lame plus souvent.
 
-STATISTICS:
+PARAMÈTRES :
 
-Armor Class Bonus: 4
-Special:
- +1 vs. Missile Weapons
- Bearer is immune to Finger of Death and Power Word: Kill
- Cure Critical Wounds 1/Day, Undead Ward 1/Day
-Weight: 20~
-@770081019 = ~It is believed that fae creatures helped create this beautiful sword, and legends say that it was forged in the cool depths of Myrloch, the large lake at the center of Gwynneth in the Moonshaes.  The weapon has an unearthly look to it, and it is believed to be quite old.  The only individual known to have carried the weapon was a half-elven bard named Daen Winterbrush.  It is said by some that after he found the sword, quite by accident, that he was blessed with exceptional creativity and powerful sensitivity to the world around him.  He traveled for forty years and is known for some of the most unique, haunting melodies in Faerun.  It is believed that Daen eventually became too melancholy at the sights of misery and oppression that he encountered in his travels, and that the fae smiths of the Moonshae Isles welcomed him into the breast of Myrloch.
+Capacités de charge :
+- Détection des pièges deux fois par jour
+- Déblocage deux fois par jour
+  Portée : 15 mètres
 
-By singing the ballad of Daen Winterbrush and speaking with his spirit, more abilities of the blade have been awakened.
+TAC0 : +4
+Dégâts : 2d4 +4 (tranchant)
+Facteur de vitesse : 5
+Type de compétence : épée longue
+Type : arme à une main
+Nécessite : 6 en force
 
-STATISTICS:
+Poids : 4~
+@770081018 = ~Le Mystère des Morts
+La face externe de ce gros bouclier en acier est ornée de dessins à l'émail noir entourant un crâne central. La face interne est couverte de signes anciens. Les seuls mots compréhensibles posent la question "ET QU'EN EST-IL DES MORTS ?" Nul sort de divination ne permet de découvrir l'histoire de cet objet.
+Édion a réussi à déchiffrer une partie supplémentaire du texte, ce qui a débloqué de nouvelles capacités.
 
-Damage:  1D8 +3
-THAC0:  +3
-Special:  
-  +30 to Lore skill while equipped
-  +1 Charisma while equipped
-Damage Type:  Slashing
-Weight:  4
-Speed Factor:  4
-Proficiency Type:  Large Swords
-Type:  1-handed~
-@770081020 = ~This axe was crafted for a powerful young barbarian warrior named Hegelfden.  He was born into the Tribe of the Elk and the shamans prophesized that he would be a powerful warrior.  Hegelfden grew up believing that he was special, important, and somehow better than those around him.  By the age of seventeen, Hegelfden was an accomplished warrior.  Huge, fast, and cunning, he was more than a match for his kinsmen.  On a journey into the Spine of the World, Hegelfden captured two dwarves that he came across in a cave.  He refused to let the two workers go until they created a magnificent axe for him.  The two dwarves reluctantly agreed, creating a stout battle axe with a keen blade and a thick handle.  When the dwarves asked to be released, Hegelfden denied their request.  He wanted to keep them as servants.  The dwarves then laid a curse upon Hegelfden.  They told him that the fruit of his abuse would be the end of him.  Hegelfden laughed at the dwarves' claim and continued on with his life.  The next day, in a battle with a rival tribe, Hegelfden went berserk with blood lust, slaying every creature he came across.  His kin, convinced that he had gone mad, cut him down where he stood.  The axe was left on the field when the warriors brought Hegelfden's body back to the camp.  When they arrived, the dwarves were nowhere to be found.
+PARAMÈTRES :
 
-With Tiernon's guidance, the angry dwarven souls in the axe have been laid to rest.
+Capacités d'équipement :
+- classe d'armure : +4, bonus de +1 contre les projectiles
+- immunité aux sorts de Doigt de mort et Mot de pouvoir mortel
 
-STATISTICS:
+Capacités de charge :
+- Soin des blessures critiques une fois par jour (guérit 27 points de vie)
+  Portée : contact
+  Durée : permanente
+  Zone d'effet : 1 créature
 
-Damage:  1D8 +5
-THAC0:  +5
-Damage Type: Slashing
-Weight: 6
-Speed Factor: 3
-Proficiency Type: Axe
-Type:  1-handed~
-@770081021 = ~Not much is known about the owner of this weapon, save that sages believe it is from another world, called "Eibrancha."  Plane-traveling wizards who have investigated life on "Eibrancha" report that it is dull, commonplace, and ordinary in the extreme, a place where heroes are rare and the populace is, by and large, incredibly average.  This might explain the virtually non-existent body of recorded information about the place.  The only thing known about the weapon's owner is that he was an educated man. The purple wood that the crossbow is constructed from is believed to be from a unique type of tree in Eibrancha.
+- Protection contre les morts-vivants une fois par jour (repousse les morts-vivants comme un prêtre de niveau 11)
+  Portée : personnelle
+  Durée : 1 tour
+  Zone d'effet : rayon de 6 mètres
 
-After contacting another plane and learning about Bren Muller, you have learned a new ability of the weapon. Once per day, it can dramatically increase accuracy for two rounds.
+Nécessite : 15 en force
 
-STATISTICS:
+Poids : 20~
+@770081019 = ~L'Épée du Val du Myrloch
+On pense que les fées aidèrent à la création de cette splendide épée, qui aurait, selon la légende, été forgée dans les profondeurs glacées du Myrloch, le grand lac de l'île de Gwynneth, dans l'archipel des Lunaë. Cette arme à l'air surnaturel serait très ancienne. On ne lui connaît qu'un seul et unique propriétaire, un barde demi-elfe nommé Daen Buisdhiver. On prétend qu'à partir du moment où il la trouva par accident, il fit preuve d'une créativité exceptionnelle et d'une grande sensibilité au monde qui l'entourait. Ses voyages se poursuivirent quarante années durant et il a à son actif quelques-unes des plus envoûtantes mélodies de Féérûne. L'histoire veut qu'il finit par devenir trop mélancolique à trop voir la misère et l'oppression, et que les fées forgerons des Lunaë l'accueillirent dans les profondeurs du Myrloch.
+En chantant la ballade de Daen Buisdhiver, et en communiquant avec son esprit, certaines des capacités latentes de la lame se sont réveillées.
 
-Once per day can increase bow's aim to an additional +5 to hit for two rounds
+PARAMÈTRES :
 
-Damage: +2
-THAC0: +5 bonus
-Weight: 7
-Speed Factor:  4
-Proficiency Type:  Crossbow
-Type:  2-handed~
-@770081022 = ~genie bottle descript~
-@770081023 = ~Remorrhaz Shell~
-@770081024 = ~Elven Chain Mail~
-@770081025 = ~The delicate yet sturdy craftsmanship of the Elven races allows them to design many beautiful yet utilitarian goods.  Among these is Elven chain mail, which is so finely wrought that it can be worn under normal clothing without revealing its presence.  This and its lightness allows it to be worn by thieves and fighter/mages with few restrictions.
+Capacités d'équipement :
+- score de connaissance : + 30
+- charisme : Bonus de 1
 
-STATISTICS:
+TAC0 : +3
+Dégâts : 1d8 +3 (tranchant)
+Facteur de vitesse : 4
+Type de compétence : épée longue
+Type : arme à une main
+Nécessite : 6 en force
 
-Armor Class: 5
-Weight: 7
-Requires: 5 Strength~
-@770081026 = ~Boomerang Dagger +1~
-@770081027 = ~Fullen Woolspinner, an ambitious halfling from a well to do family, left his home to spend several years adventuring.  During his travels he ended up staying with a family of dwarven weaponsmiths.  Much impressed by their throwing axes, which always returned to the hands of their wielder, Fullen sought to make a dagger that could do the same.  With the help of his dwarven friends he succeeded, creating several of the famous Fullen Boomerang daggers.
+Poids : 4~
+@770081020 = ~Jeune Rage
+Cette hache fut forgée pour Hegelfden, un puissant guerrier barbare. Il faisait partie de la tribu de l'Orignal, dont les chamans avaient prédit qu'il deviendrait un des plus grands guerriers. Hegelfden grandit, persuadé qu'il était important et supérieur aux gens de son entourage. À l'âge de 17 ans, il était devenu un guerrier accompli. Colossal, rapide et rusé, il était capable de vaincre tous les membres de son clan. Alors qu'il parcourait l'Épine Dorsale du Monde, il captura deux nains rencontrés dans une grotte et refusa de les laisser partir tant qu'ils ne lui auraient pas fabriqué une hache digne de lui. Les deux prisonniers acceptèrent à contrecœur et donnèrent naissance à une solide hache d'armes à la lame acérée.  Quand les nains demandèrent à être libérés, Hegelfden refusa, désirant en faire ses serviteurs. Alors, les nains le maudirent, en lui disant que le fruit de ses crimes causerait sa perte. Hegelfden éclata de rire et continua de vivre comme si de rien n'était. Mais, dès le lendemain, au cours d'une bataille contre une tribu rivale, Hegelfden fut pris d'une rage sanguinaire et massacra toutes les créatures qui se trouvaient sur son chemin. Ses semblables, convaincus qu'il était devenu complètement fou, l'abattirent sur place. La hache fut abandonnée sur le champ de bataille alors qu'ils ramenaient le corps de Hegelfden au camp. Quand ils arrivèrent, les nains avaient disparu.
+Sous l'influence de Tiernon, les esprits des nains en colère ont été apaisés.
 
-STATISTICS:
+PARAMÈTRES :
 
-Combat Abilities: dagger returns to the thrower
-THAC0:  +1 bonus
-Damage:  2d4 +1
-Damage type:  missile (piercing)
-Weight: 1
-Speed Factor: 1
-Proficiency Type: Dagger
-Type:  1-handed
-Requires: 3 Strength~
-@770081028 = ~Returning Dart +2~
-@770081029 = ~The small size of this weapon belies its great power.  Immediately after striking its target, this dart reappears in the hand of the wielder, ready to be hurled again.
+TAC0 : +5
+Dégâts : 1d8 +5 (tranchant)
+Facteur de vitesse : 3
+Type de compétence : hache
+Type : arme à une main
+Nécessite : 10 en force
 
-STATISTICS:
+Poids : 6~
+@770081021 = ~L'arbalète de Bren Muller
+On ne sait presque rien de cette arme, si ce n'est que les sages pensent qu'elle provient d'un autre monde appelé "Eibrancha". Les mages capables de se déplacer entre les plans qui s'y sont rendus affirment qu'il s'agit d'un monde sans intérêt, où les héros sont rares et la populace terne à l'extrême. Cela pourrait expliquer pourquoi on ignore tout, ou presque, de ce lieu. Le seul détail connu au sujet du possesseur de l'arme est qu'il s'agissait d'un homme cultivé. Il paraîtrait que le bois violet à partir duquel l'arbalète a été conçue provient d'un type d'arbre qui ne se trouve qu'à Eibrancha.
+Après avoir contacté un autre plan et su qui était Bren Muller, vous avez appris que l'arbalète possède une autre faculté : une fois par jour, elle peut améliorer significativement la visée pendant deux rounds.
 
-Dart returns instantly to user's hand after being thrown.
+PARAMÈTRES :
+
+Capacités de charge :
+- Visée mortelle une fois par jour (+5 au TAC0 pendant 2 rounds)
+
+TAC0 : +5
+Dégâts : +2
+Facteur de vitesse : 4
+Type de compétence : arbalète
+Type : arme à deux mains
+Nécessite : 8 en force
+
+Poids : 7~
+@770081022 = ~Descripteur de la bouteille du génie~ //genie bottle descript
+@770081023 = ~Carapace de remorhaz~  
+@770081024 = ~Cotte de mailles elfique~
+@770081025 = ~Cotte de Mailles Elfique
+L'artisanat délicat mais réputé solide des peuples elfiques leur permet de concevoir des objets à la fois beaux et efficaces. Parmi ceux-ci la cotte de mailles elfique, forgée si finement qu'elle peut être portée sous des vêtements normaux sans trahir sa présence. Sa discrétion et sa légèreté lui permettent d'être portée presque sans restriction par les voleurs et les guerriers-mages.
+
+PARAMÈTRES :
+
+Capacités d'équipement :
+- crochetage : -5 % 
+- détection de pièges : - 5 % 
+- vol à la tire : -20 % 
+- déplacement silencieux : -10 %
+
+Classe d'armure : 5 (7 contre les armes contondantes, 3 contre les armes tranchantes)
+Nécessite : 5 en force
+
+Poids : 7~
+@770081026 = ~Dague boomerang +2~
+@770081027 = ~Dague Boomerang
+Fullen Filelaine, un petit-homme ambitieux issu d'une famille aisée, quitta ses pénates pour partir à l'aventure pendant plusieurs années. Au cours de ses voyages, il s'installa dans une famille de forgerons nains. Très impressionné par leurs haches de lancer qui revenait toujours dans la main de leurs porteurs, Fullen voulut concevoir une dague dotée des mêmes propriétés. Grâce à l'aide de ses amis nains, il finit par y arriver, et fabriqua plusieurs de ces fameuses Dagues Boomerang.
+
+PARAMÈTRES :
+
+Capacités de combat : 
+- revient au lanceur une fois lancée
+
+TAC0 : +2
+Dégâts : 2d4 +2 (projectile)
+Facteur de vitesse : 1
+Type de compétence : dague
+Type : arme à une main
+Nécessite : 3 en force
+
+Poids : 1~
+@770081028 = ~Fléchette de retour +2~
+@770081029 = ~La petite taille de cette arme cache une puissance considérable : dès qu'elle a touché sa cible, elle réapparaît dans la main de son lanceur..
+
+PARAMÈTRES :
+
+La fléchette revient instantanément dans les mains du lanceur après chaque attaque.
 
 THAC0: +2 bonus
-Damage:  1d3 +2
-Damage type:  missile (piercing)
-Weight: 0
-Speed Factor: 0
-Proficiency Type: Dart
-Type:  1-handed~
-@770081030 = ~This is a portion of the carapace of a dead remorrhaz. Their natural armor is known for its resilience and natural resistances.~
-@770081031 = ~Cloak of the Winter Wolf~
-@770081032 = ~This beautiful fur cloak is made from the pelts of winter wolves. The cloak was sewn by the local seamstress in Kuldahar, and it retains some of the natural resistances inherent to the wolves thanks to Orrick's enchantments.
+Dégâts :  1d3 +2
+Type de dégâts : projectile (perforant)
+Poids : 0
+Facteur de vitesse : 0
+Type de compétence : Fléchette
+Type : arme à une main~
+@770081030 = ~Il s'agit d'un morceau de la carapace d'un remorhaz, dont la chitine est reconnue pour sa résilience et ses résistances naturelles.
 
-STATISTICS:
+Poids : 100~
+@770081031 = ~Cape du loup des glaces~
+@770081032 = ~La Cape du Loup des glaces
+Cette magnifique cape a été fabriquée à partir de fourrures de loups des glaces. La cape a été cousue par la couturière de Kuldahar, et conserve une partie de la protection naturelle contre le froid des loups arctiques, grâce aux enchantements d'Orrick.
 
-Armor Class Bonus: +1 vs. Crushing
-Special:
-  +10% Cold Resistance
-  Immune to Winter Wolf Breath Attack
-Weight:  1~
-@770081033 = ~Mithril Hammer~
-@770081034 = ~Symbol of Clan Battlehammer~
-@770081035 = ~This small, mithril hammer appears to be an exquisitively crafted, though ceremonial, item. The hammer feels slightly warm to the touch.~
-@770081036 = ~This small mithril hammer is slightly warm to the touch. It is a symbol for Clan Battlehammer, a clan of dwarves currently lead by the eighth king Bruenor Battlehammer. The clan had always been led by his ancestors and passed on from generation to generation.
+PARAMÈTRES :
 
-Originally the clan resided in Mithril Hall but when they were forced out they moved to the northern regions of Icewind Dale near Ten Towns where they set up a new home providing equipment for the towns.~
-@770081037 = ~Gnomish Tools~
-@770081038 = ~This well-loved and worn wooden box contains an assortment of small tools, broken bits of metal, and an Anatidae-based adhesive.~
-@770081039 = ~In 834 DR, a wizard named Legedain the Wiser caught a renowned thief breaking into his tower.  The thief was a cynical burglar named Ilfain Blackfeather.  Legedain was growing old and becoming tired of his frail body.  To remedy the situation, he cast Magic Jar and forced Ilfain's spirit into a host gem.  Legedain then transferred his soul to the young elf's body and left the gem on a shelf nearby.  One hundred years later, Legedain decided to do something with it.  He created a sword for his arrogant bodyguard, Gundak, and transferred Ilfain's spirit from the host gem into the sword.  Ilfain, always highly critical in life, started telepathically criticizing Gundak in combat.  Gundak became annoyed with the sword after two weeks and he threw it into the street.  A series of warriors picked it up and discarded it after short periods of ownership. The constant criticism from the sword also makes it difficult to hit its target. Over time, the weapon has simply come to be known by its current name.
+Capacités d'équipement :
+- classe d'armure : Bonus de 1 contre les attaques contondantes
+- résistance au froid : +10 %
+- immunité aux souffles des loups des glaces
 
-STATISTICS:
+Poids : 1~
+@770081033 = ~Marteau de Mithral~
+@770081034 = ~Symbole du clan Marteaudeguerre~
+@770081035 = ~Ce petit marteau en mithral est un objet de facture exceptionnelle, mais ne semble pas avoir d'utilité autre que cérémonielle. Le marteau est dégage un peu de chaleur au toucher.
 
-Damage:  2D4 +4
-THAC0:  +2
-Damage Type: Slashing
-Special:  Find Traps 1/Day, Knock 1/Day
-Weight: 4
-Speed Factor: 5
-Proficiency Type: Large Swords
-Type: 1-handed~
-@770081040 = ~Note for Edion~
-@770081041 = ~This is a note for the necromancer Edion about banishing the angry spirits from the Young Rage axe.~
-@770081042 = ~Spirit of Daen Winterbrush~
-@770081043 = ~The Ballad of Daen Winterbrush~
-@770081044 = ~This dusty tome consists of fading, well-worn pages. Page after page contain notes and music, a chronicle of a bard trying to write a song to fit his tale. Inside the cover are scratched the name 'Daen Winterbrush'. You could try singing the song, if you wish.~
-@770081045 = ~Play Daen's Ballad~
-@770081046 = ~Bren Muller's Deadeye~
+Poids : 0~
+@770081036 = ~Ce petit marteau de mithral dégage un peu de chaleur au toucher. Il s'agit du symbole du clan Marteaudeguerre, clan nain actuellement dirigé par leur huitième roi, Bruenor Marteaudeguerre. La responsabilité de chef de clan est héréditaire, c'est pourquoi les ancêtres de Bruenor régnèrent sur le clan Marteaudeguerre avant lui. À l'origine, le clan résidait à Castelmithral, mais lorsqu'il en a été délogé, les nains se sont installés dans les régions au nord du Val de Bise. Ils se sont établis près des Dix-Cités, ce qui leur a permis de faire commerce d'équipement avec les villages avoisinants.
+
+Poids : 0~
+@770081037 = ~Outils gnomes~
+@770081038 = ~Ce coffret de bois usé contient tout un assortiment de petits outils, de copeaux de métal, ainsi que de la colle à base d'animal à plumes.
+
+Poids : 25~
+@770081039 = ~Cynisme
+En l'an 834 CV, un magicien du nom de Légedain le Sage surprit un voleur de renom qui cherchait à s'infiltrer dans sa tour. Le malfrat était un cambrioleur cynique appelé Ilfain Plumenoire. Légedain se faisait vieux et en avait assez de son corps fatigué. Afin de remédier à la situation, il lança le sort Réceptacle magique et força l'âme d'Ilfain à occuper une pierre précieuse préparée à cet effet, tandis que lui-même s'emparait du corps du voleur elfe. Cela fait, il posa la gemme sur une étagère. Cent ans plus tard, il décida finalement de s'en servir, forgeant une épée pour Gundak, son arrogant garde du corps, et transféra l'esprit d'Ilfain de la gemme à l'épée. Affecté d'un grand sens critique de son vivant, Ilfain commença à émettre des jugements négatifs sur le style de combat de Gundak. Fou de rage, celui-ci jeta l'arme dans la rue au bout de quinze jours. Plusieurs guerriers la ramassèrent avant de s'en débarrasser rapidement, eux aussi. Au fil du temps, l'épée a fini par perdre son nom d'origine pour être appelée simplement "Cynisme".
+Kiéran Nye a lancé un sort d'Émotion : espoir permanent sur l'épée. Même si cette dernière reste passablement cynique, elle ne porte plus de jugement négatif sur son propriétaire, et celui-ci peut faire appel aux capacités de voleur de la lame plus souvent.
+
+PARAMÈTRES :
+
+Capacités de charge :
+- Détection des pièges deux fois par jour
+
+- Déblocage deux fois par jour
+  Portée : 15 mètres
+
+TAC0 : +4
+Dégâts : 2d4 +4 (tranchant)
+Facteur de vitesse : 5
+Type de compétence : épée longue
+Type : arme à une main
+Nécessite : 6 en force
+
+Poids : 4~
+@770081040 = ~Note pour Édion~
+@770081041 = ~Il s'agit d'une note pour Édion au sujet du bannissement des esprits en colère de la hache Jeune Rage.~
+@770081042 = ~Esprit de Daen Buisdhiver~
+@770081043 = ~La ballade de Daen Buisdhiver~
+@770081044 = ~Les pages de ce vieux tome poussiéreux sont usées et presque effacées. Le livre contient des notes et des mélodies, qui, mises ensemble, forment les chroniques d'un barde essayant d'écrire un chant à la mesure de sa légende. Un nom est griffonné au dos de la couverture : « Daen Buisdhiver ». Si vous le vouliez, vous pourriez essayer de chanter sa chanson.~
+@770081045 = ~Jouer la ballade de Daen~
+@770081046 = ~Visée mortelle de Bren Muller~
 
 //SaveGame
-@666601 = ~Kuldahar Pass~
-@666602 = ~Lonelywood~
-@666603 = ~Burial Isle~
-@666604 = ~Gloomfrost~
-@666605 = ~Sea of Moving Ice~
-@666606 = ~Return to Easthaven~
+@666601 = ~Col de Kuldahar~
+@666602 = ~Bois Isolé~
+@666603 = ~Île aux tertres~
+@666604 = ~Morneglace~
+@666605 = ~Mer des Glaces Mouvantes~
+@666606 = ~Retour à Havredest~
 
 
 
-@777701 = ~What ... what in Callarduran's name happened?  Why did this bell fall?  Why?~
-@777702 = ~The statue is broken.  Oh Callarduran.  No, I won't let Marketh hurt my son.~
-@777703 = ~I have a case for the Marketh.  Perhaps after that, your son will not be in danger.~
-@777704 = ~I'm sorry, this isn't your fault.  Hope you can do it~
-@777705 = ~Well at least Marketh has left this place, and my son, praise Callarduran, is no longer in danger.  But still, why did the bell fall?~
-@777706 = ~Well at least Marketh is dead and my son, thank Callarduran, is no longer in danger.  But still, why did the bell fall?~
-@777707 = ~I don't know.  Perhaps because someone has finally found peace.~
-@777708 = ~I'll be grateful to you all my life if you can keep my son safe.  But still, why did the bell fall?~
-@777709 = ~I have no other choice, I will do my best.  But still, why did the bell fall?~
-@777710 = ~Hmm, we need to think about it.  Maybe I can also finish the statue.  Only it would be necessary to drag this damned bell somewhere.  Goodbye~
-@777711 = ~But ... but it doesn't matter ... Just leave me alone ...~
+@777701 = ~Que... Par Callarduran que s'est-il passé ? Pourquoi cette cloche est-elle tombée ?  Pourquoi ?~  
+@777702 = ~La statue est brisée.  Oh Callarduran.  Non, je ne laisserai pas Marketh faire du mal à mon fils.~
+@777703 = ~J'ai une affaire en cours avec Marketh.  Peut-être qu'après, votre fils ne sera plus en danger.~  
+@777704 = ~Je suis désolé, ce n'est pas votre faute.  J'espère que vous pourrez le faire.~
+@777705 = ~Au moins, Marketh a quitté cet endroit, et mon fils, loué soit Callarduran, n'est plus en danger.  Mais quand même, pourquoi la cloche est-elle tombée ?~
+@777706 = ~Au moins, Marketh est mort, et mon fils, loué soit Callarduran, n'est plus en danger.  Mais quand même, pourquoi la cloche est-elle tombée ?~
+@777707 = ~Je ne sais pas.  Peut-être parce que quelqu'un a enfin trouvé la paix.~ 
+@777708 = ~Je vous serai reconnaissant toute ma vie si vous pouvez garder mon fils en sécurité.  Mais quand même, pourquoi la cloche est-elle tombée ?~
+@777709 = ~Je n'ai pas d'autre choix, je ferai de mon mieux.  Mais quand même, pourquoi la cloche est-elle tombée ?~
+@777710 = ~Hmm, nous devons y réfléchir.  Peut-être que je peux aussi finir la statue.  Seulement il faudrait traîner cette maudite cloche quelque part.  Au revoir.~
+@777711 = ~Mais... mais ça n'a pas d'importance... Laisse-moi tranquille...~
