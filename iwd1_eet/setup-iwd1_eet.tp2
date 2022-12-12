@@ -22,7 +22,7 @@ BEGIN ~Use <CHARNAME> instead of <GABBER> etc.~
 COPY ~iwd1_eet/lang/%LANGUAGE%/dialog.tra~ ~iwd1_eet/lang/%LANGUAGE%/dialog.tra~
 REPLACE_TEXTUALLY CASE_SENSITIVE ~<GABBER>~ ~<CHARNAME>~	 
 
-BEGIN ~Icwind Dale: Heart of Winter in Baldur's Gate Enhanced Edition Trilogy~
+BEGIN ~Icewind Dale: Heart of Winter in Baldur's Gate Enhanced Edition Trilogy~
 REQUIRE_PREDICATE GAME_IS ~eet~ ~Please install Baldur's Gate Enhanced Edition Trilogy at first~
 
 INCLUDE ~iwd1_eet/lib.tph~
