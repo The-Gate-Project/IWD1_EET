@@ -1,102 +1,69 @@
-OUTER_SET wmp_xCoord_SoA = 0
-OUTER_SET wmp_yCoord_SoA = 0
-
-<<<<<<<<wmp.l
-@iwd1000 = "str1000"
-@iwd2000 = "str2000"
-@iwd2100 = "str2100"
-@iwd3000 = "str3000"
-@iwd3600 = "str3600"
-@iwd4000 = "str4000"
-@iwd5000 = "str5000"
-@iwd6000 = "str6000"
-@iwd7000 = "str7000"
-@iwd8001 = "str8001"
-@iwd9100 = "str9100"
-@iwd9200 = "str9200"
-@iwd9300 = "str9300"
-@iwd9500 = "str9500"
-@iwd9600 = "str9600"
-@iwd9700 = "str9700"
+<<<<<<<<.../wmp.l
 >>>>>>>>
 
-OUTER_SPRINT rep1000 @10709
-OUTER_SPRINT rep2000 @19731
-OUTER_SPRINT rep2100 @3061
-OUTER_SPRINT rep3000 @10712
-OUTER_SPRINT rep3600 @10921
-OUTER_SPRINT rep4000 @19730
-OUTER_SPRINT rep5000 @16234
-OUTER_SPRINT rep6000 @22854
-OUTER_SPRINT rep7000 @15663
-OUTER_SPRINT rep8001 @29744
-OUTER_SPRINT rep9100 @3069
-OUTER_SPRINT rep9200 @10923
-OUTER_SPRINT rep9300 @15757
-OUTER_SPRINT rep9500 @19729
-OUTER_SPRINT rep9600 @10925
-OUTER_SPRINT rep9700 @100061
-
-OUTER_INNER_PATCH_SAVE rep1000 ~%rep1000%~ BEGIN     REPLACE_TEXTUALLY ~ ~ ~###~ END
-OUTER_INNER_PATCH_SAVE rep2000 ~%rep2000%~ BEGIN     REPLACE_TEXTUALLY ~ ~ ~###~ END
-OUTER_INNER_PATCH_SAVE rep2100 ~%rep2100%~ BEGIN     REPLACE_TEXTUALLY ~ ~ ~###~ END
-OUTER_INNER_PATCH_SAVE rep3000 ~%rep3000%~ BEGIN     REPLACE_TEXTUALLY ~ ~ ~###~ END
-OUTER_INNER_PATCH_SAVE rep3600 ~%rep3600%~ BEGIN     REPLACE_TEXTUALLY ~ ~ ~###~ END
-OUTER_INNER_PATCH_SAVE rep4000 ~%rep4000%~ BEGIN     REPLACE_TEXTUALLY ~ ~ ~###~ END
-OUTER_INNER_PATCH_SAVE rep5000 ~%rep5000%~ BEGIN     REPLACE_TEXTUALLY ~ ~ ~###~ END
-OUTER_INNER_PATCH_SAVE rep6000 ~%rep6000%~ BEGIN     REPLACE_TEXTUALLY ~ ~ ~###~ END
-OUTER_INNER_PATCH_SAVE rep7000 ~%rep7000%~ BEGIN     REPLACE_TEXTUALLY ~ ~ ~###~ END
-OUTER_INNER_PATCH_SAVE rep8001 ~%rep8001%~ BEGIN     REPLACE_TEXTUALLY ~ ~ ~###~ END
-OUTER_INNER_PATCH_SAVE rep9100 ~%rep9100%~ BEGIN     REPLACE_TEXTUALLY ~ ~ ~###~ END
-OUTER_INNER_PATCH_SAVE rep9200 ~%rep9200%~ BEGIN     REPLACE_TEXTUALLY ~ ~ ~###~ END
-OUTER_INNER_PATCH_SAVE rep9300 ~%rep9300%~ BEGIN     REPLACE_TEXTUALLY ~ ~ ~###~ END
-OUTER_INNER_PATCH_SAVE rep9500 ~%rep9500%~ BEGIN     REPLACE_TEXTUALLY ~ ~ ~###~ END
-OUTER_INNER_PATCH_SAVE rep9600 ~%rep9600%~ BEGIN     REPLACE_TEXTUALLY ~ ~ ~###~ END
-OUTER_INNER_PATCH_SAVE rep9700 ~%rep9700%~ BEGIN     REPLACE_TEXTUALLY ~ ~ ~###~ END
-
-COPY ~wmp.l~ ~iwd1_eet/lang/%LANGUAGE%/worldmap.tra~
-    REPLACE_TEXTUALLY ~str1000~ ~%rep1000%~ EVALUATE_BUFFER
-    REPLACE_TEXTUALLY ~str2000~ ~%rep2000%~ EVALUATE_BUFFER
-    REPLACE_TEXTUALLY ~str2100~ ~%rep2100%~ EVALUATE_BUFFER
-    REPLACE_TEXTUALLY ~str3000~ ~%rep3000%~ EVALUATE_BUFFER
-    REPLACE_TEXTUALLY ~str3600~ ~%rep3600%~ EVALUATE_BUFFER
-    REPLACE_TEXTUALLY ~str4000~ ~%rep4000%~ EVALUATE_BUFFER
-    REPLACE_TEXTUALLY ~str5000~ ~%rep5000%~ EVALUATE_BUFFER
-    REPLACE_TEXTUALLY ~str6000~ ~%rep6000%~ EVALUATE_BUFFER
-    REPLACE_TEXTUALLY ~str7000~ ~%rep7000%~ EVALUATE_BUFFER
-    REPLACE_TEXTUALLY ~str8001~ ~%rep8001%~ EVALUATE_BUFFER
-    REPLACE_TEXTUALLY ~str9100~ ~%rep9100%~ EVALUATE_BUFFER
-    REPLACE_TEXTUALLY ~str9200~ ~%rep9200%~ EVALUATE_BUFFER
-    REPLACE_TEXTUALLY ~str9300~ ~%rep9300%~ EVALUATE_BUFFER
-    REPLACE_TEXTUALLY ~str9500~ ~%rep9500%~ EVALUATE_BUFFER
-    REPLACE_TEXTUALLY ~str9600~ ~%rep9600%~ EVALUATE_BUFFER
-    REPLACE_TEXTUALLY ~str9700~ ~%rep9700%~ EVALUATE_BUFFER
-
-INCLUDE ~iwd1_eet/worldmap/icon/add_map_icons.tpa~
-LAF ADD_MAP_ICONS
-  STR_VAR
-    path_to_icons = ~iwd1_eet/Worldmap/icon/icon.bam~
-    patch_to_pvrz = ~iwd1_eet/Worldmap/icon~
-  RET
-    new_icon_index
+ACTION_DEFINE_ASSOCIATIVE_ARRAY wmptra BEGIN
+//  areaname => dialog.tra number
+	id1000 => ~@10709~
+	id2000 => ~@19731~
+	id2100 => ~@3061~
+	id3000 => ~@10712~
+	id3600 => ~@10921~
+	id4000 => ~@19730~
+	id5000 => ~@16234~
+	id6000 => ~@22854~
+	id7000 => ~@15663~
+	id8001 => ~@29744~
+	id9100 => ~@3069~
+	id9200 => ~@10923~
+	id9300 => ~@15757~
+	id9500 => ~@19729~
+	id9600 => ~@10925~
+	id9700 => ~@100061~
 END
-OUTER_SET ID9700_icon = new_icon_index
 
-COPY ~iwd1_eet/Worldmap/areas.tbl~ ~iwd1_eet/Worldmap~
-	//REPLACE_TEXTUALLY ~\([ %TAB%]+ID9700[ %TAB%]+[0-9]+[ %TAB%]+\)[0-9]+~ ~\1%ID9700_icon%~
-	REPLACE_TEXTUALLY ~ZZZ~ ~%ID9700_icon%~ EVALUATE_BUFFER
+ACTION_DEFINE_ASSOCIATIVE_ARRAY mapicon BEGIN
+//  folder => bam_anim
+	icon => ~ZZZ~
+END
 
+// creates the worlmap.tra file from the wmptra array
+COPY ~.../wmp.l~ ~%MOD_FOLDER%/lang/%LANGUAGE%/worldmap.tra~
+ACTION_PHP_EACH ~wmptra~ AS area => strref BEGIN
+	ACTION_BASH_FOR ~%MOD_FOLDER%/lang/%LANGUAGE%~ ~^.*\.tra$~ BEGIN
+		ACTION_IF FILE_CONTAINS_EVALUATED (~%MOD_FOLDER%/lang/%LANGUAGE%/%BASH_FOR_FILE%~ ~^%strref%~) BEGIN
+			COPY - ~%MOD_FOLDER%/lang/%LANGUAGE%/%BASH_FOR_FILE%~ ~%MOD_FOLDER%/lang/%LANGUAGE%~
+				REPLACE_EVALUATE CASE_INSENSITIVE ~~~~~^[ %TAB%]*%strref%[ %TAB%]*[=][ %TAB%]*[\~"]\(.*\)["\~]~~~~~ BEGIN
+					INNER_PATCH_SAVE string "%MATCH1%" BEGIN REPLACE_TEXTUALLY " " "###" END
+				END ~%MATCH0%~
+			APPEND_OUTER ~%MOD_FOLDER%/lang/%LANGUAGE%/worldmap.tra~ ~@%area% = "%string%"~
+		END
+	END
+END
 
-INCLUDE ~iwd1_eet/lib/add_worldmap_tbl.tpa~
+INCLUDE ~iwd1_eet/worldmap/icon/add_map_icons_ee.tpa~
+ACTION_PHP_EACH ~mapicon~ AS folder => bam_anim BEGIN
+	LAF ADD_MAP_ICONS_EE
+	STR_VAR
+		path_to_icons = EVAL ~%MOD_FOLDER%/Worldmap/%folder%/icon.bam~
+		patch_to_pvrz = EVAL ~%MOD_FOLDER%/Worldmap/%folder%~
+	RET
+		new_icon_index
+	END
+	ACTION_DEFINE_ASSOCIATIVE_ARRAY remapped_icons BEGIN ~%bam_anim%~ => ~%new_icon_index%~ END
+END
+
+INCLUDE ~%MOD_FOLDER%/lib/add_worldmap_tbl.tpa~
 LAF ADD_WORLDMAP_TBL
 	INT_VAR
     	inclSv = 0
-    	add_x = wmp_xCoord_SoA
-    	add_y = wmp_yCoord_SoA
+		patch_bp_files = 1
 	STR_VAR
-    	path_to_areas = ~iwd1_eet/Worldmap/areas.tbl~
-    	path_to_links = ~iwd1_eet/Worldmap/links.tbl~
-    	path_to_trans = EVAL ~iwd1_eet/lang/%LANGUAGE%/worldmap.tra~
+    	path_to_areas = EVAL ~%MOD_FOLDER%/Worldmap/areas.tbl~
+    	path_to_links = EVAL ~%MOD_FOLDER%/Worldmap/links.tbl~
+		path_to_areas_bp = EVAL ~%MOD_FOLDER%/Worldmap/areas-bp-bgt.tbl~
+		path_to_links_bp = EVAL ~%MOD_FOLDER%/Worldmap/links-bp-bgt.tbl~
+    	path_to_trans = EVAL ~%MOD_FOLDER%/lang/%LANGUAGE%/worldmap.tra~
+		icons_table = ~remapped_icons~
 END
 
 

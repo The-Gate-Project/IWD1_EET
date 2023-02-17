@@ -1,0 +1,105 @@
+
+SRC_AREA  SRC_NWSE  TARGET_ARE  ENTRY_NAME  TRV_TIME  DEF_ENTRY  ENC1     ENC2     ENC3     ENC4     ENC5     ENC_PROB
+
+ID2000    E         ID2100      FRWMAPW     2         8          N        N        N        N        N        5
+
+ID2100    W         ID2000      FRWMAP      2         2          N        N        N        N        N        5
+ID2100    E         ID3000      FRWMAP      2         8          N        N        N        N        N        5
+ID2100    E         ID3600      FRWMAP      10        4          N        N        N        N        N        5
+ID2100    E         ID4000      FRWMAP      18        4          N        N        N        N        N        5
+ID2100    E         ID5000      FRWMAP      30        4          N        N        N        N        N        5
+ID2100    E         ID6000      FRWMAP      20        2          N        N        N        N        N        5
+ID2100    E         ID7000      FRWMAP      96        1          N        N        N        N        N        5
+
+ID3000    W         ID2100      FRWMAPE     2         2          N        N        N        N        N        5
+
+ID3600    S         ID2100      FRWMAPE     10        2          N        N        N        N        N        5
+
+ID4000    S         ID2100      FRWMAPE     18        2          N        N        N        N        N        5
+ID4000    S         ID5000      FRWMAP      14        4          N        N        N        N        N        5
+
+ID5000    S         ID2100      FRWMAPE     30        2          N        N        N        N        N        5
+ID5000    S         ID4000      FRWMAP      14        4          N        N        N        N        N        5
+ID5000    S         ID6000      FRWMAP      12        2          N        N        N        N        N        5
+ID5000    S         ID7000      FRWMAP      72        1          N        N        N        N        N        5
+
+ID6000    W         ID7000      FRWMAP      8         1          N        N        N        N        N        5
+ID6000    E         ID2100      FRWMAPE     20        2          N        N        N        N        N        5
+ID6000    E         ID5000      FRWMAP      12        4          N        N        N        N        N        5
+
+ID7000    N         ID6000      FRWMAP      8         2          N        N        N        N        N        5
+ID7000    N         ID2100      FRWMAPE     96        2          N        N        N        N        N        5
+ID7000    N         ID5000      FRWMAP      72        4          N        N        N        N        N        5
+
+ID9100    E         ID9200      FRWMAP      4         8          N        N        N        N        N        5
+ID9100    E         ID9500      FRWMAP      20        4          N        N        N        N        N        5
+
+ID9200    W         ID9100      FRWMAP      4         2          N        N        N        N        N        5
+ID9200    W         ID9500      FRWMAP      20        4          N        N        N        N        N        5
+
+ID9500    S         ID9100      FRWMAP      20        2          N        N        N        N        N        5
+ID9500    S         ID9200      FRWMAP      20        8          N        N        N        N        N        5
+
+IW1200    N         IW3000      FRWMap      4         4          N        N        N        N        N        5
+IW1200    N         IW2000      FRWMap      2         4          N        N        N        N        N        5
+IW1200    W         IW3000      FRWMap      4         4          N        N        N        N        N        5
+IW1200    W         IW2000      FRWMap      2         4          N        N        N        N        N        5
+
+IW2000    S         IW1200      FRWMap      2         9          N        N        N        N        N        5
+
+IW2102    W         IW1200      FRWMap      2         9          N        N        N        N        N        5
+
+IW3000    S         IW1200      FRWMap      4         9          N        N        N        N        N        5
+
+IW4100    N         IW5000      FRWMapW     10        8          N        N        N        N        N        5
+
+IW5000    W         IW4100      FR5000      10        1          N        N        N        N        N        5
+IW5000    E         IW5300      FRWMap      7         9          N        N        N        N        N        5
+IW5000    E         IW5001      FR5000      1         8          N        N        N        N        N        5
+IW5000    E         IW5005      FRWMap      3         12         N        N        N        N        N        5
+IW5000    E         IW5200      FRWMap      5         4          N        N        N        N        N        5
+
+IW5001    W         IW5000      FRWMapE     1         2          N        N        N        N        N        5
+
+IW5004    N         IW5000      FRWMapE     2         2          N        N        N        N        N        5
+IW5004    N         IW5005      FRWMap      1         8          N        N        N        N        N        5
+
+IW5005    W         IW5000      FRWMapE     3         2          N        N        N        N        N        5
+IW5005    W         IW5004      FRWMap      1         1          N        N        N        N        N        5
+
+IW5102    E         IW5000      FRWMapE     3         2          N        N        N        N        N        5
+IW5102    E         IW5004      FRWMap      2         1          N        N        N        N        N        5
+IW5102    E         IW5203      FRWMap      1         1          N        N        N        N        N        5
+
+IW5200    S         IW5000      FRWMapE     5         2          N        N        N        N        N        5
+IW5200    S         IW5102      FRWMap      1         2          N        N        N        N        N        5
+IW5200    S         IW5004      FRWMap      3         1          N        N        N        N        N        5
+
+IW5203    N         IW5000      FRWMapE     5         2          N        N        N        N        N        5
+IW5203    N         IW5300      FRWMap      1         9          N        N        N        N        N        5
+
+IW5300    W         IW5000      FRWMapE     7         2          N        N        N        N        N        5
+IW5300    W         IW5203      FRWMap      1         1          N        N        N        N        N        5
+IW5300    W         IW5102      FRWMap      3         2          N        N        N        N        N        5
+IW5300    W         IW5004      FRWMap      5         1          N        N        N        N        N        5
+
+IW6001    E         IW6300      FRWMap      30        4          N        N        N        N        N        5
+IW6001    E         IW6100      FRWMap      18        4          N        N        N        N        N        5
+IW6001    E         IW6200      FRWMap      27        4          N        N        N        N        N        5
+IW6001    N         IW6300      FRWMap      30        4          N        N        N        N        N        5
+IW6001    N         IW6100      FRWMap      18        4          N        N        N        N        N        5
+IW6001    N         IW6200      FRWMap      27        4          N        N        N        N        N        5
+
+IW6100    S         IW6001      FRWMapE     18        2          N        N        N        N        N        5
+
+IW6200    S         IW6001      FRWMapE     27        2          N        N        N        N        N        5
+IW6200    S         IW6201      FRWMap      0         2          N        N        N        N        N        5
+IW6200    S         IW6300      FRWMap      27        4          N        N        N        N        N        5
+
+IW6201    E         IW6001      FRWMapE     27        2          N        N        N        N        N        5
+IW6201    E         IW6300      FRWMap      27        4          N        N        N        N        N        5
+IW6201    N         IW6200      FRWMap      0         4          N        N        N        N        N        5
+
+IW6300    S         IW6001      FRWMapE     30        2          N        N        N        N        N        5
+IW6300    S         IW6201      FRWMap      27        2          N        N        N        N        N        5
+IW6300    N         IW6200      FRWMap      27        4          N        N        N        N        N        5
