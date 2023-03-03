@@ -21,9 +21,8 @@
   * [IWD1_EET](https://github.com/11jo/IWD1_EET)
   * [IWD2_EET](https://github.com/11jo/IWD2_EET)
 
-### [Worldmap_IWD_EET](https://github.com/11jo/Worldmap_IWD_EET)
 
-* #### **After** 
-  * [BP-BGT-Worldmap](https://github.com/SpellholdStudios/BP-BGT-Worldmap)
+### [Worldmap_IWD_EET] Not needed any more, as it is part of IWD1 and IWD2.
+
 
 
