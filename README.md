@@ -1,4 +1,4 @@
-# IWD-EET
+# IWD1-EET
 
 **Autor** : [Tipun](https://github.com/tipun81?tab=repositories)
 

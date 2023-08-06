@@ -122,7 +122,7 @@ END
 
 IF
 	HaveSpell(CLERIC_CURE_MEDIUM_WOUNDS)
-	See(EigthNearestMyGroupOfType)
+	See(EighthNearestMyGroupOfType)
 	!StateCheck(LastSeenBy(Myself),STATE_REALLY_DEAD)
 	HPPercentLT(LastSeenBy(Myself),60)
 	Allegiance(Myself,ENEMY)
@@ -265,7 +265,7 @@ END
 
 IF
 	HaveSpell(CLERIC_CURE_LIGHT_WOUNDS)
-	See(EigthNearestMyGroupOfType)
+	See(EighthNearestMyGroupOfType)
 	!StateCheck(LastSeenBy(Myself),STATE_REALLY_DEAD)
 	HPPercentLT(LastSeenBy(Myself),60)
 	Allegiance(Myself,ENEMY)
