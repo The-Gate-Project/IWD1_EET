@@ -16,6 +16,9 @@ LANGUAGE ~Français~
 LANGUAGE ~Español~
 	     ~es_ES~
 	     ~iwd1_eet/lang/es_ES/dialog.tra~
+LANGUAGE ~Simplified Chinese~
+	     ~zh_CN~
+	     ~iwd1_eet/lang/zh_CN/dialog.tra~
 
 
 BEGIN ~Use <CHARNAME> instead of <GABBER> etc.~
