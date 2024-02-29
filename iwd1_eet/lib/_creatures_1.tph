@@ -1285,6 +1285,8 @@ COPY ~iwd1_eet/creatures/BPERDIEM.cre~ ~override~
 COPY ~iwd1_eet/creatures/PSENTRY.cre~ ~override~
     SAY 0x8 @19433
     SAY 0xc @19434
+	REMOVE_CRE_ITEM ~AX1H04~
+	ADD_CRE_ITEM ~AX1H04~ #0 #0 #0 ~unstealable~ ~weapon2~ EQUIP
 COPY ~iwd1_eet/creatures/WOLFBEL.cre~ ~override~
     SAY 0x8 @6629
     SAY 0xc @8769

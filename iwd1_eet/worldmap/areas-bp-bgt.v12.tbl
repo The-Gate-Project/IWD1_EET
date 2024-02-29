@@ -1,0 +1,27 @@
+
+//IWD1
+SHORT_NAME  CONTENT  LONG_NAME  FLAGS  BAM_ANIM  X_POS  Y_POS  NAME         TOOLTIP      LOAD_IM
+                                                               
+ID1000      ID1000   ID1000     0      135       815    150    @id1000      @id1000      N        //++ Восточная Гавань // Easthaven // Havredest
+ID2000      ID2000   ID2000     0      136       740    275    @id2000      @id2000      N        //++ Кулдахарский перевал // Kuldahar Pass // Le col de Kuldahar
+ID2100      ID2100   ID2100     2      137       835    230    @id2100      @id2100      N        //++ Кулдахар // Kuldahar
+ID3000      ID3000   ID3000     0      138       930    195    @id3000      @id3000      N        //++ Долина Теней // The Vale of Shadows // La Vallee des Ombres
+ID3600      ID3600   ID3600     0      139       933    131    @id3600      @id3600      N        //++ Храм Забытого Бога // Temple of the Forgotten God // Temple du dieu oublie
+ID4000      ID4000   ID4000     0      140       1050   125    @id4000      @id4000      N        //++ Глаз Дракона // Dragon's Eye // l’œil du Dragon
+ID5000      ID5000   ID5000     0      141       1155   170    @id5000      @id5000      N        //++ Отрубленная Рука // Severed Hand // Main Tranchee
+ID6000      ID6000   ID6000     0      142       1269   110    @id6000      @id6000      N        //++ Пещеры Дорна // Dorn's Deep // Profondorn
+ID7000      ID7000   ID7000     0      143       1322   60     @id7000      @id7000      N        //++ Зуб Змия // Wyrm's Tooth // Dent du Dragon
+ID8001      ID8001   ID8001     0      144       1353   117    @id8001      @id8001      N        //++ Нижние Пещеры Дорна // Lower Dorn's Deep // Le Bas Profondorn
+ID1100      ID1100   ID1100     0      135       815    150    @id1000      @id1000      N        //++ Восточная Гавань
+                                                               				                      
+ID9100      ID9100   ID9100     0      146       735    100    @id9100      @id9100      N        //++ Лонливуд // Lonelywood // Le Bois Isole
+ID9200      ID9200   ID9200     0      147       770    35     @id9200      @id9200      N        //++ Лагерь Варваров // Barbarian Camp // Camp des barbares
+ID9300      ID9300   ID9300     0      148       125    63     @id9300      @id9300      N        //++ Погребальный остров // Burial Isle // Ile aux tertres
+ID9500      ID9500   ID9500     0      150       870    65     @id9500      @id9500      N        //++ Темный ледник  // Gloom Frost // Morneglace
+ID9600      ID9600   ID9600     0      151       957    29     @id9600      @id9600      N        //++ Море Движущихся Льдов  // Sea of Moving Ice // Mer des Glaces Mouvantes
+                                                               				                      
+ID9700      ID9700   ID9700     0      184       1535   60     @id9700      @id9700      N        //++ Замок Малурадек - @100061 // Castle Maluradek // Forteresse de Maluradek
+                                                                                                  
+ID1006      ID1006   ID1006     0      134       815    150    N            N            N        //++ Восточная Гавань // Easthaven // Havredest
+ID7005      ID7005   ID7005     0      134       1330   60     N            N            N        //++ Зуб Змия // Wyrm's Tooth // Dent du Dragon
+

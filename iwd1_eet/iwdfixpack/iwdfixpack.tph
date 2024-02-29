@@ -74,7 +74,7 @@ COPY_EXISTING ~ehdwfbox.bcs~ ~override~
   DECOMPILE_AND_PATCH BEGIN
     REPLACE_TEXTUALLY ~ActionOverride("EHBEDD1",Deactivate(Myself))~ ~ActionOverride("EHINVDWF",Deactivate(Myself))~
   END
-  BUT_ONLY
+  BUT_ONLY // Not working should aim for another ressource or name the actual container depend if a Npc is deactivate or only the container
 
 COPY_EXISTING ~eepoqcng.bcs~ ~override~
   DECOMPILE_AND_PATCH BEGIN

@@ -11,7 +11,7 @@ THEN
 		MultiPlayerSync()
 		MoveViewObject(Myself,INSTANT)
 		MultiPlayerSync()
-		PlaySound("ID9711G")
+		PlaySound("ID9711G") // Missing ressource maybe ID9711D
 		EquipItemEx("CIFADE",0)
 		Wait(2)
 		//HideCreature(Myself,TRUE)
