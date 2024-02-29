@@ -4,7 +4,7 @@ SHORT_NAME  CONTENT  LONG_NAME  FLAGS  BAM_ANIM  X_POS  Y_POS  NAME         TOOL
                                                                
 ID1000      ID1000   ID1000     0      135       1147   -197   N            N            N        //++ Восточная Гавань // Easthaven // Havredest // @id1000
 ID2000      ID2000   ID2000     0      136       1460   -201   @id2000      @id2000      N        //++ Кулдахарский перевал // Kuldahar Pass // Le col de Kuldahar
-ID2100      ID2100   ID2100     2      137       1600   -245   @id2100      @id2100      N        //++ Кулдахар // Kuldahar
+ID2100      ID2100   ID2100     2      137       1600   -245   N            N            N        //++ Кулдахар // Kuldahar
 ID3000      ID3000   ID3000     0      138       1680   -325   @id3000      @id3000      N        //++ Долина Теней // The Vale of Shadows // La Vallee des Ombres
 ID3600      ID3600   ID3600     0      139       1825   -310   @id3600      @id3600      N        //++ Храм Забытого Бога // Temple of the Forgotten God // Temple du dieu oublie
 ID4000      ID4000   ID4000     0      140       1750   -225   @id4000      @id4000      N        //++ Глаз Дракона // Dragon's Eye // l’œil du Dragon
@@ -12,7 +12,7 @@ ID5000      ID5000   ID5000     0      141       2000   -130   @id5000      @id5
 ID6000      ID6000   ID6000     0      142       1580   -130   @id6000      @id6000      N        //++ Пещеры Дорна // Dorn's Deep // Profondorn
 ID7000      ID7000   ID7000     0      143       1660   -80    @id7000      @id7000      N        //++ Зуб Змия // Wyrm's Tooth // Dent du Dragon
 ID8001      ID8001   ID8001     0      144       1755   -90    @id8001      @id8001      N        //++ Нижние Пещеры Дорна // Lower Dorn's Deep // Le Bas Profondorn
-ID1100      ID1100   ID1100     0      135       1147   -197   @id1000      @id1000      N        //++ Восточная Гавань // Easthaven // Havredest
+ID1100      ID1100   ID1100     0      135       1147   -197   N            N            N        //++ Восточная Гавань // Easthaven // Havredest
                                                                                                   
 ID9100      ID9100   ID9100     0      146       663    -195   N            N            N        //++ Лонливуд // Lonelywood // Le Bois Isole // @id9100 
 ID9200      ID9200   ID9200     0      147       894    -275   @id9200      @id9200      N        //++ Лагерь Варваров // Barbarian Camp // Camp des barbares
