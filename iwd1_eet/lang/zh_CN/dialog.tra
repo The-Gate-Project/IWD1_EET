@@ -13432,7 +13432,7 @@ Donottrans~
 拉瑞站上了颠峰。~
 @8748  = ~你能告诉我那些精灵与矮人的故事吗？~
 @8749  = ~多谢了，泰兰尼。再见。~
-@8750  = "~!@#$%^&*（）_+-=\[\]{}\\|;:''，\<.\>/?"
+@8750  = ~~~~~~!@#$%^&*()_+-=\[\]{}\\|;:'",\<.\>/?~~~~~
 @8751  = ~啊。精灵与矮人的传说。这是个悲伤的故事……
 
 在与黑暗族群争斗的过程中，
@@ -19798,8 +19798,8 @@ DONOTTRANS~
 @12494 = ~[BLACK LILY 4]~ [BLACK04]
 @12495 = ~[TOWN CRIER 3]~ [TOWNC03]
 @12496 = ~[TOWN CRIER 4]~ [TOWNC04]
-@12497 = ~[NARLEN DARKWALK  3]~ [GLANM03]
-@12498 = ~[NARLEN DARKWALK  4]~ [GLANM04]
+@12497 = ~[GLANMARIE  3]~ [GLANM03]
+@12498 = ~[GLANMARIE  4]~ [GLANM04]
 @12499 = ~[NARLENDARKWALK3]~ [NARLN03]
 @12500 = ~[NARLENDARKWALK4]~ [NARLN04]
 @12501 = ~[REDEDGE 3]~ [REDEG03]
@@ -19815,7 +19815,7 @@ DONOTTRANS~
 @12511 = ~[VARCI ROARINGHAM 4]~ [VARCI04]
 @12512 = ~[TREMAIN BELDE'AR 3]~ [TREMN03]
 @12513 = ~[TREMAIN BELDE'AR 4]~ [TREMN04]
-@12514 = ~[CASSON BELDE'AR 4]~ [CASSN03]
+@12514 = ~[CASSON BELDE'AR 3]~ [CASSN03]
 @12515 = ~[CASSON BELDE'AR 4]~ [CASSN04]
 @12516 = ~[FARMER BRUN 3]~ [BRUNN03]
 @12517 = ~[FARMER BRUN 4]~ [BRUNN04]
@@ -19844,7 +19844,7 @@ DONOTTRANS~
 @12540 = ~[DUNKIN 3]~ [DUNKN03]
 @12541 = ~[DUNKIN 4]~ [DUNKN04]
 @12542 = ~[MAL-KALEN 3]~ [MALKL03]
-@12543 = ~[MAL-KALEN 5]~ [MALKL04]
+@12543 = ~[MAL-KALEN 4]~ [MALKL04]
 @12544 = ~[ANGELO 3]~ [ANGEL03]
 @12545 = ~[ANGELO 4]~ [ANGEL04]
 @12546 = ~[MALE CHILDREN 5]~ [MCHIL05]
@@ -19861,7 +19861,7 @@ DONOTTRANS~
 @12557 = ~[NOBLEWOMAN 6]~ [NOBLW06]
 @12558 = ~[STOREOWNER 5]~ [STORE05]
 @12559 = ~[STOREOWNER 6]~ [STORE06]
-@12560 = ~[MINERS 6]~ [MINER05]
+@12560 = ~[MINERS 5]~ [MINER05]
 @12561 = ~[MINERS 6]~ [MINER06]
 @12562 = ~[SLAVES 5]~ [SLAVE05]
 @12563 = ~[SLAVES 6]~ [SLAVE06]
@@ -20940,7 +20940,7 @@ DONOTTRANS~
 @13200 = ~深水城的历史~
 @13201 = ~深水城的历史~
 @13202 = ~[ALDETH POST]我根本没有话要对你讲，你为什么不赶快走远一点？！~
-@13203 = ~[[AMNISHSOLDIERHOSTILE]如果你再前进一步，我就把你的耳朵拧下来。~
+@13203 = ~[AMNISHSOLDIERHOSTILE]如果你再前进一步，我就把你的耳朵拧下来。~
 @13204 = ~[AMNISHSOLDIER2HOSTILE]如果你再前进一步，我就把你的耳朵拧下来。~
 @13205 = ~[AMNISHSOLDIER3HOSTILE]别过来，否则就对你不客气了！~
 @13206 = ~[AMNISHSOLDIER4HOSTILE]你回来和我说话？笨蛋，和我的剑聊聊吧！~
@@ -20993,8 +20993,8 @@ DONOTTRANS~
 @13253 = ~[DEMO/GUARD/SHELTONPOST]我才不会和你这种人讲话呢！走开！~
 @13254 = ~[DEMO/GUARD/SHELTONHOSTILE]我以后绝对不会再和你说话了！~
 @13255 = ~[DEMO/MONK/AVERYPOST]我和你一样都有许多工作要做。请不要干扰我。~
-@13256 = ~[DEMO/MONK/加速术NBACKPOST]希望你调查顺利。~
-@13257 = ~[DEMO/MONK/加速术NBACKHOSTILE]我不是有意无礼，不过请你马上离开。~
+@13256 = ~[DEMO/MONK/HASTENBACK POST]希望你调查顺利。~
+@13257 = ~[DEMO/MONK/HASTENBACK OSTILE]我不是有意无礼，不过请你马上离开。~
 @13258 = ~[DEMO/MONK/LENOREPOST]我……我不想和你说话。让我……让我独自静一静。~
 @13259 = ~[DEMO/MONK/LENOREHOSTILE]滚远一点！我不会帮你忙的！~
 @13260 = ~[DEMO/MONK/RANDOMEXTRAHOSTILE]我以后绝对不会再和你说话了！~
@@ -21144,18 +21144,18 @@ DONOTTRANS~
 @13404 = ~[HALFLING FEMALE OF GULLYKIN HOSTILE] 你们在这待得还不够久吗！~
 @13405 = ~[HALFLING FEMALE OF GULLYKIN 2(MABLEDALE) POST HIGH CHAR.] 欢迎！又见面了，我还以为你们已经走了呢。很高兴你们愿意多留一会。~
 @13406 = ~[HALFLING FEMALE OF GULLYKIN 2(MABLEDALE) POST LOW CHAR.]再次见到你真是令人惊讶！你们还不想上路吗？达理拉保佑，我希望小孩子不会跟着你们一起离开。~
-@13407 = ~[HALFLING FEMALE OF GULLYKIN 2(MABLEDALE) HOSTILE]你们在这待得还不够久吗！~
+@13407 = ~[HALFLING MALE OF GULLYKIN 5 (JOLDENAN) POST HIGH CHAR.]你们在这待得还不够久吗！~
 @13408 = ~[HALFLING MALE OF GULLYKIN 2 (BUNSEN) POST HIGH CHAR.] 你好，真高兴再度见到你。~
 @13409 = ~[HALFLING MALE OF GULLYKIN 2 (BUNSEN) POST LOW CHAR.]你回来啦！我猜你这次不会待的比上次久吧？~
-@13410 = ~[HALFLINGMALEOFGULLYKIN2（BUNSEN）HOSTILE]我不是有意无礼，不过请你马上离开。~
-@13411 = ~[HALFLINGMALEOFGULLYKIN3（FARTHENDELL）POSTHIGHCHAR.]我们又再次见面了，和你聊天真愉快。~
-@13412 = ~[HALFLINGMALEOFGULLYKIN3（FARTHENDELL）POSTLOWCHAR.]我又再度在家里遇见你。如果你守规矩的话，我还是欢迎你。~
-@13413 = ~[HALFLINGMALEOFGULLYKIN3（FARTHENDELL）HOSTILE]我不是有意无礼，不过请你马上离开。~
-@13414 = ~[HALFLINGMALEOFGULLYKIN4（ARLOND）POSTHIGHCHAR.]你好啊！这次最好小声一点，因为奶奶不希望你带我离开。~
-@13415 = ~[HALFLINGMALEOFGULLYKIN4（ARLOND）POSTLOWCHAR.]你赶快走！我马上就会让大家都知道你在这！~
-@13416 = ~[HALFLINGMALEOFGULLYKIN4（ARLOND）HOSTILE]我不是有意无礼，不过请你马上离开。~
-@13417 = ~[HALFLINGMALEOFGULLYKIN5（JOLDENAN）POSTHIGHCHAR.]很高兴看见你还活着，不过我希望你不要在我家里待太久。~
-@13418 = ~[HALFLINGMALEOFGULLYKIN5（JOLDENAN）POSTLOWCHAR.]你一直死赖在我家实在很讨厌。我很好客，但是你实在是不受欢迎。~
+@13410 = ~[HALFLING MALE OF GULLYKIN 2 (BUNSEN) HOSTILE]我不是有意无礼，不过请你马上离开。~
+@13411 = ~[HALFLING MALE OF GULLYKIN 3(FARTHENDELL) POST HIGH CHAR.]我们又再次见面了，和你聊天真愉快。~
+@13412 = ~[HALFLING MALE OF GULLYKIN 3(FARTHENDELL) POST LOW CHAR.]我又再度在家里遇见你。如果你守规矩的话，我还是欢迎你。~
+@13413 = ~[HALFLING MALE OF GULLYKIN 3(FARTHENDELL) HOSTILE]我不是有意无礼，不过请你马上离开。~
+@13414 = ~[HALFLING MALE OF GULLYKIN 4 (ARLOND) POST HIGH CHAR.]你好啊！这次最好小声一点，因为奶奶不希望你带我离开。~
+@13415 = ~[HALFLING MALE OF GULLYKIN 4 (ARLOND) POST LOW CHAR.]你赶快走！我马上就会让大家都知道你在这！~
+@13416 = ~[HALFLING MALE OF GULLYKIN 4 (ARLOND) HOSTILE]我不是有意无礼，不过请你马上离开。~
+@13417 = ~[HALFLING MALE OF GULLYKIN 5 (JOLDENAN) POST HIGH CHAR.]很高兴看见你还活着，不过我希望你不要在我家里待太久。~
+@13418 = ~[HALFLING MALE OF GULLYKIN 5 (JOLDENAN) POST LOW CHAR.]你一直死赖在我家实在很讨厌。我很好客，但是你实在是不受欢迎。~
 @13419 = ~[HALFLINGMALEOFGULLYKIN5（JOLDENAN）HOSTILE]我不是有意无礼，不过请你马上离开。~
 @13420 = ~[HALFLINGMALEOFGULLYKIN6POSTHIGHCHAR.]又回来啦？我很惊讶你没有待在美仑美奂的大旅馆，而跑来我这个小地方。很高兴我有这个荣幸，但是我知道你待不久的。~
 @13421 = ~[HALFLINGMALEOFGULLYKIN6POSTLOWCHAR.]啊，你又在外面过了一天，而且肚子上没有插着小刀。看来你的智能增长不少……或者你只是跑的快？不管这么多，年轻人，希望你旅途顺利。~
@@ -36020,7 +36020,7 @@ donottranslate~
 @21318 = ~梭斯~
 @21319 = ~给克瑞希的信~
 @21320 = ~给克瑞希的信~
-@21321 = ~Undropablehelmetwithnoanimation~
+@21321 = ~Undropable helmet with no animation~
 @21322 = ~阿蓝·林凡~
 @21323 = ~阿蓝·林凡~
 @21324 = ~克瑞希
@@ -44686,7 +44686,7 @@ RBP~
 @26425 = ~~
 @26426 = ~~
 @26427 = ~铜冠~
-@26428 = ~WizardsoftheCoast商标~
+@26428 = ~Wizards of the Coast商标~
 @26429 = ~被迷惑~
 @26430 = ~现在我没办法谈。附近还躲有更多的蛇形怪物。请帮我们打败它们。~
 @26431 = ~闭嘴，温血动物！高阶司仪正准备要开始进行我们的晚餐祈祷。~
