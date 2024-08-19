@@ -6,7 +6,6 @@ COPY ~iwd1_eet/spl/IDMXHPS.SPL~ ~override~
      ~iwd1_eet/spl/IDIN973.SPL~ ~override~
      ~iwd1_eet/spl/IDWI023.SPL~ ~override~
      ~iwd1_eet/spl/IDWI021.SPL~ ~override~
-     ~iwd1_eet/spl/IDIN993.SPL~ ~override~
      ~iwd1_eet/spl/IDSETHP1.SPL~ ~override~
      ~iwd1_eet/spl/IDSTHP25.SPL~ ~override~
      ~iwd1_eet/spl/IDIN984.SPL~ ~override~
@@ -107,6 +106,9 @@ COPY ~iwd1_eet/spl/IDIN974.SPL~ ~override~
 COPY ~iwd1_eet/spl/IDIN991.SPL~ ~override~
   WRITE_SHORT 0x98 ~%idpro284%~
 
+COPY ~iwd1_eet/spl/IDIN993.SPL~ ~override~
+  WRITE_SHORT 0x98 ~%idpro282%~
+
 COPY ~iwd1_eet/spl/IDIN979.SPL~ ~override~
   WRITE_SHORT 0x98 ~%idpro294%~
 
@@ -195,6 +197,7 @@ COPY ~iwd1_eet/spl/IDIN154.SPL~ ~override~
 
 COPY ~iwd1_eet/spl/IDIN159.SPL~ ~override~
   SAY 0x08 @26661
+  WRITE_SHORT 0x98 159
 
 COPY ~iwd1_eet/spl/IDPR613.SPL~ ~override~
   SAY 0x08 @21398
