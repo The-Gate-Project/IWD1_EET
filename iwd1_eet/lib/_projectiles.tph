@@ -14,6 +14,7 @@ ADD_PROJECTILE ~iwd1_eet/pro/idpro270.pro~ ~Flame Oil~
 ADD_PROJECTILE ~iwd1_eet/pro/idpro271.pro~ ~Sol searing orb~
 ADD_PROJECTILE ~iwd1_eet/pro/idpro279.pro~ ~Malavons corrosive fog~
 ADD_PROJECTILE ~iwd1_eet/pro/idpro281.pro~ ~Umber Hulk Gaze~
+ADD_PROJECTILE ~iwd1_eet/pro/idpro282.pro~ ~Bombardier Beetle cloud~
 ADD_PROJECTILE ~iwd1_eet/pro/idpro283.pro~ ~Zombie lord aura~
 ADD_PROJECTILE ~iwd1_eet/pro/idpro284.pro~ ~Iron golem cloud~
 ADD_PROJECTILE ~iwd1_eet/pro/idpro285.pro~ ~Myconid spores~

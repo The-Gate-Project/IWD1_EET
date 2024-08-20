@@ -231,75 +231,12 @@ BEGIN
   END
 END
 
-/** ADD_SPLPROT_ENTRY
- * Adds a new entry to SPLPROT.2DA and returns its index. If an identical entry already exists it will return 
- * the index of that entry instead.
- * INT_VAR stat     A code from STATS.IDS or an extended stat code starting at 0x100 (256).
- * STR_VAR value    Either a numeric value that is evaluated by "stat", or a default value "*" for specific stats.
- *                  (Note: "-1" indicates a user-defined value.)
- * STR_VAR relation Specifies how to evaluate the value.
- *                  (Note: Not all extended stats require a relation code. Use "*" in this case.)
- * RET index        Entry number that can be used to refer to this operation in various effect opcodes.
- *                  Returns -1 on error.
- */
-/*DEFINE_ACTION_FUNCTION ADD_SPLPROT_ENTRY
-INT_VAR
-  stat      = "-1"
-STR_VAR
-  value     = "*"
-  relation  = "*"
-RET
-  index
-BEGIN
-  OUTER_SET index = "-1"
-
-  ACTION_IF (stat >= 0) BEGIN
-    LAF TO_HEX_NUMBER INT_VAR value = stat RET hexNumber END
-    OUTER_TEXT_SPRINT valueHex ~0x%hexNumber%~
-    ACTION_IF (~%value%~ STRING_EQUAL ~~) BEGIN
-      OUTER_TEXT_SPRINT value ~*~
-    END
-    ACTION_IF (~%relation%~ STRING_EQUAL ~~) BEGIN
-      OUTER_TEXT_SPRINT relation ~*~
-    END
-
-    ACTION_IF (FILE_EXISTS_IN_GAME ~splprot.2da~) BEGIN
-      COPY_EXISTING ~splprot.2da~ ~override~
-        READ_2DA_ENTRIES_NOW table 4
-        // Search for identical entries
-        FOR (idx = 0; idx < table; idx += 1) BEGIN
-          READ_2DA_ENTRY_FORMER table idx 1 curStat
-          PATCH_IF (~%stat%~ STRING_EQUAL ~%curStat%~ OR ~%valueHex%~ STRING_EQUAL_CASE ~%curStat%~) BEGIN
-            READ_2DA_ENTRY_FORMER table idx 2 curValue
-            PATCH_IF (~%value%~ STRING_EQUAL ~%curValue%~) BEGIN
-              READ_2DA_ENTRY_FORMER table idx 3 curRelation
-              PATCH_IF (~%relation%~ STRING_EQUAL ~%curRelation%~) BEGIN
-                SET index = idx
-                SET idx = table
-              END
-            END
-          END
-        END
-
-        PATCH_IF (index < 0) BEGIN
-          // Add new entry
-          PATCH_IF (stat >= 0x100) BEGIN
-            TEXT_SPRINT line ~%table%        %valueHex%        %value%         %relation%~
-          END ELSE BEGIN
-            TEXT_SPRINT line ~%table%        %stat%          %value%         %relation%~
-          END
-          INSERT_2DA_ROW table 4 ~%line%~
-          SET index = table
-        END
-      BUT_ONLY
-    END
-  END
-END*/
-//BLOCK ADD_SPLPROT_ENTRY
+/* ADD_SPLPROT_ENTRY */
 DEFINE_ACTION_FUNCTION ADD_SPLPROT_ENTRY
 	INT_VAR
 		stat_hex    = 1
 		value_hex   = 0
+		add_number  = 1
 	STR_VAR
 		label       = ~~
 		definition  = ~~
@@ -355,16 +292,41 @@ BEGIN
 				SET true = 0
 				READ_2DA_ENTRY i 0 4 label1
 				READ_2DA_ENTRY i 1 4 stat1
-				PATCH_IF ( IS_AN_INT ~stat1~ )  AND ( stat = stat1 )   BEGIN true = true + 1 END
+				PATCH_IF ( IS_AN_INT ~stat1~ )  AND ( stat = stat1 )   BEGIN SET true = true + 1 END
 				READ_2DA_ENTRY i 2 4 value1
-				PATCH_IF ( IS_AN_INT ~value1~ ) AND ( value = value1 ) BEGIN true = true + 1 END
+				PATCH_IF ( IS_AN_INT ~value1~ ) AND ( value = value1 ) BEGIN SET true = true + 1 END
 				READ_2DA_ENTRY i 3 4 rel1
-				PATCH_IF ( IS_AN_INT ~rel1~ )   AND ( rel = rel1 )     BEGIN true = true + 1 END
+				PATCH_IF ( IS_AN_INT ~rel1~ )   AND ( rel = rel1 )     BEGIN SET true = true + 1 END
 				PATCH_IF ( true = 3 ) BEGIN
 					SET index = i
 					SET exists = 1
 					SET i = table
 					TEXT_SPRINT ~label1~ ~%label1%	%stat1%	%value1%	%rel1%~
+				END
+			END
+			//add_new_string to empty
+			PATCH_IF ( index < 0 ) BEGIN
+				SET trueex = 0
+				FOR ( i = 0 ; i < table ; ++i ) BEGIN
+					SET true = 0
+					PATCH_IF NOT trueex BEGIN
+						READ_2DA_ENTRY i 1 4 stat1
+						PATCH_IF ( ~%stat1%~  STR_EQ ~*~ ) BEGIN SET true = true + 1 END
+						READ_2DA_ENTRY i 1 4 value1
+						PATCH_IF ( ~%value1%~ STR_EQ ~*~ ) BEGIN SET true = true + 1 END
+						READ_2DA_ENTRY i 1 4 rel1
+						PATCH_IF ( ~%rel1%~   STR_EQ ~*~ ) BEGIN SET true = true + 1 END
+						PATCH_IF ( true = 3 ) BEGIN
+							SET index = i
+							SET i = table
+							PATCH_IF add_number BEGIN SPRINT nbr ~%index%_~ END ELSE BEGIN SPRINT nbr ~~ END
+							TEXT_SPRINT ~label1~ ~%nbr%%label%	%stat%	%value%	%rel%~
+							SET_2DA_ENTRY index 0 4 ~%nbr%%label%~
+							SET_2DA_ENTRY index 1 4 ~%stat%~
+							SET_2DA_ENTRY index 2 4 ~%value%~
+							SET_2DA_ENTRY index 3 4 ~%rel%~
+						END
+					END
 				END
 			END
 			//add_new_string
@@ -374,10 +336,11 @@ BEGIN
 				PATCH_IF ( stat >= 0 ) AND ( stat_hex = 1 ) BEGIN
 					LPF TO_HEX_NUMBER INT_VAR value=stat minDigits=3 prefix=1 RET stat=hexNumber END
 				END
-				PATCH_IF ( value >= 0 ) AND ( value_hex = 1) BEGIN
+				PATCH_IF ( value >= 0 ) AND ( value_hex = 1 ) BEGIN
 					LPF TO_HEX_NUMBER INT_VAR value=value prefix=1 RET value=hexNumber END
 				END
-				TEXT_SPRINT ~label1~ ~%label%	%stat%	%value%	%rel%~
+				PATCH_IF add_number BEGIN SPRINT nbr ~%index%_~ END ELSE BEGIN SPRINT nbr ~~ END
+				TEXT_SPRINT ~label1~ ~%nbr%%label%	%stat%	%value%	%rel%~
 				INSERT_2DA_ROW index 4 ~%label1%~
 				PRETTY_PRINT_2DA
 			END
@@ -385,7 +348,85 @@ BEGIN
 			IF_EXISTS
 	END
 END
-//BLOCKEND
+
+/* FC_ADD_CLAB_DATA */
+DEFINE_ACTION_FUNCTION FC_ADD_CLAB_DATA
+	INT_VAR
+		level = 1
+		top   = 1
+	STR_VAR
+		file  = ""
+		label = ""
+		abil  = ""
+		type  = "AP_"
+	RET
+		done
+BEGIN
+	OUTER_SET done = 0
+	OUTER_SET exists = 0
+	ACTION_IF ( ~%file%~ STR_CMP ~~ ) AND
+	          ( ~%abil%~ STR_CMP ~~ ) AND
+	          ( level > 0 ) AND
+	          ( STRING_LENGTH ~%abil%~ < 9 ) BEGIN
+		ACTION_IF NOT FILE_EXISTS_IN_GAME ~%file%.2da~ BEGIN
+			OUTER_SPRINT header ~	~
+			OUTER_SPRINT ability ~ABILITY1~
+			OUTER_FOR ( i = 1 ; i < 51 ; ++i ) BEGIN
+				OUTER_SPRINT header ~%header%	%i%~
+				OUTER_SPRINT ability ~%ability%	****~
+			END
+<<<<<<<< .../clabfile.2da
+2DA V1.0
+****
+%header%
+%ability%
+>>>>>>>>
+			COPY ~.../clabfile.2da~ ~override/%file%.2da~ EVALUATE_BUFFER PRETTY_PRINT_2DA
+		END
+		COPY_EXISTING ~%file%.2da~ ~override~
+			COUNT_2DA_COLS cols
+			SET rows = 0
+			PATCH_IF ( level < cols ) BEGIN exists = 1 END
+			PATCH_IF exists BEGIN
+				COUNT_2DA_ROWS cols rows
+				SET line = 0
+				PATCH_IF ( rows > 0 ) BEGIN
+					FOR ( i = 0 ; i < rows ; ++i ) BEGIN
+						READ_2DA_ENTRY i 0 cols lbl
+						READ_2DA_ENTRY i level cols value
+						PATCH_IF NOT done BEGIN
+							PATCH_IF ( ~%label%~ STR_EQ ~~ ) BEGIN
+								PATCH_IF ( ~%value%~ STR_EQ ~****~ ) BEGIN
+									SET_2DA_ENTRY i level cols ~%type%%abil%~
+									SET done = 1
+									SET i = rows
+								END
+							END ELSE BEGIN
+								PATCH_IF ( ~%label%~ STR_EQ ~%lbl%~ ) BEGIN
+									PATCH_IF ( ~%value%~ STR_EQ ~****~ ) BEGIN
+										SET_2DA_ENTRY i level cols ~%type%%abil%~
+										SET done = 1
+										SET i = rows
+									END
+								END
+							END
+						END
+					END
+				END
+				SET rows = rows + 1
+				PATCH_IF ( ~%label%~ STR_EQ ~~ ) BEGIN SPRINT label ~ABILITY%rows%~ END
+				FOR ( i = 1 ; i < cols ; ++i ) BEGIN
+					PATCH_IF ( i = level ) BEGIN SPRINT value ~%type%%abil%~
+					END ELSE BEGIN SPRINT value ~****~ END
+					SPRINT label ~%label%	%value%~
+				END
+				PATCH_IF top BEGIN SET pos = 0 END ELSE BEGIN SET pos = rows END
+				INSERT_2DA_ROW 0 cols ~%label%~
+				SET done = 1
+			END
+			BUT_ONLY_IF_IT_CHANGES
+	END
+END
 
 /** APPEND_STATDESC_ENTRY
 */
