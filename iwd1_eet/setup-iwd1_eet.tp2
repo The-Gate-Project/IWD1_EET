@@ -1,6 +1,8 @@
 BACKUP ~iwd1_eet/backup~
 AUTHOR ~tipun (tipun.iwd@gmail.com; arcanecoast.ru)~
 
+VERSION ~1.0~
+
 LANGUAGE ~Russian~
 	     ~ru_RU~
 	     ~iwd1_eet/lang/ru_RU/dialog.tra~
