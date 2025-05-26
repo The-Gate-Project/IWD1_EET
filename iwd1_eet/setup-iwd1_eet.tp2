@@ -1485,29 +1485,37 @@ MAKE_BIFF ~IDAR9800~ BEGIN ~iwd1_eet/biffs/IDAR9800~ ~^.*$~ END
 // Use language sounds or english if any
 
 ACTION_IF (DIRECTORY_EXISTS ~iwd1_eet/lang/%LANGUAGE%/IDDLGSN1~) THEN BEGIN
-MAKE_BIFF ~IDDLGSN1~ BEGIN ~iwd1_eet/lang/%LANGUAGE%/IDDLGSN1~ ~^.*$~ END
-END ELSE
-MAKE_BIFF ~IDDLGSN1~ BEGIN ~iwd1_eet/lang/en_US/IDDLGSN1~ ~^.*$~ END
+	MAKE_BIFF ~IDDLGSN1~ BEGIN ~iwd1_eet/lang/%LANGUAGE%/IDDLGSN1~ ~^.*$~ END
+	PRINT ~iwd1_eet sounds in %LANGUAGE%~
+END ELSE BEGIN
+	MAKE_BIFF ~IDDLGSN1~ BEGIN ~iwd1_eet/lang/en_US/IDDLGSN1~ ~^.*$~ END
+	PRINT ~iwd1_eet sounds in english~
 END
 
 ACTION_IF (DIRECTORY_EXISTS ~iwd1_eet/lang/%LANGUAGE%/IDDLGSN2~) THEN BEGIN
-MAKE_BIFF ~IDDLGSN1~ BEGIN ~iwd1_eet/lang/%LANGUAGE%/IDDLGSN2~ ~^.*$~ END
-END ELSE
-MAKE_BIFF ~IDDLGSN1~ BEGIN ~iwd1_eet/lang/en_US/IDDLGSN2~ ~^.*$~ END
+	MAKE_BIFF ~IDDLGSN2~ BEGIN ~iwd1_eet/lang/%LANGUAGE%/IDDLGSN2~ ~^.*$~ END
+	PRINT ~iwd1_eet sounds in %LANGUAGE%~
+END ELSE BEGIN
+	MAKE_BIFF ~IDDLGSN2~ BEGIN ~iwd1_eet/lang/en_US/IDDLGSN2~ ~^.*$~ END
+	PRINT ~iwd1_eet sounds in english~
 END
 
 // Use language sounds for IWD1 extension or english if any
 
 ACTION_IF (DIRECTORY_EXISTS ~iwd1_eet/lang/%LANGUAGE%/IDEXTSN1~) THEN BEGIN
-MAKE_BIFF ~IDEXTSN~ BEGIN ~iwd1_eet/lang/%LANGUAGE%/IDEXTSN1~ ~^.*$~ END
-END ELSE
-MAKE_BIFF ~IDEXTSN~ BEGIN ~iwd1_eet/lang/en_US/IDEXTSN1~ ~^.*$~ END
+	MAKE_BIFF ~IDEXTSN1~ BEGIN ~iwd1_eet/lang/%LANGUAGE%/IDEXTSN1~ ~^.*$~ END
+	PRINT ~iwd1_eet extension sounds in %LANGUAGE%~
+END ELSE BEGIN
+	MAKE_BIFF ~IDEXTSN1~ BEGIN ~iwd1_eet/lang/en_US/IDEXTSN1~ ~^.*$~ END
+	PRINT ~iwd1_eet extension sounds in english~
 END
 
 ACTION_IF (DIRECTORY_EXISTS ~iwd1_eet/lang/%LANGUAGE%/IDEXTSN2~) THEN BEGIN
-MAKE_BIFF ~IDEXTSN~ BEGIN ~iwd1_eet/lang/%LANGUAGE%/IDEXTSN2~ ~^.*$~ END
-END ELSE
-MAKE_BIFF ~IDEXTSN~ BEGIN ~iwd1_eet/lang/en_US/IDEXTSN2~ ~^.*$~ END
+	MAKE_BIFF ~IDEXTSN2~ BEGIN ~iwd1_eet/lang/%LANGUAGE%/IDEXTSN2~ ~^.*$~ END
+	PRINT ~iwd1_eet extension sounds in %LANGUAGE%~
+END ELSE BEGIN
+	MAKE_BIFF ~IDEXTSN2~ BEGIN ~iwd1_eet/lang/en_US/IDEXTSN2~ ~^.*$~ END
+	PRINT ~iwd1_eet extension sounds in english~
 END
 
 //MAKE_BIFF ~IDDLGSN1~ BEGIN ~iwd1_eet/lang/en_US/IDDLGSN1~ ~^.*$~ END
