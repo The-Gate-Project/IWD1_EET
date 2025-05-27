@@ -1,7 +1,7 @@
 BACKUP ~iwd1_eet/backup~
 AUTHOR ~tipun (tipun.iwd@gmail.com; arcanecoast.ru)~
 
-VERSION ~1.0~
+VERSION ~1.1~
 
 LANGUAGE ~Russian~
 	     ~ru_RU~
@@ -1426,22 +1426,45 @@ MKDIR ~iwd1_eet/biffs/IDINTRO~
 MKDIR ~iwd1_eet/biffs/IDMOVIE1~
 MKDIR ~iwd1_eet/biffs/IDMOVIE2~
 
-COPY_LARGE + ~iwd1_eet/IDMOVIE/IDINTRO.wbm~  ~iwd1_eet/biffs/IDINTRO~
-COPY_LARGE + ~iwd1_eet/IDMOVIE/AVALANCH.wbm~ ~iwd1_eet/biffs/IDMOVIE2~
-COPY_LARGE + ~iwd1_eet/IDMOVIE/IDTOWER.wbm~  ~iwd1_eet/biffs/IDMOVIE2~
-COPY_LARGE + ~iwd1_eet/IDMOVIE/HOWDRAG.wbm~  ~iwd1_eet/biffs/IDMOVIE1~
-COPY_LARGE + ~iwd1_eet/IDMOVIE/SCRY.wbm~     ~iwd1_eet/biffs/IDMOVIE1~
-COPY_LARGE + ~iwd1_eet/IDMOVIE/RETURN.wbm~   ~iwd1_eet/biffs/IDMOVIE1~
-COPY_LARGE + ~iwd1_eet/IDMOVIE/HOWSEER.wbm~  ~iwd1_eet/biffs/IDMOVIE2~
+
+ACTION_IF (DIRECTORY_EXISTS ~iwd1_eet/lang/%LANGUAGE%/IDMOVIE~) THEN BEGIN
+	COPY_LARGE + ~iwd1_eet/lang/%LANGUAGE%/IDMOVIE/IDINTRO.wbm~  ~iwd1_eet/biffs/IDINTRO~
+	COPY_LARGE + ~iwd1_eet/lang/%LANGUAGE%/IDMOVIE/AVALANCH.wbm~ ~iwd1_eet/biffs/IDMOVIE2~
+	COPY_LARGE + ~iwd1_eet/lang/%LANGUAGE%/IDMOVIE/IDTOWER.wbm~  ~iwd1_eet/biffs/IDMOVIE2~
+	COPY_LARGE + ~iwd1_eet/lang/%LANGUAGE%/IDMOVIE/HOWDRAG.wbm~  ~iwd1_eet/biffs/IDMOVIE1~
+	COPY_LARGE + ~iwd1_eet/lang/%LANGUAGE%/IDMOVIE/SCRY.wbm~     ~iwd1_eet/biffs/IDMOVIE1~
+	COPY_LARGE + ~iwd1_eet/lang/%LANGUAGE%/IDMOVIE/RETURN.wbm~   ~iwd1_eet/biffs/IDMOVIE1~
+	COPY_LARGE + ~iwd1_eet/lang/%LANGUAGE%/IDMOVIE/HOWSEER.wbm~  ~iwd1_eet/biffs/IDMOVIE2~
+	PRINT ~iwd1_eet movies in %LANGUAGE%~
+END ELSE BEGIN
+	COPY_LARGE + ~iwd1_eet/lang/en_US/IDMOVIE/IDINTRO.wbm~  ~iwd1_eet/biffs/IDINTRO~
+	COPY_LARGE + ~iwd1_eet/lang/en_US/IDMOVIE/AVALANCH.wbm~ ~iwd1_eet/biffs/IDMOVIE2~
+	COPY_LARGE + ~iwd1_eet/lang/en_US/IDMOVIE/IDTOWER.wbm~  ~iwd1_eet/biffs/IDMOVIE2~
+	COPY_LARGE + ~iwd1_eet/lang/en_US/IDMOVIE/HOWDRAG.wbm~  ~iwd1_eet/biffs/IDMOVIE1~
+	COPY_LARGE + ~iwd1_eet/lang/en_US/IDMOVIE/SCRY.wbm~     ~iwd1_eet/biffs/IDMOVIE1~
+	COPY_LARGE + ~iwd1_eet/lang/en_US/IDMOVIE/RETURN.wbm~   ~iwd1_eet/biffs/IDMOVIE1~
+	COPY_LARGE + ~iwd1_eet/lang/en_US/IDMOVIE/HOWSEER.wbm~  ~iwd1_eet/biffs/IDMOVIE2~
+	PRINT ~iwd1_eet sounds in english~
+END
 
 MKDIR ~lang/%LANGUAGE%/movies~
-COPY_LARGE ~iwd1_eet/IDMOVIE/IDINTRO.wbm~  ~lang/%LANGUAGE%/movies~
-COPY_LARGE ~iwd1_eet/IDMOVIE/AVALANCH.wbm~ ~lang/%LANGUAGE%/movies~
-COPY_LARGE ~iwd1_eet/IDMOVIE/IDTOWER.wbm~  ~lang/%LANGUAGE%/movies~
-COPY_LARGE ~iwd1_eet/IDMOVIE/HOWDRAG.wbm~  ~lang/%LANGUAGE%/movies~
-COPY_LARGE ~iwd1_eet/IDMOVIE/SCRY.wbm~     ~lang/%LANGUAGE%/movies~
-COPY_LARGE ~iwd1_eet/IDMOVIE/RETURN.wbm~   ~lang/%LANGUAGE%/movies~
-COPY_LARGE ~iwd1_eet/IDMOVIE/HOWSEER.wbm~  ~lang/%LANGUAGE%/movies~
+ACTION_IF (DIRECTORY_EXISTS ~iwd1_eet/lang/%LANGUAGE%/IDMOVIE~) THEN BEGIN
+	COPY_LARGE ~iwd1_eet/lang/%LANGUAGE%/IDMOVIE/IDINTRO.wbm~  ~lang/%LANGUAGE%/movies~
+	COPY_LARGE ~iwd1_eet/lang/%LANGUAGE%/IDMOVIE/AVALANCH.wbm~ ~lang/%LANGUAGE%/movies~
+	COPY_LARGE ~iwd1_eet/lang/%LANGUAGE%/IDMOVIE/IDTOWER.wbm~  ~lang/%LANGUAGE%/movies~
+	COPY_LARGE ~iwd1_eet/lang/%LANGUAGE%/IDMOVIE/HOWDRAG.wbm~  ~lang/%LANGUAGE%/movies~
+	COPY_LARGE ~iwd1_eet/lang/%LANGUAGE%/IDMOVIE/SCRY.wbm~     ~lang/%LANGUAGE%/movies~
+	COPY_LARGE ~iwd1_eet/lang/%LANGUAGE%/IDMOVIE/RETURN.wbm~   ~lang/%LANGUAGE%/movies~
+	COPY_LARGE ~iwd1_eet/lang/%LANGUAGE%/IDMOVIE/HOWSEER.wbm~  ~lang/%LANGUAGE%/movies~
+END ELSE BEGIN
+	COPY_LARGE ~iwd1_eet/lang/en_US/IDMOVIE/IDINTRO.wbm~  ~lang/%LANGUAGE%/movies~
+	COPY_LARGE ~iwd1_eet/lang/en_US/IDMOVIE/AVALANCH.wbm~ ~lang/%LANGUAGE%/movies~
+	COPY_LARGE ~iwd1_eet/lang/en_US/IDMOVIE/IDTOWER.wbm~  ~lang/%LANGUAGE%/movies~
+	COPY_LARGE ~iwd1_eet/lang/en_US/IDMOVIE/HOWDRAG.wbm~  ~lang/%LANGUAGE%/movies~
+	COPY_LARGE ~iwd1_eet/lang/en_US/IDMOVIE/SCRY.wbm~     ~lang/%LANGUAGE%/movies~
+	COPY_LARGE ~iwd1_eet/lang/en_US/IDMOVIE/RETURN.wbm~   ~lang/%LANGUAGE%/movies~
+	COPY_LARGE ~iwd1_eet/lang/en_US/IDMOVIE/HOWSEER.wbm~  ~lang/%LANGUAGE%/movies~
+END
 
 INCLUDE ~iwd1_eet/lib/_start_game.tph~
 
