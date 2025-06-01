@@ -1,4 +1,4 @@
-BACKUP ~iwd1_eet/backup~
+BACKUP ~weidu_external/iwd1_eet/backup~
 AUTHOR ~tipun (tipun.iwd@gmail.com; arcanecoast.ru)~
 
 VERSION ~1.1~
@@ -1507,8 +1507,24 @@ MAKE_BIFF ~IDAR9800~ BEGIN ~iwd1_eet/biffs/IDAR9800~ ~^.*$~ END
 
 // Use language sounds or english if any
 
-
 // LAF HANDLE_AUDIO
+
+// IDDLGSN1
+
+	LAF HANDLE_AUDIO
+		STR_VAR
+		audio_path = ~iwd1_eet/lang/en_US/IDDLGSN1~
+		audio_path = ~iwd1_eet/lang/en_US/IDDLGSN2~
+		audio_path = ~iwd1_eet/lang/en_US/IDEXTSN1~
+		audio_path = ~iwd1_eet/lang/en_US/IDEXTSN2~
+		oggdec_path = ~iwd1_eet/tools~
+	PRINT ~iwd1_eet extension sounds in english~
+	END
+
+	COPY ~iwd1_eet/lang/en_US/IDEXTSN2~ ~weidu_external/iwd1_eet/audio/IDDLGSN1~
+	COPY ~iwd1_eet/lang/en_US/IDEXTSN2~ ~weidu_external/iwd1_eet/audio/IDDLGSN2~
+	COPY ~iwd1_eet/lang/en_US/IDEXTSN2~ ~weidu_external/iwd1_eet/audio/IDEXTSN1~
+	COPY ~iwd1_eet/lang/en_US/IDEXTSN2~ ~weidu_external/iwd1_eet/audio/IDEXTSN2~
 
 // IDDLGSN1
 
@@ -1517,12 +1533,9 @@ ACTION_IF (DIRECTORY_EXISTS ~iwd1_eet/lang/%LANGUAGE%/IDDLGSN1~) THEN BEGIN
 		STR_VAR
 		audio_path = ~iwd1_eet/lang/%LANGUAGE%/IDDLGSN1~
 		oggdec_path = ~iwd1_eet/tools~
-END ELSE BEGIN
-	LAF HANDLE_AUDIO
-		STR_VAR
-		audio_path = ~iwd1_eet/lang/en_US/IDDLGSN1~
-		oggdec_path = ~iwd1_eet/tools~
 	END
+	COPY ~iwd1_eet/lang/%LANGUAGE%/IDDLGSN1~ ~weidu_external/iwd1_eet/audio/IDDLGSN1~
+	PRINT ~iwd1_eet extension sounds in %LANGUAGE%~
 END
 
 // IDDLGSN2
@@ -1532,12 +1545,9 @@ ACTION_IF (DIRECTORY_EXISTS ~iwd1_eet/lang/%LANGUAGE%/IDDLGSN2~) THEN BEGIN
 		STR_VAR
 		audio_path = ~iwd1_eet/lang/%LANGUAGE%/IDDLGSN2~
 		oggdec_path = ~iwd1_eet/tools~
-END ELSE BEGIN
-	LAF HANDLE_AUDIO
-		STR_VAR
-		audio_path = ~iwd1_eet/lang/en_US/IDDLGSN2~
-		oggdec_path = ~iwd1_eet/tools~
 	END
+	COPY ~iwd1_eet/lang/%LANGUAGE%/IDDLGSN2~ ~weidu_external/iwd1_eet/audio/IDDLGSN2~
+	PRINT ~iwd1_eet extension sounds in %LANGUAGE%~
 END
 
 // IDEXTSN1
@@ -1547,12 +1557,9 @@ ACTION_IF (DIRECTORY_EXISTS ~iwd1_eet/lang/%LANGUAGE%/IDEXTSN1~) THEN BEGIN
 		STR_VAR
 		audio_path = ~iwd1_eet/lang/%LANGUAGE%/IDEXTSN1~
 		oggdec_path = ~iwd1_eet/tools~
-END ELSE BEGIN
-	LAF HANDLE_AUDIO
-		STR_VAR
-		audio_path = ~iwd1_eet/lang/en_US/IDEXTSN1~
-		oggdec_path = ~iwd1_eet/tools~
 	END
+	COPY ~iwd1_eet/lang/%LANGUAGE%/IDEXTSN1~ ~weidu_external/iwd1_eet/audio/IDEXTSN1~
+	PRINT ~iwd1_eet extension sounds in %LANGUAGE%~
 END
 
 // IDDLGSN2
@@ -1562,47 +1569,20 @@ ACTION_IF (DIRECTORY_EXISTS ~iwd1_eet/lang/%LANGUAGE%/IDDLGSN2~) THEN BEGIN
 		STR_VAR
 		audio_path = ~iwd1_eet/lang/%LANGUAGE%/IDDLGSN2~
 		oggdec_path = ~iwd1_eet/tools~
-END ELSE BEGIN
-	LAF HANDLE_AUDIO
-		STR_VAR
-		audio_path = ~iwd1_eet/lang/en_US/IDDLGSN2~
-		oggdec_path = ~iwd1_eet/tools~
 	END
+	COPY ~iwd1_eet/lang/%LANGUAGE%/IDEXTSN2~ ~weidu_external/iwd1_eet/audio/IDEXTSN2~
+	PRINT ~iwd1_eet extension sounds in %LANGUAGE%~
 END
 
-ACTION_IF (DIRECTORY_EXISTS ~iwd1_eet/lang/%LANGUAGE%/IDDLGSN1~) THEN BEGIN
-	MAKE_BIFF ~IDDLGSN1~ BEGIN ~iwd1_eet/lang/%LANGUAGE%/IDDLGSN1~ ~^.*$~ END
-	PRINT ~iwd1_eet sounds in %LANGUAGE%~
-END ELSE BEGIN
-	MAKE_BIFF ~IDDLGSN1~ BEGIN ~iwd1_eet/lang/en_US/IDDLGSN1~ ~^.*$~ END
-	PRINT ~iwd1_eet sounds in english~
-END
+	MAKE_BIFF ~IDDLGSN1~ BEGIN ~weidu_external/iwd1_eet/audio/IDDLGSN1~ ~^.*$~ END
 
-ACTION_IF (DIRECTORY_EXISTS ~iwd1_eet/lang/%LANGUAGE%/IDDLGSN2~) THEN BEGIN
-	MAKE_BIFF ~IDDLGSN2~ BEGIN ~iwd1_eet/lang/%LANGUAGE%/IDDLGSN2~ ~^.*$~ END
-	PRINT ~iwd1_eet sounds in %LANGUAGE%~
-END ELSE BEGIN
-	MAKE_BIFF ~IDDLGSN2~ BEGIN ~iwd1_eet/lang/en_US/IDDLGSN2~ ~^.*$~ END
-	PRINT ~iwd1_eet sounds in english~
-END
+	MAKE_BIFF ~IDDLGSN2~ BEGIN ~weidu_external/iwd1_eet/audio/IDDLGSN2~ ~^.*$~ END
 
 // Use language sounds for IWD1 extension or english if any
 
-ACTION_IF (DIRECTORY_EXISTS ~iwd1_eet/lang/%LANGUAGE%/IDEXTSN1~) THEN BEGIN
-	MAKE_BIFF ~IDEXTSN1~ BEGIN ~iwd1_eet/lang/%LANGUAGE%/IDEXTSN1~ ~^.*$~ END
-	PRINT ~iwd1_eet extension sounds in %LANGUAGE%~
-END ELSE BEGIN
-	MAKE_BIFF ~IDEXTSN1~ BEGIN ~iwd1_eet/lang/en_US/IDEXTSN1~ ~^.*$~ END
-	PRINT ~iwd1_eet extension sounds in english~
-END
+	MAKE_BIFF ~IDEXTSN1~ BEGIN ~weidu_external/iwd1_eet/audio/IDEXTSN1~ ~^.*$~ END
 
-ACTION_IF (DIRECTORY_EXISTS ~iwd1_eet/lang/%LANGUAGE%/IDEXTSN2~) THEN BEGIN
-	MAKE_BIFF ~IDEXTSN2~ BEGIN ~iwd1_eet/lang/%LANGUAGE%/IDEXTSN2~ ~^.*$~ END
-	PRINT ~iwd1_eet extension sounds in %LANGUAGE%~
-END ELSE BEGIN
-	MAKE_BIFF ~IDEXTSN2~ BEGIN ~iwd1_eet/lang/en_US/IDEXTSN2~ ~^.*$~ END
-	PRINT ~iwd1_eet extension sounds in english~
-END
+	MAKE_BIFF ~IDEXTSN2~ BEGIN ~weidu_external/iwd1_eet/audio/IDEXTSN2~ ~^.*$~ END
 
 MAKE_BIFF ~IDLOCBAM~ BEGIN ~iwd1_eet/biffs/IDLOCBAM~ ~^.*$~ END
 MAKE_BIFF ~IDMONSND~ BEGIN ~iwd1_eet/biffs/IDMONSND~ ~^.*$~ END
