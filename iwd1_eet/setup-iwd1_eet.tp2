@@ -1444,7 +1444,7 @@ END ELSE BEGIN
 	COPY_LARGE + ~iwd1_eet/lang/en_US/IDMOVIE/SCRY.wbm~     ~iwd1_eet/biffs/IDMOVIE1~
 	COPY_LARGE + ~iwd1_eet/lang/en_US/IDMOVIE/RETURN.wbm~   ~iwd1_eet/biffs/IDMOVIE1~
 	COPY_LARGE + ~iwd1_eet/lang/en_US/IDMOVIE/HOWSEER.wbm~  ~iwd1_eet/biffs/IDMOVIE2~
-	PRINT ~iwd1_eet sounds in english~
+	PRINT ~iwd1_eet movies in english~
 END
 
 MKDIR ~lang/%LANGUAGE%/movies~
@@ -1542,7 +1542,7 @@ END
 
 // IDDLGSN2
 
-ACTION_IF (DIRECTORY_EXISTS ~iwd1_eet/lang/%LANGUAGE%/IDDLGSN2~) THEN BEGIN
+ACTION_IF (DIRECTORY_EXISTS ~iwd1_eet/lang/%LANGUAGE%/IDEXTSN2~) THEN BEGIN
 	COPY ~iwd1_eet/lang/%LANGUAGE%/IDEXTSN2~ ~weidu_external/iwd1_eet/audio/WIDEXTSN2~
 	PRINT ~iwd1_eet extension sounds in %LANGUAGE%~
 END
