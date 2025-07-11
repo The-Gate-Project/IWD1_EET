@@ -1597,6 +1597,8 @@ MAKE_BIFF ~IDINTRO~  BEGIN ~iwd1_eet/biffs/IDINTRO~  ~^.*$~ END
 MAKE_BIFF ~IDMOVIE1~ BEGIN ~iwd1_eet/biffs/IDMOVIE1~ ~^.*$~ END
 MAKE_BIFF ~IDMOVIE2~ BEGIN ~iwd1_eet/biffs/IDMOVIE2~ ~^.*$~ END
 
+AT_NOW ~call iwd1_eet\deldir weidu_external/iwd1_eet/audio~
+
 AT_NOW ~call iwd1_eet\deldir iwd1_eet\biffs\IDINTRO~
 AT_NOW ~call iwd1_eet\deldir iwd1_eet\biffs\IDMOVIE1~
 AT_NOW ~call iwd1_eet\deldir iwd1_eet\biffs\IDMOVIE2~
