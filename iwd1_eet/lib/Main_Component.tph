@@ -1544,11 +1544,12 @@ END
 
 // Special Tipun
 ACTION_IF Special_Tipun = 1 THEN BEGIN
-ACTION_FOR_EACH folder IN IDDLGSN1 IDDLGSN2 IDEXTSN1 IDEXTSN2 BEGIN
-	COPY ~iwd1_eet/lang/ru_RU/Special/%folder%~ ~weidu_external/iwd1_eet/audio/W%folder%~
-	PRINT ~iwd1_eet sounds in Russian~
+	COPY ~iwd1_eet/lang/%LANGUAGE%/Special/IDDLGSN1~ ~weidu_external/iwd1_eet/audio/WIDDLGSN1~
+	COPY ~iwd1_eet/lang/%LANGUAGE%/Special/IDDLGSN2~ ~weidu_external/iwd1_eet/audio/WIDDLGSN2~
+	COPY ~iwd1_eet/lang/%LANGUAGE%/Special/IDEXTSN1~ ~weidu_external/iwd1_eet/audio/WIDEXTSN1~
+	COPY ~iwd1_eet/lang/%LANGUAGE%/Special/IDEXTSN2~ ~weidu_external/iwd1_eet/audio/WIDEXTSN2~
+	PRINT ~iwd1_eet extension sounds in %LANGUAGE%~
 END
-	END
 
 // LAF HANDLE_AUDIO
 
