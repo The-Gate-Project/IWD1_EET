@@ -26,3 +26,32 @@ BEGIN ~Use <CHARNAME> instead of <GABBER> etc.~
 DESIGNATED 0
 COPY ~iwd1_eet/lang/%LANGUAGE%/dialog.tra~ ~iwd1_eet/lang/%LANGUAGE%/dialog.tra~
 REPLACE_TEXTUALLY CASE_SENSITIVE ~<GABBER>~ ~<CHARNAME>~	 
+
+BEGIN ~Icewind Dale: Heart of Winter in Baldur's Gate Enhanced Edition Trilogy~
+DESIGNATED 3
+REQUIRE_PREDICATE ( NOT ~%LANGUAGE%~ STR_EQ ~ru_RU~) ~Not for the selected language~
+FORBID_COMPONENT ~setup-iwd1_eet.tp2~ ~1~ ~Icewind Dale is already instaled~
+DESIGNATED 3
+FORBID_COMPONENT ~setup-iwd1_eet.tp2~ ~2~ ~Icewind Dale is already instaled~
+REQUIRE_PREDICATE GAME_IS ~eet~ ~Please install Baldur's Gate Enhanced Edition Trilogy at first~
+OUTER_SET Special_Tipun = 0
+
+INCLUDE ~iwd1_eet/lib/Main_Component.tph~
+
+BEGIN ~Special : Icewind Dale IN Russian WITH Russian VOICES~ ~Not for the selected language~
+DESIGNATED 1 SUBCOMPONENT ~Icewind Dale: Heart of Winter in Baldur's Gate Enhanced Edition Trilogy~
+REQUIRE_PREDICATE (~%LANGUAGE%~ STR_EQ ~ru_RU~) ~Not for the selected language~
+FORBID_COMPONENT ~setup-iwd1_eet.tp2~ ~3~  ~Icewind Dale is already instaled~
+REQUIRE_PREDICATE GAME_IS ~eet~ ~Please install Baldur's Gate Enhanced Edition Trilogy at first~
+OUTER_SET Special_Tipun = 1
+
+INCLUDE ~iwd1_eet/lib/Main_Component.tph~
+
+BEGIN ~Special : Icewind Dale IN Russian WITH English VOICES~ ~Not for the selected language~
+DESIGNATED 2 SUBCOMPONENT ~Icewind Dale: Heart of Winter in Baldur's Gate Enhanced Edition Trilogy~
+REQUIRE_PREDICATE (~%LANGUAGE%~ STR_EQ ~ru_RU~) ~Not for the selected language~
+FORBID_COMPONENT ~setup-iwd1_eet.tp2~ ~3~  ~Icewind Dale is already instaled~
+REQUIRE_PREDICATE GAME_IS ~eet~ ~Please install Baldur's Gate Enhanced Edition Trilogy at first~
+OUTER_SET Special_Tipun = 0
+
+INCLUDE ~iwd1_eet/lib/Main_Component.tph~
