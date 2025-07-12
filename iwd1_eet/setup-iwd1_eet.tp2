@@ -23,6 +23,10 @@ LANGUAGE ~Simplified Chinese~
 	     ~iwd1_eet/lang/zh_CN/dialog.tra~
 
 
+BEGIN ~Use Russian voices instead of English~
+REQUIRE_PREDICATE (~%LANGUAGE%~ STR_EQ ~ru_RU~) ~Not for the selected language~
+OUTER_SET English_For_Russian = 1
+
 BEGIN ~Use <CHARNAME> instead of <GABBER> etc.~
 COPY ~iwd1_eet/lang/%LANGUAGE%/dialog.tra~ ~iwd1_eet/lang/%LANGUAGE%/dialog.tra~
 REPLACE_TEXTUALLY CASE_SENSITIVE ~<GABBER>~ ~<CHARNAME>~	 
@@ -1426,7 +1430,17 @@ MKDIR ~iwd1_eet/biffs/IDINTRO~
 MKDIR ~iwd1_eet/biffs/IDMOVIE1~
 MKDIR ~iwd1_eet/biffs/IDMOVIE2~
 
-
+// Special Tipun
+ACTION_IF English_For_Russian = 1 THEN BEGIN
+	COPY_LARGE + ~iwd1_eet/lang/ru_RU/Special/IDMOVIE/IDINTRO.wbm~  ~iwd1_eet/biffs/IDINTRO~
+	COPY_LARGE + ~iwd1_eet/lang/ru_RU/Special/IDMOVIE/AVALANCH.wbm~ ~iwd1_eet/biffs/IDMOVIE2~
+	COPY_LARGE + ~iwd1_eet/lang/ru_RU/Special/IDMOVIE/IDTOWER.wbm~  ~iwd1_eet/biffs/IDMOVIE2~
+	COPY_LARGE + ~iwd1_eet/lang/ru_RU/Special/IDMOVIE/HOWDRAG.wbm~  ~iwd1_eet/biffs/IDMOVIE1~
+	COPY_LARGE + ~iwd1_eet/lang/ru_RU/Special/IDMOVIE/SCRY.wbm~     ~iwd1_eet/biffs/IDMOVIE1~
+	COPY_LARGE + ~iwd1_eet/lang/ru_RU/Special/IDMOVIE/RETURN.wbm~   ~iwd1_eet/biffs/IDMOVIE1~
+	COPY_LARGE + ~iwd1_eet/lang/ru_RU/Special/IDMOVIE/HOWSEER.wbm~  ~iwd1_eet/biffs/IDMOVIE2~
+	PRINT ~iwd1_eet movies in Russian~
+END ELSE BEGIN
 ACTION_IF (DIRECTORY_EXISTS ~iwd1_eet/lang/%LANGUAGE%/IDMOVIE~) THEN BEGIN
 	COPY_LARGE + ~iwd1_eet/lang/%LANGUAGE%/IDMOVIE/IDINTRO.wbm~  ~iwd1_eet/biffs/IDINTRO~
 	COPY_LARGE + ~iwd1_eet/lang/%LANGUAGE%/IDMOVIE/AVALANCH.wbm~ ~iwd1_eet/biffs/IDMOVIE2~
@@ -1446,8 +1460,22 @@ END ELSE BEGIN
 	COPY_LARGE + ~iwd1_eet/lang/en_US/IDMOVIE/HOWSEER.wbm~  ~iwd1_eet/biffs/IDMOVIE2~
 	PRINT ~iwd1_eet movies in english~
 END
+	END
 
-MKDIR ~lang/%LANGUAGE%/movies~
+ACTION_IF NOT DIRECTORY_EXISTS ~lang/%LANGUAGE%/movies~ BEGIN
+	MKDIR ~lang/%LANGUAGE%/movies~
+END
+
+// Special Tipun
+ACTION_IF English_For_Russian = 1 THEN BEGIN
+	COPY_LARGE ~iwd1_eet/lang/ru_RU/Special/IDMOVIE/IDINTRO.wbm~  ~lang/%LANGUAGE%/movies~
+	COPY_LARGE ~iwd1_eet/lang/ru_RU/Special/IDMOVIE/AVALANCH.wbm~ ~lang/%LANGUAGE%/movies~
+	COPY_LARGE ~iwd1_eet/lang/ru_RU/Special/IDMOVIE/IDTOWER.wbm~  ~lang/%LANGUAGE%/movies~
+	COPY_LARGE ~iwd1_eet/lang/ru_RU/Special/IDMOVIE/HOWDRAG.wbm~  ~lang/%LANGUAGE%/movies~
+	COPY_LARGE ~iwd1_eet/lang/ru_RU/Special/IDMOVIE/SCRY.wbm~     ~lang/%LANGUAGE%/movies~
+	COPY_LARGE ~iwd1_eet/lang/ru_RU/Special/IDMOVIE/RETURN.wbm~   ~lang/%LANGUAGE%/movies~
+	COPY_LARGE ~iwd1_eet/lang/ru_RU/Special/IDMOVIE/HOWSEER.wbm~  ~lang/%LANGUAGE%/movies~
+END ELSE BEGIN
 ACTION_IF (DIRECTORY_EXISTS ~iwd1_eet/lang/%LANGUAGE%/IDMOVIE~) THEN BEGIN
 	COPY_LARGE ~iwd1_eet/lang/%LANGUAGE%/IDMOVIE/IDINTRO.wbm~  ~lang/%LANGUAGE%/movies~
 	COPY_LARGE ~iwd1_eet/lang/%LANGUAGE%/IDMOVIE/AVALANCH.wbm~ ~lang/%LANGUAGE%/movies~
@@ -1465,6 +1493,7 @@ END ELSE BEGIN
 	COPY_LARGE ~iwd1_eet/lang/en_US/IDMOVIE/RETURN.wbm~   ~lang/%LANGUAGE%/movies~
 	COPY_LARGE ~iwd1_eet/lang/en_US/IDMOVIE/HOWSEER.wbm~  ~lang/%LANGUAGE%/movies~
 END
+	END
 
 INCLUDE ~iwd1_eet/lib/_start_game.tph~
 
@@ -1546,6 +1575,14 @@ ACTION_IF (DIRECTORY_EXISTS ~iwd1_eet/lang/%LANGUAGE%/IDEXTSN2~) THEN BEGIN
 	COPY ~iwd1_eet/lang/%LANGUAGE%/IDEXTSN2~ ~weidu_external/iwd1_eet/audio/WIDEXTSN2~
 	PRINT ~iwd1_eet extension sounds in %LANGUAGE%~
 END
+
+// Special Tipun
+ACTION_IF English_For_Russian = 1 THEN BEGIN
+ACTION_FOR_EACH folder IN IDDLGSN1 IDDLGSN2 IDEXTSN1 IDEXTSN2 BEGIN
+	COPY ~iwd1_eet/lang/ru_RU/Special/%folder%~ ~weidu_external/iwd1_eet/audio/W%folder%~
+	PRINT ~iwd1_eet sounds in Russian~
+END
+	END
 
 // LAF HANDLE_AUDIO
 
@@ -1759,38 +1796,3 @@ INCLUDE ~iwd1_eet/iwdee_data/iwdee.tph~
 
 INCLUDE ~iwd1_eet/lib.tph~
 INCLUDE ~iwd1_eet/lib/_other.tph~
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
