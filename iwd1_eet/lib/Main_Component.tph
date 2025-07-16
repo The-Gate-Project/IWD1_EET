@@ -1542,6 +1542,7 @@ ACTION_IF (DIRECTORY_EXISTS ~iwd1_eet/lang/%LANGUAGE%/IDEXTSN2~) THEN BEGIN
 	PRINT ~iwd1_eet extension sounds in %LANGUAGE%~
 END
 
+/*
 // Special Tipun
 ACTION_IF Special_Tipun = 1 THEN BEGIN
 	COPY ~iwd1_eet/lang/%LANGUAGE%/Special/IDDLGSN1~ ~weidu_external/iwd1_eet/audio/WIDDLGSN1~
@@ -1550,6 +1551,7 @@ ACTION_IF Special_Tipun = 1 THEN BEGIN
 	COPY ~iwd1_eet/lang/%LANGUAGE%/Special/IDEXTSN2~ ~weidu_external/iwd1_eet/audio/WIDEXTSN2~
 	PRINT ~iwd1_eet extension sounds in %LANGUAGE%~
 END
+*/
 
 // LAF HANDLE_AUDIO
 

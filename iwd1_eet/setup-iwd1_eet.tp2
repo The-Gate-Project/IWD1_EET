@@ -38,7 +38,7 @@ OUTER_SET Special_Tipun = 0
 
 INCLUDE ~iwd1_eet/lib/Main_Component.tph~
 
-BEGIN ~Special : Icewind Dale IN Russian WITH Russian VOICES~ ~Not for the selected language~
+BEGIN ~Special : Icewind Dale MOVIES IN Russian WITH Russian VOICES~ ~Not for the selected language~
 DESIGNATED 1 SUBCOMPONENT ~Icewind Dale: Heart of Winter in Baldur's Gate Enhanced Edition Trilogy~
 REQUIRE_PREDICATE (~%LANGUAGE%~ STR_EQ ~ru_RU~) ~Not for the selected language~
 FORBID_COMPONENT ~setup-iwd1_eet.tp2~ ~3~  ~Icewind Dale is already instaled~
@@ -47,7 +47,7 @@ OUTER_SET Special_Tipun = 1
 
 INCLUDE ~iwd1_eet/lib/Main_Component.tph~
 
-BEGIN ~Special : Icewind Dale IN Russian WITH English VOICES~ ~Not for the selected language~
+BEGIN ~Special : Icewind Dale MOVIES IN Russian WITH English VOICES~ ~Not for the selected language~
 DESIGNATED 2 SUBCOMPONENT ~Icewind Dale: Heart of Winter in Baldur's Gate Enhanced Edition Trilogy~
 REQUIRE_PREDICATE (~%LANGUAGE%~ STR_EQ ~ru_RU~) ~Not for the selected language~
 FORBID_COMPONENT ~setup-iwd1_eet.tp2~ ~3~  ~Icewind Dale is already instaled~
