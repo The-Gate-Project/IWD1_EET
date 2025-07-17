@@ -1,0 +1,1767 @@
+
+
+INCLUDE ~iwd1_eet/lib.tph~
+
+ACTION_IF FILE_EXISTS ~iwd1_eet/lang/%LANGUAGE%/journal.tra~ BEGIN
+	LOAD_TRA ~iwd1_eet/lang/%LANGUAGE%/journal.tra~
+	LOAD_TRA ~iwd1_eet/lang/%LANGUAGE%/dialog2.tra~
+END
+
+OUTER_SPRINT newline ~%WNL%%LNL%%MNL%%TAB% ~
+OUTER_SPRINT slash ~/~
+OUTER_SPRINT quote ~"~
+OUTER_SPRINT tilde "~"
+
+ACTION_IF NOT FILE_EXISTS_IN_GAME ~M_zZstr.lua~ BEGIN
+	COPY ~iwd1_eet/M_zZstr.lua~ ~override~
+END
+
+//BLOCK JOURNAL
+//Важные события
+ADD_JOURNAL TITLE (@2000000) @20671 @15470 @34232 @34220 @34218 @34188 @34233 @18313 @5056 @992 @5061 @4360 @5065 @15471 @34498 @1340 @9081 @34324 @34113 @5066 @10626 @16556 @416 @5063 @5064 @19552 @18315 @485 @1976 @1977 @4345 @4348 @4349 @1978 @3353 @3354 @4343 @4347 @4361 @4351 @4353 @4358 @4359 @17689 @14418 @14419 @2028 @4357 @2052 @34238 @5070 @22943 @5072 @5071 @34301 @34307 @23341 @34244 @34243 @34240 @34239 @34419 @34295 @34267 @34302 @34299 @34296 @34246 @34269 @34420 @34386 @34499 @2072 @34237 @14409 @14408 @34236 @34311 @2000037
+//Сердце Зимы
+ADD_JOURNAL TITLE (@2000029) @26302 @25836 @25837 @26298 @26299 @26300 @26295 @26321 @26329 @26333 @26297 @25430 @23560 @23561 @25432 @25425 @24882 @25428 @23527 @23553 @23550 @23549 @23533 @34118 @34114 @23540 @26331 @23537 @23538 @23536 @23543 @2000036
+//Пропавший караван
+ADD_JOURNAL TITLE (@2000001) @2331 @34231 @22928 @351 @349 @34183 @34182 @34172 @16535
+//Припасы для экспедиции
+ADD_JOURNAL TITLE (@2000002) @352
+//Сны Джонена
+ADD_JOURNAL TITLE (@2000003) @2080 @2079 @11408 @6294 @34497 @16320 @15731 @23507
+//Волк забрался в дом
+ADD_JOURNAL TITLE (@2000004) @3355 @348
+//Мальчик, рыба и чудовища
+ADD_JOURNAL TITLE (@2000005) @34144 @34119
+//Вино для Старого Джеда
+ADD_JOURNAL TITLE (@2000006) @34187 @34194 @34189
+//Больная голова огра
+ADD_JOURNAL TITLE (@2000007) @5073 @5055 @5057 @5058 @5060
+//Ожерелье Мирека
+ADD_JOURNAL TITLE (@2000008) @2060 @6301
+//Жрица Аурил
+ADD_JOURNAL TITLE (@2000009) @1349 @1415 @34501 @18314 @20452 @16551
+//Заклинание Мифаля
+ADD_JOURNAL TITLE (@2000010) @18316
+//Найти Шимиша, сына Конлана
+ADD_JOURNAL TITLE (@2000011) @34201 @34198 @2051
+//Глас Дурдель Анаты
+ADD_JOURNAL TITLE (@2000012) @34205
+//Хозяин гостиницы
+ADD_JOURNAL TITLE (@2000013) @2073 @2057 @2077 @1827 @2025
+//Дочь Ларрела
+//ADD_JOURNAL TITLE (@2000014) @34236
+//Убть главаря орогов
+ADD_JOURNAL TITLE (@2000015) @7834
+//Уничтожить Терикана
+ADD_JOURNAL TITLE (@2000016) @15472 @17897
+//Святая вода для святилища
+ADD_JOURNAL TITLE (@2000017) @14410 @14411
+//Упокоить жрецов
+ADD_JOURNAL TITLE (@2000018) @14412 @15469
+//Восстановить оранжерею
+ADD_JOURNAL TITLE (@2000019) @34235
+//Упокоить воинов Кайлессы
+ADD_JOURNAL TITLE (@2000020) @14416 @14415 @14417
+//Рабы ледяных саламандр - Вера
+ADD_JOURNAL TITLE (@2000021) @16940 @34217 @34211 @34207 @4680 @20179 @11854 @19284 @23552 @20469 @34300 @18696 @16352 @15706 @16002 @18698 @34413
+//Рабы ледяных саламандр
+ADD_JOURNAL TITLE (@2000022) @4649 @2071 @19364 @20867 @15762 @16319 @15707 @15739 @34315 @18695 @18699 @34417 @34418 @34416 @34407 @34399 @34391 @34387
+//Джорил - правитель Ледника
+ADD_JOURNAL TITLE (@2000023) @34265 @16526 @34385 @34384 @34383 @34382 @34241 @34337
+//Соманный мост
+//ADD_JOURNAL TITLE (@2000024) @34311
+//Рабы морозных великанов
+ADD_JOURNAL TITLE (@2000025) @34294 @16528 @6951 @2098 @2097 @2119 @3422 @2083 @34287 @23535 @23442 @19286
+//Рабы морозных великанов - Жертвоприношение
+ADD_JOURNAL TITLE (@2000026) @15744 @34291 @34290 @20256 @20214 @34234 @34281
+//Девочка без языка
+ADD_JOURNAL TITLE (@2000027) @34277 @34092 @34422 @34276 @34242
+//Накормить гномов
+ADD_JOURNAL TITLE (@2000028) @34247
+//Хейли Данн
+ADD_JOURNAL TITLE (@2000030) @34107 @34106 @34105 @34093 @34091 @34089 @23563 @34110
+//Семья Данн
+ADD_JOURNAL TITLE (@2000031) @23781 @32002 @23562 @34112 @23398 @34108 @34111
+//Секрет Киерана
+ADD_JOURNAL TITLE (@2000032) @34099 @23548
+//Оборотень в Лонливуде
+ADD_JOURNAL TITLE (@2000033) @25429 @25431 @25838 @25829 @25830 @25834 @25831 @25832 @25833 @25835 @26323 @26327 @23558 @23557 @23555 @23559
+//Ледяная Роза
+ADD_JOURNAL TITLE (@2000034) @26325 @26326 @23534
+//Темные Мысли
+ADD_JOURNAL TITLE (@2000035) @23547 @23546 @23545 @23544 @23485
+//Кольцо Маркета
+ADD_JOURNAL TITLE (@2000038) @16530 @16028 @34266 @34168 @34249 //34249 - Done
+// = ~Испытание Властелина Загадок~
+ADD_JOURNAL TITLE (@2000041) @27206 @27208 @27209 @27214 @27047 @27071 @27077 @27114
+//GRIZELLA QUEST
+ADD_JOURNAL TITLE (@120000) @120001 @120002
+//BANDOTH QUEST
+ADD_JOURNAL TITLE (@120010) @120011 @120012
+
+//BLOCKEND
+
+INCLUDE ~iwd1_eet/lib/_musics.tph~
+
+//BLOCK CHAPTERS
+COPY ~iwd1_eet/chapters~ ~override~
+COPY ~iwd1_eet/sod_ui~   ~EET/SoD_GUI~
+<<<<<<<<default.2da
+2DA V1.0
+NONE1111
+                        0           1                   
+SWITCH                  DEFAULT     DEFAULT         
+DEFAULT                 000000      000001 
+SONG                    XXXXXX
+>>>>>>>>
+COPY ~default.2da~ ~override/IWD1TXT0.2DA~
+  REPLACE_TEXTUALLY ~NONE1111~ ~IWD1CHP0~
+  REPLACE ~000000~ @16202
+  REPLACE ~000001~ @14454
+  REPLACE_TEXTUALLY ~XXXXXX~ ~%IDCP0%~ EVALUATE_BUFFER
+COPY ~default.2da~ ~override/IWD1TXT1.2DA~
+  REPLACE_TEXTUALLY ~NONE1111~ ~IWD1CHP1~
+  REPLACE ~000000~ @16203
+  REPLACE ~000001~ @14453
+  REPLACE_TEXTUALLY ~XXXXXX~ ~%IDCP0%~ EVALUATE_BUFFER
+COPY ~default.2da~ ~override/IWD1TXT2.2DA~
+  REPLACE_TEXTUALLY ~NONE1111~ ~IWD1CHP2~
+  REPLACE ~000000~ @16204
+  REPLACE ~000001~ @14452
+  REPLACE_TEXTUALLY ~XXXXXX~ ~%IDCP0%~ EVALUATE_BUFFER
+COPY ~default.2da~ ~override/IWD1TXT3.2DA~
+  REPLACE_TEXTUALLY ~NONE1111~ ~IWD1CHP3~
+  REPLACE ~000000~ @16205
+  REPLACE ~000001~ @19435
+  REPLACE_TEXTUALLY ~XXXXXX~ ~%IDCP0%~ EVALUATE_BUFFER
+COPY ~default.2da~ ~override/IWD1TXT4.2DA~
+  REPLACE_TEXTUALLY ~NONE1111~ ~IWD1CHP4~
+  REPLACE ~000000~ @16206
+  REPLACE ~000001~ @14450
+  REPLACE_TEXTUALLY ~XXXXXX~ ~%IDCP0%~ EVALUATE_BUFFER
+COPY ~default.2da~ ~override/IWD1TXT5.2DA~
+  REPLACE_TEXTUALLY ~NONE1111~ ~IWD1CHP5~
+  REPLACE ~000000~ @16207
+  REPLACE ~000001~ @14449
+  REPLACE_TEXTUALLY ~XXXXXX~ ~%IDCP0%~ EVALUATE_BUFFER
+COPY ~default.2da~ ~override/IWD1TXT6.2DA~
+  REPLACE_TEXTUALLY ~NONE1111~ ~IWD1CHP6~
+  REPLACE ~000000~ @16208
+  REPLACE ~000001~ @14448
+  REPLACE_TEXTUALLY ~XXXXXX~ ~%IDCP1%~ EVALUATE_BUFFER
+COPY ~default.2da~ ~override/IWD1CHP7.2DA~
+  REPLACE_TEXTUALLY ~NONE1111~ ~IWD1CHP7~
+  REPLACE ~000000~ @100059
+  REPLACE ~000001~ @100060
+  REPLACE_TEXTUALLY ~XXXXXX~ ~%IDCP1%~ EVALUATE_BUFFER
+//BLOCKEND
+
+/* SOD CLASSES   -  не забыть при проверках класса - шаманов (и может варваров шаманов сделать - класс Шаман)
+1 MAGE
+2 FIGHTER
+3 CLERIC
+4 THIEF
+5 BARD
+6 PALADIN
+7 FIGHTER_MAGE
+8 FIGHTER_CLERIC
+9 FIGHTER_THIEF
+10 FIGHTER_MAGE_THIEF
+11 DRUID
+12 RANGER
+13 MAGE_THIEF
+14 CLERIC_MAGE
+15 CLERIC_THIEF
+16 FIGHTER_DRUID
+17 FIGHTER_MAGE_CLERIC
+18 CLERIC_RANGER
+19 SORCERER
+20 MONK
+21 SHAMAN
+101 ANKHEG
+102 BASILISK
+103 BASILISK_GREATER
+104 BEAR_BLACK
+105 BEAR_BROWN
+106 BEAR_CAVE
+107 BEAR_POLAR
+108 CARRIONCRAWLER
+109 DOG_WILD
+110 DOG_WAR
+111 DOPPLEGANGER
+112 DOPPLEGANGER_GREATER
+113 DRIZZT
+114 ELMINSTER
+115 ETTERCAP
+116 GHOUL
+117 GHOUL_REVEANT
+118 GHOUL_GHAST
+119 GIBBERLING
+120 GNOLL
+121 HOBGOBLIN
+122 KOBOLD
+123 KOBOLD_TASLOI
+124 KOBOLD_XVART
+125 OGRE
+126 OGRE_MAGE
+127 OGRE_HALFOGRE
+128 OGRE_OGRILLON
+129 SAREVOK
+130 FAIRY_SIRINE
+131 FAIRY_DRYAD
+132 FAIRY_NEREID
+133 FAIRY_NYMPH
+134 SKELETON
+135 SKELETON_WARRIOR
+136 SKELETON_BANEGUARD
+137 SPIDER_GIANT
+138 SPIDER_HUGE
+139 SPIDER_PHASE
+140 SPIDER_SWORD
+141 SPIDER_WRAITH
+142 VOLO
+143 WOLF
+144 WOLF_WORG
+145 WOLF_DIRE
+146 WOLF_WINTER
+147 WOLF_VAMPIRIC
+148 WOLF_DREAD
+149 WYVERN
+150 OLIVE_SLIME
+151 MUSTARD_JELLY
+152 OCRE_JELLY
+153 GREY_OOZE
+154 GREEN_SLIME
+155 INNOCENT
+156 FLAMING_FIST
+157 WEREWOLF
+158 WOLFWERE
+159 DEATHKNIGHT
+160 TANARI
+161 BEHOLDER
+162 MIND_FLAYER
+163 VAMPIRE
+164 VAMPYRE
+165 OTYUGH
+166 RAKSHASA
+167 TROLL
+168 UMBERHULK
+169 SAHUAGIN
+170 SHADOW
+171 SPECTRE
+172 WRAITH
+173 KUO-TOA
+174 MIST
+175 CAT
+176 DUERGAR
+177 MEPHIT
+178 MIMIC
+179 IMP
+180 GIANT
+181 ORC
+182 GOLEM_IRON
+183 GOLEM_FLESH
+184 GOLEM_STONE
+185 GOLEM_CLAY
+186 ELEMENTAL_AIR
+187 ELEMENTAL_FIRE
+188 ELEMENTAL_EARTH
+189 SPIDER_CENTEOL
+190 RED_DRAGON
+191 SHADOW_DRAGON
+192 SILVER_DRAGON
+193 GENIE_DJINNI
+194 GENIE_DAO
+195 GENIE_EFREETI
+196 GENIE_NOBLE_DJINNI
+197 GENIE_NOBLE_EFREETI
+198 ZOMBIE_NORMAL
+199 FOOD_CREATURE
+200 HUNTER_CREATURE
+201 LONG_SWORD
+202 LONG_BOW
+202 MAGE_ALL
+203 FIGHTER_ALL
+204 CLERIC_ALL
+205 THIEF_ALL
+206 BARD_ALL
+207 PALADIN_ALL
+208 DRUID_ALL
+209 RANGER_ALL
+210 WIZARD_EYE
+211 CANDLEKEEP_WATCHER
+212 AMNISH_SOLDIER
+213 TOWN_GUARD
+219 ELEMENTAL_WATER
+220 GREEN_DRAGON
+221 NEOTHELID
+222 SPECTRAL_TROLL
+223 WIGHT
+255 NO_CLASS  */
+APPEND ~CLASS.IDS~ ~219 ELEMENTAL_WATER~  UNLESS ~219 ELEMENTAL_WATER~
+APPEND ~CLASS.IDS~ ~224 SALAMANDER_FIRE~  UNLESS ~224 SALAMANDER_FIRE~
+APPEND ~CLASS.IDS~ ~225 SALAMANDER_FROST~ UNLESS ~225 SALAMANDER_FROST~
+APPEND ~CLASS.IDS~ ~226 REMORHAZ~         UNLESS ~226 REMORHAZ~
+APPEND ~CLASS.IDS~ ~227 GOLEM_ICE~        UNLESS ~227 GOLEM_ICE~
+APPEND ~CLASS.IDS~ ~228 BEETLE_RHINO~     UNLESS ~228 BEETLE_RHINO~
+APPEND ~CLASS.IDS~ ~229 ORC_RUNNER~       UNLESS ~229 ORC_RUNNER~
+APPEND ~CLASS.IDS~ ~230 TROLL_ICE~        UNLESS ~230 TROLL_ICE~
+APPEND ~CLASS.IDS~ ~231 SNOW_TROLL~       UNLESS ~231 SNOW_TROLL~
+
+//COPY_EXISTING ~CLASS.IDS~ ~override~
+//  PRETTY_PRINT_2DA
+
+/*
+SET rac = (1 + IDS_OF_SYMBOL(~RACE~ ~KOBOLD~))
+APPEND ~RACE.IDS~ ~%rac% GOBLIN~  // GOBLIN_CRE 
+
+SET rac = (1 + IDS_OF_SYMBOL(~RACE~ ~YUANTI~))
+APPEND ~RACE.IDS~ ~%rac% LIZARDMAN~  // LIZARDMAN_CRE 
+
+SET rac = (1 + IDS_OF_SYMBOL(~RACE~ ~OGRE~))
+APPEND ~RACE.IDS~ ~%rac% MINOTAUR~  // MINOTAUR_CRE */
+
+/* SOD RACES
+1 HUMAN
+2 ELF
+3 HALF_ELF
+4 DWARF
+5 HALFLING
+6 GNOME
+7 HALFORC
+101 ANKHEG
+102 BASILISK
+103 BEAR
+104 CARRIONCRAWLER
+105 DOG
+106 DOPPLEGANGER
+107 ETTERCAP
+108 GHOUL
+109 GIBBERLING
+110 GNOLL
+111 HOBGOBLIN
+112 KOBOLD
+113 OGRE
+115 SKELETON
+116 SPIDER
+117 WOLF
+118 WYVERN
+119 SLIME
+120 FAIRY
+121 DEMONIC
+122 LYCANTHROPE
+123 BEHOLDER
+124 MIND_FLAYER
+125 VAMPIRE
+126 VAMPYRE
+127 OTYUGH
+128 RAKSHASA
+129 TROLL
+130 UMBERHULK
+131 SAHUAGIN
+132 SHADOW
+133 SPECTRE
+134 WRAITH
+135 KUO-TOA
+136 MIST
+137 CAT
+138 DUERGAR
+139 MEPHIT
+140 MIMIC
+141 IMP
+142 GIANT
+143 ORC
+144 GOLEM
+145 ELEMENTAL
+146 DRAGON
+147 GENIE
+148 ZOMBIE
+149 STATUE
+150 LICH
+151 RABBIT
+152 GITHYANKI
+153 TIEFLING
+154 YUANTI
+155 DEMILICH
+156 SOLAR
+157 ANTISOLAR
+158 PLANATAR
+159 DARKPLANATAR
+//APPEND ~RACE.IDS~ ~160 BEETLE~          UNLESS ~160 BEETLE~
+//APPEND ~RACE.IDS~ ~161 GOBLIN~          UNLESS ~161 GOBLIN~
+//APPEND ~RACE.IDS~ ~162 LIZARDMAN~       UNLESS ~162 LIZARDMAN~
+//APPEND ~RACE.IDS~ ~164 MYCONID~         UNLESS ~164 MYCONID~
+//APPEND ~RACE.IDS~ ~165 BUGBEAR~         UNLESS ~165 BUGBEAR~
+166 FEYR
+//APPEND ~RACE.IDS~ ~167 HOOK_HORROR~     UNLESS ~167 HOOK_HORROR~
+//APPEND ~RACE.IDS~ ~168 SHRIEKER~        UNLESS ~168 SHRIEKER~
+//APPEND ~RACE.IDS~ ~169 SALAMANDER~      UNLESS ~169 SALAMANDER~
+170 BIRD
+//APPEND ~RACE.IDS~ ~171 MINOTAUR~        UNLESS ~171 MINOTAUR~
+//APPEND ~RACE.IDS~ ~172 DRIDER~          UNLESS ~172 DRIDER~
+173 SIMULACRUM
+//APPEND ~RACE.IDS~ ~174 HARPY~           UNLESS ~174 HARPY~
+//APPEND ~RACE.IDS~ ~175 SPECTRAL_UNDEAD~ UNLESS ~175 SPECTRAL_UNDEAD~
+//APPEND ~RACE.IDS~ ~176 SHAMBLING_MOUND~ UNLESS ~176 SHAMBLING_MOUND~
+//APPEND ~RACE.IDS~ ~177 CHIMERA~         UNLESS ~177 CHIMERA~
+//APPEND ~RACE.IDS~ ~178 HALF_DRAGON~     UNLESS ~178 HALF_DRAGON~
+//APPEND ~RACE.IDS~ ~179 YETI~            UNLESS ~179 YETI~
+//APPEND ~RACE.IDS~ ~180 KEG~             UNLESS ~180 KEG~
+//APPEND ~RACE.IDS~ ~181 WILL-O-WISP~     UNLESS ~181 WILL-O-WISP~
+182 MAMMAL
+183 REPTILE
+184 TREANT
+185 AASIMAR
+//APPEND ~RACE.IDS~ ~199 ETTIN~           UNLESS ~199 ETTIN~
+201 SWORD
+202 BOW
+203 XBOW
+204 STAFF
+205 SLING
+206 MACE
+207 DAGGER
+208 SPEAR
+209 FIST
+210 HAMMER
+211 MORNINGSTAR
+212 ROBES
+213 LEATHER
+214 CHAIN
+215 PLATE
+255 NO_RACE  */
+APPEND ~RACE.IDS~ ~114 SIRINE~          UNLESS ~114 SIRINE~
+APPEND ~RACE.IDS~ ~186 DRAKE~           UNLESS ~186 DRAKE~
+APPEND ~RACE.IDS~ ~187 MANTICORE~       UNLESS ~187 MANTICORE~
+//APPEND ~RACE.IDS~ ~188 ORC~             UNLESS ~188 ORC~
+APPEND ~RACE.IDS~ ~189 SVIRFNEBLIN~     UNLESS ~189 SVIRFNEBLIN~
+APPEND ~RACE.IDS~ ~190 TANARI~          UNLESS ~190 TANARI~
+APPEND ~RACE.IDS~ ~191 CHICKEN~         UNLESS ~191 CHICKEN~
+//APPEND ~RACE.IDS~ ~192 SNOW_TROLL~      UNLESS ~192 SNOW_TROLL~
+APPEND ~RACE.IDS~ ~193 BARBARIAN~       UNLESS ~193 BARBARIAN~
+APPEND ~RACE.IDS~ ~194 POMAB_IMAGE~     UNLESS ~194 POMAB_IMAGE~
+APPEND ~RACE.IDS~ ~195 DJINNI~          UNLESS ~195 DJINNI~ 
+APPEND ~RACE.IDS~ ~196 DROW~            UNLESS ~196 DROW~
+APPEND ~RACE.IDS~ ~197 DWARF_UNDERDARK~ UNLESS ~197 DWARF_UNDERDARK~
+APPEND ~RACE.IDS~ ~198 SHAPESHIFTER~    UNLESS ~198 SHAPESHIFTER~
+APPEND ~RACE.IDS~ ~200 SUCCUBUS~        UNLESS ~200 SUCCUBUS~
+APPEND ~RACE.IDS~ ~175 SPECTRAL_UNDEAD~ UNLESS ~175 SPECTRAL_UNDEAD~
+APPEND ~RACE.IDS~ ~181 WILLOWISP~       UNLESS ~181 WILLOWISP~
+//APPEND ~RACE.IDS~ ~220 TROLL_ICE~       UNLESS ~220 TROLL_ICE~
+
+//SPECIFIC.IDS
+APPEND ~SPECIFIC.IDS~ ~103 PERSON_1~       UNLESS ~103 PERSON_1~
+APPEND ~SPECIFIC.IDS~ ~104 PERSON_2~       UNLESS ~104 PERSON_2~
+APPEND ~SPECIFIC.IDS~ ~105 PERSON_3~       UNLESS ~105 PERSON_3~
+APPEND ~SPECIFIC.IDS~ ~106 PERSON_4~       UNLESS ~106 PERSON_4~
+APPEND ~SPECIFIC.IDS~ ~107 PERSON_5~       UNLESS ~107 PERSON_5~
+APPEND ~SPECIFIC.IDS~ ~108 PERSON_6~       UNLESS ~108 PERSON_6~
+APPEND ~SPECIFIC.IDS~ ~109 PERSON_7~       UNLESS ~109 PERSON_7~
+APPEND ~SPECIFIC.IDS~ ~110 PERSON_8~       UNLESS ~110 PERSON_8~
+APPEND ~SPECIFIC.IDS~ ~111 PERSON_9~       UNLESS ~111 PERSON_9~
+APPEND ~SPECIFIC.IDS~ ~112 PERSON_10~      UNLESS ~112 PERSON_10~
+APPEND ~SPECIFIC.IDS~ ~113 SQUIRREL~       UNLESS ~113 SQUIRREL~
+APPEND ~SPECIFIC.IDS~ ~211 HARPY_DUEL~     UNLESS ~211 HARPY_DUEL~
+APPEND ~SPECIFIC.IDS~ ~212 WYVERN_DUEL~    UNLESS ~212 WYVERN_DUEL~
+APPEND ~SPECIFIC.IDS~ ~213 TROLL_DUEL~     UNLESS ~213 TROLL_DUEL~
+APPEND ~SPECIFIC.IDS~ ~214 MYCONID_DUEL~   UNLESS ~214 MYCONID_DUEL~
+APPEND ~SPECIFIC.IDS~ ~215 ORC_DUEL~       UNLESS ~215 ORC_DUEL~
+APPEND ~SPECIFIC.IDS~ ~216 MINOTAUR_DUEL~  UNLESS ~216 MINOTAUR_DUEL~
+APPEND ~SPECIFIC.IDS~ ~217 UMBERHULK_DUEL~ UNLESS ~217 UMBERHULK_DUEL~
+APPEND ~SPECIFIC.IDS~ ~218 GUARD_DUEL~     UNLESS ~218 GUARD_DUEL~
+APPEND ~SPECIFIC.IDS~ ~219 BEHOLDER_DUEL~  UNLESS ~219 BEHOLDER_DUEL~
+APPEND ~SPECIFIC.IDS~ ~220 JAKAL_1~        UNLESS ~220 JAKAL_1~
+APPEND ~SPECIFIC.IDS~ ~221 JAKAL_2~        UNLESS ~221 JAKAL_2~
+APPEND ~SPECIFIC.IDS~ ~222 JAKAL_3~        UNLESS ~222 JAKAL_3~
+APPEND ~SPECIFIC.IDS~ ~223 JAKAL_4~        UNLESS ~223 JAKAL_4~
+APPEND ~SPECIFIC.IDS~ ~230 TROLL_ICE~      UNLESS ~230 TROLL_ICE~
+APPEND ~SPECIFIC.IDS~ ~231 SNOW_TROLL~     UNLESS ~231 SNOW_TROLL~
+
+//STATE.IDS
+APPEND ~STATE.IDS~ ~0x00102029 STATE_HARMLESS~         UNLESS ~0x00102029 STATE_HARMLESS~
+APPEND ~STATE.IDS~ ~0x80040004 STATE_RANGED_TARGET~    UNLESS ~0x80040004 STATE_RANGED_TARGET~
+APPEND ~STATE.IDS~ ~0x8014202D STATE_OUT_OF_ACTION~    UNLESS ~0x8014202D STATE_OUT_OF_ACTION~
+APPEND ~STATE.IDS~ ~0x00400010 STATE_NOT_VISIBLE~      UNLESS ~0x00400010 STATE_NOT_VISIBLE~
+APPEND ~STATE.IDS~ ~0x60400010 STATE_ILLUSIONS~        UNLESS ~0x60400010 STATE_ILLUSIONS~
+APPEND ~STATE.IDS~ ~0x63C08010 STATE_ENCHANTED~        UNLESS ~0x63C08010 STATE_ENCHANTED~
+APPEND ~State.ids~ ~0x00000fc0 STATE_REALLY_DEAD~      UNLESS ~0x00000fc0 STATE_REALLY_DEAD~
+APPEND ~STATE.IDS~ ~0x80101FEF CD_STATE_NOTVALID~      UNLESS ~0x80101FEF CD_STATE_NOTVALID~
+
+APPEND ~invitem.ids~  ~10 NONSTEALABLE_NONDROPABLE~ UNLESS ~10 NONSTEALABLE_NONDROPABLE~
+APPEND ~wmpflag.ids~  ~5 VISIBLE_EXPLORABLE~        UNLESS  ~5 VISIBLE_EXPLORABLE~
+
+APPEND ~INSTANT.IDS~ ~376 DisplayStringNoNameDlg(O:Object*,I:StrRef*)~ UNLESS ~376 DisplayStringNoNameDlg~
+/* bits */
+/* IWDEET_COMPLETE
+BG1  - IWDEET_BG1_COMPLETE
+IWD1 - IWDEET_IWD1_COMPLETE
+SOD  - IWDEET_SOD_COMPLETE
+SOA  - IWDEET_SOA_COMPLETE
+IWD2 - IWDEET_IWD2_COMPLETE
+ROI  - IWDEET_ROI_COMPLETE
+HOW  - IWDEET_HOW_COMPLETE
+TOTL - IWDEET_TOTL_COMPLETE
+TOB  - IWDEET_TOB_COMPLETE
+*/
+/*APPEND ~BITS.IDS~ ~0x00000001	BITS_BG1~               UNLESS ~BITS_BG1~
+APPEND ~BITS.IDS~ ~0x00000002	BITS_IWD1~              UNLESS ~BITS_IWD1~
+APPEND ~BITS.IDS~ ~0x00000004	BITS_SOD~               UNLESS ~BITS_SOD~
+APPEND ~BITS.IDS~ ~0x00000008	BITS_SOA~               UNLESS ~BITS_SOA~
+APPEND ~BITS.IDS~ ~0x00000010	BITS_IWD2~              UNLESS ~BITS_IWD2~
+APPEND ~BITS.IDS~ ~0x00000020	BITS_ROI~               UNLESS ~BITS_ROI~
+APPEND ~BITS.IDS~ ~0x00000040	BITS_HOW~               UNLESS ~BITS_HOW~
+APPEND ~BITS.IDS~ ~0x00000080	BITS_TOTL~              UNLESS ~BITS_TOTL~
+APPEND ~BITS.IDS~ ~0x00000003	BITS_BGIWD~             UNLESS ~BITS_BGIWD~
+APPEND ~BITS.IDS~ ~0x00000007	BITS_BGIWDSOD~          UNLESS ~BITS_BGIWDSOD~
+APPEND ~BITS.IDS~ ~0x0000000F	BITS_BGIWDSODSOA~       UNLESS ~BITS_BGIWDSODSOA~
+APPEND ~BITS.IDS~ ~0x0000001F	BITS_BGIWDSODSOAIWD~    UNLESS ~BITS_BGIWDSODSOAIWD~
+APPEND ~BITS.IDS~ ~0x0000003F	BITS_BGIWDSODSOAIWDROI~ UNLESS ~BITS_BGIWDSODSOAIWDROI~
+
+APPEND ~BITS.IDS~ ~0x00000006	BITS_IWDSOD~            UNLESS ~BITS_IWDSOD~
+APPEND ~BITS.IDS~ ~0x0000000E	BITS_IWDSODSOA~         UNLESS ~BITS_IWDSODSOA~
+APPEND ~BITS.IDS~ ~0x0000001E	BITS_IWDSODSOAIWD~      UNLESS ~BITS_IWDSODSOAIWD~
+APPEND ~BITS.IDS~ ~0x0000003E	BITS_IWDSODSOAIWDROI~   UNLESS ~BITS_IWDSODSOAIWDROI~
+APPEND ~BITS.IDS~ ~0x0000000C	BITS_SODSOA~            UNLESS ~BITS_SODSOA~
+APPEND ~BITS.IDS~ ~0x0000001C	BITS_SODSOAIWD~         UNLESS ~BITS_SODSOAIWD~
+APPEND ~BITS.IDS~ ~0x0000003C	BITS_SODSOAIWDROI~      UNLESS ~BITS_SODSOAIWDROI~
+APPEND ~BITS.IDS~ ~0x00000018	BITS_SOAIWD~            UNLESS ~BITS_SOAIWD~
+APPEND ~BITS.IDS~ ~0x00000038	BITS_SOAIWDROI~         UNLESS ~BITS_SOAIWDROI~
+APPEND ~BITS.IDS~ ~0x00000030	BITS_IWDROI~            UNLESS ~BITS_IWDROI~
+APPEND ~BITS.IDS~ ~0x00000042	BITS_IWD1HOW~           UNLESS ~BITS_IWD1HOW~*/
+
+COPY_EXISTING ~action.ids~ ~override~
+	REPLACE_TEXTUALLY ~317 PlaySong(I:Song\*)~ ~317 PlaySong(I:Song*SONGLIST)~
+	BUT_ONLY_IF_IT_CHANGES
+
+//SPELDESC.2DA
+APPEND ~SPELDESC.2DA~ ~SPPR101	19406
+SPPR108	19401
+SPPR201	19402
+SPPR214	19397
+SPPR308	19398~
+
+/*  STATDESC  */
+LAF APPEND_STATDESC_ENTRY INT_VAR strref=RESOLVE_STR_REF(@14727) STR_VAR bam_file="IDPHASE"  RET IDPHASE =index END
+LAF APPEND_STATDESC_ENTRY INT_VAR strref=RESOLVE_STR_REF(@14728) STR_VAR bam_file="IDPAIN"   RET IDPAIN  =index END
+LAF APPEND_STATDESC_ENTRY INT_VAR strref=14665                   STR_VAR bam_file="IDPETRIF" RET IDPETRIF=index END
+LAF APPEND_STATDESC_ENTRY INT_VAR strref=RESOLVE_STR_REF(@24384) STR_VAR bam_file="IDANIMRG" RET IDANIMRG=index END
+LAF APPEND_STATDESC_ENTRY INT_VAR strref=RESOLVE_STR_REF(@24381) STR_VAR bam_file="IDBLDRG"  RET IDBLDRG =index END
+
+COPY_EXISTING ~statdesc.2da~ ~override~
+	PRETTY_PRINT_2DA
+
+//BLOCK 2DA
+PRINT ~Installing *.2da files...~
+//BLOCK movies
+OUTER_SET XXX26767 = RESOLVE_STR_REF(@26767)
+OUTER_SET XXX26769 = RESOLVE_STR_REF(@26769)
+OUTER_SET XXX26770 = RESOLVE_STR_REF(@26770)
+OUTER_SET XXX26771 = RESOLVE_STR_REF(@26771)
+OUTER_SET XXX26774 = RESOLVE_STR_REF(@26774)
+OUTER_SET XXX26807 = RESOLVE_STR_REF(@26807)
+OUTER_SET XXX26796 = RESOLVE_STR_REF(@26796)
+OUTER_SET XXX26743 = RESOLVE_STR_REF(@26743)
+OUTER_SET XXX26803 = RESOLVE_STR_REF(@26803)
+OUTER_SET XXX26744 = RESOLVE_STR_REF(@26744)
+OUTER_SET XXX26798 = RESOLVE_STR_REF(@26798)
+OUTER_SET XXX26745 = RESOLVE_STR_REF(@26745)
+OUTER_SET XXX26746 = RESOLVE_STR_REF(@26746)
+OUTER_SET XXX26747 = RESOLVE_STR_REF(@26747)
+OUTER_SET XXX26748 = RESOLVE_STR_REF(@26748)
+OUTER_SET XXX26749 = RESOLVE_STR_REF(@26749)
+OUTER_SET XXX26750 = RESOLVE_STR_REF(@26750)
+OUTER_SET XXX26751 = RESOLVE_STR_REF(@26751)
+OUTER_SET XXX26804 = RESOLVE_STR_REF(@26804)
+OUTER_SET XXX26756 = RESOLVE_STR_REF(@26756)
+OUTER_SET XXX26805 = RESOLVE_STR_REF(@26805)
+OUTER_SET XXX26757 = RESOLVE_STR_REF(@26757)
+OUTER_SET XXX26758 = RESOLVE_STR_REF(@26758)
+OUTER_SET XXX26811 = RESOLVE_STR_REF(@26811)
+OUTER_SET XXX26759 = RESOLVE_STR_REF(@26759)
+OUTER_SET XXX26760 = RESOLVE_STR_REF(@26760)
+OUTER_SET XXX26806 = RESOLVE_STR_REF(@26806)
+OUTER_SET XXX26761 = RESOLVE_STR_REF(@26761)
+OUTER_SET XXX26762 = RESOLVE_STR_REF(@26762)
+OUTER_SET XXX26763 = RESOLVE_STR_REF(@26763)
+OUTER_SET XXX26764 = RESOLVE_STR_REF(@26764)
+OUTER_SET XXX26765 = RESOLVE_STR_REF(@26765)
+OUTER_SET XXX26766 = RESOLVE_STR_REF(@26766)
+OUTER_SET XXX26778 = RESOLVE_STR_REF(@26778)
+OUTER_SET XXX26780 = RESOLVE_STR_REF(@26780)
+OUTER_SET XXX26781 = RESOLVE_STR_REF(@26781)
+OUTER_SET XXX26809 = RESOLVE_STR_REF(@26809)
+OUTER_SET XXX26782 = RESOLVE_STR_REF(@26782)
+OUTER_SET XXX26785 = RESOLVE_STR_REF(@26785)
+OUTER_SET XXX26786 = RESOLVE_STR_REF(@26786)
+OUTER_SET XXX26775 = RESOLVE_STR_REF(@26775)
+OUTER_SET XXX26808 = RESOLVE_STR_REF(@26808)
+OUTER_SET XXX26776 = RESOLVE_STR_REF(@26776)
+OUTER_SET XXX26777 = RESOLVE_STR_REF(@26777)
+OUTER_SET XXX26800 = RESOLVE_STR_REF(@26800)
+OUTER_SET XXX26787 = RESOLVE_STR_REF(@26787)
+OUTER_SET XXX26788 = RESOLVE_STR_REF(@26788)
+OUTER_SET XXX26789 = RESOLVE_STR_REF(@26789)
+OUTER_SET XXX26790 = RESOLVE_STR_REF(@26790)
+OUTER_SET XXX26791 = RESOLVE_STR_REF(@26791)
+OUTER_SET XXX26792 = RESOLVE_STR_REF(@26792)
+OUTER_SET XXX26793 = RESOLVE_STR_REF(@26793)
+OUTER_SET XXX26794 = RESOLVE_STR_REF(@26794)
+OUTER_SET XXX26795 = RESOLVE_STR_REF(@26795)
+OUTER_SET XXX26810 = RESOLVE_STR_REF(@26810)
+
+OUTER_SPRINT ~XZ26737~ @26737
+OUTER_SET XXX26737 = RESOLVE_STR_REF(~^0xFF00CA00%XZ26737%^-~)
+OUTER_SPRINT ~XZ26738~ @26738
+OUTER_SET XXX26738 = RESOLVE_STR_REF(~^0xFF00CA00%XZ26738%^-~)
+OUTER_SPRINT ~XZ26739~ @26739
+OUTER_SET XXX26739 = RESOLVE_STR_REF(~^0xFF00CA00%XZ26739%^-~)
+OUTER_SPRINT ~XZ26740~ @26740
+OUTER_SET XXX26740 = RESOLVE_STR_REF(~^0xFF00CA00%XZ26740%^-~)
+OUTER_SPRINT ~XZ26741~ @26741
+OUTER_SET XXX26741 = RESOLVE_STR_REF(~^0xFF00CA00%XZ26741%^-~)
+OUTER_SPRINT ~XZ26802~ @26802
+OUTER_SET XXX26802 = RESOLVE_STR_REF(~^0xFF00CA00%XZ26802%^-~)
+OUTER_SPRINT ~XZ26742~ @26742
+OUTER_SET XXX26742 = RESOLVE_STR_REF(~^0xFF00CA00%XZ26742%^-~)
+OUTER_SPRINT ~XZ26729~ @26729
+OUTER_SET XXX26729 = RESOLVE_STR_REF(~^0xFF00CA00%XZ26729%^-~)
+OUTER_SPRINT ~XZ26730~ @26730
+OUTER_SET XXX26730 = RESOLVE_STR_REF(~^0xFF00CA00%XZ26730%^-~)
+OUTER_SPRINT ~XZ26731~ @26731
+OUTER_SET XXX26731 = RESOLVE_STR_REF(~^0xFF00CA00%XZ26731%^-~)
+OUTER_SPRINT ~XZ26732~ @26732
+OUTER_SET XXX26732 = RESOLVE_STR_REF(~^0xFF00CA00%XZ26732%^-~)
+OUTER_SPRINT ~XZ26733~ @26733
+OUTER_SET XXX26733 = RESOLVE_STR_REF(~^0xFF00CA00%XZ26733%^-~)
+OUTER_SPRINT ~XZ26734~ @26734
+OUTER_SET XXX26734 = RESOLVE_STR_REF(~^0xFF00CA00%XZ26734%^-~)
+OUTER_SPRINT ~XZ26735~ @26735
+OUTER_SET XXX26735 = RESOLVE_STR_REF(~^0xFF00CA00%XZ26735%^-~)
+OUTER_SPRINT ~XZ26736~ @26736
+OUTER_SET XXX26736 = RESOLVE_STR_REF(~^0xFF00CA00%XZ26736%^-~)
+OUTER_SPRINT ~XZ26801~ @26801
+OUTER_SET XXX26801 = RESOLVE_STR_REF(~^0xFF00CA00%XZ26801%^-~)
+
+
+COPY ~iwd1_eet/2da/AVALANCH.2DA~ ~override~ EVALUATE_BUFFER
+	PRETTY_PRINT_2DA
+COPY ~iwd1_eet/2da/HOWDRAG.2DA~  ~override~ EVALUATE_BUFFER
+	PRETTY_PRINT_2DA
+COPY ~iwd1_eet/2da/HOWSEER.2DA~  ~override~ EVALUATE_BUFFER
+	PRETTY_PRINT_2DA
+COPY ~iwd1_eet/2da/IDINTRO.2DA~  ~override~ EVALUATE_BUFFER
+	PRETTY_PRINT_2DA
+COPY ~iwd1_eet/2da/RETURN.2DA~   ~override~ EVALUATE_BUFFER
+	PRETTY_PRINT_2DA
+COPY ~iwd1_eet/2da/SCRY.2DA~     ~override~ EVALUATE_BUFFER
+	PRETTY_PRINT_2DA
+COPY ~iwd1_eet/2da/IDTOWER.2DA~  ~override~ EVALUATE_BUFFER
+	PRETTY_PRINT_2DA
+
+COPY_EXISTING ~bgee.lua~ ~override~
+	LPF REPLACE_MULTILINE
+		INT_VAR
+			num = 1
+			strict = 1
+		STR_VAR
+			pattern =      ~~~~~movies =
+{~~~~~
+			string  = EVAL ~~~~~movies =
+{
+	{ 'idintro', 80, 220, %XXX26743%, 2, 1 },
+	{ 'idintro', 240, 340, %XXX26803%, 2, 1 },
+	{ 'idintro', 360, 520, %XXX26744%, 2, 1 },
+	{ 'idintro', 540, 745, %XXX26798%, 2, 1 },
+	{ 'idintro', 765, 970, %XXX26745%, 2, 1 },
+	{ 'idintro', 990, 1110, %XXX26746%, 2, 1 },
+	{ 'idintro', 1130, 1300, %XXX26747%, 2, 1 },
+	{ 'idintro', 1320, 1450, %XXX26748%, 2, 1 },
+	{ 'idintro', 1470, 1630, %XXX26749%, 2, 1 },
+	{ 'idintro', 1650, 1790, %XXX26750%, 2, 1 },
+	{ 'idintro', 1810, 1960, %XXX26751%, 2, 1 },
+	{ 'idintro', 1980, 2110, %XXX26804%, 2, 1 },
+	{ 'idintro', 2130, 2200, %XXX26756%, 2, 1 },
+	{ 'idintro', 2220, 2330, %XXX26805%, 2, 1 },
+	{ 'idintro', 2350, 2495, %XXX26757%, 2, 1 },
+	{ 'idintro', 2515, 2635, %XXX26758%, 2, 1 },
+	{ 'idintro', 2655, 2770, %XXX26811%, 2, 1 },
+	{ 'idintro', 2790, 2975, %XXX26759%, 2, 1 },
+	{ 'idintro', 2995, 3095, %XXX26760%, 2, 1 },
+	{ 'idintro', 3115, 3245, %XXX26806%, 2, 1 },
+	{ 'idintro', 3265, 3440, %XXX26761%, 2, 1 },
+	{ 'idintro', 3460, 3605, %XXX26762%, 2, 1 },
+	{ 'idintro', 3625, 3770, %XXX26763%, 2, 1 },
+	{ 'idintro', 3790, 4010, %XXX26764%, 2, 1 },
+	{ 'idintro', 4030, 4280, %XXX26765%, 2, 1 },
+	{ 'idintro', 4300, 4395, %XXX26766%, 2, 1 },
+	{ 'idintro', 4415, 4435, %XXX26796%, 2, 1 },
+	
+	{ 'avalanch', 30, 205, %XXX26767%, 2, 1 },
+	{ 'avalanch', 225, 415, %XXX26769%, 2, 1 },
+	{ 'avalanch', 435, 605, %XXX26770%, 2, 1 },
+	{ 'avalanch', 625, 805, %XXX26771%, 2, 1 },
+	{ 'avalanch', 825, 945, %XXX26774%, 2, 1 },
+	{ 'avalanch', 965, 1140, %XXX26807%, 2, 1 },
+	{ 'avalanch', 1160, 1180, %XXX26796%, 2, 1 },
+	
+	{ 'scry', 22, 130, %XXX26775%, 2, 1 },
+	{ 'scry', 150, 260, %XXX26808%, 2, 1 },
+	{ 'scry', 280, 505, %XXX26776%, 2, 1 },
+	{ 'scry', 525, 595, %XXX26777%, 2, 1 },
+	{ 'scry', 615, 880, %XXX26800%, 2, 1 },
+	{ 'scry', 900, 920, %XXX26796%, 2, 1 },
+	
+	{ 'return', 30, 145, %XXX26778%, 2, 1 },
+	{ 'return', 165, 340, %XXX26780%, 2, 1 },
+	{ 'return', 360, 455, %XXX26781%, 2, 1 },
+	{ 'return', 475, 580, %XXX26809%, 2, 1 },
+	{ 'return', 600, 685, %XXX26782%, 2, 1 },
+	{ 'return', 705, 865, %XXX26785%, 2, 1 },
+	{ 'return', 885, 1060, %XXX26786%, 2, 1 },
+	{ 'return', 1080, 1100, %XXX26796%, 2, 1 },
+	
+	{ 'idtower', 15, 140, %XXX26787%, 2, 1 },
+	{ 'idtower', 160, 350, %XXX26788%, 2, 1 },
+	{ 'idtower', 370, 500, %XXX26789%, 2, 1 },
+	{ 'idtower', 520, 695, %XXX26790%, 2, 1 },
+	{ 'idtower', 715, 820, %XXX26791%, 2, 1 },
+	{ 'idtower', 840, 1010, %XXX26792%, 2, 1 },
+	{ 'idtower', 1030, 1160, %XXX26793%, 2, 1 },
+	{ 'idtower', 1180, 1340, %XXX26794%, 2, 1 },
+	{ 'idtower', 1360, 1545, %XXX26795%, 2, 1 },
+	{ 'idtower', 1565, 1755, %XXX26810%, 2, 1 },
+	{ 'idtower', 1775, 1795, %XXX26796%, 2, 1 },
+	
+	{ 'howdrag', 22, 175, %XXX26737%, 2, 1 },
+	{ 'howdrag', 195, 465, %XXX26738%, 2, 1 },
+	{ 'howdrag', 485, 745, %XXX26739%, 2, 1 },
+	{ 'howdrag', 765, 855, %XXX26740%, 2, 1 },
+	{ 'howdrag', 875, 1000, %XXX26741%, 2, 1 },
+	{ 'howdrag', 1020, 1225, %XXX26802%, 2, 1 },
+	{ 'howdrag', 1245, 1450, %XXX26742%, 2, 1 },
+	{ 'howdrag', 1470, 1490, %XXX26796%, 2, 1 },
+	
+	{ 'howseer', 10, 190, %XXX26729%, 2, 1 },
+	{ 'howseer', 210, 380, %XXX26730%, 2, 1 },
+	{ 'howseer', 400, 715, %XXX26731%, 2, 1 },
+	{ 'howseer', 735, 930, %XXX26732%, 2, 1 },
+	{ 'howseer', 950, 1060, %XXX26733%, 2, 1 },
+	{ 'howseer', 1080, 1315, %XXX26734%, 2, 1 },
+	{ 'howseer', 1335, 1555, %XXX26735%, 2, 1 },
+	{ 'howseer', 1575, 1705, %XXX26736%, 2, 1 },
+	{ 'howseer', 1725, 1960, %XXX26801%, 2, 1 },
+	{ 'howseer', 1980, 2000, %XXX26796%, 2, 1 },%LNL%~~~~~
+	END
+//BLOCKEND
+
+//BLOCK XPLIST
+APPEND ~XPLIST.2da~ ~ID1EX1E	    ID1EX1Easy	      P_100      -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1     -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1
+ID1EX1A	    ID1EX1Average	  P_135      -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1     -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1
+ID1EX1H	    ID1EX1Hard	      P_200      -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1     -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1
+ID1EX1V	    ID1EX1Very_Hard	  P_300      -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1     -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1
+ID1EX2E	    ID1EX2Easy	      P_140      -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1     -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1
+ID1EX2A	    ID1EX2Average	  P_195      -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1     -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1
+ID1EX2H	    ID1EX2Hard	      P_280      -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1     -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1
+ID1EX2V	    ID1EX2Very_Hard	  P_400      -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1     -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1
+ID1EX3E	    ID1EX3Easy	      P_200      -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1     -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1
+ID1EX3A	    ID1EX3Average	  P_285      -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1     -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1
+ID1EX3H	    ID1EX3Hard	      P_400      -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1     -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1
+ID1EX3V	    ID1EX3Very_Hard	  P_550      -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1     -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1
+ID1EX4E	    ID1EX4Easy	      P_280      -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1     -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1
+ID1EX4A	    ID1EX4Average	  P_405      -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1     -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1
+ID1EX4H	    ID1EX4Hard	      P_560      -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1     -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1
+ID1EX4V	    ID1EX4Very_Hard	  P_750      -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1     -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1
+ID1EX5E	    ID1EX5Easy	      P_380      -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1     -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1
+ID1EX5A	    ID1EX5Average	  P_555      -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1     -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1
+ID1EX5H	    ID1EX5Hard	      P_760      -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1     -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1
+ID1EX5V	    ID1EX5Very_Hard	  P_1000     -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1     -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1
+ID1EX6E	    ID1EX6Easy	      P_500      -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1     -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1
+ID1EX6A	    ID1EX6Average	  P_735      -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1     -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1
+ID1EX6H	    ID1EX6Hard	      P_1000     -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1     -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1
+ID1EX6V	    ID1EX6Very_Hard	  P_1300     -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1     -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1
+ID1EX7E	    ID1EX7Easy	      P_640      -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1     -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1
+ID1EX7A	    ID1EX7Average	  P_945      -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1     -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1
+ID1EX7H	    ID1EX7Hard	      P_1280     -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1     -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1
+ID1EX7V	    ID1EX7Very_Hard	  P_1650     -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1     -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1
+ID1EX8E	    ID1EX8Easy	      P_800      -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1     -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1
+ID1EX8A	    ID1EX8Average	  P_1185     -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1     -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1
+ID1EX8H	    ID1EX8Hard	      P_1600     -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1     -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1
+ID1EX8V	    ID1EX8Very_Hard	  P_2050     -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1     -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1
+ID1EX9E	    ID1EX9Easy	      P_980      -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1     -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1
+ID1EX9A	    ID1EX9Average	  P_1455     -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1     -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1
+ID1EX9H	    ID1EX9Hard	      P_1960     -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1     -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1
+ID1EX9V	    ID1EX9Very_Hard	  P_2500     -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1     -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1
+ID1EX10E	ID1EX10Easy	      P_1180     -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1     -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1
+ID1EX10A	ID1EX10Average	  P_1755     -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1     -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1
+ID1EX10H	ID1EX10Hard	      P_2360     -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1     -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1
+ID1EX10V	ID1EX10Very_Hard  P_3000     -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1     -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1
+ID1EX11E	ID1EX11Easy	      P_1400     -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1     -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1
+ID1EX11A	ID1EX11Average	  P_2085     -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1     -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1
+ID1EX11H	ID1EX11Hard	      P_2800     -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1     -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1
+ID1EX11V	ID1EX11Very_Hard  P_3550     -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1     -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1
+ID1EX12E	ID1EX12Easy	      P_1640     -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1     -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1
+ID1EX12A	ID1EX12Average	  P_2445     -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1     -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1
+ID1EX12H	ID1EX12Hard	      P_3280     -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1     -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1
+ID1EX12V	ID1EX12Very_Hard  P_4150     -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1     -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1
+ID1EX13E	ID1EX13Easy	      P_100      -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1     -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1
+ID1EX13A	ID1EX13Average	  P_100      -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1     -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1
+ID1EX13H	ID1EX13Hard	      P_100      -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1     -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1
+ID1EX13V	ID1EX13Very_Hard  P_100      -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1     -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1
+ID1EX14E	ID1EX14Easy	      P_100      -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1     -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1
+ID1EX14A	ID1EX14Average	  P_100      -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1     -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1
+ID1EX14H	ID1EX14Hard	      P_100      -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1     -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1
+ID1EX14H	ID1EX14Hard	      P_100      -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1     -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1~
+//BLOCKEND
+
+APPEND ~ITEMEXCL.2da~ ~PLAT06 1
+MantleCS 1
+DragArm 1
+Swanarm 1
+ChainBM 1
+Glimglm 1
+MailLif 1
+Elfchan 1
+Blood 1
+KayChai 1
+uring4b 1
+uring5a 1
+shplate 1
+usltr01 1
+usltr2a 1
+usltr4a 1
+usltr5a 1
+shldrng 1
+cloakmi 1
+ArmPen 1
+Glory 1
+Mirror2 1
+Plat04 1
+VexeD 1
+Vexed2 1
+Vexed3 1~
+
+APPEND ~MASTAREA.2da~ ~ID0000 value
+ID1000  value
+ID1100  value
+ID1101	value
+ID1200  value
+ID2000  value
+ID2001  value
+ID2100  value
+ID3000  value
+ID3501  value
+ID3502  value
+ID3503  value
+ID3600  value
+ID3601  value
+ID3602  value
+ID4000  value
+ID4001  value
+ID4002  value
+ID4003  value
+ID4004  value
+ID4005  value
+ID5000  value
+ID5001  value
+ID5002  value
+ID5003  value
+ID5004  value
+ID5101  value
+ID5201  value
+ID5301  value
+ID5401  value
+ID6000  value
+ID6001  value
+ID6002  value
+ID6003  value
+ID6004  value
+ID6005  value
+ID6006  value
+ID7000  value
+ID7005  value
+ID8001  value
+ID8003  value
+ID8005  value
+ID8008  value
+ID8009  value
+ID8010  value
+ID8011  value
+ID8012  value
+ID8013  value
+ID9100	value
+ID9101	value
+ID9104	value
+ID9200	value
+ID9201	value
+ID9300	value
+ID9301	value
+ID9400	value
+ID9500	value
+ID9600	value
+ID9603  value
+ID9604  value
+ID9700  value~
+
+APPEND ~MOVIDESC.2da~ ~IDINTRO           1000019669
+AVALANCH	1000019659
+SCRY		1000019660
+RETURN		1000019661
+IDTOWER		1000019662
+HOWSEER		1000026587
+HOWDRAG		1000026700~
+COPY_EXISTING ~MOVIDESC.2da~ ~override~
+  REPLACE 1000019669 @19669
+  REPLACE 1000019659 @19659
+  REPLACE 1000019660 @19660
+  REPLACE 1000019661 @19661
+  REPLACE 1000019662 @19662
+  REPLACE 1000026700 @26700
+  REPLACE 1000026587 @26587
+
+APPEND ~TOOLTIP.2da~ ~NATURE            -1           100003235        100003236
+WANDARM           1000013025        1000013067       -1
+MantleHF          1000013047        1000013014       100004370
+Moonbow           100008945         1000013038       -1
+helmla            100009189         1000018586       100009191
+WandFre           10000926          1000012093       1000012062
+FangGF            -1           1000024331       100002419
+Tiernon           1000012122        1000012074       1000024738
+Mirror2           1000012016        1000012018       -1
+Dntshd2           -1           1000021405       -1
+Rogue             1000012015        1000012075       -1
+ULRing            1000012068        1000012069       1000012071
+Blast             1000021437        1000021427       -1
+vexed3            1000026723        100009206        -1
+sceptre           -1           100001867        1000022614 
+jhoswd3           -1           1000012116       1000012077  ~
+COPY_EXISTING ~TOOLTIP.2da~ ~override~
+  REPLACE 10000926   @926
+  REPLACE 100001867  @1867
+  REPLACE 100002419  @2419
+  REPLACE 100003235  @3235
+  REPLACE 100003236  @3236
+  REPLACE 100004370  @4370
+  REPLACE 100008945  @8945
+  REPLACE 100009189  @9189
+  REPLACE 100009191  @9191
+  REPLACE 100009206  @9206
+  REPLACE 1000012015 @12015
+  REPLACE 1000012016 @12016
+  REPLACE 1000012018 @12018
+  REPLACE 1000012062 @12062
+  REPLACE 1000012068 @12068
+  REPLACE 1000012069 @12069
+  REPLACE 1000012071 @12071
+  REPLACE 1000012074 @12074
+  REPLACE 1000012075 @12075
+  REPLACE 1000012077 @12077
+  REPLACE 1000012093 @12093
+  REPLACE 1000012116 @12116
+  REPLACE 1000012122 @12122
+  REPLACE 1000013014 @13014
+  REPLACE 1000013025 @13025
+  REPLACE 1000013038 @13038
+  REPLACE 1000013047 @13047
+  REPLACE 1000013067 @13067
+  REPLACE 1000018586 @18586
+  REPLACE 1000021405 @21405
+  REPLACE 1000021427 @21427
+  REPLACE 1000021437 @21437
+  REPLACE 1000022614 @22614
+  REPLACE 1000024331 @24331
+  REPLACE 1000024738 @24738
+  REPLACE 1000026723 @26723
+
+APPEND ~TRACKING.2da~ ~ID1000    O_10024826
+ID1001    O_10019534
+ID1002    O_10019534
+ID1003    O_10019534
+ID1004    O_10019534
+ID1005    O_10019534
+ID1006    O_10019534
+ID1007    O_10019534
+ID1008    O_10019534
+ID1009    O_10019534
+ID1010    O_10024823
+ID1011    O_10019534
+ID1012    O_10019534
+ID1013    O_10019534
+ID1014    O_10019534
+ID1100    O_10024824
+ID1101    O_10019534
+ID1102    O_10019534
+ID1103    O_10019534
+ID1104    O_10019534
+ID1105    O_10019534
+ID1200    O_10024825
+ID1201    O_10024853
+ID2000    O_10024828
+ID2001    O_10024831
+ID2002    O_10024832
+ID2003    O_10024833
+ID2004    O_10024834
+ID2005    O_10024834
+ID2006    O_10024834
+ID2100    O_10024835
+ID2101    O_10019534
+ID2102    O_10019534
+ID2103    O_10019534
+ID2104    O_10019534
+ID2105    O_10019534
+ID2106    O_10019534
+ID2107    O_10019534
+ID2108    O_10019534
+ID2109    O_10019534
+ID2110    O_10019534
+ID2111    O_10019534
+ID2112    O_10024836
+ID2113    O_10019534
+ID2114    O_10019534
+ID2115    O_10019534
+ID2116    O_10024836
+ID3000    O_10024837
+ID3001    O_10024841
+ID3101    O_10019534
+ID3201    O_10019534
+ID3301    O_10019534
+ID3401    O_10019534
+ID3501    O_10024843
+ID3502    O_10019534
+ID3503    O_10019534
+ID3600    O_10024844
+ID3601    O_10024845
+ID3602    O_10024845
+ID3603    O_10024846
+ID4000    O_10024847
+ID4001    O_10024848
+ID4002    O_10024849
+ID4003    O_10024850
+ID4004    O_10024851
+ID4005    O_10024852
+ID5000    O_10024865
+ID5001    O_10019534
+ID5002    O_10019534
+ID5003    O_10019534
+ID5004    O_10019534
+ID5101    O_10019534
+ID5102    O_10019534
+ID5103    O_10019534
+ID5104    O_10019534
+ID5201    O_10019534
+ID5202    O_10019534
+ID5203    O_10019534
+ID5204    O_10019534
+ID5301    O_10019534
+ID5302    O_10019534
+ID5303    O_10019534
+ID5304    O_10019534
+ID5401    O_10019534
+ID5402    O_10019534
+ID5403    O_10019534
+ID5404    O_10019534
+ID5502    O_10019534
+ID5502    O_10019534
+ID6000    O_10024854
+ID6001    O_10024855
+ID6002    O_10019534
+ID6003    O_10024856
+ID6004    O_10019534
+ID6005    O_10019534
+ID6006    O_10019534
+ID6007    O_10019534
+ID6008    O_10019534
+ID6009    O_10019534
+ID6010    O_10019534
+ID6011    O_10019534
+ID6013    O_10019534
+ID6014    O_10024857
+ID7000    O_10024858
+ID7001    O_10024859
+ID7002    O_10019534
+ID7003    O_10019534
+ID7004    O_10024860
+ID7004    O_10024861
+ID8001    O_10024862
+ID8002    O_10019534
+ID8003    O_10024863
+ID8004    O_10024864
+ID8005    O_10024900
+ID8006    O_10019534
+ID8007    O_10019534
+ID8008    O_10024866
+ID8009    O_10024867
+ID8010    O_10019534
+ID8011    O_10024868
+ID8012    O_10019534
+ID8013    O_10019534
+ID9100    O_10026567
+ID9101    O_10019534
+ID9102    O_10019534
+ID9103    O_10019534
+ID9104    O_10025779
+ID9105    O_10019534
+ID9106    O_10019534
+ID9107    O_10026581
+ID9108    O_10026570
+ID9109    O_10019534
+ID9110    O_10026571
+ID9200    O_10026572
+ID9201    O_10026573
+ID9300    O_10026574
+ID9400    O_10026577
+ID9500    O_10026578
+ID9501    O_10026579
+ID9502    O_10026580
+ID9600    O_10026589
+ID9601    O_10026582
+ID9602    O_10026583
+ID9603    O_10026584~
+COPY_EXISTING ~TRACKING.2da~ ~override~
+  REPLACE ~10019534~ @19534
+  REPLACE ~10024823~ @24823
+  REPLACE ~10024824~ @24824
+  REPLACE ~10024825~ @24825
+  REPLACE ~10024826~ @24826
+  REPLACE ~10024828~ @24828
+  REPLACE ~10024831~ @24831
+  REPLACE ~10024832~ @24832
+  REPLACE ~10024833~ @24833
+  REPLACE ~10024834~ @24834
+  REPLACE ~10024835~ @24835
+  REPLACE ~10024836~ @24836
+  REPLACE ~10024837~ @24837
+  REPLACE ~10024841~ @24841
+  REPLACE ~10024843~ @24843
+  REPLACE ~10024844~ @24844
+  REPLACE ~10024845~ @24845
+  REPLACE ~10024846~ @24846
+  REPLACE ~10024847~ @24847
+  REPLACE ~10024848~ @24848
+  REPLACE ~10024849~ @24849
+  REPLACE ~10024850~ @24850
+  REPLACE ~10024851~ @24851
+  REPLACE ~10024852~ @24852
+  REPLACE ~10024853~ @24853
+  REPLACE ~10024854~ @24854
+  REPLACE ~10024855~ @24855
+  REPLACE ~10024856~ @24856
+  REPLACE ~10024857~ @24857
+  REPLACE ~10024858~ @24858
+  REPLACE ~10024859~ @24859
+  REPLACE ~10024860~ @24860
+  REPLACE ~10024861~ @24861
+  REPLACE ~10024862~ @24862
+  REPLACE ~10024863~ @24863
+  REPLACE ~10024864~ @24864
+  REPLACE ~10024865~ @24865
+  REPLACE ~10024866~ @24866
+  REPLACE ~10024867~ @24867
+  REPLACE ~10024868~ @24868
+  REPLACE ~10024900~ @24900
+  REPLACE ~10025779~ @25779
+  REPLACE ~10026567~ @26567
+  REPLACE ~10026570~ @26570
+  REPLACE ~10026571~ @26571
+  REPLACE ~10026572~ @26572
+  REPLACE ~10026573~ @26573
+  REPLACE ~10026574~ @26574
+  REPLACE ~10026577~ @26577
+  REPLACE ~10026578~ @26578
+  REPLACE ~10026579~ @26579
+  REPLACE ~10026580~ @26580
+  REPLACE ~10026581~ @26581
+  REPLACE ~10026582~ @26582
+  REPLACE ~10026583~ @26583
+  REPLACE ~10026584~ @26584
+  REPLACE ~10026589~ @26589
+
+//BLOCK Save_Game
+LAF ADD_SAVE_GAME INT_VAR strref = RESOLVE_STR_REF (@666601) RET aStr = index END
+COPY ~iwd1_eet/baf/ID2000.baf~     ~iwd1_eet/baf~ REPLACE_TEXTUALLY ~SaveGame(0)~ ~SaveGame(%aStr%)~
+LAF ADD_SAVE_GAME INT_VAR strref = RESOLVE_STR_REF (@666602) RET aStr = index END
+COPY ~iwd1_eet/baf/ID9100.baf~     ~iwd1_eet/baf~ REPLACE_TEXTUALLY ~SaveGame(0)~ ~SaveGame(%aStr%)~
+LAF ADD_SAVE_GAME INT_VAR strref = RESOLVE_STR_REF (@666603) RET aStr = index END
+COPY ~iwd1_eet/baf/ID9300.baf~     ~iwd1_eet/baf~ REPLACE_TEXTUALLY ~SaveGame(0)~ ~SaveGame(%aStr%)~
+LAF ADD_SAVE_GAME INT_VAR strref = RESOLVE_STR_REF (@666604) RET aStr = index END
+COPY ~iwd1_eet/baf/ID9500.baf~     ~iwd1_eet/baf~ REPLACE_TEXTUALLY ~SaveGame(0)~ ~SaveGame(%aStr%)~
+LAF ADD_SAVE_GAME INT_VAR strref = RESOLVE_STR_REF (@666605) RET aStr = index END
+COPY ~iwd1_eet/baf/ID9600.baf~     ~iwd1_eet/baf~ REPLACE_TEXTUALLY ~SaveGame(0)~ ~SaveGame(%aStr%)~
+LAF ADD_SAVE_GAME INT_VAR strref = RESOLVE_STR_REF (@666606) RET aStr = index END
+COPY ~iwd1_eet/baf/ID1100.baf~     ~iwd1_eet/baf~ REPLACE_TEXTUALLY ~SaveGame(0)~ ~SaveGame(%aStr%)~
+//BLOCKEND
+
+COPY_EXISTING ~XPLIST.2da~   ~override~
+              ~ITEMEXCL.2da~ ~override~
+              ~MASTAREA.2da~ ~override~
+              ~MOVIDESC.2da~ ~override~
+              ~TOOLTIP.2da~  ~override~
+              ~TRACKING.2da~ ~override~
+              ~SAVENAME.2DA~ ~override~
+	PRETTY_PRINT_2DA
+//BLOCKEND
+
+
+/* ПЛАН:
+++| 1. Скрипты, диалоги и локации
+++| 1. Извлечь dialog.tlk
+++| 1. Исправление dialog.tra искать не <CHARNAME>, а CHARNAME или <
+++| 2. ИНИ - поменять скрипты ворам AR8001 на LDTHIEF4
+++| 3. ИНИ скрипты и персонажи
+++| 4. Скрипты магов и Клериков - записать, какие заклы на какие меняются
+++|     * Сделать поиск по скриптам "Spell" и посмотреть по датам, может что-то пропустил
+++| 5. Персонажей на локации
+++|     * ID6001 - исправить триггер статуи
+++| 6. Установка локаций / Текст в них / MapNote / установка музыки
+++|     6.1 Проверить предметы на локациях, может какие упустил
+++|     6.2 Проверить звуки на дверях
+++|     6.3 ID9300, ID9400, ID9500 - rest string
+++|     6.4 Музыка
+++|     6.5 Доделать музыку на локациях
+++|     6.6 Добавить MapNotes
+++| 7. Магазины
+++| 8. Рандомные предметы
+++| 8. Предметы + исправление юзабилити в описаниях 
+++|   * создать предметы для троллей, только с меньшим НР (см. ЕЕТ)
+++|       IDTRLREG(TROLLREG) - LEFT_RING
+++|       IDMONHP1(MONHP1) - AMULET
+++|       TROLLIMM - RIGHT_RING
+++| 8. магазины контейнеров
+++| 9. Заклинания
+++| 10. Предметы и Заклинания остатки. Заклинание и свиток Желание(ИВД)
+++| 10. Заклинания, которых нет в ИВД (которые сбоку)
+++| 10. PROJECTILES
+++| 10. Проверить предметы на Proficiency Type (искать ТИП ПРЕДМЕТА и ТИП ПРОФЕССИИ) Тип предметов тоже надо проверить. Так же проверить PROJECTILES. Так же проверить все иконки у предмета и его способностей.
+++| 10. BAM's для локаций
+++| 11. Персонажи - исправить предметы и заклинания (делать в ручную)
+++|   * у кого есть скрипт EFTROLG добавить предметы для троллей - смотреть не только в локациях но и в персонажах.
+++|     TROLL
+++|     TROLLT
+++|     TrollY
+++|     INVISTRL
+++|     WTSNOTRO
+++|     TROLLSNO
+++|     DLSNOTR
+++|     RNDSTROL
+++|     REVNANT
+++|     RNDREVN
+++|       IDTRLREG(TROLLREG) - LEFT_RING
+++|       IDMONHP1(MONHP1) - AMULET
+++|       TROLLIMM - RIGHT_RING - только троллям, если надо вместо REG1HP2
+++|   Уровень персонажей не менять.
+++|     У персонажей менять XP, HP, AC, AC modifiers, THAC0, Saves, Resistances, для IWD2: Str, Dex, Con, Int, Wis, Chr + StrEx 
+++|   INNOCENT персонажей не будет, вместо этого - NO_CLASS.
+++|   У персонажей поменять версию эффектов на 2
+++|   Заклинания у персонажей
+++|   Звуки и строки персонажей
+++|   SKELBLAZ - Fireball заменить на половину урона
+++|   Сделать моих дополнительных персонажей
+++|   Вытащить оружие персонажей. Надо у некоторых поменять оружие на более слабое.
+++|   Оружейные навыки
+++| 11. Проверить персонажей на предметы, которые не в инвентаре
+++| 11. Оставшиеся предметы
+++| 11. Оставшиеся скрипты и диалоги
+++|       Где поменял местами StateCheck и See в TotL, вернуть на место, хотя может и не надо, я же там Specifics обнуляю.
+++| 12. Файлы локаций / MiniMaps
+++| 13. Может всем локам ИВД добавить AreaType - IWDAREA (для IWD2 тот же) (см. README_WEIDU)
+++| 13. 2DA для глав. Не забыть про SONG
+++| 14. Анимация Персонажей
+++| 14. Ролики
+++| 15. 2DA и другие настройки, заставки - ролики преобразоветь в WBM (XP, Zastavki i t.d.), TOOLTIP, ITEMEXCL, *.INI i t.d.
+++| 16. Проверить на локациях звуки у дверей. Я про них совсем забыл.
+++| 16. Извлечение остатков WAV
+++| 16. Извлечение и изменение BAM (max size 210, ppi 72, RGB 8bit)
+++|       Edit bmp:
+++|         -2. Remove Shadow
+++|         -1. Convert to RGB
+++|         0. max size 210, ppi 72, RGB 8bit
+++|         //1. Background. HSB 0.0.0
+++|         2. Desaturate
+++|         3. Photo Filter (100%, HSB 35.55.75)
+++|         4. Brightness/Contrast
+++|         //5. Filter -> Artistic -> Underpainting
+++|         5. Noise = 7 / Uniform
+++|         6. Trim
+++|       Проверить, что все файлы есть
+++| 16. Сделать VVC
+++| 16. Звуки диалогов
+++| 17. Квесты в журнале
+++|       INFO поменять на QUEST и добавить в основные события или в Сердце Зимы
+++|       Проверить все жиалоги на JOURNAL @
+++|       Удалить записи журнала(основные события) и добавить запись об окончании
+++|       Сделать переход в ХоУ и скрипты возвращения в БГ
+++| 18. Worldmap
+**| 19. Отправление в ИВД, отправление в ХоУ и возвращение. Не забыть удалить у всех заклинание IDWI517
+**|    * может, не использовать промежуточную локацию, а использовать MoveContainerContents, создав скрытый контейнер на стартовой локе ИВД и забирать в него предметы. А на локе, куда возвращаемя, создать контейнер, и после возвращения перетаскивать туда предметы. И ставить в том месте MapNote.
+**|    * Экспорт некоторых предметов, которые были у партии в БГ или БГ2 (персонажам или в контейнеры или в магазины)
+**|    * Отмотка таймера назад.
+**|    * Персонажам в партии не нужны новые скрипты. Просто добавлять сверху их скриптов, если PARTY_IN_ICEWIND_DALE <> 0, то NoAction. А уже сверху добавлять то, что будут делать в ИВД !!!(так не получится, остальные скрипты не будут работать)
+**|    * Для возвращение из ИВД создать название скрипта, но сам скрипт не создавать. Его создам, когда буду делать мод отправки/возвращения. Там же скрипты стандартных персонажей и добавление новых персонажей
+**| 20. Добавить персонажей, которые будут появлятся, если партия не полная
+--| 21. Добавить в магазины катаны и доугое оружие, которого нет в ИВД
+++| 21. Доделать MapNote
+++| 21. Добавка STATS.BAM и STATDESC.2DA (см. Excel)
+++| 21. Еще раз проверить в ТЛК, где осталось может использовать, и поменять оружейные навыки
+--| 21. В предметах, где есть Immunity to effect (101), может добавить защиту от строк и анимации
+--| 21. Убрать везде почти SaveObjectLocation, он берется из *.are файлов, если не указан явно. 
+--| 21. Может быть добавить в тавернах и гостиницах ИВД какую-нибудь музыку из БГ
+++| 21. Предметы с эффектом IDTELEPR это не перемещение, а урон за Фазу(поэтапный). Надо исправить и в описаниях предметов тоже, и тип OnCondition поменять
+++| 21. биффинг
+++| 21. Ворам в CLABTHXX - надо добавить новую способность (см. #evasion.spl - IWD:EE), остальным ворам тоже, если уровень соответствует. Может ее так же добавить бардам и монахам. Надо учесть, чтобы не добавлялось тем, кто может присоединиться к партии. Вообще, надо посмотреть CLABXXX все, и проверить, что там добавляется китам нового. Только скрытые способности не афишировать сообщениями.
+++| 22. Праобразовать dialog.tra в UTF-8
+++| 23. Проверить, что копируются и исправляются все Файлы
+++| 23. Вытащить список всех предметов с названием и их типом из ИВД, чтобы не повторять их в ИВД2
+++| 24. Проверить SPELDESC.2da, не добавляю ли я лишнего
+
+++| 30. Сделать Unfinished Business
+++|      Не забыть в журнал Глас Дурдель Анаты. Если в УБ есть записи журнала, использовать EXISTING
+
+++| 30. Остальные ресурсы (предметы и т.д.)
+++| 31. Item Upgrade
+++| 33. Доделать журнал Unfinished Business и ЕЕ
+
+31. Может, перенести портреты персонажей для ГГ и Голоса (Sounds)
+++| 32. При возвращении из ИВД обнулить переменные Townie_Dead, Kill_Innocent
+--| 33. Возможно, сделать, что внутри Отрезанной Руки нельзя отдыхать
+++| 34. может сделать получение повреждений саламандрами, когда они близко к комнате с жаром.
+++| 35. sdelat', chtoby v gorodah dveri nochyu zakryvalis'. Vozmojno, v Atkatle, Baldure, Beregoste, Trademeet'e, Saradushe toje. Cherez timer (sekund 20)
+++| 36. Где лич, в глубинах дорна, там посмотреть ИВ'ДЕЕ, мертвец сбрасывает книгу GENEK + BRIATH.itm
+37. AR5004 - vozmojno, dobavit' Telanisu script, chtoby on ischezal kak drugie elfy, no tol'ko esli ego atakuyut
+38. В Глубинах Дорна есть незаконченный квест с Саабликом, когда ороги могут атаковать его, если им рассказать про него
+++| 39. LDBELL5.baf - est' peremennaya. Posmotret', chto tam. Ona svyazana s AR8007 s kolokolom. Pro kolokol est' neaktivniy blok v dialoge Fleezum'a.
+40. В диалоге DCOOK есть SetGlobal("Fleezum_Call","GLOBAL",1). Проверить, может сделать так, чтобы он после этого звал Флизума. Или Флизум сам приходил. Посмотреть по тексту. Судя по диалогу Флизума, это подходит, что он должен прийти туда. Если жив. Сделать так, чтобы он шел, по дороге открывая двери, если они закрыты.
+41. Na AR8007 est' eshyo kletka s ptitsami dver'. 
+*/
+
+/*  добавки
+--1. В замороженной восточной гавани есть скрытый горожанин, но с ним ничего не происходит. Надо посмотреть ЕЕ и ИВД:УБ, может, там есть что-то, связанное с ними, или же самому придумать
+--2. Добавить в контейнер на ID1201 пару свитков с заклинанием Желание ИВД, чтобы можно было призвать духа
+--3. Возможно, сделать всем локациям уличным ночную версию
+--4. Возможно, сделать, что внутри Отрезанной Руки нельзя отдыхать
+--5. '- может сделать получение повреждений саламандрами, когда они близко к комнате с жаром.
+--6. При переходе в ИВД сбрасывать репутацию в зависимости от мировоззрения. А при возвращении в БГ - восстанавливать.
+7. В Generalized Biffing добавить, чтобы биффил ini, pvrz и другие новые файлы
+--8. Посмотреть старый tp2, там есть интересные добавки.
+*/
+
+//BLOCK SCRIPT LEVEL
+/*
+IWD2		bg2			IWD1
+0 OVERRIDE	0 OVERRIDE	0 OVERRIDE
+1 SPECIAL_1	1 AREA		1 AREA
+2 TEAM		2 SPECIFICS	2 SPECIFICS
+4 SPECIAL_2	4 CLASS		4 CLASS
+5 COMBAT	5 RACE		5 RACE
+6 SPECIAL_3	6 GENERAL	6 GENERAL
+7 MOVEMENT	7 DEFAULT	7 DEFAULT
+
+Udalenie iz Vypolnit'
+HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\RunMRU
+*/
+//BLOCKEND
+
+COPY ~iwd1_eet/ini~ ~override~
+
+INCLUDE ~iwd1_eet/lib/_projectiles.tph~
+INCLUDE ~iwd1_eet/lib/_items.tph~
+INCLUDE ~iwd1_eet/lib/_spell.tph~
+INCLUDE ~iwd1_eet/lib/_areas.tph~
+INCLUDE ~iwd1_eet/lib/_stores.tph~
+INCLUDE ~iwd1_eet/lib/_creatures.tph~
+INCLUDE ~iwd1_eet/lib/_cheat_area.tph~
+
+PRINT ~Compiling scripts...~
+COMPILE ~iwd1_eet/baf~
+PRINT ~Compiling dialogues...~
+COMPILE ~iwd1_eet/dlg~
+
+<<<<<<<<hide1z.baf
+IF
+	IsActive(Myself)
+	Global("IwIHidden","LOCALS",0)
+	Global("UnhideMyself","LOCALS",0)
+THEN
+	RESPONSE #100
+		ApplySpellRES("IDINVIS5",Myself)
+		SetGlobal("UnhideMyself","LOCALS",1)
+		Continue()
+END
+>>>>>>>>
+COPY_EXISTING ~IWHIDE1.bcs~ ~override/IWHIDE1Z.bcs~
+EXTEND_BOTTOM ~IWHIDE1Z.bcs~ ~hide1z.baf~
+
+
+COPY ~iwd1_eet/VVC~ ~override~
+
+
+PRINT ~Installing movies...~
+MKDIR ~iwd1_eet/biffs/IDINTRO~
+MKDIR ~iwd1_eet/biffs/IDMOVIE1~
+MKDIR ~iwd1_eet/biffs/IDMOVIE2~
+
+// Special Tipun
+ACTION_IF Special_Tipun = 1 THEN BEGIN
+	COPY_LARGE + ~iwd1_eet/lang/ru_RU/Special/IDMOVIE/IDINTRO.wbm~  ~iwd1_eet/biffs/IDINTRO~
+	COPY_LARGE + ~iwd1_eet/lang/ru_RU/Special/IDMOVIE/AVALANCH.wbm~ ~iwd1_eet/biffs/IDMOVIE2~
+	COPY_LARGE + ~iwd1_eet/lang/ru_RU/Special/IDMOVIE/IDTOWER.wbm~  ~iwd1_eet/biffs/IDMOVIE2~
+	COPY_LARGE + ~iwd1_eet/lang/ru_RU/Special/IDMOVIE/HOWDRAG.wbm~  ~iwd1_eet/biffs/IDMOVIE1~
+	COPY_LARGE + ~iwd1_eet/lang/ru_RU/Special/IDMOVIE/SCRY.wbm~     ~iwd1_eet/biffs/IDMOVIE1~
+	COPY_LARGE + ~iwd1_eet/lang/ru_RU/Special/IDMOVIE/RETURN.wbm~   ~iwd1_eet/biffs/IDMOVIE1~
+	COPY_LARGE + ~iwd1_eet/lang/ru_RU/Special/IDMOVIE/HOWSEER.wbm~  ~iwd1_eet/biffs/IDMOVIE2~
+	PRINT ~iwd1_eet movies in Russian~
+END ELSE BEGIN
+ACTION_IF (DIRECTORY_EXISTS ~iwd1_eet/lang/%LANGUAGE%/IDMOVIE~) THEN BEGIN
+	COPY_LARGE + ~iwd1_eet/lang/%LANGUAGE%/IDMOVIE/IDINTRO.wbm~  ~iwd1_eet/biffs/IDINTRO~
+	COPY_LARGE + ~iwd1_eet/lang/%LANGUAGE%/IDMOVIE/AVALANCH.wbm~ ~iwd1_eet/biffs/IDMOVIE2~
+	COPY_LARGE + ~iwd1_eet/lang/%LANGUAGE%/IDMOVIE/IDTOWER.wbm~  ~iwd1_eet/biffs/IDMOVIE2~
+	COPY_LARGE + ~iwd1_eet/lang/%LANGUAGE%/IDMOVIE/HOWDRAG.wbm~  ~iwd1_eet/biffs/IDMOVIE1~
+	COPY_LARGE + ~iwd1_eet/lang/%LANGUAGE%/IDMOVIE/SCRY.wbm~     ~iwd1_eet/biffs/IDMOVIE1~
+	COPY_LARGE + ~iwd1_eet/lang/%LANGUAGE%/IDMOVIE/RETURN.wbm~   ~iwd1_eet/biffs/IDMOVIE1~
+	COPY_LARGE + ~iwd1_eet/lang/%LANGUAGE%/IDMOVIE/HOWSEER.wbm~  ~iwd1_eet/biffs/IDMOVIE2~
+	PRINT ~iwd1_eet movies in %LANGUAGE%~
+END ELSE BEGIN
+	COPY_LARGE + ~iwd1_eet/lang/en_US/IDMOVIE/IDINTRO.wbm~  ~iwd1_eet/biffs/IDINTRO~
+	COPY_LARGE + ~iwd1_eet/lang/en_US/IDMOVIE/AVALANCH.wbm~ ~iwd1_eet/biffs/IDMOVIE2~
+	COPY_LARGE + ~iwd1_eet/lang/en_US/IDMOVIE/IDTOWER.wbm~  ~iwd1_eet/biffs/IDMOVIE2~
+	COPY_LARGE + ~iwd1_eet/lang/en_US/IDMOVIE/HOWDRAG.wbm~  ~iwd1_eet/biffs/IDMOVIE1~
+	COPY_LARGE + ~iwd1_eet/lang/en_US/IDMOVIE/SCRY.wbm~     ~iwd1_eet/biffs/IDMOVIE1~
+	COPY_LARGE + ~iwd1_eet/lang/en_US/IDMOVIE/RETURN.wbm~   ~iwd1_eet/biffs/IDMOVIE1~
+	COPY_LARGE + ~iwd1_eet/lang/en_US/IDMOVIE/HOWSEER.wbm~  ~iwd1_eet/biffs/IDMOVIE2~
+	PRINT ~iwd1_eet movies in english~
+END
+	END
+
+ACTION_IF NOT DIRECTORY_EXISTS ~lang/%LANGUAGE%/movies~ BEGIN
+	MKDIR ~lang/%LANGUAGE%/movies~
+END
+
+// Special Tipun
+ACTION_IF Special_Tipun = 1 THEN BEGIN
+	COPY_LARGE ~iwd1_eet/lang/ru_RU/Special/IDMOVIE/IDINTRO.wbm~  ~lang/%LANGUAGE%/movies~
+	COPY_LARGE ~iwd1_eet/lang/ru_RU/Special/IDMOVIE/AVALANCH.wbm~ ~lang/%LANGUAGE%/movies~
+	COPY_LARGE ~iwd1_eet/lang/ru_RU/Special/IDMOVIE/IDTOWER.wbm~  ~lang/%LANGUAGE%/movies~
+	COPY_LARGE ~iwd1_eet/lang/ru_RU/Special/IDMOVIE/HOWDRAG.wbm~  ~lang/%LANGUAGE%/movies~
+	COPY_LARGE ~iwd1_eet/lang/ru_RU/Special/IDMOVIE/SCRY.wbm~     ~lang/%LANGUAGE%/movies~
+	COPY_LARGE ~iwd1_eet/lang/ru_RU/Special/IDMOVIE/RETURN.wbm~   ~lang/%LANGUAGE%/movies~
+	COPY_LARGE ~iwd1_eet/lang/ru_RU/Special/IDMOVIE/HOWSEER.wbm~  ~lang/%LANGUAGE%/movies~
+END ELSE BEGIN
+ACTION_IF (DIRECTORY_EXISTS ~iwd1_eet/lang/%LANGUAGE%/IDMOVIE~) THEN BEGIN
+	COPY_LARGE ~iwd1_eet/lang/%LANGUAGE%/IDMOVIE/IDINTRO.wbm~  ~lang/%LANGUAGE%/movies~
+	COPY_LARGE ~iwd1_eet/lang/%LANGUAGE%/IDMOVIE/AVALANCH.wbm~ ~lang/%LANGUAGE%/movies~
+	COPY_LARGE ~iwd1_eet/lang/%LANGUAGE%/IDMOVIE/IDTOWER.wbm~  ~lang/%LANGUAGE%/movies~
+	COPY_LARGE ~iwd1_eet/lang/%LANGUAGE%/IDMOVIE/HOWDRAG.wbm~  ~lang/%LANGUAGE%/movies~
+	COPY_LARGE ~iwd1_eet/lang/%LANGUAGE%/IDMOVIE/SCRY.wbm~     ~lang/%LANGUAGE%/movies~
+	COPY_LARGE ~iwd1_eet/lang/%LANGUAGE%/IDMOVIE/RETURN.wbm~   ~lang/%LANGUAGE%/movies~
+	COPY_LARGE ~iwd1_eet/lang/%LANGUAGE%/IDMOVIE/HOWSEER.wbm~  ~lang/%LANGUAGE%/movies~
+END ELSE BEGIN
+	COPY_LARGE ~iwd1_eet/lang/en_US/IDMOVIE/IDINTRO.wbm~  ~lang/%LANGUAGE%/movies~
+	COPY_LARGE ~iwd1_eet/lang/en_US/IDMOVIE/AVALANCH.wbm~ ~lang/%LANGUAGE%/movies~
+	COPY_LARGE ~iwd1_eet/lang/en_US/IDMOVIE/IDTOWER.wbm~  ~lang/%LANGUAGE%/movies~
+	COPY_LARGE ~iwd1_eet/lang/en_US/IDMOVIE/HOWDRAG.wbm~  ~lang/%LANGUAGE%/movies~
+	COPY_LARGE ~iwd1_eet/lang/en_US/IDMOVIE/SCRY.wbm~     ~lang/%LANGUAGE%/movies~
+	COPY_LARGE ~iwd1_eet/lang/en_US/IDMOVIE/RETURN.wbm~   ~lang/%LANGUAGE%/movies~
+	COPY_LARGE ~iwd1_eet/lang/en_US/IDMOVIE/HOWSEER.wbm~  ~lang/%LANGUAGE%/movies~
+END
+	END
+
+INCLUDE ~iwd1_eet/lib/_start_game.tph~
+
+PRINT ~Patching Worldmap...~
+INCLUDE ~iwd1_eet/lib/_worldmap.tph~
+
+PRINT ~Biffing game resources...~
+MAKE_BIFF ~IDANBARB~ BEGIN ~iwd1_eet/biffs/IDANBARB~ ~^.*$~ END
+MAKE_BIFF ~IDANGIAN~ BEGIN ~iwd1_eet/biffs/IDANGIAN~ ~^.*$~ END
+MAKE_BIFF ~IDANHUMN~ BEGIN ~iwd1_eet/biffs/IDANHUMN~ ~^.*$~ END
+MAKE_BIFF ~IDANMBAM~ BEGIN ~iwd1_eet/biffs/IDANMBAM~ ~^.*$~ END
+MAKE_BIFF ~IDANMONS~ BEGIN ~iwd1_eet/biffs/IDANMONS~ ~^.*$~ END
+MAKE_BIFF ~IDAR300A~ BEGIN ~iwd1_eet/biffs/IDAR300A~ ~^.*$~ END
+MAKE_BIFF ~IDAR1000~ BEGIN ~iwd1_eet/biffs/IDAR1000~ ~^.*$~ END
+MAKE_BIFF ~IDAR1100~ BEGIN ~iwd1_eet/biffs/IDAR1100~ ~^.*$~ END
+MAKE_BIFF ~IDAR1200~ BEGIN ~iwd1_eet/biffs/IDAR1200~ ~^.*$~ END
+MAKE_BIFF ~IDAR2000~ BEGIN ~iwd1_eet/biffs/IDAR2000~ ~^.*$~ END
+MAKE_BIFF ~IDAR2100~ BEGIN ~iwd1_eet/biffs/IDAR2100~ ~^.*$~ END
+MAKE_BIFF ~IDAR3000~ BEGIN ~iwd1_eet/biffs/IDAR3000~ ~^.*$~ END
+MAKE_BIFF ~IDAR3500~ BEGIN ~iwd1_eet/biffs/IDAR3500~ ~^.*$~ END
+MAKE_BIFF ~IDAR3600~ BEGIN ~iwd1_eet/biffs/IDAR3600~ ~^.*$~ END
+MAKE_BIFF ~IDAR4000~ BEGIN ~iwd1_eet/biffs/IDAR4000~ ~^.*$~ END
+MAKE_BIFF ~IDAR5000~ BEGIN ~iwd1_eet/biffs/IDAR5000~ ~^.*$~ END
+MAKE_BIFF ~IDAR5100~ BEGIN ~iwd1_eet/biffs/IDAR5100~ ~^.*$~ END
+MAKE_BIFF ~IDAR5200~ BEGIN ~iwd1_eet/biffs/IDAR5200~ ~^.*$~ END
+MAKE_BIFF ~IDAR5300~ BEGIN ~iwd1_eet/biffs/IDAR5300~ ~^.*$~ END
+MAKE_BIFF ~IDAR5400~ BEGIN ~iwd1_eet/biffs/IDAR5400~ ~^.*$~ END
+MAKE_BIFF ~IDAR6000~ BEGIN ~iwd1_eet/biffs/IDAR6000~ ~^.*$~ END
+MAKE_BIFF ~IDAR7000~ BEGIN ~iwd1_eet/biffs/IDAR7000~ ~^.*$~ END
+MAKE_BIFF ~IDAR8000~ BEGIN ~iwd1_eet/biffs/IDAR8000~ ~^.*$~ END
+MAKE_BIFF ~IDAR9100~ BEGIN ~iwd1_eet/biffs/IDAR9100~ ~^.*$~ END
+MAKE_BIFF ~IDAR9200~ BEGIN ~iwd1_eet/biffs/IDAR9200~ ~^.*$~ END
+MAKE_BIFF ~IDAR9300~ BEGIN ~iwd1_eet/biffs/IDAR9300~ ~^.*$~ END
+MAKE_BIFF ~IDAR9500~ BEGIN ~iwd1_eet/biffs/IDAR9500~ ~^.*$~ END
+MAKE_BIFF ~IDAR9600~ BEGIN ~iwd1_eet/biffs/IDAR9600~ ~^.*$~ END
+MAKE_BIFF ~IDAR9700~ BEGIN ~iwd1_eet/biffs/IDAR9700~ ~^.*$~ END
+MAKE_BIFF ~IDAR9800~ BEGIN ~iwd1_eet/biffs/IDAR9800~ ~^.*$~ END
+//MAKE_BIFF ~IDDLGSN1~ BEGIN ~iwd1_eet/biffs/IDDLGSN1~ ~^.*$~ END
+//MAKE_BIFF ~IDDLGSN2~ BEGIN ~iwd1_eet/biffs/IDDLGSN2~ ~^.*$~ END
+
+// Use language sounds or english if any
+
+	COPY ~iwd1_eet/lang/en_US/IDDLGSN1~ ~weidu_external/iwd1_eet/audio/WIDDLGSN1~
+	COPY ~iwd1_eet/lang/en_US/IDDLGSN2~ ~weidu_external/iwd1_eet/audio/WIDDLGSN2~
+	COPY ~iwd1_eet/lang/en_US/IDEXTSN1~ ~weidu_external/iwd1_eet/audio/WIDEXTSN1~
+	COPY ~iwd1_eet/lang/en_US/IDEXTSN2~ ~weidu_external/iwd1_eet/audio/WIDEXTSN2~
+	
+MKDIR ~weidu_external/iwd1_eet/audio/IDDLGSN1~
+MKDIR ~weidu_external/iwd1_eet/audio/IDDLGSN2~
+MKDIR ~weidu_external/iwd1_eet/audio/IDEXTSN1~
+MKDIR ~weidu_external/iwd1_eet/audio/IDEXTSN2~
+
+	PRINT ~iwd1_eet sounds in english~
+
+// IDDLGSN1
+
+ACTION_IF (DIRECTORY_EXISTS ~iwd1_eet/lang/%LANGUAGE%/IDDLGSN1~) THEN BEGIN
+	COPY ~iwd1_eet/lang/%LANGUAGE%/IDDLGSN1~ ~weidu_external/iwd1_eet/audio/WIDDLGSN1~
+	PRINT ~iwd1_eet sounds in %LANGUAGE%~
+END
+
+// IDDLGSN2
+
+ACTION_IF (DIRECTORY_EXISTS ~iwd1_eet/lang/%LANGUAGE%/IDDLGSN2~) THEN BEGIN
+	COPY ~iwd1_eet/lang/%LANGUAGE%/IDDLGSN2~ ~weidu_external/iwd1_eet/audio/WIDDLGSN2~
+	PRINT ~iwd1_eet sounds in %LANGUAGE%~
+END
+
+// IDEXTSN1
+
+ACTION_IF (DIRECTORY_EXISTS ~iwd1_eet/lang/%LANGUAGE%/IDEXTSN1~) THEN BEGIN
+	COPY ~iwd1_eet/lang/%LANGUAGE%/IDEXTSN1~ ~weidu_external/iwd1_eet/audio/WIDEXTSN1~
+	PRINT ~iwd1_eet extension sounds in %LANGUAGE%~
+END
+
+// IDDLGSN2
+
+ACTION_IF (DIRECTORY_EXISTS ~iwd1_eet/lang/%LANGUAGE%/IDEXTSN2~) THEN BEGIN
+	COPY ~iwd1_eet/lang/%LANGUAGE%/IDEXTSN2~ ~weidu_external/iwd1_eet/audio/WIDEXTSN2~
+	PRINT ~iwd1_eet extension sounds in %LANGUAGE%~
+END
+
+/*
+// Special Tipun
+ACTION_IF Special_Tipun = 1 THEN BEGIN
+	COPY ~iwd1_eet/lang/%LANGUAGE%/Special/IDDLGSN1~ ~weidu_external/iwd1_eet/audio/WIDDLGSN1~
+	COPY ~iwd1_eet/lang/%LANGUAGE%/Special/IDDLGSN2~ ~weidu_external/iwd1_eet/audio/WIDDLGSN2~
+	COPY ~iwd1_eet/lang/%LANGUAGE%/Special/IDEXTSN1~ ~weidu_external/iwd1_eet/audio/WIDEXTSN1~
+	COPY ~iwd1_eet/lang/%LANGUAGE%/Special/IDEXTSN2~ ~weidu_external/iwd1_eet/audio/WIDEXTSN2~
+	PRINT ~iwd1_eet extension sounds in %LANGUAGE%~
+END
+*/
+
+// LAF HANDLE_AUDIO
+
+	LAF HANDLE_AUDIO
+		STR_VAR
+		audio_path = ~weidu_external/iwd1_eet/audio/WIDDLGSN1~
+		oggdec_path = ~iwd1_eet/tools~
+		output_path = ~weidu_external/iwd1_eet/audio/IDDLGSN1~
+	END
+
+	LAF HANDLE_AUDIO
+		STR_VAR
+		audio_path = ~weidu_external/iwd1_eet/audio/WIDDLGSN2~
+		oggdec_path = ~iwd1_eet/tools~
+		output_path = ~weidu_external/iwd1_eet/audio/IDDLGSN2~
+	END
+
+	LAF HANDLE_AUDIO
+		STR_VAR
+		audio_path = ~weidu_external/iwd1_eet/audio/WIDEXTSN1~
+		oggdec_path = ~iwd1_eet/tools~
+		output_path = ~weidu_external/iwd1_eet/audio/IDEXTSN1~
+	END
+
+	LAF HANDLE_AUDIO
+		STR_VAR
+		audio_path = ~weidu_external/iwd1_eet/audio/WIDEXTSN2~
+		oggdec_path = ~iwd1_eet/tools~
+		output_path = ~weidu_external/iwd1_eet/audio/IDEXTSN2~
+	END
+
+	MAKE_BIFF ~IDDLGSN1~ BEGIN ~weidu_external/iwd1_eet/audio/IDDLGSN1~ ~^.*$~ END
+
+	MAKE_BIFF ~IDDLGSN2~ BEGIN ~weidu_external/iwd1_eet/audio/IDDLGSN2~ ~^.*$~ END
+
+// Use language sounds for IWD1 extension or english if any
+
+	MAKE_BIFF ~IDEXTSN1~ BEGIN ~weidu_external/iwd1_eet/audio/IDEXTSN1~ ~^.*$~ END
+
+	MAKE_BIFF ~IDEXTSN2~ BEGIN ~weidu_external/iwd1_eet/audio/IDEXTSN2~ ~^.*$~ END
+
+MAKE_BIFF ~IDLOCBAM~ BEGIN ~iwd1_eet/biffs/IDLOCBAM~ ~^.*$~ END
+MAKE_BIFF ~IDMONSND~ BEGIN ~iwd1_eet/biffs/IDMONSND~ ~^.*$~ END
+MAKE_BIFF ~IDWAV01~  BEGIN ~iwd1_eet/biffs/IDWAV01~  ~^.*$~ END
+MAKE_BIFF ~IDWAV02~  BEGIN ~iwd1_eet/biffs/IDWAV02~  ~^.*$~ END
+MAKE_BIFF ~IDWAV03~  BEGIN ~iwd1_eet/biffs/IDWAV03~  ~^.*$~ END
+
+MAKE_BIFF ~IDINTRO~  BEGIN ~iwd1_eet/biffs/IDINTRO~  ~^.*$~ END
+MAKE_BIFF ~IDMOVIE1~ BEGIN ~iwd1_eet/biffs/IDMOVIE1~ ~^.*$~ END
+MAKE_BIFF ~IDMOVIE2~ BEGIN ~iwd1_eet/biffs/IDMOVIE2~ ~^.*$~ END
+
+AT_NOW ~call iwd1_eet\deldir weidu_external/iwd1_eet/audio~
+
+AT_NOW ~call iwd1_eet\deldir iwd1_eet\biffs\IDINTRO~
+AT_NOW ~call iwd1_eet\deldir iwd1_eet\biffs\IDMOVIE1~
+AT_NOW ~call iwd1_eet\deldir iwd1_eet\biffs\IDMOVIE2~
+
+
+
+
+
+
+
+
+INCLUDE ~iwd1_eet/iwdfixpack/iwdfixpack.tph~
+
+
+
+INCLUDE ~iwd1_eet/lib.tph~
+INCLUDE ~iwd1_eet/iu_iwd/iu_iwd.tph~
+
+/* Unfinished Business */
+
+/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
+/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
+/////                                                  \\\\\
+///// voice                                            \\\\\
+/////                                                  \\\\\
+/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
+/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
+
+
+
+INCLUDE ~iwd1_eet/lib.tph~
+INCLUDE ~iwd1_eet/ub_iwd/durdel.tph~
+
+
+/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
+/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
+/////                                                  \\\\\
+///// malavon's golems                                 \\\\\
+/////                                                  \\\\\
+/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
+/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
+
+
+
+INCLUDE ~iwd1_eet/lib.tph~
+INCLUDE ~iwd1_eet/ub_iwd/m_golem.tph~
+
+
+/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
+/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
+/////                                                  \\\\\
+///// expanded guello                                  \\\\\
+/////                                                  \\\\\
+/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
+/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
+
+
+
+INCLUDE ~iwd1_eet/lib.tph~
+INCLUDE ~iwd1_eet/ub_iwd/guallo.tph~
+
+/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
+/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
+/////                                                  \\\\\
+///// marketh's ring                                   \\\\\
+/////                                                  \\\\\
+/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
+/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
+
+
+
+INCLUDE ~iwd1_eet/lib.tph~
+INCLUDE ~iwd1_eet/ub_iwd/marketh.tph~
+
+/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
+/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
+/////                                                  \\\\\
+///// presio's duel                                    \\\\\
+/////                                                  \\\\\
+/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
+/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
+
+
+
+INCLUDE ~iwd1_eet/lib.tph~
+INCLUDE ~iwd1_eet/ub_iwd/presio.tph~
+
+/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
+/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
+/////                                                  \\\\\
+///// orrick's shield                                  \\\\\
+/////                                                  \\\\\
+/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
+/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
+
+
+
+INCLUDE ~iwd1_eet/lib.tph~
+
+COMPILE ~iwd1_eet/ub_iwd/dlg/orrick.d~
+
+COPY ~iwd1_eet/ub_iwd/ub_itm/ORRSHLD.ITM~ ~override~
+  SAY 0x08 @2907
+  SAY 0x0c @2908
+  SAY 0x50 @2909
+
+COPY ~iwd1_eet/ub_iwd/ub_itm/IORRSHLD.BAM~ ~override~
+     ~iwd1_eet/ub_iwd/ub_itm/CORRSHLD.BAM~ ~override~
+
+/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
+/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
+/////                                                  \\\\\
+///// High baptist's minions                           \\\\\
+/////                                                  \\\\\
+/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
+/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
+
+
+
+INCLUDE ~iwd1_eet/lib.tph~
+INCLUDE ~iwd1_eet/ub_iwd/minions.tph~
+
+/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
+/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
+/////                                                  \\\\\
+///// Auril's bane                                     \\\\\
+/////                                                  \\\\\
+/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
+/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
+
+
+
+INCLUDE ~iwd1_eet/lib.tph~
+INCLUDE ~iwd1_eet/Auril_bane/Auril_bane.tph~
+
+/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
+/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
+/////                                                  \\\\\
+///// EE                                               \\\\\
+/////                                                  \\\\\
+/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
+/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
+
+
+
+INCLUDE ~iwd1_eet/lib.tph~
+INCLUDE ~iwd1_eet/iwdee_data/iwdee.tph~
+
+/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
+/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
+/////                                                  \\\\\
+///// MY_TWEAKS                                        \\\\\
+/////                                                  \\\\\
+/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
+/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
+
+
+
+INCLUDE ~iwd1_eet/lib.tph~
+INCLUDE ~iwd1_eet/lib/_other.tph~
