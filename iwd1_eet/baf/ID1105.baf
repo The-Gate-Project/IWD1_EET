@@ -102,6 +102,14 @@ THEN
 END
 
 IF
+	Global("Move_to_NWN","ID1105",1)
+THEN
+	RESPONSE #100
+		NoAction()
+END
+
+
+IF
   //!Global("IWD_COMPLETE","GLOBAL",0)
   //BitCheck("IWDEET_COMPLETE","GLOBAL",BITS_IWD1)
   Global("IWDEET_IWD1_COMPLETE","GLOBAL",1)
@@ -115,8 +123,8 @@ THEN
     SetGlobal("Hjollder_Quest","GLOBAL",3)
     SetGlobal("Join_Posse","GLOBAL",0)
 		SetGlobal("Move_To_HoW","GLOBAL",1)
-		//DayNight(8)
 		SetMasterArea("ID9100")
+		DayNight(8)
 		//ActionOverride(Player1,ApplySpellRES("bdresurr",Myself)) 
 		ApplySpellRES("bdresurr",Player2)
 		ApplySpellRES("bdresurr",Player3)
@@ -141,7 +149,9 @@ THEN
 		ApplySpell(Player4,RESTORE_FULL_HEALTH)
 		ApplySpell(Player5,RESTORE_FULL_HEALTH)
 		ApplySpell(Player6,RESTORE_FULL_HEALTH)
-    StartCutScene("idToLW")
+		ClearAllActions()
+		StartCutSceneMode()
+		StartCutScene("idToLW")
 END
 
 IF
@@ -183,7 +193,9 @@ THEN
 		ApplySpell(Player4,RESTORE_FULL_HEALTH)
 		ApplySpell(Player5,RESTORE_FULL_HEALTH)
 		ApplySpell(Player6,RESTORE_FULL_HEALTH)
-    StartCutScene("idKUtoBI")
+		ClearAllActions()
+		StartCutSceneMode()
+		StartCutScene("idKUtoBI")
 END
 
 IF
@@ -224,7 +236,9 @@ THEN
 		ApplySpell(Player4,RESTORE_FULL_HEALTH)
 		ApplySpell(Player5,RESTORE_FULL_HEALTH)
 		ApplySpell(Player6,RESTORE_FULL_HEALTH)
-    StartCutScene("idKUtoBC")
+		ClearAllActions()
+		StartCutSceneMode()
+		StartCutScene("idKUtoBC")
 END
 
 IF
@@ -241,7 +255,9 @@ THEN
     FadeToColor([15.0],0)
     SetGlobal("Townie_Dead","GLOBAL",0)
     SetGlobal("Kill_Innocent","GLOBAL",0)
-	Wait(1)
+    Wait(1)
+    ClearAllActions()
+    StartCutSceneMode()
     StartCutScene("idtoEET")
 END
 
