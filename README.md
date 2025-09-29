@@ -1,12 +1,24 @@
 # IWD1-EET
 
-![Language](https://img.shields.io/static/v1?label=language&message=english%20%7C%20french%20%7C%20german%20%7C%20russian%20%7C%20schinese%20%7C%20spanish%20%7C%20&color=informational)
+[![Release](https://img.shields.io/github/v/release/The-Gate-Project/IWD1_EET?include_prereleases&color=41788a)](https://github.com/The-Gate-Project/IWD1_EET/releases)
+[![Published](https://img.shields.io/github/release-date-pre/The-Gate-Project/IWD1_EET?display_date=published_at&label=published&color=014a69)](https://github.com/The-Gate-Project/IWD1_EET/releases/latest)
+[![Downloads](https://img.shields.io/github/downloads/The-Gate-Project/IWD1_EET/total?color=41788a)](https://github.com/The-Gate-Project/IWD1_EET/releases)
+
+[![Language](https://img.shields.io/badge/language-english%20%7C%20french%20%7C%20german%20%7C%20polish%20%7C%20russian%20%7C%20schinese%20%7C%20spanish-014a69)](https://github.com/The-Gate-Project/IWD1_EET/releases)
+[![Games](https://img.shields.io/badge/games-EET-41788a)](https://github.com/The-Gate-Project/IWD1_EET/releases)
+
+<!--
+
+![Visitors](https://api.visitorbadge.io/api/visitors?path=https%3A%2F%2Fgithub.com%2FThe-Gate-Project%2FIWD1_EET&countColor=41788a&style=flat)
+
+[![Platform](https://img.shields.io/badge/platform-Windows%20%a0%20macOS%20%a0%20Linux%20%a0%20Project%20Infinity-014a69)](https://github.com/The-Gate-Project/IWD1_EET/releases)
+-->
 
 ### Include Heart of Winter and Trial of the Luremaster extensions
 
 ---
 
-**Autor** : [Tipun](https://github.com/tipun81?tab=repositories)
+**Author** : [Tipun](https://github.com/tipun81?tab=repositories)
 
 **Mod Forum** : [Arcanecoast](https://arcanecoast.ru/forum/viewtopic.php?f=31&t=1247)  
 

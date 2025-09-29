@@ -1521,6 +1521,7 @@ COPY ~iwd1_eet/creatures/SKALDAR.cre~ ~override~
 COPY ~iwd1_eet/creatures/EDION.cre~ ~override~
     SAY 0x8 @24389
     SAY 0xc @21868
+	WRITE_ASCII DEATHVAR ~edion~ (32)
 COPY ~iwd1_eet/creatures/WVIRGIN.cre~ ~override~
     SAY 0x8 @34568
     SAY 0xc @21861
