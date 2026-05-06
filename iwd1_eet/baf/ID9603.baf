@@ -5,6 +5,7 @@ IF
   !Global("ERASE_IWD_JOURNAL","MYAREA",1)
 THEN
   RESPONSE #100
+    SetGlobal("ERASE_IWD_JOURNAL","MYAREA",1)
     EraseJournalEntry(@26302)
     EraseJournalEntry(@25836)
     EraseJournalEntry(@25837)
@@ -37,7 +38,7 @@ THEN
     EraseJournalEntry(@23536)
     EraseJournalEntry(@23543)
     AddJournalEntry(@2000036,QUEST_DONE)
-    SetGlobal("ERASE_IWD_JOURNAL","MYAREA",1)
+	Continue()
 END
 
 IF
@@ -63,6 +64,7 @@ THEN
 		EndCutSceneMode()
 		StartCutScene("idlu2109")
 		//ExpansionEndCredits()
+		Continue()
 END
 
 IF
@@ -79,7 +81,7 @@ THEN
 		MultiPlayerSync()
 		SetGlobal("GAME_OVER","MYAREA",1)
 		SetGlobal("Townie_Dead","GLOBAL",0)
-    SetGlobal("Kill_Innocent","GLOBAL",0)
+		SetGlobal("Kill_Innocent","GLOBAL",0)
 		FadeToColor([15.0],0)
 		Wait(1)
 		StartMovie("HOWDRAG")

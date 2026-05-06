@@ -13,17 +13,18 @@ THEN
 		CreateCreatureObject("CUTSPY","IWD_GEM",0,0,0)
 		MultiPlayerSync()
 		MoveViewObject(Myself,INSTANT)
+		Wait(2)
 		StartCutScene("ILDRGPAN")
 		EquipItemEx("MIN1HP",1)  // No such index
 		DestroyItem("MIN1HP")  // No such index
 		MultiPlayerSync()
 		MoveToPoint([1342.951])
 		FaceObject("IWD_GEM")
+		Wait(2)
 		StartCutScene("ILGEMVEW")
 		//AddexperienceParty(50000)
 		AddXP2DA("ID1EX7V")
 		ReallyForceSpellRES("IDIN158","IWD_GEM")  // INNATE_DRAGON_DEATH_ANIMATION
-		ActionOverride("CUTSPY",DestroySelf())
 		SmallWait(10)
 		ActionOverride("IWD_GEM",ApplySpellRES("IDINVIS5",Myself))
 		EndCutSceneMode()

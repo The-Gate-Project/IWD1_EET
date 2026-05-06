@@ -4,7 +4,7 @@ THEN
 	RESPONSE #100
 		//CutSceneId("VAARGLAN")
 		CutSceneId(Player1)
-		StartCutSceneMode()
+//		StartCutSceneMode()
 		//StopJoinRequests()
 		OpenDoor("AR9100_DOOR1_TO9101")
 		ClearAllActions()
@@ -22,4 +22,3 @@ THEN
 		ActionOverride("VAARGLAN",ApplySpellRES("BDCUTSPY",Myself))
 		ActionOverride("VAARGLAN",StartDialogNoSet(PartySlot1))
 END
-

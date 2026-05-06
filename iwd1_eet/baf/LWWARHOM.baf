@@ -10,4 +10,3 @@ THEN
 		SetGlobal("IwIHidden","LOCALS",1)
 		Deactivate(Myself)
 END
-

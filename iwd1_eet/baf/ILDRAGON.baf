@@ -5,7 +5,6 @@ THEN
 	RESPONSE #100
 		SetGlobal("GEM_ACTIVE","GLOBAL",1)
 		StartCutSceneMode()
-		HideGUI()
 		StartCutScene("ILDRGDIE")
 END
 

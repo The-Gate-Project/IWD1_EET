@@ -7,8 +7,10 @@ THEN
 		Wait(2)
 		MoveViewPoint([943.839],VERY_FAST)
 		EquipItemEx("IDRING91",0)  // Кольцо
-		Wait(3)
+		Kill("ICASARACHT")
+		Wait(4)
 		//SetVisualRange(0)
+		ActionOverride("CUTSPY",DestroySelf())
 		MoveViewObject(Player1,INSTANT)
 		Wait(1)
 		UnhideGUI()

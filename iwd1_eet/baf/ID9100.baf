@@ -263,4 +263,3 @@ THEN
 	RESPONSE #100
 		SetGlobal("CloseDoors","MYAREA",0)
 END
-
