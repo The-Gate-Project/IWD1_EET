@@ -1,12 +1,24 @@
 IF
   HPLT(Myself,5)
+  Global("CDVoiceDying","LOCALS",0)
 THEN
   RESPONSE #100
+    SetInterrupt(FALSE) // Draiken fix: stop combat AI from interrupting the fade-out
+    SetGlobal("CDVoiceDying","LOCALS",1)
     SetGlobal("SPRITE_IS_DEADVoice","GLOBAL",1)
     SetGlobal("CDVoiceIsHere","MYAREA",0)
     DestroyItem("IDIMMUN2")
     EquipItemEx("ringtom",0) // No such index
+    ChangeEnemyAlly(Myself,NEUTRAL)
     Wait(3)
+    SetInterrupt(TRUE)
+    DestroySelf()
+END
+
+IF
+  Global("CDVoiceDying","LOCALS",1)
+THEN
+  RESPONSE #100
     DestroySelf()
 END
 

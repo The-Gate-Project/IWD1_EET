@@ -57,8 +57,8 @@ BEGIN CDDAEN
   IF ~~ THEN BEGIN GiveSword SAY @7700015 = @770007 = @770008
     IF ~~ THEN DO ~TakePartyItem("myrloch")
                    TakePartyItem("cddaen")
-                   GiveItemCreate("cdmyr",LastTalkedToBy,0,0,0)
-                   GiveItemCreate("cddaen2",LastTalkedToBy,1000,1,1)
+                   GiveItemCreate("cdmyr",Player1,0,0,0)
+                   GiveItemCreate("cddaen2",Player1,1000,1,1)
                    SetGlobal("CDDaen","GLOBAL",99)~ EXIT
   END
 

@@ -811,8 +811,9 @@ ID1EX14H	ID1EX14Hard	      P_100      -1          -1          -1          -1    
 ID1EX14H	ID1EX14Hard	      P_100      -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1     -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1          -1~
 //BLOCKEND
 
-APPEND ~ITEMEXCL.2da~ ~PLAT06 1
-MantleCS 1
+// Draiken fix: PLAT06 and Plat04 removed - in EET they are BG's ordinary Ankheg Plate and
+// Full Plate, and listing them here stopped Rings/Cloaks of Protection working with them.
+APPEND ~ITEMEXCL.2da~ ~MantleCS 1
 DragArm 1
 Swanarm 1
 ChainBM 1
@@ -833,7 +834,6 @@ cloakmi 1
 ArmPen 1
 Glory 1
 Mirror2 1
-Plat04 1
 VexeD 1
 Vexed2 1
 Vexed3 1~
@@ -1780,3 +1780,6 @@ INCLUDE ~iwd1_eet/iwdee_data/iwdee.tph~
 
 INCLUDE ~iwd1_eet/lib.tph~
 INCLUDE ~iwd1_eet/lib/_other.tph~
+
+INCLUDE ~iwd1_eet/lib.tph~
+INCLUDE ~iwd1_eet/lib/_draiken_fixes.tph~
