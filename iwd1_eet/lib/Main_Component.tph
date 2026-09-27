@@ -1780,3 +1780,6 @@ INCLUDE ~iwd1_eet/iwdee_data/iwdee.tph~
 
 INCLUDE ~iwd1_eet/lib.tph~
 INCLUDE ~iwd1_eet/lib/_other.tph~
+
+INCLUDE ~iwd1_eet/lib.tph~
+INCLUDE ~iwd1_eet/lib/_draiken_fixes.tph~

@@ -9,11 +9,17 @@ THEN
 		Continue()
 END
 
+// Draiken fix: the exit used to reopen only if the hidden door was still closed.
+// The door is flagged "can't close", so CloseDoor() can fail and the exit stayed
+// disabled for good (party trapped in the dome). Reopen based on a variable instead.
 IF
-	!Global("SPRITE_IS_DEADMALAVON","GLOBAL",0)
-	OpenState("AR8010HIDEME",FALSE)
+	OR(2)
+		!Global("SPRITE_IS_DEADMALAVON","GLOBAL",0)
+		!Global("MALAVON_BADGE","GLOBAL",0)
+	Global("MALAVON_DOOR","GLOBAL",1)
 THEN
 	RESPONSE #100
+		SetGlobal("MALAVON_DOOR","GLOBAL",2)
 		OpenDoor("AR8010HIDEME")
 		TriggerActivation("To8009",TRUE)
 		Continue()

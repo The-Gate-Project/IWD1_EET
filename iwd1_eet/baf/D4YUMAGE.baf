@@ -81,7 +81,10 @@ IF
 	!StateCheck(LastSeenBy(Myself),STATE_FEEBLEMINDED)
 THEN
 	RESPONSE #100
-		Spell(LastSeenBy(Myself),WIZARD_FEEBLEMIND)
+		// Draiken fix: vanilla EE Feeblemind lasts 1000 hours, and nobody can rest or buy a dispel
+		// on this Dragon's Eye level, so a hit soft-locked the game. Cast a 5-turn copy instead.
+		RemoveSpell(WIZARD_FEEBLEMIND)
+		ForceSpellRES("IDYTFEEB",LastSeenBy(Myself))
 		Wait(2)
 END
 

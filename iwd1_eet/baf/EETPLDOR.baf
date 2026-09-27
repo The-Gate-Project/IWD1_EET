@@ -5,6 +5,8 @@ IF
 THEN
 	RESPONSE #100
 		SetGlobal("EETPLDOR_STATE_VAR512","MYAREA",1)
+		Unlock("AR1100TowerDoor")
 		OpenDoor("AR1100TowerDoor")
+		TriggerActivation("To1101",TRUE) // Draiken fix
 END
 

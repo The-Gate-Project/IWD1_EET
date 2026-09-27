@@ -55,7 +55,8 @@ END
 IF ~~ THEN BEGIN 6
   SAY @11100
   IF ~~ THEN REPLY @11135 DO ~StartStore("LDD_Nym",LastTalkedToBy)~ EXIT
-  IF ~~ THEN REPLY @11136 DO ~SetGlobal("Voice_Quest","GLOBAL",1)~ GOTO 7
+  IF ~Global("Voice_Quest","GLOBAL",0)~ THEN REPLY @11136 DO ~SetGlobal("Voice_Quest","GLOBAL",1)~ GOTO 7
+  IF ~GlobalGT("Voice_Quest","GLOBAL",0)~ THEN REPLY @11136 GOTO 7 // Draiken fix: do not reset a finished Voice quest back to 1
   IF ~~ THEN REPLY @11137 DO ~Enemy()~ EXIT
   IF ~~ THEN REPLY @11138 GOTO 9
 END

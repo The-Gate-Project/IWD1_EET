@@ -16,13 +16,17 @@ THEN
     Continue()
 END
 
+// Draiken fix: the temple exit was only switched on if the tower door was still
+// closed, but the door's own script (EETPLDOR) opens the same door on the same
+// condition. Whichever ran first won, and if it was the door script, To1101 stayed
+// disabled forever. The door is also locked, so unlock it before opening.
 IF
 	!BitCheck("EETPLDOR_STATE_VAR","MYAREA",512)
 	!Global("FREED_EVERARD","GLOBAL",0)
-	OpenState("AR1100TowerDoor",FALSE)
 THEN
 	RESPONSE #100
 		BitSet("EETPLDOR_STATE_VAR","MYAREA",512)
+		Unlock("AR1100TowerDoor")
 		OpenDoor("AR1100TowerDoor")
 		TriggerActivation("To1101",TRUE)
 END

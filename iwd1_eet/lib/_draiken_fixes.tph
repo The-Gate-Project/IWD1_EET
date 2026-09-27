@@ -1,0 +1,113 @@
+/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
+/////                                                  \\\\\
+///// Draiken fixes (2026-09)                            \\\\\
+///// Installed last, after every other part of the     \\\\\
+///// main component, so nothing later overwrites them.  \\\\\
+/////                                                  \\\\\
+/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\/////\\\\\
+
+PRINT ~Applying Draiken fixes...~
+
+// 1. Trolls, snow trolls and revenants could not be killed (GitHub #29).
+//    IDTRLREG.ITM is a copy of BG2's TROLLREG.ITM, but the opcode #232 "Special"
+//    field was changed from 12 to 9. For condition 19 (HPLT) that field is BOTH the
+//    HP threshold AND a set of flags, and 9 switches on bit 0 ("remove the effect
+//    after the first trigger"). Put back BG2's value of 12 (bits 2+3 only).
+COPY_EXISTING ~IDTRLREG.ITM~ ~override~
+  READ_LONG  0x6a fx_off
+  READ_SHORT 0x6e fx_idx
+  READ_SHORT 0x70 fx_num
+  FOR (i = 0; i < fx_num; ++i) BEGIN
+    SET off = fx_off + (fx_idx + i) * 0x30
+    READ_SHORT off opcode
+    READ_LONG  (off + 0x08) param2
+    PATCH_IF (opcode = 232 AND param2 = 19) BEGIN
+      WRITE_LONG (off + 0x2c) 12
+    END
+  END
+  BUT_ONLY
+
+// 2. Dragon's Eye level 4: the yuan-ti mages' Feeblemind never wore off (G3 thread,
+//    2024-2026). EE Feeblemind lasts 3,600,000 seconds and the level forbids resting,
+//    so the victim was stuck. D4YUMAGE now casts this copy, which lasts 5 turns.
+COPY_EXISTING ~SPWI509.SPL~ ~override/IDYTFEEB.SPL~
+  READ_LONG  0x64 ab_off
+  READ_SHORT 0x68 ab_num
+  READ_LONG  0x6a fx_off
+  FOR (a = 0; a < ab_num; ++a) BEGIN
+    READ_SHORT (ab_off + a * 0x28 + 0x1e) cnt
+    READ_SHORT (ab_off + a * 0x28 + 0x20) idx
+    FOR (i = 0; i < cnt; ++i) BEGIN
+      SET off = fx_off + (idx + i) * 0x30
+      READ_BYTE (off + 0x0c) timing
+      READ_LONG (off + 0x0e) dur
+      PATCH_IF (timing = 0 AND dur > 300) BEGIN
+        WRITE_LONG (off + 0x0e) 300
+      END
+    END
+  END
+
+// 3. Temple services showed BG2 dialogue lines as spell descriptions (GitHub #36:
+//    Bless, Draw upon Divine Might, Remove Paralysis...). The old APPEND used fixed
+//    strrefs that point at Cowled Wizard dialogue in the EET talk table. Use each
+//    spell's own description instead, and add Neutralize Poison, which the temples
+//    sell but which had no entry at all.
+ACTION_FOR_EACH spl IN SPPR101 SPPR108 SPPR201 SPPR214 SPPR308 SPPR404 BEGIN
+  ACTION_IF FILE_EXISTS_IN_GAME ~%spl%.spl~ BEGIN
+    OUTER_SET desc_ref = 0 - 1
+    COPY_EXISTING ~%spl%.spl~ ~override~
+      READ_LONG 0x50 desc_ref
+      BUT_ONLY
+    ACTION_IF (desc_ref > 0) BEGIN
+      COPY_EXISTING ~speldesc.2da~ ~override~
+        REPLACE_TEXTUALLY CASE_INSENSITIVE ~^%spl%[ %TAB%]+[0-9]+~ ~%spl%  %desc_ref%~
+        BUT_ONLY
+      APPEND ~speldesc.2da~ ~%spl%  %desc_ref%~ UNLESS ~^%spl%[ %TAB%]~
+    END
+  END
+END
+
+// 4. The Flaming Fists of Lin Mei and Sarutobi's Stone Breakers are monk-only, but
+//    they also excluded every non-human race and every non-lawful alignment, so a
+//    monk from a race or alignment mod could not wear them (GitHub #36). Only
+//    monks can use them anyway, so drop the redundant race/alignment flags.
+COPY_EXISTING ~ohbrac01.itm~ ~override~
+              ~ohbrac02.itm~ ~override~
+  READ_LONG 0x1e usab
+  // chaotic 0x1, lawful-chaotic neutral 0x20, elf 0x800000, dwarf 0x1000000,
+  // half-elf 0x2000000, halfling 0x4000000, gnome 0x10000000, half-orc 0x80000000
+  WRITE_LONG 0x1e (usab BAND BNOT (0x1 BOR 0x20 BOR 0x800000 BOR 0x1000000 BOR 0x2000000 BOR 0x4000000 BOR 0x10000000 BOR 0x80000000))
+  BUT_ONLY
+
+// 5. Tiernon's Full Plate Mail (ohfullp.itm) lost the Avenger kit restriction that
+//    BG2's full plate has, so an Avenger could wear it (GitHub #36).
+COPY_EXISTING ~ohfullp.itm~ ~override~
+  READ_BYTE 0x29 kit1
+  WRITE_BYTE 0x29 (kit1 BOR 0x20)
+  BUT_ONLY
+
+// 6. Contact Other Plane (IDWI517) was stored as a level-2 spell with the Invoker
+//    exclusion flag, although it is a level-5 Divination spell. Learned from the
+//    scroll it landed in the wrong spell level and seemed to vanish (GitHub #36).
+COPY_EXISTING ~IDWI517.SPL~ ~override~
+  WRITE_LONG 0x34 5
+  WRITE_LONG 0x1e 0x80   // Divination: excluded for Conjurers only
+  BUT_ONLY
+
+// 7. Myconids were affected by their own spore cloud (GitHub #36). The spores
+//    (IDIN990) use an area projectile around the target, which also catches the
+//    myconids standing next to it. Make them immune to that one spell.
+COPY_EXISTING ~myconidb.cre~ ~override~
+              ~myconidr.cre~ ~override~
+  LPF ADD_CRE_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 parameter1 = (0 - 1) STR_VAR resource = ~IDIN990~ END
+  BUT_ONLY
+
+// 8. Trials of the Luremaster harpies were hit by their own Harpy Wail (GitHub #36).
+//    The wail (IDIN165X) is an area spell centred on the harpy herself, and nothing
+//    protected the caster. Make every harpy that uses it immune to it.
+COPY_EXISTING ~hrpcat.cre~  ~override~
+              ~hrpfnd.cre~  ~override~
+              ~hrpinf.cre~  ~override~
+              ~rndhrpc.cre~ ~override~
+  LPF ADD_CRE_EFFECT INT_VAR opcode = 206 target = 1 timing = 9 parameter1 = (0 - 1) STR_VAR resource = ~IDIN165X~ END
+  BUT_ONLY
